@@ -59,6 +59,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Profile ID for the data quality result.</p>
+     */
+    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
+    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
+    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
+    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
+    inline DataQualityResult& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
+    inline DataQualityResult& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
+    inline DataQualityResult& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An aggregate data quality score. Represents the ratio of rules that passed to
      * the total number of rules.</p>
      */
@@ -226,6 +240,9 @@ namespace Model
 
     Aws::String m_resultId;
     bool m_resultIdHasBeenSet = false;
+
+    Aws::String m_profileId;
+    bool m_profileIdHasBeenSet = false;
 
     double m_score;
     bool m_scoreHasBeenSet = false;

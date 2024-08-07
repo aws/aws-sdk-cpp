@@ -20,6 +20,7 @@ StartDataQualityRuleRecommendationRunRequest::StartDataQualityRuleRecommendation
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_createdRulesetNameHasBeenSet(false),
+    m_dataQualitySecurityConfigurationHasBeenSet(false),
     m_clientTokenHasBeenSet(false)
 {
 }
@@ -55,6 +56,12 @@ Aws::String StartDataQualityRuleRecommendationRunRequest::SerializePayload() con
   if(m_createdRulesetNameHasBeenSet)
   {
    payload.WithString("CreatedRulesetName", m_createdRulesetName);
+
+  }
+
+  if(m_dataQualitySecurityConfigurationHasBeenSet)
+  {
+   payload.WithString("DataQualitySecurityConfiguration", m_dataQualitySecurityConfiguration);
 
   }
 

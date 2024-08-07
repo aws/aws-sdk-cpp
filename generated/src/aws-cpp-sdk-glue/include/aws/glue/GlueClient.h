@@ -489,6 +489,32 @@ namespace Glue
         }
 
         /**
+         * <p>Annotate datapoints over time for a specific data quality
+         * statistic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchPutDataQualityStatisticAnnotation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchPutDataQualityStatisticAnnotationOutcome BatchPutDataQualityStatisticAnnotation(const Model::BatchPutDataQualityStatisticAnnotationRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchPutDataQualityStatisticAnnotation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchPutDataQualityStatisticAnnotationRequestT = Model::BatchPutDataQualityStatisticAnnotationRequest>
+        Model::BatchPutDataQualityStatisticAnnotationOutcomeCallable BatchPutDataQualityStatisticAnnotationCallable(const BatchPutDataQualityStatisticAnnotationRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::BatchPutDataQualityStatisticAnnotation, request);
+        }
+
+        /**
+         * An Async wrapper for BatchPutDataQualityStatisticAnnotation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchPutDataQualityStatisticAnnotationRequestT = Model::BatchPutDataQualityStatisticAnnotationRequest>
+        void BatchPutDataQualityStatisticAnnotationAsync(const BatchPutDataQualityStatisticAnnotationRequestT& request, const BatchPutDataQualityStatisticAnnotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::BatchPutDataQualityStatisticAnnotation, request, handler, context);
+        }
+
+        /**
          * <p>Stops one or more job runs for a specified job definition.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">AWS
@@ -2472,6 +2498,58 @@ namespace Glue
         }
 
         /**
+         * <p>Retrieve the training status of the model along with more information
+         * (CompletedOn, StartedOn, FailureReason).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataQualityModelOutcome GetDataQualityModel(const Model::GetDataQualityModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataQualityModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataQualityModelRequestT = Model::GetDataQualityModelRequest>
+        Model::GetDataQualityModelOutcomeCallable GetDataQualityModelCallable(const GetDataQualityModelRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetDataQualityModel, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataQualityModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataQualityModelRequestT = Model::GetDataQualityModelRequest>
+        void GetDataQualityModelAsync(const GetDataQualityModelRequestT& request, const GetDataQualityModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetDataQualityModel, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve a statistic's predictions for a given Profile ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModelResult">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataQualityModelResultOutcome GetDataQualityModelResult(const Model::GetDataQualityModelResultRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataQualityModelResult that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataQualityModelResultRequestT = Model::GetDataQualityModelResultRequest>
+        Model::GetDataQualityModelResultOutcomeCallable GetDataQualityModelResultCallable(const GetDataQualityModelResultRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetDataQualityModelResult, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataQualityModelResult that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataQualityModelResultRequestT = Model::GetDataQualityModelResultRequest>
+        void GetDataQualityModelResultAsync(const GetDataQualityModelResultRequestT& request, const GetDataQualityModelResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetDataQualityModelResult, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the result of a data quality rule evaluation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResult">AWS
@@ -4122,6 +4200,57 @@ namespace Glue
         }
 
         /**
+         * <p>Retrieve annotations for a data quality statistic.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatisticAnnotations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataQualityStatisticAnnotationsOutcome ListDataQualityStatisticAnnotations(const Model::ListDataQualityStatisticAnnotationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDataQualityStatisticAnnotations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataQualityStatisticAnnotationsRequestT = Model::ListDataQualityStatisticAnnotationsRequest>
+        Model::ListDataQualityStatisticAnnotationsOutcomeCallable ListDataQualityStatisticAnnotationsCallable(const ListDataQualityStatisticAnnotationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::ListDataQualityStatisticAnnotations, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataQualityStatisticAnnotations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataQualityStatisticAnnotationsRequestT = Model::ListDataQualityStatisticAnnotationsRequest>
+        void ListDataQualityStatisticAnnotationsAsync(const ListDataQualityStatisticAnnotationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataQualityStatisticAnnotationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::ListDataQualityStatisticAnnotations, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of data quality statistics.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataQualityStatisticsOutcome ListDataQualityStatistics(const Model::ListDataQualityStatisticsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDataQualityStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataQualityStatisticsRequestT = Model::ListDataQualityStatisticsRequest>
+        Model::ListDataQualityStatisticsOutcomeCallable ListDataQualityStatisticsCallable(const ListDataQualityStatisticsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::ListDataQualityStatistics, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataQualityStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataQualityStatisticsRequestT = Model::ListDataQualityStatisticsRequest>
+        void ListDataQualityStatisticsAsync(const ListDataQualityStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataQualityStatisticsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::ListDataQualityStatistics, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon
          * Web Services account, or the resources with the specified tag. This operation
          * allows you to see which resources are available in your account, and their
@@ -4481,6 +4610,31 @@ namespace Glue
         void PutDataCatalogEncryptionSettingsAsync(const PutDataCatalogEncryptionSettingsRequestT& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::PutDataCatalogEncryptionSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Annotate all datapoints for a Profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataQualityProfileAnnotation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDataQualityProfileAnnotationOutcome PutDataQualityProfileAnnotation(const Model::PutDataQualityProfileAnnotationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutDataQualityProfileAnnotation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutDataQualityProfileAnnotationRequestT = Model::PutDataQualityProfileAnnotationRequest>
+        Model::PutDataQualityProfileAnnotationOutcomeCallable PutDataQualityProfileAnnotationCallable(const PutDataQualityProfileAnnotationRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::PutDataQualityProfileAnnotation, request);
+        }
+
+        /**
+         * An Async wrapper for PutDataQualityProfileAnnotation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutDataQualityProfileAnnotationRequestT = Model::PutDataQualityProfileAnnotationRequest>
+        void PutDataQualityProfileAnnotationAsync(const PutDataQualityProfileAnnotationRequestT& request, const PutDataQualityProfileAnnotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::PutDataQualityProfileAnnotation, request, handler, context);
         }
 
         /**

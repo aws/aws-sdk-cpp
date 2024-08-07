@@ -53,6 +53,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Profile ID for the data quality result.</p>
+     */
+    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline void SetProfileId(const Aws::String& value) { m_profileId = value; }
+    inline void SetProfileId(Aws::String&& value) { m_profileId = std::move(value); }
+    inline void SetProfileId(const char* value) { m_profileId.assign(value); }
+    inline GetDataQualityResultResult& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
+    inline GetDataQualityResultResult& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
+    inline GetDataQualityResultResult& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An aggregate data quality score. Represents the ratio of rules that passed to
      * the total number of rules.</p>
      */
@@ -218,6 +231,8 @@ namespace Model
   private:
 
     Aws::String m_resultId;
+
+    Aws::String m_profileId;
 
     double m_score;
 
