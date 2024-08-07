@@ -94,10 +94,10 @@ TEST_F(SmithyClientTest, TestCompiles) {
     //Aws::Crt::Variant<smithy::SigV4AuthScheme> var(smithy::SigV4AuthScheme(params));
     Aws::String key{"aws.auth#sigv4"};
 
-    // Aws::Crt::Variant<smithy::SigV4AuthScheme>(smithy::SigV4AuthScheme(params))
+    using MyTestVariant = Aws::Crt::Variant<smithy::SigV4AuthScheme>;
+    MyTestVariant val{smithy::SigV4AuthScheme(params)}; //(smithy::SigV4AuthScheme(params));
     
-    //authSchemesMap.emplace(key, smithy::SigV4AuthScheme(params));
-    authSchemesMap.emplace(key, Aws::Crt::Variant<smithy::SigV4AuthScheme>(smithy::SigV4AuthScheme(params)));
+    authSchemesMap.emplace(key, val);
 
     std::shared_ptr<TestClient> ptr = Aws::MakeShared<TestClient>(
         ALLOCATION_TAG,
