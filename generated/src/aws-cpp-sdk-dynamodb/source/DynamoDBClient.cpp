@@ -203,7 +203,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 DynamoDBClient::~DynamoDBClient()
 {
-  ShutdownSdkClient(this, -1);
+  // ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<DynamoDBEndpointProviderBase>& DynamoDBClient::accessEndpointProvider()
@@ -213,7 +213,6 @@ std::shared_ptr<DynamoDBEndpointProviderBase>& DynamoDBClient::accessEndpointPro
 
 void DynamoDBClient::init(const DynamoDB::DynamoDBClientConfiguration& config)
 {
-  AWSClient::SetServiceClientName("DynamoDB");
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }
