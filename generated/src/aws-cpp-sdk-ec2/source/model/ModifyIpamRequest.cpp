@@ -18,7 +18,9 @@ ModifyIpamRequest::ModifyIpamRequest() :
     m_addOperatingRegionsHasBeenSet(false),
     m_removeOperatingRegionsHasBeenSet(false),
     m_tier(IpamTier::NOT_SET),
-    m_tierHasBeenSet(false)
+    m_tierHasBeenSet(false),
+    m_enablePrivateGua(false),
+    m_enablePrivateGuaHasBeenSet(false)
 {
 }
 
@@ -64,6 +66,11 @@ Aws::String ModifyIpamRequest::SerializePayload() const
   if(m_tierHasBeenSet)
   {
     ss << "Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
+  }
+
+  if(m_enablePrivateGuaHasBeenSet)
+  {
+    ss << "EnablePrivateGua=" << std::boolalpha << m_enablePrivateGua << "&";
   }
 
   ss << "Version=2016-11-15";

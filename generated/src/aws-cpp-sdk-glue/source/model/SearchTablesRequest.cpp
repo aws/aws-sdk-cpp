@@ -21,7 +21,9 @@ SearchTablesRequest::SearchTablesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_resourceShareType(ResourceShareType::NOT_SET),
-    m_resourceShareTypeHasBeenSet(false)
+    m_resourceShareTypeHasBeenSet(false),
+    m_includeStatusDetails(false),
+    m_includeStatusDetailsHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,12 @@ Aws::String SearchTablesRequest::SerializePayload() const
   if(m_resourceShareTypeHasBeenSet)
   {
    payload.WithString("ResourceShareType", ResourceShareTypeMapper::GetNameForResourceShareType(m_resourceShareType));
+  }
+
+  if(m_includeStatusDetailsHasBeenSet)
+  {
+   payload.WithBool("IncludeStatusDetails", m_includeStatusDetails);
+
   }
 
   return payload.View().WriteReadable();

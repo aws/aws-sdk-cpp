@@ -80,7 +80,7 @@ namespace Model
     ///@{
     /**
      * <p>The netmask length of the CIDR you would like to allocate to the public IPv4
-     * pool.</p>
+     * pool. The least specific netmask length you can define is 24.</p>
      */
     inline int GetNetmaskLength() const{ return m_netmaskLength; }
     inline bool NetmaskLengthHasBeenSet() const { return m_netmaskLengthHasBeenSet; }

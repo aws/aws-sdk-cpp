@@ -23,7 +23,9 @@ namespace Model
     NETWORK,
     MARKETPLACE,
     CUSTOM,
-    SALESFORCE
+    SALESFORCE,
+    VIEW_VALIDATION_REDSHIFT,
+    VIEW_VALIDATION_ATHENA
   };
 
 namespace ConnectionTypeMapper

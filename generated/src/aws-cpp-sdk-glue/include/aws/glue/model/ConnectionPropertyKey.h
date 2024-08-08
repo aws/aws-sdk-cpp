@@ -58,7 +58,11 @@ namespace Model
     KAFKA_SASL_GSSAPI_KRB5_CONF,
     KAFKA_SASL_GSSAPI_SERVICE,
     KAFKA_SASL_GSSAPI_PRINCIPAL,
-    ROLE_ARN
+    ROLE_ARN,
+    REGION,
+    WORKGROUP_NAME,
+    CLUSTER_IDENTIFIER,
+    DATABASE
   };
 
 namespace ConnectionPropertyKeyMapper

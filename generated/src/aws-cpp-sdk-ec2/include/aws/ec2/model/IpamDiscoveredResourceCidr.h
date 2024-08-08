@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/IpamResourceCidrIpSource.h>
 #include <aws/ec2/model/IpamResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpamNetworkInterfaceAttachmentStatus.h>
@@ -116,6 +117,21 @@ namespace Model
     inline IpamDiscoveredResourceCidr& WithResourceCidr(const Aws::String& value) { SetResourceCidr(value); return *this;}
     inline IpamDiscoveredResourceCidr& WithResourceCidr(Aws::String&& value) { SetResourceCidr(std::move(value)); return *this;}
     inline IpamDiscoveredResourceCidr& WithResourceCidr(const char* value) { SetResourceCidr(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The source that allocated the IP address space. <code>byoip</code> or
+     * <code>amazon</code> indicates public IP address space allocated by Amazon or
+     * space that you have allocated with Bring your own IP (BYOIP). <code>none</code>
+     * indicates private space.</p>
+     */
+    inline const IpamResourceCidrIpSource& GetIpSource() const{ return m_ipSource; }
+    inline bool IpSourceHasBeenSet() const { return m_ipSourceHasBeenSet; }
+    inline void SetIpSource(const IpamResourceCidrIpSource& value) { m_ipSourceHasBeenSet = true; m_ipSource = value; }
+    inline void SetIpSource(IpamResourceCidrIpSource&& value) { m_ipSourceHasBeenSet = true; m_ipSource = std::move(value); }
+    inline IpamDiscoveredResourceCidr& WithIpSource(const IpamResourceCidrIpSource& value) { SetIpSource(value); return *this;}
+    inline IpamDiscoveredResourceCidr& WithIpSource(IpamResourceCidrIpSource&& value) { SetIpSource(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -232,6 +248,9 @@ namespace Model
 
     Aws::String m_resourceCidr;
     bool m_resourceCidrHasBeenSet = false;
+
+    IpamResourceCidrIpSource m_ipSource;
+    bool m_ipSourceHasBeenSet = false;
 
     IpamResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
