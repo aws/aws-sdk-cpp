@@ -9,7 +9,7 @@
 
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/threading/Semaphore.h>
+#include <condition_variable>
 #include <functional>
 #include <mutex>
 #include <atomic>
@@ -57,7 +57,7 @@ namespace Aws
             private:
                 Aws::Queue<std::function<void()>*> m_tasks;
                 mutable std::mutex m_queueLock;
-                Aws::Utils::Threading::Semaphore m_sync;
+                std::condition_variable m_sync;
                 Aws::Vector<ThreadTask*> m_threadTaskHandles;
                 size_t m_poolSize = 0;
                 OverflowPolicy m_overflowPolicy = OverflowPolicy::QUEUE_TASKS_EVENLY_ACROSS_THREADS;
