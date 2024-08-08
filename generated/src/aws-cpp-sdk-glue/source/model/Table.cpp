@@ -5,6 +5,7 @@
 
 #include <aws/glue/model/Table.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/TableStatus.h>
 
 #include <utility>
 
@@ -44,7 +45,8 @@ Table::Table() :
     m_federatedTableHasBeenSet(false),
     m_viewDefinitionHasBeenSet(false),
     m_isMultiDialectView(false),
-    m_isMultiDialectViewHasBeenSet(false)
+    m_isMultiDialectViewHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,13 @@ Table::Table(JsonView jsonValue)
 {
   *this = jsonValue;
 }
+
+const TableStatus& Table::GetStatus() const{ return *m_status; }
+bool Table::StatusHasBeenSet() const { return m_statusHasBeenSet; }
+void Table::SetStatus(const TableStatus& value) { m_statusHasBeenSet = true; m_status = Aws::MakeShared<TableStatus>("Table", value); }
+void Table::SetStatus(TableStatus&& value) { m_statusHasBeenSet = true; m_status = Aws::MakeShared<TableStatus>("Table", std::move(value)); }
+Table& Table::WithStatus(const TableStatus& value) { SetStatus(value); return *this;}
+Table& Table::WithStatus(TableStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 Table& Table::operator =(JsonView jsonValue)
 {
@@ -223,6 +232,13 @@ Table& Table::operator =(JsonView jsonValue)
     m_isMultiDialectViewHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = Aws::MakeShared<TableStatus>("Table", jsonValue.GetObject("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -371,6 +387,12 @@ JsonValue Table::Jsonize() const
   if(m_isMultiDialectViewHasBeenSet)
   {
    payload.WithBool("IsMultiDialectView", m_isMultiDialectView);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithObject("Status", m_status->Jsonize());
 
   }
 

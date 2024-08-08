@@ -275,6 +275,17 @@ namespace Model
     inline Ipam& WithTier(const IpamTier& value) { SetTier(value); return *this;}
     inline Ipam& WithTier(IpamTier&& value) { SetTier(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This
+     * option is disabled by default.</p>
+     */
+    inline bool GetEnablePrivateGua() const{ return m_enablePrivateGua; }
+    inline bool EnablePrivateGuaHasBeenSet() const { return m_enablePrivateGuaHasBeenSet; }
+    inline void SetEnablePrivateGua(bool value) { m_enablePrivateGuaHasBeenSet = true; m_enablePrivateGua = value; }
+    inline Ipam& WithEnablePrivateGua(bool value) { SetEnablePrivateGua(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ownerId;
@@ -324,6 +335,9 @@ namespace Model
 
     IpamTier m_tier;
     bool m_tierHasBeenSet = false;
+
+    bool m_enablePrivateGua;
+    bool m_enablePrivateGuaHasBeenSet = false;
   };
 
 } // namespace Model

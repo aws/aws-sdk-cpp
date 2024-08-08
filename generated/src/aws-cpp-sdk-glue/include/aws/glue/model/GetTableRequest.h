@@ -107,6 +107,17 @@ namespace Model
     inline GetTableRequest& WithQueryAsOfTime(const Aws::Utils::DateTime& value) { SetQueryAsOfTime(value); return *this;}
     inline GetTableRequest& WithQueryAsOfTime(Aws::Utils::DateTime&& value) { SetQueryAsOfTime(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to include status details related to a request to create or
+     * update an Glue Data Catalog view.</p>
+     */
+    inline bool GetIncludeStatusDetails() const{ return m_includeStatusDetails; }
+    inline bool IncludeStatusDetailsHasBeenSet() const { return m_includeStatusDetailsHasBeenSet; }
+    inline void SetIncludeStatusDetails(bool value) { m_includeStatusDetailsHasBeenSet = true; m_includeStatusDetails = value; }
+    inline GetTableRequest& WithIncludeStatusDetails(bool value) { SetIncludeStatusDetails(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_catalogId;
@@ -123,6 +134,9 @@ namespace Model
 
     Aws::Utils::DateTime m_queryAsOfTime;
     bool m_queryAsOfTimeHasBeenSet = false;
+
+    bool m_includeStatusDetails;
+    bool m_includeStatusDetailsHasBeenSet = false;
   };
 
 } // namespace Model

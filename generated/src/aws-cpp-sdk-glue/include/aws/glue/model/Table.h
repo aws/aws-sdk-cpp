@@ -15,6 +15,7 @@
 #include <aws/glue/model/ViewDefinition.h>
 #include <aws/glue/model/Column.h>
 #include <utility>
+#include <memory>
 
 namespace Aws
 {
@@ -30,6 +31,7 @@ namespace Glue
 {
 namespace Model
 {
+  class TableStatus;
 
   /**
    * <p>Represents a collection of related data organized in columns and
@@ -363,6 +365,16 @@ namespace Model
     inline void SetIsMultiDialectView(bool value) { m_isMultiDialectViewHasBeenSet = true; m_isMultiDialectView = value; }
     inline Table& WithIsMultiDialectView(bool value) { SetIsMultiDialectView(value); return *this;}
     ///@}
+
+    ///@{
+    
+    AWS_GLUE_API const TableStatus& GetStatus() const;
+    AWS_GLUE_API bool StatusHasBeenSet() const;
+    AWS_GLUE_API void SetStatus(const TableStatus& value);
+    AWS_GLUE_API void SetStatus(TableStatus&& value);
+    AWS_GLUE_API Table& WithStatus(const TableStatus& value);
+    AWS_GLUE_API Table& WithStatus(TableStatus&& value);
+    ///@}
   private:
 
     Aws::String m_name;
@@ -433,6 +445,9 @@ namespace Model
 
     bool m_isMultiDialectView;
     bool m_isMultiDialectViewHasBeenSet = false;
+
+    std::shared_ptr<TableStatus> m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

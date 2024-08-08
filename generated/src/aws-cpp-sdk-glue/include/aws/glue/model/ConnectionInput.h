@@ -115,14 +115,18 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SALESFORCE</code> - Designates a connection to
      * Salesforce using OAuth authencation.</p> <ul> <li> <p>Requires the
      * <code>AuthenticationConfiguration</code> member to be configured.</p> </li>
-     * </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network connection to a
-     * data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
-     * <p> <code>NETWORK</code> Connections do not require ConnectionParameters.
-     * Instead, provide a PhysicalConnectionRequirements.</p> </li> <li> <p>
-     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector
-     * purchased from Amazon Web Services Marketplace to read from and write to data
-     * stores that are not natively supported by Glue.</p> <p> <code>MARKETPLACE</code>
-     * Connections use the following ConnectionParameters.</p> <ul> <li> <p>Required:
+     * </ul> </li> <li> <p> <code>VIEW_VALIDATION_REDSHIFT</code> - Designates a
+     * connection used for view validation by Amazon Redshift.</p> </li> <li> <p>
+     * <code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view
+     * validation by Amazon Athena.</p> </li> <li> <p> <code>NETWORK</code> -
+     * Designates a network connection to a data source within an Amazon Virtual
+     * Private Cloud environment (Amazon VPC).</p> <p> <code>NETWORK</code> Connections
+     * do not require ConnectionParameters. Instead, provide a
+     * PhysicalConnectionRequirements.</p> </li> <li> <p> <code>MARKETPLACE</code> -
+     * Uses configuration settings contained in a connector purchased from Amazon Web
+     * Services Marketplace to read from and write to data stores that are not natively
+     * supported by Glue.</p> <p> <code>MARKETPLACE</code> Connections use the
+     * following ConnectionParameters.</p> <ul> <li> <p>Required:
      * <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
      * <code>CONNECTOR_CLASS_NAME</code>, <code>CONNECTION_URL</code>.</p> </li> <li>
      * <p>Required for <code>JDBC</code> <code>CONNECTOR_TYPE</code> connections: All
