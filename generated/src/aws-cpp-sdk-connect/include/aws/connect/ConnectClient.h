@@ -869,12 +869,16 @@ namespace Connect
          * change.</p> <p>Initiates an Amazon Connect instance with all the supported
          * channels enabled. It does not attach any storage, such as Amazon Simple Storage
          * Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
-         * configurations on features, such as Contact Lens for Amazon Connect. </p>
-         * <p>Amazon Connect enforces a limit on the total number of instances that you can
-         * create or delete in 30 days. If you exceed this limit, you will get an error
-         * message indicating there has been an excessive number of attempts at creating or
-         * deleting instances. You must wait 30 days before you can restart creating and
-         * deleting instances in your account.</p><p><h3>See Also:</h3>   <a
+         * configurations on features, such as Contact Lens for Amazon Connect. </p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Create
+         * an Amazon Connect instance</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p> <p>Amazon Connect enforces a limit on the total number of
+         * instances that you can create or delete in 30 days. If you exceed this limit,
+         * you will get an error message indicating there has been an excessive number of
+         * attempts at creating or deleting instances. You must wait 30 days before you can
+         * restart creating and deleting instances in your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">AWS
          * API Reference</a></p>
          */
@@ -983,8 +987,13 @@ namespace Connect
         }
 
         /**
-         * <p>Creates a new predefined attribute for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new predefined attribute for the specified Amazon Connect instance.
+         * <i>Predefined attributes</i> are attributes in an Amazon Connect instance that
+         * can be used to route contacts to an agent or pools of agents within a queue. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePredefinedAttribute">AWS
          * API Reference</a></p>
          */
@@ -1163,7 +1172,13 @@ namespace Connect
         }
 
         /**
-         * <p>Creates a security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a security profile.</p> <p>For information about security profiles,
+         * see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
+         * the API name and user interface name of the security profile permissions, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+         * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile">AWS
          * API Reference</a></p>
          */
@@ -1615,12 +1630,15 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes the Amazon Connect instance.</p> <p>Amazon Connect
-         * enforces a limit on the total number of instances that you can create or delete
-         * in 30 days. If you exceed this limit, you will get an error message indicating
-         * there has been an excessive number of attempts at creating or deleting
-         * instances. You must wait 30 days before you can restart creating and deleting
-         * instances in your account.</p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Deletes the Amazon Connect instance. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-connect-instance.html">Delete
+         * your Amazon Connect instance</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p> <p>Amazon Connect enforces a limit on the total number of
+         * instances that you can create or delete in 30 days. If you exceed this limit,
+         * you will get an error message indicating there has been an excessive number of
+         * attempts at creating or deleting instances. You must wait 30 days before you can
+         * restart creating and deleting instances in your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">AWS
          * API Reference</a></p>
          */
@@ -1723,7 +1741,8 @@ namespace Connect
         }
 
         /**
-         * <p>Deletes a queue.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a queue. It isn't possible to delete a queue by using the Amazon
+         * Connect admin website.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">AWS
          * API Reference</a></p>
          */
@@ -2429,8 +2448,13 @@ namespace Connect
         }
 
         /**
-         * <p>Describes a predefined attribute for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a predefined attribute for the specified Amazon Connect instance.
+         * <i>Predefined attributes</i> are attributes in an Amazon Connect instance that
+         * can be used to route contacts to an agent or pools of agents within a queue. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePredefinedAttribute">AWS
          * API Reference</a></p>
          */
@@ -2582,8 +2606,13 @@ namespace Connect
         }
 
         /**
-         * <p>Gets basic information about the security profle.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets basic information about the security profile.</p> <p>For information
+         * about security profiles, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
+         * the API name and user interface name of the security profile permissions, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+         * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile">AWS
          * API Reference</a></p>
          */
@@ -4144,8 +4173,13 @@ namespace Connect
         }
 
         /**
-         * <p>Lists predefined attributes for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists predefined attributes for the specified Amazon Connect instance.
+         * <i>Predefined attributes</i> are attributes in an Amazon Connect instance that
+         * can be used to route contacts to an agent or pools of agents within a queue. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPredefinedAttributes">AWS
          * API Reference</a></p>
          */
@@ -4445,8 +4479,13 @@ namespace Connect
         }
 
         /**
-         * <p>Lists the permissions granted to a security profile.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Lists the permissions granted to a security profile.</p> <p>For information
+         * about security profiles, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
+         * the API name and user interface name of the security profile permissions, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+         * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfilePermissions">AWS
          * API Reference</a></p>
          */
@@ -4475,8 +4514,10 @@ namespace Connect
          * Amazon Connect instance.</p> <p>For more information about security profiles,
          * see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
+         * the API name and user interface name of the security profile permissions, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+         * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles">AWS
          * API Reference</a></p>
          */
@@ -5140,8 +5181,13 @@ namespace Connect
         }
 
         /**
-         * <p>Predefined attributes that meet certain criteria.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Searches predefined attributes that meet certain criteria. <i>Predefined
+         * attributes</i> are attributes in an Amazon Connect instance that can be used to
+         * route contacts to an agent or pools of agents within a queue. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPredefinedAttributes">AWS
          * API Reference</a></p>
          */
@@ -5297,7 +5343,12 @@ namespace Connect
 
         /**
          * <p>Searches security profiles in an Amazon Connect instance, with optional
-         * filtering.</p><p><h3>See Also:</h3>   <a
+         * filtering.</p> <p>For information about security profiles, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
+         * the API name and user interface name of the security profile permissions, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+         * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">AWS
          * API Reference</a></p>
          */
@@ -6611,8 +6662,13 @@ namespace Connect
         }
 
         /**
-         * <p>Updates a predefined attribute for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a predefined attribute for the specified Amazon Connect instance.
+         * <i>Predefined attributes</i> are attributes in an Amazon Connect instance that
+         * can be used to route contacts to an agent or pools of agents within a queue. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePredefinedAttribute">AWS
          * API Reference</a></p>
          */
@@ -7029,7 +7085,13 @@ namespace Connect
         }
 
         /**
-         * <p>Updates a security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a security profile.</p> <p>For information about security profiles,
+         * see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of
+         * the API name and user interface name of the security profile permissions, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+         * of security profile permissions</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile">AWS
          * API Reference</a></p>
          */

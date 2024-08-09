@@ -25,9 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Can be used to define a list of preferred agents to target the contact within
-   * the queue. Note that agents must have the queue in their routing profile in
-   * order to be offered the contact.</p><p><h3>See Also:</h3>   <a
+   * <p>Can be used to define a list of preferred agents to target the contact to
+   * within the queue.&#x2028; Note that agents must have the queue in their routing
+   * profile in order to be offered the&#x2028; contact.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AgentsCriteria">AWS
    * API Reference</a></p>
    */
@@ -42,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object to specify a list of agents, by Agent ID.</p>
+     * <p>An object to specify a list of agents, by user ID.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentIds() const{ return m_agentIds; }
     inline bool AgentIdsHasBeenSet() const { return m_agentIdsHasBeenSet; }
