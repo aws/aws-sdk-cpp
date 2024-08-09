@@ -262,8 +262,6 @@ protected:
     }
 };
 
-//std::shared_ptr<DynamoDBClient> TableOperationTest::m_client(nullptr);
-//std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> TableOperationTest::m_limiter(nullptr);
 
 TEST_F(TableOperationTest, TestListTable)
 {
@@ -481,10 +479,6 @@ TEST_F(TableOperationTest, TestCrudOperations)
     {
         putItemResult.get();
     }
-
-    //after put requests have been made, it's not necessary that put requests may have been processed to completion before get is called
-    //for a failing read query we attempt it N times before deeming it fail
-    //we can generalize retry of a request 
 
     //now we get the items we were supposed to be putting and make sure
     //they were put successfully.
