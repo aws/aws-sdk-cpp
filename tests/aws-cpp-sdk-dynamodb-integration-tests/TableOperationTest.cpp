@@ -100,7 +100,7 @@ public:
     std::mutex updateItemResultMutex;
     std::condition_variable updateItemResultSemaphore;
 
-    std::vector<Aws::String> m_tablesCreated;
+    Aws::Vector<Aws::String> m_tablesCreated;
 
     void GetItemOutcomeReceived(const DynamoDBClient* sender, const GetItemRequest& request, const GetItemOutcome& outcome, const std::shared_ptr<const AsyncCallerContext>& context)
     {
@@ -194,70 +194,7 @@ public:
 
 
 protected:
-/*
-    static void SetUpClient(Aws::Http::TransferLibType transferType)
-    {
-        // Create a client
-        ClientConfiguration config;
-        config.endpointOverride = ENDPOINT_OVERRIDE;
-        config.scheme = Scheme::HTTPS;
-        config.connectTimeoutMs = 30000;
-        config.requestTimeoutMs = 30000;
-        config.readRateLimiter = m_limiter;
-        config.writeRateLimiter = m_limiter;
-        config.httpLibOverride = transferType;
-        config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
-        config.disableExpectHeader = true;
-        config.enableHttpClientTrace = true;
 
-        //to test proxy functionality, uncomment the next two lines.
-        //config.proxyHost = "localhost";
-        //config.proxyPort = 8080;
-        m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
-    }
-
-    static void CleanupTables()
-    {
-
-        DeleteTable(BuildTableName(BASE_SIMPLE_TABLE));
-        DeleteTable(BuildTableName(BASE_THROUGHPUT_TABLE));
-        DeleteTable(BuildTableName(BASE_CONDITION_TABLE));
-        DeleteTable(BuildTableName(BASE_VALIDATION_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_THROTTLED_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_LIMITER_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_ATTRIBUTEVALUE_TEST_TABLE));
-    }
-
-    static void SetUpTestCase()
-    {
-        m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
-        SetUpClient(Aws::Http::TransferLibType::DEFAULT_CLIENT);
-        DYNAMODB_INTEGRATION_TEST_ID = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
-    }
-
-    static void TearDownTestCase()
-    {
-        DeleteAllTables();
-        m_limiter = nullptr;
-        m_client = nullptr;
-    }
-    
-
-    static void DeleteAllTables()
-    {
-        DeleteTable(BuildTableName(BASE_SIMPLE_TABLE));
-        DeleteTable(BuildTableName(BASE_THROUGHPUT_TABLE));
-        DeleteTable(BuildTableName(BASE_CONDITION_TABLE));
-        DeleteTable(BuildTableName(BASE_VALIDATION_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_THROTTLED_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_LIMITER_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_ATTRIBUTEVALUE_TEST_TABLE));
-    }
-    */
 
     void CreateTable(Aws::String tableName, long readCap, long writeCap)
     {
