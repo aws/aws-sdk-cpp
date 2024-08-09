@@ -24,6 +24,7 @@
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 #if($serviceNamespace == "S3Crt")
 \#include <aws/$metadata.projectName/S3ExpressIdentityProvider.h>
+\#include <aws/$metadata.projectName/S3CrtIdentityProviderAdapter.h>
 #end
 #set($signPayloadsOptional = true)
 #set($virtualAddressingSupported = true)
@@ -205,6 +206,7 @@ namespace ${rootNamespace}
           std::shared_ptr<Aws::Http::HttpRequest> request;
           std::shared_ptr<Aws::Http::HttpResponse> response;
           std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest;
+          Aws::UniquePtr<struct aws_s3_checksum_config> checksumConfig;
         };
 
         Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
@@ -293,6 +295,7 @@ namespace ${rootNamespace}
 #end
 #if($serviceNamespace == "S3Crt")
         std::shared_ptr<S3ExpressIdentityProvider> m_identityProvider;
+        S3CrtIdentityProviderUserData m_identityProviderUserData{m_identityProvider};
 #end
     };
 

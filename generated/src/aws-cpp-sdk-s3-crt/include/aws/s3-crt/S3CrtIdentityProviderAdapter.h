@@ -11,6 +11,21 @@
 namespace Aws {
   namespace S3Crt {
     /**
+      * Userdata class for ensuring lifetime of the identity provider and
+      * implementation pointers for crt.
+      */
+    class S3CrtIdentityProviderUserData final {
+    public:
+      explicit S3CrtIdentityProviderUserData(std::shared_ptr<S3ExpressIdentityProvider> identity_provider);
+      std::shared_ptr<S3ExpressIdentityProvider> GetIdentityProvider() const { return m_identityProvider; }
+      std::shared_ptr<aws_s3express_credentials_provider_vtable> GetImpl() const { return m_impl; }
+
+    private:
+      std::shared_ptr<S3ExpressIdentityProvider> m_identityProvider;
+      std::shared_ptr<struct aws_s3express_credentials_provider_vtable> m_impl;
+    };
+
+    /**
      * Factory for a CRT aws_s3express_credentials_provider. Cannot subclass or instantiate,
      * only for building a crt provider to be used in crt configuration.
      */
