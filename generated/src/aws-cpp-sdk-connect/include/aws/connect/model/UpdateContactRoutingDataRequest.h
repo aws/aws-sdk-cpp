@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/RoutingCriteriaInput.h>
 #include <utility>
 
 namespace Aws
@@ -86,6 +87,19 @@ namespace Model
     inline void SetQueuePriority(long long value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
     inline UpdateContactRoutingDataRequest& WithQueuePriority(long long value) { SetQueuePriority(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Updates the routing criteria on the contact. These properties can be used to
+     * change how a&#x2028; contact is routed within the queue.</p>
+     */
+    inline const RoutingCriteriaInput& GetRoutingCriteria() const{ return m_routingCriteria; }
+    inline bool RoutingCriteriaHasBeenSet() const { return m_routingCriteriaHasBeenSet; }
+    inline void SetRoutingCriteria(const RoutingCriteriaInput& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = value; }
+    inline void SetRoutingCriteria(RoutingCriteriaInput&& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = std::move(value); }
+    inline UpdateContactRoutingDataRequest& WithRoutingCriteria(const RoutingCriteriaInput& value) { SetRoutingCriteria(value); return *this;}
+    inline UpdateContactRoutingDataRequest& WithRoutingCriteria(RoutingCriteriaInput&& value) { SetRoutingCriteria(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -99,6 +113,9 @@ namespace Model
 
     long long m_queuePriority;
     bool m_queuePriorityHasBeenSet = false;
+
+    RoutingCriteriaInput m_routingCriteria;
+    bool m_routingCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

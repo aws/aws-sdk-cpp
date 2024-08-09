@@ -1318,10 +1318,10 @@ namespace SSM
          * returns information for those managed nodes. If you don't specify node IDs, it
          * returns information for all your managed nodes. If you specify a node ID that
          * isn't valid or a node that you don't own, you receive an error.</p> 
-         * <p>The <code>IamRole</code> field returned for this API operation is the
-         * Identity and Access Management (IAM) role assigned to on-premises managed nodes.
-         * This operation does not return the IAM role for EC2 instances.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>The <code>IamRole</code> field returned for this API operation is the role
+         * assigned to an Amazon EC2 instance configured with a Systems Manager Quick Setup
+         * host management configuration or the role assigned to an on-premises managed
+         * node.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
          * API Reference</a></p>
          */
@@ -1854,6 +1854,8 @@ namespace SSM
          * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
          * <code>SEVERITY</code> </p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid
          * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>AMAZON_LINUX_2023</dt> <dd> <p>Valid
+         * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
          * <code>SEVERITY</code> </p> </dd> <dt>CENTOS</dt> <dd> <p>Valid properties:
          * <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
          * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: <code>PRODUCT</code> |
@@ -2012,7 +2014,12 @@ namespace SSM
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
+         * plugin. The Run Command API follows an eventual consistency model, due to the
+         * distributed nature of the system supporting the API. This means that the result
+         * of an API command you run that affects your resources might not be immediately
+         * visible to all subsequent commands you run. You should keep this in mind when
+         * you carry out an API command that immediately follows a previous API
+         * command.</p> <p> <code>GetCommandInvocation</code> only gives the execution
          * status of a plugin in a document. To get the command execution status on a
          * specific managed node, use <a>ListCommandInvocations</a>. To get the command
          * execution status across managed nodes, use <a>ListCommands</a>.</p><p><h3>See

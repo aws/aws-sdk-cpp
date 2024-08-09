@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Advanced security configuration options for additional authentication types
-   * in your user pool, including custom authentication and refresh-token
-   * authentication. </p><p><h3>See Also:</h3>   <a
+   * in your user pool, including custom authentication. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdvancedSecurityAdditionalFlowsType">AWS
    * API Reference</a></p>
    */

@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An object to define <code>AgentsCriteria</code>.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>An object to define AgentsCriteria.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MatchCriteria">AWS
    * API Reference</a></p>
    */
@@ -40,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object to define <code>AgentIds</code>.</p>
+     * <p>An object to define agentIds.</p>
      */
     inline const AgentsCriteria& GetAgentsCriteria() const{ return m_agentsCriteria; }
     inline bool AgentsCriteriaHasBeenSet() const { return m_agentsCriteriaHasBeenSet; }

@@ -132,7 +132,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CPU architecture of the node. For example, x86_64.</p>
+     * <p>The CPU architecture of the node. For example, <code>x86_64</code>.</p>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }

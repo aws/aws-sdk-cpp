@@ -96,9 +96,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether this is the default baseline. Amazon Web Services Systems Manager
-     * supports creating multiple default patch baselines. For example, you can create
-     * a default patch baseline for each operating system.</p>
+     * <p>Indicates whether this is the default baseline. Amazon Web Services Systems
+     * Manager supports creating multiple default patch baselines. For example, you can
+     * create a default patch baseline for each operating system.</p>
      */
     inline bool GetDefaultBaseline() const{ return m_defaultBaseline; }
     inline bool DefaultBaselineHasBeenSet() const { return m_defaultBaselineHasBeenSet; }
