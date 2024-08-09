@@ -161,10 +161,10 @@ public:
             updateItemResultSemaphore.notify_all();
         }
     }
-
-
-    explicit TableOperationTest(Aws::Http::TransferLibType transferType = Aws::Http::TransferLibType::DEFAULT_CLIENT):m_limiter(Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000))
+    void SetUp() override
     {
+        Aws::Http::TransferLibType transferType = Aws::Http::TransferLibType::DEFAULT_CLIENT;
+        m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
         // Create a client
         ClientConfiguration config;
         config.endpointOverride = ENDPOINT_OVERRIDE;
@@ -185,7 +185,7 @@ public:
         DYNAMODB_INTEGRATION_TEST_ID = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
     }
 
-    ~TableOperationTest(){
+    void TearDown() override {
         for (auto tableName : m_tablesCreated)
         {
             DeleteTable(tableName);
