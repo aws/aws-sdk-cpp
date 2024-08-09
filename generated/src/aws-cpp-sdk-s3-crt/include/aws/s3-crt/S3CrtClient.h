@@ -20,6 +20,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/s3-crt/S3CrtServiceClientModel.h>
 #include <aws/s3-crt/S3ExpressIdentityProvider.h>
+#include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
 
 struct aws_s3_client;
 // TODO: temporary fix for naming conflicts on Windows.
@@ -6304,6 +6305,7 @@ namespace Aws
           std::shared_ptr<Aws::Http::HttpRequest> request;
           std::shared_ptr<Aws::Http::HttpResponse> response;
           std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest;
+          Aws::UniquePtr<struct aws_s3_checksum_config> checksumConfig;
         };
 
         Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
@@ -6345,6 +6347,7 @@ namespace Aws
         std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtCredProvider;
         std::shared_ptr<S3CrtEndpointProviderBase> m_endpointProvider;
         std::shared_ptr<S3ExpressIdentityProvider> m_identityProvider;
+        S3CrtIdentityProviderUserData m_identityProviderUserData{m_identityProvider};
     };
 
   } // namespace S3Crt

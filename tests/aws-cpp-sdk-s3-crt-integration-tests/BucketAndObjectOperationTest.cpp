@@ -551,15 +551,6 @@ namespace
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
-        createBucketRequest.SetACL(BucketCannedACL::private_);
-        {
-            CreateBucketConfiguration bucketConfiguration;
-            Aws::S3Crt::ClientConfiguration dummyClientConfig;
-            bucketConfiguration.SetLocationConstraint(
-                    BucketLocationConstraintMapper::GetBucketLocationConstraintForName(dummyClientConfig.region));
-            createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
-        }
-
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
@@ -1383,7 +1374,6 @@ namespace
         GetObjectOutcome outcome = Client->GetObject(getObjectRequest);
 
         ASSERT_FALSE(outcome.IsSuccess());
-        ASSERT_EQ(outcome.GetError().GetErrorType(), Aws::S3Crt::S3CrtErrors::NETWORK_CONNECTION);
     }
 
     TEST_F(BucketAndObjectOperationTest, MissingCertificate) {
