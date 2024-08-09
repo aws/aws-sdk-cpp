@@ -5,32 +5,34 @@
 #pragma once
 
 #include <smithy/identity/auth/AuthScheme.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
+#include <smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h>
 
 #include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
 
 #include <smithy/identity/identity/AwsCredentialIdentityBase.h>
-#include <smithy/identity/signer/built-in/SigV4Signer.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/identity/signer/built-in/SigV4aSigner.h>
+#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
 
 
 namespace smithy {
-    constexpr char SIGV4[] = "aws.auth#sigv4";
+    constexpr char SIGV4A[] = "aws.auth#sigv4a";
+    
 
     class SigV4AuthScheme : public AuthScheme<AwsCredentialIdentityBase>
     {
+        //constexpr char AUTH_SCHEME_NAME[] = "SigV4aAuthScheme";
     public:
         using AwsCredentialIdentityResolverT = IdentityResolverBase<IdentityT>;
         using AwsCredentialSignerT = AwsSignerBase<IdentityT>;
-        using SigV4AuthSchemeParameters = DefaultAuthSchemeResolverParameters;
+        using SigV4aAuthSchemeParameters = DefaultAuthSchemeResolverParameters;
 
-        explicit SigV4AuthScheme(const SigV4AuthSchemeParameters& parameters)
-            : AuthScheme(SIGV4)
+        explicit SigV4AuthScheme(const SigV4aAuthSchemeParameters& parameters)
+            : AuthScheme(SIGV4A)
         {
-            m_identityResolver = Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme");
+            m_identityResolver = Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4aAuthScheme");
             assert(m_identityResolver);
 
-            m_signer = Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", parameters);
+            m_signer = Aws::MakeShared<AwsSigV4Signer>("SigV4aAuthScheme", parameters);
             assert(m_signer);
         }
 

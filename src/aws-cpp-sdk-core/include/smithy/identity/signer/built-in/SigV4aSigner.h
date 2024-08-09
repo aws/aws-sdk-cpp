@@ -6,7 +6,7 @@
 
 #include <smithy/identity/signer/AwsSignerBase.h>
 #include <smithy/identity/identity/AwsCredentialIdentityBase.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
 
 #include <aws/core/auth/signer/AWSAuthV4Signer.h>
 
@@ -17,10 +17,10 @@ namespace smithy {
      * A smithy SigV4 signer wrapper on top of legacy SDK SigV4 signer
      * TODO: refactor into own signer using smithy design
      */
-    class AwsSigV4Signer : public AwsSignerBase<AwsCredentialIdentityBase> {
+    class AwsSigV4aSigner : public AwsSignerBase<AwsCredentialIdentityBase> {
     public:
-        using SigV4AuthSchemeParameters = DefaultAuthSchemeResolverParameters;
-        explicit AwsSigV4Signer(const SigV4AuthSchemeParameters& parameters)
+        using SigV4aAuthSchemeParameters = DefaultAuthSchemeResolverParameters;
+        explicit AwsSigV4Signer(const SigV4aAuthSchemeParameters& parameters)
             : legacySigner(nullptr, parameters.serviceName.c_str(), *parameters.region)
         {
         }
@@ -43,7 +43,7 @@ namespace smithy {
 
         virtual ~AwsSigV4Signer() {};
     protected:
-        SigV4AuthSchemeParameters parameters;
+        SigV4aAuthSchemeParameters parameters;
         Aws::Client::AWSAuthV4Signer legacySigner;
     };
 }
