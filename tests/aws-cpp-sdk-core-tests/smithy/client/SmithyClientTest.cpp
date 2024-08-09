@@ -90,12 +90,11 @@ TEST_F(SmithyClientTest, TestCompiles) {
     params.serviceName = "MyService";
     params.region = "us-west2";
 
-
-    //Aws::Crt::Variant<smithy::SigV4AuthScheme> var(smithy::SigV4AuthScheme(params));
+    
     Aws::String key{"aws.auth#sigv4"};
 
     using MyTestVariant = Aws::Crt::Variant<smithy::SigV4AuthScheme>;
-    MyTestVariant val{smithy::SigV4AuthScheme(params)}; //(smithy::SigV4AuthScheme(params));
+    MyTestVariant val{smithy::SigV4AuthScheme(params)};
     
     authSchemesMap.emplace(key, val);
 
@@ -112,7 +111,9 @@ TEST_F(SmithyClientTest, TestCompiles) {
     smithy::client::AwsSmithyClientAsyncRequestContext ctx;
     ctx.m_pRequest = nullptr;
 
-    //auto res = ptr->SelectAuthSchemeOption(ctx);
+    auto res = ptr->SelectAuthSchemeOption(ctx);
+
     AWS_UNREFERENCED_PARAM(ptr);
+    
     
 }
