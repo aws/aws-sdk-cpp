@@ -85,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline const Aws::String& GetAwsService() const{ return m_awsService; }
     inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }

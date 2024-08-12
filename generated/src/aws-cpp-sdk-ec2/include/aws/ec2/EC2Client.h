@@ -1890,6 +1890,35 @@ namespace EC2
         }
 
         /**
+         * <p> Create a new Capacity Reservation by splitting the available capacity of the
+         * source Capacity Reservation. The new Capacity Reservation will have the same
+         * attributes as the source Capacity Reservation except for tags. The source
+         * Capacity Reservation must be <code>active</code> and owned by your Amazon Web
+         * Services account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCapacityReservationBySplittingOutcome CreateCapacityReservationBySplitting(const Model::CreateCapacityReservationBySplittingRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCapacityReservationBySplitting that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCapacityReservationBySplittingRequestT = Model::CreateCapacityReservationBySplittingRequest>
+        Model::CreateCapacityReservationBySplittingOutcomeCallable CreateCapacityReservationBySplittingCallable(const CreateCapacityReservationBySplittingRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateCapacityReservationBySplitting, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCapacityReservationBySplitting that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCapacityReservationBySplittingRequestT = Model::CreateCapacityReservationBySplittingRequest>
+        void CreateCapacityReservationBySplittingAsync(const CreateCapacityReservationBySplittingRequestT& request, const CreateCapacityReservationBySplittingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateCapacityReservationBySplitting, request, handler, context);
+        }
+
+        /**
          * <p>Creates a Capacity Reservation Fleet. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create
          * a Capacity Reservation Fleet</a> in the <i>Amazon EC2 User
@@ -6903,8 +6932,8 @@ namespace EC2
          * transfer. During those seven days, the source account can view the pending
          * transfer by using this action. After seven days, the transfer expires and
          * ownership of the Elastic IP address returns to the source account. Accepted
-         * transfers are visible to the source account for three days after the transfers
-         * have been accepted.</p><p><h3>See Also:</h3>   <a
+         * transfers are visible to the source account for 14 days after the transfers have
+         * been accepted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">AWS
          * API Reference</a></p>
          */
@@ -14871,12 +14900,14 @@ namespace EC2
         }
 
         /**
-         * <p>Modifies a Capacity Reservation's capacity and the conditions under which it
-         * is to be released. You cannot change a Capacity Reservation's instance type, EBS
-         * optimization, instance store settings, platform, Availability Zone, or instance
-         * eligibility. If you need to modify any of these attributes, we recommend that
-         * you cancel the Capacity Reservation, and then create a new one with the required
-         * attributes.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies a Capacity Reservation's capacity, instance eligibility, and the
+         * conditions under which it is to be released. You can't modify a Capacity
+         * Reservation's instance type, EBS optimization, platform, instance store
+         * settings, Availability Zone, or tenancy. If you need to modify any of these
+         * attributes, we recommend that you cancel the Capacity Reservation, and then
+         * create a new one with the required attributes. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
+         * an active Capacity Reservation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">AWS
          * API Reference</a></p>
          */
@@ -16935,6 +16966,38 @@ namespace EC2
         void MoveByoipCidrToIpamAsync(const MoveByoipCidrToIpamRequestT& request, const MoveByoipCidrToIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::MoveByoipCidrToIpam, request, handler, context);
+        }
+
+        /**
+         * <p>Move available capacity from a source Capacity Reservation to a destination
+         * Capacity Reservation. The source Capacity Reservation and the destination
+         * Capacity Reservation must be <code>active</code>, owned by your Amazon Web
+         * Services account, and share the following: </p> <ul> <li> <p>Instance type</p>
+         * </li> <li> <p>Platform</p> </li> <li> <p>Availability Zone</p> </li> <li>
+         * <p>Tenancy</p> </li> <li> <p>Placement group</p> </li> <li> <p>Capacity
+         * Reservation end time - <code>At specific time</code> or
+         * <code>Manually</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MoveCapacityReservationInstancesOutcome MoveCapacityReservationInstances(const Model::MoveCapacityReservationInstancesRequest& request) const;
+
+        /**
+         * A Callable wrapper for MoveCapacityReservationInstances that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename MoveCapacityReservationInstancesRequestT = Model::MoveCapacityReservationInstancesRequest>
+        Model::MoveCapacityReservationInstancesOutcomeCallable MoveCapacityReservationInstancesCallable(const MoveCapacityReservationInstancesRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::MoveCapacityReservationInstances, request);
+        }
+
+        /**
+         * An Async wrapper for MoveCapacityReservationInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename MoveCapacityReservationInstancesRequestT = Model::MoveCapacityReservationInstancesRequest>
+        void MoveCapacityReservationInstancesAsync(const MoveCapacityReservationInstancesRequestT& request, const MoveCapacityReservationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::MoveCapacityReservationInstances, request, handler, context);
         }
 
         /**

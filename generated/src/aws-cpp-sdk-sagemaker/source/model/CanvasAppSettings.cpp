@@ -25,7 +25,8 @@ CanvasAppSettings::CanvasAppSettings() :
     m_identityProviderOAuthSettingsHasBeenSet(false),
     m_directDeploySettingsHasBeenSet(false),
     m_kendraSettingsHasBeenSet(false),
-    m_generativeAiSettingsHasBeenSet(false)
+    m_generativeAiSettingsHasBeenSet(false),
+    m_emrServerlessSettingsHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,13 @@ CanvasAppSettings& CanvasAppSettings::operator =(JsonView jsonValue)
     m_generativeAiSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EmrServerlessSettings"))
+  {
+    m_emrServerlessSettings = jsonValue.GetObject("EmrServerlessSettings");
+
+    m_emrServerlessSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +148,12 @@ JsonValue CanvasAppSettings::Jsonize() const
   if(m_generativeAiSettingsHasBeenSet)
   {
    payload.WithObject("GenerativeAiSettings", m_generativeAiSettings.Jsonize());
+
+  }
+
+  if(m_emrServerlessSettingsHasBeenSet)
+  {
+   payload.WithObject("EmrServerlessSettings", m_emrServerlessSettings.Jsonize());
 
   }
 

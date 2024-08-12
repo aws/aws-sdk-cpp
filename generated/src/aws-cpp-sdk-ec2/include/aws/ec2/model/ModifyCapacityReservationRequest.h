@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/EndDateType.h>
+#include <aws/ec2/model/InstanceMatchCriteria.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +141,25 @@ namespace Model
     inline ModifyCapacityReservationRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
     inline ModifyCapacityReservationRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The matching criteria (instance eligibility) that you want to use in the
+     * modified Capacity Reservation. If you change the instance eligibility of an
+     * existing Capacity Reservation from <code>targeted</code> to <code>open</code>,
+     * any running instances that match the attributes of the Capacity Reservation,
+     * have the <code>CapacityReservationPreference</code> set to <code>open</code>,
+     * and are not yet running in the Capacity Reservation, will automatically use the
+     * modified Capacity Reservation. </p> <p>To modify the instance eligibility, the
+     * Capacity Reservation must be completely idle (zero usage).</p>
+     */
+    inline const InstanceMatchCriteria& GetInstanceMatchCriteria() const{ return m_instanceMatchCriteria; }
+    inline bool InstanceMatchCriteriaHasBeenSet() const { return m_instanceMatchCriteriaHasBeenSet; }
+    inline void SetInstanceMatchCriteria(const InstanceMatchCriteria& value) { m_instanceMatchCriteriaHasBeenSet = true; m_instanceMatchCriteria = value; }
+    inline void SetInstanceMatchCriteria(InstanceMatchCriteria&& value) { m_instanceMatchCriteriaHasBeenSet = true; m_instanceMatchCriteria = std::move(value); }
+    inline ModifyCapacityReservationRequest& WithInstanceMatchCriteria(const InstanceMatchCriteria& value) { SetInstanceMatchCriteria(value); return *this;}
+    inline ModifyCapacityReservationRequest& WithInstanceMatchCriteria(InstanceMatchCriteria&& value) { SetInstanceMatchCriteria(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_capacityReservationId;
@@ -162,6 +182,9 @@ namespace Model
 
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet = false;
+
+    InstanceMatchCriteria m_instanceMatchCriteria;
+    bool m_instanceMatchCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

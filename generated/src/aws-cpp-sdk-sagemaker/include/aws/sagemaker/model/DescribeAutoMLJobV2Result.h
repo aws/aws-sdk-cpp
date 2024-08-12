@@ -21,6 +21,7 @@
 #include <aws/sagemaker/model/ModelDeployResult.h>
 #include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
 #include <aws/sagemaker/model/AutoMLSecurityConfig.h>
+#include <aws/sagemaker/model/AutoMLComputeConfig.h>
 #include <aws/sagemaker/model/AutoMLJobChannel.h>
 #include <aws/sagemaker/model/AutoMLPartialFailureReason.h>
 #include <utility>
@@ -310,6 +311,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The compute configuration used for the AutoML job V2.</p>
+     */
+    inline const AutoMLComputeConfig& GetAutoMLComputeConfig() const{ return m_autoMLComputeConfig; }
+    inline void SetAutoMLComputeConfig(const AutoMLComputeConfig& value) { m_autoMLComputeConfig = value; }
+    inline void SetAutoMLComputeConfig(AutoMLComputeConfig&& value) { m_autoMLComputeConfig = std::move(value); }
+    inline DescribeAutoMLJobV2Result& WithAutoMLComputeConfig(const AutoMLComputeConfig& value) { SetAutoMLComputeConfig(value); return *this;}
+    inline DescribeAutoMLJobV2Result& WithAutoMLComputeConfig(AutoMLComputeConfig&& value) { SetAutoMLComputeConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -364,6 +376,8 @@ namespace Model
     AutoMLDataSplitConfig m_dataSplitConfig;
 
     AutoMLSecurityConfig m_securityConfig;
+
+    AutoMLComputeConfig m_autoMLComputeConfig;
 
     Aws::String m_requestId;
   };

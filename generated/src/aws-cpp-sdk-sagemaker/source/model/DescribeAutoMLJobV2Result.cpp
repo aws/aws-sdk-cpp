@@ -171,6 +171,12 @@ DescribeAutoMLJobV2Result& DescribeAutoMLJobV2Result::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("AutoMLComputeConfig"))
+  {
+    m_autoMLComputeConfig = jsonValue.GetObject("AutoMLComputeConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
