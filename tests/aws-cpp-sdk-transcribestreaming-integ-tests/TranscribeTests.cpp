@@ -579,10 +579,10 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs,
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback,
                                          nullptr /*context*/);
 
-    EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
     EXPECT_TRUE(
         signaling.WaitOneFor(timeoutMs)
         ) << "Did not get a response after " << Aws::Utils::StringUtils::to_string(timeoutMs) << " ms";
+    EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
 
     request.GetAudioStream()->Close();
     shouldContinue = false;
