@@ -72,12 +72,12 @@ namespace Model
     /**
      * <p> The value of the filter. </p> <p>The valid values for this parameter are as
      * follows:</p> <ul> <li> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, specify <code>Optimized</code>, <code>NotOptimized</code>,
-     * or <code>Unavailable</code>.</p> </li> <li> <p>If you specify the
-     * <code>name</code> parameter as <code>FindingReasonCode</code>, specify
-     * <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>,
-     * <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p>
-     * </li> </ul>
+     * <code>Finding</code>, specify <code>Optimized</code>,
+     * <code>Underprovisioned</code>, or <code>Overprovisioned</code>.</p> </li> <li>
+     * <p>If you specify the <code>name</code> parameter as
+     * <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>,
+     * <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or
+     * <code>MemoryOverprovisioned</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

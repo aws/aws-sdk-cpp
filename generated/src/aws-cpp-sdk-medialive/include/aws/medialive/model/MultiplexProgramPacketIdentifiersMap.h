@@ -152,6 +152,41 @@ namespace Model
     inline void SetVideoPid(int value) { m_videoPidHasBeenSet = true; m_videoPid = value; }
     inline MultiplexProgramPacketIdentifiersMap& WithVideoPid(int value) { SetVideoPid(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline int GetAribCaptionsPid() const{ return m_aribCaptionsPid; }
+    inline bool AribCaptionsPidHasBeenSet() const { return m_aribCaptionsPidHasBeenSet; }
+    inline void SetAribCaptionsPid(int value) { m_aribCaptionsPidHasBeenSet = true; m_aribCaptionsPid = value; }
+    inline MultiplexProgramPacketIdentifiersMap& WithAribCaptionsPid(int value) { SetAribCaptionsPid(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::Vector<int>& GetDvbTeletextPids() const{ return m_dvbTeletextPids; }
+    inline bool DvbTeletextPidsHasBeenSet() const { return m_dvbTeletextPidsHasBeenSet; }
+    inline void SetDvbTeletextPids(const Aws::Vector<int>& value) { m_dvbTeletextPidsHasBeenSet = true; m_dvbTeletextPids = value; }
+    inline void SetDvbTeletextPids(Aws::Vector<int>&& value) { m_dvbTeletextPidsHasBeenSet = true; m_dvbTeletextPids = std::move(value); }
+    inline MultiplexProgramPacketIdentifiersMap& WithDvbTeletextPids(const Aws::Vector<int>& value) { SetDvbTeletextPids(value); return *this;}
+    inline MultiplexProgramPacketIdentifiersMap& WithDvbTeletextPids(Aws::Vector<int>&& value) { SetDvbTeletextPids(std::move(value)); return *this;}
+    inline MultiplexProgramPacketIdentifiersMap& AddDvbTeletextPids(int value) { m_dvbTeletextPidsHasBeenSet = true; m_dvbTeletextPids.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    
+    inline int GetEcmPid() const{ return m_ecmPid; }
+    inline bool EcmPidHasBeenSet() const { return m_ecmPidHasBeenSet; }
+    inline void SetEcmPid(int value) { m_ecmPidHasBeenSet = true; m_ecmPid = value; }
+    inline MultiplexProgramPacketIdentifiersMap& WithEcmPid(int value) { SetEcmPid(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline int GetSmpte2038Pid() const{ return m_smpte2038Pid; }
+    inline bool Smpte2038PidHasBeenSet() const { return m_smpte2038PidHasBeenSet; }
+    inline void SetSmpte2038Pid(int value) { m_smpte2038PidHasBeenSet = true; m_smpte2038Pid = value; }
+    inline MultiplexProgramPacketIdentifiersMap& WithSmpte2038Pid(int value) { SetSmpte2038Pid(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<int> m_audioPids;
@@ -192,6 +227,18 @@ namespace Model
 
     int m_videoPid;
     bool m_videoPidHasBeenSet = false;
+
+    int m_aribCaptionsPid;
+    bool m_aribCaptionsPidHasBeenSet = false;
+
+    Aws::Vector<int> m_dvbTeletextPids;
+    bool m_dvbTeletextPidsHasBeenSet = false;
+
+    int m_ecmPid;
+    bool m_ecmPidHasBeenSet = false;
+
+    int m_smpte2038Pid;
+    bool m_smpte2038PidHasBeenSet = false;
   };
 
 } // namespace Model

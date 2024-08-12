@@ -21,7 +21,9 @@ ModifyCapacityReservationRequest::ModifyCapacityReservationRequest() :
     m_acceptHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
+    m_additionalInfoHasBeenSet(false),
+    m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
+    m_instanceMatchCriteriaHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,11 @@ Aws::String ModifyCapacityReservationRequest::SerializePayload() const
   if(m_additionalInfoHasBeenSet)
   {
     ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
+  }
+
+  if(m_instanceMatchCriteriaHasBeenSet)
+  {
+    ss << "InstanceMatchCriteria=" << InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -40,7 +40,14 @@ MultiplexProgramPacketIdentifiersMap::MultiplexProgramPacketIdentifiersMap() :
     m_timedMetadataPid(0),
     m_timedMetadataPidHasBeenSet(false),
     m_videoPid(0),
-    m_videoPidHasBeenSet(false)
+    m_videoPidHasBeenSet(false),
+    m_aribCaptionsPid(0),
+    m_aribCaptionsPidHasBeenSet(false),
+    m_dvbTeletextPidsHasBeenSet(false),
+    m_ecmPid(0),
+    m_ecmPidHasBeenSet(false),
+    m_smpte2038Pid(0),
+    m_smpte2038PidHasBeenSet(false)
 {
 }
 
@@ -155,6 +162,37 @@ MultiplexProgramPacketIdentifiersMap& MultiplexProgramPacketIdentifiersMap::oper
     m_videoPidHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("aribCaptionsPid"))
+  {
+    m_aribCaptionsPid = jsonValue.GetInteger("aribCaptionsPid");
+
+    m_aribCaptionsPidHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dvbTeletextPids"))
+  {
+    Aws::Utils::Array<JsonView> dvbTeletextPidsJsonList = jsonValue.GetArray("dvbTeletextPids");
+    for(unsigned dvbTeletextPidsIndex = 0; dvbTeletextPidsIndex < dvbTeletextPidsJsonList.GetLength(); ++dvbTeletextPidsIndex)
+    {
+      m_dvbTeletextPids.push_back(dvbTeletextPidsJsonList[dvbTeletextPidsIndex].AsInteger());
+    }
+    m_dvbTeletextPidsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ecmPid"))
+  {
+    m_ecmPid = jsonValue.GetInteger("ecmPid");
+
+    m_ecmPidHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("smpte2038Pid"))
+  {
+    m_smpte2038Pid = jsonValue.GetInteger("smpte2038Pid");
+
+    m_smpte2038PidHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -257,6 +295,35 @@ JsonValue MultiplexProgramPacketIdentifiersMap::Jsonize() const
   if(m_videoPidHasBeenSet)
   {
    payload.WithInteger("videoPid", m_videoPid);
+
+  }
+
+  if(m_aribCaptionsPidHasBeenSet)
+  {
+   payload.WithInteger("aribCaptionsPid", m_aribCaptionsPid);
+
+  }
+
+  if(m_dvbTeletextPidsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dvbTeletextPidsJsonList(m_dvbTeletextPids.size());
+   for(unsigned dvbTeletextPidsIndex = 0; dvbTeletextPidsIndex < dvbTeletextPidsJsonList.GetLength(); ++dvbTeletextPidsIndex)
+   {
+     dvbTeletextPidsJsonList[dvbTeletextPidsIndex].AsInteger(m_dvbTeletextPids[dvbTeletextPidsIndex]);
+   }
+   payload.WithArray("dvbTeletextPids", std::move(dvbTeletextPidsJsonList));
+
+  }
+
+  if(m_ecmPidHasBeenSet)
+  {
+   payload.WithInteger("ecmPid", m_ecmPid);
+
+  }
+
+  if(m_smpte2038PidHasBeenSet)
+  {
+   payload.WithInteger("smpte2038Pid", m_smpte2038Pid);
 
   }
 

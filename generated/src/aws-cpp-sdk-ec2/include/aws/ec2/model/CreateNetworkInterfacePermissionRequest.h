@@ -71,7 +71,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Service. Currently not supported.</p>
+     * <p>The Amazon Web Services service. Currently not supported.</p>
      */
     inline const Aws::String& GetAwsService() const{ return m_awsService; }
     inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }
