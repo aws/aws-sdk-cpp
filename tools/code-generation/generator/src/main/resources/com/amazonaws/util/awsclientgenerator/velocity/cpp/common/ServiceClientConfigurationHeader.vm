@@ -116,6 +116,18 @@ namespace ${rootNamespace}
             Aws::Crt::Optional<bool>& enableEndpointDiscovery;
 
 #end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
+            /**
+             * $serviceModel.endpointRuleSetModel.parameters["AccountId"].documentation
+             */
+            Aws::String accountId;
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+            /**
+             * $serviceModel.endpointRuleSetModel.parameters["AccountIdEndpointMode"].documentation
+             */
+            Aws::String accountIdEndpointMode = "preferred";
+#end
         private:
             void Load${serviceNamespace}SpecificConfig(const Aws::String& profileName);
         };

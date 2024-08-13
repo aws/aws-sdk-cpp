@@ -61,6 +61,14 @@ public class ServiceModel {
         return operations.values().parallelStream().allMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER"));
     }
 
+    public boolean hasServiceSpecificClientConfig() {
+        return metadata.getServiceId().equalsIgnoreCase("S3") ||
+                metadata.getServiceId().equalsIgnoreCase("S3-CRT") ||
+                metadata.getServiceId().equalsIgnoreCase("S3 Control") ||
+                metadata.isHasEndpointDiscoveryTrait() ||
+                endpointRuleSetModel.getParameters().containsKey("AccountId") || endpointRuleSetModel.getParameters().containsKey("AccountIdEndpointMode");
+    }
+
     public Operation getOperationForRequestShapeName(String requestShapeName) {
         for (Map.Entry<String, Operation> opEntry : operations.entrySet()) {
             Operation op = opEntry.getValue();
@@ -71,7 +79,8 @@ public class ServiceModel {
         return null;
     }
 
-    String endpointRules;
+    String endpointRules; // as a blob
+    EndpointRuleSetModel endpointRuleSetModel;
     EndpointTests endpointTests;
     ClientContextParams clientContextParams;
 }

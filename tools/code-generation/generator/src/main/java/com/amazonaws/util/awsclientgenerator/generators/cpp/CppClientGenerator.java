@@ -113,10 +113,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             fileList.add(generateEndpointProviderHeaderFile(serviceModel));
             fileList.add(generateEndpointProviderSourceFile(serviceModel));
 
-            if (serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3") ||
-                  serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3-CRT") ||
-                  serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3 Control") ||
-                  serviceModel.getMetadata().isHasEndpointDiscoveryTrait()) {
+            if (serviceModel.hasServiceSpecificClientConfig()) {
                 fileList.add(generateServiceClientConfigurationHeaderFile(serviceModel));
                 fileList.add(generateServiceClientConfigurationSourceFile(serviceModel));
             }
