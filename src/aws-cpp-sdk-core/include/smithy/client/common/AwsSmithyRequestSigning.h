@@ -41,6 +41,7 @@ namespace smithy
         static SigningOutcome SignRequest(std::shared_ptr<HttpRequest> HTTPRequest, const AuthSchemeOption& authSchemeOption,
                                           const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
         {
+            
             auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
             if (authSchemeIt == authSchemes.end())
             {
@@ -52,6 +53,7 @@ namespace smithy
             }
 
             const AuthSchemesVariantT& authScheme = authSchemeIt->second;
+            std::cout<<"FOUND variant"<<std::endl;
 
             return SignWithAuthScheme(std::move(HTTPRequest), authScheme, authSchemeOption);
         }

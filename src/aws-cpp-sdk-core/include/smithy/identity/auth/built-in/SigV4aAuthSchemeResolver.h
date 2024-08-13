@@ -14,12 +14,12 @@ namespace smithy {
     {
     public:
         using ServiceAuthSchemeParameters = ServiceAuthSchemeParametersT;
-        virtual ~SigV4AuthSchemeResolver() = default;
+        virtual ~SigV4aAuthSchemeResolver() = default;
 
         Aws::Vector<AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
         {
             AWS_UNREFERENCED_PARAM(identityProperties);
-            return {SigV4aAuthSchemeOption::sigV4AauthSchemeOption};
+            return {SigV4aAuthSchemeOption::sigV4aAuthSchemeOption};
         }
     };
 }

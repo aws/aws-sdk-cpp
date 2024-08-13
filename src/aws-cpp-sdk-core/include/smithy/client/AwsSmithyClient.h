@@ -31,7 +31,7 @@ namespace client
     class AwsSmithyClientT : public AwsSmithyClientBase
     {
     public:
-        AwsSmithyClientT(const ServiceClientConfigurationT& clientConfig, const Aws::String& serviceName,
+        explicit AwsSmithyClientT(const ServiceClientConfigurationT& clientConfig, const Aws::String& serviceName,
             const std::shared_ptr<Aws::Http::HttpClient>& httpClient,
             const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& errorMarshaller,
             const std::shared_ptr<EndpointProviderT> endpointProvider,

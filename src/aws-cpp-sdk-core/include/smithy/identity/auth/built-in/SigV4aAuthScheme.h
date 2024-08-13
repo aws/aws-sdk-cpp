@@ -10,15 +10,14 @@
 #include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
 
 #include <smithy/identity/identity/AwsCredentialIdentityBase.h>
-#include <smithy/identity/signer/built-in/SigV4aSigner.h>
-#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
+#include <smithy/identity/signer/built-in/SigV4Signer.h>
 
 
 namespace smithy {
     constexpr char SIGV4A[] = "aws.auth#sigv4a";
     
 
-    class SigV4AuthScheme : public AuthScheme<AwsCredentialIdentityBase>
+    class SigV4aAuthScheme : public AuthScheme<AwsCredentialIdentityBase>
     {
         //constexpr char AUTH_SCHEME_NAME[] = "SigV4aAuthScheme";
     public:
@@ -26,7 +25,7 @@ namespace smithy {
         using AwsCredentialSignerT = AwsSignerBase<IdentityT>;
         using SigV4aAuthSchemeParameters = DefaultAuthSchemeResolverParameters;
 
-        explicit SigV4AuthScheme(const SigV4aAuthSchemeParameters& parameters)
+        explicit SigV4aAuthScheme(const SigV4aAuthSchemeParameters& parameters)
             : AuthScheme(SIGV4A)
         {
             m_identityResolver = Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4aAuthScheme");
@@ -36,7 +35,7 @@ namespace smithy {
             assert(m_signer);
         }
 
-        virtual ~SigV4AuthScheme() = default;
+        virtual ~SigV4aAuthScheme() = default;
 
         std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver() override
         {
