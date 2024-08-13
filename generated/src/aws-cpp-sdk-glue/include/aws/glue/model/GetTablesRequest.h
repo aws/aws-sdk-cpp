@@ -8,6 +8,8 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/TableAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +144,25 @@ namespace Model
     inline void SetIncludeStatusDetails(bool value) { m_includeStatusDetailsHasBeenSet = true; m_includeStatusDetails = value; }
     inline GetTablesRequest& WithIncludeStatusDetails(bool value) { SetIncludeStatusDetails(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the table fields returned by the <code>GetTables</code> call. This
+     * parameter doesn’t accept an empty list. The request must include
+     * <code>NAME</code>.</p> <p>The following are the valid combinations of
+     * values:</p> <ul> <li> <p> <code>NAME</code> - Names of all tables in the
+     * database.</p> </li> <li> <p> <code>NAME</code>, <code>TABLE_TYPE</code> - Names
+     * of all tables and the table types.</p> </li> </ul>
+     */
+    inline const Aws::Vector<TableAttributes>& GetAttributesToGet() const{ return m_attributesToGet; }
+    inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
+    inline void SetAttributesToGet(const Aws::Vector<TableAttributes>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
+    inline void SetAttributesToGet(Aws::Vector<TableAttributes>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
+    inline GetTablesRequest& WithAttributesToGet(const Aws::Vector<TableAttributes>& value) { SetAttributesToGet(value); return *this;}
+    inline GetTablesRequest& WithAttributesToGet(Aws::Vector<TableAttributes>&& value) { SetAttributesToGet(std::move(value)); return *this;}
+    inline GetTablesRequest& AddAttributesToGet(const TableAttributes& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
+    inline GetTablesRequest& AddAttributesToGet(TableAttributes&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_catalogId;
@@ -167,6 +188,9 @@ namespace Model
 
     bool m_includeStatusDetails;
     bool m_includeStatusDetailsHasBeenSet = false;
+
+    Aws::Vector<TableAttributes> m_attributesToGet;
+    bool m_attributesToGetHasBeenSet = false;
   };
 
 } // namespace Model

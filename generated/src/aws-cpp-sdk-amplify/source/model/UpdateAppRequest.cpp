@@ -36,7 +36,8 @@ UpdateAppRequest::UpdateAppRequest() :
     m_autoBranchCreationConfigHasBeenSet(false),
     m_repositoryHasBeenSet(false),
     m_oauthTokenHasBeenSet(false),
-    m_accessTokenHasBeenSet(false)
+    m_accessTokenHasBeenSet(false),
+    m_cacheConfigHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,12 @@ Aws::String UpdateAppRequest::SerializePayload() const
   if(m_accessTokenHasBeenSet)
   {
    payload.WithString("accessToken", m_accessToken);
+
+  }
+
+  if(m_cacheConfigHasBeenSet)
+  {
+   payload.WithObject("cacheConfig", m_cacheConfig.Jsonize());
 
   }
 

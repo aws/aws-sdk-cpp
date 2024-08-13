@@ -13,6 +13,7 @@
 #include <aws/amplify/model/ProductionBranch.h>
 #include <aws/amplify/model/AutoBranchCreationConfig.h>
 #include <aws/amplify/model/RepositoryCloneMethod.h>
+#include <aws/amplify/model/CacheConfig.h>
 #include <aws/amplify/model/CustomRule.h>
 #include <utility>
 
@@ -382,6 +383,20 @@ namespace Model
     inline App& WithRepositoryCloneMethod(const RepositoryCloneMethod& value) { SetRepositoryCloneMethod(value); return *this;}
     inline App& WithRepositoryCloneMethod(RepositoryCloneMethod&& value) { SetRepositoryCloneMethod(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The cache configuration for the Amplify app. If you don't specify the cache
+     * configuration <code>type</code>, Amplify uses the default
+     * <code>AMPLIFY_MANAGED</code> setting.</p>
+     */
+    inline const CacheConfig& GetCacheConfig() const{ return m_cacheConfig; }
+    inline bool CacheConfigHasBeenSet() const { return m_cacheConfigHasBeenSet; }
+    inline void SetCacheConfig(const CacheConfig& value) { m_cacheConfigHasBeenSet = true; m_cacheConfig = value; }
+    inline void SetCacheConfig(CacheConfig&& value) { m_cacheConfigHasBeenSet = true; m_cacheConfig = std::move(value); }
+    inline App& WithCacheConfig(const CacheConfig& value) { SetCacheConfig(value); return *this;}
+    inline App& WithCacheConfig(CacheConfig&& value) { SetCacheConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_appId;
@@ -455,6 +470,9 @@ namespace Model
 
     RepositoryCloneMethod m_repositoryCloneMethod;
     bool m_repositoryCloneMethodHasBeenSet = false;
+
+    CacheConfig m_cacheConfig;
+    bool m_cacheConfigHasBeenSet = false;
   };
 
 } // namespace Model

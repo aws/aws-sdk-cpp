@@ -7,6 +7,7 @@
 #include <aws/fis/FIS_EXPORTS.h>
 #include <aws/fis/model/ExperimentStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fis/model/ExperimentError.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +64,19 @@ namespace Model
     inline ExperimentState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
     inline ExperimentState& WithReason(const char* value) { SetReason(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The error information of the experiment when the action has
+     * <code>failed</code>.</p>
+     */
+    inline const ExperimentError& GetError() const{ return m_error; }
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+    inline void SetError(const ExperimentError& value) { m_errorHasBeenSet = true; m_error = value; }
+    inline void SetError(ExperimentError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
+    inline ExperimentState& WithError(const ExperimentError& value) { SetError(value); return *this;}
+    inline ExperimentState& WithError(ExperimentError&& value) { SetError(std::move(value)); return *this;}
+    ///@}
   private:
 
     ExperimentStatus m_status;
@@ -70,6 +84,9 @@ namespace Model
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
+
+    ExperimentError m_error;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

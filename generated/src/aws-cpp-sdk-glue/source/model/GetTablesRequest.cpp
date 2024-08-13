@@ -22,7 +22,8 @@ GetTablesRequest::GetTablesRequest() :
     m_transactionIdHasBeenSet(false),
     m_queryAsOfTimeHasBeenSet(false),
     m_includeStatusDetails(false),
-    m_includeStatusDetailsHasBeenSet(false)
+    m_includeStatusDetailsHasBeenSet(false),
+    m_attributesToGetHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,17 @@ Aws::String GetTablesRequest::SerializePayload() const
   if(m_includeStatusDetailsHasBeenSet)
   {
    payload.WithBool("IncludeStatusDetails", m_includeStatusDetails);
+
+  }
+
+  if(m_attributesToGetHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> attributesToGetJsonList(m_attributesToGet.size());
+   for(unsigned attributesToGetIndex = 0; attributesToGetIndex < attributesToGetJsonList.GetLength(); ++attributesToGetIndex)
+   {
+     attributesToGetJsonList[attributesToGetIndex].AsString(TableAttributesMapper::GetNameForTableAttributes(m_attributesToGet[attributesToGetIndex]));
+   }
+   payload.WithArray("AttributesToGet", std::move(attributesToGetJsonList));
 
   }
 
