@@ -6,6 +6,7 @@
 package com.amazonaws.util.awsclientgenerator.generators;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.EndpointRuleSetModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.PartitionsModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOption;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionModifier;
@@ -42,6 +43,8 @@ public class DirectFromC2jGenerator {
         C2jServiceModel c2jServiceModel = gson.fromJson(rawJson, C2jServiceModel.class);
         c2jServiceModel.setServiceName(serviceName);
         c2jServiceModel.setEndpointRules(endpointRuleSet);
+        EndpointRuleSetModel endpointRuleSetBom = parseEndpointRuleSet(endpointRuleSet);
+        c2jServiceModel.setEndpointRuleSetModel(endpointRuleSetBom);
         if (endpointRulesTests != null) {
             EndpointTests endpointTestsModel = gson.fromJson(endpointRulesTests, EndpointTests.class);
             c2jServiceModel.setEndpointTests(endpointTestsModel);
@@ -126,6 +129,18 @@ public class DirectFromC2jGenerator {
         Gson gson = new Gson();
         return gson.fromJson(rawJson, PartitionsModel.class);
     }
+
+    /**
+     * Parse rawJson into a structured EndpointRuleSet object
+     *
+     * @param rawJson the raw json representation of the partitions object.
+     * @return a parsed object of partitions.
+     */
+    public EndpointRuleSetModel parseEndpointRuleSet(final String rawJson) {
+        Gson gson = new Gson();
+        return gson.fromJson(rawJson, EndpointRuleSetModel.class);
+    }
+
 
     /**
      * A function to generate C++ source for service client tests
