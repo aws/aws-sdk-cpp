@@ -21,7 +21,8 @@ namespace Model
 ExperimentState::ExperimentState() : 
     m_status(ExperimentStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,13 @@ ExperimentState& ExperimentState::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetObject("error");
+
+    m_errorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue ExperimentState::Jsonize() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("reason", m_reason);
+
+  }
+
+  if(m_errorHasBeenSet)
+  {
+   payload.WithObject("error", m_error.Jsonize());
 
   }
 

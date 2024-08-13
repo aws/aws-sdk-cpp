@@ -36,7 +36,8 @@ CreateAppRequest::CreateAppRequest() :
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
-    m_autoBranchCreationConfigHasBeenSet(false)
+    m_autoBranchCreationConfigHasBeenSet(false),
+    m_cacheConfigHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,12 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_autoBranchCreationConfigHasBeenSet)
   {
    payload.WithObject("autoBranchCreationConfig", m_autoBranchCreationConfig.Jsonize());
+
+  }
+
+  if(m_cacheConfigHasBeenSet)
+  {
+   payload.WithObject("cacheConfig", m_cacheConfig.Jsonize());
 
   }
 

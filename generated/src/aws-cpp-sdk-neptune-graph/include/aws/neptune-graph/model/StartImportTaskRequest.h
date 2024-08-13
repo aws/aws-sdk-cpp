@@ -9,6 +9,7 @@
 #include <aws/neptune-graph/model/ImportOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/model/Format.h>
+#include <aws/neptune-graph/model/BlankNodeHandling.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +92,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The method to handle blank nodes in the dataset. Currently, only
+     * <code>convertToIri</code> is supported, meaning blank nodes are converted to
+     * unique IRIs at load time. Must be provided when format is <code>ntriples</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling
+     * RDF values</a>.</p>
+     */
+    inline const BlankNodeHandling& GetBlankNodeHandling() const{ return m_blankNodeHandling; }
+    inline bool BlankNodeHandlingHasBeenSet() const { return m_blankNodeHandlingHasBeenSet; }
+    inline void SetBlankNodeHandling(const BlankNodeHandling& value) { m_blankNodeHandlingHasBeenSet = true; m_blankNodeHandling = value; }
+    inline void SetBlankNodeHandling(BlankNodeHandling&& value) { m_blankNodeHandlingHasBeenSet = true; m_blankNodeHandling = std::move(value); }
+    inline StartImportTaskRequest& WithBlankNodeHandling(const BlankNodeHandling& value) { SetBlankNodeHandling(value); return *this;}
+    inline StartImportTaskRequest& WithBlankNodeHandling(BlankNodeHandling&& value) { SetBlankNodeHandling(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the Neptune Analytics graph.</p>
      */
     inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
@@ -130,6 +148,9 @@ namespace Model
 
     Format m_format;
     bool m_formatHasBeenSet = false;
+
+    BlankNodeHandling m_blankNodeHandling;
+    bool m_blankNodeHandlingHasBeenSet = false;
 
     Aws::String m_graphIdentifier;
     bool m_graphIdentifierHasBeenSet = false;

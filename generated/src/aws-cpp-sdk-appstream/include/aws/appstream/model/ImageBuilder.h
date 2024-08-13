@@ -14,6 +14,7 @@
 #include <aws/appstream/model/DomainJoinInfo.h>
 #include <aws/appstream/model/NetworkAccessConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/LatestAppstreamAgentVersion.h>
 #include <aws/appstream/model/ResourceError.h>
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <utility>
@@ -317,6 +318,19 @@ namespace Model
     inline ImageBuilder& AddAccessEndpoints(const AccessEndpoint& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(value); return *this; }
     inline ImageBuilder& AddAccessEndpoints(AccessEndpoint&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the image builder is using the latest AppStream 2.0 agent
+     * version or not.</p>
+     */
+    inline const LatestAppstreamAgentVersion& GetLatestAppstreamAgentVersion() const{ return m_latestAppstreamAgentVersion; }
+    inline bool LatestAppstreamAgentVersionHasBeenSet() const { return m_latestAppstreamAgentVersionHasBeenSet; }
+    inline void SetLatestAppstreamAgentVersion(const LatestAppstreamAgentVersion& value) { m_latestAppstreamAgentVersionHasBeenSet = true; m_latestAppstreamAgentVersion = value; }
+    inline void SetLatestAppstreamAgentVersion(LatestAppstreamAgentVersion&& value) { m_latestAppstreamAgentVersionHasBeenSet = true; m_latestAppstreamAgentVersion = std::move(value); }
+    inline ImageBuilder& WithLatestAppstreamAgentVersion(const LatestAppstreamAgentVersion& value) { SetLatestAppstreamAgentVersion(value); return *this;}
+    inline ImageBuilder& WithLatestAppstreamAgentVersion(LatestAppstreamAgentVersion&& value) { SetLatestAppstreamAgentVersion(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -372,6 +386,9 @@ namespace Model
 
     Aws::Vector<AccessEndpoint> m_accessEndpoints;
     bool m_accessEndpointsHasBeenSet = false;
+
+    LatestAppstreamAgentVersion m_latestAppstreamAgentVersion;
+    bool m_latestAppstreamAgentVersionHasBeenSet = false;
   };
 
 } // namespace Model

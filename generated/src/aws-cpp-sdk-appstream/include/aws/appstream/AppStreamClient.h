@@ -581,6 +581,32 @@ namespace AppStream
         }
 
         /**
+         * <p>Creates custom branding that customizes the appearance of the streaming
+         * application catalog page.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateThemeForStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateThemeForStackOutcome CreateThemeForStack(const Model::CreateThemeForStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateThemeForStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateThemeForStackRequestT = Model::CreateThemeForStackRequest>
+        Model::CreateThemeForStackOutcomeCallable CreateThemeForStackCallable(const CreateThemeForStackRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::CreateThemeForStack, request);
+        }
+
+        /**
+         * An Async wrapper for CreateThemeForStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateThemeForStackRequestT = Model::CreateThemeForStackRequest>
+        void CreateThemeForStackAsync(const CreateThemeForStackRequestT& request, const CreateThemeForStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::CreateThemeForStack, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new image with the latest Windows operating system updates, driver
          * updates, and AppStream 2.0 agent software.</p> <p>For more information, see the
          * "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a
@@ -920,6 +946,32 @@ namespace AppStream
         void DeleteStackAsync(const DeleteStackRequestT& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppStreamClient::DeleteStack, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes custom branding that customizes the appearance of the streaming
+         * application catalog page.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteThemeForStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteThemeForStackOutcome DeleteThemeForStack(const Model::DeleteThemeForStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteThemeForStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteThemeForStackRequestT = Model::DeleteThemeForStackRequest>
+        Model::DeleteThemeForStackOutcomeCallable DeleteThemeForStackCallable(const DeleteThemeForStackRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DeleteThemeForStack, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteThemeForStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteThemeForStackRequestT = Model::DeleteThemeForStackRequest>
+        void DeleteThemeForStackAsync(const DeleteThemeForStackRequestT& request, const DeleteThemeForStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DeleteThemeForStack, request, handler, context);
         }
 
         /**
@@ -1321,6 +1373,33 @@ namespace AppStream
         void DescribeStacksAsync(const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeStacksRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeStacks, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list that describes the theme for a specified stack. A theme is
+         * custom branding that customizes the appearance of the streaming application
+         * catalog page.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeThemeForStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeThemeForStackOutcome DescribeThemeForStack(const Model::DescribeThemeForStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeThemeForStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeThemeForStackRequestT = Model::DescribeThemeForStackRequest>
+        Model::DescribeThemeForStackOutcomeCallable DescribeThemeForStackCallable(const DescribeThemeForStackRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DescribeThemeForStack, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeThemeForStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeThemeForStackRequestT = Model::DescribeThemeForStackRequest>
+        void DescribeThemeForStackAsync(const DescribeThemeForStackRequestT& request, const DescribeThemeForStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DescribeThemeForStack, request, handler, context);
         }
 
         /**
@@ -2109,6 +2188,32 @@ namespace AppStream
         void UpdateStackAsync(const UpdateStackRequestT& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppStreamClient::UpdateStack, request, handler, context);
+        }
+
+        /**
+         * <p>Updates custom branding that customizes the appearance of the streaming
+         * application catalog page.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateThemeForStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThemeForStackOutcome UpdateThemeForStack(const Model::UpdateThemeForStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateThemeForStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateThemeForStackRequestT = Model::UpdateThemeForStackRequest>
+        Model::UpdateThemeForStackOutcomeCallable UpdateThemeForStackCallable(const UpdateThemeForStackRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::UpdateThemeForStack, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateThemeForStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateThemeForStackRequestT = Model::UpdateThemeForStackRequest>
+        void UpdateThemeForStackAsync(const UpdateThemeForStackRequestT& request, const UpdateThemeForStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::UpdateThemeForStack, request, handler, context);
         }
 
 

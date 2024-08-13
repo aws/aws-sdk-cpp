@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplify/model/AutoBranchCreationConfig.h>
+#include <aws/amplify/model/CacheConfig.h>
 #include <aws/amplify/model/CustomRule.h>
 #include <utility>
 
@@ -333,6 +334,18 @@ namespace Model
     inline CreateAppRequest& WithAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { SetAutoBranchCreationConfig(value); return *this;}
     inline CreateAppRequest& WithAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { SetAutoBranchCreationConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The cache configuration for the Amplify app.</p>
+     */
+    inline const CacheConfig& GetCacheConfig() const{ return m_cacheConfig; }
+    inline bool CacheConfigHasBeenSet() const { return m_cacheConfigHasBeenSet; }
+    inline void SetCacheConfig(const CacheConfig& value) { m_cacheConfigHasBeenSet = true; m_cacheConfig = value; }
+    inline void SetCacheConfig(CacheConfig&& value) { m_cacheConfigHasBeenSet = true; m_cacheConfig = std::move(value); }
+    inline CreateAppRequest& WithCacheConfig(const CacheConfig& value) { SetCacheConfig(value); return *this;}
+    inline CreateAppRequest& WithCacheConfig(CacheConfig&& value) { SetCacheConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -391,6 +404,9 @@ namespace Model
 
     AutoBranchCreationConfig m_autoBranchCreationConfig;
     bool m_autoBranchCreationConfigHasBeenSet = false;
+
+    CacheConfig m_cacheConfig;
+    bool m_cacheConfigHasBeenSet = false;
   };
 
 } // namespace Model

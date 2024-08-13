@@ -19,6 +19,8 @@ StartImportTaskRequest::StartImportTaskRequest() :
     m_sourceHasBeenSet(false),
     m_format(Format::NOT_SET),
     m_formatHasBeenSet(false),
+    m_blankNodeHandling(BlankNodeHandling::NOT_SET),
+    m_blankNodeHandlingHasBeenSet(false),
     m_graphIdentifierHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
@@ -49,6 +51,11 @@ Aws::String StartImportTaskRequest::SerializePayload() const
   if(m_formatHasBeenSet)
   {
    payload.WithString("format", FormatMapper::GetNameForFormat(m_format));
+  }
+
+  if(m_blankNodeHandlingHasBeenSet)
+  {
+   payload.WithString("blankNodeHandling", BlankNodeHandlingMapper::GetNameForBlankNodeHandling(m_blankNodeHandling));
   }
 
   if(m_roleArnHasBeenSet)
