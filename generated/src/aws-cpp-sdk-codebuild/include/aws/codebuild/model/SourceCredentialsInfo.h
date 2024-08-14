@@ -70,7 +70,7 @@ namespace Model
     ///@{
     /**
      * <p> The type of authentication used by the credentials. Valid options are OAUTH,
-     * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. </p>
+     * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, or SECRETS_MANAGER. </p>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
@@ -82,8 +82,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
-     * and your authType is CODECONNECTIONS.</p>
+     * <p>The connection ARN if your authType is CODECONNECTIONS or
+     * SECRETS_MANAGER.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }

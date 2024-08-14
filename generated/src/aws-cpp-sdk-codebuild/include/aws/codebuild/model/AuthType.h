@@ -19,7 +19,8 @@ namespace Model
     OAUTH,
     BASIC_AUTH,
     PERSONAL_ACCESS_TOKEN,
-    CODECONNECTIONS
+    CODECONNECTIONS,
+    SECRETS_MANAGER
   };
 
 namespace AuthTypeMapper
