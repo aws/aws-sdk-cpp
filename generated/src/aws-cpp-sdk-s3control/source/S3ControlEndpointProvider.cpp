@@ -41,6 +41,9 @@ namespace Endpoint
 
     static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
     SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
+    if(!config.accountId.empty()) {
+      SetStringParameter("AccountId", config.accountId);
+    }
   }
 } // namespace Endpoint
 } // namespace S3Control

@@ -42,6 +42,10 @@ namespace Aws
             S3ControlClientConfiguration(const Client::ClientConfiguration& config);
             bool useArnRegion = false;
             Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
+            /**
+             * The Account ID used to send the request. This is an optional parameter that will be set automatically for operations that require it.
+             */
+            Aws::String accountId;
         private:
             void LoadS3ControlSpecificConfig(const Aws::String& profileName);
         };
