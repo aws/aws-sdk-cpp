@@ -386,7 +386,7 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
 
         long sleepMillis = TracingUtils::MakeCallWithTiming<long>(
             [&]() -> long {
-                return m_clientConfig.retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), pRequestCtx->m_retryCount);
+                return m_clientConfig.retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount));
             },
             TracingUtils::SMITHY_CLIENT_SERVICE_BACKOFF_DELAY_METRIC,
             *m_clientConfig.telemetryProvider->getMeter(this->GetServiceClientName(), {}),
@@ -400,7 +400,7 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
             shouldSleep |= !this->AdjustClockSkew(outcome, pRequestCtx->m_authSchemeOption);
         }
 
-        if (!retryWithCorrectRegion && !m_clientConfig.retryStrategy->ShouldRetry(outcome.GetError(), pRequestCtx->m_retryCount))
+        if (!retryWithCorrectRegion && !m_clientConfig.retryStrategy->ShouldRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount)))
         {
             break;
         }
