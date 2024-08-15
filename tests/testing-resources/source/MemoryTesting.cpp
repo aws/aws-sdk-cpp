@@ -127,6 +127,36 @@ void ExactTestMemorySystem::Cleanup()
     free(m_buckets);
 }
 
+CRTMemTracerMemorySystem::CRTMemTracerMemorySystem():
+    mem_tracer_{
+        aws_mem_tracer_new(
+            aws_default_allocator(),
+            nullptr,
+            AWS_MEMTRACE_STACKS,
+            10),
+        aws_mem_tracer_destroy}
+{}
+
+void* CRTMemTracerMemorySystem::AllocateMemory(std::size_t blockSize, std::size_t alignment, const char* allocationTag)
+{
+    AWS_UNREFERENCED_PARAM(alignment);
+    AWS_UNREFERENCED_PARAM(allocationTag);
+    return aws_mem_acquire(mem_tracer_.get(), blockSize);
+}
+
+void CRTMemTracerMemorySystem::FreeMemory(void* memoryPtr)
+{
+    aws_mem_release(mem_tracer_.get(), memoryPtr);
+}
+
+void CRTMemTracerMemorySystem::AssertNoLeaks()
+{
+    const size_t leaked_allocations = aws_mem_tracer_count(mem_tracer_.get());
+    const size_t leaked_bytes = aws_mem_tracer_bytes(mem_tracer_.get());
+    EXPECT_EQ(0ul, leaked_allocations);
+    EXPECT_EQ(0ul, leaked_bytes);
+}
+
 void ExactTestMemorySystem::GrowFreePool()
 {
     // malloc enough memory to hold the linked list pointer as well as the desired number of TaggedMemoryTrackers
