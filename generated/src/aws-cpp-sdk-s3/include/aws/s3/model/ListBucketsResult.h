@@ -60,6 +60,23 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> <code>ContinuationToken</code> is included in the response when there are
+     * more buckets that can be listed with pagination. The next
+     * <code>ListBuckets</code> request to Amazon S3 can be continued with this
+     * <code>ContinuationToken</code>. <code>ContinuationToken</code> is obfuscated and
+     * is not a real bucket.</p>
+     */
+    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
+    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
+    inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
+    inline ListBucketsResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
+    inline ListBucketsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
+    inline ListBucketsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -74,6 +91,8 @@ namespace Model
     Aws::Vector<Bucket> m_buckets;
 
     Owner m_owner;
+
+    Aws::String m_continuationToken;
 
     Aws::String m_requestId;
   };

@@ -38,7 +38,7 @@ namespace Model
     ///@{
     /**
      * <p>A full description of the tasks that were run. The tasks that were
-     * successfully placed on your cluster are described here.</p> <p/>
+     * successfully placed on your cluster are described here.</p>
      */
     inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
     inline void SetTasks(const Aws::Vector<Task>& value) { m_tasks = value; }

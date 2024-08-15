@@ -29,36 +29,35 @@ namespace Model
    * are specified in a container definition override any Docker health checks that
    * exist in the container image (such as those specified in a parent image or from
    * the image's Dockerfile). This configuration maps to the <code>HEALTHCHECK</code>
-   * parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-   * run</a>.</p>  <p>The Amazon ECS container agent only monitors and reports
-   * on the health checks specified in the task definition. Amazon ECS does not
-   * monitor Docker health checks that are embedded in a container image and not
-   * specified in the container definition. Health check parameters that are
-   * specified in a container definition override any Docker health checks that exist
-   * in the container image.</p>  <p>You can view the health status of both
-   * individual containers and a task with the DescribeTasks API operation or when
-   * viewing the task details in the console.</p> <p>The health check is designed to
-   * make sure that your containers survive agent restarts, upgrades, or temporary
-   * unavailability.</p> <p>Amazon ECS performs health checks on containers with the
-   * default that launched the container instance or the task.</p> <p>The following
-   * describes the possible <code>healthStatus</code> values for a container:</p>
-   * <ul> <li> <p> <code>HEALTHY</code>-The container health check has passed
-   * successfully.</p> </li> <li> <p> <code>UNHEALTHY</code>-The container health
-   * check has failed.</p> </li> <li> <p> <code>UNKNOWN</code>-The container health
-   * check is being evaluated, there's no container health check defined, or Amazon
-   * ECS doesn't have the health status of the container.</p> </li> </ul> <p>The
-   * following describes the possible <code>healthStatus</code> values based on the
-   * container health checker status of essential containers in the task with the
-   * following priority order (high to low):</p> <ul> <li> <p>
-   * <code>UNHEALTHY</code>-One or more essential containers have failed their health
-   * check.</p> </li> <li> <p> <code>UNKNOWN</code>-Any essential container running
-   * within the task is in an <code>UNKNOWN</code> state and no other essential
-   * containers have an <code>UNHEALTHY</code> state.</p> </li> <li> <p>
-   * <code>HEALTHY</code>-All essential containers within the task have passed their
-   * health checks.</p> </li> </ul> <p>Consider the following task health example
-   * with 2 containers.</p> <ul> <li> <p>If Container1 is <code>UNHEALTHY</code> and
-   * Container2 is <code>UNKNOWN</code>, the task health is
-   * <code>UNHEALTHY</code>.</p> </li> <li> <p>If Container1 is
+   * parameter of docker run.</p>  <p>The Amazon ECS container agent only
+   * monitors and reports on the health checks specified in the task definition.
+   * Amazon ECS does not monitor Docker health checks that are embedded in a
+   * container image and not specified in the container definition. Health check
+   * parameters that are specified in a container definition override any Docker
+   * health checks that exist in the container image.</p>  <p>You can view the
+   * health status of both individual containers and a task with the DescribeTasks
+   * API operation or when viewing the task details in the console.</p> <p>The health
+   * check is designed to make sure that your containers survive agent restarts,
+   * upgrades, or temporary unavailability.</p> <p>Amazon ECS performs health checks
+   * on containers with the default that launched the container instance or the
+   * task.</p> <p>The following describes the possible <code>healthStatus</code>
+   * values for a container:</p> <ul> <li> <p> <code>HEALTHY</code>-The container
+   * health check has passed successfully.</p> </li> <li> <p>
+   * <code>UNHEALTHY</code>-The container health check has failed.</p> </li> <li> <p>
+   * <code>UNKNOWN</code>-The container health check is being evaluated, there's no
+   * container health check defined, or Amazon ECS doesn't have the health status of
+   * the container.</p> </li> </ul> <p>The following describes the possible
+   * <code>healthStatus</code> values based on the container health checker status of
+   * essential containers in the task with the following priority order (high to
+   * low):</p> <ul> <li> <p> <code>UNHEALTHY</code>-One or more essential containers
+   * have failed their health check.</p> </li> <li> <p> <code>UNKNOWN</code>-Any
+   * essential container running within the task is in an <code>UNKNOWN</code> state
+   * and no other essential containers have an <code>UNHEALTHY</code> state.</p>
+   * </li> <li> <p> <code>HEALTHY</code>-All essential containers within the task
+   * have passed their health checks.</p> </li> </ul> <p>Consider the following task
+   * health example with 2 containers.</p> <ul> <li> <p>If Container1 is
+   * <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, the task health
+   * is <code>UNHEALTHY</code>.</p> </li> <li> <p>If Container1 is
    * <code>UNHEALTHY</code> and Container2 is <code>HEALTHY</code>, the task health
    * is <code>UNHEALTHY</code>.</p> </li> <li> <p>If Container1 is
    * <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, the task health is
@@ -127,10 +126,8 @@ namespace Model
      * double quotes and brackets when you use the Amazon Web Services Management
      * Console.</p> <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code>
      * </p> <p>An exit code of 0 indicates success, and non-zero exit code indicates
-     * failure. For more information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
+     * failure. For more information, see <code>HealthCheck</code> in tthe docker
+     * create-container command</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }

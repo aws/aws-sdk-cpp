@@ -29,28 +29,20 @@ namespace Model
 
   /**
    * <p>The log configuration for the container. This parameter maps to
-   * <code>LogConfig</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-   * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-   * <code>--log-driver</code> option to <a
-   * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
-   * run</code> </a>.</p> <p>By default, containers use the same logging driver that
-   * the Docker daemon uses. However, the container might use a different logging
-   * driver than the Docker daemon by specifying a log driver configuration in the
-   * container definition. For more information about the options for different
-   * supported log drivers, see <a
-   * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
-   * drivers</a> in the Docker documentation.</p> <p>Understand the following when
-   * specifying a log configuration for your containers.</p> <ul> <li> <p>Amazon ECS
-   * currently supports a subset of the logging drivers available to the Docker
-   * daemon. Additional log drivers may be available in future releases of the Amazon
-   * ECS container agent.</p> <p>For tasks on Fargate, the supported log drivers are
-   * <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-   * <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are
-   * <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
-   * <code>json-file</code>, <code>journald</code>,
-   * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
+   * <code>LogConfig</code> in the docker create-container command and the
+   * <code>--log-driver</code> option to docker run.</p> <p>By default, containers
+   * use the same logging driver that the Docker daemon uses. However, the container
+   * might use a different logging driver than the Docker daemon by specifying a log
+   * driver configuration in the container definition.</p> <p>Understand the
+   * following when specifying a log configuration for your containers.</p> <ul> <li>
+   * <p>Amazon ECS currently supports a subset of the logging drivers available to
+   * the Docker daemon. Additional log drivers may be available in future releases of
+   * the Amazon ECS container agent.</p> <p>For tasks on Fargate, the supported log
+   * drivers are <code>awslogs</code>, <code>splunk</code>, and
+   * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
+   * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+   * <code>gelf</code>, <code>json-file</code>,
+   * <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and
    * <code>awsfirelens</code>.</p> </li> <li> <p>This parameter requires version 1.18
    * of the Docker Remote API or greater on your container instance.</p> </li> <li>
    * <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container
@@ -84,17 +76,16 @@ namespace Model
      * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
      * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
-     * log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-     * log routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that isn't listed, you can
-     * fork the Amazon ECS container agent project that's <a
+     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+     * <p>For more information about using the <code>awslogs</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Send
+     * Amazon ECS logs to CloudWatch</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>For more information about using the
+     * <code>awsfirelens</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send
+     * Amazon ECS logs to an Amazon Web Services service or Amazon Web Services
+     * Partner</a>.</p>  <p>If you have a custom driver that isn't listed, you
+     * can fork the Amazon ECS container agent project that's <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you would like to have included. However, we don't currently

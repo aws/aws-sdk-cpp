@@ -44,7 +44,12 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the partition date source for the partitioned prefix.
-     * PartitionDateSource can be EventTime or DeliveryTime.</p>
+     * <code>PartitionDateSource</code> can be <code>EventTime</code> or
+     * <code>DeliveryTime</code>.</p> <p>For <code>DeliveryTime</code>, the time in the
+     * log file names corresponds to the delivery time for the log files. </p> <p> For
+     * <code>EventTime</code>, The logs delivered are for a specific day only. The
+     * year, month, and day correspond to the day on which the event occurred, and the
+     * hour, minutes and seconds are set to 00 in the key.</p>
      */
     inline const PartitionDateSource& GetPartitionDateSource() const{ return m_partitionDateSource; }
     inline bool PartitionDateSourceHasBeenSet() const { return m_partitionDateSourceHasBeenSet; }

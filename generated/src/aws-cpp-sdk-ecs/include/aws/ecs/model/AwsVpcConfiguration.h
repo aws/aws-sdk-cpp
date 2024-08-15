@@ -28,8 +28,8 @@ namespace Model
   /**
    * <p>An object representing the networking details for a task or service. For
    * example
-   * <code>awsvpcConfiguration={subnets=["subnet-12344321"],securityGroups=["sg-12344321"]}</code>
-   * </p><p><h3>See Also:</h3>   <a
+   * <code>awsVpcConfiguration={subnets=["subnet-12344321"],securityGroups=["sg-12344321"]}</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AwsVpcConfiguration">AWS
    * API Reference</a></p>
    */

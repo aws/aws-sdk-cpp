@@ -48,6 +48,11 @@ ListBucketsResult& ListBucketsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_owner = ownerNode;
     }
+    XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
+    if(!continuationTokenNode.IsNull())
+    {
+      m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

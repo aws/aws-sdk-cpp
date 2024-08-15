@@ -23,13 +23,13 @@ namespace Model
 {
 
   /**
-   * <p>The container element for specifying the default Object Lock retention
-   * settings for new objects placed in the specified bucket.</p>  <ul> <li>
-   * <p>The <code>DefaultRetention</code> settings require both a mode and a
-   * period.</p> </li> <li> <p>The <code>DefaultRetention</code> period can be either
-   * <code>Days</code> or <code>Years</code> but you must select one. You cannot
-   * specify <code>Days</code> and <code>Years</code> at the same time.</p> </li>
-   * </ul> <p><h3>See Also:</h3>   <a
+   * <p>The container element for optionally specifying the default Object Lock
+   * retention settings for new objects placed in the specified bucket.</p> 
+   * <ul> <li> <p>The <code>DefaultRetention</code> settings require both a mode and
+   * a period.</p> </li> <li> <p>The <code>DefaultRetention</code> period can be
+   * either <code>Days</code> or <code>Years</code> but you must select one. You
+   * cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+   * </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DefaultRetention">AWS
    * API Reference</a></p>
    */

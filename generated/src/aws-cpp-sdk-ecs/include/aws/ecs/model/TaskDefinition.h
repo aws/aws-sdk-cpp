@@ -112,15 +112,10 @@ namespace Model
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
      * Management role that grants containers in the task permission to call Amazon Web
-     * Services APIs on your behalf. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
-     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
-     * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
-     * ECS-optimized Windows AMI. Your containers must also run some configuration code
-     * to use the feature. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Services APIs on your behalf. For informationabout the required IAM roles for
+     * Amazon ECS, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-ecs-iam-role-overview.html">IAM
+     * roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
@@ -137,11 +132,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
      * Amazon ECS container agent permission to make Amazon Web Services API calls on
-     * your behalf. The task execution IAM role is required depending on the
-     * requirements of your task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * your behalf. For informationabout the required IAM roles for Amazon ECS, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-ecs-iam-role-overview.html">IAM
+     * roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
@@ -175,16 +169,15 @@ namespace Model
      *  <p>When using the <code>host</code> network mode, you should not run
      * containers using the root user (UID 0). It is considered best practice to use a
      * non-root user.</p>  <p>If the network mode is <code>awsvpc</code>,
-     * the task is allocated an elastic network interface, and you must specify a
-     * <a>NetworkConfiguration</a> value when you create a service or run a task with
-     * the task definition. For more information, see <a
+     * the task is allocated an elastic network interface, and you must specify a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html">NetworkConfiguration</a>
+     * value when you create a service or run a task with the task definition. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you cannot run
      * multiple instantiations of the same task on a single container instance when
-     * port mappings are used.</p> <p>For more information, see <a
-     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
-     * settings</a> in the <i>Docker run reference</i>.</p>
+     * port mappings are used.</p>
      */
     inline const NetworkMode& GetNetworkMode() const{ return m_networkMode; }
     inline bool NetworkModeHasBeenSet() const { return m_networkModeHasBeenSet; }
@@ -335,14 +328,17 @@ namespace Model
      * launch type, this field is optional. Any value can be used. If you use the
      * Fargate launch type, this field is required. You must use one of the following
      * values. The value that you choose determines your range of valid values for the
-     * <code>memory</code> parameter.</p> <p>The CPU units cannot be less than 1 vCPU
-     * when you use Windows containers on Fargate.</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * <code>memory</code> parameter.</p> <p>If you use the EC2 launch type, this field
+     * is optional. Supported values are between <code>128</code> CPU units
+     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     * vCPUs).</p> <p>The CPU units cannot be less than 1 vCPU when you use Windows
+     * containers on Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
      * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
      * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
@@ -423,16 +419,11 @@ namespace Model
      * container instance share the same process namespace with the host Amazon EC2
      * instance.</p> <p>If <code>task</code> is specified, all containers within the
      * specified task share the same process namespace.</p> <p>If no value is
-     * specified, the default is a private namespace for each container. For more
-     * information, see <a
-     * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
-     * settings</a> in the <i>Docker run reference</i>.</p> <p>If the <code>host</code>
-     * PID mode is used, there's a heightened risk of undesired process namespace
-     * exposure. For more information, see <a
-     * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers.</p>   <p>This parameter is only supported for tasks
-     * that are hosted on Fargate if the tasks are using platform version
+     * specified, the default is a private namespace for each container.</p> <p>If the
+     * <code>host</code> PID mode is used, there's a heightened risk of undesired
+     * process namespace exposure.</p>  <p>This parameter is not supported for
+     * Windows containers.</p>   <p>This parameter is only supported for
+     * tasks that are hosted on Fargate if the tasks are using platform version
      * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
      * on Fargate.</p> 
      */
@@ -456,15 +447,11 @@ namespace Model
      * containers of a task are private and not shared with other containers in a task
      * or on the container instance. If no value is specified, then the IPC resource
      * namespace sharing depends on the Docker daemon setting on the container
-     * instance. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
-     * settings</a> in the <i>Docker run reference</i>.</p> <p>If the <code>host</code>
-     * IPC mode is used, be aware that there is a heightened risk of undesired IPC
-     * namespace expose. For more information, see <a
-     * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <p>If you are setting namespaced kernel parameters using
-     * <code>systemControls</code> for the containers in the task, the following will
-     * apply to your IPC resource namespace. For more information, see <a
+     * instance.</p> <p>If the <code>host</code> IPC mode is used, be aware that there
+     * is a heightened risk of undesired IPC namespace expose.</p> <p>If you are
+     * setting namespaced kernel parameters using <code>systemControls</code> for the
+     * containers in the task, the following will apply to your IPC resource namespace.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      * <ul> <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace

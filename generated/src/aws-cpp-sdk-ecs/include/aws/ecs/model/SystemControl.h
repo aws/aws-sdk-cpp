@@ -25,23 +25,19 @@ namespace Model
 
   /**
    * <p>A list of namespaced kernel parameters to set in the container. This
-   * parameter maps to <code>Sysctls</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-   * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-   * <code>--sysctl</code> option to <a
-   * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-   * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-   * setting to maintain longer lived connections.</p> <p>We don't recommend that you
-   * specify network-related <code>systemControls</code> parameters for multiple
-   * containers in a single task that also uses either the <code>awsvpc</code> or
-   * <code>host</code> network mode. Doing this has the following disadvantages:</p>
-   * <ul> <li> <p>For tasks that use the <code>awsvpc</code> network mode including
-   * Fargate, if you set <code>systemControls</code> for any container, it applies to
-   * all containers in the task. If you set different <code>systemControls</code> for
-   * multiple containers in a single task, the container that's started last
-   * determines which <code>systemControls</code> take effect.</p> </li> <li> <p>For
-   * tasks that use the <code>host</code> network mode, the network namespace
+   * parameter maps to <code>Sysctls</code> in tthe docker create-container command
+   * and the <code>--sysctl</code> option to docker run. For example, you can
+   * configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer
+   * lived connections.</p> <p>We don't recommend that you specify network-related
+   * <code>systemControls</code> parameters for multiple containers in a single task
+   * that also uses either the <code>awsvpc</code> or <code>host</code> network mode.
+   * Doing this has the following disadvantages:</p> <ul> <li> <p>For tasks that use
+   * the <code>awsvpc</code> network mode including Fargate, if you set
+   * <code>systemControls</code> for any container, it applies to all containers in
+   * the task. If you set different <code>systemControls</code> for multiple
+   * containers in a single task, the container that's started last determines which
+   * <code>systemControls</code> take effect.</p> </li> <li> <p>For tasks that use
+   * the <code>host</code> network mode, the network namespace
    * <code>systemControls</code> aren't supported.</p> </li> </ul> <p>If you're
    * setting an IPC resource namespace to use for the containers in the task, the
    * following conditions apply to your system controls. For more information, see <a
