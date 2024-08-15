@@ -9,12 +9,14 @@
 
 #include <aws/core/utils/memory/MemorySystemInterface.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/common/allocator.h>
 
 #include <stdint.h>
 #include <algorithm>
 #include <mutex>
 #include <atomic>
 #include <cstdlib>
+#include <functional>
 
 // Could be folded into ExactTestMemorySystem, tracks some aggregate stats
 class AWS_TESTING_API BaseTestMemorySystem : public Aws::Utils::Memory::MemorySystemInterface
@@ -106,6 +108,19 @@ class AWS_TESTING_API ExactTestMemorySystem : public BaseTestMemorySystem
         // Keeps allocation/deallocation synchronous so that all of our bookkeeping actually works properly
         std::mutex m_internalSync;
 
+};
+
+class AWS_TESTING_API CRTMemTracerMemorySystem : public Aws::Utils::Memory::MemorySystemInterface
+{
+public:
+    CRTMemTracerMemorySystem();
+    void Begin() override {}
+    void End() override {}
+    void* AllocateMemory(std::size_t blockSize, std::size_t alignment, const char* allocationTag) override;
+    void FreeMemory(void* memoryPtr) override;
+    void AssertNoLeaks();
+private:
+    std::unique_ptr<aws_allocator, std::function<void (aws_allocator*)>> mem_tracer_;
 };
 
 #ifdef USE_AWS_MEMORY_MANAGEMENT
