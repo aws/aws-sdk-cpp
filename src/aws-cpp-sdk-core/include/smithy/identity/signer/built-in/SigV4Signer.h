@@ -21,35 +21,31 @@ namespace smithy {
     public:
         using SigV4AuthSchemeParameters = DefaultAuthSchemeResolverParameters;
         explicit AwsSigV4Signer(const SigV4AuthSchemeParameters& parameters)
-            :  m_parameters{parameters}, legacySigner(nullptr, parameters.serviceName.c_str(), *parameters.region)
+            :  m_parameters{parameters},legacySigner{nullptr, parameters.serviceName.c_str(), *parameters.region}
         {
         }
 
         SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
         {
-            const char ALLOCATION_TAG[] = "AwsSigV4Signer";
+            const auto legacyCreds = [&identity]() -> Aws::Auth::AWSCredentials {
+                if(identity.sessionToken().has_value() && identity.expiration().has_value())
+                {
+                    return {identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken(), *identity.expiration()};
+                }
+                if(identity.sessionToken().has_value())
+                {
+                    return {identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken()};
+                }
+                return {identity.accessKeyId(), identity.secretAccessKey()};
+            }();
 
-            Aws::UniquePtr<Aws::Auth::AWSCredentials> legacyCreds_sp;
-
-            if(identity.sessionToken().has_value() && identity.expiration().has_value())
-            {
-                legacyCreds_sp = Aws::MakeUnique<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken(), *identity.expiration());
-            }
-            else if(identity.sessionToken().has_value())
-            {
-                legacyCreds_sp = Aws::MakeUnique<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken());
-            }
-            else
-            {
-                legacyCreds_sp = Aws::MakeUnique<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey());
-            }
 
             
             auto signPayloadIt = properties.find("SignPayload");
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
             assert(httpRequest);
-            bool success = legacySigner.SignRequestWithCreds(*httpRequest, *legacyCreds_sp, m_parameters.region->c_str(), m_parameters.serviceName.c_str(), signPayload);
+            bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, m_parameters.region->c_str(), m_parameters.serviceName.c_str(), signPayload);
             if (success)
             {
                 return SigningFutureOutcome(std::move(httpRequest));

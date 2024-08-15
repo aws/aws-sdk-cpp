@@ -19,27 +19,12 @@
 #include <aws/core/http/HttpRequest.h>
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/identity/auth/AuthSchemeOption.h>
+#include <aws/testing/mocks/http/MockHttpClient.h>
 
-
-class SmithyClientTest : public Aws::Testing::AwsCppSdkGTestSuite {
-
-    
-};
-
-
-
-class MyTestEndpointProvider : public Aws::Endpoint::EndpointProviderBase<>
+class TestEndPointProvider : public Aws::Endpoint::EndpointProviderBase<>
 {
 };
-using MySmithyClientConfig = Aws::Client::ClientConfiguration;
-using MyServiceAuthSchemeResolver = smithy::AuthSchemeResolverBase<smithy::DefaultAuthSchemeResolverParameters>; //smithy::SigV4AuthSchemeResolver<>; 
-static constexpr char MyServiceName[] = "MySuperService";
-using SigVariant = Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::SigV4aAuthScheme>;
-using MySmithyClient = smithy::client::AwsSmithyClientT<MyServiceName,
-                                                        MySmithyClientConfig,
-                                                        MyServiceAuthSchemeResolver,
-                                                        SigVariant,
-                                                        MyTestEndpointProvider>;
+
 
 class TestCredentialsProvider : public Aws::Auth::AWSCredentialsProvider{
     public:
@@ -49,14 +34,61 @@ class TestCredentialsProvider : public Aws::Auth::AWSCredentialsProvider{
     }
 };
 
+
+
 //Goal is to add a mock credential provider which will get hit
 class TestCredentialsProviderChain: public Aws::Auth::DefaultAWSCredentialsProviderChain{
     public:
+    friend class SmithyClientTest;
     TestCredentialsProviderChain():Aws::Auth::DefaultAWSCredentialsProviderChain()
     {
-        AddProvider(Aws::MakeShared<TestCredentialsProvider>("TestCredentialsProviderChain"));
+        //AddProvider(Aws::MakeShared<TestCredentialsProvider>("TestCredentialsProviderChain"));
     }
 };
+
+
+class SmithyClientTest : public Aws::Testing::AwsCppSdkGTestSuite {
+    
+
+    protected:
+    static const char ALLOCATION_TAG[];
+    Aws::Client::ClientConfiguration clientConfig;
+    std::shared_ptr<Aws::Http::HttpClient> httpClient;
+    std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller;
+    std::shared_ptr<TestEndPointProvider> endPointProvider;
+    std::shared_ptr<TestCredentialsProviderChain> credsProviderChain;
+    public:
+    void SetUp() override{
+        httpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
+        errorMarshaller = Aws::MakeShared<Aws::Client::XmlErrorMarshaller>(ALLOCATION_TAG);
+        credsProviderChain = Aws::MakeShared<TestCredentialsProviderChain>(ALLOCATION_TAG);
+
+        //add mock credentials provider for the test to the credentials provider chain
+        AddCredentialsProvider(Aws::MakeShared<TestCredentialsProvider>("TestCredentialsProviderChain"));
+
+    }
+
+    void AddCredentialsProvider(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& provider)
+    {
+        credsProviderChain->AddProvider(provider);
+    }
+    
+};
+
+const char SmithyClientTest::ALLOCATION_TAG[] = "SmithyClientTest";
+
+
+
+using MySmithyClientConfig = Aws::Client::ClientConfiguration;
+using MyServiceAuthSchemeResolver = smithy::AuthSchemeResolverBase<smithy::DefaultAuthSchemeResolverParameters>; //smithy::SigV4AuthSchemeResolver<>; 
+static constexpr char MyServiceName[] = "MySuperService";
+using SigVariant = Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::SigV4aAuthScheme>;
+using MySmithyClient = smithy::client::AwsSmithyClientT<MyServiceName,
+                                                        MySmithyClientConfig,
+                                                        MyServiceAuthSchemeResolver,
+                                                        SigVariant,
+                                                        TestEndPointProvider>;
+
 
 class TestClient : public MySmithyClient
 {
@@ -65,7 +97,7 @@ class TestClient : public MySmithyClient
             const Aws::String& serviceName,
             const std::shared_ptr<Aws::Http::HttpClient>& httpClient,
             const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& errorMarshaller,
-            const std::shared_ptr<MyTestEndpointProvider> endpointProvider,
+            const std::shared_ptr<TestEndPointProvider> endpointProvider,
             const std::shared_ptr<MyServiceAuthSchemeResolver>& authSchemeResolver,
             const Aws::UnorderedMap<Aws::String, SigVariant>& authSchemesMap):
             MySmithyClient(
@@ -94,13 +126,6 @@ class TestClient : public MySmithyClient
 
 TEST_F(SmithyClientTest, testSigV4) {
 
-    const char ALLOCATION_TAG[] = "SmithyClientTest";
-
-    Aws::Client::ClientConfiguration clientConfig;
-    std::shared_ptr<Aws::Http::HttpClient> httpClient = Aws::Http::CreateHttpClient(clientConfig);
-    std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller = Aws::MakeShared<Aws::Client::XmlErrorMarshaller>(ALLOCATION_TAG);
-    std::shared_ptr<MyTestEndpointProvider> endPointProvider;
-
     std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::SigV4AuthSchemeResolver<> >(ALLOCATION_TAG);
 
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
@@ -111,10 +136,14 @@ TEST_F(SmithyClientTest, testSigV4) {
     params.operation = "TestOperation";
 
     Aws::String key{"aws.auth#sigv4"};  
-    
-    auto resolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, Aws::MakeShared<TestCredentialsProviderChain>(ALLOCATION_TAG));
 
-    SigVariant val{smithy::SigV4AuthScheme( resolver, params)};
+    //add mock credentials provider for the test to the credentials provider chain
+    AddCredentialsProvider(Aws::MakeShared<TestCredentialsProvider>("TestCredentialsProviderChain"));
+    
+    //create resolver with the credentials provider chain
+    auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
+
+    SigVariant val{smithy::SigV4AuthScheme( credentialsResolver, params)};
     
     authSchemesMap.emplace(key, val);
 
@@ -145,18 +174,16 @@ TEST_F(SmithyClientTest, testSigV4) {
     auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
 
     EXPECT_EQ(res2.IsSuccess(), true);
+    
+    std::cout<<"Final auth="<<res2.GetResult()->GetAwsAuthorization()<<std::endl;
 
+    EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "dummyAccessId");
 }
 
 
 TEST_F(SmithyClientTest, testSigV4a) {
 
     const char ALLOCATION_TAG[] = "SmithyClientTest";
-
-    Aws::Client::ClientConfiguration clientConfig;
-    std::shared_ptr<Aws::Http::HttpClient> httpClient = Aws::Http::CreateHttpClient(clientConfig);
-    std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller = Aws::MakeShared<Aws::Client::XmlErrorMarshaller>(ALLOCATION_TAG);
-    std::shared_ptr<MyTestEndpointProvider> endPointProvider;
 
     std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::SigV4aAuthSchemeResolver<>>(ALLOCATION_TAG);
 
@@ -168,8 +195,9 @@ TEST_F(SmithyClientTest, testSigV4a) {
     params.operation = "TestOperation2";
 
     Aws::String key{"aws.auth#sigv4a"};
+    auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
 
-    SigVariant val{smithy::SigV4aAuthScheme(params)};
+    SigVariant val{smithy::SigV4aAuthScheme(credentialsResolver, params)};
     
     authSchemesMap.emplace(key, val);
 
@@ -201,5 +229,8 @@ TEST_F(SmithyClientTest, testSigV4a) {
     auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
 
     EXPECT_EQ(res2.IsSuccess(), true);
+    std::cout<<"Final auth="<<res2.GetResult()->GetAwsAuthorization()<<std::endl;
+
+    EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "dummyAccessId");
 
 }
