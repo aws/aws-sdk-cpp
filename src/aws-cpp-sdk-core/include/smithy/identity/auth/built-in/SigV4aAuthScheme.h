@@ -19,7 +19,6 @@ namespace smithy {
 
     class SigV4aAuthScheme : public AuthScheme<AwsCredentialIdentityBase>
     {
-        //constexpr char AUTH_SCHEME_NAME[] = "SigV4aAuthScheme";
     public:
         using AwsCredentialIdentityResolverT = IdentityResolverBase<IdentityT>;
         using AwsCredentialSignerT = AwsSignerBase<IdentityT>;

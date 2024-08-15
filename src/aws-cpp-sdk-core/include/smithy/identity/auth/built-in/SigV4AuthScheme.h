@@ -24,14 +24,22 @@ namespace smithy {
         using AwsCredentialSignerT = AwsSignerBase<IdentityT>;
         using SigV4AuthSchemeParameters = DefaultAuthSchemeResolverParameters;
 
-        explicit SigV4AuthScheme(const SigV4AuthSchemeParameters& parameters)
-            : AuthScheme(SIGV4)
+        //This allows to override the identity resolver
+        explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, 
+                                 const SigV4AuthSchemeParameters& parameters)
+            : AuthScheme(SIGV4), 
+            m_identityResolver{identityResolver}, 
+            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", parameters)}
         {
-            m_identityResolver = Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme");
             assert(m_identityResolver);
-
-            m_signer = Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", parameters);
             assert(m_signer);
+        }
+
+        //delegate constructor
+        explicit SigV4AuthScheme(const SigV4AuthSchemeParameters& parameters)
+            : SigV4AuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme"),  
+                              parameters)
+        {
         }
 
         virtual ~SigV4AuthScheme() = default;

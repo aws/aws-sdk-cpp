@@ -12,7 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
 #include <aws/core/client/ClientConfiguration.h>
 
-#include "aws/core/endpoint/EndpointProviderBase.h"
+#include <aws/core/endpoint/EndpointProviderBase.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpResponse.h>
@@ -22,7 +22,11 @@
 
 
 class SmithyClientTest : public Aws::Testing::AwsCppSdkGTestSuite {
+
+    
 };
+
+
 
 class MyTestEndpointProvider : public Aws::Endpoint::EndpointProviderBase<>
 {
@@ -37,6 +41,22 @@ using MySmithyClient = smithy::client::AwsSmithyClientT<MyServiceName,
                                                         SigVariant,
                                                         MyTestEndpointProvider>;
 
+class TestCredentialsProvider : public Aws::Auth::AWSCredentialsProvider{
+    public:
+    Aws::Auth::AWSCredentials GetAWSCredentials() override
+    {
+        return Aws::Auth::AWSCredentials {"dummyAccessId", "dummySecretKey"};
+    }
+};
+
+//Goal is to add a mock credential provider which will get hit
+class TestCredentialsProviderChain: public Aws::Auth::DefaultAWSCredentialsProviderChain{
+    public:
+    TestCredentialsProviderChain():Aws::Auth::DefaultAWSCredentialsProviderChain()
+    {
+        AddProvider(Aws::MakeShared<TestCredentialsProvider>("TestCredentialsProviderChain"));
+    }
+};
 
 class TestClient : public MySmithyClient
 {
@@ -72,8 +92,6 @@ class TestClient : public MySmithyClient
 
 };
 
-
-
 TEST_F(SmithyClientTest, testSigV4) {
 
     const char ALLOCATION_TAG[] = "SmithyClientTest";
@@ -85,7 +103,6 @@ TEST_F(SmithyClientTest, testSigV4) {
 
     std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::SigV4AuthSchemeResolver<> >(ALLOCATION_TAG);
 
-
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
 
     smithy::SigV4AuthScheme::SigV4AuthSchemeParameters params;
@@ -93,10 +110,11 @@ TEST_F(SmithyClientTest, testSigV4) {
     params.region = "us-west2";
     params.operation = "TestOperation";
 
+    Aws::String key{"aws.auth#sigv4"};  
     
-    Aws::String key{"aws.auth#sigv4"};
+    auto resolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, Aws::MakeShared<TestCredentialsProviderChain>(ALLOCATION_TAG));
 
-    SigVariant val{smithy::SigV4AuthScheme(params)};
+    SigVariant val{smithy::SigV4AuthScheme( resolver, params)};
     
     authSchemesMap.emplace(key, val);
 
@@ -129,7 +147,6 @@ TEST_F(SmithyClientTest, testSigV4) {
     EXPECT_EQ(res2.IsSuccess(), true);
 
 }
-
 
 
 TEST_F(SmithyClientTest, testSigV4a) {

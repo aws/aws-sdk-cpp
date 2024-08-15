@@ -6,7 +6,6 @@
 
 #include <smithy/identity/signer/AwsSignerBase.h>
 #include <smithy/identity/identity/AwsCredentialIdentityBase.h>
-//#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 #include <aws/core/auth/signer/AWSAuthV4Signer.h>
 
@@ -30,19 +29,19 @@ namespace smithy {
         {
             const char ALLOCATION_TAG[] = "AwsSigV4Signer";
 
-            std::shared_ptr<Aws::Auth::AWSCredentials> legacyCreds_sp;
+            Aws::UniquePtr<Aws::Auth::AWSCredentials> legacyCreds_sp;
 
             if(identity.sessionToken().has_value() && identity.expiration().has_value())
             {
-                legacyCreds_sp = Aws::MakeShared<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken(), *identity.expiration());
+                legacyCreds_sp = Aws::MakeUnique<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken(), *identity.expiration());
             }
             else if(identity.sessionToken().has_value())
             {
-                legacyCreds_sp = Aws::MakeShared<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken());
+                legacyCreds_sp = Aws::MakeUnique<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken());
             }
             else
             {
-                legacyCreds_sp = Aws::MakeShared<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey());
+                legacyCreds_sp = Aws::MakeUnique<Aws::Auth::AWSCredentials>(ALLOCATION_TAG, identity.accessKeyId(), identity.secretAccessKey());
             }
 
             
