@@ -62,14 +62,10 @@ namespace Model
     ///@{
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
-     * <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     * <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
-     * the <code>devices</code> parameter isn't supported.</p> 
+     * <code>Devices</code> in tthe docker create-container command and the
+     * <code>--device</code> option to docker run.</p>  <p>If you're using tasks
+     * that use the Fargate launch type, the <code>devices</code> parameter isn't
+     * supported.</p> 
      */
     inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
     inline bool DevicesHasBeenSet() const { return m_devicesHasBeenSet; }
@@ -100,10 +96,9 @@ namespace Model
     ///@{
     /**
      * <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This
-     * parameter maps to the <code>--shm-size</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you are using tasks that use the Fargate launch type,
-     * the <code>sharedMemorySize</code> parameter is not supported.</p> 
+     * parameter maps to the <code>--shm-size</code> option to docker run.</p> 
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>sharedMemorySize</code> parameter is not supported.</p> 
      */
     inline int GetSharedMemorySize() const{ return m_sharedMemorySize; }
     inline bool SharedMemorySizeHasBeenSet() const { return m_sharedMemorySizeHasBeenSet; }
@@ -114,10 +109,9 @@ namespace Model
     ///@{
     /**
      * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
-     * parameter maps to the <code>--tmpfs</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
-     * the <code>tmpfs</code> parameter isn't supported.</p> 
+     * parameter maps to the <code>--tmpfs</code> option to docker run.</p> 
+     * <p>If you're using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter isn't supported.</p> 
      */
     inline const Aws::Vector<Tmpfs>& GetTmpfs() const{ return m_tmpfs; }
     inline bool TmpfsHasBeenSet() const { return m_tmpfsHasBeenSet; }
@@ -161,12 +155,10 @@ namespace Model
      * <code>swappiness</code> parameter is not specified, a default value of
      * <code>60</code> is used. If a value is not specified for <code>maxSwap</code>
      * then this parameter is ignored. This parameter maps to the
-     * <code>--memory-swappiness</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter isn't supported.</p> <p>If you're using
-     * tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't
-     * supported.</p> 
+     * <code>--memory-swappiness</code> option to docker run.</p>  <p>If you're
+     * using tasks that use the Fargate launch type, the <code>swappiness</code>
+     * parameter isn't supported.</p> <p>If you're using tasks on Amazon Linux 2023 the
+     * <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline int GetSwappiness() const{ return m_swappiness; }
     inline bool SwappinessHasBeenSet() const { return m_swappinessHasBeenSet; }

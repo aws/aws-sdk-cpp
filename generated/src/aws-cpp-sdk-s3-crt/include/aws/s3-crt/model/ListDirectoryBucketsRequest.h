@@ -47,9 +47,10 @@ namespace Model
     ///@{
     /**
      * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
-     * continued on this bucket with a token. <code>ContinuationToken</code> is
-     * obfuscated and is not a real key. You can use this
-     * <code>ContinuationToken</code> for pagination of the list results. </p>
+     * continued on buckets in this account with a token.
+     * <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You
+     * can use this <code>ContinuationToken</code> for the pagination of the list
+     * results. </p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }

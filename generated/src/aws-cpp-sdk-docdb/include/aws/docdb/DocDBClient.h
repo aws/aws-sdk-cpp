@@ -1103,6 +1103,38 @@ namespace DocDB
         }
 
         /**
+         * <p>Promotes the specified secondary DB cluster to be the primary DB cluster in
+         * the global cluster when failing over a global cluster occurs.</p> <p>Use this
+         * operation to respond to an unplanned event, such as a regional disaster in the
+         * primary region. Failing over can result in a loss of write transaction data that
+         * wasn't replicated to the chosen secondary before the failover event occurred.
+         * However, the recovery process that promotes a DB instance on the chosen seconday
+         * DB cluster to be the primary writer DB instance guarantees that the data is in a
+         * transactionally consistent state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::FailoverGlobalClusterOutcome FailoverGlobalCluster(const Model::FailoverGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for FailoverGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename FailoverGlobalClusterRequestT = Model::FailoverGlobalClusterRequest>
+        Model::FailoverGlobalClusterOutcomeCallable FailoverGlobalClusterCallable(const FailoverGlobalClusterRequestT& request) const
+        {
+            return SubmitCallable(&DocDBClient::FailoverGlobalCluster, request);
+        }
+
+        /**
+         * An Async wrapper for FailoverGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename FailoverGlobalClusterRequestT = Model::FailoverGlobalClusterRequest>
+        void FailoverGlobalClusterAsync(const FailoverGlobalClusterRequestT& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBClient::FailoverGlobalCluster, request, handler, context);
+        }
+
+        /**
          * <p>Lists all tags on an Amazon DocumentDB resource.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ListTagsForResource">AWS

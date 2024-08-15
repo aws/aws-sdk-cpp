@@ -134,15 +134,21 @@ namespace Aws
          * </p> <p>To verify that all parts have been removed and prevent getting charged
          * for the part storage, you should call the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
-         * API operation and ensure that the parts list is empty.</p>  <p>
+         * API operation and ensure that the parts list is empty.</p>  <ul> <li> <p>
+         * <b>Directory buckets</b> - If multipart uploads in a directory bucket are in
+         * progress, you can't delete the bucket until all the in-progress multipart
+         * uploads are aborted or completed. To delete these in-progress multipart uploads,
+         * use the <code>ListMultipartUploads</code> operation to list the in-progress
+         * multipart uploads in the bucket and use the <code>AbortMultupartUpload</code>
+         * operation to abort all the in-progress multipart uploads. </p> </li> <li> <p>
          * <b>Directory buckets</b> - For directory buckets, you must make requests for
          * this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
          * <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>  <dl>
-         * <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
+         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul>
+         *  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - For information about permissions required to use the
          * multipart upload, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
@@ -331,17 +337,22 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
          * Object Using the REST Multipart Upload API</a>.</p>  <p>You can copy
          * individual objects between general purpose buckets, between directory buckets,
-         * and between general purpose buckets and directory buckets.</p>  <p>
+         * and between general purpose buckets and directory buckets.</p>  <ul> <li>
+         * <p>Amazon S3 supports copy operations using Multi-Region Access Points only as a
+         * destination when using the Multi-Region Access Point ARN. </p> </li> <li> <p>
          * <b>Directory buckets </b> - For directory buckets, you must make requests for
          * this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
          * <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Both
-         * the Region that you want to copy the object from and the Region that you want to
-         * copy the object to must be enabled for your account. For more information about
-         * how to enable a Region for your account, see <a
+         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p> </li> <li>
+         * <p>VPC endpoints don't support cross-Region requests (including copies). If
+         * you're using VPC endpoints, your source and destination buckets should be in the
+         * same Amazon Web Services Region as your VPC endpoint.</p> </li> </ul> 
+         * <p>Both the Region that you want to copy the object from and the Region that you
+         * want to copy the object to must be enabled for your account. For more
+         * information about how to enable a Region for your account, see <a
          * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#manage-acct-regions-enable-standalone">Enable
          * or disable a Region for standalone accounts</a> in the <i>Amazon Web Services
          * Account Management Guide</i>.</p>  <p>Amazon S3 transfer acceleration
@@ -3165,25 +3176,20 @@ namespace Aws
         /**
          * <p>You can use this operation to determine if a bucket exists and if you have
          * permission to access it. The action returns a <code>200 OK</code> if the bucket
-         * exists and you have permission to access it.</p> <p>If the bucket does not exist
-         * or you do not have permission to access it, the <code>HEAD</code> request
-         * returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code> or
-         * <code>404 Not Found</code> code. A message body is not included, so you cannot
-         * determine the exception beyond these HTTP response codes.</p>  <p>
-         * <b>Directory buckets </b> - You must make requests for this API operation to the
-         * Zonal endpoint. These endpoints support virtual-hosted-style requests in the
-         * format
-         * <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
-         * Path-style requests are not supported. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>  <dl>
-         * <dt>Authentication and authorization</dt> <dd> <p>All <code>HeadBucket</code>
-         * requests must be authenticated and signed by using IAM credentials (access key
-         * ID and secret access key for the IAM identities). All headers with the
-         * <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be
-         * signed. For more information, see <a
+         * exists and you have permission to access it.</p>  <p>If the bucket does
+         * not exist or you do not have permission to access it, the <code>HEAD</code>
+         * request returns a generic <code>400 Bad Request</code>, <code>403
+         * Forbidden</code> or <code>404 Not Found</code> code. A message body is not
+         * included, so you cannot determine the exception beyond these HTTP response
+         * codes.</p>  <dl> <dt>Authentication and authorization</dt> <dd> <p>
+         * <b>General purpose buckets</b> - Request to public buckets that grant the
+         * s3:ListBucket permission publicly do not need to be signed. All other
+         * <code>HeadBucket</code> requests must be authenticated and signed by using IAM
+         * credentials (access key ID and secret access key for the IAM identities). All
+         * headers with the <code>x-amz-</code> prefix, including
+         * <code>x-amz-copy-source</code>, must be signed. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
-         * Authentication</a>.</p> <p> <b>Directory bucket</b> - You must use IAM
+         * Authentication</a>.</p> <p> <b>Directory buckets</b> - You must use IAM
          * credentials to authenticate and authorize your access to the
          * <code>HeadBucket</code> API operation, instead of using the temporary security
          * credentials through the <code>CreateSession</code> API operation.</p> <p>Amazon
@@ -3210,7 +3216,13 @@ namespace Aws
          * <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP
          * Host header syntax is <code>
          * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.</p>
-         * </dd> </dl><p><h3>See Also:</h3>   <a
+         *  <p>You must make requests for this API operation to the Zonal endpoint.
+         * These endpoints support virtual-hosted-style requests in the format
+         * <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+         * Path-style requests are not supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>  </dd>
+         * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">AWS API
          * Reference</a></p>
          */
@@ -3237,27 +3249,20 @@ namespace Aws
         /**
          * <p>The <code>HEAD</code> operation retrieves metadata from an object without
          * returning the object itself. This operation is useful if you're interested only
-         * in an object's metadata.</p> <p>A <code>HEAD</code> request has the same options
-         * as a <code>GET</code> operation on an object. The response is identical to the
-         * <code>GET</code> response except that there is no response body. Because of
-         * this, if the <code>HEAD</code> request generates an error, it returns a generic
-         * code, such as <code>400 Bad Request</code>, <code>403 Forbidden</code>,
+         * in an object's metadata.</p>  <p>A <code>HEAD</code> request has the same
+         * options as a <code>GET</code> operation on an object. The response is identical
+         * to the <code>GET</code> response except that there is no response body. Because
+         * of this, if the <code>HEAD</code> request generates an error, it returns a
+         * generic code, such as <code>400 Bad Request</code>, <code>403 Forbidden</code>,
          * <code>404 Not Found</code>, <code>405 Method Not Allowed</code>, <code>412
          * Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
-         * to retrieve the exact exception of these error codes.</p> <p>Request headers are
-         * limited to 8 KB in size. For more information, see <a
+         * to retrieve the exact exception of these error codes.</p>  <p>Request
+         * headers are limited to 8 KB in size. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
-         * Request Headers</a>.</p>  <p> <b>Directory buckets</b> - For directory
-         * buckets, you must make requests for this API operation to the Zonal endpoint.
-         * These endpoints support virtual-hosted-style requests in the format
-         * <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-         * </code>. Path-style requests are not supported. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>  <dl>
-         * <dt>Permissions</dt> <dd> <p/> <ul> <li> <p> <b>General purpose bucket
-         * permissions</b> - To use <code>HEAD</code>, you must have the
-         * <code>s3:GetObject</code> permission. You need the relevant read object (or
-         * version) permission for this operation. For more information, see <a
+         * Request Headers</a>.</p> <dl> <dt>Permissions</dt> <dd> <p/> <ul> <li> <p>
+         * <b>General purpose bucket permissions</b> - To use <code>HEAD</code>, you must
+         * have the <code>s3:GetObject</code> permission. You need the relevant read object
+         * (or version) permission for this operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
          * resources, and condition keys for Amazon S3</a> in the <i>Amazon S3 User
          * Guide</i>.</p> <p>If the object you request doesn't exist, the error that Amazon
@@ -3321,8 +3326,15 @@ namespace Aws
          * </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The
          * HTTP Host header syntax is <code>
          * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.</p>
-         * </dd> </dl> <p>The following actions are related to <code>HeadObject</code>:</p>
-         * <ul> <li> <p> <a
+         *  <p>For directory buckets, you must make requests for this API operation
+         * to the Zonal endpoint. These endpoints support virtual-hosted-style requests in
+         * the format
+         * <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+         * </code>. Path-style requests are not supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>  </dd>
+         * </dl> <p>The following actions are related to <code>HeadObject</code>:</p> <ul>
+         * <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
@@ -3642,14 +3654,18 @@ namespace Aws
          * the <code>CreateMultipartUpload</code> request, but has not yet been completed
          * or aborted.</p>  <p> <b>Directory buckets</b> - If multipart uploads in a
          * directory bucket are in progress, you can't delete the bucket until all the
-         * in-progress multipart uploads are aborted or completed. </p>  <p>The
-         * <code>ListMultipartUploads</code> operation returns a maximum of 1,000 multipart
-         * uploads in the response. The limit of 1,000 multipart uploads is also the
-         * default value. You can further limit the number of uploads in a response by
-         * specifying the <code>max-uploads</code> request parameter. If there are more
-         * than 1,000 multipart uploads that satisfy your <code>ListMultipartUploads</code>
-         * request, the response returns an <code>IsTruncated</code> element with the value
-         * of <code>true</code>, a <code>NextKeyMarker</code> element, and a
+         * in-progress multipart uploads are aborted or completed. To delete these
+         * in-progress multipart uploads, use the <code>ListMultipartUploads</code>
+         * operation to list the in-progress multipart uploads in the bucket and use the
+         * <code>AbortMultupartUpload</code> operation to abort all the in-progress
+         * multipart uploads. </p>  <p>The <code>ListMultipartUploads</code>
+         * operation returns a maximum of 1,000 multipart uploads in the response. The
+         * limit of 1,000 multipart uploads is also the default value. You can further
+         * limit the number of uploads in a response by specifying the
+         * <code>max-uploads</code> request parameter. If there are more than 1,000
+         * multipart uploads that satisfy your <code>ListMultipartUploads</code> request,
+         * the response returns an <code>IsTruncated</code> element with the value of
+         * <code>true</code>, a <code>NextKeyMarker</code> element, and a
          * <code>NextUploadIdMarker</code> element. To list the remaining multipart
          * uploads, you need to make subsequent <code>ListMultipartUploads</code> requests.
          * In these requests, include two query parameters: <code>key-marker</code> and
@@ -3838,14 +3854,19 @@ namespace Aws
          * object keys programmatically</a> in the <i>Amazon S3 User Guide</i>. To get a
          * list of your buckets, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.</p>
-         *  <p> <b>Directory buckets</b> - For directory buckets, you must make
-         * requests for this API operation to the Zonal endpoint. These endpoints support
-         * virtual-hosted-style requests in the format
+         *  <ul> <li> <p> <b>General purpose bucket</b> - For general purpose
+         * buckets, <code>ListObjectsV2</code> doesn't return prefixes that are related
+         * only to in-progress multipart uploads.</p> </li> <li> <p> <b>Directory
+         * buckets</b> - For directory buckets, <code>ListObjectsV2</code> response
+         * includes the prefixes that are related only to in-progress multipart uploads.
+         * </p> </li> <li> <p> <b>Directory buckets</b> - For directory buckets, you must
+         * make requests for this API operation to the Zonal endpoint. These endpoints
+         * support virtual-hosted-style requests in the format
          * <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>  <dl>
-         * <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
+         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul>
+         *  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - To use this operation, you must have READ access to the
          * bucket. You must have permission to perform the <code>s3:ListBucket</code>
          * action. The bucket owner has this permission by default and can grant this
@@ -4318,8 +4339,12 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">default
          * bucket encryption</a> to SSE-KMS, you should verify that your KMS key ID is
          * correct. Amazon S3 does not validate the KMS key ID provided in
-         * PutBucketEncryption requests.</p>  <p>This action requires Amazon Web
-         * Services Signature Version 4. For more information, see <a
+         * PutBucketEncryption requests.</p>  <p>If you're specifying a customer
+         * managed KMS key, we recommend using a fully qualified KMS key ARN. If you use a
+         * KMS key alias instead, then KMS resolves the key within the requester’s account.
+         * This behavior can result in data that's encrypted with a KMS key that belongs to
+         * the requester, and not the bucket owner.</p> <p>Also, this action requires
+         * Amazon Web Services Signature Version 4. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">
          * Authenticating Requests (Amazon Web Services Signature Version 4)</a>. </p>
          *  <p>To use this operation, you must have permission to perform the
@@ -5077,8 +5102,12 @@ namespace Aws
 
         /**
          *  <p>This operation is not supported by directory buckets.</p> 
-         * <p>Sets the versioning state of an existing bucket.</p> <p>You can set the
-         * versioning state with one of the following values:</p> <p>
+         *  <p>When you enable versioning on a bucket for the first time, it might
+         * take a short amount of time for the change to be fully propagated. We recommend
+         * that you wait for 15 minutes after enabling versioning before issuing write
+         * operations (<code>PUT</code> or <code>DELETE</code>) on objects in the bucket.
+         * </p>  <p>Sets the versioning state of an existing bucket.</p> <p>You can
+         * set the versioning state with one of the following values:</p> <p>
          * <b>Enabled</b>—Enables versioning for the objects in the bucket. All objects
          * added to the bucket receive a unique version ID.</p> <p>
          * <b>Suspended</b>—Disables versioning for the objects in the bucket. All objects

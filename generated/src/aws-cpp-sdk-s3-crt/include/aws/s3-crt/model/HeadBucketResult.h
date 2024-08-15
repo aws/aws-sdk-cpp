@@ -63,8 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Region that the bucket is located.</p>  <p>This functionality is
-     * not supported for directory buckets.</p> 
+     * <p>The Region that the bucket is located.</p>
      */
     inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
     inline void SetBucketRegion(const Aws::String& value) { m_bucketRegion = value; }
@@ -78,8 +77,8 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether the bucket name used in the request is an access point
-     * alias.</p>  <p>This functionality is not supported for directory
-     * buckets.</p> 
+     * alias.</p>  <p>For directory buckets, the value of this field is
+     * <code>false</code>.</p> 
      */
     inline bool GetAccessPointAlias() const{ return m_accessPointAlias; }
     inline void SetAccessPointAlias(bool value) { m_accessPointAlias = value; }
