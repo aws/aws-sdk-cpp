@@ -63,9 +63,9 @@ namespace smithy {
 
             if(!success)
             {
-                AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "Failed to get Auth configureation");
+                AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "Failed to get Auth configuration");
 
-                return SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to get Auth configureation", false);
+                return SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to get Auth configuration", false);
             }
 
             std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = request.ToCrtHttpRequest();
