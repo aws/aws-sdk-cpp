@@ -210,6 +210,20 @@ namespace Model
     inline CreateComputeEnvironmentRequest& WithEksConfiguration(const EksConfiguration& value) { SetEksConfiguration(value); return *this;}
     inline CreateComputeEnvironmentRequest& WithEksConfiguration(EksConfiguration&& value) { SetEksConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+    inline CreateComputeEnvironmentRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+    inline CreateComputeEnvironmentRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+    inline CreateComputeEnvironmentRequest& WithContext(const char* value) { SetContext(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_computeEnvironmentName;
@@ -235,6 +249,9 @@ namespace Model
 
     EksConfiguration m_eksConfiguration;
     bool m_eksConfigurationHasBeenSet = false;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

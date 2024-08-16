@@ -38,7 +38,8 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
     m_eksConfigurationHasBeenSet(false),
     m_containerOrchestrationType(OrchestrationType::NOT_SET),
     m_containerOrchestrationTypeHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,13 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_uuidHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("context"))
+  {
+    m_context = jsonValue.GetString("context");
+
+    m_contextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -253,6 +261,12 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
   if(m_uuidHasBeenSet)
   {
    payload.WithString("uuid", m_uuid);
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   payload.WithString("context", m_context);
 
   }
 
