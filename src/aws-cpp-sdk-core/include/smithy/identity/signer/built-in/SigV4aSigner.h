@@ -114,7 +114,6 @@ namespace smithy {
 
             while (!signRequestSuccess) 
             {
-                std::cout<<"in wait.."<<std::endl;
                 // Check elapsed time
                 auto currentTime = std::chrono::steady_clock::now();
                 if (currentTime - startTime >= timeout) {
