@@ -28,7 +28,8 @@ namespace Model
     JumpStart,
     InferenceRecommender,
     Endpoints,
-    Projects
+    Projects,
+    InferenceOptimization
   };
 
 namespace MlToolsMapper

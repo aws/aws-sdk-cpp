@@ -134,7 +134,7 @@ namespace Aws
 
   namespace ChimeSDKVoice
   {
-    using ChimeSDKVoiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeSDKVoiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ChimeSDKVoiceEndpointProviderBase = Aws::ChimeSDKVoice::Endpoint::ChimeSDKVoiceEndpointProviderBase;
     using ChimeSDKVoiceEndpointProvider = Aws::ChimeSDKVoice::Endpoint::ChimeSDKVoiceEndpointProvider;
 

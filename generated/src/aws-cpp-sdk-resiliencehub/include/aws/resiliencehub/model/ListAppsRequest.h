@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>The application list is sorted based on the values of
      * <code>lastAppComplianceEvaluationTime</code> field. By default, application list
-     * is sorted in ascending order. To sort the appliation list in descending order,
+     * is sorted in ascending order. To sort the application list in descending order,
      * set this field to <code>True</code>.</p>
      */
     inline bool GetReverseOrder() const{ return m_reverseOrder; }

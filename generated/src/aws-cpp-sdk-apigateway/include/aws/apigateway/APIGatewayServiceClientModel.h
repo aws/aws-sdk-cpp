@@ -158,7 +158,7 @@ namespace Aws
 
   namespace APIGateway
   {
-    using APIGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using APIGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
     using APIGatewayEndpointProviderBase = Aws::APIGateway::Endpoint::APIGatewayEndpointProviderBase;
     using APIGatewayEndpointProvider = Aws::APIGateway::Endpoint::APIGatewayEndpointProvider;
 

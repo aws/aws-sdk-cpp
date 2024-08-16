@@ -53,7 +53,7 @@ namespace Aws
 
   namespace AppConfigData
   {
-    using AppConfigDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppConfigDataClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppConfigDataEndpointProviderBase = Aws::AppConfigData::Endpoint::AppConfigDataEndpointProviderBase;
     using AppConfigDataEndpointProvider = Aws::AppConfigData::Endpoint::AppConfigDataEndpointProvider;
 

@@ -61,7 +61,7 @@ namespace Aws
 
   namespace RecycleBin
   {
-    using RecycleBinClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RecycleBinClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RecycleBinEndpointProviderBase = Aws::RecycleBin::Endpoint::RecycleBinEndpointProviderBase;
     using RecycleBinEndpointProvider = Aws::RecycleBin::Endpoint::RecycleBinEndpointProvider;
 

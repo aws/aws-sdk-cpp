@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TranscribeServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TranscribeServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using TranscribeServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TranscribeServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

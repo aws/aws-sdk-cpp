@@ -121,7 +121,7 @@ namespace Aws
 
   namespace LakeFormation
   {
-    using LakeFormationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LakeFormationClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LakeFormationEndpointProviderBase = Aws::LakeFormation::Endpoint::LakeFormationEndpointProviderBase;
     using LakeFormationEndpointProvider = Aws::LakeFormation::Endpoint::LakeFormationEndpointProvider;
 

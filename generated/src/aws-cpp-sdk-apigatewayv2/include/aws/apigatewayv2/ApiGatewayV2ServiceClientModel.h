@@ -110,7 +110,7 @@ namespace Aws
 
   namespace ApiGatewayV2
   {
-    using ApiGatewayV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApiGatewayV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApiGatewayV2EndpointProviderBase = Aws::ApiGatewayV2::Endpoint::ApiGatewayV2EndpointProviderBase;
     using ApiGatewayV2EndpointProvider = Aws::ApiGatewayV2::Endpoint::ApiGatewayV2EndpointProvider;
 

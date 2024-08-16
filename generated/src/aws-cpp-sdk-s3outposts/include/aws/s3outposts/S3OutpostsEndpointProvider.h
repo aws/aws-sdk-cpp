@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using S3OutpostsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using S3OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using S3OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using S3OutpostsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -82,7 +82,7 @@ namespace Aws
 
   namespace NeptuneGraph
   {
-    using NeptuneGraphClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NeptuneGraphClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NeptuneGraphEndpointProviderBase = Aws::NeptuneGraph::Endpoint::NeptuneGraphEndpointProviderBase;
     using NeptuneGraphEndpointProvider = Aws::NeptuneGraph::Endpoint::NeptuneGraphEndpointProvider;
 

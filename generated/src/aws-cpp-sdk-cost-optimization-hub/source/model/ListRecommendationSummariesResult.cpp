@@ -58,6 +58,12 @@ ListRecommendationSummariesResult& ListRecommendationSummariesResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("metrics"))
+  {
+    m_metrics = jsonValue.GetObject("metrics");
+
+  }
+
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");

@@ -89,7 +89,7 @@ namespace Aws
 
   namespace Amplify
   {
-    using AmplifyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AmplifyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AmplifyEndpointProviderBase = Aws::Amplify::Endpoint::AmplifyEndpointProviderBase;
     using AmplifyEndpointProvider = Aws::Amplify::Endpoint::AmplifyEndpointProvider;
 

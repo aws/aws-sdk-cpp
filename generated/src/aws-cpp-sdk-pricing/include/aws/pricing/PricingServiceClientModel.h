@@ -57,7 +57,7 @@ namespace Aws
 
   namespace Pricing
   {
-    using PricingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PricingClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PricingEndpointProviderBase = Aws::Pricing::Endpoint::PricingEndpointProviderBase;
     using PricingEndpointProvider = Aws::Pricing::Endpoint::PricingEndpointProvider;
 

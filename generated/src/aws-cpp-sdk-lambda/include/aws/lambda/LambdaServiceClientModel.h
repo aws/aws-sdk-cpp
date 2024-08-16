@@ -109,7 +109,7 @@ namespace Aws
 
   namespace Lambda
   {
-    using LambdaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LambdaClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LambdaEndpointProviderBase = Aws::Lambda::Endpoint::LambdaEndpointProviderBase;
     using LambdaEndpointProvider = Aws::Lambda::Endpoint::LambdaEndpointProvider;
 

@@ -158,7 +158,7 @@ namespace Aws
 
   namespace MediaLive
   {
-    using MediaLiveClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaLiveClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MediaLiveEndpointProviderBase = Aws::MediaLive::Endpoint::MediaLiveEndpointProviderBase;
     using MediaLiveEndpointProvider = Aws::MediaLive::Endpoint::MediaLiveEndpointProvider;
 

@@ -110,12 +110,17 @@ namespace Model
      * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
      * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
      * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
-     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
-     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
-     * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li> <p>stream.graphics.g5.xlarge</p>
+     * </li> <li> <p>stream.graphics.g5.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g5.4xlarge</p> </li> <li> <p>stream.graphics.g5.8xlarge</p>
+     * </li> <li> <p>stream.graphics.g5.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g5.16xlarge</p> </li> <li> <p>stream.graphics.g5.24xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.8xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following instance types
+     * are available for Elastic fleets:</p> <ul> <li> <p>stream.standard.small</p>
+     * </li> <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p>
+     * </li> <li> <p>stream.standard.xlarge</p> </li> <li>
      * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }

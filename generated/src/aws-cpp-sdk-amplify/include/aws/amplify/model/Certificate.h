@@ -51,7 +51,7 @@ namespace Model
      * US East (N. Virginia) Region (us-east-1). For more information about using ACM,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into Certificate Manager</a> in the <i>ACM User guide</i> .</p>
+     * certificates into Certificate Manager</a> in the <i>ACM User guide</i>.</p>
      */
     inline const CertificateType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

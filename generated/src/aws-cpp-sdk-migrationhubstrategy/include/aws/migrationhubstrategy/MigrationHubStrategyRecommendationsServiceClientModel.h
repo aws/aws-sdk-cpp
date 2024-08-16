@@ -84,7 +84,7 @@ namespace Aws
 
   namespace MigrationHubStrategyRecommendations
   {
-    using MigrationHubStrategyRecommendationsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MigrationHubStrategyRecommendationsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MigrationHubStrategyRecommendationsEndpointProviderBase = Aws::MigrationHubStrategyRecommendations::Endpoint::MigrationHubStrategyRecommendationsEndpointProviderBase;
     using MigrationHubStrategyRecommendationsEndpointProvider = Aws::MigrationHubStrategyRecommendations::Endpoint::MigrationHubStrategyRecommendationsEndpointProvider;
 

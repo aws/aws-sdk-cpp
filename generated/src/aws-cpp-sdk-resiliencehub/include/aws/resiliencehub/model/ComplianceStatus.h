@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     PolicyBreached,
-    PolicyMet
+    PolicyMet,
+    NotApplicable,
+    MissingPolicy
   };
 
 namespace ComplianceStatusMapper

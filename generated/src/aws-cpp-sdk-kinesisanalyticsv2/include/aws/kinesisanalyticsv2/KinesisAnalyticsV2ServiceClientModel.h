@@ -85,7 +85,7 @@ namespace Aws
 
   namespace KinesisAnalyticsV2
   {
-    using KinesisAnalyticsV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisAnalyticsV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisAnalyticsV2EndpointProviderBase = Aws::KinesisAnalyticsV2::Endpoint::KinesisAnalyticsV2EndpointProviderBase;
     using KinesisAnalyticsV2EndpointProvider = Aws::KinesisAnalyticsV2::Endpoint::KinesisAnalyticsV2EndpointProvider;
 

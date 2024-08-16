@@ -118,7 +118,7 @@ namespace Aws
 
   namespace AppSync
   {
-    using AppSyncClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppSyncEndpointProviderBase = Aws::AppSync::Endpoint::AppSyncEndpointProviderBase;
     using AppSyncEndpointProvider = Aws::AppSync::Endpoint::AppSyncEndpointProvider;
 

@@ -17,6 +17,7 @@ ListRecommendationSummariesRequest::ListRecommendationSummariesRequest() :
     m_groupByHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
+    m_metricsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -40,6 +41,17 @@ Aws::String ListRecommendationSummariesRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_metricsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
+   for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
+   {
+     metricsJsonList[metricsIndex].AsString(SummaryMetricsMapper::GetNameForSummaryMetrics(m_metrics[metricsIndex]));
+   }
+   payload.WithArray("metrics", std::move(metricsJsonList));
 
   }
 

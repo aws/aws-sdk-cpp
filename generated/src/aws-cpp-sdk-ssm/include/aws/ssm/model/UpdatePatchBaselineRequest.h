@@ -159,17 +159,21 @@ namespace Model
     ///@{
     /**
      * <p>The action for Patch Manager to take on patches included in the
-     * <code>RejectedPackages</code> list.</p> <ul> <li> <p> <b>
-     * <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code>
-     * patches list is installed only if it is a dependency of another package. It is
-     * considered compliant with the patch baseline, and its status is reported as
-     * <code>InstalledOther</code>. This is the default action if no option is
-     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the <b>Rejected
-     * patches</b> list, and packages that include them as dependencies, aren't
+     * <code>RejectedPackages</code> list.</p> <dl> <dt>ALLOW_AS_DEPENDENCY</dt> <dd>
+     * <p> <b>Linux and macOS</b>: A package in the rejected patches list is installed
+     * only if it is a dependency of another package. It is considered compliant with
+     * the patch baseline, and its status is reported as <code>INSTALLED_OTHER</code>.
+     * This is the default action if no option is specified.</p> <p> <b>Windows
+     * Server</b>: Windows Server doesn't support the concept of package dependencies.
+     * If a package in the rejected patches list and already installed on the node, its
+     * status is reported as <code>INSTALLED_OTHER</code>. Any package not already
+     * installed on the node is skipped. This is the default action if no option is
+     * specified.</p> </dd> <dt>BLOCK</dt> <dd> <p> <b>All OSs</b>: Packages in the
+     * rejected patches list, and packages that include them as dependencies, aren't
      * installed by Patch Manager under any circumstances. If a package was installed
-     * before it was added to the <b>Rejected patches</b> list, or is installed outside
-     * of Patch Manager afterward, it's considered noncompliant with the patch baseline
-     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
+     * before it was added to the rejected patches list, or is installed outside of
+     * Patch Manager afterward, it's considered noncompliant with the patch baseline
+     * and its status is reported as <code>INSTALLED_REJECTED</code>.</p> </dd> </dl>
      */
     inline const PatchAction& GetRejectedPatchesAction() const{ return m_rejectedPatchesAction; }
     inline bool RejectedPatchesActionHasBeenSet() const { return m_rejectedPatchesActionHasBeenSet; }

@@ -56,6 +56,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Statistic ID.</p>
+     */
+    inline const Aws::String& GetStatisticId() const{ return m_statisticId; }
+    inline bool StatisticIdHasBeenSet() const { return m_statisticIdHasBeenSet; }
+    inline void SetStatisticId(const Aws::String& value) { m_statisticIdHasBeenSet = true; m_statisticId = value; }
+    inline void SetStatisticId(Aws::String&& value) { m_statisticIdHasBeenSet = true; m_statisticId = std::move(value); }
+    inline void SetStatisticId(const char* value) { m_statisticIdHasBeenSet = true; m_statisticId.assign(value); }
+    inline MetricBasedObservation& WithStatisticId(const Aws::String& value) { SetStatisticId(value); return *this;}
+    inline MetricBasedObservation& WithStatisticId(Aws::String&& value) { SetStatisticId(std::move(value)); return *this;}
+    inline MetricBasedObservation& WithStatisticId(const char* value) { SetStatisticId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object of type <code>DataQualityMetricValues</code> representing the
      * analysis of the data quality metric value.</p>
      */
@@ -86,6 +100,9 @@ namespace Model
 
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet = false;
+
+    Aws::String m_statisticId;
+    bool m_statisticIdHasBeenSet = false;
 
     DataQualityMetricValues m_metricValues;
     bool m_metricValuesHasBeenSet = false;

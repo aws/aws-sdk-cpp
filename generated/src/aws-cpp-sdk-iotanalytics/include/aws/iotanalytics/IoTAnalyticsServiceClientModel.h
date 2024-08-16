@@ -81,7 +81,7 @@ namespace Aws
 
   namespace IoTAnalytics
   {
-    using IoTAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTAnalyticsEndpointProviderBase = Aws::IoTAnalytics::Endpoint::IoTAnalyticsEndpointProviderBase;
     using IoTAnalyticsEndpointProvider = Aws::IoTAnalytics::Endpoint::IoTAnalyticsEndpointProvider;
 

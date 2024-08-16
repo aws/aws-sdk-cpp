@@ -112,7 +112,7 @@ namespace Aws
 
   namespace ForecastService
   {
-    using ForecastServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ForecastServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ForecastServiceEndpointProviderBase = Aws::ForecastService::Endpoint::ForecastServiceEndpointProviderBase;
     using ForecastServiceEndpointProvider = Aws::ForecastService::Endpoint::ForecastServiceEndpointProvider;
 

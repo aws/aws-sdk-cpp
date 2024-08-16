@@ -243,7 +243,7 @@ namespace Aws
 
   namespace Connect
   {
-    using ConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConnectEndpointProviderBase = Aws::Connect::Endpoint::ConnectEndpointProviderBase;
     using ConnectEndpointProvider = Aws::Connect::Endpoint::ConnectEndpointProvider;
 

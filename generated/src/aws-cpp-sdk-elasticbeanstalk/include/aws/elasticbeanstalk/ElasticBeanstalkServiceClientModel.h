@@ -111,7 +111,7 @@ namespace Aws
 
   namespace ElasticBeanstalk
   {
-    using ElasticBeanstalkClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticBeanstalkClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElasticBeanstalkEndpointProviderBase = Aws::ElasticBeanstalk::Endpoint::ElasticBeanstalkEndpointProviderBase;
     using ElasticBeanstalkEndpointProvider = Aws::ElasticBeanstalk::Endpoint::ElasticBeanstalkEndpointProvider;
 

@@ -10,7 +10,7 @@
 #set($externMacro = "AWS_${metadata.classNamePrefix.toUpperCase()}_EXTERN")
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
-#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+#if($serviceModel.hasServiceSpecificClientConfig())
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
 #else
 \#include <aws/core/client/GenericClientConfiguration.h>
@@ -31,7 +31,7 @@ namespace ${serviceNamespace}
 {
 namespace Endpoint
 {
-#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+#if($serviceModel.hasServiceSpecificClientConfig())
 using ${metadata.classNamePrefix}ClientConfiguration = Aws::${serviceNamespace}::${metadata.classNamePrefix}ClientConfiguration;
 #end
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
@@ -65,14 +65,10 @@ public:
 using ${epContextClassName} = Aws::Endpoint::ClientContextParameters;
 #end
 
-#if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control")
-#if(!$metadata.hasEndpointDiscoveryTrait)
-using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
-#else
-using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
+#if(!$serviceModel.hasServiceSpecificClientConfig())
+using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration;
 #end
-#end
-#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+#if($serviceModel.hasServiceSpecificClientConfig())
 class ${exportMacro} ${epBuiltInClassName} : public Aws::Endpoint::BuiltInParameters
 {
 public:
@@ -95,7 +91,7 @@ using ${metadata.classNamePrefix}EndpointProviderBase =
 using ${metadata.classNamePrefix}DefaultEpProviderBase =
     DefaultEndpointProvider<${metadata.classNamePrefix}ClientConfiguration, ${epBuiltInClassName}, ${epContextClassName}>;
 
-#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control" || $serviceModel.clientContextParams)
+#if($serviceModel.hasServiceSpecificClientConfig() || $serviceModel.clientContextParams)
 } // namespace Endpoint
 } // namespace ${serviceNamespace}
 

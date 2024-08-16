@@ -158,7 +158,7 @@ namespace Aws
 
   namespace CloudFormation
   {
-    using CloudFormationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudFormationClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudFormationEndpointProviderBase = Aws::CloudFormation::Endpoint::CloudFormationEndpointProviderBase;
     using CloudFormationEndpointProvider = Aws::CloudFormation::Endpoint::CloudFormationEndpointProvider;
 

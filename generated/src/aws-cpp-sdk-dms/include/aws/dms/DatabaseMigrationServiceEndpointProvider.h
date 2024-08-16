@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DatabaseMigrationServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DatabaseMigrationServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DatabaseMigrationServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DatabaseMigrationServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

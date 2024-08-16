@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AppMeshClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppMeshClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AppMeshClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppMeshBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

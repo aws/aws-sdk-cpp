@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTAnalyticsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTAnalyticsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

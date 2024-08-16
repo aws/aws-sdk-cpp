@@ -60,7 +60,7 @@ namespace Aws
 
   namespace CloudControlApi
   {
-    using CloudControlApiClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudControlApiClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudControlApiEndpointProviderBase = Aws::CloudControlApi::Endpoint::CloudControlApiEndpointProviderBase;
     using CloudControlApiEndpointProvider = Aws::CloudControlApi::Endpoint::CloudControlApiEndpointProvider;
 

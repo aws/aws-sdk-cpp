@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ComprehendClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ComprehendClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ComprehendClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ComprehendBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

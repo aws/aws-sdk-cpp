@@ -19,7 +19,8 @@ namespace Model
 {
 
 ListingItem::ListingItem() : 
-    m_assetListingHasBeenSet(false)
+    m_assetListingHasBeenSet(false),
+    m_dataProductListingHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ ListingItem& ListingItem::operator =(JsonView jsonValue)
     m_assetListingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataProductListing"))
+  {
+    m_dataProductListing = jsonValue.GetObject("dataProductListing");
+
+    m_dataProductListingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue ListingItem::Jsonize() const
   if(m_assetListingHasBeenSet)
   {
    payload.WithObject("assetListing", m_assetListing.Jsonize());
+
+  }
+
+  if(m_dataProductListingHasBeenSet)
+  {
+   payload.WithObject("dataProductListing", m_dataProductListing.Jsonize());
 
   }
 

@@ -472,8 +472,9 @@ namespace Model
      * exception if the user doesn't exist in the user pool.</p> <p>Valid values
      * include:</p> <ul> <li> <p> <code>ENABLED</code> - This prevents user
      * existence-related errors.</p> </li> <li> <p> <code>LEGACY</code> - This
-     * represents the old behavior of Amazon Cognito where user existence related
-     * errors aren't prevented.</p> </li> </ul>
+     * represents the early behavior of Amazon Cognito where user existence related
+     * errors aren't prevented.</p> </li> </ul> <p>Defaults to <code>LEGACY</code> when
+     * you don't provide a value.</p>
      */
     inline const PreventUserExistenceErrorTypes& GetPreventUserExistenceErrors() const{ return m_preventUserExistenceErrors; }
     inline bool PreventUserExistenceErrorsHasBeenSet() const { return m_preventUserExistenceErrorsHasBeenSet; }

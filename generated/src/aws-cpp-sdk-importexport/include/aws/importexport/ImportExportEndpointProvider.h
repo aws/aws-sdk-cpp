@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ImportExportClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ImportExportClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ImportExportClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ImportExportBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

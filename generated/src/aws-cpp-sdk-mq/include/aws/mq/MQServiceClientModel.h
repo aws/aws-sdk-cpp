@@ -77,7 +77,7 @@ namespace Aws
 
   namespace MQ
   {
-    using MQClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MQClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MQEndpointProviderBase = Aws::MQ::Endpoint::MQEndpointProviderBase;
     using MQEndpointProvider = Aws::MQ::Endpoint::MQEndpointProvider;
 

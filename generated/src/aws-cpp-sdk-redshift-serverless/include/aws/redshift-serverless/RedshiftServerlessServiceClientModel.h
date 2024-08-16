@@ -118,7 +118,7 @@ namespace Aws
 
   namespace RedshiftServerless
   {
-    using RedshiftServerlessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RedshiftServerlessClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RedshiftServerlessEndpointProviderBase = Aws::RedshiftServerless::Endpoint::RedshiftServerlessEndpointProviderBase;
     using RedshiftServerlessEndpointProvider = Aws::RedshiftServerless::Endpoint::RedshiftServerlessEndpointProvider;
 

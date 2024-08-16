@@ -92,7 +92,7 @@ namespace Aws
 
   namespace ConnectWisdomService
   {
-    using ConnectWisdomServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectWisdomServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConnectWisdomServiceEndpointProviderBase = Aws::ConnectWisdomService::Endpoint::ConnectWisdomServiceEndpointProviderBase;
     using ConnectWisdomServiceEndpointProvider = Aws::ConnectWisdomService::Endpoint::ConnectWisdomServiceEndpointProvider;
 

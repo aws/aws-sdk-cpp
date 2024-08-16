@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using BudgetsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BudgetsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using BudgetsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BudgetsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

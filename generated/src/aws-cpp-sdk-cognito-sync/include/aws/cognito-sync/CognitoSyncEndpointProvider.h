@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CognitoSyncClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CognitoSyncClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CognitoSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CognitoSyncBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

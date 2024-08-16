@@ -33,6 +33,7 @@ namespace Aws
         static const int InferenceRecommender_HASH = HashingUtils::HashString("InferenceRecommender");
         static const int Endpoints_HASH = HashingUtils::HashString("Endpoints");
         static const int Projects_HASH = HashingUtils::HashString("Projects");
+        static const int InferenceOptimization_HASH = HashingUtils::HashString("InferenceOptimization");
 
 
         MlTools GetMlToolsForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return MlTools::Projects;
           }
+          else if (hashCode == InferenceOptimization_HASH)
+          {
+            return MlTools::InferenceOptimization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -132,6 +137,8 @@ namespace Aws
             return "Endpoints";
           case MlTools::Projects:
             return "Projects";
+          case MlTools::InferenceOptimization:
+            return "InferenceOptimization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

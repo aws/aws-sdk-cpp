@@ -56,7 +56,7 @@ namespace Aws
 
   namespace RDSDataService
   {
-    using RDSDataServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RDSDataServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RDSDataServiceEndpointProviderBase = Aws::RDSDataService::Endpoint::RDSDataServiceEndpointProviderBase;
     using RDSDataServiceEndpointProvider = Aws::RDSDataService::Endpoint::RDSDataServiceEndpointProvider;
 

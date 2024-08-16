@@ -60,7 +60,7 @@ namespace Aws
 
   namespace Artifact
   {
-    using ArtifactClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ArtifactClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ArtifactEndpointProviderBase = Aws::Artifact::Endpoint::ArtifactEndpointProviderBase;
     using ArtifactEndpointProvider = Aws::Artifact::Endpoint::ArtifactEndpointProvider;
 

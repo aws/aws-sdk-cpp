@@ -251,7 +251,7 @@ namespace Aws
 
   namespace Lightsail
   {
-    using LightsailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LightsailClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LightsailEndpointProviderBase = Aws::Lightsail::Endpoint::LightsailEndpointProviderBase;
     using LightsailEndpointProvider = Aws::Lightsail::Endpoint::LightsailEndpointProvider;
 

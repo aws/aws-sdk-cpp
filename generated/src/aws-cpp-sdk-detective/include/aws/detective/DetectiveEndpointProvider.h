@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DetectiveClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DetectiveClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DetectiveClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DetectiveBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

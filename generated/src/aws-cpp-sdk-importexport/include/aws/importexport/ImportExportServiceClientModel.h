@@ -58,7 +58,7 @@ namespace Aws
 
   namespace ImportExport
   {
-    using ImportExportClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ImportExportClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ImportExportEndpointProviderBase = Aws::ImportExport::Endpoint::ImportExportEndpointProviderBase;
     using ImportExportEndpointProvider = Aws::ImportExport::Endpoint::ImportExportEndpointProvider;
 

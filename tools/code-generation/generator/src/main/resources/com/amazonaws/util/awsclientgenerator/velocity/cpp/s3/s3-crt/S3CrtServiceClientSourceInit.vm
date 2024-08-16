@@ -502,7 +502,7 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   s3CrtConfig.shutdown_callback = CrtClientShutdownCallback;
   s3CrtConfig.shutdown_callback_user_data = static_cast<void*>(&m_wrappedData);
   s3CrtConfig.enable_s3express = !config.disableS3ExpressAuth;
-  s3CrtConfig.factory_user_data = static_cast<void *>(m_identityProvider.get());
+  s3CrtConfig.factory_user_data = static_cast<void *>(&m_identityProviderUserData);
   s3CrtConfig.s3express_provider_override_factory = S3CrtIdentityProviderAdapter::ProviderFactory;
 
   m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);

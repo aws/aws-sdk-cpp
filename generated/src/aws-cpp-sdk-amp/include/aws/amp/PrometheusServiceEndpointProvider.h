@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PrometheusServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PrometheusServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PrometheusServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PrometheusServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

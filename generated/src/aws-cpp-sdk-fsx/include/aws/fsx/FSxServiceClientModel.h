@@ -107,7 +107,7 @@ namespace Aws
 
   namespace FSx
   {
-    using FSxClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FSxClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FSxEndpointProviderBase = Aws::FSx::Endpoint::FSxEndpointProviderBase;
     using FSxEndpointProvider = Aws::FSx::Endpoint::FSxEndpointProvider;
 

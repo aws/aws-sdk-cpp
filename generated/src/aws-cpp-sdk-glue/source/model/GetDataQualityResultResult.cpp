@@ -37,6 +37,12 @@ GetDataQualityResultResult& GetDataQualityResultResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("ProfileId"))
+  {
+    m_profileId = jsonValue.GetString("ProfileId");
+
+  }
+
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");

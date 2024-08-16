@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ApplicationInsightsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ApplicationInsightsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ApplicationInsightsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ApplicationInsightsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
+     * <p>The ID of the user pool that has the logging configuration that you want to
+     * view.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }

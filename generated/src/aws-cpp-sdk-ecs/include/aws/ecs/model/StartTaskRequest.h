@@ -181,9 +181,11 @@ namespace Model
      * automatically trigger a task to run a batch process job, you could apply a
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
-     * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
-     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
+     * results of a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>
+     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
+     * lowercase), numbers, hyphens (-), forward slash (/), and underscores (_) are
+     * allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */

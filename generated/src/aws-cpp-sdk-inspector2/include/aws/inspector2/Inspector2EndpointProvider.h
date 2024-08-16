@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using Inspector2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using Inspector2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using Inspector2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Inspector2BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

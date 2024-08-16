@@ -1,37 +1,52 @@
-add_project(aws-cpp-sdk-s3-crt-integration-tests
-    "Tests for the AWS S3 CRT C++ SDK"
-    aws-cpp-sdk-s3-crt
-    testing-resources
-    aws-cpp-sdk-core)
+set(TEST_LIST "aws-cpp-sdk-s3-crt-integration-tests:RunTests.cpp")
 
-file(GLOB AWS_S3_CRT_SRC
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
-)
+# Only run memlimiter test if we are building with custom memory management
+if (CUSTOM_MEMORY_MANAGEMENT)
+    list(APPEND TEST_LIST "aws-cpp-sdk-s3-crt-memory-checked-integration-tests:RunTestsWithMemTracer.cpp")
+endif ()
 
-file(GLOB AWS_S3_CRT_INTEGRATION_TESTS_SRC
-    ${AWS_S3_CRT_SRC}
-)
+foreach(TEST IN LISTS TEST_LIST)
+    string(REPLACE ":" ";" TEST_ITEMS "${TEST}")
+    list(GET TEST_ITEMS 0 TEST_PROJECT_NAME)
+    list(GET TEST_ITEMS 1 TEST_MAIN_FILE)
 
-add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
+    add_project("${TEST_PROJECT_NAME}"
+            "Tests for the AWS S3 CRT C++ SDK"
+            aws-cpp-sdk-s3-crt
+            testing-resources
+            aws-cpp-sdk-core)
 
-if(MSVC AND BUILD_SHARED_LIBS)
-    add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
-endif()
+    file(GLOB AWS_S3_CRT_SRC
+            "${TEST_MAIN_FILE}"
+            "BucketAndObjectOperationTest.cpp"
+            "S3ExpressTest.cpp"
+    )
 
-enable_testing()
+    file(GLOB AWS_S3_CRT_INTEGRATION_TESTS_SRC
+            ${AWS_S3_CRT_SRC}
+    )
 
-if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} ${AWS_S3_CRT_INTEGRATION_TESTS_SRC})
-else()
-    add_executable(${PROJECT_NAME} ${AWS_S3_CRT_INTEGRATION_TESTS_SRC})
-endif()
+    add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
 
-set_compiler_flags(${PROJECT_NAME})
-set_compiler_warnings(${PROJECT_NAME})
+    if(MSVC AND BUILD_SHARED_LIBS)
+        add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
+    endif()
 
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+    enable_testing()
 
-if(MSVC AND BUILD_SHARED_LIBS)
-    set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/DELAYLOAD:aws-cpp-sdk-s3-crt.dll /DELAYLOAD:aws-cpp-sdk-core.dll")
-    target_link_libraries(${PROJECT_NAME} delayimp.lib)
-endif()
+    if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+        add_library(${PROJECT_NAME} ${AWS_S3_CRT_INTEGRATION_TESTS_SRC})
+    else()
+        add_executable(${PROJECT_NAME} ${AWS_S3_CRT_INTEGRATION_TESTS_SRC})
+    endif()
+
+    set_compiler_flags(${PROJECT_NAME})
+    set_compiler_warnings(${PROJECT_NAME})
+
+    target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+
+    if(MSVC AND BUILD_SHARED_LIBS)
+        set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/DELAYLOAD:aws-cpp-sdk-s3-crt.dll /DELAYLOAD:aws-cpp-sdk-core.dll")
+        target_link_libraries(${PROJECT_NAME} delayimp.lib)
+    endif()
+endforeach ()

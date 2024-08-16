@@ -51,7 +51,7 @@ namespace Aws
 
   namespace WorkLink
   {
-    using WorkLinkClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkLinkClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkLinkEndpointProviderBase = Aws::WorkLink::Endpoint::WorkLinkEndpointProviderBase;
     using WorkLinkEndpointProvider = Aws::WorkLink::Endpoint::WorkLinkEndpointProvider;
 

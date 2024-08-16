@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MarketplaceMeteringClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MarketplaceMeteringClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MarketplaceMeteringClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceMeteringBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using FirehoseClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FirehoseClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using FirehoseClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FirehoseBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

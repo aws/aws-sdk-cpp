@@ -64,7 +64,7 @@ namespace Aws
 
   namespace NetworkMonitor
   {
-    using NetworkMonitorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NetworkMonitorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NetworkMonitorEndpointProviderBase = Aws::NetworkMonitor::Endpoint::NetworkMonitorEndpointProviderBase;
     using NetworkMonitorEndpointProvider = Aws::NetworkMonitor::Endpoint::NetworkMonitorEndpointProvider;
 

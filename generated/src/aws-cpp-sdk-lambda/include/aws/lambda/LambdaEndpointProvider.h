@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LambdaClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LambdaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LambdaClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LambdaBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

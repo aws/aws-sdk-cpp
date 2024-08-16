@@ -71,7 +71,7 @@ namespace Aws
 
   namespace SWF
   {
-    using SWFClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SWFClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SWFEndpointProviderBase = Aws::SWF::Endpoint::SWFEndpointProviderBase;
     using SWFEndpointProvider = Aws::SWF::Endpoint::SWFEndpointProvider;
 

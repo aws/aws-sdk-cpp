@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PollyClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PollyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PollyClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PollyBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

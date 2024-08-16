@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DynamoDBStreamsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DynamoDBStreamsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DynamoDBStreamsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DynamoDBStreamsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

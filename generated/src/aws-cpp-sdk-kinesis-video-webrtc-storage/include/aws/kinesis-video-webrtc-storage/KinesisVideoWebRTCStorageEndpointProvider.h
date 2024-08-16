@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using KinesisVideoWebRTCStorageClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KinesisVideoWebRTCStorageClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using KinesisVideoWebRTCStorageClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KinesisVideoWebRTCStorageBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

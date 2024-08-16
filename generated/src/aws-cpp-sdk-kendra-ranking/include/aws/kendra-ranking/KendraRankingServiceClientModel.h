@@ -60,7 +60,7 @@ namespace Aws
 
   namespace KendraRanking
   {
-    using KendraRankingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KendraRankingClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KendraRankingEndpointProviderBase = Aws::KendraRanking::Endpoint::KendraRankingEndpointProviderBase;
     using KendraRankingEndpointProvider = Aws::KendraRanking::Endpoint::KendraRankingEndpointProvider;
 

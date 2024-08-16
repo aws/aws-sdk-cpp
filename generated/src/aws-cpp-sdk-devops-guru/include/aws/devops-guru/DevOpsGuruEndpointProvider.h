@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DevOpsGuruClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DevOpsGuruClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DevOpsGuruClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DevOpsGuruBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

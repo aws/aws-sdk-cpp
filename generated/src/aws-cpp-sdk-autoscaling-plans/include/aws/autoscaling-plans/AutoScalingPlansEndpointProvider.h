@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AutoScalingPlansClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AutoScalingPlansClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AutoScalingPlansClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AutoScalingPlansBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

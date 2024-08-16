@@ -55,8 +55,9 @@ namespace Model
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
      * Bitbucket, this is either the access token or the app password. For the
-     * <code>authType</code> CODECONNECTIONS, this is the
-     * <code>connectionArn</code>.</p>
+     * <code>authType</code> CODECONNECTIONS, this is the <code>connectionArn</code>.
+     * For the <code>authType</code> SECRETS_MANAGER, this is the
+     * <code>secretArn</code>.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
@@ -84,8 +85,7 @@ namespace Model
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
      * GitLab, GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not
-     * supported by the API and must be created using the CodeBuild console. Note that
-     * CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.</p>
+     * supported by the API and must be created using the CodeBuild console.</p>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }

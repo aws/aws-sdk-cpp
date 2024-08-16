@@ -36,16 +36,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the session with the agent.</p>
+     * <p>The MIME type of the input data in the request. The default value is
+     * <code>application/json</code>.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline InvokeAgentInitialResponse& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline InvokeAgentInitialResponse& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline InvokeAgentInitialResponse& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
+    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
+    inline InvokeAgentInitialResponse& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
+    inline InvokeAgentInitialResponse& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
+    inline InvokeAgentInitialResponse& WithContentType(const char* value) { SetContentType(value); return *this;}
     ///@}
 
     ///@{
@@ -64,28 +65,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MIME type of the input data in the request. The default value is
-     * <code>application/json</code>.</p>
+     * <p>The unique identifier of the session with the agent.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline InvokeAgentInitialResponse& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline InvokeAgentInitialResponse& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline InvokeAgentInitialResponse& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline InvokeAgentInitialResponse& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline InvokeAgentInitialResponse& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline InvokeAgentInitialResponse& WithSessionId(const char* value) { SetSessionId(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
+    Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_memoryId;
     bool m_memoryIdHasBeenSet = false;
 
-    Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet = false;
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

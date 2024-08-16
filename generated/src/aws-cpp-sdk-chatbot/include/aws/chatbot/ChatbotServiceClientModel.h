@@ -86,7 +86,7 @@ namespace Aws
 
   namespace chatbot
   {
-    using ChatbotClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChatbotClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ChatbotEndpointProviderBase = Aws::chatbot::Endpoint::ChatbotEndpointProviderBase;
     using ChatbotEndpointProvider = Aws::chatbot::Endpoint::ChatbotEndpointProvider;
 

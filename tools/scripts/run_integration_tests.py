@@ -41,7 +41,7 @@ def main():
         "aws-cpp-sdk-sqs-integration-tests",
         "aws-cpp-sdk-s3-integration-tests",
         "aws-cpp-sdk-s3-unit-tests",
-        #"aws-cpp-sdk-s3-crt-integration-tests",
+        "aws-cpp-sdk-s3-crt-integration-tests",
         #"aws-cpp-sdk-s3control-integration-tests",
         # "aws-cpp-sdk-lambda-integration-tests",
         "aws-cpp-sdk-cognitoidentity-integration-tests",
@@ -54,6 +54,17 @@ def main():
         "aws-cpp-sdk-rds-integration-tests",
         "aws-cpp-sdk-ec2-integration-tests",
         "aws-cpp-sdk-timestream-query-integration-tests"]
+
+    # check for existence of these binaries before adding them to tests
+    # as they will not always be present
+    cmake_dependent_tests = [
+        "aws-cpp-sdk-s3-crt-memory-checked-integration-tests"
+    ]
+
+    for test in cmake_dependent_tests:
+        test_exe = os.path.join(arguments["testDir"], test if test_has_parent_dir else "", test) + exe_extension
+        if os.path.isfile(test_exe):
+            test_list.append("aws-cpp-sdk-s3-crt-memory-checked-integration-tests")
 
     random.shuffle(test_list)
 

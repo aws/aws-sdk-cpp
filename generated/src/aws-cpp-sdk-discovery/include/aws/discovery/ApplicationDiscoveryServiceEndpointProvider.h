@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ApplicationDiscoveryServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ApplicationDiscoveryServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ApplicationDiscoveryServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ApplicationDiscoveryServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

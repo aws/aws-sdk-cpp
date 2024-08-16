@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IAMClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IAMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IAMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

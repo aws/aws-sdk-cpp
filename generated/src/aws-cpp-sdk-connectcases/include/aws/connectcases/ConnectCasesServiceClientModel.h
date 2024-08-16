@@ -85,7 +85,7 @@ namespace Aws
 
   namespace ConnectCases
   {
-    using ConnectCasesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectCasesClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConnectCasesEndpointProviderBase = Aws::ConnectCases::Endpoint::ConnectCasesEndpointProviderBase;
     using ConnectCasesEndpointProvider = Aws::ConnectCases::Endpoint::ConnectCasesEndpointProvider;
 

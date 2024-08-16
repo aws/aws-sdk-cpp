@@ -65,7 +65,7 @@ namespace Aws
 
   namespace HealthLake
   {
-    using HealthLakeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using HealthLakeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using HealthLakeEndpointProviderBase = Aws::HealthLake::Endpoint::HealthLakeEndpointProviderBase;
     using HealthLakeEndpointProvider = Aws::HealthLake::Endpoint::HealthLakeEndpointProvider;
 

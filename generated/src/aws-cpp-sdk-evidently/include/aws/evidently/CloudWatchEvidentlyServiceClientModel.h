@@ -91,7 +91,7 @@ namespace Aws
 
   namespace CloudWatchEvidently
   {
-    using CloudWatchEvidentlyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchEvidentlyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudWatchEvidentlyEndpointProviderBase = Aws::CloudWatchEvidently::Endpoint::CloudWatchEvidentlyEndpointProviderBase;
     using CloudWatchEvidentlyEndpointProvider = Aws::CloudWatchEvidently::Endpoint::CloudWatchEvidentlyEndpointProvider;
 

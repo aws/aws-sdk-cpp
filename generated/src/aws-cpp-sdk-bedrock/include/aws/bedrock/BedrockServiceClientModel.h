@@ -93,7 +93,7 @@ namespace Aws
 
   namespace Bedrock
   {
-    using BedrockClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BedrockClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BedrockEndpointProviderBase = Aws::Bedrock::Endpoint::BedrockEndpointProviderBase;
     using BedrockEndpointProvider = Aws::Bedrock::Endpoint::BedrockEndpointProvider;
 

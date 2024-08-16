@@ -63,7 +63,7 @@ namespace Aws
 
   namespace IoTEventsData
   {
-    using IoTEventsDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTEventsDataClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTEventsDataEndpointProviderBase = Aws::IoTEventsData::Endpoint::IoTEventsDataEndpointProviderBase;
     using IoTEventsDataEndpointProvider = Aws::IoTEventsData::Endpoint::IoTEventsDataEndpointProvider;
 

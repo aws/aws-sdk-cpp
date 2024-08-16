@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The CloudWatch logging destination of a user pool detailed activity logging
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration for the CloudWatch log group destination of user pool detailed
+   * activity logging, or of user activity log export with advanced security
+   * features.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CloudWatchLogsConfigurationType">AWS
    * API Reference</a></p>
    */

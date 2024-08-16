@@ -109,7 +109,7 @@ namespace Aws
 
   namespace Kafka
   {
-    using KafkaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KafkaClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KafkaEndpointProviderBase = Aws::Kafka::Endpoint::KafkaEndpointProviderBase;
     using KafkaEndpointProvider = Aws::Kafka::Endpoint::KafkaEndpointProvider;
 

@@ -32,6 +32,7 @@ ContainerDefinition::ContainerDefinition() :
     m_portMappingsHasBeenSet(false),
     m_essential(false),
     m_essentialHasBeenSet(false),
+    m_restartPolicyHasBeenSet(false),
     m_entryPointHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -148,6 +149,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_essential = jsonValue.GetBool("essential");
 
     m_essentialHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("restartPolicy"))
+  {
+    m_restartPolicy = jsonValue.GetObject("restartPolicy");
+
+    m_restartPolicyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("entryPoint"))
@@ -486,6 +494,12 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_essentialHasBeenSet)
   {
    payload.WithBool("essential", m_essential);
+
+  }
+
+  if(m_restartPolicyHasBeenSet)
+  {
+   payload.WithObject("restartPolicy", m_restartPolicy.Jsonize());
 
   }
 

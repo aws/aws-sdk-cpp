@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/DirectDeploySettings.h>
 #include <aws/sagemaker/model/KendraSettings.h>
 #include <aws/sagemaker/model/GenerativeAiSettings.h>
+#include <aws/sagemaker/model/EmrServerlessSettings.h>
 #include <aws/sagemaker/model/IdentityProviderOAuthSetting.h>
 #include <utility>
 
@@ -129,6 +130,19 @@ namespace Model
     inline CanvasAppSettings& WithGenerativeAiSettings(const GenerativeAiSettings& value) { SetGenerativeAiSettings(value); return *this;}
     inline CanvasAppSettings& WithGenerativeAiSettings(GenerativeAiSettings&& value) { SetGenerativeAiSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The settings for running Amazon EMR Serverless data processing jobs in
+     * SageMaker Canvas.</p>
+     */
+    inline const EmrServerlessSettings& GetEmrServerlessSettings() const{ return m_emrServerlessSettings; }
+    inline bool EmrServerlessSettingsHasBeenSet() const { return m_emrServerlessSettingsHasBeenSet; }
+    inline void SetEmrServerlessSettings(const EmrServerlessSettings& value) { m_emrServerlessSettingsHasBeenSet = true; m_emrServerlessSettings = value; }
+    inline void SetEmrServerlessSettings(EmrServerlessSettings&& value) { m_emrServerlessSettingsHasBeenSet = true; m_emrServerlessSettings = std::move(value); }
+    inline CanvasAppSettings& WithEmrServerlessSettings(const EmrServerlessSettings& value) { SetEmrServerlessSettings(value); return *this;}
+    inline CanvasAppSettings& WithEmrServerlessSettings(EmrServerlessSettings&& value) { SetEmrServerlessSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     TimeSeriesForecastingSettings m_timeSeriesForecastingSettings;
@@ -151,6 +165,9 @@ namespace Model
 
     GenerativeAiSettings m_generativeAiSettings;
     bool m_generativeAiSettingsHasBeenSet = false;
+
+    EmrServerlessSettings m_emrServerlessSettings;
+    bool m_emrServerlessSettingsHasBeenSet = false;
   };
 
 } // namespace Model

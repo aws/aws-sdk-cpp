@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address range of the Amazon Web Service.</p>
+     * <p>The IP address range of the Amazon Web Services service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
     inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }

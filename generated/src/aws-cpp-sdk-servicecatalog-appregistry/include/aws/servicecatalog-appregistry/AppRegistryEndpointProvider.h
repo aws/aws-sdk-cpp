@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AppRegistryClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppRegistryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AppRegistryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppRegistryBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

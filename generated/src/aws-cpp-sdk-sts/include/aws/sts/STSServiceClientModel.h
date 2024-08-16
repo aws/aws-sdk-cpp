@@ -61,7 +61,7 @@ namespace Aws
 
   namespace STS
   {
-    using STSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using STSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using STSEndpointProviderBase = Aws::STS::Endpoint::STSEndpointProviderBase;
     using STSEndpointProvider = Aws::STS::Endpoint::STSEndpointProvider;
 

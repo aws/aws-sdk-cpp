@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using KinesisAnalyticsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KinesisAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using KinesisAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KinesisAnalyticsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

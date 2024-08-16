@@ -65,7 +65,7 @@ namespace Aws
 
   namespace ServerlessApplicationRepository
   {
-    using ServerlessApplicationRepositoryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServerlessApplicationRepositoryClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ServerlessApplicationRepositoryEndpointProviderBase = Aws::ServerlessApplicationRepository::Endpoint::ServerlessApplicationRepositoryEndpointProviderBase;
     using ServerlessApplicationRepositoryEndpointProvider = Aws::ServerlessApplicationRepository::Endpoint::ServerlessApplicationRepositoryEndpointProvider;
 

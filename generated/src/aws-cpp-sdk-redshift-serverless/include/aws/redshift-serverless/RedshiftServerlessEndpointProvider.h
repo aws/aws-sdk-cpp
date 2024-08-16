@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RedshiftServerlessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RedshiftServerlessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RedshiftServerlessClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RedshiftServerlessBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

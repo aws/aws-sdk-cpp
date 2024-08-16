@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DAXClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DAXClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DAXClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DAXBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

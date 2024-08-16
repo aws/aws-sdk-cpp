@@ -93,7 +93,7 @@ namespace Aws
 
   namespace SSMContacts
   {
-    using SSMContactsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSMContactsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SSMContactsEndpointProviderBase = Aws::SSMContacts::Endpoint::SSMContactsEndpointProviderBase;
     using SSMContactsEndpointProvider = Aws::SSMContacts::Endpoint::SSMContactsEndpointProvider;
 

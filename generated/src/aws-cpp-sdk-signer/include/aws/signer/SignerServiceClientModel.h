@@ -71,7 +71,7 @@ namespace Aws
 
   namespace signer
   {
-    using SignerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SignerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SignerEndpointProviderBase = Aws::signer::Endpoint::SignerEndpointProviderBase;
     using SignerEndpointProvider = Aws::signer::Endpoint::SignerEndpointProvider;
 

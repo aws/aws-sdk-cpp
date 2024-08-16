@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using QAppsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using QAppsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using QAppsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QAppsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

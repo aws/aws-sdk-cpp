@@ -87,7 +87,7 @@ namespace Aws
 
   namespace Outposts
   {
-    using OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OutpostsEndpointProviderBase = Aws::Outposts::Endpoint::OutpostsEndpointProviderBase;
     using OutpostsEndpointProvider = Aws::Outposts::Endpoint::OutpostsEndpointProvider;
 

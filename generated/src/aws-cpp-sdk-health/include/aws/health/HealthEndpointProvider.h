@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using HealthClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using HealthClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using HealthClientConfiguration = Aws::Client::GenericClientConfiguration;
 using HealthBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

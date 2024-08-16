@@ -128,7 +128,7 @@ namespace Aws
 
   namespace SES
   {
-    using SESClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SESClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SESEndpointProviderBase = Aws::SES::Endpoint::SESEndpointProviderBase;
     using SESEndpointProvider = Aws::SES::Endpoint::SESEndpointProvider;
 

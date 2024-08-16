@@ -123,7 +123,7 @@ namespace Aws
 
   namespace CodeCommit
   {
-    using CodeCommitClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeCommitClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeCommitEndpointProviderBase = Aws::CodeCommit::Endpoint::CodeCommitEndpointProviderBase;
     using CodeCommitEndpointProvider = Aws::CodeCommit::Endpoint::CodeCommitEndpointProvider;
 

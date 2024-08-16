@@ -26,9 +26,7 @@ namespace Model
 
   /**
    * <p>Information about the authorization settings for CodeBuild to access the
-   * source code to be built.</p> <p>This information is for the CodeBuild console's
-   * use only. Your code should not get or set this information
-   * directly.</p><p><h3>See Also:</h3>   <a
+   * source code to be built.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth">AWS
    * API Reference</a></p>
    */
@@ -43,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authorization type to use. Valid options are OAUTH or
-     * CODECONNECTIONS.</p>
+     * <p>The authorization type to use. Valid options are OAUTH, CODECONNECTIONS, or
+     * SECRETS_MANAGER.</p>
      */
     inline const SourceAuthType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

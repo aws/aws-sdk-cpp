@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SageMakerMetricsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SageMakerMetricsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SageMakerMetricsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SageMakerMetricsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

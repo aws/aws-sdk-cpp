@@ -142,7 +142,7 @@ namespace Aws
 
   namespace Backup
   {
-    using BackupClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BackupClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BackupEndpointProviderBase = Aws::Backup::Endpoint::BackupEndpointProviderBase;
     using BackupEndpointProvider = Aws::Backup::Endpoint::BackupEndpointProvider;
 

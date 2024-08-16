@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WAFClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WAFClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WAFClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WAFBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

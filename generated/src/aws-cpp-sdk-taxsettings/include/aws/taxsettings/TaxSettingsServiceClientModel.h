@@ -61,7 +61,7 @@ namespace Aws
 
   namespace TaxSettings
   {
-    using TaxSettingsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TaxSettingsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TaxSettingsEndpointProviderBase = Aws::TaxSettings::Endpoint::TaxSettingsEndpointProviderBase;
     using TaxSettingsEndpointProvider = Aws::TaxSettings::Endpoint::TaxSettingsEndpointProvider;
 

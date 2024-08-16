@@ -666,6 +666,31 @@ namespace ECR
         }
 
         /**
+         * <p>Retrieves the basic scan type version name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAccountSetting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountSettingOutcome GetAccountSetting(const Model::GetAccountSettingRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAccountSetting that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountSettingRequestT = Model::GetAccountSettingRequest>
+        Model::GetAccountSettingOutcomeCallable GetAccountSettingCallable(const GetAccountSettingRequestT& request) const
+        {
+            return SubmitCallable(&ECRClient::GetAccountSetting, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountSetting that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountSettingRequestT = Model::GetAccountSettingRequest>
+        void GetAccountSettingAsync(const GetAccountSettingRequestT& request, const GetAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECRClient::GetAccountSetting, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves an authorization token. An authorization token represents your IAM
          * authentication credentials and can be used to access any Amazon ECR registry
          * that your IAM principal has access to. The authorization token is valid for 12
@@ -947,6 +972,33 @@ namespace ECR
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ECRClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Allows you to change the basic scan type version by setting the
+         * <code>name</code> parameter to either <code>CLAIR</code> to
+         * <code>AWS_NATIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutAccountSetting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountSettingOutcome PutAccountSetting(const Model::PutAccountSettingRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAccountSetting that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutAccountSettingRequestT = Model::PutAccountSettingRequest>
+        Model::PutAccountSettingOutcomeCallable PutAccountSettingCallable(const PutAccountSettingRequestT& request) const
+        {
+            return SubmitCallable(&ECRClient::PutAccountSetting, request);
+        }
+
+        /**
+         * An Async wrapper for PutAccountSetting that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutAccountSettingRequestT = Model::PutAccountSettingRequest>
+        void PutAccountSettingAsync(const PutAccountSettingRequestT& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECRClient::PutAccountSetting, request, handler, context);
         }
 
         /**

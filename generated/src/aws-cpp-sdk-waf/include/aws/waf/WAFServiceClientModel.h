@@ -144,7 +144,7 @@ namespace Aws
 
   namespace WAF
   {
-    using WAFClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WAFClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WAFEndpointProviderBase = Aws::WAF::Endpoint::WAFEndpointProviderBase;
     using WAFEndpointProvider = Aws::WAF::Endpoint::WAFEndpointProvider;
 

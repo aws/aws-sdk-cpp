@@ -74,7 +74,7 @@ namespace Aws
 
   namespace Translate
   {
-    using TranslateClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TranslateClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TranslateEndpointProviderBase = Aws::Translate::Endpoint::TranslateEndpointProviderBase;
     using TranslateEndpointProvider = Aws::Translate::Endpoint::TranslateEndpointProvider;
 

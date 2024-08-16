@@ -689,8 +689,8 @@ namespace CodeBuild
 
         /**
          * <p> Imports the source repository credentials for an CodeBuild project that has
-         * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
-         * </p><p><h3>See Also:</h3>   <a
+         * its source code stored in a GitHub, GitHub Enterprise, GitLab, GitLab Self
+         * Managed, or Bitbucket repository. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">AWS
          * API Reference</a></p>
          */

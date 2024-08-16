@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MTurkClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MTurkClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MTurkClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MTurkBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

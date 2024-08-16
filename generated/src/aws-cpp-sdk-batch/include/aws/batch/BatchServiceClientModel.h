@@ -81,7 +81,7 @@ namespace Aws
 
   namespace Batch
   {
-    using BatchClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BatchClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BatchEndpointProviderBase = Aws::Batch::Endpoint::BatchEndpointProviderBase;
     using BatchEndpointProvider = Aws::Batch::Endpoint::BatchEndpointProvider;
 

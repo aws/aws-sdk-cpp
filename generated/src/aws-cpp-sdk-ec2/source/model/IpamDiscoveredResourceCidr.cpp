@@ -26,6 +26,8 @@ IpamDiscoveredResourceCidr::IpamDiscoveredResourceCidr() :
     m_resourceIdHasBeenSet(false),
     m_resourceOwnerIdHasBeenSet(false),
     m_resourceCidrHasBeenSet(false),
+    m_ipSource(IpamResourceCidrIpSource::NOT_SET),
+    m_ipSourceHasBeenSet(false),
     m_resourceType(IpamResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
@@ -80,6 +82,12 @@ IpamDiscoveredResourceCidr& IpamDiscoveredResourceCidr::operator =(const XmlNode
     {
       m_resourceCidr = Aws::Utils::Xml::DecodeEscapedXmlText(resourceCidrNode.GetText());
       m_resourceCidrHasBeenSet = true;
+    }
+    XmlNode ipSourceNode = resultNode.FirstChild("ipSource");
+    if(!ipSourceNode.IsNull())
+    {
+      m_ipSource = IpamResourceCidrIpSourceMapper::GetIpamResourceCidrIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipSourceNode.GetText()).c_str()).c_str());
+      m_ipSourceHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
@@ -161,6 +169,11 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".ResourceCidr=" << StringUtils::URLEncode(m_resourceCidr.c_str()) << "&";
   }
 
+  if(m_ipSourceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpSource=" << IpamResourceCidrIpSourceMapper::GetNameForIpamResourceCidrIpSource(m_ipSource) << "&";
+  }
+
   if(m_resourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceType=" << IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType) << "&";
@@ -225,6 +238,10 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
   if(m_resourceCidrHasBeenSet)
   {
       oStream << location << ".ResourceCidr=" << StringUtils::URLEncode(m_resourceCidr.c_str()) << "&";
+  }
+  if(m_ipSourceHasBeenSet)
+  {
+      oStream << location << ".IpSource=" << IpamResourceCidrIpSourceMapper::GetNameForIpamResourceCidrIpSource(m_ipSource) << "&";
   }
   if(m_resourceTypeHasBeenSet)
   {

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WorkDocsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WorkDocsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WorkDocsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkDocsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

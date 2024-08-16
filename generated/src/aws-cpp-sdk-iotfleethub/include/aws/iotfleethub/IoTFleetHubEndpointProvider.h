@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTFleetHubClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTFleetHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTFleetHubClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTFleetHubBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

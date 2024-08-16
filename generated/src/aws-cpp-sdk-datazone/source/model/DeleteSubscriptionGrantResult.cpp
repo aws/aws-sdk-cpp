@@ -76,12 +76,6 @@ DeleteSubscriptionGrantResult& DeleteSubscriptionGrantResult::operator =(const A
 
   }
 
-  if(jsonValue.ValueExists("subscriptionId"))
-  {
-    m_subscriptionId = jsonValue.GetString("subscriptionId");
-
-  }
-
   if(jsonValue.ValueExists("subscriptionTargetId"))
   {
     m_subscriptionTargetId = jsonValue.GetString("subscriptionTargetId");

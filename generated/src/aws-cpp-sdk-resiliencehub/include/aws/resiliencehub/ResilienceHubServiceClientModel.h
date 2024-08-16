@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in ResilienceHubClient header */
+#include <aws/resiliencehub/model/AcceptResourceGroupingRecommendationsResult.h>
 #include <aws/resiliencehub/model/AddDraftAppVersionResourceMappingsResult.h>
 #include <aws/resiliencehub/model/BatchUpdateRecommendationStatusResult.h>
 #include <aws/resiliencehub/model/CreateAppResult.h>
@@ -41,6 +42,7 @@
 #include <aws/resiliencehub/model/DescribeAppVersionTemplateResult.h>
 #include <aws/resiliencehub/model/DescribeDraftAppVersionResourcesImportStatusResult.h>
 #include <aws/resiliencehub/model/DescribeResiliencyPolicyResult.h>
+#include <aws/resiliencehub/model/DescribeResourceGroupingRecommendationTaskResult.h>
 #include <aws/resiliencehub/model/ImportResourcesToDraftAppVersionResult.h>
 #include <aws/resiliencehub/model/ListAlarmRecommendationsResult.h>
 #include <aws/resiliencehub/model/ListAppAssessmentComplianceDriftsResult.h>
@@ -56,6 +58,7 @@
 #include <aws/resiliencehub/model/ListAppsResult.h>
 #include <aws/resiliencehub/model/ListRecommendationTemplatesResult.h>
 #include <aws/resiliencehub/model/ListResiliencyPoliciesResult.h>
+#include <aws/resiliencehub/model/ListResourceGroupingRecommendationsResult.h>
 #include <aws/resiliencehub/model/ListSopRecommendationsResult.h>
 #include <aws/resiliencehub/model/ListSuggestedResiliencyPoliciesResult.h>
 #include <aws/resiliencehub/model/ListTagsForResourceResult.h>
@@ -63,9 +66,11 @@
 #include <aws/resiliencehub/model/ListUnsupportedAppVersionResourcesResult.h>
 #include <aws/resiliencehub/model/PublishAppVersionResult.h>
 #include <aws/resiliencehub/model/PutDraftAppVersionTemplateResult.h>
+#include <aws/resiliencehub/model/RejectResourceGroupingRecommendationsResult.h>
 #include <aws/resiliencehub/model/RemoveDraftAppVersionResourceMappingsResult.h>
 #include <aws/resiliencehub/model/ResolveAppVersionResourcesResult.h>
 #include <aws/resiliencehub/model/StartAppAssessmentResult.h>
+#include <aws/resiliencehub/model/StartResourceGroupingRecommendationTaskResult.h>
 #include <aws/resiliencehub/model/TagResourceResult.h>
 #include <aws/resiliencehub/model/UntagResourceResult.h>
 #include <aws/resiliencehub/model/UpdateAppResult.h>
@@ -74,6 +79,7 @@
 #include <aws/resiliencehub/model/UpdateAppVersionResourceResult.h>
 #include <aws/resiliencehub/model/UpdateResiliencyPolicyResult.h>
 #include <aws/resiliencehub/model/ListRecommendationTemplatesRequest.h>
+#include <aws/resiliencehub/model/ListResourceGroupingRecommendationsRequest.h>
 #include <aws/resiliencehub/model/ListSuggestedResiliencyPoliciesRequest.h>
 #include <aws/resiliencehub/model/ListAppsRequest.h>
 #include <aws/resiliencehub/model/ListAppAssessmentsRequest.h>
@@ -111,13 +117,14 @@ namespace Aws
 
   namespace ResilienceHub
   {
-    using ResilienceHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ResilienceHubClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ResilienceHubEndpointProviderBase = Aws::ResilienceHub::Endpoint::ResilienceHubEndpointProviderBase;
     using ResilienceHubEndpointProvider = Aws::ResilienceHub::Endpoint::ResilienceHubEndpointProvider;
 
     namespace Model
     {
       /* Service model forward declarations required in ResilienceHubClient header */
+      class AcceptResourceGroupingRecommendationsRequest;
       class AddDraftAppVersionResourceMappingsRequest;
       class BatchUpdateRecommendationStatusRequest;
       class CreateAppRequest;
@@ -141,6 +148,7 @@ namespace Aws
       class DescribeAppVersionTemplateRequest;
       class DescribeDraftAppVersionResourcesImportStatusRequest;
       class DescribeResiliencyPolicyRequest;
+      class DescribeResourceGroupingRecommendationTaskRequest;
       class ImportResourcesToDraftAppVersionRequest;
       class ListAlarmRecommendationsRequest;
       class ListAppAssessmentComplianceDriftsRequest;
@@ -156,6 +164,7 @@ namespace Aws
       class ListAppsRequest;
       class ListRecommendationTemplatesRequest;
       class ListResiliencyPoliciesRequest;
+      class ListResourceGroupingRecommendationsRequest;
       class ListSopRecommendationsRequest;
       class ListSuggestedResiliencyPoliciesRequest;
       class ListTagsForResourceRequest;
@@ -163,9 +172,11 @@ namespace Aws
       class ListUnsupportedAppVersionResourcesRequest;
       class PublishAppVersionRequest;
       class PutDraftAppVersionTemplateRequest;
+      class RejectResourceGroupingRecommendationsRequest;
       class RemoveDraftAppVersionResourceMappingsRequest;
       class ResolveAppVersionResourcesRequest;
       class StartAppAssessmentRequest;
+      class StartResourceGroupingRecommendationTaskRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateAppRequest;
@@ -176,6 +187,7 @@ namespace Aws
       /* End of service model forward declarations required in ResilienceHubClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AcceptResourceGroupingRecommendationsResult, ResilienceHubError> AcceptResourceGroupingRecommendationsOutcome;
       typedef Aws::Utils::Outcome<AddDraftAppVersionResourceMappingsResult, ResilienceHubError> AddDraftAppVersionResourceMappingsOutcome;
       typedef Aws::Utils::Outcome<BatchUpdateRecommendationStatusResult, ResilienceHubError> BatchUpdateRecommendationStatusOutcome;
       typedef Aws::Utils::Outcome<CreateAppResult, ResilienceHubError> CreateAppOutcome;
@@ -199,6 +211,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAppVersionTemplateResult, ResilienceHubError> DescribeAppVersionTemplateOutcome;
       typedef Aws::Utils::Outcome<DescribeDraftAppVersionResourcesImportStatusResult, ResilienceHubError> DescribeDraftAppVersionResourcesImportStatusOutcome;
       typedef Aws::Utils::Outcome<DescribeResiliencyPolicyResult, ResilienceHubError> DescribeResiliencyPolicyOutcome;
+      typedef Aws::Utils::Outcome<DescribeResourceGroupingRecommendationTaskResult, ResilienceHubError> DescribeResourceGroupingRecommendationTaskOutcome;
       typedef Aws::Utils::Outcome<ImportResourcesToDraftAppVersionResult, ResilienceHubError> ImportResourcesToDraftAppVersionOutcome;
       typedef Aws::Utils::Outcome<ListAlarmRecommendationsResult, ResilienceHubError> ListAlarmRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ListAppAssessmentComplianceDriftsResult, ResilienceHubError> ListAppAssessmentComplianceDriftsOutcome;
@@ -214,6 +227,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAppsResult, ResilienceHubError> ListAppsOutcome;
       typedef Aws::Utils::Outcome<ListRecommendationTemplatesResult, ResilienceHubError> ListRecommendationTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListResiliencyPoliciesResult, ResilienceHubError> ListResiliencyPoliciesOutcome;
+      typedef Aws::Utils::Outcome<ListResourceGroupingRecommendationsResult, ResilienceHubError> ListResourceGroupingRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ListSopRecommendationsResult, ResilienceHubError> ListSopRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ListSuggestedResiliencyPoliciesResult, ResilienceHubError> ListSuggestedResiliencyPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ResilienceHubError> ListTagsForResourceOutcome;
@@ -221,9 +235,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListUnsupportedAppVersionResourcesResult, ResilienceHubError> ListUnsupportedAppVersionResourcesOutcome;
       typedef Aws::Utils::Outcome<PublishAppVersionResult, ResilienceHubError> PublishAppVersionOutcome;
       typedef Aws::Utils::Outcome<PutDraftAppVersionTemplateResult, ResilienceHubError> PutDraftAppVersionTemplateOutcome;
+      typedef Aws::Utils::Outcome<RejectResourceGroupingRecommendationsResult, ResilienceHubError> RejectResourceGroupingRecommendationsOutcome;
       typedef Aws::Utils::Outcome<RemoveDraftAppVersionResourceMappingsResult, ResilienceHubError> RemoveDraftAppVersionResourceMappingsOutcome;
       typedef Aws::Utils::Outcome<ResolveAppVersionResourcesResult, ResilienceHubError> ResolveAppVersionResourcesOutcome;
       typedef Aws::Utils::Outcome<StartAppAssessmentResult, ResilienceHubError> StartAppAssessmentOutcome;
+      typedef Aws::Utils::Outcome<StartResourceGroupingRecommendationTaskResult, ResilienceHubError> StartResourceGroupingRecommendationTaskOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ResilienceHubError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ResilienceHubError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAppResult, ResilienceHubError> UpdateAppOutcome;
@@ -234,6 +250,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AcceptResourceGroupingRecommendationsOutcome> AcceptResourceGroupingRecommendationsOutcomeCallable;
       typedef std::future<AddDraftAppVersionResourceMappingsOutcome> AddDraftAppVersionResourceMappingsOutcomeCallable;
       typedef std::future<BatchUpdateRecommendationStatusOutcome> BatchUpdateRecommendationStatusOutcomeCallable;
       typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
@@ -257,6 +274,7 @@ namespace Aws
       typedef std::future<DescribeAppVersionTemplateOutcome> DescribeAppVersionTemplateOutcomeCallable;
       typedef std::future<DescribeDraftAppVersionResourcesImportStatusOutcome> DescribeDraftAppVersionResourcesImportStatusOutcomeCallable;
       typedef std::future<DescribeResiliencyPolicyOutcome> DescribeResiliencyPolicyOutcomeCallable;
+      typedef std::future<DescribeResourceGroupingRecommendationTaskOutcome> DescribeResourceGroupingRecommendationTaskOutcomeCallable;
       typedef std::future<ImportResourcesToDraftAppVersionOutcome> ImportResourcesToDraftAppVersionOutcomeCallable;
       typedef std::future<ListAlarmRecommendationsOutcome> ListAlarmRecommendationsOutcomeCallable;
       typedef std::future<ListAppAssessmentComplianceDriftsOutcome> ListAppAssessmentComplianceDriftsOutcomeCallable;
@@ -272,6 +290,7 @@ namespace Aws
       typedef std::future<ListAppsOutcome> ListAppsOutcomeCallable;
       typedef std::future<ListRecommendationTemplatesOutcome> ListRecommendationTemplatesOutcomeCallable;
       typedef std::future<ListResiliencyPoliciesOutcome> ListResiliencyPoliciesOutcomeCallable;
+      typedef std::future<ListResourceGroupingRecommendationsOutcome> ListResourceGroupingRecommendationsOutcomeCallable;
       typedef std::future<ListSopRecommendationsOutcome> ListSopRecommendationsOutcomeCallable;
       typedef std::future<ListSuggestedResiliencyPoliciesOutcome> ListSuggestedResiliencyPoliciesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -279,9 +298,11 @@ namespace Aws
       typedef std::future<ListUnsupportedAppVersionResourcesOutcome> ListUnsupportedAppVersionResourcesOutcomeCallable;
       typedef std::future<PublishAppVersionOutcome> PublishAppVersionOutcomeCallable;
       typedef std::future<PutDraftAppVersionTemplateOutcome> PutDraftAppVersionTemplateOutcomeCallable;
+      typedef std::future<RejectResourceGroupingRecommendationsOutcome> RejectResourceGroupingRecommendationsOutcomeCallable;
       typedef std::future<RemoveDraftAppVersionResourceMappingsOutcome> RemoveDraftAppVersionResourceMappingsOutcomeCallable;
       typedef std::future<ResolveAppVersionResourcesOutcome> ResolveAppVersionResourcesOutcomeCallable;
       typedef std::future<StartAppAssessmentOutcome> StartAppAssessmentOutcomeCallable;
+      typedef std::future<StartResourceGroupingRecommendationTaskOutcome> StartResourceGroupingRecommendationTaskOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAppOutcome> UpdateAppOutcomeCallable;
@@ -295,6 +316,7 @@ namespace Aws
     class ResilienceHubClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const ResilienceHubClient*, const Model::AcceptResourceGroupingRecommendationsRequest&, const Model::AcceptResourceGroupingRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptResourceGroupingRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::AddDraftAppVersionResourceMappingsRequest&, const Model::AddDraftAppVersionResourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddDraftAppVersionResourceMappingsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::BatchUpdateRecommendationStatusRequest&, const Model::BatchUpdateRecommendationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateRecommendationStatusResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::CreateAppRequest&, const Model::CreateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppResponseReceivedHandler;
@@ -318,6 +340,7 @@ namespace Aws
     typedef std::function<void(const ResilienceHubClient*, const Model::DescribeAppVersionTemplateRequest&, const Model::DescribeAppVersionTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppVersionTemplateResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DescribeDraftAppVersionResourcesImportStatusRequest&, const Model::DescribeDraftAppVersionResourcesImportStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDraftAppVersionResourcesImportStatusResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DescribeResiliencyPolicyRequest&, const Model::DescribeResiliencyPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResiliencyPolicyResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::DescribeResourceGroupingRecommendationTaskRequest&, const Model::DescribeResourceGroupingRecommendationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceGroupingRecommendationTaskResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ImportResourcesToDraftAppVersionRequest&, const Model::ImportResourcesToDraftAppVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportResourcesToDraftAppVersionResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAlarmRecommendationsRequest&, const Model::ListAlarmRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlarmRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppAssessmentComplianceDriftsRequest&, const Model::ListAppAssessmentComplianceDriftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppAssessmentComplianceDriftsResponseReceivedHandler;
@@ -333,6 +356,7 @@ namespace Aws
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppsRequest&, const Model::ListAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListRecommendationTemplatesRequest&, const Model::ListRecommendationTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendationTemplatesResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListResiliencyPoliciesRequest&, const Model::ListResiliencyPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResiliencyPoliciesResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::ListResourceGroupingRecommendationsRequest&, const Model::ListResourceGroupingRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceGroupingRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListSopRecommendationsRequest&, const Model::ListSopRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSopRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListSuggestedResiliencyPoliciesRequest&, const Model::ListSuggestedResiliencyPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuggestedResiliencyPoliciesResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -340,9 +364,11 @@ namespace Aws
     typedef std::function<void(const ResilienceHubClient*, const Model::ListUnsupportedAppVersionResourcesRequest&, const Model::ListUnsupportedAppVersionResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUnsupportedAppVersionResourcesResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::PublishAppVersionRequest&, const Model::PublishAppVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishAppVersionResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::PutDraftAppVersionTemplateRequest&, const Model::PutDraftAppVersionTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDraftAppVersionTemplateResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::RejectResourceGroupingRecommendationsRequest&, const Model::RejectResourceGroupingRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectResourceGroupingRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::RemoveDraftAppVersionResourceMappingsRequest&, const Model::RemoveDraftAppVersionResourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveDraftAppVersionResourceMappingsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ResolveAppVersionResourcesRequest&, const Model::ResolveAppVersionResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveAppVersionResourcesResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::StartAppAssessmentRequest&, const Model::StartAppAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAppAssessmentResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::StartResourceGroupingRecommendationTaskRequest&, const Model::StartResourceGroupingRecommendationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartResourceGroupingRecommendationTaskResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::UpdateAppRequest&, const Model::UpdateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppResponseReceivedHandler;

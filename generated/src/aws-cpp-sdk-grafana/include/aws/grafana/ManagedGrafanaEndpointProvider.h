@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ManagedGrafanaClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ManagedGrafanaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ManagedGrafanaClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ManagedGrafanaBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

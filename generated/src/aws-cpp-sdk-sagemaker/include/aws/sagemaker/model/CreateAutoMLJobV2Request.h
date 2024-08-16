@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/AutoMLJobObjective.h>
 #include <aws/sagemaker/model/ModelDeployConfig.h>
 #include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
+#include <aws/sagemaker/model/AutoMLComputeConfig.h>
 #include <aws/sagemaker/model/AutoMLJobChannel.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -210,6 +211,18 @@ namespace Model
     inline CreateAutoMLJobV2Request& WithDataSplitConfig(const AutoMLDataSplitConfig& value) { SetDataSplitConfig(value); return *this;}
     inline CreateAutoMLJobV2Request& WithDataSplitConfig(AutoMLDataSplitConfig&& value) { SetDataSplitConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the compute configuration for the AutoML job V2.</p>
+     */
+    inline const AutoMLComputeConfig& GetAutoMLComputeConfig() const{ return m_autoMLComputeConfig; }
+    inline bool AutoMLComputeConfigHasBeenSet() const { return m_autoMLComputeConfigHasBeenSet; }
+    inline void SetAutoMLComputeConfig(const AutoMLComputeConfig& value) { m_autoMLComputeConfigHasBeenSet = true; m_autoMLComputeConfig = value; }
+    inline void SetAutoMLComputeConfig(AutoMLComputeConfig&& value) { m_autoMLComputeConfigHasBeenSet = true; m_autoMLComputeConfig = std::move(value); }
+    inline CreateAutoMLJobV2Request& WithAutoMLComputeConfig(const AutoMLComputeConfig& value) { SetAutoMLComputeConfig(value); return *this;}
+    inline CreateAutoMLJobV2Request& WithAutoMLComputeConfig(AutoMLComputeConfig&& value) { SetAutoMLComputeConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_autoMLJobName;
@@ -241,6 +254,9 @@ namespace Model
 
     AutoMLDataSplitConfig m_dataSplitConfig;
     bool m_dataSplitConfigHasBeenSet = false;
+
+    AutoMLComputeConfig m_autoMLComputeConfig;
+    bool m_autoMLComputeConfigHasBeenSet = false;
   };
 
 } // namespace Model

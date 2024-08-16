@@ -69,7 +69,7 @@ namespace Aws
 
   namespace ElasticTranscoder
   {
-    using ElasticTranscoderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticTranscoderClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElasticTranscoderEndpointProviderBase = Aws::ElasticTranscoder::Endpoint::ElasticTranscoderEndpointProviderBase;
     using ElasticTranscoderEndpointProvider = Aws::ElasticTranscoder::Endpoint::ElasticTranscoderEndpointProvider;
 

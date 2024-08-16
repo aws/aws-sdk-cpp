@@ -242,7 +242,13 @@ namespace Model
      * for different machine learning workloads.</p> <p>By selecting an AMI version,
      * you can ensure that your inference environment is compatible with specific
      * software requirements, such as CUDA driver versions, Linux kernel versions, or
-     * Amazon Web Services Neuron driver versions.</p>
+     * Amazon Web Services Neuron driver versions.</p> <p>The AMI version names, and
+     * their configurations, are the following:</p> <dl>
+     * <dt>al2-ami-sagemaker-inference-gpu-2</dt> <dd> <ul> <li> <p>Accelerator:
+     * GPU</p> </li> <li> <p>NVIDIA driver version: 535.54.03</p> </li> <li> <p>CUDA
+     * driver version: 12.2</p> </li> <li> <p>Supported instance types: ml.g4dn.*,
+     * ml.g5.*, ml.g6.*, ml.p3.*, ml.p4d.*, ml.p4de.*, ml.p5.*</p> </li> </ul> </dd>
+     * </dl>
      */
     inline const ProductionVariantInferenceAmiVersion& GetInferenceAmiVersion() const{ return m_inferenceAmiVersion; }
     inline bool InferenceAmiVersionHasBeenSet() const { return m_inferenceAmiVersionHasBeenSet; }

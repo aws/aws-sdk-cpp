@@ -78,7 +78,7 @@ namespace Aws
 
   namespace AppRegistry
   {
-    using AppRegistryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppRegistryClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppRegistryEndpointProviderBase = Aws::AppRegistry::Endpoint::AppRegistryEndpointProviderBase;
     using AppRegistryEndpointProvider = Aws::AppRegistry::Endpoint::AppRegistryEndpointProvider;
 

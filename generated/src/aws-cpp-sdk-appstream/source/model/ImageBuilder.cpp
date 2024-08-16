@@ -39,7 +39,9 @@ ImageBuilder::ImageBuilder() :
     m_networkAccessConfigurationHasBeenSet(false),
     m_imageBuilderErrorsHasBeenSet(false),
     m_appstreamAgentVersionHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
+    m_accessEndpointsHasBeenSet(false),
+    m_latestAppstreamAgentVersion(LatestAppstreamAgentVersion::NOT_SET),
+    m_latestAppstreamAgentVersionHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,13 @@ ImageBuilder& ImageBuilder::operator =(JsonView jsonValue)
     m_accessEndpointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LatestAppstreamAgentVersion"))
+  {
+    m_latestAppstreamAgentVersion = LatestAppstreamAgentVersionMapper::GetLatestAppstreamAgentVersionForName(jsonValue.GetString("LatestAppstreamAgentVersion"));
+
+    m_latestAppstreamAgentVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -303,6 +312,11 @@ JsonValue ImageBuilder::Jsonize() const
    }
    payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
 
+  }
+
+  if(m_latestAppstreamAgentVersionHasBeenSet)
+  {
+   payload.WithString("LatestAppstreamAgentVersion", LatestAppstreamAgentVersionMapper::GetNameForLatestAppstreamAgentVersion(m_latestAppstreamAgentVersion));
   }
 
   return payload;

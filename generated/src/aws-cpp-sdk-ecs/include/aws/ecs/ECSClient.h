@@ -293,7 +293,7 @@ namespace ECS
          * task definition revision before authorization. When a task definition revision
          * is not specified, authorization will occur using the latest revision of a task
          * definition.</p>  <p>For information about the maximum number of task sets
-         * and otther quotas, see <a
+         * and other quotas, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
          * ECS service quotas</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1373,13 +1373,10 @@ namespace ECS
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
-         * your task definition with the <code>networkMode</code> parameter. The available
-         * network modes correspond to those described in <a
-         * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-         * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
-         * network mode, the task is allocated an elastic network interface, and you must
-         * specify a <a>NetworkConfiguration</a> when you create a service or run a task
-         * with the task definition. For more information, see <a
+         * your task definition with the <code>networkMode</code> parameter. If you specify
+         * the <code>awsvpc</code> network mode, the task is allocated an elastic network
+         * interface, and you must specify a <a>NetworkConfiguration</a> when you create a
+         * service or run a task with the task definition. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
          * Networking</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1847,10 +1844,12 @@ namespace ECS
          * <code>RUNNING</code> tasks that do not belong to a service aren't affected. You
          * must wait for them to finish or stop them manually.</p> <p>A container instance
          * has completed draining when it has no more <code>RUNNING</code> tasks. You can
-         * verify this using <a>ListTasks</a>.</p> <p>When a container instance has been
-         * drained, you can set a container instance to <code>ACTIVE</code> status and once
-         * it has reached that status the Amazon ECS scheduler can begin scheduling tasks
-         * on the instance again.</p><p><h3>See Also:</h3>   <a
+         * verify this using <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>.</p>
+         * <p>When a container instance has been drained, you can set a container instance
+         * to <code>ACTIVE</code> status and once it has reached that status the Amazon ECS
+         * scheduler can begin scheduling tasks on the instance again.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">AWS
          * API Reference</a></p>
          */

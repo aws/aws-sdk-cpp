@@ -121,7 +121,7 @@ namespace Aws
 
   namespace CloudDirectory
   {
-    using CloudDirectoryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudDirectoryClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudDirectoryEndpointProviderBase = Aws::CloudDirectory::Endpoint::CloudDirectoryEndpointProviderBase;
     using CloudDirectoryEndpointProvider = Aws::CloudDirectory::Endpoint::CloudDirectoryEndpointProvider;
 

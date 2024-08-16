@@ -24,6 +24,7 @@ namespace Aws
         static const int BASIC_AUTH_HASH = HashingUtils::HashString("BASIC_AUTH");
         static const int PERSONAL_ACCESS_TOKEN_HASH = HashingUtils::HashString("PERSONAL_ACCESS_TOKEN");
         static const int CODECONNECTIONS_HASH = HashingUtils::HashString("CODECONNECTIONS");
+        static const int SECRETS_MANAGER_HASH = HashingUtils::HashString("SECRETS_MANAGER");
 
 
         AuthType GetAuthTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == CODECONNECTIONS_HASH)
           {
             return AuthType::CODECONNECTIONS;
+          }
+          else if (hashCode == SECRETS_MANAGER_HASH)
+          {
+            return AuthType::SECRETS_MANAGER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "PERSONAL_ACCESS_TOKEN";
           case AuthType::CODECONNECTIONS:
             return "CODECONNECTIONS";
+          case AuthType::SECRETS_MANAGER:
+            return "SECRETS_MANAGER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

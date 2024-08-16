@@ -81,7 +81,7 @@ namespace Aws
 
   namespace ComprehendMedical
   {
-    using ComprehendMedicalClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ComprehendMedicalClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ComprehendMedicalEndpointProviderBase = Aws::ComprehendMedical::Endpoint::ComprehendMedicalEndpointProviderBase;
     using ComprehendMedicalEndpointProvider = Aws::ComprehendMedical::Endpoint::ComprehendMedicalEndpointProvider;
 

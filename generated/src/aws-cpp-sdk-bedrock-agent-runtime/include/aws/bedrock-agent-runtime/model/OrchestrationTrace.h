@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/InvocationInput.h>
 #include <aws/bedrock-agent-runtime/model/ModelInvocationInput.h>
+#include <aws/bedrock-agent-runtime/model/OrchestrationModelInvocationOutput.h>
 #include <aws/bedrock-agent-runtime/model/Observation.h>
 #include <aws/bedrock-agent-runtime/model/Rationale.h>
 #include <utility>
@@ -75,6 +76,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information pertaining to the output from the foundation model that
+     * is being invoked.</p>
+     */
+    inline const OrchestrationModelInvocationOutput& GetModelInvocationOutput() const{ return m_modelInvocationOutput; }
+    inline bool ModelInvocationOutputHasBeenSet() const { return m_modelInvocationOutputHasBeenSet; }
+    inline void SetModelInvocationOutput(const OrchestrationModelInvocationOutput& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = value; }
+    inline void SetModelInvocationOutput(OrchestrationModelInvocationOutput&& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = std::move(value); }
+    inline OrchestrationTrace& WithModelInvocationOutput(const OrchestrationModelInvocationOutput& value) { SetModelInvocationOutput(value); return *this;}
+    inline OrchestrationTrace& WithModelInvocationOutput(OrchestrationModelInvocationOutput&& value) { SetModelInvocationOutput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details about the observation (the output of the action group Lambda or
      * knowledge base) made by the agent.</p>
      */
@@ -106,6 +120,9 @@ namespace Model
 
     ModelInvocationInput m_modelInvocationInput;
     bool m_modelInvocationInputHasBeenSet = false;
+
+    OrchestrationModelInvocationOutput m_modelInvocationOutput;
+    bool m_modelInvocationOutputHasBeenSet = false;
 
     Observation m_observation;
     bool m_observationHasBeenSet = false;

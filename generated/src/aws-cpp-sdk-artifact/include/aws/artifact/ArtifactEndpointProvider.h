@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ArtifactClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ArtifactClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ArtifactClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ArtifactBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ApiGatewayManagementApiClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ApiGatewayManagementApiClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ApiGatewayManagementApiClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ApiGatewayManagementApiBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

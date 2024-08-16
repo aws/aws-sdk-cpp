@@ -88,7 +88,7 @@ namespace Aws
 
   namespace tnb
   {
-    using TnbClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TnbClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TnbEndpointProviderBase = Aws::tnb::Endpoint::TnbEndpointProviderBase;
     using TnbEndpointProvider = Aws::tnb::Endpoint::TnbEndpointProvider;
 

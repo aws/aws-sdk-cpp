@@ -73,7 +73,7 @@ namespace Aws
 
   namespace PaymentCryptography
   {
-    using PaymentCryptographyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PaymentCryptographyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PaymentCryptographyEndpointProviderBase = Aws::PaymentCryptography::Endpoint::PaymentCryptographyEndpointProviderBase;
     using PaymentCryptographyEndpointProvider = Aws::PaymentCryptography::Endpoint::PaymentCryptographyEndpointProvider;
 

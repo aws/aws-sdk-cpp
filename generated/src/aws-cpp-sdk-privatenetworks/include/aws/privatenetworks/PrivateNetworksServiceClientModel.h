@@ -79,7 +79,7 @@ namespace Aws
 
   namespace PrivateNetworks
   {
-    using PrivateNetworksClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PrivateNetworksClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PrivateNetworksEndpointProviderBase = Aws::PrivateNetworks::Endpoint::PrivateNetworksEndpointProviderBase;
     using PrivateNetworksEndpointProvider = Aws::PrivateNetworks::Endpoint::PrivateNetworksEndpointProvider;
 

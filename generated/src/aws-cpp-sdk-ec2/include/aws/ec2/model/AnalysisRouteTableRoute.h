@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The prefix of the Amazon Web Service.</p>
+     * <p>The prefix of the Amazon Web Services service.</p>
      */
     inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
     inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }

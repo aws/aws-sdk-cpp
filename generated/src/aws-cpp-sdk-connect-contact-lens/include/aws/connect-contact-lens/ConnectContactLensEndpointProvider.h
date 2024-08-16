@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ConnectContactLensClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ConnectContactLensClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ConnectContactLensClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConnectContactLensBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

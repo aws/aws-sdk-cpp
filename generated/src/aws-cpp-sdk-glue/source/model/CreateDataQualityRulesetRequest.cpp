@@ -18,6 +18,7 @@ CreateDataQualityRulesetRequest::CreateDataQualityRulesetRequest() :
     m_rulesetHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_targetTableHasBeenSet(false),
+    m_dataQualitySecurityConfigurationHasBeenSet(false),
     m_clientTokenHasBeenSet(false)
 {
 }
@@ -58,6 +59,12 @@ Aws::String CreateDataQualityRulesetRequest::SerializePayload() const
   if(m_targetTableHasBeenSet)
   {
    payload.WithObject("TargetTable", m_targetTable.Jsonize());
+
+  }
+
+  if(m_dataQualitySecurityConfigurationHasBeenSet)
+  {
+   payload.WithString("DataQualitySecurityConfiguration", m_dataQualitySecurityConfiguration);
 
   }
 

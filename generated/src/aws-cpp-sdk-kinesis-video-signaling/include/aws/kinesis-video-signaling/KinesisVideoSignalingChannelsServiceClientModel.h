@@ -53,7 +53,7 @@ namespace Aws
 
   namespace KinesisVideoSignalingChannels
   {
-    using KinesisVideoSignalingChannelsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisVideoSignalingChannelsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisVideoSignalingChannelsEndpointProviderBase = Aws::KinesisVideoSignalingChannels::Endpoint::KinesisVideoSignalingChannelsEndpointProviderBase;
     using KinesisVideoSignalingChannelsEndpointProvider = Aws::KinesisVideoSignalingChannels::Endpoint::KinesisVideoSignalingChannelsEndpointProvider;
 

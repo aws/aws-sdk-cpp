@@ -48,7 +48,8 @@ App::App() :
     m_autoBranchCreationPatternsHasBeenSet(false),
     m_autoBranchCreationConfigHasBeenSet(false),
     m_repositoryCloneMethod(RepositoryCloneMethod::NOT_SET),
-    m_repositoryCloneMethodHasBeenSet(false)
+    m_repositoryCloneMethodHasBeenSet(false),
+    m_cacheConfigHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,13 @@ App& App::operator =(JsonView jsonValue)
     m_repositoryCloneMethodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cacheConfig"))
+  {
+    m_cacheConfig = jsonValue.GetObject("cacheConfig");
+
+    m_cacheConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -405,6 +413,12 @@ JsonValue App::Jsonize() const
   if(m_repositoryCloneMethodHasBeenSet)
   {
    payload.WithString("repositoryCloneMethod", RepositoryCloneMethodMapper::GetNameForRepositoryCloneMethod(m_repositoryCloneMethod));
+  }
+
+  if(m_cacheConfigHasBeenSet)
+  {
+   payload.WithObject("cacheConfig", m_cacheConfig.Jsonize());
+
   }
 
   return payload;

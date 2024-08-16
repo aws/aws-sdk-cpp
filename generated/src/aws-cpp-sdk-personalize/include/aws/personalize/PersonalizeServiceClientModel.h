@@ -130,7 +130,7 @@ namespace Aws
 
   namespace Personalize
   {
-    using PersonalizeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PersonalizeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PersonalizeEndpointProviderBase = Aws::Personalize::Endpoint::PersonalizeEndpointProviderBase;
     using PersonalizeEndpointProvider = Aws::Personalize::Endpoint::PersonalizeEndpointProvider;
 

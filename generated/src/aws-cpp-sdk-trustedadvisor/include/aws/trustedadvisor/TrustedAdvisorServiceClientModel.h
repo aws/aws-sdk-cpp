@@ -64,7 +64,7 @@ namespace Aws
 
   namespace TrustedAdvisor
   {
-    using TrustedAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TrustedAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TrustedAdvisorEndpointProviderBase = Aws::TrustedAdvisor::Endpoint::TrustedAdvisorEndpointProviderBase;
     using TrustedAdvisorEndpointProvider = Aws::TrustedAdvisor::Endpoint::TrustedAdvisorEndpointProvider;
 

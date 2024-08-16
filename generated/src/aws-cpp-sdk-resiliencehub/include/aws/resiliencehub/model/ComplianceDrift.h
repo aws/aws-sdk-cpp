@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>Difference type between actual and expected recovery point objective (RPO)
      * and recovery time objective (RTO) values. Currently, Resilience Hub supports
-     * only <b>NotEqual</b> difference type.</p>
+     * only <code>NotEqual</code> difference type.</p>
      */
     inline const DifferenceType& GetDiffType() const{ return m_diffType; }
     inline bool DiffTypeHasBeenSet() const { return m_diffTypeHasBeenSet; }

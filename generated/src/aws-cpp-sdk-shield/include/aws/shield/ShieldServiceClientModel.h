@@ -101,7 +101,7 @@ namespace Aws
 
   namespace Shield
   {
-    using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ShieldEndpointProviderBase = Aws::Shield::Endpoint::ShieldEndpointProviderBase;
     using ShieldEndpointProvider = Aws::Shield::Endpoint::ShieldEndpointProvider;
 

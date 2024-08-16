@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PinpointEmailClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PinpointEmailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PinpointEmailClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PinpointEmailBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

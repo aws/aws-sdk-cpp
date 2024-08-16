@@ -81,7 +81,7 @@ namespace Aws
 
   namespace CodeConnections
   {
-    using CodeConnectionsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeConnectionsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeConnectionsEndpointProviderBase = Aws::CodeConnections::Endpoint::CodeConnectionsEndpointProviderBase;
     using CodeConnectionsEndpointProvider = Aws::CodeConnections::Endpoint::CodeConnectionsEndpointProvider;
 

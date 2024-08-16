@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using HealthLakeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using HealthLakeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using HealthLakeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using HealthLakeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

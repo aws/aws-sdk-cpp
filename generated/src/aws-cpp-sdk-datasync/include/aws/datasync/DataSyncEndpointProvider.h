@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DataSyncClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DataSyncClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DataSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DataSyncBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

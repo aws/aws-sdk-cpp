@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MQClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MQClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MQClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MQBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

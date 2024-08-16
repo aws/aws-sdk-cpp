@@ -191,7 +191,7 @@ namespace Aws
 
   namespace DatabaseMigrationService
   {
-    using DatabaseMigrationServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DatabaseMigrationServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DatabaseMigrationServiceEndpointProviderBase = Aws::DatabaseMigrationService::Endpoint::DatabaseMigrationServiceEndpointProviderBase;
     using DatabaseMigrationServiceEndpointProvider = Aws::DatabaseMigrationService::Endpoint::DatabaseMigrationServiceEndpointProvider;
 

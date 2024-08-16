@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeGuruSecurityClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeGuruSecurityClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeGuruSecurityClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeGuruSecurityBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

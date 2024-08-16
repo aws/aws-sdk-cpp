@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ServiceQuotasClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ServiceQuotasClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ServiceQuotasClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ServiceQuotasBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTSecureTunnelingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTSecureTunnelingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTSecureTunnelingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTSecureTunnelingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

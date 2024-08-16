@@ -112,6 +112,12 @@ GetDataQualityRuleRecommendationRunResult& GetDataQualityRuleRecommendationRunRe
 
   }
 
+  if(jsonValue.ValueExists("DataQualitySecurityConfiguration"))
+  {
+    m_dataQualitySecurityConfiguration = jsonValue.GetString("DataQualitySecurityConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

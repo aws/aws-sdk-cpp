@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CostExplorerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CostExplorerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CostExplorerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CostExplorerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

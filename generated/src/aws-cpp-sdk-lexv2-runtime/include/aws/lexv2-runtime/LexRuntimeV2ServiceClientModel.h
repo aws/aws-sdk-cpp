@@ -62,7 +62,7 @@ namespace Aws
 
   namespace LexRuntimeV2
   {
-    using LexRuntimeV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LexRuntimeV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LexRuntimeV2EndpointProviderBase = Aws::LexRuntimeV2::Endpoint::LexRuntimeV2EndpointProviderBase;
     using LexRuntimeV2EndpointProvider = Aws::LexRuntimeV2::Endpoint::LexRuntimeV2EndpointProvider;
 

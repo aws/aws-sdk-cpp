@@ -13,6 +13,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/appstream/model/ImagePermissions.h>
+#include <aws/appstream/model/LatestAppstreamAgentVersion.h>
+#include <aws/appstream/model/DynamicAppProvidersEnabled.h>
+#include <aws/appstream/model/ImageSharedWithOthers.h>
 #include <aws/appstream/model/Application.h>
 #include <aws/appstream/model/ResourceError.h>
 #include <utility>
@@ -271,6 +274,64 @@ namespace Model
     inline Image& AddImageErrors(const ResourceError& value) { m_imageErrorsHasBeenSet = true; m_imageErrors.push_back(value); return *this; }
     inline Image& AddImageErrors(ResourceError&& value) { m_imageErrorsHasBeenSet = true; m_imageErrors.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the image is using the latest AppStream 2.0 agent version
+     * or not.</p>
+     */
+    inline const LatestAppstreamAgentVersion& GetLatestAppstreamAgentVersion() const{ return m_latestAppstreamAgentVersion; }
+    inline bool LatestAppstreamAgentVersionHasBeenSet() const { return m_latestAppstreamAgentVersionHasBeenSet; }
+    inline void SetLatestAppstreamAgentVersion(const LatestAppstreamAgentVersion& value) { m_latestAppstreamAgentVersionHasBeenSet = true; m_latestAppstreamAgentVersion = value; }
+    inline void SetLatestAppstreamAgentVersion(LatestAppstreamAgentVersion&& value) { m_latestAppstreamAgentVersionHasBeenSet = true; m_latestAppstreamAgentVersion = std::move(value); }
+    inline Image& WithLatestAppstreamAgentVersion(const LatestAppstreamAgentVersion& value) { SetLatestAppstreamAgentVersion(value); return *this;}
+    inline Image& WithLatestAppstreamAgentVersion(LatestAppstreamAgentVersion&& value) { SetLatestAppstreamAgentVersion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The supported instances families that determine which image a customer can
+     * use when the customer launches a fleet or image builder. The following instances
+     * families are supported:</p> <ul> <li> <p>General Purpose</p> </li> <li>
+     * <p>Compute Optimized</p> </li> <li> <p>Memory Optimized</p> </li> <li>
+     * <p>Graphics</p> </li> <li> <p>Graphics Design</p> </li> <li> <p>Graphics Pro</p>
+     * </li> <li> <p>Graphics G4</p> </li> <li> <p>Graphics G5</p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedInstanceFamilies() const{ return m_supportedInstanceFamilies; }
+    inline bool SupportedInstanceFamiliesHasBeenSet() const { return m_supportedInstanceFamiliesHasBeenSet; }
+    inline void SetSupportedInstanceFamilies(const Aws::Vector<Aws::String>& value) { m_supportedInstanceFamiliesHasBeenSet = true; m_supportedInstanceFamilies = value; }
+    inline void SetSupportedInstanceFamilies(Aws::Vector<Aws::String>&& value) { m_supportedInstanceFamiliesHasBeenSet = true; m_supportedInstanceFamilies = std::move(value); }
+    inline Image& WithSupportedInstanceFamilies(const Aws::Vector<Aws::String>& value) { SetSupportedInstanceFamilies(value); return *this;}
+    inline Image& WithSupportedInstanceFamilies(Aws::Vector<Aws::String>&& value) { SetSupportedInstanceFamilies(std::move(value)); return *this;}
+    inline Image& AddSupportedInstanceFamilies(const Aws::String& value) { m_supportedInstanceFamiliesHasBeenSet = true; m_supportedInstanceFamilies.push_back(value); return *this; }
+    inline Image& AddSupportedInstanceFamilies(Aws::String&& value) { m_supportedInstanceFamiliesHasBeenSet = true; m_supportedInstanceFamilies.push_back(std::move(value)); return *this; }
+    inline Image& AddSupportedInstanceFamilies(const char* value) { m_supportedInstanceFamiliesHasBeenSet = true; m_supportedInstanceFamilies.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0
+     * image or not.</p>
+     */
+    inline const DynamicAppProvidersEnabled& GetDynamicAppProvidersEnabled() const{ return m_dynamicAppProvidersEnabled; }
+    inline bool DynamicAppProvidersEnabledHasBeenSet() const { return m_dynamicAppProvidersEnabledHasBeenSet; }
+    inline void SetDynamicAppProvidersEnabled(const DynamicAppProvidersEnabled& value) { m_dynamicAppProvidersEnabledHasBeenSet = true; m_dynamicAppProvidersEnabled = value; }
+    inline void SetDynamicAppProvidersEnabled(DynamicAppProvidersEnabled&& value) { m_dynamicAppProvidersEnabledHasBeenSet = true; m_dynamicAppProvidersEnabled = std::move(value); }
+    inline Image& WithDynamicAppProvidersEnabled(const DynamicAppProvidersEnabled& value) { SetDynamicAppProvidersEnabled(value); return *this;}
+    inline Image& WithDynamicAppProvidersEnabled(DynamicAppProvidersEnabled&& value) { SetDynamicAppProvidersEnabled(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the image is shared with another account ID.</p>
+     */
+    inline const ImageSharedWithOthers& GetImageSharedWithOthers() const{ return m_imageSharedWithOthers; }
+    inline bool ImageSharedWithOthersHasBeenSet() const { return m_imageSharedWithOthersHasBeenSet; }
+    inline void SetImageSharedWithOthers(const ImageSharedWithOthers& value) { m_imageSharedWithOthersHasBeenSet = true; m_imageSharedWithOthers = value; }
+    inline void SetImageSharedWithOthers(ImageSharedWithOthers&& value) { m_imageSharedWithOthersHasBeenSet = true; m_imageSharedWithOthers = std::move(value); }
+    inline Image& WithImageSharedWithOthers(const ImageSharedWithOthers& value) { SetImageSharedWithOthers(value); return *this;}
+    inline Image& WithImageSharedWithOthers(ImageSharedWithOthers&& value) { SetImageSharedWithOthers(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -323,6 +384,18 @@ namespace Model
 
     Aws::Vector<ResourceError> m_imageErrors;
     bool m_imageErrorsHasBeenSet = false;
+
+    LatestAppstreamAgentVersion m_latestAppstreamAgentVersion;
+    bool m_latestAppstreamAgentVersionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_supportedInstanceFamilies;
+    bool m_supportedInstanceFamiliesHasBeenSet = false;
+
+    DynamicAppProvidersEnabled m_dynamicAppProvidersEnabled;
+    bool m_dynamicAppProvidersEnabledHasBeenSet = false;
+
+    ImageSharedWithOthers m_imageSharedWithOthers;
+    bool m_imageSharedWithOthersHasBeenSet = false;
   };
 
 } // namespace Model

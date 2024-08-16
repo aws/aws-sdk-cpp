@@ -78,7 +78,7 @@ namespace Aws
 
   namespace Kinesis
   {
-    using KinesisClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisEndpointProviderBase = Aws::Kinesis::Endpoint::KinesisEndpointProviderBase;
     using KinesisEndpointProvider = Aws::Kinesis::Endpoint::KinesisEndpointProvider;
 

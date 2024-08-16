@@ -70,6 +70,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The partition keys used to distribute data across multiple partitions or
+     * shards based on a specific key or set of key.</p>
+     */
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPartitionKeys() const{ return m_partitionKeys; }
+    inline bool PartitionKeysHasBeenSet() const { return m_partitionKeysHasBeenSet; }
+    inline void SetPartitionKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = value; }
+    inline void SetPartitionKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::move(value); }
+    inline BasicCatalogTarget& WithPartitionKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetPartitionKeys(value); return *this;}
+    inline BasicCatalogTarget& WithPartitionKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetPartitionKeys(std::move(value)); return *this;}
+    inline BasicCatalogTarget& AddPartitionKeys(const Aws::Vector<Aws::String>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(value); return *this; }
+    inline BasicCatalogTarget& AddPartitionKeys(Aws::Vector<Aws::String>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The database that contains the table you want to use as the target. This
      * database must already exist in the Data Catalog.</p>
      */
@@ -104,6 +119,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_inputs;
     bool m_inputsHasBeenSet = false;
+
+    Aws::Vector<Aws::Vector<Aws::String>> m_partitionKeys;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::String m_database;
     bool m_databaseHasBeenSet = false;

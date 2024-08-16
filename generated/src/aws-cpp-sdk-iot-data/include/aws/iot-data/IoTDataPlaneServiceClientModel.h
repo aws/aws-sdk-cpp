@@ -59,7 +59,7 @@ namespace Aws
 
   namespace IoTDataPlane
   {
-    using IoTDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTDataPlaneEndpointProviderBase = Aws::IoTDataPlane::Endpoint::IoTDataPlaneEndpointProviderBase;
     using IoTDataPlaneEndpointProvider = Aws::IoTDataPlane::Endpoint::IoTDataPlaneEndpointProvider;
 

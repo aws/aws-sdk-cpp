@@ -23,6 +23,7 @@ namespace Aws
         static const int BreachedUnattainable_HASH = HashingUtils::HashString("BreachedUnattainable");
         static const int BreachedCanMeet_HASH = HashingUtils::HashString("BreachedCanMeet");
         static const int MetCanImprove_HASH = HashingUtils::HashString("MetCanImprove");
+        static const int MissingPolicy_HASH = HashingUtils::HashString("MissingPolicy");
 
 
         RecommendationComplianceStatus GetRecommendationComplianceStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == MetCanImprove_HASH)
           {
             return RecommendationComplianceStatus::MetCanImprove;
+          }
+          else if (hashCode == MissingPolicy_HASH)
+          {
+            return RecommendationComplianceStatus::MissingPolicy;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "BreachedCanMeet";
           case RecommendationComplianceStatus::MetCanImprove:
             return "MetCanImprove";
+          case RecommendationComplianceStatus::MissingPolicy:
+            return "MissingPolicy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

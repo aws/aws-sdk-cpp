@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudDirectoryClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudDirectoryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudDirectoryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudDirectoryBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

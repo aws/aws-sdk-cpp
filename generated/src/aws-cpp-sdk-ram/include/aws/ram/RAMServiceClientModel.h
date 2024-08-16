@@ -91,7 +91,7 @@ namespace Aws
 
   namespace RAM
   {
-    using RAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RAMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RAMEndpointProviderBase = Aws::RAM::Endpoint::RAMEndpointProviderBase;
     using RAMEndpointProvider = Aws::RAM::Endpoint::RAMEndpointProvider;
 

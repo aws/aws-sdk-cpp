@@ -149,7 +149,7 @@ namespace Aws
 
   namespace StorageGateway
   {
-    using StorageGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using StorageGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
     using StorageGatewayEndpointProviderBase = Aws::StorageGateway::Endpoint::StorageGatewayEndpointProviderBase;
     using StorageGatewayEndpointProvider = Aws::StorageGateway::Endpoint::StorageGatewayEndpointProvider;
 

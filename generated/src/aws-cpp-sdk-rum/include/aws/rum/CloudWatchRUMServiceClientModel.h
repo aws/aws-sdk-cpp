@@ -69,7 +69,7 @@ namespace Aws
 
   namespace CloudWatchRUM
   {
-    using CloudWatchRUMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchRUMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudWatchRUMEndpointProviderBase = Aws::CloudWatchRUM::Endpoint::CloudWatchRUMEndpointProviderBase;
     using CloudWatchRUMEndpointProvider = Aws::CloudWatchRUM::Endpoint::CloudWatchRUMEndpointProvider;
 

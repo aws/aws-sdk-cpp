@@ -76,15 +76,9 @@ namespace Model
      * installed using the Docker plugin CLI, use <code>docker plugin ls</code> to
      * retrieve the driver name from your container instance. If the driver was
      * installed using another method, use Docker plugin discovery to retrieve the
-     * driver name. For more information, see <a
-     * href="https://docs.docker.com/engine/extend/plugin_api/#plugin-discovery">Docker
-     * plugin discovery</a>. This parameter maps to <code>Driver</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
-     * volume</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     * <code>xxdriver</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
-     * volume create</a>.</p>
+     * driver name. This parameter maps to <code>Driver</code> in the docker
+     * create-container command and the <code>xxdriver</code> option to docker volume
+     * create.</p>
      */
     inline const Aws::String& GetDriver() const{ return m_driver; }
     inline bool DriverHasBeenSet() const { return m_driverHasBeenSet; }
@@ -99,13 +93,8 @@ namespace Model
     ///@{
     /**
      * <p>A map of Docker driver-specific options passed through. This parameter maps
-     * to <code>DriverOpts</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
-     * volume</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     * <code>xxopt</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
-     * volume create</a>.</p>
+     * to <code>DriverOpts</code> in the docker create-volume command and the
+     * <code>xxopt</code> option to docker volume create.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDriverOpts() const{ return m_driverOpts; }
     inline bool DriverOptsHasBeenSet() const { return m_driverOptsHasBeenSet; }
@@ -125,13 +114,8 @@ namespace Model
     ///@{
     /**
      * <p>Custom metadata to add to your Docker volume. This parameter maps to
-     * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
-     * volume</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     * <code>xxlabel</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
-     * volume create</a>.</p>
+     * <code>Labels</code> in the docker create-container command and the
+     * <code>xxlabel</code> option to docker volume create.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }

@@ -63,7 +63,7 @@ namespace Aws
 
   namespace Polly
   {
-    using PollyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PollyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PollyEndpointProviderBase = Aws::Polly::Endpoint::PollyEndpointProviderBase;
     using PollyEndpointProvider = Aws::Polly::Endpoint::PollyEndpointProvider;
 

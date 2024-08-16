@@ -113,7 +113,7 @@ namespace Aws
 
   namespace LicenseManager
   {
-    using LicenseManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LicenseManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LicenseManagerEndpointProviderBase = Aws::LicenseManager::Endpoint::LicenseManagerEndpointProviderBase;
     using LicenseManagerEndpointProvider = Aws::LicenseManager::Endpoint::LicenseManagerEndpointProvider;
 

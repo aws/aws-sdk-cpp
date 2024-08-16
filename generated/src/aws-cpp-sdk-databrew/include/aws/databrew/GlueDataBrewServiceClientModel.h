@@ -101,7 +101,7 @@ namespace Aws
 
   namespace GlueDataBrew
   {
-    using GlueDataBrewClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GlueDataBrewClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GlueDataBrewEndpointProviderBase = Aws::GlueDataBrew::Endpoint::GlueDataBrewEndpointProviderBase;
     using GlueDataBrewEndpointProvider = Aws::GlueDataBrew::Endpoint::GlueDataBrewEndpointProvider;
 

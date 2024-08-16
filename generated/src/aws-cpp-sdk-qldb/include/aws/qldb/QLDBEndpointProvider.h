@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using QLDBClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using QLDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using QLDBClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QLDBBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

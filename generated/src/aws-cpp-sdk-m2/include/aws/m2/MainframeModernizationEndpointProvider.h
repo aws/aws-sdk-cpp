@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MainframeModernizationClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MainframeModernizationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MainframeModernizationClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MainframeModernizationBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

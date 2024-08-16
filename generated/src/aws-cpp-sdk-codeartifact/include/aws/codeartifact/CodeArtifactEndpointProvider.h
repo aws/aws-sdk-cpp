@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeArtifactClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeArtifactClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeArtifactClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeArtifactBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

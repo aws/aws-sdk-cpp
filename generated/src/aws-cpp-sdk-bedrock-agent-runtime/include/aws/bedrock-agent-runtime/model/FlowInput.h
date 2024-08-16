@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an input into the flow and what to do with it.</p>
-   * <p>This data type is used in the following API operations:</p> <ul> <li> <p> <a
+   * <p>Contains information about an input into the prompt flow and where to send
+   * it.</p> <p>This data type is used in the following API operations:</p> <ul> <li>
+   * <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html#API_agent_InvokeFlow_RequestSyntax">InvokeFlow
    * request</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/FlowInput">AWS
@@ -43,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about an input into the flow.</p>
+     * <p>Contains information about an input into the prompt flow.</p>
      */
     inline const FlowInputContent& GetContent() const{ return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
@@ -55,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A name for the input of the flow input node.</p>
+     * <p>The name of the flow input node that begins the prompt flow.</p>
      */
     inline const Aws::String& GetNodeName() const{ return m_nodeName; }
     inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
@@ -69,7 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A name for the output of the flow input node.</p>
+     * <p>The name of the output from the flow input node that begins the prompt
+     * flow.</p>
      */
     inline const Aws::String& GetNodeOutputName() const{ return m_nodeOutputName; }
     inline bool NodeOutputNameHasBeenSet() const { return m_nodeOutputNameHasBeenSet; }

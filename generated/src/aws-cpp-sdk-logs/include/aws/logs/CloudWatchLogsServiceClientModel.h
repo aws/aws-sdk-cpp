@@ -113,7 +113,7 @@ namespace Aws
 
   namespace CloudWatchLogs
   {
-    using CloudWatchLogsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchLogsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudWatchLogsEndpointProviderBase = Aws::CloudWatchLogs::Endpoint::CloudWatchLogsEndpointProviderBase;
     using CloudWatchLogsEndpointProvider = Aws::CloudWatchLogs::Endpoint::CloudWatchLogsEndpointProvider;
 

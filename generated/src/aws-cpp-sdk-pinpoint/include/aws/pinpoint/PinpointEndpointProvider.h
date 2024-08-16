@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PinpointClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PinpointClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PinpointClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PinpointBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

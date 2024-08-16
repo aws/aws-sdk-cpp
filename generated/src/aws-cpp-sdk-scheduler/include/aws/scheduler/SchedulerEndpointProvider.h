@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SchedulerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SchedulerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SchedulerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SchedulerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

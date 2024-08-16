@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using EventBridgeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EventBridgeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using EventBridgeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EventBridgeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -206,7 +206,15 @@ namespace Model
      * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
      * The name of the Kerberos princial used by Glue. For more information, see <a
      * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
-     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> <li> <p>
+     * <code>ROLE_ARN</code> - The role to be used for running queries.</p> </li> <li>
+     * <p> <code>REGION</code> - The Amazon Web Services Region where queries will be
+     * run.</p> </li> <li> <p> <code>WORKGROUP_NAME</code> - The name of an Amazon
+     * Redshift serverless workgroup or Amazon Athena workgroup in which queries will
+     * run.</p> </li> <li> <p> <code>CLUSTER_IDENTIFIER</code> - The cluster identifier
+     * of an Amazon Redshift cluster in which queries will run.</p> </li> <li> <p>
+     * <code>DATABASE</code> - The Amazon Redshift database that you are connecting
+     * to.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }

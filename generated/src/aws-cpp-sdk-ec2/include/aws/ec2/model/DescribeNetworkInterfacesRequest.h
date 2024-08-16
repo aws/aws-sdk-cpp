@@ -101,18 +101,18 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>requester-id</code> - The alias or
      * Amazon Web Services account ID of the principal or service that created the
      * network interface.</p> </li> <li> <p> <code>requester-managed</code> - Indicates
-     * whether the network interface is being managed by an Amazon Web Service (for
-     * example, Amazon Web Services Management Console, Auto Scaling, and so on).</p>
-     * </li> <li> <p> <code>source-dest-check</code> - Indicates whether the network
-     * interface performs source/destination checking. A value of <code>true</code>
-     * means checking is enabled, and <code>false</code> means checking is disabled.
-     * The value must be <code>false</code> for the network interface to perform
-     * network address translation (NAT) in your VPC. </p> </li> <li> <p>
-     * <code>status</code> - The status of the network interface. If the network
-     * interface is not attached to an instance, the status is <code>available</code>;
-     * if a network interface is attached to an instance the status is
-     * <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the
-     * subnet for the network interface.</p> </li> <li> <p>
+     * whether the network interface is being managed by an Amazon Web Services service
+     * (for example, Amazon Web Services Management Console, Auto Scaling, and so
+     * on).</p> </li> <li> <p> <code>source-dest-check</code> - Indicates whether the
+     * network interface performs source/destination checking. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code> means
+     * checking is disabled. The value must be <code>false</code> for the network
+     * interface to perform network address translation (NAT) in your VPC. </p> </li>
+     * <li> <p> <code>status</code> - The status of the network interface. If the
+     * network interface is not attached to an instance, the status is
+     * <code>available</code>; if a network interface is attached to an instance the
+     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
+     * ID of the subnet for the network interface.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key

@@ -108,6 +108,20 @@ namespace Model
     inline DataQualityRuleResult& AddEvaluatedMetrics(Aws::String&& key, double value) { m_evaluatedMetricsHasBeenSet = true; m_evaluatedMetrics.emplace(std::move(key), value); return *this; }
     inline DataQualityRuleResult& AddEvaluatedMetrics(const char* key, double value) { m_evaluatedMetricsHasBeenSet = true; m_evaluatedMetrics.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The evaluated rule.</p>
+     */
+    inline const Aws::String& GetEvaluatedRule() const{ return m_evaluatedRule; }
+    inline bool EvaluatedRuleHasBeenSet() const { return m_evaluatedRuleHasBeenSet; }
+    inline void SetEvaluatedRule(const Aws::String& value) { m_evaluatedRuleHasBeenSet = true; m_evaluatedRule = value; }
+    inline void SetEvaluatedRule(Aws::String&& value) { m_evaluatedRuleHasBeenSet = true; m_evaluatedRule = std::move(value); }
+    inline void SetEvaluatedRule(const char* value) { m_evaluatedRuleHasBeenSet = true; m_evaluatedRule.assign(value); }
+    inline DataQualityRuleResult& WithEvaluatedRule(const Aws::String& value) { SetEvaluatedRule(value); return *this;}
+    inline DataQualityRuleResult& WithEvaluatedRule(Aws::String&& value) { SetEvaluatedRule(std::move(value)); return *this;}
+    inline DataQualityRuleResult& WithEvaluatedRule(const char* value) { SetEvaluatedRule(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -124,6 +138,9 @@ namespace Model
 
     Aws::Map<Aws::String, double> m_evaluatedMetrics;
     bool m_evaluatedMetricsHasBeenSet = false;
+
+    Aws::String m_evaluatedRule;
+    bool m_evaluatedRuleHasBeenSet = false;
   };
 
 } // namespace Model

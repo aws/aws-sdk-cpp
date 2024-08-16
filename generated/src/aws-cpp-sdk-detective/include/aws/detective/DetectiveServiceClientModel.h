@@ -76,7 +76,7 @@ namespace Aws
 
   namespace Detective
   {
-    using DetectiveClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DetectiveClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DetectiveEndpointProviderBase = Aws::Detective::Endpoint::DetectiveEndpointProviderBase;
     using DetectiveEndpointProvider = Aws::Detective::Endpoint::DetectiveEndpointProvider;
 

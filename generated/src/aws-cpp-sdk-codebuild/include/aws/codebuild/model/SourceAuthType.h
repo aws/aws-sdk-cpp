@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     OAUTH,
-    CODECONNECTIONS
+    CODECONNECTIONS,
+    SECRETS_MANAGER
   };
 
 namespace SourceAuthTypeMapper

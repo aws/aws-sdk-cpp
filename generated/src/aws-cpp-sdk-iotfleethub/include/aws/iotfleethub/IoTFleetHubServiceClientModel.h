@@ -60,7 +60,7 @@ namespace Aws
 
   namespace IoTFleetHub
   {
-    using IoTFleetHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTFleetHubClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTFleetHubEndpointProviderBase = Aws::IoTFleetHub::Endpoint::IoTFleetHubEndpointProviderBase;
     using IoTFleetHubEndpointProvider = Aws::IoTFleetHub::Endpoint::IoTFleetHubEndpointProvider;
 

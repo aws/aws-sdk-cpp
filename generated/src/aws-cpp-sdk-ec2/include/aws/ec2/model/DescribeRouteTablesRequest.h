@@ -57,7 +57,7 @@ namespace Model
      * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
      * in a route in the route table.</p> </li> <li> <p>
      * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the Amazon
-     * Web Service specified in a route in the table.</p> </li> <li> <p>
+     * Web Services service specified in a route in the table.</p> </li> <li> <p>
      * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
      * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
      * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the

@@ -77,7 +77,7 @@ namespace Aws
 
   namespace Budgets
   {
-    using BudgetsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BudgetsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BudgetsEndpointProviderBase = Aws::Budgets::Endpoint::BudgetsEndpointProviderBase;
     using BudgetsEndpointProvider = Aws::Budgets::Endpoint::BudgetsEndpointProvider;
 

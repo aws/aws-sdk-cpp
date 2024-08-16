@@ -21,6 +21,7 @@ namespace Model
 OrchestrationTrace::OrchestrationTrace() : 
     m_invocationInputHasBeenSet(false),
     m_modelInvocationInputHasBeenSet(false),
+    m_modelInvocationOutputHasBeenSet(false),
     m_observationHasBeenSet(false),
     m_rationaleHasBeenSet(false)
 {
@@ -46,6 +47,13 @@ OrchestrationTrace& OrchestrationTrace::operator =(JsonView jsonValue)
     m_modelInvocationInput = jsonValue.GetObject("modelInvocationInput");
 
     m_modelInvocationInputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("modelInvocationOutput"))
+  {
+    m_modelInvocationOutput = jsonValue.GetObject("modelInvocationOutput");
+
+    m_modelInvocationOutputHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("observation"))
@@ -78,6 +86,12 @@ JsonValue OrchestrationTrace::Jsonize() const
   if(m_modelInvocationInputHasBeenSet)
   {
    payload.WithObject("modelInvocationInput", m_modelInvocationInput.Jsonize());
+
+  }
+
+  if(m_modelInvocationOutputHasBeenSet)
+  {
+   payload.WithObject("modelInvocationOutput", m_modelInvocationOutput.Jsonize());
 
   }
 

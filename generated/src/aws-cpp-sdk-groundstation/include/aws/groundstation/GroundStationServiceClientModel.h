@@ -89,7 +89,7 @@ namespace Aws
 
   namespace GroundStation
   {
-    using GroundStationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GroundStationClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GroundStationEndpointProviderBase = Aws::GroundStation::Endpoint::GroundStationEndpointProviderBase;
     using GroundStationEndpointProvider = Aws::GroundStation::Endpoint::GroundStationEndpointProvider;
 

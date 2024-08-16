@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DeadlineClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DeadlineClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DeadlineClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DeadlineBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

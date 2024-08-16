@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TimestreamInfluxDBClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TimestreamInfluxDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using TimestreamInfluxDBClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TimestreamInfluxDBBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

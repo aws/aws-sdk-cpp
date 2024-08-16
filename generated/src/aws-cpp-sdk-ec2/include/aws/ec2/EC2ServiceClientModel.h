@@ -70,6 +70,7 @@
 #include <aws/ec2/model/CopyImageResponse.h>
 #include <aws/ec2/model/CopySnapshotResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationResponse.h>
+#include <aws/ec2/model/CreateCapacityReservationBySplittingResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/CreateCarrierGatewayResponse.h>
 #include <aws/ec2/model/CreateClientVpnEndpointResponse.h>
@@ -532,6 +533,7 @@
 #include <aws/ec2/model/MonitorInstancesResponse.h>
 #include <aws/ec2/model/MoveAddressToVpcResponse.h>
 #include <aws/ec2/model/MoveByoipCidrToIpamResponse.h>
+#include <aws/ec2/model/MoveCapacityReservationInstancesResponse.h>
 #include <aws/ec2/model/ProvisionByoipCidrResponse.h>
 #include <aws/ec2/model/ProvisionIpamByoasnResponse.h>
 #include <aws/ec2/model/ProvisionIpamPoolCidrResponse.h>
@@ -809,7 +811,7 @@ namespace Aws
 
   namespace EC2
   {
-    using EC2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EC2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EC2EndpointProviderBase = Aws::EC2::Endpoint::EC2EndpointProviderBase;
     using EC2EndpointProvider = Aws::EC2::Endpoint::EC2EndpointProvider;
 
@@ -872,6 +874,7 @@ namespace Aws
       class CopyImageRequest;
       class CopySnapshotRequest;
       class CreateCapacityReservationRequest;
+      class CreateCapacityReservationBySplittingRequest;
       class CreateCapacityReservationFleetRequest;
       class CreateCarrierGatewayRequest;
       class CreateClientVpnEndpointRequest;
@@ -1374,6 +1377,7 @@ namespace Aws
       class MonitorInstancesRequest;
       class MoveAddressToVpcRequest;
       class MoveByoipCidrToIpamRequest;
+      class MoveCapacityReservationInstancesRequest;
       class ProvisionByoipCidrRequest;
       class ProvisionIpamByoasnRequest;
       class ProvisionIpamPoolCidrRequest;
@@ -1500,6 +1504,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CopyImageResponse, EC2Error> CopyImageOutcome;
       typedef Aws::Utils::Outcome<CopySnapshotResponse, EC2Error> CopySnapshotOutcome;
       typedef Aws::Utils::Outcome<CreateCapacityReservationResponse, EC2Error> CreateCapacityReservationOutcome;
+      typedef Aws::Utils::Outcome<CreateCapacityReservationBySplittingResponse, EC2Error> CreateCapacityReservationBySplittingOutcome;
       typedef Aws::Utils::Outcome<CreateCapacityReservationFleetResponse, EC2Error> CreateCapacityReservationFleetOutcome;
       typedef Aws::Utils::Outcome<CreateCarrierGatewayResponse, EC2Error> CreateCarrierGatewayOutcome;
       typedef Aws::Utils::Outcome<CreateClientVpnEndpointResponse, EC2Error> CreateClientVpnEndpointOutcome;
@@ -2002,6 +2007,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<MonitorInstancesResponse, EC2Error> MonitorInstancesOutcome;
       typedef Aws::Utils::Outcome<MoveAddressToVpcResponse, EC2Error> MoveAddressToVpcOutcome;
       typedef Aws::Utils::Outcome<MoveByoipCidrToIpamResponse, EC2Error> MoveByoipCidrToIpamOutcome;
+      typedef Aws::Utils::Outcome<MoveCapacityReservationInstancesResponse, EC2Error> MoveCapacityReservationInstancesOutcome;
       typedef Aws::Utils::Outcome<ProvisionByoipCidrResponse, EC2Error> ProvisionByoipCidrOutcome;
       typedef Aws::Utils::Outcome<ProvisionIpamByoasnResponse, EC2Error> ProvisionIpamByoasnOutcome;
       typedef Aws::Utils::Outcome<ProvisionIpamPoolCidrResponse, EC2Error> ProvisionIpamPoolCidrOutcome;
@@ -2128,6 +2134,7 @@ namespace Aws
       typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
       typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
       typedef std::future<CreateCapacityReservationOutcome> CreateCapacityReservationOutcomeCallable;
+      typedef std::future<CreateCapacityReservationBySplittingOutcome> CreateCapacityReservationBySplittingOutcomeCallable;
       typedef std::future<CreateCapacityReservationFleetOutcome> CreateCapacityReservationFleetOutcomeCallable;
       typedef std::future<CreateCarrierGatewayOutcome> CreateCarrierGatewayOutcomeCallable;
       typedef std::future<CreateClientVpnEndpointOutcome> CreateClientVpnEndpointOutcomeCallable;
@@ -2630,6 +2637,7 @@ namespace Aws
       typedef std::future<MonitorInstancesOutcome> MonitorInstancesOutcomeCallable;
       typedef std::future<MoveAddressToVpcOutcome> MoveAddressToVpcOutcomeCallable;
       typedef std::future<MoveByoipCidrToIpamOutcome> MoveByoipCidrToIpamOutcomeCallable;
+      typedef std::future<MoveCapacityReservationInstancesOutcome> MoveCapacityReservationInstancesOutcomeCallable;
       typedef std::future<ProvisionByoipCidrOutcome> ProvisionByoipCidrOutcomeCallable;
       typedef std::future<ProvisionIpamByoasnOutcome> ProvisionIpamByoasnOutcomeCallable;
       typedef std::future<ProvisionIpamPoolCidrOutcome> ProvisionIpamPoolCidrOutcomeCallable;
@@ -2759,6 +2767,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CopyImageRequest&, const Model::CopyImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationRequest&, const Model::CreateCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationBySplittingRequest&, const Model::CreateCapacityReservationBySplittingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationBySplittingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationFleetRequest&, const Model::CreateCapacityReservationFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCarrierGatewayRequest&, const Model::CreateCarrierGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCarrierGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateClientVpnEndpointRequest&, const Model::CreateClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClientVpnEndpointResponseReceivedHandler;
@@ -3261,6 +3270,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::MonitorInstancesRequest&, const Model::MonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MoveAddressToVpcRequest&, const Model::MoveAddressToVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveAddressToVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MoveByoipCidrToIpamRequest&, const Model::MoveByoipCidrToIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveByoipCidrToIpamResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::MoveCapacityReservationInstancesRequest&, const Model::MoveCapacityReservationInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveCapacityReservationInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionByoipCidrRequest&, const Model::ProvisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionByoipCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionIpamByoasnRequest&, const Model::ProvisionIpamByoasnOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionIpamByoasnResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionIpamPoolCidrRequest&, const Model::ProvisionIpamPoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionIpamPoolCidrResponseReceivedHandler;

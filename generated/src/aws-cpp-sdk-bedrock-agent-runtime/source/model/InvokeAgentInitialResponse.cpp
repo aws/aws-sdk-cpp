@@ -22,9 +22,9 @@ namespace Model
 {
 
 InvokeAgentInitialResponse::InvokeAgentInitialResponse() : 
-    m_sessionIdHasBeenSet(false),
+    m_contentTypeHasBeenSet(false),
     m_memoryIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -42,10 +42,10 @@ InvokeAgentInitialResponse& InvokeAgentInitialResponse::operator =(JsonView json
 
 InvokeAgentInitialResponse::InvokeAgentInitialResponse(const Http::HeaderValueCollection& headers) : InvokeAgentInitialResponse()
 {
-  const auto& sessionIdIter = headers.find("x-amz-bedrock-agent-session-id");
-  if(sessionIdIter != headers.end())
+  const auto& contentTypeIter = headers.find("x-amzn-bedrock-agent-content-type");
+  if(contentTypeIter != headers.end())
   {
-    m_sessionId = sessionIdIter->second;
+    m_contentType = contentTypeIter->second;
   }
 
   const auto& memoryIdIter = headers.find("x-amz-bedrock-agent-memory-id");
@@ -54,10 +54,10 @@ InvokeAgentInitialResponse::InvokeAgentInitialResponse(const Http::HeaderValueCo
     m_memoryId = memoryIdIter->second;
   }
 
-  const auto& contentTypeIter = headers.find("x-amzn-bedrock-agent-content-type");
-  if(contentTypeIter != headers.end())
+  const auto& sessionIdIter = headers.find("x-amz-bedrock-agent-session-id");
+  if(sessionIdIter != headers.end())
   {
-    m_contentType = contentTypeIter->second;
+    m_sessionId = sessionIdIter->second;
   }
 
 }

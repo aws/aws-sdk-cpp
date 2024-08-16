@@ -145,7 +145,7 @@ namespace Aws
 
   namespace CognitoIdentityProvider
   {
-    using CognitoIdentityProviderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CognitoIdentityProviderClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CognitoIdentityProviderEndpointProviderBase = Aws::CognitoIdentityProvider::Endpoint::CognitoIdentityProviderEndpointProviderBase;
     using CognitoIdentityProviderEndpointProvider = Aws::CognitoIdentityProvider::Endpoint::CognitoIdentityProviderEndpointProvider;
 

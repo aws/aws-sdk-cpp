@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CostOptimizationHubClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CostOptimizationHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CostOptimizationHubClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CostOptimizationHubBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

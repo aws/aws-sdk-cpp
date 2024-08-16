@@ -38,8 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool where you want to configure detailed activity logging
-     * .</p>
+     * <p>The ID of the user pool where you want to configure logging.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -53,8 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A collection of all of the detailed activity logging configurations for a
-     * user pool.</p>
+     * <p>A collection of the logging configurations for a user pool.</p>
      */
     inline const Aws::Vector<LogConfigurationType>& GetLogConfigurations() const{ return m_logConfigurations; }
     inline bool LogConfigurationsHasBeenSet() const { return m_logConfigurationsHasBeenSet; }

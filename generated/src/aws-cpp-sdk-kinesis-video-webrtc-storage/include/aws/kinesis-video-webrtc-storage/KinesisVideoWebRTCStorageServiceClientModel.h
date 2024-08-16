@@ -52,7 +52,7 @@ namespace Aws
 
   namespace KinesisVideoWebRTCStorage
   {
-    using KinesisVideoWebRTCStorageClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisVideoWebRTCStorageClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisVideoWebRTCStorageEndpointProviderBase = Aws::KinesisVideoWebRTCStorage::Endpoint::KinesisVideoWebRTCStorageEndpointProviderBase;
     using KinesisVideoWebRTCStorageEndpointProvider = Aws::KinesisVideoWebRTCStorage::Endpoint::KinesisVideoWebRTCStorageEndpointProvider;
 
@@ -60,14 +60,17 @@ namespace Aws
     {
       /* Service model forward declarations required in KinesisVideoWebRTCStorageClient header */
       class JoinStorageSessionRequest;
+      class JoinStorageSessionAsViewerRequest;
       /* End of service model forward declarations required in KinesisVideoWebRTCStorageClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<Aws::NoResult, KinesisVideoWebRTCStorageError> JoinStorageSessionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, KinesisVideoWebRTCStorageError> JoinStorageSessionAsViewerOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<JoinStorageSessionOutcome> JoinStorageSessionOutcomeCallable;
+      typedef std::future<JoinStorageSessionAsViewerOutcome> JoinStorageSessionAsViewerOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -75,6 +78,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const KinesisVideoWebRTCStorageClient*, const Model::JoinStorageSessionRequest&, const Model::JoinStorageSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > JoinStorageSessionResponseReceivedHandler;
+    typedef std::function<void(const KinesisVideoWebRTCStorageClient*, const Model::JoinStorageSessionAsViewerRequest&, const Model::JoinStorageSessionAsViewerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > JoinStorageSessionAsViewerResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace KinesisVideoWebRTCStorage
 } // namespace Aws

@@ -435,7 +435,8 @@ namespace Model
      * include:</p> <ul> <li> <p> <code>ENABLED</code> - This prevents user
      * existence-related errors.</p> </li> <li> <p> <code>LEGACY</code> - This
      * represents the early behavior of Amazon Cognito where user existence related
-     * errors aren't prevented.</p> </li> </ul>
+     * errors aren't prevented.</p> </li> </ul> <p>Defaults to <code>LEGACY</code> when
+     * you don't provide a value.</p>
      */
     inline const PreventUserExistenceErrorTypes& GetPreventUserExistenceErrors() const{ return m_preventUserExistenceErrors; }
     inline bool PreventUserExistenceErrorsHasBeenSet() const { return m_preventUserExistenceErrorsHasBeenSet; }

@@ -16,7 +16,8 @@ namespace Model
   enum class LogLevel
   {
     NOT_SET,
-    ERROR_
+    ERROR_,
+    INFO
   };
 
 namespace LogLevelMapper

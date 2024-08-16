@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PinpointSMSVoiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PinpointSMSVoiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PinpointSMSVoiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PinpointSMSVoiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

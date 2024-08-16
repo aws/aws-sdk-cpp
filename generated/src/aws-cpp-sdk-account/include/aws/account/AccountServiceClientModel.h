@@ -61,7 +61,7 @@ namespace Aws
 
   namespace Account
   {
-    using AccountClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AccountClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AccountEndpointProviderBase = Aws::Account::Endpoint::AccountEndpointProviderBase;
     using AccountEndpointProvider = Aws::Account::Endpoint::AccountEndpointProvider;
 

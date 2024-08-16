@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using VoiceIDClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using VoiceIDClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using VoiceIDClientConfiguration = Aws::Client::GenericClientConfiguration;
 using VoiceIDBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

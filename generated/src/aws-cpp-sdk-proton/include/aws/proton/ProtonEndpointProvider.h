@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ProtonClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ProtonClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ProtonClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ProtonBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

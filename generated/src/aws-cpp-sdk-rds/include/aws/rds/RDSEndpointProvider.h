@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RDSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RDSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RDSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RDSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

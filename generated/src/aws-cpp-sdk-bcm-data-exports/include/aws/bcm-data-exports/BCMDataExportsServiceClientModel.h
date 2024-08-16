@@ -65,7 +65,7 @@ namespace Aws
 
   namespace BCMDataExports
   {
-    using BCMDataExportsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BCMDataExportsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BCMDataExportsEndpointProviderBase = Aws::BCMDataExports::Endpoint::BCMDataExportsEndpointProviderBase;
     using BCMDataExportsEndpointProvider = Aws::BCMDataExports::Endpoint::BCMDataExportsEndpointProvider;
 

@@ -51,7 +51,7 @@ namespace Aws
 
   namespace IoTThingsGraph
   {
-    using IoTThingsGraphClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTThingsGraphClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTThingsGraphEndpointProviderBase = Aws::IoTThingsGraph::Endpoint::IoTThingsGraphEndpointProviderBase;
     using IoTThingsGraphEndpointProvider = Aws::IoTThingsGraph::Endpoint::IoTThingsGraphEndpointProvider;
 

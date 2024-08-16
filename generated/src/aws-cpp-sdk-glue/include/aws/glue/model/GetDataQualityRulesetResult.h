@@ -124,6 +124,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The name of the security configuration created with the data quality
+     * encryption option.</p>
+     */
+    inline const Aws::String& GetDataQualitySecurityConfiguration() const{ return m_dataQualitySecurityConfiguration; }
+    inline void SetDataQualitySecurityConfiguration(const Aws::String& value) { m_dataQualitySecurityConfiguration = value; }
+    inline void SetDataQualitySecurityConfiguration(Aws::String&& value) { m_dataQualitySecurityConfiguration = std::move(value); }
+    inline void SetDataQualitySecurityConfiguration(const char* value) { m_dataQualitySecurityConfiguration.assign(value); }
+    inline GetDataQualityRulesetResult& WithDataQualitySecurityConfiguration(const Aws::String& value) { SetDataQualitySecurityConfiguration(value); return *this;}
+    inline GetDataQualityRulesetResult& WithDataQualitySecurityConfiguration(Aws::String&& value) { SetDataQualitySecurityConfiguration(std::move(value)); return *this;}
+    inline GetDataQualityRulesetResult& WithDataQualitySecurityConfiguration(const char* value) { SetDataQualitySecurityConfiguration(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -148,6 +162,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedOn;
 
     Aws::String m_recommendationRunId;
+
+    Aws::String m_dataQualitySecurityConfiguration;
 
     Aws::String m_requestId;
   };

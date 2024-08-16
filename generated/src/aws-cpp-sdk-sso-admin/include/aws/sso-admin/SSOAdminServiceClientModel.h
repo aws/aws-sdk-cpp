@@ -122,7 +122,7 @@ namespace Aws
 
   namespace SSOAdmin
   {
-    using SSOAdminClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSOAdminClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SSOAdminEndpointProviderBase = Aws::SSOAdmin::Endpoint::SSOAdminEndpointProviderBase;
     using SSOAdminEndpointProvider = Aws::SSOAdmin::Endpoint::SSOAdminEndpointProvider;
 

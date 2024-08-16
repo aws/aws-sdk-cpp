@@ -68,7 +68,7 @@ namespace Aws
 
   namespace SimSpaceWeaver
   {
-    using SimSpaceWeaverClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SimSpaceWeaverClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SimSpaceWeaverEndpointProviderBase = Aws::SimSpaceWeaver::Endpoint::SimSpaceWeaverEndpointProviderBase;
     using SimSpaceWeaverEndpointProvider = Aws::SimSpaceWeaver::Endpoint::SimSpaceWeaverEndpointProvider;
 

@@ -64,7 +64,7 @@ namespace Aws
 
   namespace ApplicationAutoScaling
   {
-    using ApplicationAutoScalingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApplicationAutoScalingClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApplicationAutoScalingEndpointProviderBase = Aws::ApplicationAutoScaling::Endpoint::ApplicationAutoScalingEndpointProviderBase;
     using ApplicationAutoScalingEndpointProvider = Aws::ApplicationAutoScaling::Endpoint::ApplicationAutoScalingEndpointProvider;
 

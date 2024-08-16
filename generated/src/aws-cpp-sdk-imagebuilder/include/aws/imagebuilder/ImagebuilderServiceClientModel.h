@@ -136,7 +136,7 @@ namespace Aws
 
   namespace imagebuilder
   {
-    using ImagebuilderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ImagebuilderClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ImagebuilderEndpointProviderBase = Aws::imagebuilder::Endpoint::ImagebuilderEndpointProviderBase;
     using ImagebuilderEndpointProvider = Aws::imagebuilder::Endpoint::ImagebuilderEndpointProvider;
 

@@ -144,7 +144,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the status of the subscription requests.</p>
+     * <p>Specifies the status of the subscription requests.</p>  <p>This is not
+     * a required parameter, but if not specified, by default, Amazon DataZone returns
+     * only <code>PENDING</code> subscription requests. </p> 
      */
     inline const SubscriptionRequestStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

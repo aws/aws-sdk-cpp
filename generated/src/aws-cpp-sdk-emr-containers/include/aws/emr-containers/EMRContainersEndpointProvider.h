@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using EMRContainersClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EMRContainersClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using EMRContainersClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EMRContainersBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

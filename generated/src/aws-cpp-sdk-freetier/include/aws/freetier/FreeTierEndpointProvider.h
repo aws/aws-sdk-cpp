@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using FreeTierClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FreeTierClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using FreeTierClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FreeTierBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

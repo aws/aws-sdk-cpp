@@ -65,7 +65,7 @@ namespace Aws
 
   namespace ACMPCA
   {
-    using ACMPCAClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ACMPCAClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ACMPCAEndpointProviderBase = Aws::ACMPCA::Endpoint::ACMPCAEndpointProviderBase;
     using ACMPCAEndpointProvider = Aws::ACMPCA::Endpoint::ACMPCAEndpointProvider;
 

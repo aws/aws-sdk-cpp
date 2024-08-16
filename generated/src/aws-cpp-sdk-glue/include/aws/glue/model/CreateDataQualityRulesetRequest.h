@@ -112,6 +112,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the security configuration created with the data quality
+     * encryption option.</p>
+     */
+    inline const Aws::String& GetDataQualitySecurityConfiguration() const{ return m_dataQualitySecurityConfiguration; }
+    inline bool DataQualitySecurityConfigurationHasBeenSet() const { return m_dataQualitySecurityConfigurationHasBeenSet; }
+    inline void SetDataQualitySecurityConfiguration(const Aws::String& value) { m_dataQualitySecurityConfigurationHasBeenSet = true; m_dataQualitySecurityConfiguration = value; }
+    inline void SetDataQualitySecurityConfiguration(Aws::String&& value) { m_dataQualitySecurityConfigurationHasBeenSet = true; m_dataQualitySecurityConfiguration = std::move(value); }
+    inline void SetDataQualitySecurityConfiguration(const char* value) { m_dataQualitySecurityConfigurationHasBeenSet = true; m_dataQualitySecurityConfiguration.assign(value); }
+    inline CreateDataQualityRulesetRequest& WithDataQualitySecurityConfiguration(const Aws::String& value) { SetDataQualitySecurityConfiguration(value); return *this;}
+    inline CreateDataQualityRulesetRequest& WithDataQualitySecurityConfiguration(Aws::String&& value) { SetDataQualitySecurityConfiguration(std::move(value)); return *this;}
+    inline CreateDataQualityRulesetRequest& WithDataQualitySecurityConfiguration(const char* value) { SetDataQualitySecurityConfiguration(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Used for idempotency and is recommended to be set to a random ID (such as a
      * UUID) to avoid creating or starting multiple instances of the same resource.</p>
      */
@@ -140,6 +155,9 @@ namespace Model
 
     DataQualityTargetTable m_targetTable;
     bool m_targetTableHasBeenSet = false;
+
+    Aws::String m_dataQualitySecurityConfiguration;
+    bool m_dataQualitySecurityConfigurationHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

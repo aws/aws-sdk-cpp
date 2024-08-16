@@ -79,7 +79,7 @@ namespace Aws
 
   namespace Route53RecoveryControlConfig
   {
-    using Route53RecoveryControlConfigClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53RecoveryControlConfigClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53RecoveryControlConfigEndpointProviderBase = Aws::Route53RecoveryControlConfig::Endpoint::Route53RecoveryControlConfigEndpointProviderBase;
     using Route53RecoveryControlConfigEndpointProvider = Aws::Route53RecoveryControlConfig::Endpoint::Route53RecoveryControlConfigEndpointProvider;
 

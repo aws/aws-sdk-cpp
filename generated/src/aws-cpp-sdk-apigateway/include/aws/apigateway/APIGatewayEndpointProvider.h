@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using APIGatewayClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using APIGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using APIGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
 using APIGatewayBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

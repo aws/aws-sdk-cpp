@@ -32,8 +32,12 @@ namespace Model
    * encrypted with SSE-KMS to a bucket. By default, Amazon S3 uses this KMS key for
    * SSE-KMS. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html">PUT
-   * Bucket encryption</a> in the <i>Amazon S3 API Reference</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * Bucket encryption</a> in the <i>Amazon S3 API Reference</i>.</p>  <p>If
+   * you're specifying a customer managed KMS key, we recommend using a fully
+   * qualified KMS key ARN. If you use a KMS key alias instead, then KMS resolves the
+   * key within the requester’s account. This behavior can result in data that's
+   * encrypted with a KMS key that belongs to the requester, and not the bucket
+   * owner.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ServerSideEncryptionByDefault">AWS
    * API Reference</a></p>
    */

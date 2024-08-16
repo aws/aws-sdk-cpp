@@ -27,7 +27,6 @@ SubscriptionGrantSummary::SubscriptionGrantSummary() :
     m_idHasBeenSet(false),
     m_status(SubscriptionGrantOverallStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
     m_subscriptionTargetIdHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_updatedByHasBeenSet(false)
@@ -92,13 +91,6 @@ SubscriptionGrantSummary& SubscriptionGrantSummary::operator =(JsonView jsonValu
     m_status = SubscriptionGrantOverallStatusMapper::GetSubscriptionGrantOverallStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("subscriptionId"))
-  {
-    m_subscriptionId = jsonValue.GetString("subscriptionId");
-
-    m_subscriptionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("subscriptionTargetId"))
@@ -172,12 +164,6 @@ JsonValue SubscriptionGrantSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", SubscriptionGrantOverallStatusMapper::GetNameForSubscriptionGrantOverallStatus(m_status));
-  }
-
-  if(m_subscriptionIdHasBeenSet)
-  {
-   payload.WithString("subscriptionId", m_subscriptionId);
-
   }
 
   if(m_subscriptionTargetIdHasBeenSet)

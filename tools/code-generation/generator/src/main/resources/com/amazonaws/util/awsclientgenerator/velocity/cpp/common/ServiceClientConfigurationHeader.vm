@@ -3,7 +3,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
-#if($metadata.hasEndpointDiscoveryTrait || $metadata.hasEndpointTrait)
+#if($metadata.hasEndpointDiscoveryTrait)
 #set($EndpointDiscoveryTraitSupported = "/*EndpointDiscoverySupported*/true")
 #else
 #set($EndpointDiscoveryTraitSupported = "/*EndpointDiscoverySupported*/false")
@@ -33,9 +33,17 @@ namespace ${rootNamespace}
         };
 
 #end
-        struct ${exportValue} ${metadata.classNamePrefix}ClientConfiguration : public Aws::Client::GenericClientConfiguration<${EndpointDiscoveryTraitSupported}>
+        struct ${exportValue} ${metadata.classNamePrefix}ClientConfiguration : public Aws::Client::GenericClientConfiguration
         {
-            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration<${EndpointDiscoveryTraitSupported}>;
+            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
+#if($metadata.hasEndpointDiscoveryTrait)
+            static const bool EndpointDiscoverySupported = true;
+#if($metadata.requireEndpointDiscovery)
+            static const bool EndpointDiscoveryRequired = true;
+#else
+            static const bool EndpointDiscoveryRequired = false;
+#end
+#end
 
             ${metadata.classNamePrefix}ClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
@@ -88,6 +96,37 @@ namespace ${rootNamespace}
             IdentityProviderSupplier identityProviderSupplier = [](const ${metadata.classNamePrefix}Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
                 return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("${metadata.classNamePrefix}ClientConfiguration", client);
             };
+#end
+#if($metadata.hasEndpointDiscoveryTrait)
+
+            /**
+             * Enable endpoint discovery
+             * For some services to dynamically set up their endpoints for different requests.
+             * By default, service clients will decide if endpoint discovery is enabled or not.
+             * If disabled, regional or overridden endpoint will be used instead.
+             * If a request requires endpoint discovery, but it was disabled then the request will never succeed.
+             * A boolean value is either true of false, use Optional here to have an instance does not contain a value,
+             * such that SDK will decide the default behavior as stated before, if no value specified.
+#if($metadata.requireEndpointDiscovery)
+             * $serviceModel.metadata.serviceId service client requires endpoint discovery. The default value for this setting is Enabled.
+#else
+             * $serviceModel.metadata.serviceId service client does not require endpoint discovery. The default value for this setting is Disabled.
+#end
+             */
+            Aws::Crt::Optional<bool>& enableEndpointDiscovery;
+
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
+            /**
+             * $serviceModel.endpointRuleSetModel.parameters["AccountId"].documentation
+             */
+            Aws::String accountId;
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+            /**
+             * $serviceModel.endpointRuleSetModel.parameters["AccountIdEndpointMode"].documentation
+             */
+            Aws::String accountIdEndpointMode = "preferred";
 #end
         private:
             void Load${serviceNamespace}SpecificConfig(const Aws::String& profileName);

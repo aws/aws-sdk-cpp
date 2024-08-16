@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon S3 output path. Must be 128 characters or less.</p>
+     * <p>The Amazon S3 output path. Must be 512 characters or less.</p>
      */
     inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }

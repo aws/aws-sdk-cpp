@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ElasticLoadBalancingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ElasticLoadBalancingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ElasticLoadBalancingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElasticLoadBalancingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

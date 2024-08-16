@@ -73,14 +73,9 @@ namespace Endpoint
         }
     }
 
-    void BuiltInParameters::SetFromClientConfiguration(const Client::GenericClientConfiguration<false>& config)
+    void BuiltInParameters::SetFromClientConfiguration(const Client::GenericClientConfiguration& config)
     {
         return SetFromClientConfiguration(static_cast<const Client::ClientConfiguration&>(config));
-    }
-
-    void BuiltInParameters::SetFromClientConfiguration(const Client::GenericClientConfiguration<true>& config)
-    {
-        SetFromClientConfiguration(static_cast<const Client::ClientConfiguration&>(config));
     }
 
     const BuiltInParameters::EndpointParameter& BuiltInParameters::GetParameter(const Aws::String& name) const

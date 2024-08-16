@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MachineLearningClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MachineLearningClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MachineLearningClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MachineLearningBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -473,7 +473,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   s3CrtConfig.shutdown_callback = CrtClientShutdownCallback;
   s3CrtConfig.shutdown_callback_user_data = static_cast<void*>(&m_wrappedData);
   s3CrtConfig.enable_s3express = !config.disableS3ExpressAuth;
-  s3CrtConfig.factory_user_data = static_cast<void *>(m_identityProvider.get());
+  s3CrtConfig.factory_user_data = static_cast<void *>(&m_identityProviderUserData);
   s3CrtConfig.s3express_provider_override_factory = S3CrtIdentityProviderAdapter::ProviderFactory;
 
   m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
@@ -788,6 +788,37 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
   }
   options.signing_config = &signing_config_override;
 
+  const auto headers = request.GetHeaders();
+  const auto checksumHeader = std::find_if(headers.begin(),
+    headers.end(),
+    [](const Aws::Http::HeaderValuePair& header) -> bool { return header.first.find("x-amz-checksum-") != Aws::String::npos; });
+  if (request.ChecksumAlgorithmHasBeenSet() && checksumHeader == headers.end())
+  {
+    static std::pair<ChecksumAlgorithm, aws_s3_checksum_algorithm> crtChecksumMapping[]{
+      {ChecksumAlgorithm::CRC32, aws_s3_checksum_algorithm::AWS_SCA_CRC32},
+      {ChecksumAlgorithm::CRC32C, aws_s3_checksum_algorithm::AWS_SCA_CRC32C},
+      {ChecksumAlgorithm::SHA1, aws_s3_checksum_algorithm::AWS_SCA_SHA1},
+      {ChecksumAlgorithm::SHA256, aws_s3_checksum_algorithm::AWS_SCA_SHA256},
+    };
+
+    const auto checksumAlgorithm = request.GetChecksumAlgorithm();
+    const auto mapping = std::find_if(std::begin(crtChecksumMapping),
+      std::end(crtChecksumMapping),
+      [&checksumAlgorithm](const std::pair<ChecksumAlgorithm, aws_s3_checksum_algorithm>& mapping){ return mapping.first == checksumAlgorithm; });
+    if (mapping != std::end(crtChecksumMapping))
+    {
+      Aws::UniquePtr<struct aws_s3_checksum_config> checksumConfig{Aws::New<struct aws_s3_checksum_config>(ALLOCATION_TAG)};
+      checksumConfig->checksum_algorithm = mapping->second;
+      checksumConfig->location = AWS_SCL_TRAILER;
+      userData->checksumConfig = std::move(checksumConfig);
+      options.checksum_config = userData->checksumConfig.get();
+    }
+    else
+    {
+      AWS_LOGSTREAM_ERROR("CopyObject", "Could not set CRT checksum for " << ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(checksumAlgorithm));
+    }
+  }
+  
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
   options.message= crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;
@@ -1030,6 +1061,37 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   }
   options.signing_config = &signing_config_override;
 
+  const auto headers = request.GetHeaders();
+  const auto checksumHeader = std::find_if(headers.begin(),
+    headers.end(),
+    [](const Aws::Http::HeaderValuePair& header) -> bool { return header.first.find("x-amz-checksum-") != Aws::String::npos; });
+  if (request.ChecksumAlgorithmHasBeenSet() && checksumHeader == headers.end())
+  {
+    static std::pair<ChecksumAlgorithm, aws_s3_checksum_algorithm> crtChecksumMapping[]{
+      {ChecksumAlgorithm::CRC32, aws_s3_checksum_algorithm::AWS_SCA_CRC32},
+      {ChecksumAlgorithm::CRC32C, aws_s3_checksum_algorithm::AWS_SCA_CRC32C},
+      {ChecksumAlgorithm::SHA1, aws_s3_checksum_algorithm::AWS_SCA_SHA1},
+      {ChecksumAlgorithm::SHA256, aws_s3_checksum_algorithm::AWS_SCA_SHA256},
+    };
+
+    const auto checksumAlgorithm = request.GetChecksumAlgorithm();
+    const auto mapping = std::find_if(std::begin(crtChecksumMapping),
+      std::end(crtChecksumMapping),
+      [&checksumAlgorithm](const std::pair<ChecksumAlgorithm, aws_s3_checksum_algorithm>& mapping){ return mapping.first == checksumAlgorithm; });
+    if (mapping != std::end(crtChecksumMapping))
+    {
+      Aws::UniquePtr<struct aws_s3_checksum_config> checksumConfig{Aws::New<struct aws_s3_checksum_config>(ALLOCATION_TAG)};
+      checksumConfig->checksum_algorithm = mapping->second;
+      checksumConfig->location = AWS_SCL_TRAILER;
+      userData->checksumConfig = std::move(checksumConfig);
+      options.checksum_config = userData->checksumConfig.get();
+    }
+    else
+    {
+      AWS_LOGSTREAM_ERROR("PutObject", "Could not set CRT checksum for " << ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(checksumAlgorithm));
+    }
+  }
+  
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
   options.message= crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;

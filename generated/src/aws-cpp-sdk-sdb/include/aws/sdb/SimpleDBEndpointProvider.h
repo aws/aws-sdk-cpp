@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SimpleDBClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SimpleDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SimpleDBClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SimpleDBBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

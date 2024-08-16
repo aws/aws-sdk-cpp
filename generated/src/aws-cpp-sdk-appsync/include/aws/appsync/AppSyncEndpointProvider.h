@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AppSyncClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppSyncClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AppSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppSyncBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

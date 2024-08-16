@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using FraudDetectorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FraudDetectorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using FraudDetectorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FraudDetectorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

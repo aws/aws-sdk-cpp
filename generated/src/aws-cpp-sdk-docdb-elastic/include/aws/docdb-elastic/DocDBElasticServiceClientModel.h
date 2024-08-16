@@ -69,7 +69,7 @@ namespace Aws
 
   namespace DocDBElastic
   {
-    using DocDBElasticClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DocDBElasticClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DocDBElasticEndpointProviderBase = Aws::DocDBElastic::Endpoint::DocDBElasticEndpointProviderBase;
     using DocDBElasticEndpointProvider = Aws::DocDBElastic::Endpoint::DocDBElasticEndpointProvider;
 

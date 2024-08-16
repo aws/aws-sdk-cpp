@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ResilienceHubClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ResilienceHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ResilienceHubClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ResilienceHubBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

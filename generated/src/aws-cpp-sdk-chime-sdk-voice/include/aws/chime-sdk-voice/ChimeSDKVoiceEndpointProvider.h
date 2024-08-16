@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ChimeSDKVoiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChimeSDKVoiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ChimeSDKVoiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeSDKVoiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**
