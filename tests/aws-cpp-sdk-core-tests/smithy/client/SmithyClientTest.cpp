@@ -37,10 +37,10 @@ class TestCredentialsProvider : public Aws::Auth::AWSCredentialsProvider{
 
 
 //Goal is to add a mock credential provider which will get hit
-class TestCredentialsProviderChain: public Aws::Auth::DefaultAWSCredentialsProviderChain{
+class TestCredentialsProviderChain: public Aws::Auth::AWSCredentialsProviderChain{
     public:
     friend class SmithyClientTest;
-    TestCredentialsProviderChain():Aws::Auth::DefaultAWSCredentialsProviderChain()
+    TestCredentialsProviderChain(): AWSCredentialsProviderChain()
     {
         //AddProvider(Aws::MakeShared<TestCredentialsProvider>("TestCredentialsProviderChain"));
     }
