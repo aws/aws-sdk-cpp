@@ -166,8 +166,7 @@ TEST_F(SmithyClientTest, testSigV4) {
     std::cout<<"selected scheme id="<<res.GetResult().schemeId<<std::endl;
     EXPECT_EQ(res.GetResult().schemeId, key);
 
-    //for s3 client as an example
-    Aws::String uri{"https://objecttest-cb93079d-24a0-4862-8ef2-88dae12cd549.s3.amazonaws.com"};
+    Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
 
     std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
@@ -223,8 +222,7 @@ TEST_F(SmithyClientTest, testSigV4a) {
     std::cout<<"selected scheme id="<<res.GetResult().schemeId<<std::endl;
     EXPECT_EQ(res.GetResult().schemeId, key);
 
-    //for s3 client mock uri as an example
-    Aws::String uri{"https://objecttest-cb93079d-24a0-4862-8ef2-88dae12cd549.s3.amazonaws.com"};
+    Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
 
     std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 

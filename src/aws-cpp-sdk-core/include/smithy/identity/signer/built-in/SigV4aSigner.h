@@ -7,9 +7,6 @@
 
 #include <smithy/identity/signer/AwsSignerBase.h>
 #include <smithy/identity/identity/AwsCredentialIdentityBase.h>
-
-//#include <aws/core/auth/signer/AWSAuthV4Signer.h>
-
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/crt/auth/Credentials.h>
 
@@ -46,7 +43,6 @@ namespace smithy {
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
             assert(httpRequest);
-            assert(identity.sessionToken().has_value());
             assert(identity.expiration().has_value());
 
             auto &request = *httpRequest;
@@ -71,11 +67,13 @@ namespace smithy {
             std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = request.ToCrtHttpRequest();
 
             auto sigv4HttpRequestSigner = Aws::MakeShared<Aws::Crt::Auth::Sigv4HttpRequestSigner>(v4AsymmetricLogTag);
-            
+            //This is an async call, so we need to wait till we have received an outcome
+            bool signRequestSuccess = false;
+            Aws::String errorMessage;
             sigv4HttpRequestSigner->SignRequest(crtHttpRequest, awsSigningConfig,
-                [&request, &success, this](const std::shared_ptr<Aws::Crt::Http::HttpRequest>& signedCrtHttpRequest, int errorCode) {
-                    success = (errorCode == AWS_ERROR_SUCCESS);
-                    if (success)
+                [&request, &signRequestSuccess, &errorMessage, this](const std::shared_ptr<Aws::Crt::Http::HttpRequest>& signedCrtHttpRequest, int errorCode) {
+                    signRequestSuccess = (errorCode == AWS_ERROR_SUCCESS);
+                    if (signRequestSuccess)
                     {
                         if (m_signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders)
                         {
@@ -93,19 +91,42 @@ namespace smithy {
                         }
                         else
                         {
-                            AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "No action to take when signature type is neither \"HttpRequestViaHeaders\" nor \"HttpRequestViaQueryParams\"");
-                            success = false;
+                            errorMessage = "No action to take when signature type is neither \"HttpRequestViaHeaders\" nor \"HttpRequestViaQueryParams\"";
+                            AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
+                            signRequestSuccess = false;
                         }
                     }
                     else
                     {
-                        AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "Encountered internal error during signing process with AWS signature version 4 (Asymmetric):" << aws_error_str(errorCode));
+                        Aws::OStringStream logStream;
+                        logStream << "Encountered internal error during signing process with AWS signature version 4 (Asymmetric):" << aws_error_str(errorCode);
+                        errorMessage = logStream.str();
+                        AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
                     }
                 }
             );
+
+
+            //wait till either success or time out
+            auto startTime = std::chrono::steady_clock::now();
+            const auto timeout = std::chrono::seconds(10);  // Set the timeout duration
+            const auto waitDuration = std::chrono::milliseconds(500);  // Wait for 500 milliseconds each iteration
+
+            while (!signRequestSuccess) 
+            {
+                std::cout<<"in wait.."<<std::endl;
+                // Check elapsed time
+                auto currentTime = std::chrono::steady_clock::now();
+                if (currentTime - startTime >= timeout) {
+                    errorMessage = "Timeout reached in crt SignRequest, exiting loop.";
+                    break;
+                }
+
+                // Wait for the specified duration
+                std::this_thread::sleep_for(waitDuration);
+            }
             
-            
-            return success? SigningFutureOutcome(std::move(httpRequest)) : SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
+            return signRequestSuccess? SigningFutureOutcome(std::move(httpRequest)) : SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
         }
 
 

@@ -9,12 +9,8 @@
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 
-namespace{
-    constexpr char ALLOC_ID[] = "DefaultAwsCredentialIdentityResolver";
-
-}
-
 namespace smithy {
+    constexpr char ALLOC_ID[] = "DefaultAwsCredentialIdentityResolver";
     /**
      * A smithy SigV4 AWS Credentials resolver wrapper on top of legacy SDK Credentials provider
      * TODO: refactor into own signer using smithy design
