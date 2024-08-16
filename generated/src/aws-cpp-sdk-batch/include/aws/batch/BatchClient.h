@@ -90,19 +90,18 @@ namespace Batch
         virtual ~BatchClient();
 
         /**
-         * <p>Cancels a job in an Batch job queue. Jobs that are in the
-         * <code>SUBMITTED</code> or <code>PENDING</code> are canceled. A job
-         * in<code>RUNNABLE</code> remains in <code>RUNNABLE</code> until it reaches the
-         * head of the job queue. Then the job status is updated to
-         * <code>FAILED</code>.</p>  <p>A <code>PENDING</code> job is canceled after
-         * all dependency jobs are completed. Therefore, it may take longer than expected
-         * to cancel a job in <code>PENDING</code> status.</p> <p>When you try to cancel an
-         * array parent job in <code>PENDING</code>, Batch attempts to cancel all child
-         * jobs. The array parent job is canceled when all child jobs are completed.</p>
-         *  <p>Jobs that progressed to the <code>STARTING</code> or
-         * <code>RUNNING</code> state aren't canceled. However, the API operation still
-         * succeeds, even if no job is canceled. These jobs must be terminated with the
-         * <a>TerminateJob</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels a job in an Batch job queue. Jobs that are in a
+         * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
+         * cancelled and the job status is updated to <code>FAILED</code>.</p>  <p>A
+         * <code>PENDING</code> job is canceled after all dependency jobs are completed.
+         * Therefore, it may take longer than expected to cancel a job in
+         * <code>PENDING</code> status.</p> <p>When you try to cancel an array parent job
+         * in <code>PENDING</code>, Batch attempts to cancel all child jobs. The array
+         * parent job is canceled when all child jobs are completed.</p>  <p>Jobs
+         * that progressed to the <code>STARTING</code> or <code>RUNNING</code> state
+         * aren't canceled. However, the API operation still succeeds, even if no job is
+         * canceled. These jobs must be terminated with the <a>TerminateJob</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">AWS API
          * Reference</a></p>
          */

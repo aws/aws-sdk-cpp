@@ -32,7 +32,9 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
     m_qualityCheckHasBeenSet(false),
     m_clarifyCheckHasBeenSet(false),
     m_failHasBeenSet(false),
-    m_autoMLJobHasBeenSet(false)
+    m_autoMLJobHasBeenSet(false),
+    m_endpointHasBeenSet(false),
+    m_endpointConfigHasBeenSet(false)
 {
 }
 
@@ -142,6 +144,20 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_autoMLJobHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Endpoint"))
+  {
+    m_endpoint = jsonValue.GetObject("Endpoint");
+
+    m_endpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointConfig"))
+  {
+    m_endpointConfig = jsonValue.GetObject("EndpointConfig");
+
+    m_endpointConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,6 +246,18 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
   if(m_autoMLJobHasBeenSet)
   {
    payload.WithObject("AutoMLJob", m_autoMLJob.Jsonize());
+
+  }
+
+  if(m_endpointHasBeenSet)
+  {
+   payload.WithObject("Endpoint", m_endpoint.Jsonize());
+
+  }
+
+  if(m_endpointConfigHasBeenSet)
+  {
+   payload.WithObject("EndpointConfig", m_endpointConfig.Jsonize());
 
   }
 

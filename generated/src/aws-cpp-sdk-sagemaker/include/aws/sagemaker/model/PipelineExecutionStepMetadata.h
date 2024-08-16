@@ -19,6 +19,8 @@
 #include <aws/sagemaker/model/ClarifyCheckStepMetadata.h>
 #include <aws/sagemaker/model/FailStepMetadata.h>
 #include <aws/sagemaker/model/AutoMLJobStepMetadata.h>
+#include <aws/sagemaker/model/EndpointStepMetadata.h>
+#include <aws/sagemaker/model/EndpointConfigStepMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -248,6 +250,31 @@ namespace Model
     inline PipelineExecutionStepMetadata& WithAutoMLJob(const AutoMLJobStepMetadata& value) { SetAutoMLJob(value); return *this;}
     inline PipelineExecutionStepMetadata& WithAutoMLJob(AutoMLJobStepMetadata&& value) { SetAutoMLJob(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The endpoint that was invoked during this step execution.</p>
+     */
+    inline const EndpointStepMetadata& GetEndpoint() const{ return m_endpoint; }
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+    inline void SetEndpoint(const EndpointStepMetadata& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(EndpointStepMetadata&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
+    inline PipelineExecutionStepMetadata& WithEndpoint(const EndpointStepMetadata& value) { SetEndpoint(value); return *this;}
+    inline PipelineExecutionStepMetadata& WithEndpoint(EndpointStepMetadata&& value) { SetEndpoint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The endpoint configuration used to create an endpoint during this step
+     * execution.</p>
+     */
+    inline const EndpointConfigStepMetadata& GetEndpointConfig() const{ return m_endpointConfig; }
+    inline bool EndpointConfigHasBeenSet() const { return m_endpointConfigHasBeenSet; }
+    inline void SetEndpointConfig(const EndpointConfigStepMetadata& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = value; }
+    inline void SetEndpointConfig(EndpointConfigStepMetadata&& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = std::move(value); }
+    inline PipelineExecutionStepMetadata& WithEndpointConfig(const EndpointConfigStepMetadata& value) { SetEndpointConfig(value); return *this;}
+    inline PipelineExecutionStepMetadata& WithEndpointConfig(EndpointConfigStepMetadata&& value) { SetEndpointConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     TrainingJobStepMetadata m_trainingJob;
@@ -291,6 +318,12 @@ namespace Model
 
     AutoMLJobStepMetadata m_autoMLJob;
     bool m_autoMLJobHasBeenSet = false;
+
+    EndpointStepMetadata m_endpoint;
+    bool m_endpointHasBeenSet = false;
+
+    EndpointConfigStepMetadata m_endpointConfig;
+    bool m_endpointConfigHasBeenSet = false;
   };
 
 } // namespace Model

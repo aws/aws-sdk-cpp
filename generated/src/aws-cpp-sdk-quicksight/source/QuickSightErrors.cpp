@@ -18,6 +18,7 @@
 #include <aws/quicksight/model/UnsupportedPricingPlanException.h>
 #include <aws/quicksight/model/DomainNotWhitelistedException.h>
 #include <aws/quicksight/model/ThrottlingException.h>
+#include <aws/quicksight/model/CustomerManagedKeyUnavailableException.h>
 #include <aws/quicksight/model/UnsupportedUserEditionException.h>
 #include <aws/quicksight/model/SessionLifetimeInMinutesInvalidException.h>
 #include <aws/quicksight/model/AccessDeniedException.h>
@@ -107,6 +108,12 @@ template<> AWS_QUICKSIGHT_API ThrottlingException QuickSightError::GetModeledErr
   return ThrottlingException(this->GetJsonPayload().View());
 }
 
+template<> AWS_QUICKSIGHT_API CustomerManagedKeyUnavailableException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::CUSTOMER_MANAGED_KEY_UNAVAILABLE);
+  return CustomerManagedKeyUnavailableException(this->GetJsonPayload().View());
+}
+
 template<> AWS_QUICKSIGHT_API UnsupportedUserEditionException QuickSightError::GetModeledError()
 {
   assert(this->GetErrorType() == QuickSightErrors::UNSUPPORTED_USER_EDITION);
@@ -160,6 +167,7 @@ static const int IDENTITY_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("Id
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int UNSUPPORTED_PRICING_PLAN_HASH = HashingUtils::HashString("UnsupportedPricingPlanException");
 static const int DOMAIN_NOT_WHITELISTED_HASH = HashingUtils::HashString("DomainNotWhitelistedException");
+static const int CUSTOMER_MANAGED_KEY_UNAVAILABLE_HASH = HashingUtils::HashString("CustomerManagedKeyUnavailableException");
 static const int UNSUPPORTED_USER_EDITION_HASH = HashingUtils::HashString("UnsupportedUserEditionException");
 static const int SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = HashingUtils::HashString("SessionLifetimeInMinutesInvalidException");
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
@@ -203,6 +211,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DOMAIN_NOT_WHITELISTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::DOMAIN_NOT_WHITELISTED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CUSTOMER_MANAGED_KEY_UNAVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CUSTOMER_MANAGED_KEY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_USER_EDITION_HASH)
   {
