@@ -14,7 +14,8 @@
 #include <aws/core/auth/signer/AWSAuthSignerHelper.h>
 #include <aws/crt/http/HttpConnection.h>
 #include <aws/crt/http/HttpRequestResponse.h>
-
+#include <condition_variable>
+#include <mutex>
 
 namespace smithy {
     static const char* UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
@@ -68,12 +69,15 @@ namespace smithy {
 
             auto sigv4HttpRequestSigner = Aws::MakeShared<Aws::Crt::Auth::Sigv4HttpRequestSigner>(v4AsymmetricLogTag);
             //This is an async call, so we need to wait till we have received an outcome
-            bool signRequestSuccess = false;
             Aws::String errorMessage;
+            bool processed = false;
+            //producer function
             sigv4HttpRequestSigner->SignRequest(crtHttpRequest, awsSigningConfig,
-                [&request, &signRequestSuccess, &errorMessage, this](const std::shared_ptr<Aws::Crt::Http::HttpRequest>& signedCrtHttpRequest, int errorCode) {
-                    signRequestSuccess = (errorCode == AWS_ERROR_SUCCESS);
-                    if (signRequestSuccess)
+                [&request, &success, &errorMessage, &processed, this](const std::shared_ptr<Aws::Crt::Http::HttpRequest>& signedCrtHttpRequest, int errorCode) {
+                    std::unique_lock<std::mutex> lock(m_mutex);
+                    m_cv.wait(lock, [&]{ return !processed; });
+                    success = (errorCode == AWS_ERROR_SUCCESS);
+                    if (success)
                     {
                         if (m_signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders)
                         {
@@ -93,7 +97,7 @@ namespace smithy {
                         {
                             errorMessage = "No action to take when signature type is neither \"HttpRequestViaHeaders\" nor \"HttpRequestViaQueryParams\"";
                             AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
-                            signRequestSuccess = false;
+                            success = false;
                         }
                     }
                     else
@@ -103,29 +107,20 @@ namespace smithy {
                         errorMessage = logStream.str();
                         AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
                     }
+
+                    processed = true;
+                    m_cv.notify_all();
                 }
             );
 
+            //consumer
+            {       
+                std::unique_lock<std::mutex> lock(m_mutex);
+                m_cv.wait(lock, [&]{ return processed; });
 
-            //wait till either success or time out
-            auto startTime = std::chrono::steady_clock::now();
-            const auto timeout = std::chrono::seconds(10);  // Set the timeout duration
-            const auto waitDuration = std::chrono::milliseconds(500);  // Wait for 500 milliseconds each iteration
-
-            while (!signRequestSuccess) 
-            {
-                // Check elapsed time
-                auto currentTime = std::chrono::steady_clock::now();
-                if (currentTime - startTime >= timeout) {
-                    errorMessage = "Timeout reached in crt SignRequest, exiting loop.";
-                    break;
-                }
-
-                // Wait for the specified duration
-                std::this_thread::sleep_for(waitDuration);
             }
             
-            return signRequestSuccess? SigningFutureOutcome(std::move(httpRequest)) : SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
+            return success? SigningFutureOutcome(std::move(httpRequest)) : SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
         }
 
 
@@ -218,5 +213,7 @@ namespace smithy {
         const bool m_urlEscape{true};
         const Aws::Set<Aws::String> m_unsignedHeaders{USER_AGENT, Aws::Auth::AWSAuthHelper::X_AMZN_TRACE_ID};
         const Aws::Crt::Auth::SignatureType m_signatureType{Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams};
+        std::condition_variable m_cv;
+        std::mutex m_mutex;
     };
 }
