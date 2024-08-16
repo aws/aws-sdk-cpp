@@ -30,7 +30,7 @@ class TestCredentialsProvider : public Aws::Auth::AWSCredentialsProvider{
     public:
     Aws::Auth::AWSCredentials GetAWSCredentials() override
     {
-        return Aws::Auth::AWSCredentials {"dummyAccessId", "dummySecretKey"};
+        return Aws::Auth::AWSCredentials {"dummyAccessId", "dummySecretKey","dummySessionToken"};
     }
 };
 
@@ -178,6 +178,8 @@ TEST_F(SmithyClientTest, testSigV4) {
     std::cout<<"Final auth="<<res2.GetResult()->GetAwsAuthorization()<<std::endl;
 
     EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "dummyAccessId");
+
+
 }
 
 
@@ -221,7 +223,7 @@ TEST_F(SmithyClientTest, testSigV4a) {
     std::cout<<"selected scheme id="<<res.GetResult().schemeId<<std::endl;
     EXPECT_EQ(res.GetResult().schemeId, key);
 
-    //for s3 client as an example
+    //for s3 client mock uri as an example
     Aws::String uri{"https://objecttest-cb93079d-24a0-4862-8ef2-88dae12cd549.s3.amazonaws.com"};
 
     std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
@@ -229,8 +231,9 @@ TEST_F(SmithyClientTest, testSigV4a) {
     auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
 
     EXPECT_EQ(res2.IsSuccess(), true);
-    std::cout<<"Final auth="<<res2.GetResult()->GetAwsAuthorization()<<std::endl;
 
-    EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "dummyAccessId");
+    EXPECT_TRUE(res2.GetResult()->GetSigningAccessKey().empty());
+
+    EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
 
 }

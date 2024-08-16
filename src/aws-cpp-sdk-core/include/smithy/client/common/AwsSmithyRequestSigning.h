@@ -53,7 +53,6 @@ namespace smithy
             }
 
             const AuthSchemesVariantT& authScheme = authSchemeIt->second;
-            std::cout<<"FOUND variant"<<std::endl;
 
             return SignWithAuthScheme(std::move(HTTPRequest), authScheme, authSchemeOption);
         }
