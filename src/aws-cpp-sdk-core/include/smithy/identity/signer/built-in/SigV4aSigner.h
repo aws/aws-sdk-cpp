@@ -102,9 +102,9 @@ namespace smithy {
                     }
                     else
                     {
-                        Aws::OStringStream logStream;
-                        logStream << "Encountered internal error during signing process with AWS signature version 4 (Asymmetric):" << aws_error_str(errorCode);
-                        errorMessage = logStream.str();
+                        Aws::OStringStream errStream;
+                        errStream << "Encountered internal error during signing process with AWS signature version 4 (Asymmetric):" << aws_error_str(errorCode);
+                        errorMessage = errStream.str();
                         AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
                     }
 
