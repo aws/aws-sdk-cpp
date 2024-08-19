@@ -61,7 +61,7 @@ namespace client
 {
     class AwsSmithyClientAsyncRequestContext;
     /* Non-template base client class that contains main Aws Client Request pipeline logic */
-    class AwsSmithyClientBase
+    class SMITHY_API AwsSmithyClientBase
     {
     public:
         using HttpRequest = Aws::Http::HttpRequest;
