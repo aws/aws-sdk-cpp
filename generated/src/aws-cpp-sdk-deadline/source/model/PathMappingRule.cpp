@@ -19,10 +19,10 @@ namespace Model
 {
 
 PathMappingRule::PathMappingRule() : 
-    m_destinationPathHasBeenSet(false),
-    m_sourcePathHasBeenSet(false),
     m_sourcePathFormat(PathFormat::NOT_SET),
-    m_sourcePathFormatHasBeenSet(false)
+    m_sourcePathFormatHasBeenSet(false),
+    m_sourcePathHasBeenSet(false),
+    m_destinationPathHasBeenSet(false)
 {
 }
 
@@ -34,11 +34,11 @@ PathMappingRule::PathMappingRule(JsonView jsonValue)
 
 PathMappingRule& PathMappingRule::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("destinationPath"))
+  if(jsonValue.ValueExists("sourcePathFormat"))
   {
-    m_destinationPath = jsonValue.GetString("destinationPath");
+    m_sourcePathFormat = PathFormatMapper::GetPathFormatForName(jsonValue.GetString("sourcePathFormat"));
 
-    m_destinationPathHasBeenSet = true;
+    m_sourcePathFormatHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourcePath"))
@@ -48,11 +48,11 @@ PathMappingRule& PathMappingRule::operator =(JsonView jsonValue)
     m_sourcePathHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("sourcePathFormat"))
+  if(jsonValue.ValueExists("destinationPath"))
   {
-    m_sourcePathFormat = PathFormatMapper::GetPathFormatForName(jsonValue.GetString("sourcePathFormat"));
+    m_destinationPath = jsonValue.GetString("destinationPath");
 
-    m_sourcePathFormatHasBeenSet = true;
+    m_destinationPathHasBeenSet = true;
   }
 
   return *this;
@@ -62,10 +62,9 @@ JsonValue PathMappingRule::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_destinationPathHasBeenSet)
+  if(m_sourcePathFormatHasBeenSet)
   {
-   payload.WithString("destinationPath", m_destinationPath);
-
+   payload.WithString("sourcePathFormat", PathFormatMapper::GetNameForPathFormat(m_sourcePathFormat));
   }
 
   if(m_sourcePathHasBeenSet)
@@ -74,9 +73,10 @@ JsonValue PathMappingRule::Jsonize() const
 
   }
 
-  if(m_sourcePathFormatHasBeenSet)
+  if(m_destinationPathHasBeenSet)
   {
-   payload.WithString("sourcePathFormat", PathFormatMapper::GetNameForPathFormat(m_sourcePathFormat));
+   payload.WithString("destinationPath", m_destinationPath);
+
   }
 
   return payload;

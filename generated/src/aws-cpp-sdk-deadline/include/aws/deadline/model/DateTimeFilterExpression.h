@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/ComparisonOperator.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time.</p>
-     */
-    inline const Aws::Utils::DateTime& GetDateTime() const{ return m_dateTime; }
-    inline bool DateTimeHasBeenSet() const { return m_dateTimeHasBeenSet; }
-    inline void SetDateTime(const Aws::Utils::DateTime& value) { m_dateTimeHasBeenSet = true; m_dateTime = value; }
-    inline void SetDateTime(Aws::Utils::DateTime&& value) { m_dateTimeHasBeenSet = true; m_dateTime = std::move(value); }
-    inline DateTimeFilterExpression& WithDateTime(const Aws::Utils::DateTime& value) { SetDateTime(value); return *this;}
-    inline DateTimeFilterExpression& WithDateTime(Aws::Utils::DateTime&& value) { SetDateTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the date-time field to filter on.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -76,16 +64,28 @@ namespace Model
     inline DateTimeFilterExpression& WithOperator(const ComparisonOperator& value) { SetOperator(value); return *this;}
     inline DateTimeFilterExpression& WithOperator(ComparisonOperator&& value) { SetOperator(std::move(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::DateTime m_dateTime;
-    bool m_dateTimeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The date and time.</p>
+     */
+    inline const Aws::Utils::DateTime& GetDateTime() const{ return m_dateTime; }
+    inline bool DateTimeHasBeenSet() const { return m_dateTimeHasBeenSet; }
+    inline void SetDateTime(const Aws::Utils::DateTime& value) { m_dateTimeHasBeenSet = true; m_dateTime = value; }
+    inline void SetDateTime(Aws::Utils::DateTime&& value) { m_dateTimeHasBeenSet = true; m_dateTime = std::move(value); }
+    inline DateTimeFilterExpression& WithDateTime(const Aws::Utils::DateTime& value) { SetDateTime(value); return *this;}
+    inline DateTimeFilterExpression& WithDateTime(Aws::Utils::DateTime&& value) { SetDateTime(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     ComparisonOperator m_operator;
     bool m_operatorHasBeenSet = false;
+
+    Aws::Utils::DateTime m_dateTime;
+    bool m_dateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -182,6 +182,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+    inline CreateFleetRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+    inline CreateFleetRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+    inline CreateFleetRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The service role associated with the compute fleet. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
@@ -235,6 +249,9 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_fleetServiceRole;
     bool m_fleetServiceRoleHasBeenSet = false;

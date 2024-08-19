@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/LicenseEndpointStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The DNS name.</p>
-     */
-    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
-    inline void SetDnsName(const Aws::String& value) { m_dnsName = value; }
-    inline void SetDnsName(Aws::String&& value) { m_dnsName = std::move(value); }
-    inline void SetDnsName(const char* value) { m_dnsName.assign(value); }
-    inline GetLicenseEndpointResult& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-    inline GetLicenseEndpointResult& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-    inline GetLicenseEndpointResult& WithDnsName(const char* value) { SetDnsName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The license endpoint ID.</p>
      */
     inline const Aws::String& GetLicenseEndpointId() const{ return m_licenseEndpointId; }
@@ -58,20 +45,6 @@ namespace Model
     inline GetLicenseEndpointResult& WithLicenseEndpointId(const Aws::String& value) { SetLicenseEndpointId(value); return *this;}
     inline GetLicenseEndpointResult& WithLicenseEndpointId(Aws::String&& value) { SetLicenseEndpointId(std::move(value)); return *this;}
     inline GetLicenseEndpointResult& WithLicenseEndpointId(const char* value) { SetLicenseEndpointId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The security group IDs for the license endpoint.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIds = std::move(value); }
-    inline GetLicenseEndpointResult& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline GetLicenseEndpointResult& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline GetLicenseEndpointResult& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIds.push_back(value); return *this; }
-    inline GetLicenseEndpointResult& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline GetLicenseEndpointResult& AddSecurityGroupIds(const char* value) { m_securityGroupIds.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -100,6 +73,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
+    inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
+    inline GetLicenseEndpointResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+    inline GetLicenseEndpointResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+    inline GetLicenseEndpointResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The DNS name.</p>
+     */
+    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+    inline void SetDnsName(const Aws::String& value) { m_dnsName = value; }
+    inline void SetDnsName(Aws::String&& value) { m_dnsName = std::move(value); }
+    inline void SetDnsName(const char* value) { m_dnsName.assign(value); }
+    inline GetLicenseEndpointResult& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
+    inline GetLicenseEndpointResult& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
+    inline GetLicenseEndpointResult& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The subnet IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
@@ -114,15 +113,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+     * <p>The security group IDs for the license endpoint.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
-    inline GetLicenseEndpointResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline GetLicenseEndpointResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline GetLicenseEndpointResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIds = std::move(value); }
+    inline GetLicenseEndpointResult& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+    inline GetLicenseEndpointResult& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
+    inline GetLicenseEndpointResult& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIds.push_back(value); return *this; }
+    inline GetLicenseEndpointResult& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIds.push_back(std::move(value)); return *this; }
+    inline GetLicenseEndpointResult& AddSecurityGroupIds(const char* value) { m_securityGroupIds.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -137,19 +137,19 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_dnsName;
-
     Aws::String m_licenseEndpointId;
-
-    Aws::Vector<Aws::String> m_securityGroupIds;
 
     LicenseEndpointStatus m_status;
 
     Aws::String m_statusMessage;
 
+    Aws::String m_vpcId;
+
+    Aws::String m_dnsName;
+
     Aws::Vector<Aws::String> m_subnetIds;
 
-    Aws::String m_vpcId;
+    Aws::Vector<Aws::String> m_securityGroupIds;
 
     Aws::String m_requestId;
   };

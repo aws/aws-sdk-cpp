@@ -20,12 +20,12 @@ namespace Model
 {
 
 ThrottlingException::ThrottlingException() : 
-    m_contextHasBeenSet(false),
     m_messageHasBeenSet(false),
+    m_serviceCodeHasBeenSet(false),
     m_quotaCodeHasBeenSet(false),
     m_retryAfterSeconds(0),
     m_retryAfterSecondsHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -37,6 +37,27 @@ ThrottlingException::ThrottlingException(JsonView jsonValue)
 
 ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+    m_messageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceCode"))
+  {
+    m_serviceCode = jsonValue.GetString("serviceCode");
+
+    m_serviceCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("quotaCode"))
+  {
+    m_quotaCode = jsonValue.GetString("quotaCode");
+
+    m_quotaCodeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("context"))
   {
     Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("context").GetAllObjects();
@@ -47,27 +68,6 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
     m_contextHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("message"))
-  {
-    m_message = jsonValue.GetString("message");
-
-    m_messageHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("quotaCode"))
-  {
-    m_quotaCode = jsonValue.GetString("quotaCode");
-
-    m_quotaCodeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("serviceCode"))
-  {
-    m_serviceCode = jsonValue.GetString("serviceCode");
-
-    m_serviceCodeHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -75,20 +75,15 @@ JsonValue ThrottlingException::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_contextHasBeenSet)
-  {
-   JsonValue contextJsonMap;
-   for(auto& contextItem : m_context)
-   {
-     contextJsonMap.WithString(contextItem.first, contextItem.second);
-   }
-   payload.WithObject("context", std::move(contextJsonMap));
-
-  }
-
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
+
+  }
+
+  if(m_serviceCodeHasBeenSet)
+  {
+   payload.WithString("serviceCode", m_serviceCode);
 
   }
 
@@ -98,9 +93,14 @@ JsonValue ThrottlingException::Jsonize() const
 
   }
 
-  if(m_serviceCodeHasBeenSet)
+  if(m_contextHasBeenSet)
   {
-   payload.WithString("serviceCode", m_serviceCode);
+   JsonValue contextJsonMap;
+   for(auto& contextItem : m_context)
+   {
+     contextJsonMap.WithString(contextItem.first, contextItem.second);
+   }
+   payload.WithObject("context", std::move(contextJsonMap));
 
   }
 

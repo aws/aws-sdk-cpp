@@ -32,9 +32,9 @@ GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("endedAt"))
+  if(jsonValue.ValueExists("sessionId"))
   {
-    m_endedAt = jsonValue.GetString("endedAt");
+    m_sessionId = jsonValue.GetString("sessionId");
 
   }
 
@@ -44,27 +44,9 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
-  if(jsonValue.ValueExists("hostProperties"))
+  if(jsonValue.ValueExists("workerId"))
   {
-    m_hostProperties = jsonValue.GetObject("hostProperties");
-
-  }
-
-  if(jsonValue.ValueExists("lifecycleStatus"))
-  {
-    m_lifecycleStatus = SessionLifecycleStatusMapper::GetSessionLifecycleStatusForName(jsonValue.GetString("lifecycleStatus"));
-
-  }
-
-  if(jsonValue.ValueExists("log"))
-  {
-    m_log = jsonValue.GetObject("log");
-
-  }
-
-  if(jsonValue.ValueExists("sessionId"))
-  {
-    m_sessionId = jsonValue.GetString("sessionId");
+    m_workerId = jsonValue.GetString("workerId");
 
   }
 
@@ -74,9 +56,21 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
-  if(jsonValue.ValueExists("targetLifecycleStatus"))
+  if(jsonValue.ValueExists("log"))
   {
-    m_targetLifecycleStatus = SessionLifecycleTargetStatusMapper::GetSessionLifecycleTargetStatusForName(jsonValue.GetString("targetLifecycleStatus"));
+    m_log = jsonValue.GetObject("log");
+
+  }
+
+  if(jsonValue.ValueExists("lifecycleStatus"))
+  {
+    m_lifecycleStatus = SessionLifecycleStatusMapper::GetSessionLifecycleStatusForName(jsonValue.GetString("lifecycleStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("endedAt"))
+  {
+    m_endedAt = jsonValue.GetString("endedAt");
 
   }
 
@@ -92,9 +86,15 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
-  if(jsonValue.ValueExists("workerId"))
+  if(jsonValue.ValueExists("targetLifecycleStatus"))
   {
-    m_workerId = jsonValue.GetString("workerId");
+    m_targetLifecycleStatus = SessionLifecycleTargetStatusMapper::GetSessionLifecycleTargetStatusForName(jsonValue.GetString("targetLifecycleStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("hostProperties"))
+  {
+    m_hostProperties = jsonValue.GetObject("hostProperties");
 
   }
 

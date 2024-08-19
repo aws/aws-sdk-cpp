@@ -67,20 +67,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job ID to update.</p>
-     */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline UpdateStepRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline UpdateStepRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline UpdateStepRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The queue ID to update.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
@@ -91,6 +77,20 @@ namespace Model
     inline UpdateStepRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
     inline UpdateStepRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
     inline UpdateStepRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The job ID to update.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
+    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
+    inline UpdateStepRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+    inline UpdateStepRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+    inline UpdateStepRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
     ///@}
 
     ///@{
@@ -126,11 +126,11 @@ namespace Model
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
-
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;

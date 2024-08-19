@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/QueueFleetAssociationSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queue-fleet associations on the list.</p>
+     */
+    inline const Aws::Vector<QueueFleetAssociationSummary>& GetQueueFleetAssociations() const{ return m_queueFleetAssociations; }
+    inline void SetQueueFleetAssociations(const Aws::Vector<QueueFleetAssociationSummary>& value) { m_queueFleetAssociations = value; }
+    inline void SetQueueFleetAssociations(Aws::Vector<QueueFleetAssociationSummary>&& value) { m_queueFleetAssociations = std::move(value); }
+    inline ListQueueFleetAssociationsResult& WithQueueFleetAssociations(const Aws::Vector<QueueFleetAssociationSummary>& value) { SetQueueFleetAssociations(value); return *this;}
+    inline ListQueueFleetAssociationsResult& WithQueueFleetAssociations(Aws::Vector<QueueFleetAssociationSummary>&& value) { SetQueueFleetAssociations(std::move(value)); return *this;}
+    inline ListQueueFleetAssociationsResult& AddQueueFleetAssociations(const QueueFleetAssociationSummary& value) { m_queueFleetAssociations.push_back(value); return *this; }
+    inline ListQueueFleetAssociationsResult& AddQueueFleetAssociations(QueueFleetAssociationSummary&& value) { m_queueFleetAssociations.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -54,19 +67,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The queue-fleet associations on the list.</p>
-     */
-    inline const Aws::Vector<QueueFleetAssociationSummary>& GetQueueFleetAssociations() const{ return m_queueFleetAssociations; }
-    inline void SetQueueFleetAssociations(const Aws::Vector<QueueFleetAssociationSummary>& value) { m_queueFleetAssociations = value; }
-    inline void SetQueueFleetAssociations(Aws::Vector<QueueFleetAssociationSummary>&& value) { m_queueFleetAssociations = std::move(value); }
-    inline ListQueueFleetAssociationsResult& WithQueueFleetAssociations(const Aws::Vector<QueueFleetAssociationSummary>& value) { SetQueueFleetAssociations(value); return *this;}
-    inline ListQueueFleetAssociationsResult& WithQueueFleetAssociations(Aws::Vector<QueueFleetAssociationSummary>&& value) { SetQueueFleetAssociations(std::move(value)); return *this;}
-    inline ListQueueFleetAssociationsResult& AddQueueFleetAssociations(const QueueFleetAssociationSummary& value) { m_queueFleetAssociations.push_back(value); return *this; }
-    inline ListQueueFleetAssociationsResult& AddQueueFleetAssociations(QueueFleetAssociationSummary&& value) { m_queueFleetAssociations.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<QueueFleetAssociationSummary> m_queueFleetAssociations;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

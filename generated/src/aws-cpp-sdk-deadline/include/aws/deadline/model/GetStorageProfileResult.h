@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/StorageProfileOperatingSystemFamily.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/FileSystemLocation.h>
 #include <utility>
 
@@ -38,6 +38,46 @@ namespace Model
 
     ///@{
     /**
+     * <p>The storage profile ID.</p>
+     */
+    inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
+    inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileId = value; }
+    inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileId = std::move(value); }
+    inline void SetStorageProfileId(const char* value) { m_storageProfileId.assign(value); }
+    inline GetStorageProfileResult& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
+    inline GetStorageProfileResult& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
+    inline GetStorageProfileResult& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display name of the storage profile.</p>  <p>This field can
+     * store any content. Escape or encode this content before displaying it on a
+     * webpage or any other system that might interpret the content of this field.</p>
+     * 
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
+    inline GetStorageProfileResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline GetStorageProfileResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline GetStorageProfileResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The operating system (OS) for the storage profile.</p>
+     */
+    inline const StorageProfileOperatingSystemFamily& GetOsFamily() const{ return m_osFamily; }
+    inline void SetOsFamily(const StorageProfileOperatingSystemFamily& value) { m_osFamily = value; }
+    inline void SetOsFamily(StorageProfileOperatingSystemFamily&& value) { m_osFamily = std::move(value); }
+    inline GetStorageProfileResult& WithOsFamily(const StorageProfileOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
+    inline GetStorageProfileResult& WithOsFamily(StorageProfileOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -58,56 +98,6 @@ namespace Model
     inline GetStorageProfileResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
     inline GetStorageProfileResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
     inline GetStorageProfileResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The display name of the storage profile.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
-    inline GetStorageProfileResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline GetStorageProfileResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline GetStorageProfileResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The location of the files for the storage profile.</p>
-     */
-    inline const Aws::Vector<FileSystemLocation>& GetFileSystemLocations() const{ return m_fileSystemLocations; }
-    inline void SetFileSystemLocations(const Aws::Vector<FileSystemLocation>& value) { m_fileSystemLocations = value; }
-    inline void SetFileSystemLocations(Aws::Vector<FileSystemLocation>&& value) { m_fileSystemLocations = std::move(value); }
-    inline GetStorageProfileResult& WithFileSystemLocations(const Aws::Vector<FileSystemLocation>& value) { SetFileSystemLocations(value); return *this;}
-    inline GetStorageProfileResult& WithFileSystemLocations(Aws::Vector<FileSystemLocation>&& value) { SetFileSystemLocations(std::move(value)); return *this;}
-    inline GetStorageProfileResult& AddFileSystemLocations(const FileSystemLocation& value) { m_fileSystemLocations.push_back(value); return *this; }
-    inline GetStorageProfileResult& AddFileSystemLocations(FileSystemLocation&& value) { m_fileSystemLocations.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The operating system (OS) for the storage profile.</p>
-     */
-    inline const StorageProfileOperatingSystemFamily& GetOsFamily() const{ return m_osFamily; }
-    inline void SetOsFamily(const StorageProfileOperatingSystemFamily& value) { m_osFamily = value; }
-    inline void SetOsFamily(StorageProfileOperatingSystemFamily&& value) { m_osFamily = std::move(value); }
-    inline GetStorageProfileResult& WithOsFamily(const StorageProfileOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
-    inline GetStorageProfileResult& WithOsFamily(StorageProfileOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The storage profile ID.</p>
-     */
-    inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
-    inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileId = value; }
-    inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileId = std::move(value); }
-    inline void SetStorageProfileId(const char* value) { m_storageProfileId.assign(value); }
-    inline GetStorageProfileResult& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
-    inline GetStorageProfileResult& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
-    inline GetStorageProfileResult& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
     ///@}
 
     ///@{
@@ -135,6 +125,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The location of the files for the storage profile.</p>
+     */
+    inline const Aws::Vector<FileSystemLocation>& GetFileSystemLocations() const{ return m_fileSystemLocations; }
+    inline void SetFileSystemLocations(const Aws::Vector<FileSystemLocation>& value) { m_fileSystemLocations = value; }
+    inline void SetFileSystemLocations(Aws::Vector<FileSystemLocation>&& value) { m_fileSystemLocations = std::move(value); }
+    inline GetStorageProfileResult& WithFileSystemLocations(const Aws::Vector<FileSystemLocation>& value) { SetFileSystemLocations(value); return *this;}
+    inline GetStorageProfileResult& WithFileSystemLocations(Aws::Vector<FileSystemLocation>&& value) { SetFileSystemLocations(std::move(value)); return *this;}
+    inline GetStorageProfileResult& AddFileSystemLocations(const FileSystemLocation& value) { m_fileSystemLocations.push_back(value); return *this; }
+    inline GetStorageProfileResult& AddFileSystemLocations(FileSystemLocation&& value) { m_fileSystemLocations.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -146,21 +149,21 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_storageProfileId;
+
+    Aws::String m_displayName;
+
+    StorageProfileOperatingSystemFamily m_osFamily;
+
     Aws::Utils::DateTime m_createdAt;
 
     Aws::String m_createdBy;
 
-    Aws::String m_displayName;
-
-    Aws::Vector<FileSystemLocation> m_fileSystemLocations;
-
-    StorageProfileOperatingSystemFamily m_osFamily;
-
-    Aws::String m_storageProfileId;
-
     Aws::Utils::DateTime m_updatedAt;
 
     Aws::String m_updatedBy;
+
+    Aws::Vector<FileSystemLocation> m_fileSystemLocations;
 
     Aws::String m_requestId;
   };

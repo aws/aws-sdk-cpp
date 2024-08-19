@@ -40,7 +40,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The display name of the storage profile summary to update.</p>
+     * <p>The storage profile ID.</p>
+     */
+    inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
+    inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
+    inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = value; }
+    inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::move(value); }
+    inline void SetStorageProfileId(const char* value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId.assign(value); }
+    inline StorageProfileSummary& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
+    inline StorageProfileSummary& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
+    inline StorageProfileSummary& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display name of the storage profile summary to update.</p> 
+     * <p>This field can store any content. Escape or encode this content before
+     * displaying it on a webpage or any other system that might interpret the content
+     * of this field.</p> 
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -63,30 +80,16 @@ namespace Model
     inline StorageProfileSummary& WithOsFamily(const StorageProfileOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
     inline StorageProfileSummary& WithOsFamily(StorageProfileOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The storage profile ID.</p>
-     */
-    inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
-    inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
-    inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = value; }
-    inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::move(value); }
-    inline void SetStorageProfileId(const char* value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId.assign(value); }
-    inline StorageProfileSummary& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
-    inline StorageProfileSummary& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
-    inline StorageProfileSummary& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_storageProfileId;
+    bool m_storageProfileIdHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
     StorageProfileOperatingSystemFamily m_osFamily;
     bool m_osFamilyHasBeenSet = false;
-
-    Aws::String m_storageProfileId;
-    bool m_storageProfileIdHasBeenSet = false;
   };
 
 } // namespace Model

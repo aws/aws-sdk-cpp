@@ -48,20 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A member's principal ID to disassociate from a queue.</p>
-     */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline DisassociateMemberFromQueueRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline DisassociateMemberFromQueueRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline DisassociateMemberFromQueueRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The queue ID of the queue in which you're disassociating from a member.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
@@ -73,16 +59,30 @@ namespace Model
     inline DisassociateMemberFromQueueRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
     inline DisassociateMemberFromQueueRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A member's principal ID to disassociate from a queue.</p>
+     */
+    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
+    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
+    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
+    inline DisassociateMemberFromQueueRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
+    inline DisassociateMemberFromQueueRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
+    inline DisassociateMemberFromQueueRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::String m_principalId;
-    bool m_principalIdHasBeenSet = false;
-
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet = false;
   };
 
 } // namespace Model

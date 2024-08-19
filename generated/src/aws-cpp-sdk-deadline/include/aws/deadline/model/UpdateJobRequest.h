@@ -7,8 +7,8 @@
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/DeadlineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/deadline/model/UpdateJobLifecycleStatus.h>
 #include <aws/deadline/model/JobTargetTaskRunStatus.h>
+#include <aws/deadline/model/UpdateJobLifecycleStatus.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -68,6 +68,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queue ID of the job to update.</p>
+     */
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
+    inline UpdateJobRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline UpdateJobRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline UpdateJobRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The job ID to update.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -82,14 +96,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of a job in its lifecycle.</p>
+     * <p>The task status to update the job's tasks to.</p>
      */
-    inline const UpdateJobLifecycleStatus& GetLifecycleStatus() const{ return m_lifecycleStatus; }
-    inline bool LifecycleStatusHasBeenSet() const { return m_lifecycleStatusHasBeenSet; }
-    inline void SetLifecycleStatus(const UpdateJobLifecycleStatus& value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = value; }
-    inline void SetLifecycleStatus(UpdateJobLifecycleStatus&& value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = std::move(value); }
-    inline UpdateJobRequest& WithLifecycleStatus(const UpdateJobLifecycleStatus& value) { SetLifecycleStatus(value); return *this;}
-    inline UpdateJobRequest& WithLifecycleStatus(UpdateJobLifecycleStatus&& value) { SetLifecycleStatus(std::move(value)); return *this;}
+    inline const JobTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
+    inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }
+    inline void SetTargetTaskRunStatus(const JobTargetTaskRunStatus& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = value; }
+    inline void SetTargetTaskRunStatus(JobTargetTaskRunStatus&& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = std::move(value); }
+    inline UpdateJobRequest& WithTargetTaskRunStatus(const JobTargetTaskRunStatus& value) { SetTargetTaskRunStatus(value); return *this;}
+    inline UpdateJobRequest& WithTargetTaskRunStatus(JobTargetTaskRunStatus&& value) { SetTargetTaskRunStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The job priority to update.</p>
+     */
+    inline int GetPriority() const{ return m_priority; }
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+    inline UpdateJobRequest& WithPriority(int value) { SetPriority(value); return *this;}
     ///@}
 
     ///@{
@@ -115,38 +139,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job priority to update.</p>
+     * <p>The status of a job in its lifecycle. When you change the status of the job
+     * to <code>ARCHIVED</code>, the job can't be scheduled or archived.</p>
+     *  <p>An archived jobs and its steps and tasks are deleted after 120
+     * days. The job can't be recovered.</p> 
      */
-    inline int GetPriority() const{ return m_priority; }
-    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-    inline UpdateJobRequest& WithPriority(int value) { SetPriority(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The queue ID of the job to update.</p>
-     */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline UpdateJobRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline UpdateJobRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline UpdateJobRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The task status to update the job's tasks to.</p>
-     */
-    inline const JobTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
-    inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }
-    inline void SetTargetTaskRunStatus(const JobTargetTaskRunStatus& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = value; }
-    inline void SetTargetTaskRunStatus(JobTargetTaskRunStatus&& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = std::move(value); }
-    inline UpdateJobRequest& WithTargetTaskRunStatus(const JobTargetTaskRunStatus& value) { SetTargetTaskRunStatus(value); return *this;}
-    inline UpdateJobRequest& WithTargetTaskRunStatus(JobTargetTaskRunStatus&& value) { SetTargetTaskRunStatus(std::move(value)); return *this;}
+    inline const UpdateJobLifecycleStatus& GetLifecycleStatus() const{ return m_lifecycleStatus; }
+    inline bool LifecycleStatusHasBeenSet() const { return m_lifecycleStatusHasBeenSet; }
+    inline void SetLifecycleStatus(const UpdateJobLifecycleStatus& value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = value; }
+    inline void SetLifecycleStatus(UpdateJobLifecycleStatus&& value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = std::move(value); }
+    inline UpdateJobRequest& WithLifecycleStatus(const UpdateJobLifecycleStatus& value) { SetLifecycleStatus(value); return *this;}
+    inline UpdateJobRequest& WithLifecycleStatus(UpdateJobLifecycleStatus&& value) { SetLifecycleStatus(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -156,11 +159,17 @@ namespace Model
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
+    Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    UpdateJobLifecycleStatus m_lifecycleStatus;
-    bool m_lifecycleStatusHasBeenSet = false;
+    JobTargetTaskRunStatus m_targetTaskRunStatus;
+    bool m_targetTaskRunStatusHasBeenSet = false;
+
+    int m_priority;
+    bool m_priorityHasBeenSet = false;
 
     int m_maxFailedTasksCount;
     bool m_maxFailedTasksCountHasBeenSet = false;
@@ -168,14 +177,8 @@ namespace Model
     int m_maxRetriesPerTask;
     bool m_maxRetriesPerTaskHasBeenSet = false;
 
-    int m_priority;
-    bool m_priorityHasBeenSet = false;
-
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
-
-    JobTargetTaskRunStatus m_targetTaskRunStatus;
-    bool m_targetTaskRunStatusHasBeenSet = false;
+    UpdateJobLifecycleStatus m_lifecycleStatus;
+    bool m_lifecycleStatusHasBeenSet = false;
   };
 
 } // namespace Model

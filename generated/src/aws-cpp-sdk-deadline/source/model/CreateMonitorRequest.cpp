@@ -18,8 +18,8 @@ CreateMonitorRequest::CreateMonitorRequest() :
     m_clientTokenHasBeenSet(true),
     m_displayNameHasBeenSet(false),
     m_identityCenterInstanceArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_subdomainHasBeenSet(false)
+    m_subdomainHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
@@ -39,15 +39,15 @@ Aws::String CreateMonitorRequest::SerializePayload() const
 
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
-  }
-
   if(m_subdomainHasBeenSet)
   {
    payload.WithString("subdomain", m_subdomain);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

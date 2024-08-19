@@ -56,18 +56,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters by group.</p>
-     */
-    AWS_DEADLINE_API const SearchGroupedFilterExpressions& GetGroupFilter() const;
-    AWS_DEADLINE_API bool GroupFilterHasBeenSet() const;
-    AWS_DEADLINE_API void SetGroupFilter(const SearchGroupedFilterExpressions& value);
-    AWS_DEADLINE_API void SetGroupFilter(SearchGroupedFilterExpressions&& value);
-    AWS_DEADLINE_API SearchFilterExpression& WithGroupFilter(const SearchGroupedFilterExpressions& value);
-    AWS_DEADLINE_API SearchFilterExpression& WithGroupFilter(SearchGroupedFilterExpressions&& value);
-    ///@}
-
-    ///@{
-    /**
      * <p>Filters by parameter.</p>
      */
     inline const ParameterFilterExpression& GetParameterFilter() const{ return m_parameterFilter; }
@@ -101,13 +89,22 @@ namespace Model
     inline SearchFilterExpression& WithStringFilter(const StringFilterExpression& value) { SetStringFilter(value); return *this;}
     inline SearchFilterExpression& WithStringFilter(StringFilterExpression&& value) { SetStringFilter(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Filters by group.</p>
+     */
+    AWS_DEADLINE_API const SearchGroupedFilterExpressions& GetGroupFilter() const;
+    AWS_DEADLINE_API bool GroupFilterHasBeenSet() const;
+    AWS_DEADLINE_API void SetGroupFilter(const SearchGroupedFilterExpressions& value);
+    AWS_DEADLINE_API void SetGroupFilter(SearchGroupedFilterExpressions&& value);
+    AWS_DEADLINE_API SearchFilterExpression& WithGroupFilter(const SearchGroupedFilterExpressions& value);
+    AWS_DEADLINE_API SearchFilterExpression& WithGroupFilter(SearchGroupedFilterExpressions&& value);
+    ///@}
   private:
 
     DateTimeFilterExpression m_dateTimeFilter;
     bool m_dateTimeFilterHasBeenSet = false;
-
-    std::shared_ptr<SearchGroupedFilterExpressions> m_groupFilter;
-    bool m_groupFilterHasBeenSet = false;
 
     ParameterFilterExpression m_parameterFilter;
     bool m_parameterFilterHasBeenSet = false;
@@ -117,6 +114,9 @@ namespace Model
 
     StringFilterExpression m_stringFilter;
     bool m_stringFilterHasBeenSet = false;
+
+    std::shared_ptr<SearchGroupedFilterExpressions> m_groupFilter;
+    bool m_groupFilterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,8 +18,8 @@ using namespace Aws::Http;
 AssumeQueueRoleForWorkerRequest::AssumeQueueRoleForWorkerRequest() : 
     m_farmIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+    m_workerIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false)
 {
 }
 

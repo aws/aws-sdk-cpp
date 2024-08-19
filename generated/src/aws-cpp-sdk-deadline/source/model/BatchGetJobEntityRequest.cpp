@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 BatchGetJobEntityRequest::BatchGetJobEntityRequest() : 
     m_farmIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_identifiersHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+    m_workerIdHasBeenSet(false),
+    m_identifiersHasBeenSet(false)
 {
 }
 

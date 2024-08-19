@@ -42,10 +42,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>A runtime identifier. For example, <code>java21</code>.</p> <p>The following
-     * list includes deprecated runtimes. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-     * deprecation policy</a>.</p>
+     * <p>A runtime identifier.</p> <p>The following list includes deprecated runtimes.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime
+     * use after deprecation</a>.</p> <p>For a list of all currently supported
+     * runtimes, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported
+     * runtimes</a>.</p>
      */
     inline const Runtime& GetCompatibleRuntime() const{ return m_compatibleRuntime; }
     inline bool CompatibleRuntimeHasBeenSet() const { return m_compatibleRuntimeHasBeenSet; }

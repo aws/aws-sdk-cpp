@@ -19,19 +19,18 @@ namespace Model
 {
 
 BudgetSummary::BudgetSummary() : 
-    m_approximateDollarLimit(0.0),
-    m_approximateDollarLimitHasBeenSet(false),
     m_budgetIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
+    m_usageTrackingResourceHasBeenSet(false),
     m_status(BudgetStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_approximateDollarLimit(0.0),
+    m_approximateDollarLimitHasBeenSet(false),
+    m_usagesHasBeenSet(false),
+    m_createdByHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_updatedByHasBeenSet(false),
-    m_usageTrackingResourceHasBeenSet(false),
-    m_usagesHasBeenSet(false)
+    m_updatedAtHasBeenSet(false)
 {
 }
 
@@ -43,67 +42,11 @@ BudgetSummary::BudgetSummary(JsonView jsonValue)
 
 BudgetSummary& BudgetSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("approximateDollarLimit"))
-  {
-    m_approximateDollarLimit = jsonValue.GetDouble("approximateDollarLimit");
-
-    m_approximateDollarLimitHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("budgetId"))
   {
     m_budgetId = jsonValue.GetString("budgetId");
 
     m_budgetIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
-
-    m_createdByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-
-    m_displayNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = BudgetStatusMapper::GetBudgetStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-
-    m_updatedAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("updatedBy"))
-  {
-    m_updatedBy = jsonValue.GetString("updatedBy");
-
-    m_updatedByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("usageTrackingResource"))
@@ -113,11 +56,60 @@ BudgetSummary& BudgetSummary::operator =(JsonView jsonValue)
     m_usageTrackingResourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = BudgetStatusMapper::GetBudgetStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("approximateDollarLimit"))
+  {
+    m_approximateDollarLimit = jsonValue.GetDouble("approximateDollarLimit");
+
+    m_approximateDollarLimitHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("usages"))
   {
     m_usages = jsonValue.GetObject("usages");
 
     m_usagesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
+
+    m_createdByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedBy"))
+  {
+    m_updatedBy = jsonValue.GetString("updatedBy");
+
+    m_updatedByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   return *this;
@@ -127,54 +119,9 @@ JsonValue BudgetSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_approximateDollarLimitHasBeenSet)
-  {
-   payload.WithDouble("approximateDollarLimit", m_approximateDollarLimit);
-
-  }
-
   if(m_budgetIdHasBeenSet)
   {
    payload.WithString("budgetId", m_budgetId);
-
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", BudgetStatusMapper::GetNameForBudgetStatus(m_status));
-  }
-
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_updatedByHasBeenSet)
-  {
-   payload.WithString("updatedBy", m_updatedBy);
 
   }
 
@@ -184,10 +131,49 @@ JsonValue BudgetSummary::Jsonize() const
 
   }
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", BudgetStatusMapper::GetNameForBudgetStatus(m_status));
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_approximateDollarLimitHasBeenSet)
+  {
+   payload.WithDouble("approximateDollarLimit", m_approximateDollarLimit);
+
+  }
+
   if(m_usagesHasBeenSet)
   {
    payload.WithObject("usages", m_usages.Jsonize());
 
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedByHasBeenSet)
+  {
+   payload.WithString("updatedBy", m_updatedBy);
+
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

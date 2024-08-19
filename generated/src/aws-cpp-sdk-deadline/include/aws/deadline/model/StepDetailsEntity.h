@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Document.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -41,21 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The dependencies for a step.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetDependencies() const{ return m_dependencies; }
-    inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
-    inline void SetDependencies(const Aws::Vector<Aws::String>& value) { m_dependenciesHasBeenSet = true; m_dependencies = value; }
-    inline void SetDependencies(Aws::Vector<Aws::String>&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::move(value); }
-    inline StepDetailsEntity& WithDependencies(const Aws::Vector<Aws::String>& value) { SetDependencies(value); return *this;}
-    inline StepDetailsEntity& WithDependencies(Aws::Vector<Aws::String>&& value) { SetDependencies(std::move(value)); return *this;}
-    inline StepDetailsEntity& AddDependencies(const Aws::String& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
-    inline StepDetailsEntity& AddDependencies(Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(std::move(value)); return *this; }
-    inline StepDetailsEntity& AddDependencies(const char* value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The job ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -66,20 +51,6 @@ namespace Model
     inline StepDetailsEntity& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
     inline StepDetailsEntity& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
     inline StepDetailsEntity& WithJobId(const char* value) { SetJobId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The schema version for a step template.</p>
-     */
-    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
-    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
-    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
-    inline StepDetailsEntity& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
-    inline StepDetailsEntity& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
-    inline StepDetailsEntity& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -98,6 +69,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The schema version for a step template.</p>
+     */
+    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
+    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
+    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
+    inline StepDetailsEntity& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
+    inline StepDetailsEntity& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
+    inline StepDetailsEntity& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The template for a step.</p>
      */
     inline Aws::Utils::DocumentView GetTemplate() const{ return m_template; }
@@ -107,22 +92,37 @@ namespace Model
     inline StepDetailsEntity& WithTemplate(const Aws::Utils::Document& value) { SetTemplate(value); return *this;}
     inline StepDetailsEntity& WithTemplate(Aws::Utils::Document&& value) { SetTemplate(std::move(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<Aws::String> m_dependencies;
-    bool m_dependenciesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The dependencies for a step.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDependencies() const{ return m_dependencies; }
+    inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
+    inline void SetDependencies(const Aws::Vector<Aws::String>& value) { m_dependenciesHasBeenSet = true; m_dependencies = value; }
+    inline void SetDependencies(Aws::Vector<Aws::String>&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::move(value); }
+    inline StepDetailsEntity& WithDependencies(const Aws::Vector<Aws::String>& value) { SetDependencies(value); return *this;}
+    inline StepDetailsEntity& WithDependencies(Aws::Vector<Aws::String>&& value) { SetDependencies(std::move(value)); return *this;}
+    inline StepDetailsEntity& AddDependencies(const Aws::String& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
+    inline StepDetailsEntity& AddDependencies(Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(std::move(value)); return *this; }
+    inline StepDetailsEntity& AddDependencies(const char* value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
+    ///@}
+  private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet = false;
-
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;
 
+    Aws::String m_schemaVersion;
+    bool m_schemaVersionHasBeenSet = false;
+
     Aws::Utils::Document m_template;
     bool m_templateHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_dependencies;
+    bool m_dependenciesHasBeenSet = false;
   };
 
 } // namespace Model

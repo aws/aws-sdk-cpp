@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteBudgetRequest::DeleteBudgetRequest() : 
-    m_budgetIdHasBeenSet(false),
-    m_farmIdHasBeenSet(false)
+    m_farmIdHasBeenSet(false),
+    m_budgetIdHasBeenSet(false)
 {
 }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/DependencyConsumerResolutionStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/DependencyConsumerResolutionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The step consumer status.</p>
-     */
-    inline const DependencyConsumerResolutionStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DependencyConsumerResolutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DependencyConsumerResolutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StepConsumer& WithStatus(const DependencyConsumerResolutionStatus& value) { SetStatus(value); return *this;}
-    inline StepConsumer& WithStatus(DependencyConsumerResolutionStatus&& value) { SetStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The step ID.</p>
      */
     inline const Aws::String& GetStepId() const{ return m_stepId; }
@@ -63,13 +51,25 @@ namespace Model
     inline StepConsumer& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
     inline StepConsumer& WithStepId(const char* value) { SetStepId(value); return *this;}
     ///@}
-  private:
 
-    DependencyConsumerResolutionStatus m_status;
-    bool m_statusHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The step consumer status.</p>
+     */
+    inline const DependencyConsumerResolutionStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const DependencyConsumerResolutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(DependencyConsumerResolutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline StepConsumer& WithStatus(const DependencyConsumerResolutionStatus& value) { SetStatus(value); return *this;}
+    inline StepConsumer& WithStatus(DependencyConsumerResolutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;
+
+    DependencyConsumerResolutionStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

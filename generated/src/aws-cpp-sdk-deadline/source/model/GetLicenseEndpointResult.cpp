@@ -31,25 +31,10 @@ GetLicenseEndpointResult::GetLicenseEndpointResult(const Aws::AmazonWebServiceRe
 GetLicenseEndpointResult& GetLicenseEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("dnsName"))
-  {
-    m_dnsName = jsonValue.GetString("dnsName");
-
-  }
-
   if(jsonValue.ValueExists("licenseEndpointId"))
   {
     m_licenseEndpointId = jsonValue.GetString("licenseEndpointId");
 
-  }
-
-  if(jsonValue.ValueExists("securityGroupIds"))
-  {
-    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
-    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-    {
-      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
-    }
   }
 
   if(jsonValue.ValueExists("status"))
@@ -64,6 +49,18 @@ GetLicenseEndpointResult& GetLicenseEndpointResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("vpcId"))
+  {
+    m_vpcId = jsonValue.GetString("vpcId");
+
+  }
+
+  if(jsonValue.ValueExists("dnsName"))
+  {
+    m_dnsName = jsonValue.GetString("dnsName");
+
+  }
+
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -73,10 +70,13 @@ GetLicenseEndpointResult& GetLicenseEndpointResult::operator =(const Aws::Amazon
     }
   }
 
-  if(jsonValue.ValueExists("vpcId"))
+  if(jsonValue.ValueExists("securityGroupIds"))
   {
-    m_vpcId = jsonValue.GetString("vpcId");
-
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
   }
 
 

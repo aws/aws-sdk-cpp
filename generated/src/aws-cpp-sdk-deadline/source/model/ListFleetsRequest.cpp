@@ -16,14 +16,14 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListFleetsRequest::ListFleetsRequest() : 
-    m_displayNameHasBeenSet(false),
     m_farmIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_principalIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_status(FleetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -35,6 +35,13 @@ Aws::String ListFleetsRequest::SerializePayload() const
 void ListFleetsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_principalIdHasBeenSet)
+    {
+      ss << m_principalId;
+      uri.AddQueryStringParameter("principalId", ss.str());
+      ss.str("");
+    }
+
     if(m_displayNameHasBeenSet)
     {
       ss << m_displayName;
@@ -42,10 +49,10 @@ void ListFleetsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_maxResultsHasBeenSet)
+    if(m_statusHasBeenSet)
     {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss << FleetStatusMapper::GetNameForFleetStatus(m_status);
+      uri.AddQueryStringParameter("status", ss.str());
       ss.str("");
     }
 
@@ -56,17 +63,10 @@ void ListFleetsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_principalIdHasBeenSet)
+    if(m_maxResultsHasBeenSet)
     {
-      ss << m_principalId;
-      uri.AddQueryStringParameter("principalId", ss.str());
-      ss.str("");
-    }
-
-    if(m_statusHasBeenSet)
-    {
-      ss << FleetStatusMapper::GetNameForFleetStatus(m_status);
-      uri.AddQueryStringParameter("status", ss.str());
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -39,25 +39,6 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>Information about the resources in use when the exception was thrown.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
-    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline ThrottlingException& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
-    inline ThrottlingException& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
-    inline ThrottlingException& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
-    inline ThrottlingException& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline ThrottlingException& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline ThrottlingException& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
-    inline ThrottlingException& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline ThrottlingException& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline ThrottlingException& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -67,6 +48,20 @@ namespace Model
     inline ThrottlingException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
     inline ThrottlingException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
     inline ThrottlingException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the service that is being throttled.</p>
+     */
+    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
+    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
+    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
+    inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
+    inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
+    inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
     ///@}
 
     ///@{
@@ -95,24 +90,29 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifies the service that is being throttled.</p>
+     * <p>Information about the resources in use when the exception was thrown.</p>
      */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+    inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
+    inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+    inline ThrottlingException& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
+    inline ThrottlingException& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
+    inline ThrottlingException& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
+    inline ThrottlingException& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
+    inline ThrottlingException& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
+    inline ThrottlingException& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
+    inline ThrottlingException& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
+    inline ThrottlingException& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
+    inline ThrottlingException& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
     ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet = false;
-
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::String m_serviceCode;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_quotaCode;
     bool m_quotaCodeHasBeenSet = false;
@@ -120,8 +120,8 @@ namespace Model
     int m_retryAfterSeconds;
     bool m_retryAfterSecondsHasBeenSet = false;
 
-    Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet = false;
+    Aws::Map<Aws::String, Aws::String> m_context;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,9 +25,12 @@ namespace Model
 
   /**
    * <p>The RevisionId provided does not match the latest RevisionId for the Lambda
-   * function or alias. Call the <code>GetFunction</code> or the
-   * <code>GetAlias</code> API operation to retrieve the latest RevisionId for your
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * function or alias.</p> <ul> <li> <p> <b>For AddPermission and RemovePermission
+   * API operations:</b> Call <code>GetPolicy</code> to retrieve the latest
+   * RevisionId for your resource.</p> </li> <li> <p> <b>For all other API
+   * operations:</b> Call <code>GetFunction</code> or <code>GetAlias</code> to
+   * retrieve the latest RevisionId for your resource.</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PreconditionFailedException">AWS
    * API Reference</a></p>
    */

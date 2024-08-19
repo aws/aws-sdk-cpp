@@ -29,12 +29,6 @@ ListStorageProfilesResult::ListStorageProfilesResult(const Aws::AmazonWebService
 ListStorageProfilesResult& ListStorageProfilesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("storageProfiles"))
   {
     Aws::Utils::Array<JsonView> storageProfilesJsonList = jsonValue.GetArray("storageProfiles");
@@ -42,6 +36,12 @@ ListStorageProfilesResult& ListStorageProfilesResult::operator =(const Aws::Amaz
     {
       m_storageProfiles.push_back(storageProfilesJsonList[storageProfilesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

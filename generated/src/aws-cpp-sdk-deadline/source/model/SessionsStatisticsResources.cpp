@@ -19,8 +19,8 @@ namespace Model
 {
 
 SessionsStatisticsResources::SessionsStatisticsResources() : 
-    m_fleetIdsHasBeenSet(false),
-    m_queueIdsHasBeenSet(false)
+    m_queueIdsHasBeenSet(false),
+    m_fleetIdsHasBeenSet(false)
 {
 }
 
@@ -32,16 +32,6 @@ SessionsStatisticsResources::SessionsStatisticsResources(JsonView jsonValue)
 
 SessionsStatisticsResources& SessionsStatisticsResources::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("fleetIds"))
-  {
-    Aws::Utils::Array<JsonView> fleetIdsJsonList = jsonValue.GetArray("fleetIds");
-    for(unsigned fleetIdsIndex = 0; fleetIdsIndex < fleetIdsJsonList.GetLength(); ++fleetIdsIndex)
-    {
-      m_fleetIds.push_back(fleetIdsJsonList[fleetIdsIndex].AsString());
-    }
-    m_fleetIdsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("queueIds"))
   {
     Aws::Utils::Array<JsonView> queueIdsJsonList = jsonValue.GetArray("queueIds");
@@ -52,23 +42,22 @@ SessionsStatisticsResources& SessionsStatisticsResources::operator =(JsonView js
     m_queueIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fleetIds"))
+  {
+    Aws::Utils::Array<JsonView> fleetIdsJsonList = jsonValue.GetArray("fleetIds");
+    for(unsigned fleetIdsIndex = 0; fleetIdsIndex < fleetIdsJsonList.GetLength(); ++fleetIdsIndex)
+    {
+      m_fleetIds.push_back(fleetIdsJsonList[fleetIdsIndex].AsString());
+    }
+    m_fleetIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue SessionsStatisticsResources::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_fleetIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fleetIdsJsonList(m_fleetIds.size());
-   for(unsigned fleetIdsIndex = 0; fleetIdsIndex < fleetIdsJsonList.GetLength(); ++fleetIdsIndex)
-   {
-     fleetIdsJsonList[fleetIdsIndex].AsString(m_fleetIds[fleetIdsIndex]);
-   }
-   payload.WithArray("fleetIds", std::move(fleetIdsJsonList));
-
-  }
 
   if(m_queueIdsHasBeenSet)
   {
@@ -78,6 +67,17 @@ JsonValue SessionsStatisticsResources::Jsonize() const
      queueIdsJsonList[queueIdsIndex].AsString(m_queueIds[queueIdsIndex]);
    }
    payload.WithArray("queueIds", std::move(queueIdsJsonList));
+
+  }
+
+  if(m_fleetIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> fleetIdsJsonList(m_fleetIds.size());
+   for(unsigned fleetIdsIndex = 0; fleetIdsIndex < fleetIdsJsonList.GetLength(); ++fleetIdsIndex)
+   {
+     fleetIdsJsonList[fleetIdsIndex].AsString(m_fleetIds[fleetIdsIndex]);
+   }
+   payload.WithArray("fleetIds", std::move(fleetIdsJsonList));
 
   }
 

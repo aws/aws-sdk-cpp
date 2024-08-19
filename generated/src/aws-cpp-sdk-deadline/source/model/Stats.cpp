@@ -19,12 +19,12 @@ namespace Model
 {
 
 Stats::Stats() : 
-    m_avg(0.0),
-    m_avgHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
     m_min(0.0),
     m_minHasBeenSet(false),
+    m_max(0.0),
+    m_maxHasBeenSet(false),
+    m_avg(0.0),
+    m_avgHasBeenSet(false),
     m_sum(0.0),
     m_sumHasBeenSet(false)
 {
@@ -38,11 +38,11 @@ Stats::Stats(JsonView jsonValue)
 
 Stats& Stats::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("avg"))
+  if(jsonValue.ValueExists("min"))
   {
-    m_avg = jsonValue.GetDouble("avg");
+    m_min = jsonValue.GetDouble("min");
 
-    m_avgHasBeenSet = true;
+    m_minHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("max"))
@@ -52,11 +52,11 @@ Stats& Stats::operator =(JsonView jsonValue)
     m_maxHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("min"))
+  if(jsonValue.ValueExists("avg"))
   {
-    m_min = jsonValue.GetDouble("min");
+    m_avg = jsonValue.GetDouble("avg");
 
-    m_minHasBeenSet = true;
+    m_avgHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sum"))
@@ -73,9 +73,9 @@ JsonValue Stats::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_avgHasBeenSet)
+  if(m_minHasBeenSet)
   {
-   payload.WithDouble("avg", m_avg);
+   payload.WithDouble("min", m_min);
 
   }
 
@@ -85,9 +85,9 @@ JsonValue Stats::Jsonize() const
 
   }
 
-  if(m_minHasBeenSet)
+  if(m_avgHasBeenSet)
   {
-   payload.WithDouble("min", m_min);
+   payload.WithDouble("avg", m_avg);
 
   }
 

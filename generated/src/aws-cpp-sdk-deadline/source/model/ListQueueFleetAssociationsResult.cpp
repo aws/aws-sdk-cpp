@@ -29,12 +29,6 @@ ListQueueFleetAssociationsResult::ListQueueFleetAssociationsResult(const Aws::Am
 ListQueueFleetAssociationsResult& ListQueueFleetAssociationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("queueFleetAssociations"))
   {
     Aws::Utils::Array<JsonView> queueFleetAssociationsJsonList = jsonValue.GetArray("queueFleetAssociations");
@@ -42,6 +36,12 @@ ListQueueFleetAssociationsResult& ListQueueFleetAssociationsResult::operator =(c
     {
       m_queueFleetAssociations.push_back(queueFleetAssociationsJsonList[queueFleetAssociationsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

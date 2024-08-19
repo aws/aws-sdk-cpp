@@ -7,8 +7,8 @@
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/DeadlineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/deadline/model/SearchGroupedFilterExpressions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/deadline/model/SearchGroupedFilterExpressions.h>
 #include <aws/deadline/model/SearchSortExpression.h>
 #include <utility>
 
@@ -51,6 +51,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The fleet ID of the workers to search for.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
+    inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
+    inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
+    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
+    inline SearchWorkersRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
+    inline SearchWorkersRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
+    inline SearchWorkersRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    inline SearchWorkersRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
+    inline SearchWorkersRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when
      * searching among a group of search strings in a resource. <p>You can use two
      * groupings per search each within parenthesis <code>()</code>.</p></p>
@@ -65,17 +80,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fleet ID of the workers to search for.</p>
+     * <p>The search terms for a resource.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
-    inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
-    inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
-    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
-    inline SearchWorkersRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
-    inline SearchWorkersRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
-    inline SearchWorkersRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
-    inline SearchWorkersRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
-    inline SearchWorkersRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    inline const Aws::Vector<SearchSortExpression>& GetSortExpressions() const{ return m_sortExpressions; }
+    inline bool SortExpressionsHasBeenSet() const { return m_sortExpressionsHasBeenSet; }
+    inline void SetSortExpressions(const Aws::Vector<SearchSortExpression>& value) { m_sortExpressionsHasBeenSet = true; m_sortExpressions = value; }
+    inline void SetSortExpressions(Aws::Vector<SearchSortExpression>&& value) { m_sortExpressionsHasBeenSet = true; m_sortExpressions = std::move(value); }
+    inline SearchWorkersRequest& WithSortExpressions(const Aws::Vector<SearchSortExpression>& value) { SetSortExpressions(value); return *this;}
+    inline SearchWorkersRequest& WithSortExpressions(Aws::Vector<SearchSortExpression>&& value) { SetSortExpressions(std::move(value)); return *this;}
+    inline SearchWorkersRequest& AddSortExpressions(const SearchSortExpression& value) { m_sortExpressionsHasBeenSet = true; m_sortExpressions.push_back(value); return *this; }
+    inline SearchWorkersRequest& AddSortExpressions(SearchSortExpression&& value) { m_sortExpressionsHasBeenSet = true; m_sortExpressions.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,39 +111,25 @@ namespace Model
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline SearchWorkersRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The search terms for a resource.</p>
-     */
-    inline const Aws::Vector<SearchSortExpression>& GetSortExpressions() const{ return m_sortExpressions; }
-    inline bool SortExpressionsHasBeenSet() const { return m_sortExpressionsHasBeenSet; }
-    inline void SetSortExpressions(const Aws::Vector<SearchSortExpression>& value) { m_sortExpressionsHasBeenSet = true; m_sortExpressions = value; }
-    inline void SetSortExpressions(Aws::Vector<SearchSortExpression>&& value) { m_sortExpressionsHasBeenSet = true; m_sortExpressions = std::move(value); }
-    inline SearchWorkersRequest& WithSortExpressions(const Aws::Vector<SearchSortExpression>& value) { SetSortExpressions(value); return *this;}
-    inline SearchWorkersRequest& WithSortExpressions(Aws::Vector<SearchSortExpression>&& value) { SetSortExpressions(std::move(value)); return *this;}
-    inline SearchWorkersRequest& AddSortExpressions(const SearchSortExpression& value) { m_sortExpressionsHasBeenSet = true; m_sortExpressions.push_back(value); return *this; }
-    inline SearchWorkersRequest& AddSortExpressions(SearchSortExpression&& value) { m_sortExpressionsHasBeenSet = true; m_sortExpressions.push_back(std::move(value)); return *this; }
-    ///@}
   private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_fleetIds;
+    bool m_fleetIdsHasBeenSet = false;
+
     SearchGroupedFilterExpressions m_filterExpressions;
     bool m_filterExpressionsHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_fleetIds;
-    bool m_fleetIdsHasBeenSet = false;
+    Aws::Vector<SearchSortExpression> m_sortExpressions;
+    bool m_sortExpressionsHasBeenSet = false;
 
     int m_itemOffset;
     bool m_itemOffsetHasBeenSet = false;
 
     int m_pageSize;
     bool m_pageSizeHasBeenSet = false;
-
-    Aws::Vector<SearchSortExpression> m_sortExpressions;
-    bool m_sortExpressionsHasBeenSet = false;
   };
 
 } // namespace Model

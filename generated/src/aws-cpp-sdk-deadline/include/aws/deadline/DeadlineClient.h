@@ -446,9 +446,10 @@ namespace deadline
         }
 
         /**
-         * <p>Creates a job. A job is a render submission submitted by a user. It contains
-         * specific job properties outlined as steps and tasks.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a job. A job is a set of instructions that AWS Deadline Cloud uses to
+         * schedule and run work on available workers. For more information, see <a
+         * href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline
+         * Cloud jobs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateJob">AWS
          * API Reference</a></p>
          */
@@ -811,7 +812,9 @@ namespace deadline
         }
 
         /**
-         * <p>Deletes a queue.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a queue.</p>  <p>You can't recover the jobs in a queue if
+         * you delete the queue. Deleting the queue also deletes the jobs in that
+         * queue.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueue">AWS
          * API Reference</a></p>
          */
@@ -2243,7 +2246,10 @@ namespace deadline
         /**
          * <p>Starts an asynchronous request for getting aggregated statistics about queues
          * and farms. Get the statistics using the
-         * <code>GetSessionsStatisticsAggregation</code> operation. Statistics are
+         * <code>GetSessionsStatisticsAggregation</code> operation. You can only have one
+         * running aggregation for your Deadline Cloud farm. Call the
+         * <code>GetSessionsStatisticsAggregation</code> operation and check the
+         * <code>status</code> field to see if an aggregation is running. Statistics are
          * available for 1 hour after you call the
          * <code>StartSessionsStatisticsAggregation</code> operation.</p><p><h3>See
          * Also:</h3>   <a
@@ -2399,7 +2405,10 @@ namespace deadline
         }
 
         /**
-         * <p>Updates a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a job. </p> <p>When you change the status of the job to
+         * <code>ARCHIVED</code>, the job can't be scheduled or archived.</p> 
+         * <p>An archived jobs and its steps and tasks are deleted after 120 days. The job
+         * can't be recovered.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateJob">AWS
          * API Reference</a></p>
          */

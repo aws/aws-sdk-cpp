@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/EnvironmentDetailsEntity.h>
-#include <aws/deadline/model/JobAttachmentDetailsEntity.h>
 #include <aws/deadline/model/JobDetailsEntity.h>
+#include <aws/deadline/model/JobAttachmentDetailsEntity.h>
 #include <aws/deadline/model/StepDetailsEntity.h>
+#include <aws/deadline/model/EnvironmentDetailsEntity.h>
 #include <utility>
 
 namespace Aws
@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The environment details for the job entity.</p>
+     * <p>The job details.</p>
      */
-    inline const EnvironmentDetailsEntity& GetEnvironmentDetails() const{ return m_environmentDetails; }
-    inline bool EnvironmentDetailsHasBeenSet() const { return m_environmentDetailsHasBeenSet; }
-    inline void SetEnvironmentDetails(const EnvironmentDetailsEntity& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = value; }
-    inline void SetEnvironmentDetails(EnvironmentDetailsEntity&& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = std::move(value); }
-    inline JobEntity& WithEnvironmentDetails(const EnvironmentDetailsEntity& value) { SetEnvironmentDetails(value); return *this;}
-    inline JobEntity& WithEnvironmentDetails(EnvironmentDetailsEntity&& value) { SetEnvironmentDetails(std::move(value)); return *this;}
+    inline const JobDetailsEntity& GetJobDetails() const{ return m_jobDetails; }
+    inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
+    inline void SetJobDetails(const JobDetailsEntity& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
+    inline void SetJobDetails(JobDetailsEntity&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
+    inline JobEntity& WithJobDetails(const JobDetailsEntity& value) { SetJobDetails(value); return *this;}
+    inline JobEntity& WithJobDetails(JobDetailsEntity&& value) { SetJobDetails(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,18 +66,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job details.</p>
-     */
-    inline const JobDetailsEntity& GetJobDetails() const{ return m_jobDetails; }
-    inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
-    inline void SetJobDetails(const JobDetailsEntity& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
-    inline void SetJobDetails(JobDetailsEntity&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
-    inline JobEntity& WithJobDetails(const JobDetailsEntity& value) { SetJobDetails(value); return *this;}
-    inline JobEntity& WithJobDetails(JobDetailsEntity&& value) { SetJobDetails(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The step details.</p>
      */
     inline const StepDetailsEntity& GetStepDetails() const{ return m_stepDetails; }
@@ -87,19 +75,31 @@ namespace Model
     inline JobEntity& WithStepDetails(const StepDetailsEntity& value) { SetStepDetails(value); return *this;}
     inline JobEntity& WithStepDetails(StepDetailsEntity&& value) { SetStepDetails(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The environment details for the job entity.</p>
+     */
+    inline const EnvironmentDetailsEntity& GetEnvironmentDetails() const{ return m_environmentDetails; }
+    inline bool EnvironmentDetailsHasBeenSet() const { return m_environmentDetailsHasBeenSet; }
+    inline void SetEnvironmentDetails(const EnvironmentDetailsEntity& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = value; }
+    inline void SetEnvironmentDetails(EnvironmentDetailsEntity&& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = std::move(value); }
+    inline JobEntity& WithEnvironmentDetails(const EnvironmentDetailsEntity& value) { SetEnvironmentDetails(value); return *this;}
+    inline JobEntity& WithEnvironmentDetails(EnvironmentDetailsEntity&& value) { SetEnvironmentDetails(std::move(value)); return *this;}
+    ///@}
   private:
-
-    EnvironmentDetailsEntity m_environmentDetails;
-    bool m_environmentDetailsHasBeenSet = false;
-
-    JobAttachmentDetailsEntity m_jobAttachmentDetails;
-    bool m_jobAttachmentDetailsHasBeenSet = false;
 
     JobDetailsEntity m_jobDetails;
     bool m_jobDetailsHasBeenSet = false;
 
+    JobAttachmentDetailsEntity m_jobAttachmentDetails;
+    bool m_jobAttachmentDetailsHasBeenSet = false;
+
     StepDetailsEntity m_stepDetails;
     bool m_stepDetailsHasBeenSet = false;
+
+    EnvironmentDetailsEntity m_environmentDetails;
+    bool m_environmentDetailsHasBeenSet = false;
   };
 
 } // namespace Model

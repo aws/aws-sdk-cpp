@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/MonitorSummary.h>
 #include <utility>
 
@@ -36,20 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>MonitorSummary</code> objects that describe your monitors in
-     * the Deadline Cloud.</p>
-     */
-    inline const Aws::Vector<MonitorSummary>& GetMonitors() const{ return m_monitors; }
-    inline void SetMonitors(const Aws::Vector<MonitorSummary>& value) { m_monitors = value; }
-    inline void SetMonitors(Aws::Vector<MonitorSummary>&& value) { m_monitors = std::move(value); }
-    inline ListMonitorsResult& WithMonitors(const Aws::Vector<MonitorSummary>& value) { SetMonitors(value); return *this;}
-    inline ListMonitorsResult& WithMonitors(Aws::Vector<MonitorSummary>&& value) { SetMonitors(std::move(value)); return *this;}
-    inline ListMonitorsResult& AddMonitors(const MonitorSummary& value) { m_monitors.push_back(value); return *this; }
-    inline ListMonitorsResult& AddMonitors(MonitorSummary&& value) { m_monitors.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -68,6 +54,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A list of <code>MonitorSummary</code> objects that describe your monitors in
+     * the Deadline Cloud.</p>
+     */
+    inline const Aws::Vector<MonitorSummary>& GetMonitors() const{ return m_monitors; }
+    inline void SetMonitors(const Aws::Vector<MonitorSummary>& value) { m_monitors = value; }
+    inline void SetMonitors(Aws::Vector<MonitorSummary>&& value) { m_monitors = std::move(value); }
+    inline ListMonitorsResult& WithMonitors(const Aws::Vector<MonitorSummary>& value) { SetMonitors(value); return *this;}
+    inline ListMonitorsResult& WithMonitors(Aws::Vector<MonitorSummary>&& value) { SetMonitors(std::move(value)); return *this;}
+    inline ListMonitorsResult& AddMonitors(const MonitorSummary& value) { m_monitors.push_back(value); return *this; }
+    inline ListMonitorsResult& AddMonitors(MonitorSummary&& value) { m_monitors.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -79,9 +79,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<MonitorSummary> m_monitors;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<MonitorSummary> m_monitors;
 
     Aws::String m_requestId;
   };

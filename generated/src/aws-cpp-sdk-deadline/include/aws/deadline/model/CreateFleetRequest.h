@@ -54,48 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration settings for the fleet. Customer managed fleets are
-     * self-managed. Service managed Amazon EC2 fleets are managed by Deadline
-     * Cloud.</p>
-     */
-    inline const FleetConfiguration& GetConfiguration() const{ return m_configuration; }
-    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const FleetConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(FleetConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline CreateFleetRequest& WithConfiguration(const FleetConfiguration& value) { SetConfiguration(value); return *this;}
-    inline CreateFleetRequest& WithConfiguration(FleetConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the fleet.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFleetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The display name of the fleet.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline CreateFleetRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline CreateFleetRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The farm ID of the farm to connect to the fleet.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
@@ -110,22 +68,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of workers for the fleet.</p>
+     * <p>The display name of the fleet.</p>  <p>This field can store any
+     * content. Escape or encode this content before displaying it on a webpage or any
+     * other system that might interpret the content of this field.</p> 
      */
-    inline int GetMaxWorkerCount() const{ return m_maxWorkerCount; }
-    inline bool MaxWorkerCountHasBeenSet() const { return m_maxWorkerCountHasBeenSet; }
-    inline void SetMaxWorkerCount(int value) { m_maxWorkerCountHasBeenSet = true; m_maxWorkerCount = value; }
-    inline CreateFleetRequest& WithMaxWorkerCount(int value) { SetMaxWorkerCount(value); return *this;}
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline CreateFleetRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline CreateFleetRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline CreateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The minimum number of workers for the fleet.</p>
+     * <p>The description of the fleet.</p>  <p>This field can store any
+     * content. Escape or encode this content before displaying it on a webpage or any
+     * other system that might interpret the content of this field.</p> 
      */
-    inline int GetMinWorkerCount() const{ return m_minWorkerCount; }
-    inline bool MinWorkerCountHasBeenSet() const { return m_minWorkerCountHasBeenSet; }
-    inline void SetMinWorkerCount(int value) { m_minWorkerCountHasBeenSet = true; m_minWorkerCount = value; }
-    inline CreateFleetRequest& WithMinWorkerCount(int value) { SetMinWorkerCount(value); return *this;}
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateFleetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
 
     ///@{
@@ -140,6 +110,40 @@ namespace Model
     inline CreateFleetRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
     inline CreateFleetRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
     inline CreateFleetRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The minimum number of workers for the fleet.</p>
+     */
+    inline int GetMinWorkerCount() const{ return m_minWorkerCount; }
+    inline bool MinWorkerCountHasBeenSet() const { return m_minWorkerCountHasBeenSet; }
+    inline void SetMinWorkerCount(int value) { m_minWorkerCountHasBeenSet = true; m_minWorkerCount = value; }
+    inline CreateFleetRequest& WithMinWorkerCount(int value) { SetMinWorkerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of workers for the fleet.</p>
+     */
+    inline int GetMaxWorkerCount() const{ return m_maxWorkerCount; }
+    inline bool MaxWorkerCountHasBeenSet() const { return m_maxWorkerCountHasBeenSet; }
+    inline void SetMaxWorkerCount(int value) { m_maxWorkerCountHasBeenSet = true; m_maxWorkerCount = value; }
+    inline CreateFleetRequest& WithMaxWorkerCount(int value) { SetMaxWorkerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration settings for the fleet. Customer managed fleets are
+     * self-managed. Service managed Amazon EC2 fleets are managed by Deadline
+     * Cloud.</p>
+     */
+    inline const FleetConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+    inline void SetConfiguration(const FleetConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+    inline void SetConfiguration(FleetConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+    inline CreateFleetRequest& WithConfiguration(const FleetConfiguration& value) { SetConfiguration(value); return *this;}
+    inline CreateFleetRequest& WithConfiguration(FleetConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,26 +170,26 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    FleetConfiguration m_configuration;
-    bool m_configurationHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_farmId;
+    bool m_farmIdHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    Aws::String m_farmId;
-    bool m_farmIdHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    int m_maxWorkerCount;
-    bool m_maxWorkerCountHasBeenSet = false;
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     int m_minWorkerCount;
     bool m_minWorkerCountHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
+    int m_maxWorkerCount;
+    bool m_maxWorkerCountHasBeenSet = false;
+
+    FleetConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

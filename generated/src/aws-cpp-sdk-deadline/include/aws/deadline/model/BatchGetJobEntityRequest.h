@@ -66,20 +66,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job identifiers to include within the job entity batch details.</p>
-     */
-    inline const Aws::Vector<JobEntityIdentifiersUnion>& GetIdentifiers() const{ return m_identifiers; }
-    inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
-    inline void SetIdentifiers(const Aws::Vector<JobEntityIdentifiersUnion>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
-    inline void SetIdentifiers(Aws::Vector<JobEntityIdentifiersUnion>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
-    inline BatchGetJobEntityRequest& WithIdentifiers(const Aws::Vector<JobEntityIdentifiersUnion>& value) { SetIdentifiers(value); return *this;}
-    inline BatchGetJobEntityRequest& WithIdentifiers(Aws::Vector<JobEntityIdentifiersUnion>&& value) { SetIdentifiers(std::move(value)); return *this;}
-    inline BatchGetJobEntityRequest& AddIdentifiers(const JobEntityIdentifiersUnion& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
-    inline BatchGetJobEntityRequest& AddIdentifiers(JobEntityIdentifiersUnion&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The worker ID of the worker containing the job details to get.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
@@ -91,6 +77,20 @@ namespace Model
     inline BatchGetJobEntityRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
     inline BatchGetJobEntityRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The job identifiers to include within the job entity batch details.</p>
+     */
+    inline const Aws::Vector<JobEntityIdentifiersUnion>& GetIdentifiers() const{ return m_identifiers; }
+    inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
+    inline void SetIdentifiers(const Aws::Vector<JobEntityIdentifiersUnion>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
+    inline void SetIdentifiers(Aws::Vector<JobEntityIdentifiersUnion>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
+    inline BatchGetJobEntityRequest& WithIdentifiers(const Aws::Vector<JobEntityIdentifiersUnion>& value) { SetIdentifiers(value); return *this;}
+    inline BatchGetJobEntityRequest& WithIdentifiers(Aws::Vector<JobEntityIdentifiersUnion>&& value) { SetIdentifiers(std::move(value)); return *this;}
+    inline BatchGetJobEntityRequest& AddIdentifiers(const JobEntityIdentifiersUnion& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
+    inline BatchGetJobEntityRequest& AddIdentifiers(JobEntityIdentifiersUnion&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_farmId;
@@ -99,11 +99,11 @@ namespace Model
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    Aws::Vector<JobEntityIdentifiersUnion> m_identifiers;
-    bool m_identifiersHasBeenSet = false;
-
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet = false;
+
+    Aws::Vector<JobEntityIdentifiersUnion> m_identifiers;
+    bool m_identifiersHasBeenSet = false;
   };
 
 } // namespace Model

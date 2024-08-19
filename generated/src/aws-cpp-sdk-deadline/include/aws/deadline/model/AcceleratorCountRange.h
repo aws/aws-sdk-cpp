@@ -37,16 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum GPU for the accelerator.</p>
-     */
-    inline int GetMax() const{ return m_max; }
-    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-    inline AcceleratorCountRange& WithMax(int value) { SetMax(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The minimum GPU for the accelerator.</p>
      */
     inline int GetMin() const{ return m_min; }
@@ -54,13 +44,23 @@ namespace Model
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
     inline AcceleratorCountRange& WithMin(int value) { SetMin(value); return *this;}
     ///@}
-  private:
 
-    int m_max;
-    bool m_maxHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum GPU for the accelerator.</p>
+     */
+    inline int GetMax() const{ return m_max; }
+    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
+    inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
+    inline AcceleratorCountRange& WithMax(int value) { SetMax(value); return *this;}
+    ///@}
+  private:
 
     int m_min;
     bool m_minHasBeenSet = false;
+
+    int m_max;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

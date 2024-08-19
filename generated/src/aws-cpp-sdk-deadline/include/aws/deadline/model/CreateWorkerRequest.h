@@ -38,21 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique token which the server uses to recognize retries of the same
-     * request.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateWorkerRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateWorkerRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateWorkerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The farm ID of the farm to connect to the worker.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
@@ -90,10 +75,22 @@ namespace Model
     inline CreateWorkerRequest& WithHostProperties(const HostPropertiesRequest& value) { SetHostProperties(value); return *this;}
     inline CreateWorkerRequest& WithHostProperties(HostPropertiesRequest&& value) { SetHostProperties(std::move(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The unique token which the server uses to recognize retries of the same
+     * request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline CreateWorkerRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateWorkerRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline CreateWorkerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
@@ -103,6 +100,9 @@ namespace Model
 
     HostPropertiesRequest m_hostProperties;
     bool m_hostPropertiesHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

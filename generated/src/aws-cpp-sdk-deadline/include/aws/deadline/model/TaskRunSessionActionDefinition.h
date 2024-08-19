@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/deadline/model/TaskParameterValue.h>
 #include <utility>
 
@@ -42,20 +42,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The task parameters.</p>
+     * <p>The task ID.</p>
      */
-    inline const Aws::Map<Aws::String, TaskParameterValue>& GetParameters() const{ return m_parameters; }
-    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, TaskParameterValue>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, TaskParameterValue>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline TaskRunSessionActionDefinition& WithParameters(const Aws::Map<Aws::String, TaskParameterValue>& value) { SetParameters(value); return *this;}
-    inline TaskRunSessionActionDefinition& WithParameters(Aws::Map<Aws::String, TaskParameterValue>&& value) { SetParameters(std::move(value)); return *this;}
-    inline TaskRunSessionActionDefinition& AddParameters(const Aws::String& key, const TaskParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline TaskRunSessionActionDefinition& AddParameters(Aws::String&& key, const TaskParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline TaskRunSessionActionDefinition& AddParameters(const Aws::String& key, TaskParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline TaskRunSessionActionDefinition& AddParameters(Aws::String&& key, TaskParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline TaskRunSessionActionDefinition& AddParameters(const char* key, TaskParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline TaskRunSessionActionDefinition& AddParameters(const char* key, const TaskParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
+    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
+    inline TaskRunSessionActionDefinition& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
+    inline TaskRunSessionActionDefinition& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
+    inline TaskRunSessionActionDefinition& WithTaskId(const char* value) { SetTaskId(value); return *this;}
     ///@}
 
     ///@{
@@ -74,27 +70,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The task ID.</p>
+     * <p>The task parameters.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
-    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline TaskRunSessionActionDefinition& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline TaskRunSessionActionDefinition& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline TaskRunSessionActionDefinition& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    inline const Aws::Map<Aws::String, TaskParameterValue>& GetParameters() const{ return m_parameters; }
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+    inline void SetParameters(const Aws::Map<Aws::String, TaskParameterValue>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, TaskParameterValue>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+    inline TaskRunSessionActionDefinition& WithParameters(const Aws::Map<Aws::String, TaskParameterValue>& value) { SetParameters(value); return *this;}
+    inline TaskRunSessionActionDefinition& WithParameters(Aws::Map<Aws::String, TaskParameterValue>&& value) { SetParameters(std::move(value)); return *this;}
+    inline TaskRunSessionActionDefinition& AddParameters(const Aws::String& key, const TaskParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    inline TaskRunSessionActionDefinition& AddParameters(Aws::String&& key, const TaskParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+    inline TaskRunSessionActionDefinition& AddParameters(const Aws::String& key, TaskParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+    inline TaskRunSessionActionDefinition& AddParameters(Aws::String&& key, TaskParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
+    inline TaskRunSessionActionDefinition& AddParameters(const char* key, TaskParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+    inline TaskRunSessionActionDefinition& AddParameters(const char* key, const TaskParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
     ///@}
   private:
 
-    Aws::Map<Aws::String, TaskParameterValue> m_parameters;
-    bool m_parametersHasBeenSet = false;
+    Aws::String m_taskId;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;
 
-    Aws::String m_taskId;
-    bool m_taskIdHasBeenSet = false;
+    Aws::Map<Aws::String, TaskParameterValue> m_parameters;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

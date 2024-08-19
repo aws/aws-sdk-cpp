@@ -19,10 +19,10 @@ namespace Model
 {
 
 BudgetActionToRemove::BudgetActionToRemove() : 
-    m_thresholdPercentage(0.0),
-    m_thresholdPercentageHasBeenSet(false),
     m_type(BudgetActionType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_thresholdPercentage(0.0),
+    m_thresholdPercentageHasBeenSet(false)
 {
 }
 
@@ -34,18 +34,18 @@ BudgetActionToRemove::BudgetActionToRemove(JsonView jsonValue)
 
 BudgetActionToRemove& BudgetActionToRemove::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("thresholdPercentage"))
-  {
-    m_thresholdPercentage = jsonValue.GetDouble("thresholdPercentage");
-
-    m_thresholdPercentageHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = BudgetActionTypeMapper::GetBudgetActionTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("thresholdPercentage"))
+  {
+    m_thresholdPercentage = jsonValue.GetDouble("thresholdPercentage");
+
+    m_thresholdPercentageHasBeenSet = true;
   }
 
   return *this;
@@ -55,15 +55,15 @@ JsonValue BudgetActionToRemove::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", BudgetActionTypeMapper::GetNameForBudgetActionType(m_type));
+  }
+
   if(m_thresholdPercentageHasBeenSet)
   {
    payload.WithDouble("thresholdPercentage", m_thresholdPercentage);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", BudgetActionTypeMapper::GetNameForBudgetActionType(m_type));
   }
 
   return payload;

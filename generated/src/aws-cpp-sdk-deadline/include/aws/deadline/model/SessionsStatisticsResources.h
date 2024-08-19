@@ -41,23 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>One to 10 fleet IDs that specify the fleets to return statistics for. If you
-     * specify the <code>fleetIds</code> field, you can't specify the
-     * <code>queueIds</code> field.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
-    inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
-    inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
-    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
-    inline SessionsStatisticsResources& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
-    inline SessionsStatisticsResources& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
-    inline SessionsStatisticsResources& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
-    inline SessionsStatisticsResources& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
-    inline SessionsStatisticsResources& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>One to 10 queue IDs that specify the queues to return statistics for. If you
      * specify the <code>queueIds</code> field, you can't specify the
      * <code>fleetIds</code> field.</p>
@@ -72,13 +55,30 @@ namespace Model
     inline SessionsStatisticsResources& AddQueueIds(Aws::String&& value) { m_queueIdsHasBeenSet = true; m_queueIds.push_back(std::move(value)); return *this; }
     inline SessionsStatisticsResources& AddQueueIds(const char* value) { m_queueIdsHasBeenSet = true; m_queueIds.push_back(value); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<Aws::String> m_fleetIds;
-    bool m_fleetIdsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>One to 10 fleet IDs that specify the fleets to return statistics for. If you
+     * specify the <code>fleetIds</code> field, you can't specify the
+     * <code>queueIds</code> field.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
+    inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
+    inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
+    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
+    inline SessionsStatisticsResources& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
+    inline SessionsStatisticsResources& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
+    inline SessionsStatisticsResources& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    inline SessionsStatisticsResources& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
+    inline SessionsStatisticsResources& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<Aws::String> m_queueIds;
     bool m_queueIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_fleetIds;
+    bool m_fleetIdsHasBeenSet = false;
   };
 
 } // namespace Model

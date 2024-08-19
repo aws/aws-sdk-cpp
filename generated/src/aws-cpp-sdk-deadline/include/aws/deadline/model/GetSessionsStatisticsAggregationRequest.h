@@ -40,22 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier returned by the
-     * <code>StartSessionsStatisticsAggregation</code> operation that identifies the
-     * aggregated statistics.</p>
-     */
-    inline const Aws::String& GetAggregationId() const{ return m_aggregationId; }
-    inline bool AggregationIdHasBeenSet() const { return m_aggregationIdHasBeenSet; }
-    inline void SetAggregationId(const Aws::String& value) { m_aggregationIdHasBeenSet = true; m_aggregationId = value; }
-    inline void SetAggregationId(Aws::String&& value) { m_aggregationIdHasBeenSet = true; m_aggregationId = std::move(value); }
-    inline void SetAggregationId(const char* value) { m_aggregationIdHasBeenSet = true; m_aggregationId.assign(value); }
-    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(const Aws::String& value) { SetAggregationId(value); return *this;}
-    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(Aws::String&& value) { SetAggregationId(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(const char* value) { SetAggregationId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the farm to include in the statistics. This should be the
      * same as the farm ID used in the call to the
      * <code>StartSessionsStatisticsAggregation</code> operation.</p>
@@ -68,6 +52,22 @@ namespace Model
     inline GetSessionsStatisticsAggregationRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
     inline GetSessionsStatisticsAggregationRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
     inline GetSessionsStatisticsAggregationRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier returned by the
+     * <code>StartSessionsStatisticsAggregation</code> operation that identifies the
+     * aggregated statistics.</p>
+     */
+    inline const Aws::String& GetAggregationId() const{ return m_aggregationId; }
+    inline bool AggregationIdHasBeenSet() const { return m_aggregationIdHasBeenSet; }
+    inline void SetAggregationId(const Aws::String& value) { m_aggregationIdHasBeenSet = true; m_aggregationId = value; }
+    inline void SetAggregationId(Aws::String&& value) { m_aggregationIdHasBeenSet = true; m_aggregationId = std::move(value); }
+    inline void SetAggregationId(const char* value) { m_aggregationIdHasBeenSet = true; m_aggregationId.assign(value); }
+    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(const Aws::String& value) { SetAggregationId(value); return *this;}
+    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(Aws::String&& value) { SetAggregationId(std::move(value)); return *this;}
+    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(const char* value) { SetAggregationId(value); return *this;}
     ///@}
 
     ///@{
@@ -97,11 +97,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_aggregationId;
-    bool m_aggregationIdHasBeenSet = false;
-
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
+
+    Aws::String m_aggregationId;
+    bool m_aggregationIdHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

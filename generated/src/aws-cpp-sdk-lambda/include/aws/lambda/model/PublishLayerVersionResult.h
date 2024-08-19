@@ -114,8 +114,11 @@ namespace Model
     /**
      * <p>The layer's compatible runtimes.</p> <p>The following list includes
      * deprecated runtimes. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-     * deprecation policy</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime
+     * use after deprecation</a>.</p> <p>For a list of all currently supported
+     * runtimes, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported
+     * runtimes</a>.</p>
      */
     inline const Aws::Vector<Runtime>& GetCompatibleRuntimes() const{ return m_compatibleRuntimes; }
     inline void SetCompatibleRuntimes(const Aws::Vector<Runtime>& value) { m_compatibleRuntimes = value; }

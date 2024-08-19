@@ -29,6 +29,12 @@ ListBudgetsResult::ListBudgetsResult(const Aws::AmazonWebServiceResult<JsonValue
 ListBudgetsResult& ListBudgetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("budgets"))
   {
     Aws::Utils::Array<JsonView> budgetsJsonList = jsonValue.GetArray("budgets");
@@ -36,12 +42,6 @@ ListBudgetsResult& ListBudgetsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

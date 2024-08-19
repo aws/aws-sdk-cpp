@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/AutoScalingMode.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/CustomerManagedWorkerCapabilities.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +54,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The worker capabilities for a customer managed fleet configuration.</p>
+     */
+    inline const CustomerManagedWorkerCapabilities& GetWorkerCapabilities() const{ return m_workerCapabilities; }
+    inline bool WorkerCapabilitiesHasBeenSet() const { return m_workerCapabilitiesHasBeenSet; }
+    inline void SetWorkerCapabilities(const CustomerManagedWorkerCapabilities& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = value; }
+    inline void SetWorkerCapabilities(CustomerManagedWorkerCapabilities&& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = std::move(value); }
+    inline CustomerManagedFleetConfiguration& WithWorkerCapabilities(const CustomerManagedWorkerCapabilities& value) { SetWorkerCapabilities(value); return *this;}
+    inline CustomerManagedFleetConfiguration& WithWorkerCapabilities(CustomerManagedWorkerCapabilities&& value) { SetWorkerCapabilities(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The storage profile ID.</p>
      */
     inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
@@ -65,28 +77,16 @@ namespace Model
     inline CustomerManagedFleetConfiguration& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
     inline CustomerManagedFleetConfiguration& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The worker capabilities for a customer managed fleet configuration.</p>
-     */
-    inline const CustomerManagedWorkerCapabilities& GetWorkerCapabilities() const{ return m_workerCapabilities; }
-    inline bool WorkerCapabilitiesHasBeenSet() const { return m_workerCapabilitiesHasBeenSet; }
-    inline void SetWorkerCapabilities(const CustomerManagedWorkerCapabilities& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = value; }
-    inline void SetWorkerCapabilities(CustomerManagedWorkerCapabilities&& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = std::move(value); }
-    inline CustomerManagedFleetConfiguration& WithWorkerCapabilities(const CustomerManagedWorkerCapabilities& value) { SetWorkerCapabilities(value); return *this;}
-    inline CustomerManagedFleetConfiguration& WithWorkerCapabilities(CustomerManagedWorkerCapabilities&& value) { SetWorkerCapabilities(std::move(value)); return *this;}
-    ///@}
   private:
 
     AutoScalingMode m_mode;
     bool m_modeHasBeenSet = false;
 
-    Aws::String m_storageProfileId;
-    bool m_storageProfileIdHasBeenSet = false;
-
     CustomerManagedWorkerCapabilities m_workerCapabilities;
     bool m_workerCapabilitiesHasBeenSet = false;
+
+    Aws::String m_storageProfileId;
+    bool m_storageProfileIdHasBeenSet = false;
   };
 
 } // namespace Model

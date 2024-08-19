@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/PathFormat.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -56,49 +56,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The has value of the file.</p>
-     */
-    inline const Aws::String& GetInputManifestHash() const{ return m_inputManifestHash; }
-    inline bool InputManifestHashHasBeenSet() const { return m_inputManifestHashHasBeenSet; }
-    inline void SetInputManifestHash(const Aws::String& value) { m_inputManifestHashHasBeenSet = true; m_inputManifestHash = value; }
-    inline void SetInputManifestHash(Aws::String&& value) { m_inputManifestHashHasBeenSet = true; m_inputManifestHash = std::move(value); }
-    inline void SetInputManifestHash(const char* value) { m_inputManifestHashHasBeenSet = true; m_inputManifestHash.assign(value); }
-    inline ManifestProperties& WithInputManifestHash(const Aws::String& value) { SetInputManifestHash(value); return *this;}
-    inline ManifestProperties& WithInputManifestHash(Aws::String&& value) { SetInputManifestHash(std::move(value)); return *this;}
-    inline ManifestProperties& WithInputManifestHash(const char* value) { SetInputManifestHash(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The file path.</p>
-     */
-    inline const Aws::String& GetInputManifestPath() const{ return m_inputManifestPath; }
-    inline bool InputManifestPathHasBeenSet() const { return m_inputManifestPathHasBeenSet; }
-    inline void SetInputManifestPath(const Aws::String& value) { m_inputManifestPathHasBeenSet = true; m_inputManifestPath = value; }
-    inline void SetInputManifestPath(Aws::String&& value) { m_inputManifestPathHasBeenSet = true; m_inputManifestPath = std::move(value); }
-    inline void SetInputManifestPath(const char* value) { m_inputManifestPathHasBeenSet = true; m_inputManifestPath.assign(value); }
-    inline ManifestProperties& WithInputManifestPath(const Aws::String& value) { SetInputManifestPath(value); return *this;}
-    inline ManifestProperties& WithInputManifestPath(Aws::String&& value) { SetInputManifestPath(std::move(value)); return *this;}
-    inline ManifestProperties& WithInputManifestPath(const char* value) { SetInputManifestPath(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The file path relative to the directory.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetOutputRelativeDirectories() const{ return m_outputRelativeDirectories; }
-    inline bool OutputRelativeDirectoriesHasBeenSet() const { return m_outputRelativeDirectoriesHasBeenSet; }
-    inline void SetOutputRelativeDirectories(const Aws::Vector<Aws::String>& value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories = value; }
-    inline void SetOutputRelativeDirectories(Aws::Vector<Aws::String>&& value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories = std::move(value); }
-    inline ManifestProperties& WithOutputRelativeDirectories(const Aws::Vector<Aws::String>& value) { SetOutputRelativeDirectories(value); return *this;}
-    inline ManifestProperties& WithOutputRelativeDirectories(Aws::Vector<Aws::String>&& value) { SetOutputRelativeDirectories(std::move(value)); return *this;}
-    inline ManifestProperties& AddOutputRelativeDirectories(const Aws::String& value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories.push_back(value); return *this; }
-    inline ManifestProperties& AddOutputRelativeDirectories(Aws::String&& value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories.push_back(std::move(value)); return *this; }
-    inline ManifestProperties& AddOutputRelativeDirectories(const char* value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The file's root path.</p>
      */
     inline const Aws::String& GetRootPath() const{ return m_rootPath; }
@@ -122,25 +79,68 @@ namespace Model
     inline ManifestProperties& WithRootPathFormat(const PathFormat& value) { SetRootPathFormat(value); return *this;}
     inline ManifestProperties& WithRootPathFormat(PathFormat&& value) { SetRootPathFormat(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The file path relative to the directory.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOutputRelativeDirectories() const{ return m_outputRelativeDirectories; }
+    inline bool OutputRelativeDirectoriesHasBeenSet() const { return m_outputRelativeDirectoriesHasBeenSet; }
+    inline void SetOutputRelativeDirectories(const Aws::Vector<Aws::String>& value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories = value; }
+    inline void SetOutputRelativeDirectories(Aws::Vector<Aws::String>&& value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories = std::move(value); }
+    inline ManifestProperties& WithOutputRelativeDirectories(const Aws::Vector<Aws::String>& value) { SetOutputRelativeDirectories(value); return *this;}
+    inline ManifestProperties& WithOutputRelativeDirectories(Aws::Vector<Aws::String>&& value) { SetOutputRelativeDirectories(std::move(value)); return *this;}
+    inline ManifestProperties& AddOutputRelativeDirectories(const Aws::String& value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories.push_back(value); return *this; }
+    inline ManifestProperties& AddOutputRelativeDirectories(Aws::String&& value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories.push_back(std::move(value)); return *this; }
+    inline ManifestProperties& AddOutputRelativeDirectories(const char* value) { m_outputRelativeDirectoriesHasBeenSet = true; m_outputRelativeDirectories.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The file path.</p>
+     */
+    inline const Aws::String& GetInputManifestPath() const{ return m_inputManifestPath; }
+    inline bool InputManifestPathHasBeenSet() const { return m_inputManifestPathHasBeenSet; }
+    inline void SetInputManifestPath(const Aws::String& value) { m_inputManifestPathHasBeenSet = true; m_inputManifestPath = value; }
+    inline void SetInputManifestPath(Aws::String&& value) { m_inputManifestPathHasBeenSet = true; m_inputManifestPath = std::move(value); }
+    inline void SetInputManifestPath(const char* value) { m_inputManifestPathHasBeenSet = true; m_inputManifestPath.assign(value); }
+    inline ManifestProperties& WithInputManifestPath(const Aws::String& value) { SetInputManifestPath(value); return *this;}
+    inline ManifestProperties& WithInputManifestPath(Aws::String&& value) { SetInputManifestPath(std::move(value)); return *this;}
+    inline ManifestProperties& WithInputManifestPath(const char* value) { SetInputManifestPath(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The has value of the file.</p>
+     */
+    inline const Aws::String& GetInputManifestHash() const{ return m_inputManifestHash; }
+    inline bool InputManifestHashHasBeenSet() const { return m_inputManifestHashHasBeenSet; }
+    inline void SetInputManifestHash(const Aws::String& value) { m_inputManifestHashHasBeenSet = true; m_inputManifestHash = value; }
+    inline void SetInputManifestHash(Aws::String&& value) { m_inputManifestHashHasBeenSet = true; m_inputManifestHash = std::move(value); }
+    inline void SetInputManifestHash(const char* value) { m_inputManifestHashHasBeenSet = true; m_inputManifestHash.assign(value); }
+    inline ManifestProperties& WithInputManifestHash(const Aws::String& value) { SetInputManifestHash(value); return *this;}
+    inline ManifestProperties& WithInputManifestHash(Aws::String&& value) { SetInputManifestHash(std::move(value)); return *this;}
+    inline ManifestProperties& WithInputManifestHash(const char* value) { SetInputManifestHash(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_fileSystemLocationName;
     bool m_fileSystemLocationNameHasBeenSet = false;
-
-    Aws::String m_inputManifestHash;
-    bool m_inputManifestHashHasBeenSet = false;
-
-    Aws::String m_inputManifestPath;
-    bool m_inputManifestPathHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_outputRelativeDirectories;
-    bool m_outputRelativeDirectoriesHasBeenSet = false;
 
     Aws::String m_rootPath;
     bool m_rootPathHasBeenSet = false;
 
     PathFormat m_rootPathFormat;
     bool m_rootPathFormatHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_outputRelativeDirectories;
+    bool m_outputRelativeDirectoriesHasBeenSet = false;
+
+    Aws::String m_inputManifestPath;
+    bool m_inputManifestPathHasBeenSet = false;
+
+    Aws::String m_inputManifestHash;
+    bool m_inputManifestHashHasBeenSet = false;
   };
 
 } // namespace Model

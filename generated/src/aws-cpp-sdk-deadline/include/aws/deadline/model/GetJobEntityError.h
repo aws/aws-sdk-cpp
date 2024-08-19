@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/EnvironmentDetailsError.h>
-#include <aws/deadline/model/JobAttachmentDetailsError.h>
 #include <aws/deadline/model/JobDetailsError.h>
+#include <aws/deadline/model/JobAttachmentDetailsError.h>
 #include <aws/deadline/model/StepDetailsError.h>
+#include <aws/deadline/model/EnvironmentDetailsError.h>
 #include <utility>
 
 namespace Aws
@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The environment details for the failed job entity.</p>
+     * <p>The job details for the failed job entity.</p>
      */
-    inline const EnvironmentDetailsError& GetEnvironmentDetails() const{ return m_environmentDetails; }
-    inline bool EnvironmentDetailsHasBeenSet() const { return m_environmentDetailsHasBeenSet; }
-    inline void SetEnvironmentDetails(const EnvironmentDetailsError& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = value; }
-    inline void SetEnvironmentDetails(EnvironmentDetailsError&& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = std::move(value); }
-    inline GetJobEntityError& WithEnvironmentDetails(const EnvironmentDetailsError& value) { SetEnvironmentDetails(value); return *this;}
-    inline GetJobEntityError& WithEnvironmentDetails(EnvironmentDetailsError&& value) { SetEnvironmentDetails(std::move(value)); return *this;}
+    inline const JobDetailsError& GetJobDetails() const{ return m_jobDetails; }
+    inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
+    inline void SetJobDetails(const JobDetailsError& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
+    inline void SetJobDetails(JobDetailsError&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
+    inline GetJobEntityError& WithJobDetails(const JobDetailsError& value) { SetJobDetails(value); return *this;}
+    inline GetJobEntityError& WithJobDetails(JobDetailsError&& value) { SetJobDetails(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,18 +66,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job details for the failed job entity.</p>
-     */
-    inline const JobDetailsError& GetJobDetails() const{ return m_jobDetails; }
-    inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
-    inline void SetJobDetails(const JobDetailsError& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
-    inline void SetJobDetails(JobDetailsError&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
-    inline GetJobEntityError& WithJobDetails(const JobDetailsError& value) { SetJobDetails(value); return *this;}
-    inline GetJobEntityError& WithJobDetails(JobDetailsError&& value) { SetJobDetails(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The step details for the failed job entity.</p>
      */
     inline const StepDetailsError& GetStepDetails() const{ return m_stepDetails; }
@@ -87,19 +75,31 @@ namespace Model
     inline GetJobEntityError& WithStepDetails(const StepDetailsError& value) { SetStepDetails(value); return *this;}
     inline GetJobEntityError& WithStepDetails(StepDetailsError&& value) { SetStepDetails(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The environment details for the failed job entity.</p>
+     */
+    inline const EnvironmentDetailsError& GetEnvironmentDetails() const{ return m_environmentDetails; }
+    inline bool EnvironmentDetailsHasBeenSet() const { return m_environmentDetailsHasBeenSet; }
+    inline void SetEnvironmentDetails(const EnvironmentDetailsError& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = value; }
+    inline void SetEnvironmentDetails(EnvironmentDetailsError&& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = std::move(value); }
+    inline GetJobEntityError& WithEnvironmentDetails(const EnvironmentDetailsError& value) { SetEnvironmentDetails(value); return *this;}
+    inline GetJobEntityError& WithEnvironmentDetails(EnvironmentDetailsError&& value) { SetEnvironmentDetails(std::move(value)); return *this;}
+    ///@}
   private:
-
-    EnvironmentDetailsError m_environmentDetails;
-    bool m_environmentDetailsHasBeenSet = false;
-
-    JobAttachmentDetailsError m_jobAttachmentDetails;
-    bool m_jobAttachmentDetailsHasBeenSet = false;
 
     JobDetailsError m_jobDetails;
     bool m_jobDetailsHasBeenSet = false;
 
+    JobAttachmentDetailsError m_jobAttachmentDetails;
+    bool m_jobAttachmentDetailsHasBeenSet = false;
+
     StepDetailsError m_stepDetails;
     bool m_stepDetailsHasBeenSet = false;
+
+    EnvironmentDetailsError m_environmentDetails;
+    bool m_environmentDetailsHasBeenSet = false;
   };
 
 } // namespace Model

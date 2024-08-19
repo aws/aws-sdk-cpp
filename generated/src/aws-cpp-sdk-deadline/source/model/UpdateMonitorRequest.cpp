@@ -13,16 +13,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateMonitorRequest::UpdateMonitorRequest() : 
-    m_displayNameHasBeenSet(false),
     m_monitorIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_subdomainHasBeenSet(false)
+    m_subdomainHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
 Aws::String UpdateMonitorRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_subdomainHasBeenSet)
+  {
+   payload.WithString("subdomain", m_subdomain);
+
+  }
 
   if(m_displayNameHasBeenSet)
   {
@@ -33,12 +39,6 @@ Aws::String UpdateMonitorRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
-
-  }
-
-  if(m_subdomainHasBeenSet)
-  {
-   payload.WithString("subdomain", m_subdomain);
 
   }
 

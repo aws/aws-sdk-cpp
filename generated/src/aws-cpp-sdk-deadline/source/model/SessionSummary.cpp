@@ -19,17 +19,17 @@ namespace Model
 {
 
 SessionSummary::SessionSummary() : 
-    m_endedAtHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
+    m_workerIdHasBeenSet(false),
+    m_startedAtHasBeenSet(false),
     m_lifecycleStatus(SessionLifecycleStatus::NOT_SET),
     m_lifecycleStatusHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_targetLifecycleStatus(SessionLifecycleTargetStatus::NOT_SET),
-    m_targetLifecycleStatusHasBeenSet(false),
+    m_endedAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_updatedByHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+    m_targetLifecycleStatus(SessionLifecycleTargetStatus::NOT_SET),
+    m_targetLifecycleStatusHasBeenSet(false)
 {
 }
 
@@ -41,11 +41,11 @@ SessionSummary::SessionSummary(JsonView jsonValue)
 
 SessionSummary& SessionSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("endedAt"))
+  if(jsonValue.ValueExists("sessionId"))
   {
-    m_endedAt = jsonValue.GetString("endedAt");
+    m_sessionId = jsonValue.GetString("sessionId");
 
-    m_endedAtHasBeenSet = true;
+    m_sessionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fleetId"))
@@ -55,18 +55,11 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
     m_fleetIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("lifecycleStatus"))
+  if(jsonValue.ValueExists("workerId"))
   {
-    m_lifecycleStatus = SessionLifecycleStatusMapper::GetSessionLifecycleStatusForName(jsonValue.GetString("lifecycleStatus"));
+    m_workerId = jsonValue.GetString("workerId");
 
-    m_lifecycleStatusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("sessionId"))
-  {
-    m_sessionId = jsonValue.GetString("sessionId");
-
-    m_sessionIdHasBeenSet = true;
+    m_workerIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startedAt"))
@@ -76,11 +69,18 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
     m_startedAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("targetLifecycleStatus"))
+  if(jsonValue.ValueExists("lifecycleStatus"))
   {
-    m_targetLifecycleStatus = SessionLifecycleTargetStatusMapper::GetSessionLifecycleTargetStatusForName(jsonValue.GetString("targetLifecycleStatus"));
+    m_lifecycleStatus = SessionLifecycleStatusMapper::GetSessionLifecycleStatusForName(jsonValue.GetString("lifecycleStatus"));
 
-    m_targetLifecycleStatusHasBeenSet = true;
+    m_lifecycleStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endedAt"))
+  {
+    m_endedAt = jsonValue.GetString("endedAt");
+
+    m_endedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -97,11 +97,11 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
     m_updatedByHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("workerId"))
+  if(jsonValue.ValueExists("targetLifecycleStatus"))
   {
-    m_workerId = jsonValue.GetString("workerId");
+    m_targetLifecycleStatus = SessionLifecycleTargetStatusMapper::GetSessionLifecycleTargetStatusForName(jsonValue.GetString("targetLifecycleStatus"));
 
-    m_workerIdHasBeenSet = true;
+    m_targetLifecycleStatusHasBeenSet = true;
   }
 
   return *this;
@@ -111,9 +111,10 @@ JsonValue SessionSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_endedAtHasBeenSet)
+  if(m_sessionIdHasBeenSet)
   {
-   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("sessionId", m_sessionId);
+
   }
 
   if(m_fleetIdHasBeenSet)
@@ -122,14 +123,9 @@ JsonValue SessionSummary::Jsonize() const
 
   }
 
-  if(m_lifecycleStatusHasBeenSet)
+  if(m_workerIdHasBeenSet)
   {
-   payload.WithString("lifecycleStatus", SessionLifecycleStatusMapper::GetNameForSessionLifecycleStatus(m_lifecycleStatus));
-  }
-
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
+   payload.WithString("workerId", m_workerId);
 
   }
 
@@ -138,9 +134,14 @@ JsonValue SessionSummary::Jsonize() const
    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_targetLifecycleStatusHasBeenSet)
+  if(m_lifecycleStatusHasBeenSet)
   {
-   payload.WithString("targetLifecycleStatus", SessionLifecycleTargetStatusMapper::GetNameForSessionLifecycleTargetStatus(m_targetLifecycleStatus));
+   payload.WithString("lifecycleStatus", SessionLifecycleStatusMapper::GetNameForSessionLifecycleStatus(m_lifecycleStatus));
+  }
+
+  if(m_endedAtHasBeenSet)
+  {
+   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedAtHasBeenSet)
@@ -154,10 +155,9 @@ JsonValue SessionSummary::Jsonize() const
 
   }
 
-  if(m_workerIdHasBeenSet)
+  if(m_targetLifecycleStatusHasBeenSet)
   {
-   payload.WithString("workerId", m_workerId);
-
+   payload.WithString("targetLifecycleStatus", SessionLifecycleTargetStatusMapper::GetNameForSessionLifecycleTargetStatus(m_targetLifecycleStatus));
   }
 
   return payload;

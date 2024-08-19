@@ -21,10 +21,10 @@ namespace Model
 
 SearchFilterExpression::SearchFilterExpression() : 
     m_dateTimeFilterHasBeenSet(false),
-    m_groupFilterHasBeenSet(false),
     m_parameterFilterHasBeenSet(false),
     m_searchTermFilterHasBeenSet(false),
-    m_stringFilterHasBeenSet(false)
+    m_stringFilterHasBeenSet(false),
+    m_groupFilterHasBeenSet(false)
 {
 }
 
@@ -50,13 +50,6 @@ SearchFilterExpression& SearchFilterExpression::operator =(JsonView jsonValue)
     m_dateTimeFilterHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("groupFilter"))
-  {
-    m_groupFilter = Aws::MakeShared<SearchGroupedFilterExpressions>("SearchFilterExpression", jsonValue.GetObject("groupFilter"));
-
-    m_groupFilterHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("parameterFilter"))
   {
     m_parameterFilter = jsonValue.GetObject("parameterFilter");
@@ -78,6 +71,13 @@ SearchFilterExpression& SearchFilterExpression::operator =(JsonView jsonValue)
     m_stringFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("groupFilter"))
+  {
+    m_groupFilter = Aws::MakeShared<SearchGroupedFilterExpressions>("SearchFilterExpression", jsonValue.GetObject("groupFilter"));
+
+    m_groupFilterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,12 +88,6 @@ JsonValue SearchFilterExpression::Jsonize() const
   if(m_dateTimeFilterHasBeenSet)
   {
    payload.WithObject("dateTimeFilter", m_dateTimeFilter.Jsonize());
-
-  }
-
-  if(m_groupFilterHasBeenSet)
-  {
-   payload.WithObject("groupFilter", m_groupFilter->Jsonize());
 
   }
 
@@ -112,6 +106,12 @@ JsonValue SearchFilterExpression::Jsonize() const
   if(m_stringFilterHasBeenSet)
   {
    payload.WithObject("stringFilter", m_stringFilter.Jsonize());
+
+  }
+
+  if(m_groupFilterHasBeenSet)
+  {
+   payload.WithObject("groupFilter", m_groupFilter->Jsonize());
 
   }
 

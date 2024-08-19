@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,18 @@ namespace Model
 
 
     ///@{
+    
+    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+    inline AccessDeniedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline AccessDeniedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline AccessDeniedException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Information about the resources in use when the exception was thrown.</p>
      */
@@ -57,25 +69,13 @@ namespace Model
     inline AccessDeniedException& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
     inline AccessDeniedException& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
     ///@}
-
-    ///@{
-    
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AccessDeniedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AccessDeniedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AccessDeniedException& WithMessage(const char* value) { SetMessage(value); return *this;}
-    ///@}
   private:
-
-    Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_context;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

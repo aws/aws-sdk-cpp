@@ -16,8 +16,8 @@ using namespace Aws::Utils;
 CreateFarmRequest::CreateFarmRequest() : 
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -27,15 +27,15 @@ Aws::String CreateFarmRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

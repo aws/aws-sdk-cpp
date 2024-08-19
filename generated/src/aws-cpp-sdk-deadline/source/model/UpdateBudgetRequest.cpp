@@ -14,25 +14,48 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateBudgetRequest::UpdateBudgetRequest() : 
-    m_actionsToAddHasBeenSet(false),
-    m_actionsToRemoveHasBeenSet(false),
-    m_approximateDollarLimit(0.0),
-    m_approximateDollarLimitHasBeenSet(false),
-    m_budgetIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
     m_farmIdHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
+    m_budgetIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_status(BudgetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_approximateDollarLimit(0.0),
+    m_approximateDollarLimitHasBeenSet(false),
+    m_actionsToAddHasBeenSet(false),
+    m_actionsToRemoveHasBeenSet(false),
+    m_scheduleHasBeenSet(false)
 {
 }
 
 Aws::String UpdateBudgetRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", BudgetStatusMapper::GetNameForBudgetStatus(m_status));
+  }
+
+  if(m_approximateDollarLimitHasBeenSet)
+  {
+   payload.WithDouble("approximateDollarLimit", m_approximateDollarLimit);
+
+  }
 
   if(m_actionsToAddHasBeenSet)
   {
@@ -56,33 +79,10 @@ Aws::String UpdateBudgetRequest::SerializePayload() const
 
   }
 
-  if(m_approximateDollarLimitHasBeenSet)
-  {
-   payload.WithDouble("approximateDollarLimit", m_approximateDollarLimit);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
   if(m_scheduleHasBeenSet)
   {
    payload.WithObject("schedule", m_schedule.Jsonize());
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", BudgetStatusMapper::GetNameForBudgetStatus(m_status));
   }
 
   return payload.View().WriteReadable();

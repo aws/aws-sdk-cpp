@@ -19,11 +19,11 @@ namespace Model
 {
 
 FarmSummary::FarmSummary() : 
+    m_farmIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_updatedByHasBeenSet(false)
 {
@@ -37,6 +37,27 @@ FarmSummary::FarmSummary(JsonView jsonValue)
 
 FarmSummary& FarmSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("farmId"))
+  {
+    m_farmId = jsonValue.GetString("farmId");
+
+    m_farmIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -49,27 +70,6 @@ FarmSummary& FarmSummary::operator =(JsonView jsonValue)
     m_createdBy = jsonValue.GetString("createdBy");
 
     m_createdByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-
-    m_displayNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("farmId"))
-  {
-    m_farmId = jsonValue.GetString("farmId");
-
-    m_farmIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
-    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
-    m_kmsKeyArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -93,14 +93,9 @@ JsonValue FarmSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_farmIdHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
+   payload.WithString("farmId", m_farmId);
 
   }
 
@@ -110,15 +105,20 @@ JsonValue FarmSummary::Jsonize() const
 
   }
 
-  if(m_farmIdHasBeenSet)
-  {
-   payload.WithString("farmId", m_farmId);
-
-  }
-
   if(m_kmsKeyArnHasBeenSet)
   {
    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
 
   }
 

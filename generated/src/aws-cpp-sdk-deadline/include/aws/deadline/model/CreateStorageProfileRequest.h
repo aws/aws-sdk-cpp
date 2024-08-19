@@ -7,8 +7,8 @@
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/DeadlineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/StorageProfileOperatingSystemFamily.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/FileSystemLocation.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -55,7 +55,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The display name of the storage profile.</p>
+     * <p>The farm ID of the farm to connect to the storage profile.</p>
+     */
+    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
+    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
+    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
+    inline CreateStorageProfileRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
+    inline CreateStorageProfileRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
+    inline CreateStorageProfileRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display name of the storage profile.</p>  <p>This field can
+     * store any content. Escape or encode this content before displaying it on a
+     * webpage or any other system that might interpret the content of this field.</p>
+     * 
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -69,16 +86,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The farm ID of the farm to connect to the storage profile.</p>
+     * <p>The type of operating system (OS) for the storage profile.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
-    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline CreateStorageProfileRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline CreateStorageProfileRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline CreateStorageProfileRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    inline const StorageProfileOperatingSystemFamily& GetOsFamily() const{ return m_osFamily; }
+    inline bool OsFamilyHasBeenSet() const { return m_osFamilyHasBeenSet; }
+    inline void SetOsFamily(const StorageProfileOperatingSystemFamily& value) { m_osFamilyHasBeenSet = true; m_osFamily = value; }
+    inline void SetOsFamily(StorageProfileOperatingSystemFamily&& value) { m_osFamilyHasBeenSet = true; m_osFamily = std::move(value); }
+    inline CreateStorageProfileRequest& WithOsFamily(const StorageProfileOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
+    inline CreateStorageProfileRequest& WithOsFamily(StorageProfileOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,34 +109,22 @@ namespace Model
     inline CreateStorageProfileRequest& AddFileSystemLocations(const FileSystemLocation& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(value); return *this; }
     inline CreateStorageProfileRequest& AddFileSystemLocations(FileSystemLocation&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of operating system (OS) for the storage profile.</p>
-     */
-    inline const StorageProfileOperatingSystemFamily& GetOsFamily() const{ return m_osFamily; }
-    inline bool OsFamilyHasBeenSet() const { return m_osFamilyHasBeenSet; }
-    inline void SetOsFamily(const StorageProfileOperatingSystemFamily& value) { m_osFamilyHasBeenSet = true; m_osFamily = value; }
-    inline void SetOsFamily(StorageProfileOperatingSystemFamily&& value) { m_osFamilyHasBeenSet = true; m_osFamily = std::move(value); }
-    inline CreateStorageProfileRequest& WithOsFamily(const StorageProfileOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
-    inline CreateStorageProfileRequest& WithOsFamily(StorageProfileOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::Vector<FileSystemLocation> m_fileSystemLocations;
-    bool m_fileSystemLocationsHasBeenSet = false;
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
 
     StorageProfileOperatingSystemFamily m_osFamily;
     bool m_osFamilyHasBeenSet = false;
+
+    Aws::Vector<FileSystemLocation> m_fileSystemLocations;
+    bool m_fileSystemLocationsHasBeenSet = false;
   };
 
 } // namespace Model

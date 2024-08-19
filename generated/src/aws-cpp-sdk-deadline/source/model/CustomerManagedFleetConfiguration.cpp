@@ -21,8 +21,8 @@ namespace Model
 CustomerManagedFleetConfiguration::CustomerManagedFleetConfiguration() : 
     m_mode(AutoScalingMode::NOT_SET),
     m_modeHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false),
-    m_workerCapabilitiesHasBeenSet(false)
+    m_workerCapabilitiesHasBeenSet(false),
+    m_storageProfileIdHasBeenSet(false)
 {
 }
 
@@ -41,18 +41,18 @@ CustomerManagedFleetConfiguration& CustomerManagedFleetConfiguration::operator =
     m_modeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("storageProfileId"))
-  {
-    m_storageProfileId = jsonValue.GetString("storageProfileId");
-
-    m_storageProfileIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("workerCapabilities"))
   {
     m_workerCapabilities = jsonValue.GetObject("workerCapabilities");
 
     m_workerCapabilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageProfileId"))
+  {
+    m_storageProfileId = jsonValue.GetString("storageProfileId");
+
+    m_storageProfileIdHasBeenSet = true;
   }
 
   return *this;
@@ -67,15 +67,15 @@ JsonValue CustomerManagedFleetConfiguration::Jsonize() const
    payload.WithString("mode", AutoScalingModeMapper::GetNameForAutoScalingMode(m_mode));
   }
 
-  if(m_storageProfileIdHasBeenSet)
-  {
-   payload.WithString("storageProfileId", m_storageProfileId);
-
-  }
-
   if(m_workerCapabilitiesHasBeenSet)
   {
    payload.WithObject("workerCapabilities", m_workerCapabilities.Jsonize());
+
+  }
+
+  if(m_storageProfileIdHasBeenSet)
+  {
+   payload.WithString("storageProfileId", m_storageProfileId);
 
   }
 

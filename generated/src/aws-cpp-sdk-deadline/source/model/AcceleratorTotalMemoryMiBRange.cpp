@@ -19,10 +19,10 @@ namespace Model
 {
 
 AcceleratorTotalMemoryMiBRange::AcceleratorTotalMemoryMiBRange() : 
-    m_max(0),
-    m_maxHasBeenSet(false),
     m_min(0),
-    m_minHasBeenSet(false)
+    m_minHasBeenSet(false),
+    m_max(0),
+    m_maxHasBeenSet(false)
 {
 }
 
@@ -34,18 +34,18 @@ AcceleratorTotalMemoryMiBRange::AcceleratorTotalMemoryMiBRange(JsonView jsonValu
 
 AcceleratorTotalMemoryMiBRange& AcceleratorTotalMemoryMiBRange::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("max"))
-  {
-    m_max = jsonValue.GetInteger("max");
-
-    m_maxHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetInteger("min");
 
     m_minHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("max"))
+  {
+    m_max = jsonValue.GetInteger("max");
+
+    m_maxHasBeenSet = true;
   }
 
   return *this;
@@ -55,15 +55,15 @@ JsonValue AcceleratorTotalMemoryMiBRange::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_maxHasBeenSet)
-  {
-   payload.WithInteger("max", m_max);
-
-  }
-
   if(m_minHasBeenSet)
   {
    payload.WithInteger("min", m_min);
+
+  }
+
+  if(m_maxHasBeenSet)
+  {
+   payload.WithInteger("max", m_max);
 
   }
 

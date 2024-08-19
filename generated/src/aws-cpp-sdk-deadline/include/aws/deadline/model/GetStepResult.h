@@ -5,15 +5,15 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/deadline/model/DependencyCounts.h>
 #include <aws/deadline/model/StepLifecycleStatus.h>
-#include <aws/deadline/model/ParameterSpace.h>
-#include <aws/deadline/model/StepRequiredCapabilities.h>
-#include <aws/deadline/model/StepTargetTaskRunStatus.h>
 #include <aws/deadline/model/TaskRunStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/deadline/model/StepTargetTaskRunStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/deadline/model/DependencyCounts.h>
+#include <aws/deadline/model/StepRequiredCapabilities.h>
+#include <aws/deadline/model/ParameterSpace.h>
 #include <utility>
 
 namespace Aws
@@ -42,61 +42,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource was created.</p>
+     * <p>The step ID.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetStepResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetStepResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::String& GetStepId() const{ return m_stepId; }
+    inline void SetStepId(const Aws::String& value) { m_stepId = value; }
+    inline void SetStepId(Aws::String&& value) { m_stepId = std::move(value); }
+    inline void SetStepId(const char* value) { m_stepId.assign(value); }
+    inline GetStepResult& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
+    inline GetStepResult& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
+    inline GetStepResult& WithStepId(const char* value) { SetStepId(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The user or system that created this resource.</p>
+     * <p>The name of the step.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetStepResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetStepResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetStepResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of dependencies in the step.</p>
-     */
-    inline const DependencyCounts& GetDependencyCounts() const{ return m_dependencyCounts; }
-    inline void SetDependencyCounts(const DependencyCounts& value) { m_dependencyCounts = value; }
-    inline void SetDependencyCounts(DependencyCounts&& value) { m_dependencyCounts = std::move(value); }
-    inline GetStepResult& WithDependencyCounts(const DependencyCounts& value) { SetDependencyCounts(value); return *this;}
-    inline GetStepResult& WithDependencyCounts(DependencyCounts&& value) { SetDependencyCounts(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the step.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetStepResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetStepResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetStepResult& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time the resource ended running.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAt = std::move(value); }
-    inline GetStepResult& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline GetStepResult& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
+    inline void SetName(const char* value) { m_name.assign(value); }
+    inline GetStepResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline GetStepResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline GetStepResult& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -125,76 +92,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the step.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetStepResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetStepResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetStepResult& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A list of step parameters and the combination expression for the step.</p>
-     */
-    inline const ParameterSpace& GetParameterSpace() const{ return m_parameterSpace; }
-    inline void SetParameterSpace(const ParameterSpace& value) { m_parameterSpace = value; }
-    inline void SetParameterSpace(ParameterSpace&& value) { m_parameterSpace = std::move(value); }
-    inline GetStepResult& WithParameterSpace(const ParameterSpace& value) { SetParameterSpace(value); return *this;}
-    inline GetStepResult& WithParameterSpace(ParameterSpace&& value) { SetParameterSpace(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The required capabilities of the step.</p>
-     */
-    inline const StepRequiredCapabilities& GetRequiredCapabilities() const{ return m_requiredCapabilities; }
-    inline void SetRequiredCapabilities(const StepRequiredCapabilities& value) { m_requiredCapabilities = value; }
-    inline void SetRequiredCapabilities(StepRequiredCapabilities&& value) { m_requiredCapabilities = std::move(value); }
-    inline GetStepResult& WithRequiredCapabilities(const StepRequiredCapabilities& value) { SetRequiredCapabilities(value); return *this;}
-    inline GetStepResult& WithRequiredCapabilities(StepRequiredCapabilities&& value) { SetRequiredCapabilities(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time the resource started running.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
-    inline GetStepResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline GetStepResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The step ID.</p>
-     */
-    inline const Aws::String& GetStepId() const{ return m_stepId; }
-    inline void SetStepId(const Aws::String& value) { m_stepId = value; }
-    inline void SetStepId(Aws::String&& value) { m_stepId = std::move(value); }
-    inline void SetStepId(const char* value) { m_stepId.assign(value); }
-    inline GetStepResult& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-    inline GetStepResult& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-    inline GetStepResult& WithStepId(const char* value) { SetStepId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The task status with which the job started.</p>
-     */
-    inline const StepTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
-    inline void SetTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { m_targetTaskRunStatus = value; }
-    inline void SetTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { m_targetTaskRunStatus = std::move(value); }
-    inline GetStepResult& WithTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { SetTargetTaskRunStatus(value); return *this;}
-    inline GetStepResult& WithTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { SetTargetTaskRunStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The task run status for the job.</p>
      */
     inline const TaskRunStatus& GetTaskRunStatus() const{ return m_taskRunStatus; }
@@ -215,6 +112,41 @@ namespace Model
     inline GetStepResult& WithTaskRunStatusCounts(Aws::Map<TaskRunStatus, int>&& value) { SetTaskRunStatusCounts(std::move(value)); return *this;}
     inline GetStepResult& AddTaskRunStatusCounts(const TaskRunStatus& key, int value) { m_taskRunStatusCounts.emplace(key, value); return *this; }
     inline GetStepResult& AddTaskRunStatusCounts(TaskRunStatus&& key, int value) { m_taskRunStatusCounts.emplace(std::move(key), value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The task status with which the job started.</p>
+     */
+    inline const StepTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
+    inline void SetTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { m_targetTaskRunStatus = value; }
+    inline void SetTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { m_targetTaskRunStatus = std::move(value); }
+    inline GetStepResult& WithTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { SetTargetTaskRunStatus(value); return *this;}
+    inline GetStepResult& WithTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { SetTargetTaskRunStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
+    inline GetStepResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline GetStepResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that created this resource.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
+    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
+    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
+    inline GetStepResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+    inline GetStepResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline GetStepResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
     ///@}
 
     ///@{
@@ -242,6 +174,76 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The date and time the resource started running.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
+    inline GetStepResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+    inline GetStepResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource ended running.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAt = value; }
+    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAt = std::move(value); }
+    inline GetStepResult& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
+    inline GetStepResult& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of dependencies in the step.</p>
+     */
+    inline const DependencyCounts& GetDependencyCounts() const{ return m_dependencyCounts; }
+    inline void SetDependencyCounts(const DependencyCounts& value) { m_dependencyCounts = value; }
+    inline void SetDependencyCounts(DependencyCounts&& value) { m_dependencyCounts = std::move(value); }
+    inline GetStepResult& WithDependencyCounts(const DependencyCounts& value) { SetDependencyCounts(value); return *this;}
+    inline GetStepResult& WithDependencyCounts(DependencyCounts&& value) { SetDependencyCounts(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The required capabilities of the step.</p>
+     */
+    inline const StepRequiredCapabilities& GetRequiredCapabilities() const{ return m_requiredCapabilities; }
+    inline void SetRequiredCapabilities(const StepRequiredCapabilities& value) { m_requiredCapabilities = value; }
+    inline void SetRequiredCapabilities(StepRequiredCapabilities&& value) { m_requiredCapabilities = std::move(value); }
+    inline GetStepResult& WithRequiredCapabilities(const StepRequiredCapabilities& value) { SetRequiredCapabilities(value); return *this;}
+    inline GetStepResult& WithRequiredCapabilities(StepRequiredCapabilities&& value) { SetRequiredCapabilities(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of step parameters and the combination expression for the step.</p>
+     */
+    inline const ParameterSpace& GetParameterSpace() const{ return m_parameterSpace; }
+    inline void SetParameterSpace(const ParameterSpace& value) { m_parameterSpace = value; }
+    inline void SetParameterSpace(ParameterSpace&& value) { m_parameterSpace = std::move(value); }
+    inline GetStepResult& WithParameterSpace(const ParameterSpace& value) { SetParameterSpace(value); return *this;}
+    inline GetStepResult& WithParameterSpace(ParameterSpace&& value) { SetParameterSpace(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the step.</p>  <p>This field can store any
+     * content. Escape or encode this content before displaying it on a webpage or any
+     * other system that might interpret the content of this field.</p> 
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline GetStepResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline GetStepResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline GetStepResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -253,39 +255,39 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::String m_stepId;
 
-    Aws::String m_createdBy;
-
-    DependencyCounts m_dependencyCounts;
-
-    Aws::String m_description;
-
-    Aws::Utils::DateTime m_endedAt;
+    Aws::String m_name;
 
     StepLifecycleStatus m_lifecycleStatus;
 
     Aws::String m_lifecycleStatusMessage;
 
-    Aws::String m_name;
-
-    ParameterSpace m_parameterSpace;
-
-    StepRequiredCapabilities m_requiredCapabilities;
-
-    Aws::Utils::DateTime m_startedAt;
-
-    Aws::String m_stepId;
-
-    StepTargetTaskRunStatus m_targetTaskRunStatus;
-
     TaskRunStatus m_taskRunStatus;
 
     Aws::Map<TaskRunStatus, int> m_taskRunStatusCounts;
 
+    StepTargetTaskRunStatus m_targetTaskRunStatus;
+
+    Aws::Utils::DateTime m_createdAt;
+
+    Aws::String m_createdBy;
+
     Aws::Utils::DateTime m_updatedAt;
 
     Aws::String m_updatedBy;
+
+    Aws::Utils::DateTime m_startedAt;
+
+    Aws::Utils::DateTime m_endedAt;
+
+    DependencyCounts m_dependencyCounts;
+
+    StepRequiredCapabilities m_requiredCapabilities;
+
+    ParameterSpace m_parameterSpace;
+
+    Aws::String m_description;
 
     Aws::String m_requestId;
   };

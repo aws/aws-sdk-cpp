@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetBudgetRequest::GetBudgetRequest() : 
-    m_budgetIdHasBeenSet(false),
-    m_farmIdHasBeenSet(false)
+    m_farmIdHasBeenSet(false),
+    m_budgetIdHasBeenSet(false)
 {
 }
 

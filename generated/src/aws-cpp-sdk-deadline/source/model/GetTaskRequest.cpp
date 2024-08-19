@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 GetTaskRequest::GetTaskRequest() : 
     m_farmIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
     m_queueIdHasBeenSet(false),
+    m_jobIdHasBeenSet(false),
     m_stepIdHasBeenSet(false),
     m_taskIdHasBeenSet(false)
 {

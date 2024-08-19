@@ -41,20 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The display names of a list of fleets.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline ListFleetsRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline ListFleetsRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline ListFleetsRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The farm ID of the fleets.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
@@ -69,13 +55,45 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.</p>
+     * <p>The principal ID of the members to include in the fleet.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListFleetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
+    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
+    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
+    inline ListFleetsRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
+    inline ListFleetsRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
+    inline ListFleetsRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display names of a list of fleets.</p>  <p>This field can
+     * store any content. Escape or encode this content before displaying it on a
+     * webpage or any other system that might interpret the content of this field.</p>
+     * 
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline ListFleetsRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline ListFleetsRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline ListFleetsRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the fleet.</p>
+     */
+    inline const FleetStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline ListFleetsRequest& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
+    inline ListFleetsRequest& WithStatus(FleetStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,48 +113,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>The principal ID of the members to include in the fleet.</p>
+     * <p>The maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline ListFleetsRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline ListFleetsRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline ListFleetsRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the fleet.</p>
-     */
-    inline const FleetStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListFleetsRequest& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
-    inline ListFleetsRequest& WithStatus(FleetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListFleetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    FleetStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_principalId;
-    bool m_principalIdHasBeenSet = false;
-
-    FleetStatus m_status;
-    bool m_statusHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

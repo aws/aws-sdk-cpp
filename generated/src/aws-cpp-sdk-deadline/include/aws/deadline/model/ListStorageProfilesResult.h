@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/StorageProfileSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The storage profiles.</p>
+     */
+    inline const Aws::Vector<StorageProfileSummary>& GetStorageProfiles() const{ return m_storageProfiles; }
+    inline void SetStorageProfiles(const Aws::Vector<StorageProfileSummary>& value) { m_storageProfiles = value; }
+    inline void SetStorageProfiles(Aws::Vector<StorageProfileSummary>&& value) { m_storageProfiles = std::move(value); }
+    inline ListStorageProfilesResult& WithStorageProfiles(const Aws::Vector<StorageProfileSummary>& value) { SetStorageProfiles(value); return *this;}
+    inline ListStorageProfilesResult& WithStorageProfiles(Aws::Vector<StorageProfileSummary>&& value) { SetStorageProfiles(std::move(value)); return *this;}
+    inline ListStorageProfilesResult& AddStorageProfiles(const StorageProfileSummary& value) { m_storageProfiles.push_back(value); return *this; }
+    inline ListStorageProfilesResult& AddStorageProfiles(StorageProfileSummary&& value) { m_storageProfiles.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -54,19 +67,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The storage profiles.</p>
-     */
-    inline const Aws::Vector<StorageProfileSummary>& GetStorageProfiles() const{ return m_storageProfiles; }
-    inline void SetStorageProfiles(const Aws::Vector<StorageProfileSummary>& value) { m_storageProfiles = value; }
-    inline void SetStorageProfiles(Aws::Vector<StorageProfileSummary>&& value) { m_storageProfiles = std::move(value); }
-    inline ListStorageProfilesResult& WithStorageProfiles(const Aws::Vector<StorageProfileSummary>& value) { SetStorageProfiles(value); return *this;}
-    inline ListStorageProfilesResult& WithStorageProfiles(Aws::Vector<StorageProfileSummary>&& value) { SetStorageProfiles(std::move(value)); return *this;}
-    inline ListStorageProfilesResult& AddStorageProfiles(const StorageProfileSummary& value) { m_storageProfiles.push_back(value); return *this; }
-    inline ListStorageProfilesResult& AddStorageProfiles(StorageProfileSummary&& value) { m_storageProfiles.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<StorageProfileSummary> m_storageProfiles;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

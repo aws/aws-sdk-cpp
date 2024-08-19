@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 UpdateWorkerScheduleRequest::UpdateWorkerScheduleRequest() : 
     m_farmIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_updatedSessionActionsHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+    m_workerIdHasBeenSet(false),
+    m_updatedSessionActionsHasBeenSet(false)
 {
 }
 

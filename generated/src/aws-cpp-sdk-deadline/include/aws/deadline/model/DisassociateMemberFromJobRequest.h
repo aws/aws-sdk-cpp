@@ -48,6 +48,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queue ID connected to a job for which you're disassociating a member.</p>
+     */
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
+    inline DisassociateMemberFromJobRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline DisassociateMemberFromJobRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline DisassociateMemberFromJobRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The job ID to disassociate from a member in a job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -73,33 +87,19 @@ namespace Model
     inline DisassociateMemberFromJobRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
     inline DisassociateMemberFromJobRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The queue ID connected to a job for which you're disassociating a member.</p>
-     */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline DisassociateMemberFromJobRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline DisassociateMemberFromJobRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline DisassociateMemberFromJobRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
+
+    Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet = false;
-
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
   };
 
 } // namespace Model

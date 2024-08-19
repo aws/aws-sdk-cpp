@@ -31,15 +31,9 @@ GetStorageProfileResult::GetStorageProfileResult(const Aws::AmazonWebServiceResu
 GetStorageProfileResult& GetStorageProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("storageProfileId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
+    m_storageProfileId = jsonValue.GetString("storageProfileId");
 
   }
 
@@ -49,24 +43,21 @@ GetStorageProfileResult& GetStorageProfileResult::operator =(const Aws::AmazonWe
 
   }
 
-  if(jsonValue.ValueExists("fileSystemLocations"))
-  {
-    Aws::Utils::Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
-    for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
-    {
-      m_fileSystemLocations.push_back(fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("osFamily"))
   {
     m_osFamily = StorageProfileOperatingSystemFamilyMapper::GetStorageProfileOperatingSystemFamilyForName(jsonValue.GetString("osFamily"));
 
   }
 
-  if(jsonValue.ValueExists("storageProfileId"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_storageProfileId = jsonValue.GetString("storageProfileId");
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
 
   }
 
@@ -80,6 +71,15 @@ GetStorageProfileResult& GetStorageProfileResult::operator =(const Aws::AmazonWe
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
 
+  }
+
+  if(jsonValue.ValueExists("fileSystemLocations"))
+  {
+    Aws::Utils::Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
+    for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
+    {
+      m_fileSystemLocations.push_back(fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject());
+    }
   }
 
 

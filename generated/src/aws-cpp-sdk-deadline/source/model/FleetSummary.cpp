@@ -19,26 +19,26 @@ namespace Model
 {
 
 FleetSummary::FleetSummary() : 
+    m_fleetIdHasBeenSet(false),
+    m_farmIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_status(FleetStatus::NOT_SET),
+    m_statusHasBeenSet(false),
     m_autoScalingStatus(AutoScalingStatus::NOT_SET),
     m_autoScalingStatusHasBeenSet(false),
+    m_targetWorkerCount(0),
+    m_targetWorkerCountHasBeenSet(false),
+    m_workerCount(0),
+    m_workerCountHasBeenSet(false),
+    m_minWorkerCount(0),
+    m_minWorkerCountHasBeenSet(false),
+    m_maxWorkerCount(0),
+    m_maxWorkerCountHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_maxWorkerCount(0),
-    m_maxWorkerCountHasBeenSet(false),
-    m_minWorkerCount(0),
-    m_minWorkerCountHasBeenSet(false),
-    m_status(FleetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetWorkerCount(0),
-    m_targetWorkerCountHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_workerCount(0),
-    m_workerCountHasBeenSet(false)
+    m_updatedByHasBeenSet(false)
 {
 }
 
@@ -50,11 +50,67 @@ FleetSummary::FleetSummary(JsonView jsonValue)
 
 FleetSummary& FleetSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("fleetId"))
+  {
+    m_fleetId = jsonValue.GetString("fleetId");
+
+    m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("farmId"))
+  {
+    m_farmId = jsonValue.GetString("farmId");
+
+    m_farmIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("autoScalingStatus"))
   {
     m_autoScalingStatus = AutoScalingStatusMapper::GetAutoScalingStatusForName(jsonValue.GetString("autoScalingStatus"));
 
     m_autoScalingStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetWorkerCount"))
+  {
+    m_targetWorkerCount = jsonValue.GetInteger("targetWorkerCount");
+
+    m_targetWorkerCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("workerCount"))
+  {
+    m_workerCount = jsonValue.GetInteger("workerCount");
+
+    m_workerCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minWorkerCount"))
+  {
+    m_minWorkerCount = jsonValue.GetInteger("minWorkerCount");
+
+    m_minWorkerCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxWorkerCount"))
+  {
+    m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
+
+    m_maxWorkerCountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("configuration"))
@@ -78,55 +134,6 @@ FleetSummary& FleetSummary::operator =(JsonView jsonValue)
     m_createdByHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-
-    m_displayNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("farmId"))
-  {
-    m_farmId = jsonValue.GetString("farmId");
-
-    m_farmIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("fleetId"))
-  {
-    m_fleetId = jsonValue.GetString("fleetId");
-
-    m_fleetIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("maxWorkerCount"))
-  {
-    m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
-
-    m_maxWorkerCountHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("minWorkerCount"))
-  {
-    m_minWorkerCount = jsonValue.GetInteger("minWorkerCount");
-
-    m_minWorkerCountHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("targetWorkerCount"))
-  {
-    m_targetWorkerCount = jsonValue.GetInteger("targetWorkerCount");
-
-    m_targetWorkerCountHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -141,13 +148,6 @@ FleetSummary& FleetSummary::operator =(JsonView jsonValue)
     m_updatedByHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("workerCount"))
-  {
-    m_workerCount = jsonValue.GetInteger("workerCount");
-
-    m_workerCountHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -155,9 +155,56 @@ JsonValue FleetSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_fleetIdHasBeenSet)
+  {
+   payload.WithString("fleetId", m_fleetId);
+
+  }
+
+  if(m_farmIdHasBeenSet)
+  {
+   payload.WithString("farmId", m_farmId);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", FleetStatusMapper::GetNameForFleetStatus(m_status));
+  }
+
   if(m_autoScalingStatusHasBeenSet)
   {
    payload.WithString("autoScalingStatus", AutoScalingStatusMapper::GetNameForAutoScalingStatus(m_autoScalingStatus));
+  }
+
+  if(m_targetWorkerCountHasBeenSet)
+  {
+   payload.WithInteger("targetWorkerCount", m_targetWorkerCount);
+
+  }
+
+  if(m_workerCountHasBeenSet)
+  {
+   payload.WithInteger("workerCount", m_workerCount);
+
+  }
+
+  if(m_minWorkerCountHasBeenSet)
+  {
+   payload.WithInteger("minWorkerCount", m_minWorkerCount);
+
+  }
+
+  if(m_maxWorkerCountHasBeenSet)
+  {
+   payload.WithInteger("maxWorkerCount", m_maxWorkerCount);
+
   }
 
   if(m_configurationHasBeenSet)
@@ -177,47 +224,6 @@ JsonValue FleetSummary::Jsonize() const
 
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
-  if(m_farmIdHasBeenSet)
-  {
-   payload.WithString("farmId", m_farmId);
-
-  }
-
-  if(m_fleetIdHasBeenSet)
-  {
-   payload.WithString("fleetId", m_fleetId);
-
-  }
-
-  if(m_maxWorkerCountHasBeenSet)
-  {
-   payload.WithInteger("maxWorkerCount", m_maxWorkerCount);
-
-  }
-
-  if(m_minWorkerCountHasBeenSet)
-  {
-   payload.WithInteger("minWorkerCount", m_minWorkerCount);
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", FleetStatusMapper::GetNameForFleetStatus(m_status));
-  }
-
-  if(m_targetWorkerCountHasBeenSet)
-  {
-   payload.WithInteger("targetWorkerCount", m_targetWorkerCount);
-
-  }
-
   if(m_updatedAtHasBeenSet)
   {
    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -226,12 +232,6 @@ JsonValue FleetSummary::Jsonize() const
   if(m_updatedByHasBeenSet)
   {
    payload.WithString("updatedBy", m_updatedBy);
-
-  }
-
-  if(m_workerCountHasBeenSet)
-  {
-   payload.WithInteger("workerCount", m_workerCount);
 
   }
 

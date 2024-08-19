@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 CreateQueueFleetAssociationRequest::CreateQueueFleetAssociationRequest() : 
     m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+    m_queueIdHasBeenSet(false),
+    m_fleetIdHasBeenSet(false)
 {
 }
 
@@ -23,15 +23,15 @@ Aws::String CreateQueueFleetAssociationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_fleetIdHasBeenSet)
-  {
-   payload.WithString("fleetId", m_fleetId);
-
-  }
-
   if(m_queueIdHasBeenSet)
   {
    payload.WithString("queueId", m_queueId);
+
+  }
+
+  if(m_fleetIdHasBeenSet)
+  {
+   payload.WithString("fleetId", m_fleetId);
 
   }
 

@@ -957,6 +957,33 @@ namespace Lambda
         }
 
         /**
+         * <p>Returns your function's <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
+         * loop detection</a> configuration. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionRecursionConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFunctionRecursionConfigOutcome GetFunctionRecursionConfig(const Model::GetFunctionRecursionConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFunctionRecursionConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFunctionRecursionConfigRequestT = Model::GetFunctionRecursionConfigRequest>
+        Model::GetFunctionRecursionConfigOutcomeCallable GetFunctionRecursionConfigCallable(const GetFunctionRecursionConfigRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::GetFunctionRecursionConfig, request);
+        }
+
+        /**
+         * An Async wrapper for GetFunctionRecursionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFunctionRecursionConfigRequestT = Model::GetFunctionRecursionConfigRequest>
+        void GetFunctionRecursionConfigAsync(const GetFunctionRecursionConfigRequestT& request, const GetFunctionRecursionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::GetFunctionRecursionConfig, request, handler, context);
+        }
+
+        /**
          * <p>Returns details about a Lambda function URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">AWS
          * API Reference</a></p>
@@ -1760,6 +1787,42 @@ namespace Lambda
         void PutFunctionEventInvokeConfigAsync(const PutFunctionEventInvokeConfigRequestT& request, const PutFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LambdaClient::PutFunctionEventInvokeConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Sets your function's <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
+         * loop detection</a> configuration.</p> <p>When you configure a Lambda function to
+         * output to the same service or resource that invokes the function, it's possible
+         * to create an infinite recursive loop. For example, a Lambda function might write
+         * a message to an Amazon Simple Queue Service (Amazon SQS) queue, which then
+         * invokes the same function. This invocation causes the function to write another
+         * message to the queue, which in turn invokes the function again.</p> <p>Lambda
+         * can detect certain types of recursive loops shortly after they occur. When
+         * Lambda detects a recursive loop and your function's recursive loop detection
+         * configuration is set to <code>Terminate</code>, it stops your function being
+         * invoked and notifies you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionRecursionConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFunctionRecursionConfigOutcome PutFunctionRecursionConfig(const Model::PutFunctionRecursionConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutFunctionRecursionConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutFunctionRecursionConfigRequestT = Model::PutFunctionRecursionConfigRequest>
+        Model::PutFunctionRecursionConfigOutcomeCallable PutFunctionRecursionConfigCallable(const PutFunctionRecursionConfigRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::PutFunctionRecursionConfig, request);
+        }
+
+        /**
+         * An Async wrapper for PutFunctionRecursionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutFunctionRecursionConfigRequestT = Model::PutFunctionRecursionConfigRequest>
+        void PutFunctionRecursionConfigAsync(const PutFunctionRecursionConfigRequestT& request, const PutFunctionRecursionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::PutFunctionRecursionConfig, request, handler, context);
         }
 
         /**

@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/WorkerStatus.h>
 #include <aws/deadline/model/HostPropertiesResponse.h>
 #include <aws/deadline/model/LogConfiguration.h>
-#include <aws/deadline/model/WorkerStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -43,28 +43,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource was created.</p>
+     * <p>The worker ID.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline WorkerSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline WorkerSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The user or system that created this resource.</p>
-     */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline WorkerSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline WorkerSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline WorkerSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
+    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
+    inline WorkerSummary& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
+    inline WorkerSummary& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
+    inline WorkerSummary& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
     ///@}
 
     ///@{
@@ -97,6 +85,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of the worker.</p>
+     */
+    inline const WorkerStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const WorkerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(WorkerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline WorkerSummary& WithStatus(const WorkerStatus& value) { SetStatus(value); return *this;}
+    inline WorkerSummary& WithStatus(WorkerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The host properties of the worker.</p>
      */
     inline const HostPropertiesResponse& GetHostProperties() const{ return m_hostProperties; }
@@ -121,14 +121,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the worker.</p>
+     * <p>The date and time the resource was created.</p>
      */
-    inline const WorkerStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WorkerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WorkerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline WorkerSummary& WithStatus(const WorkerStatus& value) { SetStatus(value); return *this;}
-    inline WorkerSummary& WithStatus(WorkerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+    inline WorkerSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline WorkerSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that created this resource.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
+    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
+    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
+    inline WorkerSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+    inline WorkerSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline WorkerSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
     ///@}
 
     ///@{
@@ -156,27 +170,10 @@ namespace Model
     inline WorkerSummary& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
     inline WorkerSummary& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The worker ID.</p>
-     */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline WorkerSummary& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline WorkerSummary& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline WorkerSummary& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
-    ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
+    Aws::String m_workerId;
+    bool m_workerIdHasBeenSet = false;
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
@@ -184,23 +181,26 @@ namespace Model
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
+    WorkerStatus m_status;
+    bool m_statusHasBeenSet = false;
+
     HostPropertiesResponse m_hostProperties;
     bool m_hostPropertiesHasBeenSet = false;
 
     LogConfiguration m_log;
     bool m_logHasBeenSet = false;
 
-    WorkerStatus m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet = false;
-
-    Aws::String m_workerId;
-    bool m_workerIdHasBeenSet = false;
   };
 
 } // namespace Model

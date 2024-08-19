@@ -19,10 +19,10 @@ namespace Model
 {
 
 GetJobEntityError::GetJobEntityError() : 
-    m_environmentDetailsHasBeenSet(false),
-    m_jobAttachmentDetailsHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
-    m_stepDetailsHasBeenSet(false)
+    m_jobAttachmentDetailsHasBeenSet(false),
+    m_stepDetailsHasBeenSet(false),
+    m_environmentDetailsHasBeenSet(false)
 {
 }
 
@@ -34,11 +34,11 @@ GetJobEntityError::GetJobEntityError(JsonView jsonValue)
 
 GetJobEntityError& GetJobEntityError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("environmentDetails"))
+  if(jsonValue.ValueExists("jobDetails"))
   {
-    m_environmentDetails = jsonValue.GetObject("environmentDetails");
+    m_jobDetails = jsonValue.GetObject("jobDetails");
 
-    m_environmentDetailsHasBeenSet = true;
+    m_jobDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobAttachmentDetails"))
@@ -48,18 +48,18 @@ GetJobEntityError& GetJobEntityError::operator =(JsonView jsonValue)
     m_jobAttachmentDetailsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("jobDetails"))
-  {
-    m_jobDetails = jsonValue.GetObject("jobDetails");
-
-    m_jobDetailsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("stepDetails"))
   {
     m_stepDetails = jsonValue.GetObject("stepDetails");
 
     m_stepDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("environmentDetails"))
+  {
+    m_environmentDetails = jsonValue.GetObject("environmentDetails");
+
+    m_environmentDetailsHasBeenSet = true;
   }
 
   return *this;
@@ -69,9 +69,9 @@ JsonValue GetJobEntityError::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_environmentDetailsHasBeenSet)
+  if(m_jobDetailsHasBeenSet)
   {
-   payload.WithObject("environmentDetails", m_environmentDetails.Jsonize());
+   payload.WithObject("jobDetails", m_jobDetails.Jsonize());
 
   }
 
@@ -81,15 +81,15 @@ JsonValue GetJobEntityError::Jsonize() const
 
   }
 
-  if(m_jobDetailsHasBeenSet)
-  {
-   payload.WithObject("jobDetails", m_jobDetails.Jsonize());
-
-  }
-
   if(m_stepDetailsHasBeenSet)
   {
    payload.WithObject("stepDetails", m_stepDetails.Jsonize());
+
+  }
+
+  if(m_environmentDetailsHasBeenSet)
+  {
+   payload.WithObject("environmentDetails", m_environmentDetails.Jsonize());
 
   }
 

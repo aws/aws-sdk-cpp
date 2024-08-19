@@ -29,6 +29,12 @@ ListFarmsResult::ListFarmsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 ListFarmsResult& ListFarmsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("farms"))
   {
     Aws::Utils::Array<JsonView> farmsJsonList = jsonValue.GetArray("farms");
@@ -36,12 +42,6 @@ ListFarmsResult& ListFarmsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_farms.push_back(farmsJsonList[farmsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

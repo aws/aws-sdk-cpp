@@ -7,8 +7,8 @@
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/EnvironmentEnterSessionActionDefinitionSummary.h>
 #include <aws/deadline/model/EnvironmentExitSessionActionDefinitionSummary.h>
-#include <aws/deadline/model/SyncInputJobAttachmentsSessionActionDefinitionSummary.h>
 #include <aws/deadline/model/TaskRunSessionActionDefinitionSummary.h>
+#include <aws/deadline/model/SyncInputJobAttachmentsSessionActionDefinitionSummary.h>
 #include <utility>
 
 namespace Aws
@@ -66,18 +66,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job attachments to sync with the session action definition.</p>
-     */
-    inline const SyncInputJobAttachmentsSessionActionDefinitionSummary& GetSyncInputJobAttachments() const{ return m_syncInputJobAttachments; }
-    inline bool SyncInputJobAttachmentsHasBeenSet() const { return m_syncInputJobAttachmentsHasBeenSet; }
-    inline void SetSyncInputJobAttachments(const SyncInputJobAttachmentsSessionActionDefinitionSummary& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = value; }
-    inline void SetSyncInputJobAttachments(SyncInputJobAttachmentsSessionActionDefinitionSummary&& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = std::move(value); }
-    inline SessionActionDefinitionSummary& WithSyncInputJobAttachments(const SyncInputJobAttachmentsSessionActionDefinitionSummary& value) { SetSyncInputJobAttachments(value); return *this;}
-    inline SessionActionDefinitionSummary& WithSyncInputJobAttachments(SyncInputJobAttachmentsSessionActionDefinitionSummary&& value) { SetSyncInputJobAttachments(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The task run.</p>
      */
     inline const TaskRunSessionActionDefinitionSummary& GetTaskRun() const{ return m_taskRun; }
@@ -87,6 +75,18 @@ namespace Model
     inline SessionActionDefinitionSummary& WithTaskRun(const TaskRunSessionActionDefinitionSummary& value) { SetTaskRun(value); return *this;}
     inline SessionActionDefinitionSummary& WithTaskRun(TaskRunSessionActionDefinitionSummary&& value) { SetTaskRun(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The job attachments to sync with the session action definition.</p>
+     */
+    inline const SyncInputJobAttachmentsSessionActionDefinitionSummary& GetSyncInputJobAttachments() const{ return m_syncInputJobAttachments; }
+    inline bool SyncInputJobAttachmentsHasBeenSet() const { return m_syncInputJobAttachmentsHasBeenSet; }
+    inline void SetSyncInputJobAttachments(const SyncInputJobAttachmentsSessionActionDefinitionSummary& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = value; }
+    inline void SetSyncInputJobAttachments(SyncInputJobAttachmentsSessionActionDefinitionSummary&& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = std::move(value); }
+    inline SessionActionDefinitionSummary& WithSyncInputJobAttachments(const SyncInputJobAttachmentsSessionActionDefinitionSummary& value) { SetSyncInputJobAttachments(value); return *this;}
+    inline SessionActionDefinitionSummary& WithSyncInputJobAttachments(SyncInputJobAttachmentsSessionActionDefinitionSummary&& value) { SetSyncInputJobAttachments(std::move(value)); return *this;}
+    ///@}
   private:
 
     EnvironmentEnterSessionActionDefinitionSummary m_envEnter;
@@ -95,11 +95,11 @@ namespace Model
     EnvironmentExitSessionActionDefinitionSummary m_envExit;
     bool m_envExitHasBeenSet = false;
 
-    SyncInputJobAttachmentsSessionActionDefinitionSummary m_syncInputJobAttachments;
-    bool m_syncInputJobAttachmentsHasBeenSet = false;
-
     TaskRunSessionActionDefinitionSummary m_taskRun;
     bool m_taskRunHasBeenSet = false;
+
+    SyncInputJobAttachmentsSessionActionDefinitionSummary m_syncInputJobAttachments;
+    bool m_syncInputJobAttachmentsHasBeenSet = false;
   };
 
 } // namespace Model

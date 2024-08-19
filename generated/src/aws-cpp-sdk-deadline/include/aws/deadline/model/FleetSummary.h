@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/FleetStatus.h>
 #include <aws/deadline/model/AutoScalingStatus.h>
 #include <aws/deadline/model/FleetConfiguration.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/deadline/model/FleetStatus.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,63 @@ namespace Model
 
     ///@{
     /**
+     * <p>The fleet ID.</p>
+     */
+    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
+    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
+    inline FleetSummary& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
+    inline FleetSummary& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
+    inline FleetSummary& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The farm ID.</p>
+     */
+    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
+    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
+    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
+    inline FleetSummary& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
+    inline FleetSummary& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
+    inline FleetSummary& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display name of the fleet summary to update.</p>  <p>This
+     * field can store any content. Escape or encode this content before displaying it
+     * on a webpage or any other system that might interpret the content of this
+     * field.</p> 
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline FleetSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline FleetSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline FleetSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the fleet.</p>
+     */
+    inline const FleetStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline FleetSummary& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
+    inline FleetSummary& WithStatus(FleetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Auto Scaling status of a fleet.</p>
      */
     inline const AutoScalingStatus& GetAutoScalingStatus() const{ return m_autoScalingStatus; }
@@ -51,6 +108,46 @@ namespace Model
     inline void SetAutoScalingStatus(AutoScalingStatus&& value) { m_autoScalingStatusHasBeenSet = true; m_autoScalingStatus = std::move(value); }
     inline FleetSummary& WithAutoScalingStatus(const AutoScalingStatus& value) { SetAutoScalingStatus(value); return *this;}
     inline FleetSummary& WithAutoScalingStatus(AutoScalingStatus&& value) { SetAutoScalingStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The target number of workers in a fleet.</p>
+     */
+    inline int GetTargetWorkerCount() const{ return m_targetWorkerCount; }
+    inline bool TargetWorkerCountHasBeenSet() const { return m_targetWorkerCountHasBeenSet; }
+    inline void SetTargetWorkerCount(int value) { m_targetWorkerCountHasBeenSet = true; m_targetWorkerCount = value; }
+    inline FleetSummary& WithTargetWorkerCount(int value) { SetTargetWorkerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of workers in the fleet summary.</p>
+     */
+    inline int GetWorkerCount() const{ return m_workerCount; }
+    inline bool WorkerCountHasBeenSet() const { return m_workerCountHasBeenSet; }
+    inline void SetWorkerCount(int value) { m_workerCountHasBeenSet = true; m_workerCount = value; }
+    inline FleetSummary& WithWorkerCount(int value) { SetWorkerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The minimum number of workers in the fleet.</p>
+     */
+    inline int GetMinWorkerCount() const{ return m_minWorkerCount; }
+    inline bool MinWorkerCountHasBeenSet() const { return m_minWorkerCountHasBeenSet; }
+    inline void SetMinWorkerCount(int value) { m_minWorkerCountHasBeenSet = true; m_minWorkerCount = value; }
+    inline FleetSummary& WithMinWorkerCount(int value) { SetMinWorkerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of workers specified in the fleet.</p>
+     */
+    inline int GetMaxWorkerCount() const{ return m_maxWorkerCount; }
+    inline bool MaxWorkerCountHasBeenSet() const { return m_maxWorkerCountHasBeenSet; }
+    inline void SetMaxWorkerCount(int value) { m_maxWorkerCountHasBeenSet = true; m_maxWorkerCount = value; }
+    inline FleetSummary& WithMaxWorkerCount(int value) { SetMaxWorkerCount(value); return *this;}
     ///@}
 
     ///@{
@@ -93,90 +190,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The display name of the fleet summary to update.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline FleetSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline FleetSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline FleetSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The farm ID.</p>
-     */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
-    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline FleetSummary& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline FleetSummary& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline FleetSummary& WithFarmId(const char* value) { SetFarmId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The fleet ID.</p>
-     */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline FleetSummary& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline FleetSummary& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline FleetSummary& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of workers specified in the fleet.</p>
-     */
-    inline int GetMaxWorkerCount() const{ return m_maxWorkerCount; }
-    inline bool MaxWorkerCountHasBeenSet() const { return m_maxWorkerCountHasBeenSet; }
-    inline void SetMaxWorkerCount(int value) { m_maxWorkerCountHasBeenSet = true; m_maxWorkerCount = value; }
-    inline FleetSummary& WithMaxWorkerCount(int value) { SetMaxWorkerCount(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The minimum number of workers in the fleet.</p>
-     */
-    inline int GetMinWorkerCount() const{ return m_minWorkerCount; }
-    inline bool MinWorkerCountHasBeenSet() const { return m_minWorkerCountHasBeenSet; }
-    inline void SetMinWorkerCount(int value) { m_minWorkerCountHasBeenSet = true; m_minWorkerCount = value; }
-    inline FleetSummary& WithMinWorkerCount(int value) { SetMinWorkerCount(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the fleet.</p>
-     */
-    inline const FleetStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FleetSummary& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
-    inline FleetSummary& WithStatus(FleetStatus&& value) { SetStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The target number of workers in a fleet.</p>
-     */
-    inline int GetTargetWorkerCount() const{ return m_targetWorkerCount; }
-    inline bool TargetWorkerCountHasBeenSet() const { return m_targetWorkerCountHasBeenSet; }
-    inline void SetTargetWorkerCount(int value) { m_targetWorkerCountHasBeenSet = true; m_targetWorkerCount = value; }
-    inline FleetSummary& WithTargetWorkerCount(int value) { SetTargetWorkerCount(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The date and time the resource was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
@@ -200,20 +213,34 @@ namespace Model
     inline FleetSummary& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
     inline FleetSummary& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The number of workers in the fleet summary.</p>
-     */
-    inline int GetWorkerCount() const{ return m_workerCount; }
-    inline bool WorkerCountHasBeenSet() const { return m_workerCountHasBeenSet; }
-    inline void SetWorkerCount(int value) { m_workerCountHasBeenSet = true; m_workerCount = value; }
-    inline FleetSummary& WithWorkerCount(int value) { SetWorkerCount(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
+
+    Aws::String m_farmId;
+    bool m_farmIdHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    FleetStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     AutoScalingStatus m_autoScalingStatus;
     bool m_autoScalingStatusHasBeenSet = false;
+
+    int m_targetWorkerCount;
+    bool m_targetWorkerCountHasBeenSet = false;
+
+    int m_workerCount;
+    bool m_workerCountHasBeenSet = false;
+
+    int m_minWorkerCount;
+    bool m_minWorkerCountHasBeenSet = false;
+
+    int m_maxWorkerCount;
+    bool m_maxWorkerCountHasBeenSet = false;
 
     FleetConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
@@ -224,35 +251,11 @@ namespace Model
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
-    Aws::String m_farmId;
-    bool m_farmIdHasBeenSet = false;
-
-    Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet = false;
-
-    int m_maxWorkerCount;
-    bool m_maxWorkerCountHasBeenSet = false;
-
-    int m_minWorkerCount;
-    bool m_minWorkerCountHasBeenSet = false;
-
-    FleetStatus m_status;
-    bool m_statusHasBeenSet = false;
-
-    int m_targetWorkerCount;
-    bool m_targetWorkerCountHasBeenSet = false;
-
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet = false;
-
-    int m_workerCount;
-    bool m_workerCountHasBeenSet = false;
   };
 
 } // namespace Model

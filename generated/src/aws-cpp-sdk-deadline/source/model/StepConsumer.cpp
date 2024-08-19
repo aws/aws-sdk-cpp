@@ -19,9 +19,9 @@ namespace Model
 {
 
 StepConsumer::StepConsumer() : 
+    m_stepIdHasBeenSet(false),
     m_status(DependencyConsumerResolutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_stepIdHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -33,18 +33,18 @@ StepConsumer::StepConsumer(JsonView jsonValue)
 
 StepConsumer& StepConsumer::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = DependencyConsumerResolutionStatusMapper::GetDependencyConsumerResolutionStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
 
     m_stepIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = DependencyConsumerResolutionStatusMapper::GetDependencyConsumerResolutionStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue StepConsumer::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DependencyConsumerResolutionStatusMapper::GetNameForDependencyConsumerResolutionStatus(m_status));
-  }
-
   if(m_stepIdHasBeenSet)
   {
    payload.WithString("stepId", m_stepId);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", DependencyConsumerResolutionStatusMapper::GetNameForDependencyConsumerResolutionStatus(m_status));
   }
 
   return payload;

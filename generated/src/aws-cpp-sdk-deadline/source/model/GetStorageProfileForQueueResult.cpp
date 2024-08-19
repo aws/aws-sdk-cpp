@@ -31,9 +31,21 @@ GetStorageProfileForQueueResult::GetStorageProfileForQueueResult(const Aws::Amaz
 GetStorageProfileForQueueResult& GetStorageProfileForQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("storageProfileId"))
+  {
+    m_storageProfileId = jsonValue.GetString("storageProfileId");
+
+  }
+
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
+
+  }
+
+  if(jsonValue.ValueExists("osFamily"))
+  {
+    m_osFamily = StorageProfileOperatingSystemFamilyMapper::GetStorageProfileOperatingSystemFamilyForName(jsonValue.GetString("osFamily"));
 
   }
 
@@ -44,18 +56,6 @@ GetStorageProfileForQueueResult& GetStorageProfileForQueueResult::operator =(con
     {
       m_fileSystemLocations.push_back(fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("osFamily"))
-  {
-    m_osFamily = StorageProfileOperatingSystemFamilyMapper::GetStorageProfileOperatingSystemFamilyForName(jsonValue.GetString("osFamily"));
-
-  }
-
-  if(jsonValue.ValueExists("storageProfileId"))
-  {
-    m_storageProfileId = jsonValue.GetString("storageProfileId");
-
   }
 
 

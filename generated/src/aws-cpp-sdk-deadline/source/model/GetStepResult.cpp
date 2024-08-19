@@ -19,8 +19,8 @@ using namespace Aws;
 
 GetStepResult::GetStepResult() : 
     m_lifecycleStatus(StepLifecycleStatus::NOT_SET),
-    m_targetTaskRunStatus(StepTargetTaskRunStatus::NOT_SET),
-    m_taskRunStatus(TaskRunStatus::NOT_SET)
+    m_taskRunStatus(TaskRunStatus::NOT_SET),
+    m_targetTaskRunStatus(StepTargetTaskRunStatus::NOT_SET)
 {
 }
 
@@ -33,33 +33,15 @@ GetStepResult::GetStepResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 GetStepResult& GetStepResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("stepId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
+    m_stepId = jsonValue.GetString("stepId");
 
   }
 
-  if(jsonValue.ValueExists("createdBy"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_createdBy = jsonValue.GetString("createdBy");
-
-  }
-
-  if(jsonValue.ValueExists("dependencyCounts"))
-  {
-    m_dependencyCounts = jsonValue.GetObject("dependencyCounts");
-
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-  }
-
-  if(jsonValue.ValueExists("endedAt"))
-  {
-    m_endedAt = jsonValue.GetString("endedAt");
+    m_name = jsonValue.GetString("name");
 
   }
 
@@ -72,42 +54,6 @@ GetStepResult& GetStepResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("lifecycleStatusMessage"))
   {
     m_lifecycleStatusMessage = jsonValue.GetString("lifecycleStatusMessage");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-  }
-
-  if(jsonValue.ValueExists("parameterSpace"))
-  {
-    m_parameterSpace = jsonValue.GetObject("parameterSpace");
-
-  }
-
-  if(jsonValue.ValueExists("requiredCapabilities"))
-  {
-    m_requiredCapabilities = jsonValue.GetObject("requiredCapabilities");
-
-  }
-
-  if(jsonValue.ValueExists("startedAt"))
-  {
-    m_startedAt = jsonValue.GetString("startedAt");
-
-  }
-
-  if(jsonValue.ValueExists("stepId"))
-  {
-    m_stepId = jsonValue.GetString("stepId");
-
-  }
-
-  if(jsonValue.ValueExists("targetTaskRunStatus"))
-  {
-    m_targetTaskRunStatus = StepTargetTaskRunStatusMapper::GetStepTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
 
   }
 
@@ -126,6 +72,24 @@ GetStepResult& GetStepResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     }
   }
 
+  if(jsonValue.ValueExists("targetTaskRunStatus"))
+  {
+    m_targetTaskRunStatus = StepTargetTaskRunStatusMapper::GetStepTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
+
+  }
+
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -135,6 +99,42 @@ GetStepResult& GetStepResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
+
+  }
+
+  if(jsonValue.ValueExists("startedAt"))
+  {
+    m_startedAt = jsonValue.GetString("startedAt");
+
+  }
+
+  if(jsonValue.ValueExists("endedAt"))
+  {
+    m_endedAt = jsonValue.GetString("endedAt");
+
+  }
+
+  if(jsonValue.ValueExists("dependencyCounts"))
+  {
+    m_dependencyCounts = jsonValue.GetObject("dependencyCounts");
+
+  }
+
+  if(jsonValue.ValueExists("requiredCapabilities"))
+  {
+    m_requiredCapabilities = jsonValue.GetObject("requiredCapabilities");
+
+  }
+
+  if(jsonValue.ValueExists("parameterSpace"))
+  {
+    m_parameterSpace = jsonValue.GetObject("parameterSpace");
+
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
 
   }
 

@@ -54,6 +54,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queue ID for the queue-fleet association list.</p>
+     */
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
+    inline ListQueueFleetAssociationsRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline ListQueueFleetAssociationsRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline ListQueueFleetAssociationsRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The fleet ID for the queue-fleet association list.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
@@ -64,17 +78,6 @@ namespace Model
     inline ListQueueFleetAssociationsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
     inline ListQueueFleetAssociationsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
     inline ListQueueFleetAssociationsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListQueueFleetAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
     ///@{
@@ -94,33 +97,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The queue ID for the queue-fleet association list.</p>
+     * <p>The maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline ListQueueFleetAssociationsRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline ListQueueFleetAssociationsRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline ListQueueFleetAssociationsRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListQueueFleetAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
+    Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
-
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

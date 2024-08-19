@@ -20,9 +20,9 @@ namespace Model
 
 JobRunAsUser::JobRunAsUser() : 
     m_posixHasBeenSet(false),
+    m_windowsHasBeenSet(false),
     m_runAs(RunAs::NOT_SET),
-    m_runAsHasBeenSet(false),
-    m_windowsHasBeenSet(false)
+    m_runAsHasBeenSet(false)
 {
 }
 
@@ -41,18 +41,18 @@ JobRunAsUser& JobRunAsUser::operator =(JsonView jsonValue)
     m_posixHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("runAs"))
-  {
-    m_runAs = RunAsMapper::GetRunAsForName(jsonValue.GetString("runAs"));
-
-    m_runAsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("windows"))
   {
     m_windows = jsonValue.GetObject("windows");
 
     m_windowsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("runAs"))
+  {
+    m_runAs = RunAsMapper::GetRunAsForName(jsonValue.GetString("runAs"));
+
+    m_runAsHasBeenSet = true;
   }
 
   return *this;
@@ -68,15 +68,15 @@ JsonValue JobRunAsUser::Jsonize() const
 
   }
 
-  if(m_runAsHasBeenSet)
-  {
-   payload.WithString("runAs", RunAsMapper::GetNameForRunAs(m_runAs));
-  }
-
   if(m_windowsHasBeenSet)
   {
    payload.WithObject("windows", m_windows.Jsonize());
 
+  }
+
+  if(m_runAsHasBeenSet)
+  {
+   payload.WithString("runAs", RunAsMapper::GetNameForRunAs(m_runAs));
   }
 
   return payload;

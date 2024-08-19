@@ -13,15 +13,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartSessionsStatisticsAggregationRequest::StartSessionsStatisticsAggregationRequest() : 
-    m_endTimeHasBeenSet(false),
     m_farmIdHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_period(Period::NOT_SET),
-    m_periodHasBeenSet(false),
     m_resourceIdsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_timezoneHasBeenSet(false),
+    m_period(Period::NOT_SET),
+    m_periodHasBeenSet(false),
+    m_groupByHasBeenSet(false),
+    m_statisticsHasBeenSet(false)
 {
 }
 
@@ -29,9 +29,31 @@ Aws::String StartSessionsStatisticsAggregationRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_resourceIdsHasBeenSet)
+  {
+   payload.WithObject("resourceIds", m_resourceIds.Jsonize());
+
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_endTimeHasBeenSet)
   {
    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_timezoneHasBeenSet)
+  {
+   payload.WithString("timezone", m_timezone);
+
+  }
+
+  if(m_periodHasBeenSet)
+  {
+   payload.WithString("period", PeriodMapper::GetNameForPeriod(m_period));
   }
 
   if(m_groupByHasBeenSet)
@@ -45,22 +67,6 @@ Aws::String StartSessionsStatisticsAggregationRequest::SerializePayload() const
 
   }
 
-  if(m_periodHasBeenSet)
-  {
-   payload.WithString("period", PeriodMapper::GetNameForPeriod(m_period));
-  }
-
-  if(m_resourceIdsHasBeenSet)
-  {
-   payload.WithObject("resourceIds", m_resourceIds.Jsonize());
-
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_statisticsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> statisticsJsonList(m_statistics.size());
@@ -69,12 +75,6 @@ Aws::String StartSessionsStatisticsAggregationRequest::SerializePayload() const
      statisticsJsonList[statisticsIndex].AsString(UsageStatisticMapper::GetNameForUsageStatistic(m_statistics[statisticsIndex]));
    }
    payload.WithArray("statistics", std::move(statisticsJsonList));
-
-  }
-
-  if(m_timezoneHasBeenSet)
-  {
-   payload.WithString("timezone", m_timezone);
 
   }
 

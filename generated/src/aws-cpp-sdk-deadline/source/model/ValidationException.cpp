@@ -19,11 +19,11 @@ namespace Model
 {
 
 ValidationException::ValidationException() : 
-    m_contextHasBeenSet(false),
-    m_fieldListHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_reason(ValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_fieldListHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -35,26 +35,6 @@ ValidationException::ValidationException(JsonView jsonValue)
 
 ValidationException& ValidationException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("context"))
-  {
-    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("context").GetAllObjects();
-    for(auto& contextItem : contextJsonMap)
-    {
-      m_context[contextItem.first] = contextItem.second.AsString();
-    }
-    m_contextHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("fieldList"))
-  {
-    Aws::Utils::Array<JsonView> fieldListJsonList = jsonValue.GetArray("fieldList");
-    for(unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex)
-    {
-      m_fieldList.push_back(fieldListJsonList[fieldListIndex].AsObject());
-    }
-    m_fieldListHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
@@ -69,6 +49,26 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fieldList"))
+  {
+    Aws::Utils::Array<JsonView> fieldListJsonList = jsonValue.GetArray("fieldList");
+    for(unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex)
+    {
+      m_fieldList.push_back(fieldListJsonList[fieldListIndex].AsObject());
+    }
+    m_fieldListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("context"))
+  {
+    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("context").GetAllObjects();
+    for(auto& contextItem : contextJsonMap)
+    {
+      m_context[contextItem.first] = contextItem.second.AsString();
+    }
+    m_contextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,15 +76,15 @@ JsonValue ValidationException::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_contextHasBeenSet)
+  if(m_messageHasBeenSet)
   {
-   JsonValue contextJsonMap;
-   for(auto& contextItem : m_context)
-   {
-     contextJsonMap.WithString(contextItem.first, contextItem.second);
-   }
-   payload.WithObject("context", std::move(contextJsonMap));
+   payload.WithString("message", m_message);
 
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", ValidationExceptionReasonMapper::GetNameForValidationExceptionReason(m_reason));
   }
 
   if(m_fieldListHasBeenSet)
@@ -98,15 +98,15 @@ JsonValue ValidationException::Jsonize() const
 
   }
 
-  if(m_messageHasBeenSet)
+  if(m_contextHasBeenSet)
   {
-   payload.WithString("message", m_message);
+   JsonValue contextJsonMap;
+   for(auto& contextItem : m_context)
+   {
+     contextJsonMap.WithString(contextItem.first, contextItem.second);
+   }
+   payload.WithObject("context", std::move(contextJsonMap));
 
-  }
-
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", ValidationExceptionReasonMapper::GetNameForValidationExceptionReason(m_reason));
   }
 
   return payload;

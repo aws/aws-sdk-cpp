@@ -161,6 +161,22 @@ namespace Model
     inline Application& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
     inline Application& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Names of the associated AWS Systems Manager for SAP
+     * applications.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssociatedApplicationArns() const{ return m_associatedApplicationArns; }
+    inline bool AssociatedApplicationArnsHasBeenSet() const { return m_associatedApplicationArnsHasBeenSet; }
+    inline void SetAssociatedApplicationArns(const Aws::Vector<Aws::String>& value) { m_associatedApplicationArnsHasBeenSet = true; m_associatedApplicationArns = value; }
+    inline void SetAssociatedApplicationArns(Aws::Vector<Aws::String>&& value) { m_associatedApplicationArnsHasBeenSet = true; m_associatedApplicationArns = std::move(value); }
+    inline Application& WithAssociatedApplicationArns(const Aws::Vector<Aws::String>& value) { SetAssociatedApplicationArns(value); return *this;}
+    inline Application& WithAssociatedApplicationArns(Aws::Vector<Aws::String>&& value) { SetAssociatedApplicationArns(std::move(value)); return *this;}
+    inline Application& AddAssociatedApplicationArns(const Aws::String& value) { m_associatedApplicationArnsHasBeenSet = true; m_associatedApplicationArns.push_back(value); return *this; }
+    inline Application& AddAssociatedApplicationArns(Aws::String&& value) { m_associatedApplicationArnsHasBeenSet = true; m_associatedApplicationArns.push_back(std::move(value)); return *this; }
+    inline Application& AddAssociatedApplicationArns(const char* value) { m_associatedApplicationArnsHasBeenSet = true; m_associatedApplicationArns.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -189,6 +205,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_associatedApplicationArns;
+    bool m_associatedApplicationArnsHasBeenSet = false;
   };
 
 } // namespace Model

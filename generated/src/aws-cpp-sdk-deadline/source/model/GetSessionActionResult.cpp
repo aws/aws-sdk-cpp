@@ -18,9 +18,9 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetSessionActionResult::GetSessionActionResult() : 
-    m_processExitCode(0),
+    m_status(SessionActionStatus::NOT_SET),
     m_progressPercent(0.0),
-    m_status(SessionActionStatus::NOT_SET)
+    m_processExitCode(0)
 {
 }
 
@@ -33,15 +33,45 @@ GetSessionActionResult::GetSessionActionResult(const Aws::AmazonWebServiceResult
 GetSessionActionResult& GetSessionActionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("definition"))
+  if(jsonValue.ValueExists("sessionActionId"))
   {
-    m_definition = jsonValue.GetObject("definition");
+    m_sessionActionId = jsonValue.GetString("sessionActionId");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = SessionActionStatusMapper::GetSessionActionStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("startedAt"))
+  {
+    m_startedAt = jsonValue.GetString("startedAt");
 
   }
 
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
+
+  }
+
+  if(jsonValue.ValueExists("workerUpdatedAt"))
+  {
+    m_workerUpdatedAt = jsonValue.GetString("workerUpdatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("progressPercent"))
+  {
+    m_progressPercent = jsonValue.GetDouble("progressPercent");
+
+  }
+
+  if(jsonValue.ValueExists("sessionId"))
+  {
+    m_sessionId = jsonValue.GetString("sessionId");
 
   }
 
@@ -57,39 +87,9 @@ GetSessionActionResult& GetSessionActionResult::operator =(const Aws::AmazonWebS
 
   }
 
-  if(jsonValue.ValueExists("progressPercent"))
+  if(jsonValue.ValueExists("definition"))
   {
-    m_progressPercent = jsonValue.GetDouble("progressPercent");
-
-  }
-
-  if(jsonValue.ValueExists("sessionActionId"))
-  {
-    m_sessionActionId = jsonValue.GetString("sessionActionId");
-
-  }
-
-  if(jsonValue.ValueExists("sessionId"))
-  {
-    m_sessionId = jsonValue.GetString("sessionId");
-
-  }
-
-  if(jsonValue.ValueExists("startedAt"))
-  {
-    m_startedAt = jsonValue.GetString("startedAt");
-
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = SessionActionStatusMapper::GetSessionActionStatusForName(jsonValue.GetString("status"));
-
-  }
-
-  if(jsonValue.ValueExists("workerUpdatedAt"))
-  {
-    m_workerUpdatedAt = jsonValue.GetString("workerUpdatedAt");
+    m_definition = jsonValue.GetObject("definition");
 
   }
 

@@ -19,8 +19,8 @@ namespace Model
 {
 
 AssignedSessionAction::AssignedSessionAction() : 
-    m_definitionHasBeenSet(false),
-    m_sessionActionIdHasBeenSet(false)
+    m_sessionActionIdHasBeenSet(false),
+    m_definitionHasBeenSet(false)
 {
 }
 
@@ -32,18 +32,18 @@ AssignedSessionAction::AssignedSessionAction(JsonView jsonValue)
 
 AssignedSessionAction& AssignedSessionAction::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("definition"))
-  {
-    m_definition = jsonValue.GetObject("definition");
-
-    m_definitionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("sessionActionId"))
   {
     m_sessionActionId = jsonValue.GetString("sessionActionId");
 
     m_sessionActionIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("definition"))
+  {
+    m_definition = jsonValue.GetObject("definition");
+
+    m_definitionHasBeenSet = true;
   }
 
   return *this;
@@ -53,15 +53,15 @@ JsonValue AssignedSessionAction::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_definitionHasBeenSet)
-  {
-   payload.WithObject("definition", m_definition.Jsonize());
-
-  }
-
   if(m_sessionActionIdHasBeenSet)
   {
    payload.WithString("sessionActionId", m_sessionActionId);
+
+  }
+
+  if(m_definitionHasBeenSet)
+  {
+   payload.WithObject("definition", m_definition.Jsonize());
 
   }
 

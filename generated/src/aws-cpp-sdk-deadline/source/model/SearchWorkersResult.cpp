@@ -32,6 +32,15 @@ SearchWorkersResult::SearchWorkersResult(const Aws::AmazonWebServiceResult<JsonV
 SearchWorkersResult& SearchWorkersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("workers"))
+  {
+    Aws::Utils::Array<JsonView> workersJsonList = jsonValue.GetArray("workers");
+    for(unsigned workersIndex = 0; workersIndex < workersJsonList.GetLength(); ++workersIndex)
+    {
+      m_workers.push_back(workersJsonList[workersIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("nextItemOffset"))
   {
     m_nextItemOffset = jsonValue.GetInteger("nextItemOffset");
@@ -42,15 +51,6 @@ SearchWorkersResult& SearchWorkersResult::operator =(const Aws::AmazonWebService
   {
     m_totalResults = jsonValue.GetInteger("totalResults");
 
-  }
-
-  if(jsonValue.ValueExists("workers"))
-  {
-    Aws::Utils::Array<JsonView> workersJsonList = jsonValue.GetArray("workers");
-    for(unsigned workersIndex = 0; workersIndex < workersJsonList.GetLength(); ++workersIndex)
-    {
-      m_workers.push_back(workersJsonList[workersIndex].AsObject());
-    }
   }
 
 

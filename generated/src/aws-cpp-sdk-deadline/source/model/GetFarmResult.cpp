@@ -29,21 +29,9 @@ GetFarmResult::GetFarmResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 GetFarmResult& GetFarmResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("farmId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
-
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
+    m_farmId = jsonValue.GetString("farmId");
 
   }
 
@@ -53,15 +41,27 @@ GetFarmResult& GetFarmResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   }
 
-  if(jsonValue.ValueExists("farmId"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_farmId = jsonValue.GetString("farmId");
+    m_description = jsonValue.GetString("description");
 
   }
 
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
 
   }
 

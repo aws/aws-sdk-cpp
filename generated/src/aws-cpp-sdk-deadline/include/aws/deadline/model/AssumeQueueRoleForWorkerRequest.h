@@ -68,20 +68,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The queue ID of the worker assuming the queue role.</p>
-     */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline AssumeQueueRoleForWorkerRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline AssumeQueueRoleForWorkerRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline AssumeQueueRoleForWorkerRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The worker ID of the worker assuming the queue role.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
@@ -93,6 +79,20 @@ namespace Model
     inline AssumeQueueRoleForWorkerRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
     inline AssumeQueueRoleForWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The queue ID of the worker assuming the queue role.</p>
+     */
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
+    inline AssumeQueueRoleForWorkerRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline AssumeQueueRoleForWorkerRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline AssumeQueueRoleForWorkerRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_farmId;
@@ -101,11 +101,11 @@ namespace Model
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
-
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet = false;
+
+    Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
   };
 
 } // namespace Model

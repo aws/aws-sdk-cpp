@@ -14,21 +14,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateQueueRequest::UpdateQueueRequest() : 
-    m_allowedStorageProfileIdsToAddHasBeenSet(false),
-    m_allowedStorageProfileIdsToRemoveHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_farmIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_defaultBudgetAction(DefaultQueueBudgetAction::NOT_SET),
     m_defaultBudgetActionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
     m_jobAttachmentSettingsHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_jobRunAsUserHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
     m_requiredFileSystemLocationNamesToAddHasBeenSet(false),
     m_requiredFileSystemLocationNamesToRemoveHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_allowedStorageProfileIdsToAddHasBeenSet(false),
+    m_allowedStorageProfileIdsToRemoveHasBeenSet(false)
 {
 }
 
@@ -36,31 +36,10 @@ Aws::String UpdateQueueRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_allowedStorageProfileIdsToAddHasBeenSet)
+  if(m_displayNameHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> allowedStorageProfileIdsToAddJsonList(m_allowedStorageProfileIdsToAdd.size());
-   for(unsigned allowedStorageProfileIdsToAddIndex = 0; allowedStorageProfileIdsToAddIndex < allowedStorageProfileIdsToAddJsonList.GetLength(); ++allowedStorageProfileIdsToAddIndex)
-   {
-     allowedStorageProfileIdsToAddJsonList[allowedStorageProfileIdsToAddIndex].AsString(m_allowedStorageProfileIdsToAdd[allowedStorageProfileIdsToAddIndex]);
-   }
-   payload.WithArray("allowedStorageProfileIdsToAdd", std::move(allowedStorageProfileIdsToAddJsonList));
+   payload.WithString("displayName", m_displayName);
 
-  }
-
-  if(m_allowedStorageProfileIdsToRemoveHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedStorageProfileIdsToRemoveJsonList(m_allowedStorageProfileIdsToRemove.size());
-   for(unsigned allowedStorageProfileIdsToRemoveIndex = 0; allowedStorageProfileIdsToRemoveIndex < allowedStorageProfileIdsToRemoveJsonList.GetLength(); ++allowedStorageProfileIdsToRemoveIndex)
-   {
-     allowedStorageProfileIdsToRemoveJsonList[allowedStorageProfileIdsToRemoveIndex].AsString(m_allowedStorageProfileIdsToRemove[allowedStorageProfileIdsToRemoveIndex]);
-   }
-   payload.WithArray("allowedStorageProfileIdsToRemove", std::move(allowedStorageProfileIdsToRemoveJsonList));
-
-  }
-
-  if(m_defaultBudgetActionHasBeenSet)
-  {
-   payload.WithString("defaultBudgetAction", DefaultQueueBudgetActionMapper::GetNameForDefaultQueueBudgetAction(m_defaultBudgetAction));
   }
 
   if(m_descriptionHasBeenSet)
@@ -69,15 +48,20 @@ Aws::String UpdateQueueRequest::SerializePayload() const
 
   }
 
-  if(m_displayNameHasBeenSet)
+  if(m_defaultBudgetActionHasBeenSet)
   {
-   payload.WithString("displayName", m_displayName);
-
+   payload.WithString("defaultBudgetAction", DefaultQueueBudgetActionMapper::GetNameForDefaultQueueBudgetAction(m_defaultBudgetAction));
   }
 
   if(m_jobAttachmentSettingsHasBeenSet)
   {
    payload.WithObject("jobAttachmentSettings", m_jobAttachmentSettings.Jsonize());
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -109,9 +93,25 @@ Aws::String UpdateQueueRequest::SerializePayload() const
 
   }
 
-  if(m_roleArnHasBeenSet)
+  if(m_allowedStorageProfileIdsToAddHasBeenSet)
   {
-   payload.WithString("roleArn", m_roleArn);
+   Aws::Utils::Array<JsonValue> allowedStorageProfileIdsToAddJsonList(m_allowedStorageProfileIdsToAdd.size());
+   for(unsigned allowedStorageProfileIdsToAddIndex = 0; allowedStorageProfileIdsToAddIndex < allowedStorageProfileIdsToAddJsonList.GetLength(); ++allowedStorageProfileIdsToAddIndex)
+   {
+     allowedStorageProfileIdsToAddJsonList[allowedStorageProfileIdsToAddIndex].AsString(m_allowedStorageProfileIdsToAdd[allowedStorageProfileIdsToAddIndex]);
+   }
+   payload.WithArray("allowedStorageProfileIdsToAdd", std::move(allowedStorageProfileIdsToAddJsonList));
+
+  }
+
+  if(m_allowedStorageProfileIdsToRemoveHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowedStorageProfileIdsToRemoveJsonList(m_allowedStorageProfileIdsToRemove.size());
+   for(unsigned allowedStorageProfileIdsToRemoveIndex = 0; allowedStorageProfileIdsToRemoveIndex < allowedStorageProfileIdsToRemoveJsonList.GetLength(); ++allowedStorageProfileIdsToRemoveIndex)
+   {
+     allowedStorageProfileIdsToRemoveJsonList[allowedStorageProfileIdsToRemoveIndex].AsString(m_allowedStorageProfileIdsToRemove[allowedStorageProfileIdsToRemoveIndex]);
+   }
+   payload.WithArray("allowedStorageProfileIdsToRemove", std::move(allowedStorageProfileIdsToRemoveJsonList));
 
   }
 

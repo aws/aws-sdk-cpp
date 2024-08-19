@@ -19,8 +19,8 @@ namespace Model
 {
 
 JobAttachmentSettings::JobAttachmentSettings() : 
-    m_rootPrefixHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
+    m_s3BucketNameHasBeenSet(false),
+    m_rootPrefixHasBeenSet(false)
 {
 }
 
@@ -32,18 +32,18 @@ JobAttachmentSettings::JobAttachmentSettings(JsonView jsonValue)
 
 JobAttachmentSettings& JobAttachmentSettings::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("rootPrefix"))
-  {
-    m_rootPrefix = jsonValue.GetString("rootPrefix");
-
-    m_rootPrefixHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
 
     m_s3BucketNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rootPrefix"))
+  {
+    m_rootPrefix = jsonValue.GetString("rootPrefix");
+
+    m_rootPrefixHasBeenSet = true;
   }
 
   return *this;
@@ -53,15 +53,15 @@ JsonValue JobAttachmentSettings::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_rootPrefixHasBeenSet)
-  {
-   payload.WithString("rootPrefix", m_rootPrefix);
-
-  }
-
   if(m_s3BucketNameHasBeenSet)
   {
    payload.WithString("s3BucketName", m_s3BucketName);
+
+  }
+
+  if(m_rootPrefixHasBeenSet)
+  {
+   payload.WithString("rootPrefix", m_rootPrefix);
 
   }
 

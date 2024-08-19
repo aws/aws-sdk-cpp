@@ -29,12 +29,6 @@ ListTasksResult::ListTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 ListTasksResult& ListTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("tasks"))
   {
     Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
@@ -42,6 +36,12 @@ ListTasksResult& ListTasksResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

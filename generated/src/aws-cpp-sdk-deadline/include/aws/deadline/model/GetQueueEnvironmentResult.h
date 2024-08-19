@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/EnvironmentTemplateType.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -36,26 +36,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource was created.</p>
+     * <p>The queue environment ID.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetQueueEnvironmentResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetQueueEnvironmentResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The user or system that created this resource.&gt;</p>
-     */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetQueueEnvironmentResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetQueueEnvironmentResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetQueueEnvironmentResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetQueueEnvironmentId() const{ return m_queueEnvironmentId; }
+    inline void SetQueueEnvironmentId(const Aws::String& value) { m_queueEnvironmentId = value; }
+    inline void SetQueueEnvironmentId(Aws::String&& value) { m_queueEnvironmentId = std::move(value); }
+    inline void SetQueueEnvironmentId(const char* value) { m_queueEnvironmentId.assign(value); }
+    inline GetQueueEnvironmentResult& WithQueueEnvironmentId(const Aws::String& value) { SetQueueEnvironmentId(value); return *this;}
+    inline GetQueueEnvironmentResult& WithQueueEnvironmentId(Aws::String&& value) { SetQueueEnvironmentId(std::move(value)); return *this;}
+    inline GetQueueEnvironmentResult& WithQueueEnvironmentId(const char* value) { SetQueueEnvironmentId(value); return *this;}
     ///@}
 
     ///@{
@@ -82,15 +71,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The queue environment ID.</p>
+     * <p>The type of template for the queue environment.</p>
      */
-    inline const Aws::String& GetQueueEnvironmentId() const{ return m_queueEnvironmentId; }
-    inline void SetQueueEnvironmentId(const Aws::String& value) { m_queueEnvironmentId = value; }
-    inline void SetQueueEnvironmentId(Aws::String&& value) { m_queueEnvironmentId = std::move(value); }
-    inline void SetQueueEnvironmentId(const char* value) { m_queueEnvironmentId.assign(value); }
-    inline GetQueueEnvironmentResult& WithQueueEnvironmentId(const Aws::String& value) { SetQueueEnvironmentId(value); return *this;}
-    inline GetQueueEnvironmentResult& WithQueueEnvironmentId(Aws::String&& value) { SetQueueEnvironmentId(std::move(value)); return *this;}
-    inline GetQueueEnvironmentResult& WithQueueEnvironmentId(const char* value) { SetQueueEnvironmentId(value); return *this;}
+    inline const EnvironmentTemplateType& GetTemplateType() const{ return m_templateType; }
+    inline void SetTemplateType(const EnvironmentTemplateType& value) { m_templateType = value; }
+    inline void SetTemplateType(EnvironmentTemplateType&& value) { m_templateType = std::move(value); }
+    inline GetQueueEnvironmentResult& WithTemplateType(const EnvironmentTemplateType& value) { SetTemplateType(value); return *this;}
+    inline GetQueueEnvironmentResult& WithTemplateType(EnvironmentTemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,13 +95,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of template for the queue environment.</p>
+     * <p>The date and time the resource was created.</p>
      */
-    inline const EnvironmentTemplateType& GetTemplateType() const{ return m_templateType; }
-    inline void SetTemplateType(const EnvironmentTemplateType& value) { m_templateType = value; }
-    inline void SetTemplateType(EnvironmentTemplateType&& value) { m_templateType = std::move(value); }
-    inline GetQueueEnvironmentResult& WithTemplateType(const EnvironmentTemplateType& value) { SetTemplateType(value); return *this;}
-    inline GetQueueEnvironmentResult& WithTemplateType(EnvironmentTemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
+    inline GetQueueEnvironmentResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline GetQueueEnvironmentResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that created this resource.&gt;</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
+    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
+    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
+    inline GetQueueEnvironmentResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+    inline GetQueueEnvironmentResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline GetQueueEnvironmentResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
     ///@}
 
     ///@{
@@ -153,19 +153,19 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-
-    Aws::String m_createdBy;
+    Aws::String m_queueEnvironmentId;
 
     Aws::String m_name;
 
     int m_priority;
 
-    Aws::String m_queueEnvironmentId;
+    EnvironmentTemplateType m_templateType;
 
     Aws::String m_template;
 
-    EnvironmentTemplateType m_templateType;
+    Aws::Utils::DateTime m_createdAt;
+
+    Aws::String m_createdBy;
 
     Aws::Utils::DateTime m_updatedAt;
 

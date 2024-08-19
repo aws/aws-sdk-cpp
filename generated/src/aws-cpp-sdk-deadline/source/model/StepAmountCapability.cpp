@@ -19,11 +19,11 @@ namespace Model
 {
 
 StepAmountCapability::StepAmountCapability() : 
-    m_max(0.0),
-    m_maxHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_min(0.0),
     m_minHasBeenSet(false),
-    m_nameHasBeenSet(false),
+    m_max(0.0),
+    m_maxHasBeenSet(false),
     m_value(0.0),
     m_valueHasBeenSet(false)
 {
@@ -37,11 +37,11 @@ StepAmountCapability::StepAmountCapability(JsonView jsonValue)
 
 StepAmountCapability& StepAmountCapability::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("max"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_max = jsonValue.GetDouble("max");
+    m_name = jsonValue.GetString("name");
 
-    m_maxHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("min"))
@@ -51,11 +51,11 @@ StepAmountCapability& StepAmountCapability::operator =(JsonView jsonValue)
     m_minHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("max"))
   {
-    m_name = jsonValue.GetString("name");
+    m_max = jsonValue.GetDouble("max");
 
-    m_nameHasBeenSet = true;
+    m_maxHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("value"))
@@ -72,9 +72,9 @@ JsonValue StepAmountCapability::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_maxHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithDouble("max", m_max);
+   payload.WithString("name", m_name);
 
   }
 
@@ -84,9 +84,9 @@ JsonValue StepAmountCapability::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_maxHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithDouble("max", m_max);
 
   }
 

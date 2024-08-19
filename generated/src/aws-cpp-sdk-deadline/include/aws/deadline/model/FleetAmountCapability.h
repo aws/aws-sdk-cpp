@@ -39,12 +39,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum amount of the fleet worker capability.</p>
+     * <p>The name of the fleet capability.</p>
      */
-    inline double GetMax() const{ return m_max; }
-    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-    inline FleetAmountCapability& WithMax(double value) { SetMax(value); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline FleetAmountCapability& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline FleetAmountCapability& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline FleetAmountCapability& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -59,27 +63,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the fleet capability.</p>
+     * <p>The maximum amount of the fleet worker capability.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FleetAmountCapability& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FleetAmountCapability& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FleetAmountCapability& WithName(const char* value) { SetName(value); return *this;}
+    inline double GetMax() const{ return m_max; }
+    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
+    inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
+    inline FleetAmountCapability& WithMax(double value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    double m_max;
-    bool m_maxHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     double m_min;
     bool m_minHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    double m_max;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

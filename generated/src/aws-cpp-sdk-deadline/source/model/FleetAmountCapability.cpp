@@ -19,11 +19,11 @@ namespace Model
 {
 
 FleetAmountCapability::FleetAmountCapability() : 
-    m_max(0.0),
-    m_maxHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_min(0.0),
     m_minHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_max(0.0),
+    m_maxHasBeenSet(false)
 {
 }
 
@@ -35,11 +35,11 @@ FleetAmountCapability::FleetAmountCapability(JsonView jsonValue)
 
 FleetAmountCapability& FleetAmountCapability::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("max"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_max = jsonValue.GetDouble("max");
+    m_name = jsonValue.GetString("name");
 
-    m_maxHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("min"))
@@ -49,11 +49,11 @@ FleetAmountCapability& FleetAmountCapability::operator =(JsonView jsonValue)
     m_minHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("max"))
   {
-    m_name = jsonValue.GetString("name");
+    m_max = jsonValue.GetDouble("max");
 
-    m_nameHasBeenSet = true;
+    m_maxHasBeenSet = true;
   }
 
   return *this;
@@ -63,9 +63,9 @@ JsonValue FleetAmountCapability::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_maxHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithDouble("max", m_max);
+   payload.WithString("name", m_name);
 
   }
 
@@ -75,9 +75,9 @@ JsonValue FleetAmountCapability::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_maxHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithDouble("max", m_max);
 
   }
 

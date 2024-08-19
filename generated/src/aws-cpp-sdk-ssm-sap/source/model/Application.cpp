@@ -30,7 +30,8 @@ Application::Application() :
     m_discoveryStatusHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_associatedApplicationArnsHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,16 @@ Application& Application::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssociatedApplicationArns"))
+  {
+    Aws::Utils::Array<JsonView> associatedApplicationArnsJsonList = jsonValue.GetArray("AssociatedApplicationArns");
+    for(unsigned associatedApplicationArnsIndex = 0; associatedApplicationArnsIndex < associatedApplicationArnsJsonList.GetLength(); ++associatedApplicationArnsIndex)
+    {
+      m_associatedApplicationArns.push_back(associatedApplicationArnsJsonList[associatedApplicationArnsIndex].AsString());
+    }
+    m_associatedApplicationArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -167,6 +178,17 @@ JsonValue Application::Jsonize() const
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("StatusMessage", m_statusMessage);
+
+  }
+
+  if(m_associatedApplicationArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> associatedApplicationArnsJsonList(m_associatedApplicationArns.size());
+   for(unsigned associatedApplicationArnsIndex = 0; associatedApplicationArnsIndex < associatedApplicationArnsJsonList.GetLength(); ++associatedApplicationArnsIndex)
+   {
+     associatedApplicationArnsJsonList[associatedApplicationArnsIndex].AsString(m_associatedApplicationArns[associatedApplicationArnsIndex]);
+   }
+   payload.WithArray("AssociatedApplicationArns", std::move(associatedApplicationArnsJsonList));
 
   }
 

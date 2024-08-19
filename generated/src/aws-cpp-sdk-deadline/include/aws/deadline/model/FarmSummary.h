@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,50 @@ namespace Model
 
     ///@{
     /**
+     * <p>The farm ID.</p>
+     */
+    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
+    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
+    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
+    inline FarmSummary& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
+    inline FarmSummary& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
+    inline FarmSummary& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display name of the farm.</p>  <p>This field can store any
+     * content. Escape or encode this content before displaying it on a webpage or any
+     * other system that might interpret the content of this field.</p> 
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline FarmSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline FarmSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline FarmSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN for the KMS key.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
+    inline FarmSummary& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+    inline FarmSummary& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+    inline FarmSummary& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -62,48 +106,6 @@ namespace Model
     inline FarmSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
     inline FarmSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
     inline FarmSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The display name of the farm.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline FarmSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline FarmSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline FarmSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The farm ID.</p>
-     */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
-    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline FarmSummary& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline FarmSummary& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline FarmSummary& WithFarmId(const char* value) { SetFarmId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN for the KMS key.</p>
-     */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline FarmSummary& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline FarmSummary& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline FarmSummary& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
     ///@}
 
     ///@{
@@ -133,20 +135,20 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_farmId;
+    bool m_farmIdHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
-    Aws::String m_farmId;
-    bool m_farmIdHasBeenSet = false;
-
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

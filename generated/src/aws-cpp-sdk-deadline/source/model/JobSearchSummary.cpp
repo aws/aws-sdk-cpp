@@ -19,28 +19,28 @@ namespace Model
 {
 
 JobSearchSummary::JobSearchSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_jobParametersHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_lifecycleStatus(JobLifecycleStatus::NOT_SET),
     m_lifecycleStatusHasBeenSet(false),
     m_lifecycleStatusMessageHasBeenSet(false),
+    m_taskRunStatus(TaskRunStatus::NOT_SET),
+    m_taskRunStatusHasBeenSet(false),
+    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
+    m_targetTaskRunStatusHasBeenSet(false),
+    m_taskRunStatusCountsHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_maxFailedTasksCount(0),
     m_maxFailedTasksCountHasBeenSet(false),
     m_maxRetriesPerTask(0),
     m_maxRetriesPerTaskHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
+    m_createdByHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_endedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
-    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_taskRunStatus(TaskRunStatus::NOT_SET),
-    m_taskRunStatusHasBeenSet(false),
-    m_taskRunStatusCountsHasBeenSet(false)
+    m_jobParametersHasBeenSet(false)
 {
 }
 
@@ -52,27 +52,6 @@ JobSearchSummary::JobSearchSummary(JsonView jsonValue)
 
 JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
-
-    m_createdByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("endedAt"))
-  {
-    m_endedAt = jsonValue.GetString("endedAt");
-
-    m_endedAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
@@ -80,14 +59,18 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     m_jobIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("jobParameters"))
+  if(jsonValue.ValueExists("queueId"))
   {
-    Aws::Map<Aws::String, JsonView> jobParametersJsonMap = jsonValue.GetObject("jobParameters").GetAllObjects();
-    for(auto& jobParametersItem : jobParametersJsonMap)
-    {
-      m_jobParameters[jobParametersItem.first] = jobParametersItem.second.AsObject();
-    }
-    m_jobParametersHasBeenSet = true;
+    m_queueId = jsonValue.GetString("queueId");
+
+    m_queueIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lifecycleStatus"))
@@ -104,6 +87,37 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     m_lifecycleStatusMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taskRunStatus"))
+  {
+    m_taskRunStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("taskRunStatus"));
+
+    m_taskRunStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetTaskRunStatus"))
+  {
+    m_targetTaskRunStatus = JobTargetTaskRunStatusMapper::GetJobTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
+
+    m_targetTaskRunStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("taskRunStatusCounts"))
+  {
+    Aws::Map<Aws::String, JsonView> taskRunStatusCountsJsonMap = jsonValue.GetObject("taskRunStatusCounts").GetAllObjects();
+    for(auto& taskRunStatusCountsItem : taskRunStatusCountsJsonMap)
+    {
+      m_taskRunStatusCounts[TaskRunStatusMapper::GetTaskRunStatusForName(taskRunStatusCountsItem.first)] = taskRunStatusCountsItem.second.AsInteger();
+    }
+    m_taskRunStatusCountsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("priority"))
+  {
+    m_priority = jsonValue.GetInteger("priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("maxFailedTasksCount"))
   {
     m_maxFailedTasksCount = jsonValue.GetInteger("maxFailedTasksCount");
@@ -118,25 +132,25 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     m_maxRetriesPerTaskHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("createdBy"))
   {
-    m_name = jsonValue.GetString("name");
+    m_createdBy = jsonValue.GetString("createdBy");
 
-    m_nameHasBeenSet = true;
+    m_createdByHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("priority"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_priority = jsonValue.GetInteger("priority");
+    m_createdAt = jsonValue.GetString("createdAt");
 
-    m_priorityHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("queueId"))
+  if(jsonValue.ValueExists("endedAt"))
   {
-    m_queueId = jsonValue.GetString("queueId");
+    m_endedAt = jsonValue.GetString("endedAt");
 
-    m_queueIdHasBeenSet = true;
+    m_endedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startedAt"))
@@ -146,28 +160,14 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     m_startedAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("targetTaskRunStatus"))
+  if(jsonValue.ValueExists("jobParameters"))
   {
-    m_targetTaskRunStatus = JobTargetTaskRunStatusMapper::GetJobTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
-
-    m_targetTaskRunStatusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("taskRunStatus"))
-  {
-    m_taskRunStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("taskRunStatus"));
-
-    m_taskRunStatusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("taskRunStatusCounts"))
-  {
-    Aws::Map<Aws::String, JsonView> taskRunStatusCountsJsonMap = jsonValue.GetObject("taskRunStatusCounts").GetAllObjects();
-    for(auto& taskRunStatusCountsItem : taskRunStatusCountsJsonMap)
+    Aws::Map<Aws::String, JsonView> jobParametersJsonMap = jsonValue.GetObject("jobParameters").GetAllObjects();
+    for(auto& jobParametersItem : jobParametersJsonMap)
     {
-      m_taskRunStatusCounts[TaskRunStatusMapper::GetTaskRunStatusForName(taskRunStatusCountsItem.first)] = taskRunStatusCountsItem.second.AsInteger();
+      m_jobParameters[jobParametersItem.first] = jobParametersItem.second.AsObject();
     }
-    m_taskRunStatusCountsHasBeenSet = true;
+    m_jobParametersHasBeenSet = true;
   }
 
   return *this;
@@ -177,36 +177,21 @@ JsonValue JobSearchSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
-
-  }
-
-  if(m_endedAtHasBeenSet)
-  {
-   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_jobIdHasBeenSet)
   {
    payload.WithString("jobId", m_jobId);
 
   }
 
-  if(m_jobParametersHasBeenSet)
+  if(m_queueIdHasBeenSet)
   {
-   JsonValue jobParametersJsonMap;
-   for(auto& jobParametersItem : m_jobParameters)
-   {
-     jobParametersJsonMap.WithObject(jobParametersItem.first, jobParametersItem.second.Jsonize());
-   }
-   payload.WithObject("jobParameters", std::move(jobParametersJsonMap));
+   payload.WithString("queueId", m_queueId);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
 
   }
 
@@ -218,6 +203,33 @@ JsonValue JobSearchSummary::Jsonize() const
   if(m_lifecycleStatusMessageHasBeenSet)
   {
    payload.WithString("lifecycleStatusMessage", m_lifecycleStatusMessage);
+
+  }
+
+  if(m_taskRunStatusHasBeenSet)
+  {
+   payload.WithString("taskRunStatus", TaskRunStatusMapper::GetNameForTaskRunStatus(m_taskRunStatus));
+  }
+
+  if(m_targetTaskRunStatusHasBeenSet)
+  {
+   payload.WithString("targetTaskRunStatus", JobTargetTaskRunStatusMapper::GetNameForJobTargetTaskRunStatus(m_targetTaskRunStatus));
+  }
+
+  if(m_taskRunStatusCountsHasBeenSet)
+  {
+   JsonValue taskRunStatusCountsJsonMap;
+   for(auto& taskRunStatusCountsItem : m_taskRunStatusCounts)
+   {
+     taskRunStatusCountsJsonMap.WithInteger(TaskRunStatusMapper::GetNameForTaskRunStatus(taskRunStatusCountsItem.first), taskRunStatusCountsItem.second);
+   }
+   payload.WithObject("taskRunStatusCounts", std::move(taskRunStatusCountsJsonMap));
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 
@@ -233,22 +245,20 @@ JsonValue JobSearchSummary::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_createdByHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("createdBy", m_createdBy);
 
   }
 
-  if(m_priorityHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithInteger("priority", m_priority);
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_queueIdHasBeenSet)
+  if(m_endedAtHasBeenSet)
   {
-   payload.WithString("queueId", m_queueId);
-
+   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_startedAtHasBeenSet)
@@ -256,24 +266,14 @@ JsonValue JobSearchSummary::Jsonize() const
    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_targetTaskRunStatusHasBeenSet)
+  if(m_jobParametersHasBeenSet)
   {
-   payload.WithString("targetTaskRunStatus", JobTargetTaskRunStatusMapper::GetNameForJobTargetTaskRunStatus(m_targetTaskRunStatus));
-  }
-
-  if(m_taskRunStatusHasBeenSet)
-  {
-   payload.WithString("taskRunStatus", TaskRunStatusMapper::GetNameForTaskRunStatus(m_taskRunStatus));
-  }
-
-  if(m_taskRunStatusCountsHasBeenSet)
-  {
-   JsonValue taskRunStatusCountsJsonMap;
-   for(auto& taskRunStatusCountsItem : m_taskRunStatusCounts)
+   JsonValue jobParametersJsonMap;
+   for(auto& jobParametersItem : m_jobParameters)
    {
-     taskRunStatusCountsJsonMap.WithInteger(TaskRunStatusMapper::GetNameForTaskRunStatus(taskRunStatusCountsItem.first), taskRunStatusCountsItem.second);
+     jobParametersJsonMap.WithObject(jobParametersItem.first, jobParametersItem.second.Jsonize());
    }
-   payload.WithObject("taskRunStatusCounts", std::move(taskRunStatusCountsJsonMap));
+   payload.WithObject("jobParameters", std::move(jobParametersJsonMap));
 
   }
 

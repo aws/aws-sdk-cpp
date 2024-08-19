@@ -67,12 +67,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The priority to update.</p>
+     * <p>The queue ID of the queue environment to update.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
-    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-    inline UpdateQueueEnvironmentRequest& WithPriority(int value) { SetPriority(value); return *this;}
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
+    inline UpdateQueueEnvironmentRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline UpdateQueueEnvironmentRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline UpdateQueueEnvironmentRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
     ///@}
 
     ///@{
@@ -91,16 +95,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The queue ID of the queue environment to update.</p>
+     * <p>The priority to update.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline UpdateQueueEnvironmentRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline UpdateQueueEnvironmentRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline UpdateQueueEnvironmentRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    inline int GetPriority() const{ return m_priority; }
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+    inline UpdateQueueEnvironmentRequest& WithPriority(int value) { SetPriority(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The template type to update.</p>
+     */
+    inline const EnvironmentTemplateType& GetTemplateType() const{ return m_templateType; }
+    inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
+    inline void SetTemplateType(const EnvironmentTemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
+    inline void SetTemplateType(EnvironmentTemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
+    inline UpdateQueueEnvironmentRequest& WithTemplateType(const EnvironmentTemplateType& value) { SetTemplateType(value); return *this;}
+    inline UpdateQueueEnvironmentRequest& WithTemplateType(EnvironmentTemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,18 +128,6 @@ namespace Model
     inline UpdateQueueEnvironmentRequest& WithTemplate(Aws::String&& value) { SetTemplate(std::move(value)); return *this;}
     inline UpdateQueueEnvironmentRequest& WithTemplate(const char* value) { SetTemplate(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The template type to update.</p>
-     */
-    inline const EnvironmentTemplateType& GetTemplateType() const{ return m_templateType; }
-    inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(const EnvironmentTemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline void SetTemplateType(EnvironmentTemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-    inline UpdateQueueEnvironmentRequest& WithTemplateType(const EnvironmentTemplateType& value) { SetTemplateType(value); return *this;}
-    inline UpdateQueueEnvironmentRequest& WithTemplateType(EnvironmentTemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_clientToken;
@@ -136,20 +136,20 @@ namespace Model
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    int m_priority;
-    bool m_priorityHasBeenSet = false;
+    Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::String m_queueEnvironmentId;
     bool m_queueEnvironmentIdHasBeenSet = false;
 
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
-
-    Aws::String m_template;
-    bool m_templateHasBeenSet = false;
+    int m_priority;
+    bool m_priorityHasBeenSet = false;
 
     EnvironmentTemplateType m_templateType;
     bool m_templateTypeHasBeenSet = false;
+
+    Aws::String m_template;
+    bool m_templateHasBeenSet = false;
   };
 
 } // namespace Model

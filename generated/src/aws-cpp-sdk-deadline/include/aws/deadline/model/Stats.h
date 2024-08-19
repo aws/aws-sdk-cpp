@@ -37,12 +37,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The average of the usage statistics.</p>
+     * <p>The minimum of the usage statistics.</p>
      */
-    inline double GetAvg() const{ return m_avg; }
-    inline bool AvgHasBeenSet() const { return m_avgHasBeenSet; }
-    inline void SetAvg(double value) { m_avgHasBeenSet = true; m_avg = value; }
-    inline Stats& WithAvg(double value) { SetAvg(value); return *this;}
+    inline double GetMin() const{ return m_min; }
+    inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
+    inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
+    inline Stats& WithMin(double value) { SetMin(value); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum of the usage statistics.</p>
+     * <p>The average of the usage statistics.</p>
      */
-    inline double GetMin() const{ return m_min; }
-    inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-    inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
-    inline Stats& WithMin(double value) { SetMin(value); return *this;}
+    inline double GetAvg() const{ return m_avg; }
+    inline bool AvgHasBeenSet() const { return m_avgHasBeenSet; }
+    inline void SetAvg(double value) { m_avgHasBeenSet = true; m_avg = value; }
+    inline Stats& WithAvg(double value) { SetAvg(value); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +76,14 @@ namespace Model
     ///@}
   private:
 
-    double m_avg;
-    bool m_avgHasBeenSet = false;
+    double m_min;
+    bool m_minHasBeenSet = false;
 
     double m_max;
     bool m_maxHasBeenSet = false;
 
-    double m_min;
-    bool m_minHasBeenSet = false;
+    double m_avg;
+    bool m_avgHasBeenSet = false;
 
     double m_sum;
     bool m_sumHasBeenSet = false;

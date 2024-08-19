@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/deadline/model/BudgetStatus.h>
 #include <aws/deadline/model/UsageTrackingResource.h>
+#include <aws/deadline/model/BudgetStatus.h>
 #include <aws/deadline/model/ConsumedUsages.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -43,16 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The approximate dollar limit of the budget.</p>
-     */
-    inline double GetApproximateDollarLimit() const{ return m_approximateDollarLimit; }
-    inline bool ApproximateDollarLimitHasBeenSet() const { return m_approximateDollarLimitHasBeenSet; }
-    inline void SetApproximateDollarLimit(double value) { m_approximateDollarLimitHasBeenSet = true; m_approximateDollarLimit = value; }
-    inline BudgetSummary& WithApproximateDollarLimit(double value) { SetApproximateDollarLimit(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The budget ID.</p>
      */
     inline const Aws::String& GetBudgetId() const{ return m_budgetId; }
@@ -67,56 +57,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource was created.</p>
+     * <p>The resource used to track expenditure in the budget.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline BudgetSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline BudgetSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The user or system that created this resource.</p>
-     */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline BudgetSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline BudgetSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline BudgetSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the budget summary.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline BudgetSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline BudgetSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline BudgetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The display name of the budget summary to update.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline BudgetSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline BudgetSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline BudgetSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline const UsageTrackingResource& GetUsageTrackingResource() const{ return m_usageTrackingResource; }
+    inline bool UsageTrackingResourceHasBeenSet() const { return m_usageTrackingResourceHasBeenSet; }
+    inline void SetUsageTrackingResource(const UsageTrackingResource& value) { m_usageTrackingResourceHasBeenSet = true; m_usageTrackingResource = value; }
+    inline void SetUsageTrackingResource(UsageTrackingResource&& value) { m_usageTrackingResourceHasBeenSet = true; m_usageTrackingResource = std::move(value); }
+    inline BudgetSummary& WithUsageTrackingResource(const UsageTrackingResource& value) { SetUsageTrackingResource(value); return *this;}
+    inline BudgetSummary& WithUsageTrackingResource(UsageTrackingResource&& value) { SetUsageTrackingResource(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +84,67 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource was updated.</p>
+     * <p>The display name of the budget summary to update.</p>  <p>This
+     * field can store any content. Escape or encode this content before displaying it
+     * on a webpage or any other system that might interpret the content of this
+     * field.</p> 
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline BudgetSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline BudgetSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline BudgetSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline BudgetSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline BudgetSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The approximate dollar limit of the budget.</p>
+     */
+    inline double GetApproximateDollarLimit() const{ return m_approximateDollarLimit; }
+    inline bool ApproximateDollarLimitHasBeenSet() const { return m_approximateDollarLimitHasBeenSet; }
+    inline void SetApproximateDollarLimit(double value) { m_approximateDollarLimitHasBeenSet = true; m_approximateDollarLimit = value; }
+    inline BudgetSummary& WithApproximateDollarLimit(double value) { SetApproximateDollarLimit(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The consumed usage for the budget.</p>
+     */
+    inline const ConsumedUsages& GetUsages() const{ return m_usages; }
+    inline bool UsagesHasBeenSet() const { return m_usagesHasBeenSet; }
+    inline void SetUsages(const ConsumedUsages& value) { m_usagesHasBeenSet = true; m_usages = value; }
+    inline void SetUsages(ConsumedUsages&& value) { m_usagesHasBeenSet = true; m_usages = std::move(value); }
+    inline BudgetSummary& WithUsages(const ConsumedUsages& value) { SetUsages(value); return *this;}
+    inline BudgetSummary& WithUsages(ConsumedUsages&& value) { SetUsages(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that created this resource.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
+    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
+    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
+    inline BudgetSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+    inline BudgetSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline BudgetSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+    inline BudgetSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline BudgetSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,61 +163,46 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource used to track expenditure in the budget.</p>
+     * <p>The date and time the resource was updated.</p>
      */
-    inline const UsageTrackingResource& GetUsageTrackingResource() const{ return m_usageTrackingResource; }
-    inline bool UsageTrackingResourceHasBeenSet() const { return m_usageTrackingResourceHasBeenSet; }
-    inline void SetUsageTrackingResource(const UsageTrackingResource& value) { m_usageTrackingResourceHasBeenSet = true; m_usageTrackingResource = value; }
-    inline void SetUsageTrackingResource(UsageTrackingResource&& value) { m_usageTrackingResourceHasBeenSet = true; m_usageTrackingResource = std::move(value); }
-    inline BudgetSummary& WithUsageTrackingResource(const UsageTrackingResource& value) { SetUsageTrackingResource(value); return *this;}
-    inline BudgetSummary& WithUsageTrackingResource(UsageTrackingResource&& value) { SetUsageTrackingResource(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The consumed usage for the budget.</p>
-     */
-    inline const ConsumedUsages& GetUsages() const{ return m_usages; }
-    inline bool UsagesHasBeenSet() const { return m_usagesHasBeenSet; }
-    inline void SetUsages(const ConsumedUsages& value) { m_usagesHasBeenSet = true; m_usages = value; }
-    inline void SetUsages(ConsumedUsages&& value) { m_usagesHasBeenSet = true; m_usages = std::move(value); }
-    inline BudgetSummary& WithUsages(const ConsumedUsages& value) { SetUsages(value); return *this;}
-    inline BudgetSummary& WithUsages(ConsumedUsages&& value) { SetUsages(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
+    inline BudgetSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+    inline BudgetSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
     ///@}
   private:
-
-    double m_approximateDollarLimit;
-    bool m_approximateDollarLimitHasBeenSet = false;
 
     Aws::String m_budgetId;
     bool m_budgetIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
+    UsageTrackingResource m_usageTrackingResource;
+    bool m_usageTrackingResourceHasBeenSet = false;
 
     BudgetStatus m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet = false;
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    double m_approximateDollarLimit;
+    bool m_approximateDollarLimitHasBeenSet = false;
+
+    ConsumedUsages m_usages;
+    bool m_usagesHasBeenSet = false;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet = false;
 
-    UsageTrackingResource m_usageTrackingResource;
-    bool m_usageTrackingResourceHasBeenSet = false;
-
-    ConsumedUsages m_usages;
-    bool m_usagesHasBeenSet = false;
+    Aws::Utils::DateTime m_updatedAt;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/deadline/model/TaskRunStatus.h>
 #include <aws/deadline/model/TaskTargetRunStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/deadline/model/TaskParameterValue.h>
 #include <utility>
 
@@ -44,6 +44,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The task ID.</p>
+     */
+    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
+    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
+    inline TaskSummary& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
+    inline TaskSummary& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
+    inline TaskSummary& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -70,14 +84,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource ended running.</p>
+     * <p>The run status of the task.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
-    inline TaskSummary& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline TaskSummary& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    inline const TaskRunStatus& GetRunStatus() const{ return m_runStatus; }
+    inline bool RunStatusHasBeenSet() const { return m_runStatusHasBeenSet; }
+    inline void SetRunStatus(const TaskRunStatus& value) { m_runStatusHasBeenSet = true; m_runStatus = value; }
+    inline void SetRunStatus(TaskRunStatus&& value) { m_runStatusHasBeenSet = true; m_runStatus = std::move(value); }
+    inline TaskSummary& WithRunStatus(const TaskRunStatus& value) { SetRunStatus(value); return *this;}
+    inline TaskSummary& WithRunStatus(TaskRunStatus&& value) { SetRunStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The run status on which the started.</p>
+     */
+    inline const TaskTargetRunStatus& GetTargetRunStatus() const{ return m_targetRunStatus; }
+    inline bool TargetRunStatusHasBeenSet() const { return m_targetRunStatusHasBeenSet; }
+    inline void SetTargetRunStatus(const TaskTargetRunStatus& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = value; }
+    inline void SetTargetRunStatus(TaskTargetRunStatus&& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = std::move(value); }
+    inline TaskSummary& WithTargetRunStatus(const TaskTargetRunStatus& value) { SetTargetRunStatus(value); return *this;}
+    inline TaskSummary& WithTargetRunStatus(TaskTargetRunStatus&& value) { SetTargetRunStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,20 +114,6 @@ namespace Model
     inline bool FailureRetryCountHasBeenSet() const { return m_failureRetryCountHasBeenSet; }
     inline void SetFailureRetryCount(int value) { m_failureRetryCountHasBeenSet = true; m_failureRetryCount = value; }
     inline TaskSummary& WithFailureRetryCount(int value) { SetFailureRetryCount(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The latest session action for the task.</p>
-     */
-    inline const Aws::String& GetLatestSessionActionId() const{ return m_latestSessionActionId; }
-    inline bool LatestSessionActionIdHasBeenSet() const { return m_latestSessionActionIdHasBeenSet; }
-    inline void SetLatestSessionActionId(const Aws::String& value) { m_latestSessionActionIdHasBeenSet = true; m_latestSessionActionId = value; }
-    inline void SetLatestSessionActionId(Aws::String&& value) { m_latestSessionActionIdHasBeenSet = true; m_latestSessionActionId = std::move(value); }
-    inline void SetLatestSessionActionId(const char* value) { m_latestSessionActionIdHasBeenSet = true; m_latestSessionActionId.assign(value); }
-    inline TaskSummary& WithLatestSessionActionId(const Aws::String& value) { SetLatestSessionActionId(value); return *this;}
-    inline TaskSummary& WithLatestSessionActionId(Aws::String&& value) { SetLatestSessionActionId(std::move(value)); return *this;}
-    inline TaskSummary& WithLatestSessionActionId(const char* value) { SetLatestSessionActionId(value); return *this;}
     ///@}
 
     ///@{
@@ -124,18 +136,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The run status of the task.</p>
-     */
-    inline const TaskRunStatus& GetRunStatus() const{ return m_runStatus; }
-    inline bool RunStatusHasBeenSet() const { return m_runStatusHasBeenSet; }
-    inline void SetRunStatus(const TaskRunStatus& value) { m_runStatusHasBeenSet = true; m_runStatus = value; }
-    inline void SetRunStatus(TaskRunStatus&& value) { m_runStatusHasBeenSet = true; m_runStatus = std::move(value); }
-    inline TaskSummary& WithRunStatus(const TaskRunStatus& value) { SetRunStatus(value); return *this;}
-    inline TaskSummary& WithRunStatus(TaskRunStatus&& value) { SetRunStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The date and time the resource started running.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
@@ -148,28 +148,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The run status on which the started.</p>
+     * <p>The date and time the resource ended running.</p>
      */
-    inline const TaskTargetRunStatus& GetTargetRunStatus() const{ return m_targetRunStatus; }
-    inline bool TargetRunStatusHasBeenSet() const { return m_targetRunStatusHasBeenSet; }
-    inline void SetTargetRunStatus(const TaskTargetRunStatus& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = value; }
-    inline void SetTargetRunStatus(TaskTargetRunStatus&& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = std::move(value); }
-    inline TaskSummary& WithTargetRunStatus(const TaskTargetRunStatus& value) { SetTargetRunStatus(value); return *this;}
-    inline TaskSummary& WithTargetRunStatus(TaskTargetRunStatus&& value) { SetTargetRunStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The task ID.</p>
-     */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
-    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline TaskSummary& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline TaskSummary& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline TaskSummary& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
+    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
+    inline TaskSummary& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
+    inline TaskSummary& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,7 +183,24 @@ namespace Model
     inline TaskSummary& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
     inline TaskSummary& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The latest session action for the task.</p>
+     */
+    inline const Aws::String& GetLatestSessionActionId() const{ return m_latestSessionActionId; }
+    inline bool LatestSessionActionIdHasBeenSet() const { return m_latestSessionActionIdHasBeenSet; }
+    inline void SetLatestSessionActionId(const Aws::String& value) { m_latestSessionActionIdHasBeenSet = true; m_latestSessionActionId = value; }
+    inline void SetLatestSessionActionId(Aws::String&& value) { m_latestSessionActionIdHasBeenSet = true; m_latestSessionActionId = std::move(value); }
+    inline void SetLatestSessionActionId(const char* value) { m_latestSessionActionIdHasBeenSet = true; m_latestSessionActionId.assign(value); }
+    inline TaskSummary& WithLatestSessionActionId(const Aws::String& value) { SetLatestSessionActionId(value); return *this;}
+    inline TaskSummary& WithLatestSessionActionId(Aws::String&& value) { SetLatestSessionActionId(std::move(value)); return *this;}
+    inline TaskSummary& WithLatestSessionActionId(const char* value) { SetLatestSessionActionId(value); return *this;}
+    ///@}
   private:
+
+    Aws::String m_taskId;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
@@ -205,35 +208,32 @@ namespace Model
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet = false;
-
-    int m_failureRetryCount;
-    bool m_failureRetryCountHasBeenSet = false;
-
-    Aws::String m_latestSessionActionId;
-    bool m_latestSessionActionIdHasBeenSet = false;
-
-    Aws::Map<Aws::String, TaskParameterValue> m_parameters;
-    bool m_parametersHasBeenSet = false;
-
     TaskRunStatus m_runStatus;
     bool m_runStatusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet = false;
 
     TaskTargetRunStatus m_targetRunStatus;
     bool m_targetRunStatusHasBeenSet = false;
 
-    Aws::String m_taskId;
-    bool m_taskIdHasBeenSet = false;
+    int m_failureRetryCount;
+    bool m_failureRetryCountHasBeenSet = false;
+
+    Aws::Map<Aws::String, TaskParameterValue> m_parameters;
+    bool m_parametersHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startedAt;
+    bool m_startedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endedAt;
+    bool m_endedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet = false;
+
+    Aws::String m_latestSessionActionId;
+    bool m_latestSessionActionIdHasBeenSet = false;
   };
 
 } // namespace Model

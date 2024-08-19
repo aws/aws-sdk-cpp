@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/SessionSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The sessions on the list.</p>
+     */
+    inline const Aws::Vector<SessionSummary>& GetSessions() const{ return m_sessions; }
+    inline void SetSessions(const Aws::Vector<SessionSummary>& value) { m_sessions = value; }
+    inline void SetSessions(Aws::Vector<SessionSummary>&& value) { m_sessions = std::move(value); }
+    inline ListSessionsResult& WithSessions(const Aws::Vector<SessionSummary>& value) { SetSessions(value); return *this;}
+    inline ListSessionsResult& WithSessions(Aws::Vector<SessionSummary>&& value) { SetSessions(std::move(value)); return *this;}
+    inline ListSessionsResult& AddSessions(const SessionSummary& value) { m_sessions.push_back(value); return *this; }
+    inline ListSessionsResult& AddSessions(SessionSummary&& value) { m_sessions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -54,19 +67,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The sessions on the list.</p>
-     */
-    inline const Aws::Vector<SessionSummary>& GetSessions() const{ return m_sessions; }
-    inline void SetSessions(const Aws::Vector<SessionSummary>& value) { m_sessions = value; }
-    inline void SetSessions(Aws::Vector<SessionSummary>&& value) { m_sessions = std::move(value); }
-    inline ListSessionsResult& WithSessions(const Aws::Vector<SessionSummary>& value) { SetSessions(value); return *this;}
-    inline ListSessionsResult& WithSessions(Aws::Vector<SessionSummary>&& value) { SetSessions(std::move(value)); return *this;}
-    inline ListSessionsResult& AddSessions(const SessionSummary& value) { m_sessions.push_back(value); return *this; }
-    inline ListSessionsResult& AddSessions(SessionSummary&& value) { m_sessions.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<SessionSummary> m_sessions;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

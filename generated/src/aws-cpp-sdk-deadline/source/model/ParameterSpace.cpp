@@ -19,8 +19,8 @@ namespace Model
 {
 
 ParameterSpace::ParameterSpace() : 
-    m_combinationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_combinationHasBeenSet(false)
 {
 }
 
@@ -32,13 +32,6 @@ ParameterSpace::ParameterSpace(JsonView jsonValue)
 
 ParameterSpace& ParameterSpace::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("combination"))
-  {
-    m_combination = jsonValue.GetString("combination");
-
-    m_combinationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -49,18 +42,19 @@ ParameterSpace& ParameterSpace::operator =(JsonView jsonValue)
     m_parametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("combination"))
+  {
+    m_combination = jsonValue.GetString("combination");
+
+    m_combinationHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ParameterSpace::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_combinationHasBeenSet)
-  {
-   payload.WithString("combination", m_combination);
-
-  }
 
   if(m_parametersHasBeenSet)
   {
@@ -70,6 +64,12 @@ JsonValue ParameterSpace::Jsonize() const
      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
    }
    payload.WithArray("parameters", std::move(parametersJsonList));
+
+  }
+
+  if(m_combinationHasBeenSet)
+  {
+   payload.WithString("combination", m_combination);
 
   }
 

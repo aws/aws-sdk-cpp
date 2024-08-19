@@ -36,16 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The next incremental starting point after the defined
-     * <code>itemOffset</code>.</p>
-     */
-    inline int GetNextItemOffset() const{ return m_nextItemOffset; }
-    inline void SetNextItemOffset(int value) { m_nextItemOffset = value; }
-    inline SearchStepsResult& WithNextItemOffset(int value) { SetNextItemOffset(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The steps in the search.</p>
      */
     inline const Aws::Vector<StepSearchSummary>& GetSteps() const{ return m_steps; }
@@ -55,6 +45,16 @@ namespace Model
     inline SearchStepsResult& WithSteps(Aws::Vector<StepSearchSummary>&& value) { SetSteps(std::move(value)); return *this;}
     inline SearchStepsResult& AddSteps(const StepSearchSummary& value) { m_steps.push_back(value); return *this; }
     inline SearchStepsResult& AddSteps(StepSearchSummary&& value) { m_steps.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The next incremental starting point after the defined
+     * <code>itemOffset</code>.</p>
+     */
+    inline int GetNextItemOffset() const{ return m_nextItemOffset; }
+    inline void SetNextItemOffset(int value) { m_nextItemOffset = value; }
+    inline SearchStepsResult& WithNextItemOffset(int value) { SetNextItemOffset(value); return *this;}
     ///@}
 
     ///@{
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    int m_nextItemOffset;
-
     Aws::Vector<StepSearchSummary> m_steps;
+
+    int m_nextItemOffset;
 
     int m_totalResults;
 

@@ -13,19 +13,24 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateWorkerRequest::UpdateWorkerRequest() : 
-    m_capabilitiesHasBeenSet(false),
     m_farmIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
+    m_workerIdHasBeenSet(false),
     m_status(UpdatedWorkerStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+    m_capabilitiesHasBeenSet(false),
+    m_hostPropertiesHasBeenSet(false)
 {
 }
 
 Aws::String UpdateWorkerRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", UpdatedWorkerStatusMapper::GetNameForUpdatedWorkerStatus(m_status));
+  }
 
   if(m_capabilitiesHasBeenSet)
   {
@@ -37,11 +42,6 @@ Aws::String UpdateWorkerRequest::SerializePayload() const
   {
    payload.WithObject("hostProperties", m_hostProperties.Jsonize());
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", UpdatedWorkerStatusMapper::GetNameForUpdatedWorkerStatus(m_status));
   }
 
   return payload.View().WriteReadable();

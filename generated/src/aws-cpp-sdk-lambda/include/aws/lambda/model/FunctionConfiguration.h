@@ -87,11 +87,17 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-     * Runtime is required if the deployment package is a .zip file archive.</p> <p>The
-     * following list includes deprecated runtimes. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-     * deprecation policy</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">
+     * runtime</a>. Runtime is required if the deployment package is a .zip file
+     * archive. Specifying a runtime results in an error if you're deploying a function
+     * using a container image.</p> <p>The following list includes deprecated runtimes.
+     * Lambda blocks creating new functions and updating existing functions shortly
+     * after each runtime is deprecated. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime
+     * use after deprecation</a>.</p> <p>For a list of all currently supported
+     * runtimes, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported
+     * runtimes</a>.</p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }

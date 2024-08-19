@@ -17,18 +17,18 @@ UpdateJobRequest::UpdateJobRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_farmIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_lifecycleStatus(UpdateJobLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
+    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
+    m_targetTaskRunStatusHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_maxFailedTasksCount(0),
     m_maxFailedTasksCountHasBeenSet(false),
     m_maxRetriesPerTask(0),
     m_maxRetriesPerTaskHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false)
+    m_lifecycleStatus(UpdateJobLifecycleStatus::NOT_SET),
+    m_lifecycleStatusHasBeenSet(false)
 {
 }
 
@@ -36,9 +36,15 @@ Aws::String UpdateJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_lifecycleStatusHasBeenSet)
+  if(m_targetTaskRunStatusHasBeenSet)
   {
-   payload.WithString("lifecycleStatus", UpdateJobLifecycleStatusMapper::GetNameForUpdateJobLifecycleStatus(m_lifecycleStatus));
+   payload.WithString("targetTaskRunStatus", JobTargetTaskRunStatusMapper::GetNameForJobTargetTaskRunStatus(m_targetTaskRunStatus));
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
+
   }
 
   if(m_maxFailedTasksCountHasBeenSet)
@@ -53,15 +59,9 @@ Aws::String UpdateJobRequest::SerializePayload() const
 
   }
 
-  if(m_priorityHasBeenSet)
+  if(m_lifecycleStatusHasBeenSet)
   {
-   payload.WithInteger("priority", m_priority);
-
-  }
-
-  if(m_targetTaskRunStatusHasBeenSet)
-  {
-   payload.WithString("targetTaskRunStatus", JobTargetTaskRunStatusMapper::GetNameForJobTargetTaskRunStatus(m_targetTaskRunStatus));
+   payload.WithString("lifecycleStatus", UpdateJobLifecycleStatusMapper::GetNameForUpdateJobLifecycleStatus(m_lifecycleStatus));
   }
 
   return payload.View().WriteReadable();

@@ -41,6 +41,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The token for the next set of results, or <code>null</code> to start from the
+     * beginning.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline ListBudgetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListBudgetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListBudgetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The farm ID associated with the budgets.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
@@ -66,21 +81,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token for the next set of results, or <code>null</code> to start from the
-     * beginning.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBudgetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBudgetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBudgetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The status to list for the budgets.</p>
      */
     inline const BudgetStatus& GetStatus() const{ return m_status; }
@@ -92,14 +92,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
 
     BudgetStatus m_status;
     bool m_statusHasBeenSet = false;

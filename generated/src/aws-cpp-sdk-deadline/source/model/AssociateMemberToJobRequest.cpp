@@ -14,20 +14,25 @@ using namespace Aws::Utils;
 
 AssociateMemberToJobRequest::AssociateMemberToJobRequest() : 
     m_farmIdHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_membershipLevel(MembershipLevel::NOT_SET),
-    m_membershipLevelHasBeenSet(false),
     m_principalIdHasBeenSet(false),
     m_principalType(PrincipalType::NOT_SET),
     m_principalTypeHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+    m_identityStoreIdHasBeenSet(false),
+    m_membershipLevel(MembershipLevel::NOT_SET),
+    m_membershipLevelHasBeenSet(false)
 {
 }
 
 Aws::String AssociateMemberToJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_principalTypeHasBeenSet)
+  {
+   payload.WithString("principalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
+  }
 
   if(m_identityStoreIdHasBeenSet)
   {
@@ -38,11 +43,6 @@ Aws::String AssociateMemberToJobRequest::SerializePayload() const
   if(m_membershipLevelHasBeenSet)
   {
    payload.WithString("membershipLevel", MembershipLevelMapper::GetNameForMembershipLevel(m_membershipLevel));
-  }
-
-  if(m_principalTypeHasBeenSet)
-  {
-   payload.WithString("principalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
   }
 
   return payload.View().WriteReadable();

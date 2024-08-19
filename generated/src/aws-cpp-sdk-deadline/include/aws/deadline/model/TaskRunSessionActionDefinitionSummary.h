@@ -39,20 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The step ID.</p>
-     */
-    inline const Aws::String& GetStepId() const{ return m_stepId; }
-    inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-    inline TaskRunSessionActionDefinitionSummary& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-    inline TaskRunSessionActionDefinitionSummary& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-    inline TaskRunSessionActionDefinitionSummary& WithStepId(const char* value) { SetStepId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The task ID.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
@@ -64,13 +50,27 @@ namespace Model
     inline TaskRunSessionActionDefinitionSummary& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
     inline TaskRunSessionActionDefinitionSummary& WithTaskId(const char* value) { SetTaskId(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_stepId;
-    bool m_stepIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The step ID.</p>
+     */
+    inline const Aws::String& GetStepId() const{ return m_stepId; }
+    inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
+    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
+    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
+    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
+    inline TaskRunSessionActionDefinitionSummary& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
+    inline TaskRunSessionActionDefinitionSummary& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
+    inline TaskRunSessionActionDefinitionSummary& WithStepId(const char* value) { SetStepId(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
+
+    Aws::String m_stepId;
+    bool m_stepIdHasBeenSet = false;
   };
 
 } // namespace Model

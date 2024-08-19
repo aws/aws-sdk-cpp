@@ -39,20 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The password ARN for the Windows user.</p>
-     */
-    inline const Aws::String& GetPasswordArn() const{ return m_passwordArn; }
-    inline bool PasswordArnHasBeenSet() const { return m_passwordArnHasBeenSet; }
-    inline void SetPasswordArn(const Aws::String& value) { m_passwordArnHasBeenSet = true; m_passwordArn = value; }
-    inline void SetPasswordArn(Aws::String&& value) { m_passwordArnHasBeenSet = true; m_passwordArn = std::move(value); }
-    inline void SetPasswordArn(const char* value) { m_passwordArnHasBeenSet = true; m_passwordArn.assign(value); }
-    inline WindowsUser& WithPasswordArn(const Aws::String& value) { SetPasswordArn(value); return *this;}
-    inline WindowsUser& WithPasswordArn(Aws::String&& value) { SetPasswordArn(std::move(value)); return *this;}
-    inline WindowsUser& WithPasswordArn(const char* value) { SetPasswordArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The user.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
@@ -64,13 +50,27 @@ namespace Model
     inline WindowsUser& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
     inline WindowsUser& WithUser(const char* value) { SetUser(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_passwordArn;
-    bool m_passwordArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The password ARN for the Windows user.</p>
+     */
+    inline const Aws::String& GetPasswordArn() const{ return m_passwordArn; }
+    inline bool PasswordArnHasBeenSet() const { return m_passwordArnHasBeenSet; }
+    inline void SetPasswordArn(const Aws::String& value) { m_passwordArnHasBeenSet = true; m_passwordArn = value; }
+    inline void SetPasswordArn(Aws::String&& value) { m_passwordArnHasBeenSet = true; m_passwordArn = std::move(value); }
+    inline void SetPasswordArn(const char* value) { m_passwordArnHasBeenSet = true; m_passwordArn.assign(value); }
+    inline WindowsUser& WithPasswordArn(const Aws::String& value) { SetPasswordArn(value); return *this;}
+    inline WindowsUser& WithPasswordArn(Aws::String&& value) { SetPasswordArn(std::move(value)); return *this;}
+    inline WindowsUser& WithPasswordArn(const char* value) { SetPasswordArn(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_user;
     bool m_userHasBeenSet = false;
+
+    Aws::String m_passwordArn;
+    bool m_passwordArnHasBeenSet = false;
   };
 
 } // namespace Model
