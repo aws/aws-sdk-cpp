@@ -61,7 +61,7 @@ namespace client
 {
     class AwsSmithyClientAsyncRequestContext;
     /* Non-template base client class that contains main Aws Client Request pipeline logic */
-    class AwsSmithyClientBase
+    class SMITHY_API AwsSmithyClientBase
     {
     public:
         using HttpRequest = Aws::Http::HttpRequest;
@@ -77,7 +77,7 @@ namespace client
         using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
         using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
 
-        AwsSmithyClientBase(Aws::Client::ClientConfiguration& clientConfig,
+        AwsSmithyClientBase(const Aws::Client::ClientConfiguration& clientConfig,
                             Aws::String serviceName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
@@ -127,7 +127,7 @@ namespace client
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
 
     protected:
-        Aws::Client::ClientConfiguration& m_clientConfig;
+        Aws::Client::ClientConfiguration m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;
 

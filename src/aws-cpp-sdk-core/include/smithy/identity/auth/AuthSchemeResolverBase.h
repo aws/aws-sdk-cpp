@@ -22,7 +22,11 @@ namespace smithy {
         Aws::String operation;
         Aws::Crt::Optional<Aws::String> region;
 
-        Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>> additionalProperties;
+        Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, 
+                bool, 
+                Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy, 
+                Aws::Auth::AWSSigningAlgorithm > > additionalProperties;
+
     };
 
     template<typename ServiceAuthSchemeParametersT = DefaultAuthSchemeResolverParameters>
