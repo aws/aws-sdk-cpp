@@ -22,7 +22,7 @@ namespace smithy {
     static const char* EMPTY_STRING_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     static const char v4AsymmetricLogTag[] = "AWSAuthSymmetricV4Signer";
     static const char* USER_AGENT = "user-agent";
-
+    static const char* X_AMZN_TRACE_ID = "x-amzn-trace-id";
 
     /**
      * A smithy SigV4 signer wrapper on top of legacy SDK SigV4 signer
@@ -210,7 +210,7 @@ namespace smithy {
         long long m_expirationTimeInSeconds{0};
         const bool m_includeSha256HashHeader{true};
         const bool m_urlEscape{true};
-        const Aws::Set<Aws::String> m_unsignedHeaders{USER_AGENT, Aws::Auth::AWSAuthHelper::X_AMZN_TRACE_ID};
+        const Aws::Set<Aws::String> m_unsignedHeaders{USER_AGENT,X_AMZN_TRACE_ID};
         const Aws::Crt::Auth::SignatureType m_signatureType{Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams};
         std::condition_variable m_cv;
         std::mutex m_mutex;
