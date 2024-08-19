@@ -184,8 +184,6 @@ TEST_F(SmithyClientTest, testSigV4) {
 
 TEST_F(SmithyClientTest, testSigV4a) {
 
-    const char ALLOCATION_TAG[] = "SmithyClientTest";
-
     std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::SigV4aAuthSchemeResolver<>>(ALLOCATION_TAG);
 
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
