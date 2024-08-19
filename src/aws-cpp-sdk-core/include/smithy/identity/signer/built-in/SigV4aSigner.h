@@ -134,7 +134,6 @@ namespace smithy {
             Aws::Crt::Auth::AwsSigningConfig& awsSigningConfig, 
             bool signBody) const
         {
-            Aws::String payloadHash(UNSIGNED_PAYLOAD);
             awsSigningConfig.SetSigningAlgorithm(static_cast<Aws::Crt::Auth::SigningAlgorithm>(Aws::Auth::AWSSigningAlgorithm::ASYMMETRIC_SIGV4));
             awsSigningConfig.SetSignatureType(m_signatureType);
             awsSigningConfig.SetRegion((*m_parameters.region).c_str());
