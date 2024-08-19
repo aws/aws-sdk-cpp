@@ -31,12 +31,6 @@ GetSessionsStatisticsAggregationResult::GetSessionsStatisticsAggregationResult(c
 GetSessionsStatisticsAggregationResult& GetSessionsStatisticsAggregationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("statistics"))
   {
     Aws::Utils::Array<JsonView> statisticsJsonList = jsonValue.GetArray("statistics");
@@ -44,6 +38,12 @@ GetSessionsStatisticsAggregationResult& GetSessionsStatisticsAggregationResult::
     {
       m_statistics.push_back(statisticsJsonList[statisticsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
   if(jsonValue.ValueExists("status"))

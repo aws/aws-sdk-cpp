@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>When the budget ends.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline FixedBudgetSchedule& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline FixedBudgetSchedule& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>When the budget starts.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -60,13 +48,25 @@ namespace Model
     inline FixedBudgetSchedule& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
     inline FixedBudgetSchedule& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>When the budget ends.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+    inline FixedBudgetSchedule& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+    inline FixedBudgetSchedule& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

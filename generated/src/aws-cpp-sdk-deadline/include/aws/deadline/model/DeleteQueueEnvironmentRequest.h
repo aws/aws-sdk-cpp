@@ -48,20 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The queue environment ID of the queue environment to delete.</p>
-     */
-    inline const Aws::String& GetQueueEnvironmentId() const{ return m_queueEnvironmentId; }
-    inline bool QueueEnvironmentIdHasBeenSet() const { return m_queueEnvironmentIdHasBeenSet; }
-    inline void SetQueueEnvironmentId(const Aws::String& value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId = value; }
-    inline void SetQueueEnvironmentId(Aws::String&& value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId = std::move(value); }
-    inline void SetQueueEnvironmentId(const char* value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId.assign(value); }
-    inline DeleteQueueEnvironmentRequest& WithQueueEnvironmentId(const Aws::String& value) { SetQueueEnvironmentId(value); return *this;}
-    inline DeleteQueueEnvironmentRequest& WithQueueEnvironmentId(Aws::String&& value) { SetQueueEnvironmentId(std::move(value)); return *this;}
-    inline DeleteQueueEnvironmentRequest& WithQueueEnvironmentId(const char* value) { SetQueueEnvironmentId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The queue ID of the queue environment to delete.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
@@ -73,16 +59,30 @@ namespace Model
     inline DeleteQueueEnvironmentRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
     inline DeleteQueueEnvironmentRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The queue environment ID of the queue environment to delete.</p>
+     */
+    inline const Aws::String& GetQueueEnvironmentId() const{ return m_queueEnvironmentId; }
+    inline bool QueueEnvironmentIdHasBeenSet() const { return m_queueEnvironmentIdHasBeenSet; }
+    inline void SetQueueEnvironmentId(const Aws::String& value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId = value; }
+    inline void SetQueueEnvironmentId(Aws::String&& value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId = std::move(value); }
+    inline void SetQueueEnvironmentId(const char* value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId.assign(value); }
+    inline DeleteQueueEnvironmentRequest& WithQueueEnvironmentId(const Aws::String& value) { SetQueueEnvironmentId(value); return *this;}
+    inline DeleteQueueEnvironmentRequest& WithQueueEnvironmentId(Aws::String&& value) { SetQueueEnvironmentId(std::move(value)); return *this;}
+    inline DeleteQueueEnvironmentRequest& WithQueueEnvironmentId(const char* value) { SetQueueEnvironmentId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::String m_queueEnvironmentId;
-    bool m_queueEnvironmentIdHasBeenSet = false;
-
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_queueEnvironmentId;
+    bool m_queueEnvironmentIdHasBeenSet = false;
   };
 
 } // namespace Model

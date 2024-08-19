@@ -19,8 +19,8 @@ namespace Model
 {
 
 PosixUser::PosixUser() : 
-    m_groupHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_groupHasBeenSet(false)
 {
 }
 
@@ -32,18 +32,18 @@ PosixUser::PosixUser(JsonView jsonValue)
 
 PosixUser& PosixUser::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("group"))
-  {
-    m_group = jsonValue.GetString("group");
-
-    m_groupHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
 
     m_userHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("group"))
+  {
+    m_group = jsonValue.GetString("group");
+
+    m_groupHasBeenSet = true;
   }
 
   return *this;
@@ -53,15 +53,15 @@ JsonValue PosixUser::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_groupHasBeenSet)
-  {
-   payload.WithString("group", m_group);
-
-  }
-
   if(m_userHasBeenSet)
   {
    payload.WithString("user", m_user);
+
+  }
+
+  if(m_groupHasBeenSet)
+  {
+   payload.WithString("group", m_group);
 
   }
 

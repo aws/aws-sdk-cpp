@@ -19,8 +19,8 @@ namespace Model
 {
 
 StepRequiredCapabilities::StepRequiredCapabilities() : 
-    m_amountsHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_amountsHasBeenSet(false)
 {
 }
 
@@ -32,16 +32,6 @@ StepRequiredCapabilities::StepRequiredCapabilities(JsonView jsonValue)
 
 StepRequiredCapabilities& StepRequiredCapabilities::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("amounts"))
-  {
-    Aws::Utils::Array<JsonView> amountsJsonList = jsonValue.GetArray("amounts");
-    for(unsigned amountsIndex = 0; amountsIndex < amountsJsonList.GetLength(); ++amountsIndex)
-    {
-      m_amounts.push_back(amountsJsonList[amountsIndex].AsObject());
-    }
-    m_amountsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
@@ -52,23 +42,22 @@ StepRequiredCapabilities& StepRequiredCapabilities::operator =(JsonView jsonValu
     m_attributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("amounts"))
+  {
+    Aws::Utils::Array<JsonView> amountsJsonList = jsonValue.GetArray("amounts");
+    for(unsigned amountsIndex = 0; amountsIndex < amountsJsonList.GetLength(); ++amountsIndex)
+    {
+      m_amounts.push_back(amountsJsonList[amountsIndex].AsObject());
+    }
+    m_amountsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue StepRequiredCapabilities::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_amountsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> amountsJsonList(m_amounts.size());
-   for(unsigned amountsIndex = 0; amountsIndex < amountsJsonList.GetLength(); ++amountsIndex)
-   {
-     amountsJsonList[amountsIndex].AsObject(m_amounts[amountsIndex].Jsonize());
-   }
-   payload.WithArray("amounts", std::move(amountsJsonList));
-
-  }
 
   if(m_attributesHasBeenSet)
   {
@@ -78,6 +67,17 @@ JsonValue StepRequiredCapabilities::Jsonize() const
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
    }
    payload.WithArray("attributes", std::move(attributesJsonList));
+
+  }
+
+  if(m_amountsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> amountsJsonList(m_amounts.size());
+   for(unsigned amountsIndex = 0; amountsIndex < amountsJsonList.GetLength(); ++amountsIndex)
+   {
+     amountsJsonList[amountsIndex].AsObject(m_amounts[amountsIndex].Jsonize());
+   }
+   payload.WithArray("amounts", std::move(amountsJsonList));
 
   }
 

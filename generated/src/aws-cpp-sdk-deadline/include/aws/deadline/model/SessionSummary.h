@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/deadline/model/SessionLifecycleStatus.h>
 #include <aws/deadline/model/SessionLifecycleTargetStatus.h>
 #include <utility>
@@ -42,14 +42,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource ended running.</p>
+     * <p>The session ID.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
-    inline SessionSummary& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline SessionSummary& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline SessionSummary& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline SessionSummary& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline SessionSummary& WithSessionId(const char* value) { SetSessionId(value); return *this;}
     ///@}
 
     ///@{
@@ -68,28 +70,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The life cycle status for the session.</p>
+     * <p>The worker ID.</p>
      */
-    inline const SessionLifecycleStatus& GetLifecycleStatus() const{ return m_lifecycleStatus; }
-    inline bool LifecycleStatusHasBeenSet() const { return m_lifecycleStatusHasBeenSet; }
-    inline void SetLifecycleStatus(const SessionLifecycleStatus& value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = value; }
-    inline void SetLifecycleStatus(SessionLifecycleStatus&& value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = std::move(value); }
-    inline SessionSummary& WithLifecycleStatus(const SessionLifecycleStatus& value) { SetLifecycleStatus(value); return *this;}
-    inline SessionSummary& WithLifecycleStatus(SessionLifecycleStatus&& value) { SetLifecycleStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The session ID.</p>
-     */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline SessionSummary& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline SessionSummary& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline SessionSummary& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
+    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
+    inline SessionSummary& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
+    inline SessionSummary& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
+    inline SessionSummary& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +96,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The target life cycle status for the session.</p>
+     * <p>The life cycle status for the session.</p>
      */
-    inline const SessionLifecycleTargetStatus& GetTargetLifecycleStatus() const{ return m_targetLifecycleStatus; }
-    inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
-    inline void SetTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = value; }
-    inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = std::move(value); }
-    inline SessionSummary& WithTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { SetTargetLifecycleStatus(value); return *this;}
-    inline SessionSummary& WithTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { SetTargetLifecycleStatus(std::move(value)); return *this;}
+    inline const SessionLifecycleStatus& GetLifecycleStatus() const{ return m_lifecycleStatus; }
+    inline bool LifecycleStatusHasBeenSet() const { return m_lifecycleStatusHasBeenSet; }
+    inline void SetLifecycleStatus(const SessionLifecycleStatus& value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = value; }
+    inline void SetLifecycleStatus(SessionLifecycleStatus&& value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = std::move(value); }
+    inline SessionSummary& WithLifecycleStatus(const SessionLifecycleStatus& value) { SetLifecycleStatus(value); return *this;}
+    inline SessionSummary& WithLifecycleStatus(SessionLifecycleStatus&& value) { SetLifecycleStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource ended running.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
+    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
+    inline SessionSummary& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
+    inline SessionSummary& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,36 +146,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The worker ID.</p>
+     * <p>The target life cycle status for the session.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline SessionSummary& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline SessionSummary& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline SessionSummary& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    inline const SessionLifecycleTargetStatus& GetTargetLifecycleStatus() const{ return m_targetLifecycleStatus; }
+    inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
+    inline void SetTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = value; }
+    inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = std::move(value); }
+    inline SessionSummary& WithTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { SetTargetLifecycleStatus(value); return *this;}
+    inline SessionSummary& WithTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { SetTargetLifecycleStatus(std::move(value)); return *this;}
     ///@}
   private:
-
-    Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet = false;
-
-    Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet = false;
-
-    SessionLifecycleStatus m_lifecycleStatus;
-    bool m_lifecycleStatusHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
+    Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
+
+    Aws::String m_workerId;
+    bool m_workerIdHasBeenSet = false;
+
     Aws::Utils::DateTime m_startedAt;
     bool m_startedAtHasBeenSet = false;
 
-    SessionLifecycleTargetStatus m_targetLifecycleStatus;
-    bool m_targetLifecycleStatusHasBeenSet = false;
+    SessionLifecycleStatus m_lifecycleStatus;
+    bool m_lifecycleStatusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endedAt;
+    bool m_endedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
@@ -181,8 +181,8 @@ namespace Model
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet = false;
 
-    Aws::String m_workerId;
-    bool m_workerIdHasBeenSet = false;
+    SessionLifecycleTargetStatus m_targetLifecycleStatus;
+    bool m_targetLifecycleStatusHasBeenSet = false;
   };
 
 } // namespace Model

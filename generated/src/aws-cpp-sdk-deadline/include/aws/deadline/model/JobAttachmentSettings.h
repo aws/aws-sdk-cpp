@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The root prefix.</p>
-     */
-    inline const Aws::String& GetRootPrefix() const{ return m_rootPrefix; }
-    inline bool RootPrefixHasBeenSet() const { return m_rootPrefixHasBeenSet; }
-    inline void SetRootPrefix(const Aws::String& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = value; }
-    inline void SetRootPrefix(Aws::String&& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = std::move(value); }
-    inline void SetRootPrefix(const char* value) { m_rootPrefixHasBeenSet = true; m_rootPrefix.assign(value); }
-    inline JobAttachmentSettings& WithRootPrefix(const Aws::String& value) { SetRootPrefix(value); return *this;}
-    inline JobAttachmentSettings& WithRootPrefix(Aws::String&& value) { SetRootPrefix(std::move(value)); return *this;}
-    inline JobAttachmentSettings& WithRootPrefix(const char* value) { SetRootPrefix(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon S3 bucket name.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
@@ -65,13 +51,27 @@ namespace Model
     inline JobAttachmentSettings& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
     inline JobAttachmentSettings& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_rootPrefix;
-    bool m_rootPrefixHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The root prefix.</p>
+     */
+    inline const Aws::String& GetRootPrefix() const{ return m_rootPrefix; }
+    inline bool RootPrefixHasBeenSet() const { return m_rootPrefixHasBeenSet; }
+    inline void SetRootPrefix(const Aws::String& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = value; }
+    inline void SetRootPrefix(Aws::String&& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = std::move(value); }
+    inline void SetRootPrefix(const char* value) { m_rootPrefixHasBeenSet = true; m_rootPrefix.assign(value); }
+    inline JobAttachmentSettings& WithRootPrefix(const Aws::String& value) { SetRootPrefix(value); return *this;}
+    inline JobAttachmentSettings& WithRootPrefix(Aws::String&& value) { SetRootPrefix(std::move(value)); return *this;}
+    inline JobAttachmentSettings& WithRootPrefix(const char* value) { SetRootPrefix(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet = false;
+
+    Aws::String m_rootPrefix;
+    bool m_rootPrefixHasBeenSet = false;
   };
 
 } // namespace Model

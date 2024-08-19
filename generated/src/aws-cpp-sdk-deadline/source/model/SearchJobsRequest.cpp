@@ -14,37 +14,19 @@ using namespace Aws::Utils;
 
 SearchJobsRequest::SearchJobsRequest() : 
     m_farmIdHasBeenSet(false),
+    m_queueIdsHasBeenSet(false),
     m_filterExpressionsHasBeenSet(false),
+    m_sortExpressionsHasBeenSet(false),
     m_itemOffset(0),
     m_itemOffsetHasBeenSet(false),
     m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_queueIdsHasBeenSet(false),
-    m_sortExpressionsHasBeenSet(false)
+    m_pageSizeHasBeenSet(false)
 {
 }
 
 Aws::String SearchJobsRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_filterExpressionsHasBeenSet)
-  {
-   payload.WithObject("filterExpressions", m_filterExpressions.Jsonize());
-
-  }
-
-  if(m_itemOffsetHasBeenSet)
-  {
-   payload.WithInteger("itemOffset", m_itemOffset);
-
-  }
-
-  if(m_pageSizeHasBeenSet)
-  {
-   payload.WithInteger("pageSize", m_pageSize);
-
-  }
 
   if(m_queueIdsHasBeenSet)
   {
@@ -57,6 +39,12 @@ Aws::String SearchJobsRequest::SerializePayload() const
 
   }
 
+  if(m_filterExpressionsHasBeenSet)
+  {
+   payload.WithObject("filterExpressions", m_filterExpressions.Jsonize());
+
+  }
+
   if(m_sortExpressionsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> sortExpressionsJsonList(m_sortExpressions.size());
@@ -65,6 +53,18 @@ Aws::String SearchJobsRequest::SerializePayload() const
      sortExpressionsJsonList[sortExpressionsIndex].AsObject(m_sortExpressions[sortExpressionsIndex].Jsonize());
    }
    payload.WithArray("sortExpressions", std::move(sortExpressionsJsonList));
+
+  }
+
+  if(m_itemOffsetHasBeenSet)
+  {
+   payload.WithInteger("itemOffset", m_itemOffset);
+
+  }
+
+  if(m_pageSizeHasBeenSet)
+  {
+   payload.WithInteger("pageSize", m_pageSize);
 
   }
 

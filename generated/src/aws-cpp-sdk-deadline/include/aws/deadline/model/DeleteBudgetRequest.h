@@ -34,20 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The budget ID of the budget to delete.</p>
-     */
-    inline const Aws::String& GetBudgetId() const{ return m_budgetId; }
-    inline bool BudgetIdHasBeenSet() const { return m_budgetIdHasBeenSet; }
-    inline void SetBudgetId(const Aws::String& value) { m_budgetIdHasBeenSet = true; m_budgetId = value; }
-    inline void SetBudgetId(Aws::String&& value) { m_budgetIdHasBeenSet = true; m_budgetId = std::move(value); }
-    inline void SetBudgetId(const char* value) { m_budgetIdHasBeenSet = true; m_budgetId.assign(value); }
-    inline DeleteBudgetRequest& WithBudgetId(const Aws::String& value) { SetBudgetId(value); return *this;}
-    inline DeleteBudgetRequest& WithBudgetId(Aws::String&& value) { SetBudgetId(std::move(value)); return *this;}
-    inline DeleteBudgetRequest& WithBudgetId(const char* value) { SetBudgetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The farm ID of the farm to remove from the budget.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
@@ -59,13 +45,27 @@ namespace Model
     inline DeleteBudgetRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
     inline DeleteBudgetRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_budgetId;
-    bool m_budgetIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The budget ID of the budget to delete.</p>
+     */
+    inline const Aws::String& GetBudgetId() const{ return m_budgetId; }
+    inline bool BudgetIdHasBeenSet() const { return m_budgetIdHasBeenSet; }
+    inline void SetBudgetId(const Aws::String& value) { m_budgetIdHasBeenSet = true; m_budgetId = value; }
+    inline void SetBudgetId(Aws::String&& value) { m_budgetIdHasBeenSet = true; m_budgetId = std::move(value); }
+    inline void SetBudgetId(const char* value) { m_budgetIdHasBeenSet = true; m_budgetId.assign(value); }
+    inline DeleteBudgetRequest& WithBudgetId(const Aws::String& value) { SetBudgetId(value); return *this;}
+    inline DeleteBudgetRequest& WithBudgetId(Aws::String&& value) { SetBudgetId(std::move(value)); return *this;}
+    inline DeleteBudgetRequest& WithBudgetId(const char* value) { SetBudgetId(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
+
+    Aws::String m_budgetId;
+    bool m_budgetIdHasBeenSet = false;
   };
 
 } // namespace Model

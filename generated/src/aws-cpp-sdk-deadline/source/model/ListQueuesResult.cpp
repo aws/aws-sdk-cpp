@@ -29,12 +29,6 @@ ListQueuesResult::ListQueuesResult(const Aws::AmazonWebServiceResult<JsonValue>&
 ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("queues"))
   {
     Aws::Utils::Array<JsonView> queuesJsonList = jsonValue.GetArray("queues");
@@ -42,6 +36,12 @@ ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

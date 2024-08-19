@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/IpAddresses.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IP address of the host.</p>
+     */
+    inline const IpAddresses& GetIpAddresses() const{ return m_ipAddresses; }
+    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
+    inline void SetIpAddresses(const IpAddresses& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
+    inline void SetIpAddresses(IpAddresses&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
+    inline HostPropertiesResponse& WithIpAddresses(const IpAddresses& value) { SetIpAddresses(value); return *this;}
+    inline HostPropertiesResponse& WithIpAddresses(IpAddresses&& value) { SetIpAddresses(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The host name.</p>
+     */
+    inline const Aws::String& GetHostName() const{ return m_hostName; }
+    inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
+    inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
+    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
+    inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
+    inline HostPropertiesResponse& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
+    inline HostPropertiesResponse& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
+    inline HostPropertiesResponse& WithHostName(const char* value) { SetHostName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the host EC2 instance.</p>
      */
     inline const Aws::String& GetEc2InstanceArn() const{ return m_ec2InstanceArn; }
@@ -65,45 +91,19 @@ namespace Model
     inline HostPropertiesResponse& WithEc2InstanceType(Aws::String&& value) { SetEc2InstanceType(std::move(value)); return *this;}
     inline HostPropertiesResponse& WithEc2InstanceType(const char* value) { SetEc2InstanceType(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The host name.</p>
-     */
-    inline const Aws::String& GetHostName() const{ return m_hostName; }
-    inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
-    inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
-    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
-    inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
-    inline HostPropertiesResponse& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
-    inline HostPropertiesResponse& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
-    inline HostPropertiesResponse& WithHostName(const char* value) { SetHostName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The IP address of the host.</p>
-     */
-    inline const IpAddresses& GetIpAddresses() const{ return m_ipAddresses; }
-    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
-    inline void SetIpAddresses(const IpAddresses& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
-    inline void SetIpAddresses(IpAddresses&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
-    inline HostPropertiesResponse& WithIpAddresses(const IpAddresses& value) { SetIpAddresses(value); return *this;}
-    inline HostPropertiesResponse& WithIpAddresses(IpAddresses&& value) { SetIpAddresses(std::move(value)); return *this;}
-    ///@}
   private:
+
+    IpAddresses m_ipAddresses;
+    bool m_ipAddressesHasBeenSet = false;
+
+    Aws::String m_hostName;
+    bool m_hostNameHasBeenSet = false;
 
     Aws::String m_ec2InstanceArn;
     bool m_ec2InstanceArnHasBeenSet = false;
 
     Aws::String m_ec2InstanceType;
     bool m_ec2InstanceTypeHasBeenSet = false;
-
-    Aws::String m_hostName;
-    bool m_hostNameHasBeenSet = false;
-
-    IpAddresses m_ipAddresses;
-    bool m_ipAddressesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,12 +17,12 @@ using namespace Aws::Http;
 
 ListQueuesRequest::ListQueuesRequest() : 
     m_farmIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_principalIdHasBeenSet(false),
     m_status(QueueStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -34,20 +34,6 @@ Aws::String ListQueuesRequest::SerializePayload() const
 void ListQueuesRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
     if(m_principalIdHasBeenSet)
     {
       ss << m_principalId;
@@ -59,6 +45,20 @@ void ListQueuesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << QueueStatusMapper::GetNameForQueueStatus(m_status);
       uri.AddQueryStringParameter("status", ss.str());
+      ss.str("");
+    }
+
+    if(m_nextTokenHasBeenSet)
+    {
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

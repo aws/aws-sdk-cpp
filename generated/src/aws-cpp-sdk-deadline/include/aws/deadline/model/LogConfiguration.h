@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The log configuration error details.</p>
-     */
-    inline const Aws::String& GetError() const{ return m_error; }
-    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline LogConfiguration& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline LogConfiguration& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline LogConfiguration& WithError(const char* value) { SetError(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The log drivers for worker related logs.</p>
      */
     inline const Aws::String& GetLogDriver() const{ return m_logDriver; }
@@ -103,10 +89,21 @@ namespace Model
     inline LogConfiguration& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
     inline LogConfiguration& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
     ///@}
-  private:
 
-    Aws::String m_error;
-    bool m_errorHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The log configuration error details.</p>
+     */
+    inline const Aws::String& GetError() const{ return m_error; }
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
+    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
+    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
+    inline LogConfiguration& WithError(const Aws::String& value) { SetError(value); return *this;}
+    inline LogConfiguration& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
+    inline LogConfiguration& WithError(const char* value) { SetError(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_logDriver;
     bool m_logDriverHasBeenSet = false;
@@ -116,6 +113,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet = false;
+
+    Aws::String m_error;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

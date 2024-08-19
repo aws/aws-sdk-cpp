@@ -18,12 +18,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetFleetResult::GetFleetResult() : 
-    m_autoScalingStatus(AutoScalingStatus::NOT_SET),
-    m_maxWorkerCount(0),
-    m_minWorkerCount(0),
     m_status(FleetStatus::NOT_SET),
+    m_autoScalingStatus(AutoScalingStatus::NOT_SET),
     m_targetWorkerCount(0),
-    m_workerCount(0)
+    m_workerCount(0),
+    m_minWorkerCount(0),
+    m_maxWorkerCount(0)
 {
 }
 
@@ -36,9 +36,69 @@ GetFleetResult::GetFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 GetFleetResult& GetFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("fleetId"))
+  {
+    m_fleetId = jsonValue.GetString("fleetId");
+
+  }
+
+  if(jsonValue.ValueExists("farmId"))
+  {
+    m_farmId = jsonValue.GetString("farmId");
+
+  }
+
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("status"));
+
+  }
+
   if(jsonValue.ValueExists("autoScalingStatus"))
   {
     m_autoScalingStatus = AutoScalingStatusMapper::GetAutoScalingStatusForName(jsonValue.GetString("autoScalingStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("targetWorkerCount"))
+  {
+    m_targetWorkerCount = jsonValue.GetInteger("targetWorkerCount");
+
+  }
+
+  if(jsonValue.ValueExists("workerCount"))
+  {
+    m_workerCount = jsonValue.GetInteger("workerCount");
+
+  }
+
+  if(jsonValue.ValueExists("minWorkerCount"))
+  {
+    m_minWorkerCount = jsonValue.GetInteger("minWorkerCount");
+
+  }
+
+  if(jsonValue.ValueExists("maxWorkerCount"))
+  {
+    m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
+
+  }
+
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
 
   }
 
@@ -48,9 +108,9 @@ GetFleetResult& GetFleetResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
-  if(jsonValue.ValueExists("configuration"))
+  if(jsonValue.ValueExists("roleArn"))
   {
-    m_configuration = jsonValue.GetObject("configuration");
+    m_roleArn = jsonValue.GetString("roleArn");
 
   }
 
@@ -66,60 +126,6 @@ GetFleetResult& GetFleetResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-  }
-
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-
-  }
-
-  if(jsonValue.ValueExists("farmId"))
-  {
-    m_farmId = jsonValue.GetString("farmId");
-
-  }
-
-  if(jsonValue.ValueExists("fleetId"))
-  {
-    m_fleetId = jsonValue.GetString("fleetId");
-
-  }
-
-  if(jsonValue.ValueExists("maxWorkerCount"))
-  {
-    m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
-
-  }
-
-  if(jsonValue.ValueExists("minWorkerCount"))
-  {
-    m_minWorkerCount = jsonValue.GetInteger("minWorkerCount");
-
-  }
-
-  if(jsonValue.ValueExists("roleArn"))
-  {
-    m_roleArn = jsonValue.GetString("roleArn");
-
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("status"));
-
-  }
-
-  if(jsonValue.ValueExists("targetWorkerCount"))
-  {
-    m_targetWorkerCount = jsonValue.GetInteger("targetWorkerCount");
-
-  }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -129,12 +135,6 @@ GetFleetResult& GetFleetResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
-  }
-
-  if(jsonValue.ValueExists("workerCount"))
-  {
-    m_workerCount = jsonValue.GetInteger("workerCount");
 
   }
 

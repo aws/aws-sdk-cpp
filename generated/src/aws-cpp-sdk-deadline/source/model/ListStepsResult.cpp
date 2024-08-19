@@ -29,12 +29,6 @@ ListStepsResult::ListStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 ListStepsResult& ListStepsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("steps"))
   {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
@@ -42,6 +36,12 @@ ListStepsResult& ListStepsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

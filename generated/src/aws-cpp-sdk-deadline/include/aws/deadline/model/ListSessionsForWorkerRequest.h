@@ -68,13 +68,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.</p>
+     * <p>The worker ID for the session.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListSessionsForWorkerRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
+    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
+    inline ListSessionsForWorkerRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
+    inline ListSessionsForWorkerRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
+    inline ListSessionsForWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
     ///@}
 
     ///@{
@@ -94,16 +97,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The worker ID for the session.</p>
+     * <p>The maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline ListSessionsForWorkerRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline ListSessionsForWorkerRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline ListSessionsForWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListSessionsForWorkerRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
@@ -113,14 +113,14 @@ namespace Model
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_workerId;
+    bool m_workerIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_workerId;
-    bool m_workerIdHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

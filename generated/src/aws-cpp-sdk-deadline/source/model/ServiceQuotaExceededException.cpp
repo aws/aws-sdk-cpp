@@ -19,14 +19,14 @@ namespace Model
 {
 
 ServiceQuotaExceededException::ServiceQuotaExceededException() : 
-    m_contextHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
     m_reason(ServiceQuotaExceededExceptionReason::NOT_SET),
     m_reasonHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+    m_serviceCodeHasBeenSet(false),
+    m_quotaCodeHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -38,16 +38,6 @@ ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
 
 ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("context"))
-  {
-    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("context").GetAllObjects();
-    for(auto& contextItem : contextJsonMap)
-    {
-      m_context[contextItem.first] = contextItem.second.AsString();
-    }
-    m_contextHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
@@ -55,25 +45,11 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
     m_messageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("quotaCode"))
-  {
-    m_quotaCode = jsonValue.GetString("quotaCode");
-
-    m_quotaCodeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = ServiceQuotaExceededExceptionReasonMapper::GetServiceQuotaExceededExceptionReasonForName(jsonValue.GetString("reason"));
 
     m_reasonHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("resourceId"))
-  {
-    m_resourceId = jsonValue.GetString("resourceId");
-
-    m_resourceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceType"))
@@ -90,6 +66,30 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
     m_serviceCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("quotaCode"))
+  {
+    m_quotaCode = jsonValue.GetString("quotaCode");
+
+    m_quotaCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceId"))
+  {
+    m_resourceId = jsonValue.GetString("resourceId");
+
+    m_resourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("context"))
+  {
+    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("context").GetAllObjects();
+    for(auto& contextItem : contextJsonMap)
+    {
+      m_context[contextItem.first] = contextItem.second.AsString();
+    }
+    m_contextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,38 +97,15 @@ JsonValue ServiceQuotaExceededException::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_contextHasBeenSet)
-  {
-   JsonValue contextJsonMap;
-   for(auto& contextItem : m_context)
-   {
-     contextJsonMap.WithString(contextItem.first, contextItem.second);
-   }
-   payload.WithObject("context", std::move(contextJsonMap));
-
-  }
-
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
 
   }
 
-  if(m_quotaCodeHasBeenSet)
-  {
-   payload.WithString("quotaCode", m_quotaCode);
-
-  }
-
   if(m_reasonHasBeenSet)
   {
    payload.WithString("reason", ServiceQuotaExceededExceptionReasonMapper::GetNameForServiceQuotaExceededExceptionReason(m_reason));
-  }
-
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("resourceId", m_resourceId);
-
   }
 
   if(m_resourceTypeHasBeenSet)
@@ -140,6 +117,29 @@ JsonValue ServiceQuotaExceededException::Jsonize() const
   if(m_serviceCodeHasBeenSet)
   {
    payload.WithString("serviceCode", m_serviceCode);
+
+  }
+
+  if(m_quotaCodeHasBeenSet)
+  {
+   payload.WithString("quotaCode", m_quotaCode);
+
+  }
+
+  if(m_resourceIdHasBeenSet)
+  {
+   payload.WithString("resourceId", m_resourceId);
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   JsonValue contextJsonMap;
+   for(auto& contextItem : m_context)
+   {
+     contextJsonMap.WithString(contextItem.first, contextItem.second);
+   }
+   payload.WithObject("context", std::move(contextJsonMap));
 
   }
 

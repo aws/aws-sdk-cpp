@@ -39,30 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The family to which the metered product belongs.</p>
-     */
-    inline const Aws::String& GetFamily() const{ return m_family; }
-    inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
-    inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
-    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
-    inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
-    inline MeteredProductSummary& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
-    inline MeteredProductSummary& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
-    inline MeteredProductSummary& WithFamily(const char* value) { SetFamily(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The port on which the metered product should run.</p>
-     */
-    inline int GetPort() const{ return m_port; }
-    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-    inline MeteredProductSummary& WithPort(int value) { SetPort(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The product ID.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
@@ -73,6 +49,20 @@ namespace Model
     inline MeteredProductSummary& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
     inline MeteredProductSummary& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
     inline MeteredProductSummary& WithProductId(const char* value) { SetProductId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The family to which the metered product belongs.</p>
+     */
+    inline const Aws::String& GetFamily() const{ return m_family; }
+    inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
+    inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
+    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
+    inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
+    inline MeteredProductSummary& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
+    inline MeteredProductSummary& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
+    inline MeteredProductSummary& WithFamily(const char* value) { SetFamily(value); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +78,29 @@ namespace Model
     inline MeteredProductSummary& WithVendor(Aws::String&& value) { SetVendor(std::move(value)); return *this;}
     inline MeteredProductSummary& WithVendor(const char* value) { SetVendor(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The port on which the metered product should run.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+    inline MeteredProductSummary& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_family;
-    bool m_familyHasBeenSet = false;
-
-    int m_port;
-    bool m_portHasBeenSet = false;
 
     Aws::String m_productId;
     bool m_productIdHasBeenSet = false;
 
+    Aws::String m_family;
+    bool m_familyHasBeenSet = false;
+
     Aws::String m_vendor;
     bool m_vendorHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

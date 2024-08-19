@@ -54,46 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job ID for the session actions list.</p>
-     */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline ListSessionActionsRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline ListSessionActionsRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline ListSessionActionsRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListSessionActionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The token for the next set of results, or <code>null</code> to start from the
-     * beginning.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSessionActionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSessionActionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSessionActionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The queue ID for the session actions list.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
@@ -104,6 +64,20 @@ namespace Model
     inline ListSessionActionsRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
     inline ListSessionActionsRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
     inline ListSessionActionsRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The job ID for the session actions list.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
+    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
+    inline ListSessionActionsRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+    inline ListSessionActionsRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+    inline ListSessionActionsRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
     ///@}
 
     ///@{
@@ -133,28 +107,54 @@ namespace Model
     inline ListSessionActionsRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
     inline ListSessionActionsRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The token for the next set of results, or <code>null</code> to start from the
+     * beginning.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline ListSessionActionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListSessionActionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListSessionActionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListSessionActionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
-
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

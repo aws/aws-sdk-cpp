@@ -19,8 +19,8 @@ namespace Model
 {
 
 HostPropertiesRequest::HostPropertiesRequest() : 
-    m_hostNameHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false)
+    m_ipAddressesHasBeenSet(false),
+    m_hostNameHasBeenSet(false)
 {
 }
 
@@ -32,18 +32,18 @@ HostPropertiesRequest::HostPropertiesRequest(JsonView jsonValue)
 
 HostPropertiesRequest& HostPropertiesRequest::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("hostName"))
-  {
-    m_hostName = jsonValue.GetString("hostName");
-
-    m_hostNameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("ipAddresses"))
   {
     m_ipAddresses = jsonValue.GetObject("ipAddresses");
 
     m_ipAddressesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hostName"))
+  {
+    m_hostName = jsonValue.GetString("hostName");
+
+    m_hostNameHasBeenSet = true;
   }
 
   return *this;
@@ -53,15 +53,15 @@ JsonValue HostPropertiesRequest::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_hostNameHasBeenSet)
-  {
-   payload.WithString("hostName", m_hostName);
-
-  }
-
   if(m_ipAddressesHasBeenSet)
   {
    payload.WithObject("ipAddresses", m_ipAddresses.Jsonize());
+
+  }
+
+  if(m_hostNameHasBeenSet)
+  {
+   payload.WithString("hostName", m_hostName);
 
   }
 

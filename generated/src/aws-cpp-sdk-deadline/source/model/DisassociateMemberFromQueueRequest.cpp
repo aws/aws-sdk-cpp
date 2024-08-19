@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 DisassociateMemberFromQueueRequest::DisassociateMemberFromQueueRequest() : 
     m_farmIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+    m_queueIdHasBeenSet(false),
+    m_principalIdHasBeenSet(false)
 {
 }
 

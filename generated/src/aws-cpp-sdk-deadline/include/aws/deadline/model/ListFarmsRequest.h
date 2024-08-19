@@ -40,17 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListFarmsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The token for the next set of results, or <code>null</code> to start from the
      * beginning.</p>
      */
@@ -77,16 +66,27 @@ namespace Model
     inline ListFarmsRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
     inline ListFarmsRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
     ///@}
-  private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListFarmsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

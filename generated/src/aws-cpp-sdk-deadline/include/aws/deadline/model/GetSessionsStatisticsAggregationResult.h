@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/SessionsStatisticsAggregationStatus.h>
 #include <aws/deadline/model/Statistics.h>
 #include <utility>
@@ -37,6 +37,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The statistics for the specified fleets or queues.</p>
+     */
+    inline const Aws::Vector<Statistics>& GetStatistics() const{ return m_statistics; }
+    inline void SetStatistics(const Aws::Vector<Statistics>& value) { m_statistics = value; }
+    inline void SetStatistics(Aws::Vector<Statistics>&& value) { m_statistics = std::move(value); }
+    inline GetSessionsStatisticsAggregationResult& WithStatistics(const Aws::Vector<Statistics>& value) { SetStatistics(value); return *this;}
+    inline GetSessionsStatisticsAggregationResult& WithStatistics(Aws::Vector<Statistics>&& value) { SetStatistics(std::move(value)); return *this;}
+    inline GetSessionsStatisticsAggregationResult& AddStatistics(const Statistics& value) { m_statistics.push_back(value); return *this; }
+    inline GetSessionsStatisticsAggregationResult& AddStatistics(Statistics&& value) { m_statistics.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -56,20 +69,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The statistics for the specified fleets or queues.</p>
-     */
-    inline const Aws::Vector<Statistics>& GetStatistics() const{ return m_statistics; }
-    inline void SetStatistics(const Aws::Vector<Statistics>& value) { m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<Statistics>&& value) { m_statistics = std::move(value); }
-    inline GetSessionsStatisticsAggregationResult& WithStatistics(const Aws::Vector<Statistics>& value) { SetStatistics(value); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithStatistics(Aws::Vector<Statistics>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationResult& AddStatistics(const Statistics& value) { m_statistics.push_back(value); return *this; }
-    inline GetSessionsStatisticsAggregationResult& AddStatistics(Statistics&& value) { m_statistics.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the aggregated results.</p>
+     * <p>The status of the aggregated results. An aggregation may fail or time out if
+     * the results are too large. If this happens, you can call the
+     * <code>StartSessionsStatisticsAggregation</code> operation after you reduce the
+     * aggregation time frame, reduce the number of queues or fleets in the
+     * aggregation, or increase the period length.</p> <p>If you call the
+     * <code>StartSessionsStatisticsAggregation </code> operation when the status is
+     * <code>IN_PROGRESS</code>, you will receive a
+     * <code>ThrottlingException</code>.</p>
      */
     inline const SessionsStatisticsAggregationStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const SessionsStatisticsAggregationStatus& value) { m_status = value; }
@@ -103,9 +110,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<Statistics> m_statistics;
+
+    Aws::String m_nextToken;
 
     SessionsStatisticsAggregationStatus m_status;
 

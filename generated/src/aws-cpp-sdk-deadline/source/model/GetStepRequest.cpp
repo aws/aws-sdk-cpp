@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 GetStepRequest::GetStepRequest() : 
     m_farmIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
     m_queueIdHasBeenSet(false),
+    m_jobIdHasBeenSet(false),
     m_stepIdHasBeenSet(false)
 {
 }

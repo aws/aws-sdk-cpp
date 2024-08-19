@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/deadline/model/CpuArchitectureType.h>
+#include <aws/deadline/model/VCpuCountRange.h>
 #include <aws/deadline/model/MemoryMiBRange.h>
 #include <aws/deadline/model/ServiceManagedFleetOperatingSystemFamily.h>
+#include <aws/deadline/model/CpuArchitectureType.h>
 #include <aws/deadline/model/Ec2EbsVolume.h>
-#include <aws/deadline/model/VCpuCountRange.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/FleetAmountCapability.h>
 #include <aws/deadline/model/FleetAttributeCapability.h>
@@ -47,6 +47,66 @@ namespace Model
 
     ///@{
     /**
+     * <p>The amount of vCPU to require for instances in this fleet.</p>
+     */
+    inline const VCpuCountRange& GetVCpuCount() const{ return m_vCpuCount; }
+    inline bool VCpuCountHasBeenSet() const { return m_vCpuCountHasBeenSet; }
+    inline void SetVCpuCount(const VCpuCountRange& value) { m_vCpuCountHasBeenSet = true; m_vCpuCount = value; }
+    inline void SetVCpuCount(VCpuCountRange&& value) { m_vCpuCountHasBeenSet = true; m_vCpuCount = std::move(value); }
+    inline ServiceManagedEc2InstanceCapabilities& WithVCpuCount(const VCpuCountRange& value) { SetVCpuCount(value); return *this;}
+    inline ServiceManagedEc2InstanceCapabilities& WithVCpuCount(VCpuCountRange&& value) { SetVCpuCount(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The memory, as MiB, for the Amazon EC2 instance type.</p>
+     */
+    inline const MemoryMiBRange& GetMemoryMiB() const{ return m_memoryMiB; }
+    inline bool MemoryMiBHasBeenSet() const { return m_memoryMiBHasBeenSet; }
+    inline void SetMemoryMiB(const MemoryMiBRange& value) { m_memoryMiBHasBeenSet = true; m_memoryMiB = value; }
+    inline void SetMemoryMiB(MemoryMiBRange&& value) { m_memoryMiBHasBeenSet = true; m_memoryMiB = std::move(value); }
+    inline ServiceManagedEc2InstanceCapabilities& WithMemoryMiB(const MemoryMiBRange& value) { SetMemoryMiB(value); return *this;}
+    inline ServiceManagedEc2InstanceCapabilities& WithMemoryMiB(MemoryMiBRange&& value) { SetMemoryMiB(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The operating system (OS) family.</p>
+     */
+    inline const ServiceManagedFleetOperatingSystemFamily& GetOsFamily() const{ return m_osFamily; }
+    inline bool OsFamilyHasBeenSet() const { return m_osFamilyHasBeenSet; }
+    inline void SetOsFamily(const ServiceManagedFleetOperatingSystemFamily& value) { m_osFamilyHasBeenSet = true; m_osFamily = value; }
+    inline void SetOsFamily(ServiceManagedFleetOperatingSystemFamily&& value) { m_osFamilyHasBeenSet = true; m_osFamily = std::move(value); }
+    inline ServiceManagedEc2InstanceCapabilities& WithOsFamily(const ServiceManagedFleetOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
+    inline ServiceManagedEc2InstanceCapabilities& WithOsFamily(ServiceManagedFleetOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The CPU architecture type.</p>
+     */
+    inline const CpuArchitectureType& GetCpuArchitectureType() const{ return m_cpuArchitectureType; }
+    inline bool CpuArchitectureTypeHasBeenSet() const { return m_cpuArchitectureTypeHasBeenSet; }
+    inline void SetCpuArchitectureType(const CpuArchitectureType& value) { m_cpuArchitectureTypeHasBeenSet = true; m_cpuArchitectureType = value; }
+    inline void SetCpuArchitectureType(CpuArchitectureType&& value) { m_cpuArchitectureTypeHasBeenSet = true; m_cpuArchitectureType = std::move(value); }
+    inline ServiceManagedEc2InstanceCapabilities& WithCpuArchitectureType(const CpuArchitectureType& value) { SetCpuArchitectureType(value); return *this;}
+    inline ServiceManagedEc2InstanceCapabilities& WithCpuArchitectureType(CpuArchitectureType&& value) { SetCpuArchitectureType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The root EBS volume.</p>
+     */
+    inline const Ec2EbsVolume& GetRootEbsVolume() const{ return m_rootEbsVolume; }
+    inline bool RootEbsVolumeHasBeenSet() const { return m_rootEbsVolumeHasBeenSet; }
+    inline void SetRootEbsVolume(const Ec2EbsVolume& value) { m_rootEbsVolumeHasBeenSet = true; m_rootEbsVolume = value; }
+    inline void SetRootEbsVolume(Ec2EbsVolume&& value) { m_rootEbsVolumeHasBeenSet = true; m_rootEbsVolume = std::move(value); }
+    inline ServiceManagedEc2InstanceCapabilities& WithRootEbsVolume(const Ec2EbsVolume& value) { SetRootEbsVolume(value); return *this;}
+    inline ServiceManagedEc2InstanceCapabilities& WithRootEbsVolume(Ec2EbsVolume&& value) { SetRootEbsVolume(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The allowable Amazon EC2 instance types.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedInstanceTypes() const{ return m_allowedInstanceTypes; }
@@ -62,14 +122,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CPU architecture type.</p>
+     * <p>The instance types to exclude from the fleet.</p>
      */
-    inline const CpuArchitectureType& GetCpuArchitectureType() const{ return m_cpuArchitectureType; }
-    inline bool CpuArchitectureTypeHasBeenSet() const { return m_cpuArchitectureTypeHasBeenSet; }
-    inline void SetCpuArchitectureType(const CpuArchitectureType& value) { m_cpuArchitectureTypeHasBeenSet = true; m_cpuArchitectureType = value; }
-    inline void SetCpuArchitectureType(CpuArchitectureType&& value) { m_cpuArchitectureTypeHasBeenSet = true; m_cpuArchitectureType = std::move(value); }
-    inline ServiceManagedEc2InstanceCapabilities& WithCpuArchitectureType(const CpuArchitectureType& value) { SetCpuArchitectureType(value); return *this;}
-    inline ServiceManagedEc2InstanceCapabilities& WithCpuArchitectureType(CpuArchitectureType&& value) { SetCpuArchitectureType(std::move(value)); return *this;}
+    inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const{ return m_excludedInstanceTypes; }
+    inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }
+    inline void SetExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = value; }
+    inline void SetExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::move(value); }
+    inline ServiceManagedEc2InstanceCapabilities& WithExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetExcludedInstanceTypes(value); return *this;}
+    inline ServiceManagedEc2InstanceCapabilities& WithExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetExcludedInstanceTypes(std::move(value)); return *this;}
+    inline ServiceManagedEc2InstanceCapabilities& AddExcludedInstanceTypes(const Aws::String& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
+    inline ServiceManagedEc2InstanceCapabilities& AddExcludedInstanceTypes(Aws::String&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(std::move(value)); return *this; }
+    inline ServiceManagedEc2InstanceCapabilities& AddExcludedInstanceTypes(const char* value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -99,85 +162,10 @@ namespace Model
     inline ServiceManagedEc2InstanceCapabilities& AddCustomAttributes(const FleetAttributeCapability& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(value); return *this; }
     inline ServiceManagedEc2InstanceCapabilities& AddCustomAttributes(FleetAttributeCapability&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The instance types to exclude from the fleet.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const{ return m_excludedInstanceTypes; }
-    inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }
-    inline void SetExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = value; }
-    inline void SetExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::move(value); }
-    inline ServiceManagedEc2InstanceCapabilities& WithExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetExcludedInstanceTypes(value); return *this;}
-    inline ServiceManagedEc2InstanceCapabilities& WithExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetExcludedInstanceTypes(std::move(value)); return *this;}
-    inline ServiceManagedEc2InstanceCapabilities& AddExcludedInstanceTypes(const Aws::String& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
-    inline ServiceManagedEc2InstanceCapabilities& AddExcludedInstanceTypes(Aws::String&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(std::move(value)); return *this; }
-    inline ServiceManagedEc2InstanceCapabilities& AddExcludedInstanceTypes(const char* value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The memory, as MiB, for the Amazon EC2 instance type.</p>
-     */
-    inline const MemoryMiBRange& GetMemoryMiB() const{ return m_memoryMiB; }
-    inline bool MemoryMiBHasBeenSet() const { return m_memoryMiBHasBeenSet; }
-    inline void SetMemoryMiB(const MemoryMiBRange& value) { m_memoryMiBHasBeenSet = true; m_memoryMiB = value; }
-    inline void SetMemoryMiB(MemoryMiBRange&& value) { m_memoryMiBHasBeenSet = true; m_memoryMiB = std::move(value); }
-    inline ServiceManagedEc2InstanceCapabilities& WithMemoryMiB(const MemoryMiBRange& value) { SetMemoryMiB(value); return *this;}
-    inline ServiceManagedEc2InstanceCapabilities& WithMemoryMiB(MemoryMiBRange&& value) { SetMemoryMiB(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The operating system (OS) family.</p>
-     */
-    inline const ServiceManagedFleetOperatingSystemFamily& GetOsFamily() const{ return m_osFamily; }
-    inline bool OsFamilyHasBeenSet() const { return m_osFamilyHasBeenSet; }
-    inline void SetOsFamily(const ServiceManagedFleetOperatingSystemFamily& value) { m_osFamilyHasBeenSet = true; m_osFamily = value; }
-    inline void SetOsFamily(ServiceManagedFleetOperatingSystemFamily&& value) { m_osFamilyHasBeenSet = true; m_osFamily = std::move(value); }
-    inline ServiceManagedEc2InstanceCapabilities& WithOsFamily(const ServiceManagedFleetOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
-    inline ServiceManagedEc2InstanceCapabilities& WithOsFamily(ServiceManagedFleetOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The root EBS volume.</p>
-     */
-    inline const Ec2EbsVolume& GetRootEbsVolume() const{ return m_rootEbsVolume; }
-    inline bool RootEbsVolumeHasBeenSet() const { return m_rootEbsVolumeHasBeenSet; }
-    inline void SetRootEbsVolume(const Ec2EbsVolume& value) { m_rootEbsVolumeHasBeenSet = true; m_rootEbsVolume = value; }
-    inline void SetRootEbsVolume(Ec2EbsVolume&& value) { m_rootEbsVolumeHasBeenSet = true; m_rootEbsVolume = std::move(value); }
-    inline ServiceManagedEc2InstanceCapabilities& WithRootEbsVolume(const Ec2EbsVolume& value) { SetRootEbsVolume(value); return *this;}
-    inline ServiceManagedEc2InstanceCapabilities& WithRootEbsVolume(Ec2EbsVolume&& value) { SetRootEbsVolume(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The amount of vCPU to require for instances in this fleet.</p>
-     */
-    inline const VCpuCountRange& GetVCpuCount() const{ return m_vCpuCount; }
-    inline bool VCpuCountHasBeenSet() const { return m_vCpuCountHasBeenSet; }
-    inline void SetVCpuCount(const VCpuCountRange& value) { m_vCpuCountHasBeenSet = true; m_vCpuCount = value; }
-    inline void SetVCpuCount(VCpuCountRange&& value) { m_vCpuCountHasBeenSet = true; m_vCpuCount = std::move(value); }
-    inline ServiceManagedEc2InstanceCapabilities& WithVCpuCount(const VCpuCountRange& value) { SetVCpuCount(value); return *this;}
-    inline ServiceManagedEc2InstanceCapabilities& WithVCpuCount(VCpuCountRange&& value) { SetVCpuCount(std::move(value)); return *this;}
-    ///@}
   private:
 
-    Aws::Vector<Aws::String> m_allowedInstanceTypes;
-    bool m_allowedInstanceTypesHasBeenSet = false;
-
-    CpuArchitectureType m_cpuArchitectureType;
-    bool m_cpuArchitectureTypeHasBeenSet = false;
-
-    Aws::Vector<FleetAmountCapability> m_customAmounts;
-    bool m_customAmountsHasBeenSet = false;
-
-    Aws::Vector<FleetAttributeCapability> m_customAttributes;
-    bool m_customAttributesHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_excludedInstanceTypes;
-    bool m_excludedInstanceTypesHasBeenSet = false;
+    VCpuCountRange m_vCpuCount;
+    bool m_vCpuCountHasBeenSet = false;
 
     MemoryMiBRange m_memoryMiB;
     bool m_memoryMiBHasBeenSet = false;
@@ -185,11 +173,23 @@ namespace Model
     ServiceManagedFleetOperatingSystemFamily m_osFamily;
     bool m_osFamilyHasBeenSet = false;
 
+    CpuArchitectureType m_cpuArchitectureType;
+    bool m_cpuArchitectureTypeHasBeenSet = false;
+
     Ec2EbsVolume m_rootEbsVolume;
     bool m_rootEbsVolumeHasBeenSet = false;
 
-    VCpuCountRange m_vCpuCount;
-    bool m_vCpuCountHasBeenSet = false;
+    Aws::Vector<Aws::String> m_allowedInstanceTypes;
+    bool m_allowedInstanceTypesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_excludedInstanceTypes;
+    bool m_excludedInstanceTypesHasBeenSet = false;
+
+    Aws::Vector<FleetAmountCapability> m_customAmounts;
+    bool m_customAmountsHasBeenSet = false;
+
+    Aws::Vector<FleetAttributeCapability> m_customAttributes;
+    bool m_customAttributesHasBeenSet = false;
   };
 
 } // namespace Model

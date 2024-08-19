@@ -32,12 +32,6 @@ SearchTasksResult::SearchTasksResult(const Aws::AmazonWebServiceResult<JsonValue
 SearchTasksResult& SearchTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextItemOffset"))
-  {
-    m_nextItemOffset = jsonValue.GetInteger("nextItemOffset");
-
-  }
-
   if(jsonValue.ValueExists("tasks"))
   {
     Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
@@ -45,6 +39,12 @@ SearchTasksResult& SearchTasksResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextItemOffset"))
+  {
+    m_nextItemOffset = jsonValue.GetInteger("nextItemOffset");
+
   }
 
   if(jsonValue.ValueExists("totalResults"))

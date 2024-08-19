@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/JobEntityErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/JobEntityErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error code.</p>
-     */
-    inline const JobEntityErrorCode& GetCode() const{ return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const JobEntityErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(JobEntityErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline StepDetailsError& WithCode(const JobEntityErrorCode& value) { SetCode(value); return *this;}
-    inline StepDetailsError& WithCode(JobEntityErrorCode&& value) { SetCode(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The job ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -62,20 +50,6 @@ namespace Model
     inline StepDetailsError& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
     inline StepDetailsError& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
     inline StepDetailsError& WithJobId(const char* value) { SetJobId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The error message detailing the error's cause.</p>
-     */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline StepDetailsError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline StepDetailsError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline StepDetailsError& WithMessage(const char* value) { SetMessage(value); return *this;}
     ///@}
 
     ///@{
@@ -91,19 +65,45 @@ namespace Model
     inline StepDetailsError& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
     inline StepDetailsError& WithStepId(const char* value) { SetStepId(value); return *this;}
     ///@}
-  private:
 
-    JobEntityErrorCode m_code;
-    bool m_codeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The error code.</p>
+     */
+    inline const JobEntityErrorCode& GetCode() const{ return m_code; }
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+    inline void SetCode(const JobEntityErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(JobEntityErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+    inline StepDetailsError& WithCode(const JobEntityErrorCode& value) { SetCode(value); return *this;}
+    inline StepDetailsError& WithCode(JobEntityErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The error message detailing the error's cause.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+    inline StepDetailsError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline StepDetailsError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline StepDetailsError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
-
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;
+
+    JobEntityErrorCode m_code;
+    bool m_codeHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

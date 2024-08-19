@@ -17,11 +17,11 @@ using namespace Aws::Http;
 
 ListJobsRequest::ListJobsRequest() : 
     m_farmIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_principalIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+    m_queueIdHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -33,10 +33,10 @@ Aws::String ListJobsRequest::SerializePayload() const
 void ListJobsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
+    if(m_principalIdHasBeenSet)
     {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss << m_principalId;
+      uri.AddQueryStringParameter("principalId", ss.str());
       ss.str("");
     }
 
@@ -47,10 +47,10 @@ void ListJobsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_principalIdHasBeenSet)
+    if(m_maxResultsHasBeenSet)
     {
-      ss << m_principalId;
-      uri.AddQueryStringParameter("principalId", ss.str());
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

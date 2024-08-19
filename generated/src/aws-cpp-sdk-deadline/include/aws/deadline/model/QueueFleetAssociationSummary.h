@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/QueueFleetAssociationStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,52 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queue ID.</p>
+     */
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
+    inline QueueFleetAssociationSummary& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline QueueFleetAssociationSummary& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline QueueFleetAssociationSummary& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The fleet ID.</p>
+     */
+    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
+    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
+    inline QueueFleetAssociationSummary& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
+    inline QueueFleetAssociationSummary& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
+    inline QueueFleetAssociationSummary& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of task scheduling in the queue-fleet association.</p> <ul> <li>
+     * <p> <code>ACTIVE</code>–Association is active.</p> </li> <li> <p>
+     * <code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code>–Association has stopped
+     * scheduling new tasks and is completing current tasks.</p> </li> <li> <p>
+     * <code>STOP_SCHEDULING_AND_CANCEL_TASKS</code>–Association has stopped scheduling
+     * new tasks and is canceling current tasks.</p> </li> <li> <p>
+     * <code>STOPPED</code>–Association has been stopped.</p> </li> </ul>
+     */
+    inline const QueueFleetAssociationStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const QueueFleetAssociationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(QueueFleetAssociationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline QueueFleetAssociationSummary& WithStatus(const QueueFleetAssociationStatus& value) { SetStatus(value); return *this;}
+    inline QueueFleetAssociationSummary& WithStatus(QueueFleetAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -63,52 +109,6 @@ namespace Model
     inline QueueFleetAssociationSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
     inline QueueFleetAssociationSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
     inline QueueFleetAssociationSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The fleet ID.</p>
-     */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline QueueFleetAssociationSummary& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline QueueFleetAssociationSummary& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline QueueFleetAssociationSummary& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The queue ID.</p>
-     */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline QueueFleetAssociationSummary& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline QueueFleetAssociationSummary& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline QueueFleetAssociationSummary& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of task scheduling in the queue-fleet association.</p> <ul> <li>
-     * <p> <code>ACTIVE</code>–Association is active.</p> </li> <li> <p>
-     * <code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code>–Association has stopped
-     * scheduling new tasks and is completing current tasks.</p> </li> <li> <p>
-     * <code>STOP_SCHEDULING_AND_CANCEL_TASKS</code>–Association has stopped scheduling
-     * new tasks and is canceling current tasks.</p> </li> <li> <p>
-     * <code>STOPPED</code>–Association has been stopped.</p> </li> </ul>
-     */
-    inline const QueueFleetAssociationStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const QueueFleetAssociationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(QueueFleetAssociationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline QueueFleetAssociationSummary& WithStatus(const QueueFleetAssociationStatus& value) { SetStatus(value); return *this;}
-    inline QueueFleetAssociationSummary& WithStatus(QueueFleetAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,20 +138,20 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
+
+    QueueFleetAssociationStatus m_status;
+    bool m_statusHasBeenSet = false;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
-
-    Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet = false;
-
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
-
-    QueueFleetAssociationStatus m_status;
-    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

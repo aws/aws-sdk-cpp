@@ -29,6 +29,12 @@ ListMonitorsResult::ListMonitorsResult(const Aws::AmazonWebServiceResult<JsonVal
 ListMonitorsResult& ListMonitorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("monitors"))
   {
     Aws::Utils::Array<JsonView> monitorsJsonList = jsonValue.GetArray("monitors");
@@ -36,12 +42,6 @@ ListMonitorsResult& ListMonitorsResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_monitors.push_back(monitorsJsonList[monitorsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

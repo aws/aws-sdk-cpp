@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/QueueFleetAssociationStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,43 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queue ID for the queue-fleet association.</p>
+     */
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline void SetQueueId(const Aws::String& value) { m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueId.assign(value); }
+    inline GetQueueFleetAssociationResult& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline GetQueueFleetAssociationResult& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline GetQueueFleetAssociationResult& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The fleet ID for the queue-fleet association.</p>
+     */
+    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
+    inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
+    inline GetQueueFleetAssociationResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
+    inline GetQueueFleetAssociationResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
+    inline GetQueueFleetAssociationResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the queue-fleet association.</p>
+     */
+    inline const QueueFleetAssociationStatus& GetStatus() const{ return m_status; }
+    inline void SetStatus(const QueueFleetAssociationStatus& value) { m_status = value; }
+    inline void SetStatus(QueueFleetAssociationStatus&& value) { m_status = std::move(value); }
+    inline GetQueueFleetAssociationResult& WithStatus(const QueueFleetAssociationStatus& value) { SetStatus(value); return *this;}
+    inline GetQueueFleetAssociationResult& WithStatus(QueueFleetAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -56,43 +93,6 @@ namespace Model
     inline GetQueueFleetAssociationResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
     inline GetQueueFleetAssociationResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
     inline GetQueueFleetAssociationResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The fleet ID for the queue-fleet association.</p>
-     */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
-    inline GetQueueFleetAssociationResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline GetQueueFleetAssociationResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline GetQueueFleetAssociationResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The queue ID for the queue-fleet association.</p>
-     */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline void SetQueueId(const Aws::String& value) { m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueId.assign(value); }
-    inline GetQueueFleetAssociationResult& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline GetQueueFleetAssociationResult& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline GetQueueFleetAssociationResult& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the queue-fleet association.</p>
-     */
-    inline const QueueFleetAssociationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const QueueFleetAssociationStatus& value) { m_status = value; }
-    inline void SetStatus(QueueFleetAssociationStatus&& value) { m_status = std::move(value); }
-    inline GetQueueFleetAssociationResult& WithStatus(const QueueFleetAssociationStatus& value) { SetStatus(value); return *this;}
-    inline GetQueueFleetAssociationResult& WithStatus(QueueFleetAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,15 +131,15 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-
-    Aws::String m_createdBy;
+    Aws::String m_queueId;
 
     Aws::String m_fleetId;
 
-    Aws::String m_queueId;
-
     QueueFleetAssociationStatus m_status;
+
+    Aws::Utils::DateTime m_createdAt;
+
+    Aws::String m_createdBy;
 
     Aws::Utils::DateTime m_updatedAt;
 

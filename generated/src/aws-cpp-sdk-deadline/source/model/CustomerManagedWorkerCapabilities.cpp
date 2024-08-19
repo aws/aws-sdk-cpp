@@ -19,17 +19,17 @@ namespace Model
 {
 
 CustomerManagedWorkerCapabilities::CustomerManagedWorkerCapabilities() : 
+    m_vCpuCountHasBeenSet(false),
+    m_memoryMiBHasBeenSet(false),
+    m_acceleratorTypesHasBeenSet(false),
     m_acceleratorCountHasBeenSet(false),
     m_acceleratorTotalMemoryMiBHasBeenSet(false),
-    m_acceleratorTypesHasBeenSet(false),
+    m_osFamily(CustomerManagedFleetOperatingSystemFamily::NOT_SET),
+    m_osFamilyHasBeenSet(false),
     m_cpuArchitectureType(CpuArchitectureType::NOT_SET),
     m_cpuArchitectureTypeHasBeenSet(false),
     m_customAmountsHasBeenSet(false),
-    m_customAttributesHasBeenSet(false),
-    m_memoryMiBHasBeenSet(false),
-    m_osFamily(CustomerManagedFleetOperatingSystemFamily::NOT_SET),
-    m_osFamilyHasBeenSet(false),
-    m_vCpuCountHasBeenSet(false)
+    m_customAttributesHasBeenSet(false)
 {
 }
 
@@ -41,6 +41,30 @@ CustomerManagedWorkerCapabilities::CustomerManagedWorkerCapabilities(JsonView js
 
 CustomerManagedWorkerCapabilities& CustomerManagedWorkerCapabilities::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("vCpuCount"))
+  {
+    m_vCpuCount = jsonValue.GetObject("vCpuCount");
+
+    m_vCpuCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memoryMiB"))
+  {
+    m_memoryMiB = jsonValue.GetObject("memoryMiB");
+
+    m_memoryMiBHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("acceleratorTypes"))
+  {
+    Aws::Utils::Array<JsonView> acceleratorTypesJsonList = jsonValue.GetArray("acceleratorTypes");
+    for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
+    {
+      m_acceleratorTypes.push_back(AcceleratorTypeMapper::GetAcceleratorTypeForName(acceleratorTypesJsonList[acceleratorTypesIndex].AsString()));
+    }
+    m_acceleratorTypesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("acceleratorCount"))
   {
     m_acceleratorCount = jsonValue.GetObject("acceleratorCount");
@@ -55,14 +79,11 @@ CustomerManagedWorkerCapabilities& CustomerManagedWorkerCapabilities::operator =
     m_acceleratorTotalMemoryMiBHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("acceleratorTypes"))
+  if(jsonValue.ValueExists("osFamily"))
   {
-    Aws::Utils::Array<JsonView> acceleratorTypesJsonList = jsonValue.GetArray("acceleratorTypes");
-    for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
-    {
-      m_acceleratorTypes.push_back(AcceleratorTypeMapper::GetAcceleratorTypeForName(acceleratorTypesJsonList[acceleratorTypesIndex].AsString()));
-    }
-    m_acceleratorTypesHasBeenSet = true;
+    m_osFamily = CustomerManagedFleetOperatingSystemFamilyMapper::GetCustomerManagedFleetOperatingSystemFamilyForName(jsonValue.GetString("osFamily"));
+
+    m_osFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("cpuArchitectureType"))
@@ -92,33 +113,35 @@ CustomerManagedWorkerCapabilities& CustomerManagedWorkerCapabilities::operator =
     m_customAttributesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("memoryMiB"))
-  {
-    m_memoryMiB = jsonValue.GetObject("memoryMiB");
-
-    m_memoryMiBHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("osFamily"))
-  {
-    m_osFamily = CustomerManagedFleetOperatingSystemFamilyMapper::GetCustomerManagedFleetOperatingSystemFamilyForName(jsonValue.GetString("osFamily"));
-
-    m_osFamilyHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("vCpuCount"))
-  {
-    m_vCpuCount = jsonValue.GetObject("vCpuCount");
-
-    m_vCpuCountHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue CustomerManagedWorkerCapabilities::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_vCpuCountHasBeenSet)
+  {
+   payload.WithObject("vCpuCount", m_vCpuCount.Jsonize());
+
+  }
+
+  if(m_memoryMiBHasBeenSet)
+  {
+   payload.WithObject("memoryMiB", m_memoryMiB.Jsonize());
+
+  }
+
+  if(m_acceleratorTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
+   for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
+   {
+     acceleratorTypesJsonList[acceleratorTypesIndex].AsString(AcceleratorTypeMapper::GetNameForAcceleratorType(m_acceleratorTypes[acceleratorTypesIndex]));
+   }
+   payload.WithArray("acceleratorTypes", std::move(acceleratorTypesJsonList));
+
+  }
 
   if(m_acceleratorCountHasBeenSet)
   {
@@ -132,15 +155,9 @@ JsonValue CustomerManagedWorkerCapabilities::Jsonize() const
 
   }
 
-  if(m_acceleratorTypesHasBeenSet)
+  if(m_osFamilyHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
-   for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
-   {
-     acceleratorTypesJsonList[acceleratorTypesIndex].AsString(AcceleratorTypeMapper::GetNameForAcceleratorType(m_acceleratorTypes[acceleratorTypesIndex]));
-   }
-   payload.WithArray("acceleratorTypes", std::move(acceleratorTypesJsonList));
-
+   payload.WithString("osFamily", CustomerManagedFleetOperatingSystemFamilyMapper::GetNameForCustomerManagedFleetOperatingSystemFamily(m_osFamily));
   }
 
   if(m_cpuArchitectureTypeHasBeenSet)
@@ -167,23 +184,6 @@ JsonValue CustomerManagedWorkerCapabilities::Jsonize() const
      customAttributesJsonList[customAttributesIndex].AsObject(m_customAttributes[customAttributesIndex].Jsonize());
    }
    payload.WithArray("customAttributes", std::move(customAttributesJsonList));
-
-  }
-
-  if(m_memoryMiBHasBeenSet)
-  {
-   payload.WithObject("memoryMiB", m_memoryMiB.Jsonize());
-
-  }
-
-  if(m_osFamilyHasBeenSet)
-  {
-   payload.WithString("osFamily", CustomerManagedFleetOperatingSystemFamilyMapper::GetNameForCustomerManagedFleetOperatingSystemFamily(m_osFamily));
-  }
-
-  if(m_vCpuCountHasBeenSet)
-  {
-   payload.WithObject("vCpuCount", m_vCpuCount.Jsonize());
 
   }
 

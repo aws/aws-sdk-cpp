@@ -22,7 +22,8 @@ namespace Model
     ARM_CONTAINER,
     WINDOWS_SERVER_2019_CONTAINER,
     LINUX_LAMBDA_CONTAINER,
-    ARM_LAMBDA_CONTAINER
+    ARM_LAMBDA_CONTAINER,
+    MAC_ARM
   };
 
 namespace EnvironmentTypeMapper

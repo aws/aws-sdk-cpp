@@ -19,21 +19,21 @@ namespace Model
 {
 
 Statistics::Statistics() : 
-    m_aggregationEndTimeHasBeenSet(false),
-    m_aggregationStartTimeHasBeenSet(false),
-    m_costInUsdHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
-    m_licenseProductHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_runtimeInSecondsHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_usageType(UsageType::NOT_SET),
     m_usageTypeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_licenseProductHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_count(0),
+    m_countHasBeenSet(false),
+    m_costInUsdHasBeenSet(false),
+    m_runtimeInSecondsHasBeenSet(false),
+    m_aggregationStartTimeHasBeenSet(false),
+    m_aggregationEndTimeHasBeenSet(false)
 {
 }
 
@@ -45,32 +45,11 @@ Statistics::Statistics(JsonView jsonValue)
 
 Statistics& Statistics::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("aggregationEndTime"))
+  if(jsonValue.ValueExists("queueId"))
   {
-    m_aggregationEndTime = jsonValue.GetString("aggregationEndTime");
+    m_queueId = jsonValue.GetString("queueId");
 
-    m_aggregationEndTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("aggregationStartTime"))
-  {
-    m_aggregationStartTime = jsonValue.GetString("aggregationStartTime");
-
-    m_aggregationStartTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("costInUsd"))
-  {
-    m_costInUsd = jsonValue.GetObject("costInUsd");
-
-    m_costInUsdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("count"))
-  {
-    m_count = jsonValue.GetInteger("count");
-
-    m_countHasBeenSet = true;
+    m_queueIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fleetId"))
@@ -78,13 +57,6 @@ Statistics& Statistics::operator =(JsonView jsonValue)
     m_fleetId = jsonValue.GetString("fleetId");
 
     m_fleetIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("instanceType"))
-  {
-    m_instanceType = jsonValue.GetString("instanceType");
-
-    m_instanceTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobId"))
@@ -101,25 +73,11 @@ Statistics& Statistics::operator =(JsonView jsonValue)
     m_jobNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("licenseProduct"))
+  if(jsonValue.ValueExists("userId"))
   {
-    m_licenseProduct = jsonValue.GetString("licenseProduct");
+    m_userId = jsonValue.GetString("userId");
 
-    m_licenseProductHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("queueId"))
-  {
-    m_queueId = jsonValue.GetString("queueId");
-
-    m_queueIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("runtimeInSeconds"))
-  {
-    m_runtimeInSeconds = jsonValue.GetObject("runtimeInSeconds");
-
-    m_runtimeInSecondsHasBeenSet = true;
+    m_userIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("usageType"))
@@ -129,11 +87,53 @@ Statistics& Statistics::operator =(JsonView jsonValue)
     m_usageTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("userId"))
+  if(jsonValue.ValueExists("licenseProduct"))
   {
-    m_userId = jsonValue.GetString("userId");
+    m_licenseProduct = jsonValue.GetString("licenseProduct");
 
-    m_userIdHasBeenSet = true;
+    m_licenseProductHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("count"))
+  {
+    m_count = jsonValue.GetInteger("count");
+
+    m_countHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("costInUsd"))
+  {
+    m_costInUsd = jsonValue.GetObject("costInUsd");
+
+    m_costInUsdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("runtimeInSeconds"))
+  {
+    m_runtimeInSeconds = jsonValue.GetObject("runtimeInSeconds");
+
+    m_runtimeInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("aggregationStartTime"))
+  {
+    m_aggregationStartTime = jsonValue.GetString("aggregationStartTime");
+
+    m_aggregationStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("aggregationEndTime"))
+  {
+    m_aggregationEndTime = jsonValue.GetString("aggregationEndTime");
+
+    m_aggregationEndTimeHasBeenSet = true;
   }
 
   return *this;
@@ -143,37 +143,15 @@ JsonValue Statistics::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_aggregationEndTimeHasBeenSet)
+  if(m_queueIdHasBeenSet)
   {
-   payload.WithString("aggregationEndTime", m_aggregationEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_aggregationStartTimeHasBeenSet)
-  {
-   payload.WithString("aggregationStartTime", m_aggregationStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_costInUsdHasBeenSet)
-  {
-   payload.WithObject("costInUsd", m_costInUsd.Jsonize());
-
-  }
-
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("count", m_count);
+   payload.WithString("queueId", m_queueId);
 
   }
 
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("fleetId", m_fleetId);
-
-  }
-
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", m_instanceType);
 
   }
 
@@ -189,15 +167,38 @@ JsonValue Statistics::Jsonize() const
 
   }
 
+  if(m_userIdHasBeenSet)
+  {
+   payload.WithString("userId", m_userId);
+
+  }
+
+  if(m_usageTypeHasBeenSet)
+  {
+   payload.WithString("usageType", UsageTypeMapper::GetNameForUsageType(m_usageType));
+  }
+
   if(m_licenseProductHasBeenSet)
   {
    payload.WithString("licenseProduct", m_licenseProduct);
 
   }
 
-  if(m_queueIdHasBeenSet)
+  if(m_instanceTypeHasBeenSet)
   {
-   payload.WithString("queueId", m_queueId);
+   payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_countHasBeenSet)
+  {
+   payload.WithInteger("count", m_count);
+
+  }
+
+  if(m_costInUsdHasBeenSet)
+  {
+   payload.WithObject("costInUsd", m_costInUsd.Jsonize());
 
   }
 
@@ -207,15 +208,14 @@ JsonValue Statistics::Jsonize() const
 
   }
 
-  if(m_usageTypeHasBeenSet)
+  if(m_aggregationStartTimeHasBeenSet)
   {
-   payload.WithString("usageType", UsageTypeMapper::GetNameForUsageType(m_usageType));
+   payload.WithString("aggregationStartTime", m_aggregationStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_userIdHasBeenSet)
+  if(m_aggregationEndTimeHasBeenSet)
   {
-   payload.WithString("userId", m_userId);
-
+   payload.WithString("aggregationEndTime", m_aggregationEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

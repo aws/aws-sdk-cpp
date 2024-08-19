@@ -16,10 +16,10 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListFarmsRequest::ListFarmsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+    m_principalIdHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -31,13 +31,6 @@ Aws::String ListFarmsRequest::SerializePayload() const
 void ListFarmsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;
@@ -49,6 +42,13 @@ void ListFarmsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_principalId;
       uri.AddQueryStringParameter("principalId", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

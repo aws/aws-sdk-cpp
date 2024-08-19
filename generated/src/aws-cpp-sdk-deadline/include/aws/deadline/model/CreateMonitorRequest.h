@@ -53,7 +53,9 @@ namespace Model
     ///@{
     /**
      * <p>The name that you give the monitor that is displayed in the Deadline Cloud
-     * console.</p>
+     * console.</p>  <p>This field can store any content. Escape or encode
+     * this content before displaying it on a webpage or any other system that might
+     * interpret the content of this field.</p> 
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -82,6 +84,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The subdomain to use when creating the monitor URL. The full URL of the
+     * monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
+     */
+    inline const Aws::String& GetSubdomain() const{ return m_subdomain; }
+    inline bool SubdomainHasBeenSet() const { return m_subdomainHasBeenSet; }
+    inline void SetSubdomain(const Aws::String& value) { m_subdomainHasBeenSet = true; m_subdomain = value; }
+    inline void SetSubdomain(Aws::String&& value) { m_subdomainHasBeenSet = true; m_subdomain = std::move(value); }
+    inline void SetSubdomain(const char* value) { m_subdomainHasBeenSet = true; m_subdomain.assign(value); }
+    inline CreateMonitorRequest& WithSubdomain(const Aws::String& value) { SetSubdomain(value); return *this;}
+    inline CreateMonitorRequest& WithSubdomain(Aws::String&& value) { SetSubdomain(std::move(value)); return *this;}
+    inline CreateMonitorRequest& WithSubdomain(const char* value) { SetSubdomain(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the monitor uses to
      * connect to Deadline Cloud. Every user that signs in to the monitor using IAM
      * Identity Center uses this role to access Deadline Cloud resources.</p>
@@ -95,21 +112,6 @@ namespace Model
     inline CreateMonitorRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
     inline CreateMonitorRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The subdomain to use when creating the monitor URL. The full URL of the
-     * monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
-     */
-    inline const Aws::String& GetSubdomain() const{ return m_subdomain; }
-    inline bool SubdomainHasBeenSet() const { return m_subdomainHasBeenSet; }
-    inline void SetSubdomain(const Aws::String& value) { m_subdomainHasBeenSet = true; m_subdomain = value; }
-    inline void SetSubdomain(Aws::String&& value) { m_subdomainHasBeenSet = true; m_subdomain = std::move(value); }
-    inline void SetSubdomain(const char* value) { m_subdomainHasBeenSet = true; m_subdomain.assign(value); }
-    inline CreateMonitorRequest& WithSubdomain(const Aws::String& value) { SetSubdomain(value); return *this;}
-    inline CreateMonitorRequest& WithSubdomain(Aws::String&& value) { SetSubdomain(std::move(value)); return *this;}
-    inline CreateMonitorRequest& WithSubdomain(const char* value) { SetSubdomain(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_clientToken;
@@ -121,11 +123,11 @@ namespace Model
     Aws::String m_identityCenterInstanceArn;
     bool m_identityCenterInstanceArnHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
-
     Aws::String m_subdomain;
     bool m_subdomainHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,22 +37,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IOPS per volume.</p>
-     */
-    inline int GetIops() const{ return m_iops; }
-    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-    inline Ec2EbsVolume& WithIops(int value) { SetIops(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The EBS volume size in GiB.</p>
      */
     inline int GetSizeGiB() const{ return m_sizeGiB; }
     inline bool SizeGiBHasBeenSet() const { return m_sizeGiBHasBeenSet; }
     inline void SetSizeGiB(int value) { m_sizeGiBHasBeenSet = true; m_sizeGiB = value; }
     inline Ec2EbsVolume& WithSizeGiB(int value) { SetSizeGiB(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IOPS per volume.</p>
+     */
+    inline int GetIops() const{ return m_iops; }
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline Ec2EbsVolume& WithIops(int value) { SetIops(value); return *this;}
     ///@}
 
     ///@{
@@ -66,11 +66,11 @@ namespace Model
     ///@}
   private:
 
-    int m_iops;
-    bool m_iopsHasBeenSet = false;
-
     int m_sizeGiB;
     bool m_sizeGiBHasBeenSet = false;
+
+    int m_iops;
+    bool m_iopsHasBeenSet = false;
 
     int m_throughputMiB;
     bool m_throughputMiBHasBeenSet = false;

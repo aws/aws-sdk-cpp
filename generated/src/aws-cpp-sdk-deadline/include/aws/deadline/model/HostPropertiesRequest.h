@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/IpAddresses.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IP address of the host.</p>
+     */
+    inline const IpAddresses& GetIpAddresses() const{ return m_ipAddresses; }
+    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
+    inline void SetIpAddresses(const IpAddresses& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
+    inline void SetIpAddresses(IpAddresses&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
+    inline HostPropertiesRequest& WithIpAddresses(const IpAddresses& value) { SetIpAddresses(value); return *this;}
+    inline HostPropertiesRequest& WithIpAddresses(IpAddresses&& value) { SetIpAddresses(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The host name.</p>
      */
     inline const Aws::String& GetHostName() const{ return m_hostName; }
@@ -51,25 +63,13 @@ namespace Model
     inline HostPropertiesRequest& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
     inline HostPropertiesRequest& WithHostName(const char* value) { SetHostName(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The IP address of the host.</p>
-     */
-    inline const IpAddresses& GetIpAddresses() const{ return m_ipAddresses; }
-    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
-    inline void SetIpAddresses(const IpAddresses& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
-    inline void SetIpAddresses(IpAddresses&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
-    inline HostPropertiesRequest& WithIpAddresses(const IpAddresses& value) { SetIpAddresses(value); return *this;}
-    inline HostPropertiesRequest& WithIpAddresses(IpAddresses&& value) { SetIpAddresses(std::move(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_hostName;
-    bool m_hostNameHasBeenSet = false;
 
     IpAddresses m_ipAddresses;
     bool m_ipAddressesHasBeenSet = false;
+
+    Aws::String m_hostName;
+    bool m_hostNameHasBeenSet = false;
   };
 
 } // namespace Model

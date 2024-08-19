@@ -18,9 +18,9 @@ using namespace Aws::Http;
 ListFleetMembersRequest::ListFleetMembersRequest() : 
     m_farmIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -32,17 +32,17 @@ Aws::String ListFleetMembersRequest::SerializePayload() const
 void ListFleetMembersRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

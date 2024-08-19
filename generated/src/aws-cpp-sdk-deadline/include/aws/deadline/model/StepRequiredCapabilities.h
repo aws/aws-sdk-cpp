@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/deadline/model/StepAmountCapability.h>
 #include <aws/deadline/model/StepAttributeCapability.h>
+#include <aws/deadline/model/StepAmountCapability.h>
 #include <utility>
 
 namespace Aws
@@ -41,20 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The capability amounts that the step requires.</p>
-     */
-    inline const Aws::Vector<StepAmountCapability>& GetAmounts() const{ return m_amounts; }
-    inline bool AmountsHasBeenSet() const { return m_amountsHasBeenSet; }
-    inline void SetAmounts(const Aws::Vector<StepAmountCapability>& value) { m_amountsHasBeenSet = true; m_amounts = value; }
-    inline void SetAmounts(Aws::Vector<StepAmountCapability>&& value) { m_amountsHasBeenSet = true; m_amounts = std::move(value); }
-    inline StepRequiredCapabilities& WithAmounts(const Aws::Vector<StepAmountCapability>& value) { SetAmounts(value); return *this;}
-    inline StepRequiredCapabilities& WithAmounts(Aws::Vector<StepAmountCapability>&& value) { SetAmounts(std::move(value)); return *this;}
-    inline StepRequiredCapabilities& AddAmounts(const StepAmountCapability& value) { m_amountsHasBeenSet = true; m_amounts.push_back(value); return *this; }
-    inline StepRequiredCapabilities& AddAmounts(StepAmountCapability&& value) { m_amountsHasBeenSet = true; m_amounts.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The capability attributes that the step requires.</p>
      */
     inline const Aws::Vector<StepAttributeCapability>& GetAttributes() const{ return m_attributes; }
@@ -66,13 +52,27 @@ namespace Model
     inline StepRequiredCapabilities& AddAttributes(const StepAttributeCapability& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
     inline StepRequiredCapabilities& AddAttributes(StepAttributeCapability&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<StepAmountCapability> m_amounts;
-    bool m_amountsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The capability amounts that the step requires.</p>
+     */
+    inline const Aws::Vector<StepAmountCapability>& GetAmounts() const{ return m_amounts; }
+    inline bool AmountsHasBeenSet() const { return m_amountsHasBeenSet; }
+    inline void SetAmounts(const Aws::Vector<StepAmountCapability>& value) { m_amountsHasBeenSet = true; m_amounts = value; }
+    inline void SetAmounts(Aws::Vector<StepAmountCapability>&& value) { m_amountsHasBeenSet = true; m_amounts = std::move(value); }
+    inline StepRequiredCapabilities& WithAmounts(const Aws::Vector<StepAmountCapability>& value) { SetAmounts(value); return *this;}
+    inline StepRequiredCapabilities& WithAmounts(Aws::Vector<StepAmountCapability>&& value) { SetAmounts(std::move(value)); return *this;}
+    inline StepRequiredCapabilities& AddAmounts(const StepAmountCapability& value) { m_amountsHasBeenSet = true; m_amounts.push_back(value); return *this; }
+    inline StepRequiredCapabilities& AddAmounts(StepAmountCapability&& value) { m_amountsHasBeenSet = true; m_amounts.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<StepAttributeCapability> m_attributes;
     bool m_attributesHasBeenSet = false;
+
+    Aws::Vector<StepAmountCapability> m_amounts;
+    bool m_amountsHasBeenSet = false;
   };
 
 } // namespace Model

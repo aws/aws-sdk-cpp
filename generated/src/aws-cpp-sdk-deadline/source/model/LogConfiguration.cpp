@@ -19,10 +19,10 @@ namespace Model
 {
 
 LogConfiguration::LogConfiguration() : 
-    m_errorHasBeenSet(false),
     m_logDriverHasBeenSet(false),
     m_optionsHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -34,13 +34,6 @@ LogConfiguration::LogConfiguration(JsonView jsonValue)
 
 LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("error"))
-  {
-    m_error = jsonValue.GetString("error");
-
-    m_errorHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("logDriver"))
   {
     m_logDriver = jsonValue.GetString("logDriver");
@@ -68,18 +61,19 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     m_parametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetString("error");
+
+    m_errorHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue LogConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_errorHasBeenSet)
-  {
-   payload.WithString("error", m_error);
-
-  }
 
   if(m_logDriverHasBeenSet)
   {
@@ -106,6 +100,12 @@ JsonValue LogConfiguration::Jsonize() const
      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
    }
    payload.WithObject("parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_errorHasBeenSet)
+  {
+   payload.WithString("error", m_error);
 
   }
 

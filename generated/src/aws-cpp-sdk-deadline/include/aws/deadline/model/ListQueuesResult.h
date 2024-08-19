@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/QueueSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queues on the list.</p>
+     */
+    inline const Aws::Vector<QueueSummary>& GetQueues() const{ return m_queues; }
+    inline void SetQueues(const Aws::Vector<QueueSummary>& value) { m_queues = value; }
+    inline void SetQueues(Aws::Vector<QueueSummary>&& value) { m_queues = std::move(value); }
+    inline ListQueuesResult& WithQueues(const Aws::Vector<QueueSummary>& value) { SetQueues(value); return *this;}
+    inline ListQueuesResult& WithQueues(Aws::Vector<QueueSummary>&& value) { SetQueues(std::move(value)); return *this;}
+    inline ListQueuesResult& AddQueues(const QueueSummary& value) { m_queues.push_back(value); return *this; }
+    inline ListQueuesResult& AddQueues(QueueSummary&& value) { m_queues.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -54,19 +67,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The queues on the list.</p>
-     */
-    inline const Aws::Vector<QueueSummary>& GetQueues() const{ return m_queues; }
-    inline void SetQueues(const Aws::Vector<QueueSummary>& value) { m_queues = value; }
-    inline void SetQueues(Aws::Vector<QueueSummary>&& value) { m_queues = std::move(value); }
-    inline ListQueuesResult& WithQueues(const Aws::Vector<QueueSummary>& value) { SetQueues(value); return *this;}
-    inline ListQueuesResult& WithQueues(Aws::Vector<QueueSummary>&& value) { SetQueues(std::move(value)); return *this;}
-    inline ListQueuesResult& AddQueues(const QueueSummary& value) { m_queues.push_back(value); return *this; }
-    inline ListQueuesResult& AddQueues(QueueSummary&& value) { m_queues.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<QueueSummary> m_queues;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

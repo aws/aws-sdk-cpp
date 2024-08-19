@@ -34,20 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The new value to use for the monitor's display name.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateMonitorRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateMonitorRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the monitor to update.</p>
      */
     inline const Aws::String& GetMonitorId() const{ return m_monitorId; }
@@ -58,6 +44,37 @@ namespace Model
     inline UpdateMonitorRequest& WithMonitorId(const Aws::String& value) { SetMonitorId(value); return *this;}
     inline UpdateMonitorRequest& WithMonitorId(Aws::String&& value) { SetMonitorId(std::move(value)); return *this;}
     inline UpdateMonitorRequest& WithMonitorId(const char* value) { SetMonitorId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The new value of the subdomain to use when forming the monitor URL.</p>
+     */
+    inline const Aws::String& GetSubdomain() const{ return m_subdomain; }
+    inline bool SubdomainHasBeenSet() const { return m_subdomainHasBeenSet; }
+    inline void SetSubdomain(const Aws::String& value) { m_subdomainHasBeenSet = true; m_subdomain = value; }
+    inline void SetSubdomain(Aws::String&& value) { m_subdomainHasBeenSet = true; m_subdomain = std::move(value); }
+    inline void SetSubdomain(const char* value) { m_subdomainHasBeenSet = true; m_subdomain.assign(value); }
+    inline UpdateMonitorRequest& WithSubdomain(const Aws::String& value) { SetSubdomain(value); return *this;}
+    inline UpdateMonitorRequest& WithSubdomain(Aws::String&& value) { SetSubdomain(std::move(value)); return *this;}
+    inline UpdateMonitorRequest& WithSubdomain(const char* value) { SetSubdomain(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The new value to use for the monitor's display name.</p>  <p>This
+     * field can store any content. Escape or encode this content before displaying it
+     * on a webpage or any other system that might interpret the content of this
+     * field.</p> 
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline UpdateMonitorRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline UpdateMonitorRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline UpdateMonitorRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
     ///@}
 
     ///@{
@@ -74,33 +91,19 @@ namespace Model
     inline UpdateMonitorRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
     inline UpdateMonitorRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The new value of the subdomain to use when forming the monitor URL.</p>
-     */
-    inline const Aws::String& GetSubdomain() const{ return m_subdomain; }
-    inline bool SubdomainHasBeenSet() const { return m_subdomainHasBeenSet; }
-    inline void SetSubdomain(const Aws::String& value) { m_subdomainHasBeenSet = true; m_subdomain = value; }
-    inline void SetSubdomain(Aws::String&& value) { m_subdomainHasBeenSet = true; m_subdomain = std::move(value); }
-    inline void SetSubdomain(const char* value) { m_subdomainHasBeenSet = true; m_subdomain.assign(value); }
-    inline UpdateMonitorRequest& WithSubdomain(const Aws::String& value) { SetSubdomain(value); return *this;}
-    inline UpdateMonitorRequest& WithSubdomain(Aws::String&& value) { SetSubdomain(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& WithSubdomain(const char* value) { SetSubdomain(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_monitorId;
     bool m_monitorIdHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
-
     Aws::String m_subdomain;
     bool m_subdomainHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

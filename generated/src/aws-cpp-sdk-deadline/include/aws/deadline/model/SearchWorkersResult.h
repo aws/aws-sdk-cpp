@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The workers for the search.</p>
+     */
+    inline const Aws::Vector<WorkerSearchSummary>& GetWorkers() const{ return m_workers; }
+    inline void SetWorkers(const Aws::Vector<WorkerSearchSummary>& value) { m_workers = value; }
+    inline void SetWorkers(Aws::Vector<WorkerSearchSummary>&& value) { m_workers = std::move(value); }
+    inline SearchWorkersResult& WithWorkers(const Aws::Vector<WorkerSearchSummary>& value) { SetWorkers(value); return *this;}
+    inline SearchWorkersResult& WithWorkers(Aws::Vector<WorkerSearchSummary>&& value) { SetWorkers(std::move(value)); return *this;}
+    inline SearchWorkersResult& AddWorkers(const WorkerSearchSummary& value) { m_workers.push_back(value); return *this; }
+    inline SearchWorkersResult& AddWorkers(WorkerSearchSummary&& value) { m_workers.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The next incremental starting point after the defined
      * <code>itemOffset</code>.</p>
      */
@@ -54,19 +67,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The workers for the search.</p>
-     */
-    inline const Aws::Vector<WorkerSearchSummary>& GetWorkers() const{ return m_workers; }
-    inline void SetWorkers(const Aws::Vector<WorkerSearchSummary>& value) { m_workers = value; }
-    inline void SetWorkers(Aws::Vector<WorkerSearchSummary>&& value) { m_workers = std::move(value); }
-    inline SearchWorkersResult& WithWorkers(const Aws::Vector<WorkerSearchSummary>& value) { SetWorkers(value); return *this;}
-    inline SearchWorkersResult& WithWorkers(Aws::Vector<WorkerSearchSummary>&& value) { SetWorkers(std::move(value)); return *this;}
-    inline SearchWorkersResult& AddWorkers(const WorkerSearchSummary& value) { m_workers.push_back(value); return *this; }
-    inline SearchWorkersResult& AddWorkers(WorkerSearchSummary&& value) { m_workers.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,11 +78,11 @@ namespace Model
     ///@}
   private:
 
+    Aws::Vector<WorkerSearchSummary> m_workers;
+
     int m_nextItemOffset;
 
     int m_totalResults;
-
-    Aws::Vector<WorkerSearchSummary> m_workers;
 
     Aws::String m_requestId;
   };

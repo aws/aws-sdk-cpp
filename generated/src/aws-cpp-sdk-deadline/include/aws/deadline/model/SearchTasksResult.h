@@ -36,16 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The next incremental starting point after the defined
-     * <code>itemOffset</code>.</p>
-     */
-    inline int GetNextItemOffset() const{ return m_nextItemOffset; }
-    inline void SetNextItemOffset(int value) { m_nextItemOffset = value; }
-    inline SearchTasksResult& WithNextItemOffset(int value) { SetNextItemOffset(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Tasks in the search.</p>
      */
     inline const Aws::Vector<TaskSearchSummary>& GetTasks() const{ return m_tasks; }
@@ -55,6 +45,16 @@ namespace Model
     inline SearchTasksResult& WithTasks(Aws::Vector<TaskSearchSummary>&& value) { SetTasks(std::move(value)); return *this;}
     inline SearchTasksResult& AddTasks(const TaskSearchSummary& value) { m_tasks.push_back(value); return *this; }
     inline SearchTasksResult& AddTasks(TaskSearchSummary&& value) { m_tasks.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The next incremental starting point after the defined
+     * <code>itemOffset</code>.</p>
+     */
+    inline int GetNextItemOffset() const{ return m_nextItemOffset; }
+    inline void SetNextItemOffset(int value) { m_nextItemOffset = value; }
+    inline SearchTasksResult& WithNextItemOffset(int value) { SetNextItemOffset(value); return *this;}
     ///@}
 
     ///@{
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    int m_nextItemOffset;
-
     Aws::Vector<TaskSearchSummary> m_tasks;
+
+    int m_nextItemOffset;
 
     int m_totalResults;
 

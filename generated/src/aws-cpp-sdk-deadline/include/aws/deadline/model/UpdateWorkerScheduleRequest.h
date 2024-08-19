@@ -64,6 +64,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The worker ID to update.</p>
+     */
+    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
+    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
+    inline UpdateWorkerScheduleRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
+    inline UpdateWorkerScheduleRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
+    inline UpdateWorkerScheduleRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The session actions associated with the worker schedule to update.</p>
      */
     inline const Aws::Map<Aws::String, UpdatedSessionActionInfo>& GetUpdatedSessionActions() const{ return m_updatedSessionActions; }
@@ -79,20 +93,6 @@ namespace Model
     inline UpdateWorkerScheduleRequest& AddUpdatedSessionActions(const char* key, UpdatedSessionActionInfo&& value) { m_updatedSessionActionsHasBeenSet = true; m_updatedSessionActions.emplace(key, std::move(value)); return *this; }
     inline UpdateWorkerScheduleRequest& AddUpdatedSessionActions(const char* key, const UpdatedSessionActionInfo& value) { m_updatedSessionActionsHasBeenSet = true; m_updatedSessionActions.emplace(key, value); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The worker ID to update.</p>
-     */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline UpdateWorkerScheduleRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline UpdateWorkerScheduleRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline UpdateWorkerScheduleRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_farmId;
@@ -101,11 +101,11 @@ namespace Model
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    Aws::Map<Aws::String, UpdatedSessionActionInfo> m_updatedSessionActions;
-    bool m_updatedSessionActionsHasBeenSet = false;
-
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, UpdatedSessionActionInfo> m_updatedSessionActions;
+    bool m_updatedSessionActionsHasBeenSet = false;
   };
 
 } // namespace Model

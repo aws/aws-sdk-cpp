@@ -18,9 +18,9 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetQueueResult::GetQueueResult() : 
-    m_blockedReason(QueueBlockedReason::NOT_SET),
+    m_status(QueueStatus::NOT_SET),
     m_defaultBudgetAction(DefaultQueueBudgetAction::NOT_SET),
-    m_status(QueueStatus::NOT_SET)
+    m_blockedReason(QueueBlockedReason::NOT_SET)
 {
 }
 
@@ -33,42 +33,9 @@ GetQueueResult::GetQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 GetQueueResult& GetQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("allowedStorageProfileIds"))
+  if(jsonValue.ValueExists("queueId"))
   {
-    Aws::Utils::Array<JsonView> allowedStorageProfileIdsJsonList = jsonValue.GetArray("allowedStorageProfileIds");
-    for(unsigned allowedStorageProfileIdsIndex = 0; allowedStorageProfileIdsIndex < allowedStorageProfileIdsJsonList.GetLength(); ++allowedStorageProfileIdsIndex)
-    {
-      m_allowedStorageProfileIds.push_back(allowedStorageProfileIdsJsonList[allowedStorageProfileIdsIndex].AsString());
-    }
-  }
-
-  if(jsonValue.ValueExists("blockedReason"))
-  {
-    m_blockedReason = QueueBlockedReasonMapper::GetQueueBlockedReasonForName(jsonValue.GetString("blockedReason"));
-
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
-
-  }
-
-  if(jsonValue.ValueExists("defaultBudgetAction"))
-  {
-    m_defaultBudgetAction = DefaultQueueBudgetActionMapper::GetDefaultQueueBudgetActionForName(jsonValue.GetString("defaultBudgetAction"));
-
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
+    m_queueId = jsonValue.GetString("queueId");
 
   }
 
@@ -78,9 +45,33 @@ GetQueueResult& GetQueueResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
   if(jsonValue.ValueExists("farmId"))
   {
     m_farmId = jsonValue.GetString("farmId");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = QueueStatusMapper::GetQueueStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("defaultBudgetAction"))
+  {
+    m_defaultBudgetAction = DefaultQueueBudgetActionMapper::GetDefaultQueueBudgetActionForName(jsonValue.GetString("defaultBudgetAction"));
+
+  }
+
+  if(jsonValue.ValueExists("blockedReason"))
+  {
+    m_blockedReason = QueueBlockedReasonMapper::GetQueueBlockedReasonForName(jsonValue.GetString("blockedReason"));
 
   }
 
@@ -90,15 +81,9 @@ GetQueueResult& GetQueueResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
-  if(jsonValue.ValueExists("jobRunAsUser"))
+  if(jsonValue.ValueExists("roleArn"))
   {
-    m_jobRunAsUser = jsonValue.GetObject("jobRunAsUser");
-
-  }
-
-  if(jsonValue.ValueExists("queueId"))
-  {
-    m_queueId = jsonValue.GetString("queueId");
+    m_roleArn = jsonValue.GetString("roleArn");
 
   }
 
@@ -111,15 +96,30 @@ GetQueueResult& GetQueueResult::operator =(const Aws::AmazonWebServiceResult<Jso
     }
   }
 
-  if(jsonValue.ValueExists("roleArn"))
+  if(jsonValue.ValueExists("allowedStorageProfileIds"))
   {
-    m_roleArn = jsonValue.GetString("roleArn");
+    Aws::Utils::Array<JsonView> allowedStorageProfileIdsJsonList = jsonValue.GetArray("allowedStorageProfileIds");
+    for(unsigned allowedStorageProfileIdsIndex = 0; allowedStorageProfileIdsIndex < allowedStorageProfileIdsJsonList.GetLength(); ++allowedStorageProfileIdsIndex)
+    {
+      m_allowedStorageProfileIds.push_back(allowedStorageProfileIdsJsonList[allowedStorageProfileIdsIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("jobRunAsUser"))
+  {
+    m_jobRunAsUser = jsonValue.GetObject("jobRunAsUser");
 
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_status = QueueStatusMapper::GetQueueStatusForName(jsonValue.GetString("status"));
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
 
   }
 

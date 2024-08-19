@@ -39,16 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The percentage threshold for the budget action to remove.</p>
-     */
-    inline double GetThresholdPercentage() const{ return m_thresholdPercentage; }
-    inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
-    inline void SetThresholdPercentage(double value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
-    inline BudgetActionToRemove& WithThresholdPercentage(double value) { SetThresholdPercentage(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The type of budget action to remove.</p>
      */
     inline const BudgetActionType& GetType() const{ return m_type; }
@@ -58,13 +48,23 @@ namespace Model
     inline BudgetActionToRemove& WithType(const BudgetActionType& value) { SetType(value); return *this;}
     inline BudgetActionToRemove& WithType(BudgetActionType&& value) { SetType(std::move(value)); return *this;}
     ///@}
-  private:
 
-    double m_thresholdPercentage;
-    bool m_thresholdPercentageHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The percentage threshold for the budget action to remove.</p>
+     */
+    inline double GetThresholdPercentage() const{ return m_thresholdPercentage; }
+    inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
+    inline void SetThresholdPercentage(double value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
+    inline BudgetActionToRemove& WithThresholdPercentage(double value) { SetThresholdPercentage(value); return *this;}
+    ///@}
+  private:
 
     BudgetActionType m_type;
     bool m_typeHasBeenSet = false;
+
+    double m_thresholdPercentage;
+    bool m_thresholdPercentageHasBeenSet = false;
   };
 
 } // namespace Model

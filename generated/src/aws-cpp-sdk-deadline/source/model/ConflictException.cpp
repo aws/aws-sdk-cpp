@@ -19,12 +19,12 @@ namespace Model
 {
 
 ConflictException::ConflictException() : 
-    m_contextHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_reason(ConflictExceptionReason::NOT_SET),
     m_reasonHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -36,16 +36,6 @@ ConflictException::ConflictException(JsonView jsonValue)
 
 ConflictException& ConflictException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("context"))
-  {
-    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("context").GetAllObjects();
-    for(auto& contextItem : contextJsonMap)
-    {
-      m_context[contextItem.first] = contextItem.second.AsString();
-    }
-    m_contextHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
@@ -74,23 +64,22 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("context"))
+  {
+    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("context").GetAllObjects();
+    for(auto& contextItem : contextJsonMap)
+    {
+      m_context[contextItem.first] = contextItem.second.AsString();
+    }
+    m_contextHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ConflictException::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_contextHasBeenSet)
-  {
-   JsonValue contextJsonMap;
-   for(auto& contextItem : m_context)
-   {
-     contextJsonMap.WithString(contextItem.first, contextItem.second);
-   }
-   payload.WithObject("context", std::move(contextJsonMap));
-
-  }
 
   if(m_messageHasBeenSet)
   {
@@ -112,6 +101,17 @@ JsonValue ConflictException::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("resourceType", m_resourceType);
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   JsonValue contextJsonMap;
+   for(auto& contextItem : m_context)
+   {
+     contextJsonMap.WithString(contextItem.first, contextItem.second);
+   }
+   payload.WithObject("context", std::move(contextJsonMap));
 
   }
 

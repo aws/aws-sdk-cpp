@@ -48,6 +48,7 @@
 #include <aws/lambda/model/GetFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/GetFunctionConfigurationRequest.h>
 #include <aws/lambda/model/GetFunctionEventInvokeConfigRequest.h>
+#include <aws/lambda/model/GetFunctionRecursionConfigRequest.h>
 #include <aws/lambda/model/GetFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/GetLayerVersionRequest.h>
 #include <aws/lambda/model/GetLayerVersionByArnRequest.h>
@@ -74,6 +75,7 @@
 #include <aws/lambda/model/PutFunctionCodeSigningConfigRequest.h>
 #include <aws/lambda/model/PutFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/PutFunctionEventInvokeConfigRequest.h>
+#include <aws/lambda/model/PutFunctionRecursionConfigRequest.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
@@ -1108,6 +1110,40 @@ GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(c
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetFunctionRecursionConfigOutcome LambdaClient::GetFunctionRecursionConfig(const GetFunctionRecursionConfigRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetFunctionRecursionConfig);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionRecursionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionRecursionConfig", "Required field: FunctionName, is not set");
+    return GetFunctionRecursionConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetFunctionRecursionConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetFunctionRecursionConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetFunctionRecursionConfig",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetFunctionRecursionConfigOutcome>(
+    [&]()-> GetFunctionRecursionConfigOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFunctionRecursionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2024-08-31/functions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/recursion-config");
+      return GetFunctionRecursionConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunctionUrlConfigRequest& request) const
 {
   AWS_OPERATION_GUARD(GetFunctionUrlConfig);
@@ -1982,6 +2018,40 @@ PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(c
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/event-invoke-config");
       return PutFunctionEventInvokeConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutFunctionRecursionConfigOutcome LambdaClient::PutFunctionRecursionConfig(const PutFunctionRecursionConfigRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutFunctionRecursionConfig);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFunctionRecursionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutFunctionRecursionConfig", "Required field: FunctionName, is not set");
+    return PutFunctionRecursionConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutFunctionRecursionConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutFunctionRecursionConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutFunctionRecursionConfig",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutFunctionRecursionConfigOutcome>(
+    [&]()-> PutFunctionRecursionConfigOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutFunctionRecursionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2024-08-31/functions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/recursion-config");
+      return PutFunctionRecursionConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

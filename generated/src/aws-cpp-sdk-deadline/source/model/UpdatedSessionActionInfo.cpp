@@ -21,14 +21,14 @@ namespace Model
 UpdatedSessionActionInfo::UpdatedSessionActionInfo() : 
     m_completedStatus(CompletedStatus::NOT_SET),
     m_completedStatusHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
     m_processExitCode(0),
     m_processExitCodeHasBeenSet(false),
     m_progressMessageHasBeenSet(false),
-    m_progressPercent(0.0),
-    m_progressPercentHasBeenSet(false),
     m_startedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_endedAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
+    m_progressPercent(0.0),
+    m_progressPercentHasBeenSet(false)
 {
 }
 
@@ -47,13 +47,6 @@ UpdatedSessionActionInfo& UpdatedSessionActionInfo::operator =(JsonView jsonValu
     m_completedStatusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("endedAt"))
-  {
-    m_endedAt = jsonValue.GetString("endedAt");
-
-    m_endedAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("processExitCode"))
   {
     m_processExitCode = jsonValue.GetInteger("processExitCode");
@@ -68,13 +61,6 @@ UpdatedSessionActionInfo& UpdatedSessionActionInfo::operator =(JsonView jsonValu
     m_progressMessageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("progressPercent"))
-  {
-    m_progressPercent = jsonValue.GetDouble("progressPercent");
-
-    m_progressPercentHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
@@ -82,11 +68,25 @@ UpdatedSessionActionInfo& UpdatedSessionActionInfo::operator =(JsonView jsonValu
     m_startedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("endedAt"))
+  {
+    m_endedAt = jsonValue.GetString("endedAt");
+
+    m_endedAtHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
 
     m_updatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("progressPercent"))
+  {
+    m_progressPercent = jsonValue.GetDouble("progressPercent");
+
+    m_progressPercentHasBeenSet = true;
   }
 
   return *this;
@@ -101,11 +101,6 @@ JsonValue UpdatedSessionActionInfo::Jsonize() const
    payload.WithString("completedStatus", CompletedStatusMapper::GetNameForCompletedStatus(m_completedStatus));
   }
 
-  if(m_endedAtHasBeenSet)
-  {
-   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_processExitCodeHasBeenSet)
   {
    payload.WithInteger("processExitCode", m_processExitCode);
@@ -118,20 +113,25 @@ JsonValue UpdatedSessionActionInfo::Jsonize() const
 
   }
 
-  if(m_progressPercentHasBeenSet)
-  {
-   payload.WithDouble("progressPercent", m_progressPercent);
-
-  }
-
   if(m_startedAtHasBeenSet)
   {
    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
+  if(m_endedAtHasBeenSet)
+  {
+   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_updatedAtHasBeenSet)
   {
    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_progressPercentHasBeenSet)
+  {
+   payload.WithDouble("progressPercent", m_progressPercent);
+
   }
 
   return payload;

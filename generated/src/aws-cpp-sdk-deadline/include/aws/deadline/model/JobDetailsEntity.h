@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/JobAttachmentSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/JobAttachmentSettings.h>
 #include <aws/deadline/model/JobRunAsUser.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -45,18 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job attachment settings.</p>
-     */
-    inline const JobAttachmentSettings& GetJobAttachmentSettings() const{ return m_jobAttachmentSettings; }
-    inline bool JobAttachmentSettingsHasBeenSet() const { return m_jobAttachmentSettingsHasBeenSet; }
-    inline void SetJobAttachmentSettings(const JobAttachmentSettings& value) { m_jobAttachmentSettingsHasBeenSet = true; m_jobAttachmentSettings = value; }
-    inline void SetJobAttachmentSettings(JobAttachmentSettings&& value) { m_jobAttachmentSettingsHasBeenSet = true; m_jobAttachmentSettings = std::move(value); }
-    inline JobDetailsEntity& WithJobAttachmentSettings(const JobAttachmentSettings& value) { SetJobAttachmentSettings(value); return *this;}
-    inline JobDetailsEntity& WithJobAttachmentSettings(JobAttachmentSettings&& value) { SetJobAttachmentSettings(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The job ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -67,6 +55,18 @@ namespace Model
     inline JobDetailsEntity& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
     inline JobDetailsEntity& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
     inline JobDetailsEntity& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The job attachment settings.</p>
+     */
+    inline const JobAttachmentSettings& GetJobAttachmentSettings() const{ return m_jobAttachmentSettings; }
+    inline bool JobAttachmentSettingsHasBeenSet() const { return m_jobAttachmentSettingsHasBeenSet; }
+    inline void SetJobAttachmentSettings(const JobAttachmentSettings& value) { m_jobAttachmentSettingsHasBeenSet = true; m_jobAttachmentSettings = value; }
+    inline void SetJobAttachmentSettings(JobAttachmentSettings&& value) { m_jobAttachmentSettingsHasBeenSet = true; m_jobAttachmentSettings = std::move(value); }
+    inline JobDetailsEntity& WithJobAttachmentSettings(const JobAttachmentSettings& value) { SetJobAttachmentSettings(value); return *this;}
+    inline JobDetailsEntity& WithJobAttachmentSettings(JobAttachmentSettings&& value) { SetJobAttachmentSettings(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,6 +97,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queue role ARN.</p>
+     */
+    inline const Aws::String& GetQueueRoleArn() const{ return m_queueRoleArn; }
+    inline bool QueueRoleArnHasBeenSet() const { return m_queueRoleArnHasBeenSet; }
+    inline void SetQueueRoleArn(const Aws::String& value) { m_queueRoleArnHasBeenSet = true; m_queueRoleArn = value; }
+    inline void SetQueueRoleArn(Aws::String&& value) { m_queueRoleArnHasBeenSet = true; m_queueRoleArn = std::move(value); }
+    inline void SetQueueRoleArn(const char* value) { m_queueRoleArnHasBeenSet = true; m_queueRoleArn.assign(value); }
+    inline JobDetailsEntity& WithQueueRoleArn(const Aws::String& value) { SetQueueRoleArn(value); return *this;}
+    inline JobDetailsEntity& WithQueueRoleArn(Aws::String&& value) { SetQueueRoleArn(std::move(value)); return *this;}
+    inline JobDetailsEntity& WithQueueRoleArn(const char* value) { SetQueueRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The parameters.</p>
      */
     inline const Aws::Map<Aws::String, JobParameter>& GetParameters() const{ return m_parameters; }
@@ -115,34 +129,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The path mapping rules.</p>
-     */
-    inline const Aws::Vector<PathMappingRule>& GetPathMappingRules() const{ return m_pathMappingRules; }
-    inline bool PathMappingRulesHasBeenSet() const { return m_pathMappingRulesHasBeenSet; }
-    inline void SetPathMappingRules(const Aws::Vector<PathMappingRule>& value) { m_pathMappingRulesHasBeenSet = true; m_pathMappingRules = value; }
-    inline void SetPathMappingRules(Aws::Vector<PathMappingRule>&& value) { m_pathMappingRulesHasBeenSet = true; m_pathMappingRules = std::move(value); }
-    inline JobDetailsEntity& WithPathMappingRules(const Aws::Vector<PathMappingRule>& value) { SetPathMappingRules(value); return *this;}
-    inline JobDetailsEntity& WithPathMappingRules(Aws::Vector<PathMappingRule>&& value) { SetPathMappingRules(std::move(value)); return *this;}
-    inline JobDetailsEntity& AddPathMappingRules(const PathMappingRule& value) { m_pathMappingRulesHasBeenSet = true; m_pathMappingRules.push_back(value); return *this; }
-    inline JobDetailsEntity& AddPathMappingRules(PathMappingRule&& value) { m_pathMappingRulesHasBeenSet = true; m_pathMappingRules.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The queue role ARN.</p>
-     */
-    inline const Aws::String& GetQueueRoleArn() const{ return m_queueRoleArn; }
-    inline bool QueueRoleArnHasBeenSet() const { return m_queueRoleArnHasBeenSet; }
-    inline void SetQueueRoleArn(const Aws::String& value) { m_queueRoleArnHasBeenSet = true; m_queueRoleArn = value; }
-    inline void SetQueueRoleArn(Aws::String&& value) { m_queueRoleArnHasBeenSet = true; m_queueRoleArn = std::move(value); }
-    inline void SetQueueRoleArn(const char* value) { m_queueRoleArnHasBeenSet = true; m_queueRoleArn.assign(value); }
-    inline JobDetailsEntity& WithQueueRoleArn(const Aws::String& value) { SetQueueRoleArn(value); return *this;}
-    inline JobDetailsEntity& WithQueueRoleArn(Aws::String&& value) { SetQueueRoleArn(std::move(value)); return *this;}
-    inline JobDetailsEntity& WithQueueRoleArn(const char* value) { SetQueueRoleArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The schema version.</p>
      */
     inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
@@ -154,13 +140,27 @@ namespace Model
     inline JobDetailsEntity& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
     inline JobDetailsEntity& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
     ///@}
-  private:
 
-    JobAttachmentSettings m_jobAttachmentSettings;
-    bool m_jobAttachmentSettingsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The path mapping rules.</p>
+     */
+    inline const Aws::Vector<PathMappingRule>& GetPathMappingRules() const{ return m_pathMappingRules; }
+    inline bool PathMappingRulesHasBeenSet() const { return m_pathMappingRulesHasBeenSet; }
+    inline void SetPathMappingRules(const Aws::Vector<PathMappingRule>& value) { m_pathMappingRulesHasBeenSet = true; m_pathMappingRules = value; }
+    inline void SetPathMappingRules(Aws::Vector<PathMappingRule>&& value) { m_pathMappingRulesHasBeenSet = true; m_pathMappingRules = std::move(value); }
+    inline JobDetailsEntity& WithPathMappingRules(const Aws::Vector<PathMappingRule>& value) { SetPathMappingRules(value); return *this;}
+    inline JobDetailsEntity& WithPathMappingRules(Aws::Vector<PathMappingRule>&& value) { SetPathMappingRules(std::move(value)); return *this;}
+    inline JobDetailsEntity& AddPathMappingRules(const PathMappingRule& value) { m_pathMappingRulesHasBeenSet = true; m_pathMappingRules.push_back(value); return *this; }
+    inline JobDetailsEntity& AddPathMappingRules(PathMappingRule&& value) { m_pathMappingRulesHasBeenSet = true; m_pathMappingRules.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
+
+    JobAttachmentSettings m_jobAttachmentSettings;
+    bool m_jobAttachmentSettingsHasBeenSet = false;
 
     JobRunAsUser m_jobRunAsUser;
     bool m_jobRunAsUserHasBeenSet = false;
@@ -168,17 +168,17 @@ namespace Model
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
 
-    Aws::Map<Aws::String, JobParameter> m_parameters;
-    bool m_parametersHasBeenSet = false;
-
-    Aws::Vector<PathMappingRule> m_pathMappingRules;
-    bool m_pathMappingRulesHasBeenSet = false;
-
     Aws::String m_queueRoleArn;
     bool m_queueRoleArnHasBeenSet = false;
 
+    Aws::Map<Aws::String, JobParameter> m_parameters;
+    bool m_parametersHasBeenSet = false;
+
     Aws::String m_schemaVersion;
     bool m_schemaVersionHasBeenSet = false;
+
+    Aws::Vector<PathMappingRule> m_pathMappingRules;
+    bool m_pathMappingRulesHasBeenSet = false;
   };
 
 } // namespace Model

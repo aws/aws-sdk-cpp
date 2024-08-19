@@ -34,6 +34,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the monitor.</p>
+     */
+    inline const Aws::String& GetMonitorId() const{ return m_monitorId; }
+    inline void SetMonitorId(const Aws::String& value) { m_monitorId = value; }
+    inline void SetMonitorId(Aws::String&& value) { m_monitorId = std::move(value); }
+    inline void SetMonitorId(const char* value) { m_monitorId.assign(value); }
+    inline CreateMonitorResult& WithMonitorId(const Aws::String& value) { SetMonitorId(value); return *this;}
+    inline CreateMonitorResult& WithMonitorId(Aws::String&& value) { SetMonitorId(std::move(value)); return *this;}
+    inline CreateMonitorResult& WithMonitorId(const char* value) { SetMonitorId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) that IAM Identity Center assigns to the
      * monitor.</p>
      */
@@ -44,19 +57,6 @@ namespace Model
     inline CreateMonitorResult& WithIdentityCenterApplicationArn(const Aws::String& value) { SetIdentityCenterApplicationArn(value); return *this;}
     inline CreateMonitorResult& WithIdentityCenterApplicationArn(Aws::String&& value) { SetIdentityCenterApplicationArn(std::move(value)); return *this;}
     inline CreateMonitorResult& WithIdentityCenterApplicationArn(const char* value) { SetIdentityCenterApplicationArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the monitor.</p>
-     */
-    inline const Aws::String& GetMonitorId() const{ return m_monitorId; }
-    inline void SetMonitorId(const Aws::String& value) { m_monitorId = value; }
-    inline void SetMonitorId(Aws::String&& value) { m_monitorId = std::move(value); }
-    inline void SetMonitorId(const char* value) { m_monitorId.assign(value); }
-    inline CreateMonitorResult& WithMonitorId(const Aws::String& value) { SetMonitorId(value); return *this;}
-    inline CreateMonitorResult& WithMonitorId(Aws::String&& value) { SetMonitorId(std::move(value)); return *this;}
-    inline CreateMonitorResult& WithMonitorId(const char* value) { SetMonitorId(value); return *this;}
     ///@}
 
     ///@{
@@ -71,9 +71,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_identityCenterApplicationArn;
-
     Aws::String m_monitorId;
+
+    Aws::String m_identityCenterApplicationArn;
 
     Aws::String m_requestId;
   };

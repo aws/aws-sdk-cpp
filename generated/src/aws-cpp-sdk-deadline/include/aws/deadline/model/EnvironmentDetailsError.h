@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/JobEntityErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/JobEntityErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -40,14 +40,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error code.</p>
+     * <p>The job ID.</p>
      */
-    inline const JobEntityErrorCode& GetCode() const{ return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const JobEntityErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(JobEntityErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline EnvironmentDetailsError& WithCode(const JobEntityErrorCode& value) { SetCode(value); return *this;}
-    inline EnvironmentDetailsError& WithCode(JobEntityErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
+    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
+    inline EnvironmentDetailsError& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+    inline EnvironmentDetailsError& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+    inline EnvironmentDetailsError& WithJobId(const char* value) { SetJobId(value); return *this;}
     ///@}
 
     ///@{
@@ -66,16 +68,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job ID.</p>
+     * <p>The error code.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline EnvironmentDetailsError& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline EnvironmentDetailsError& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline EnvironmentDetailsError& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const JobEntityErrorCode& GetCode() const{ return m_code; }
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+    inline void SetCode(const JobEntityErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(JobEntityErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+    inline EnvironmentDetailsError& WithCode(const JobEntityErrorCode& value) { SetCode(value); return *this;}
+    inline EnvironmentDetailsError& WithCode(JobEntityErrorCode&& value) { SetCode(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +93,14 @@ namespace Model
     ///@}
   private:
 
-    JobEntityErrorCode m_code;
-    bool m_codeHasBeenSet = false;
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet = false;
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
+    JobEntityErrorCode m_code;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

@@ -16,15 +16,15 @@ using namespace Aws::Utils;
 CreateFleetRequest::CreateFleetRequest() : 
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_configurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
     m_farmIdHasBeenSet(false),
-    m_maxWorkerCount(0),
-    m_maxWorkerCountHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_minWorkerCount(0),
     m_minWorkerCountHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
+    m_maxWorkerCount(0),
+    m_maxWorkerCountHasBeenSet(false),
+    m_configurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -33,9 +33,9 @@ Aws::String CreateFleetRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
+  if(m_displayNameHasBeenSet)
   {
-   payload.WithObject("configuration", m_configuration.Jsonize());
+   payload.WithString("displayName", m_displayName);
 
   }
 
@@ -45,15 +45,9 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   }
 
-  if(m_displayNameHasBeenSet)
+  if(m_roleArnHasBeenSet)
   {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
-  if(m_maxWorkerCountHasBeenSet)
-  {
-   payload.WithInteger("maxWorkerCount", m_maxWorkerCount);
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -63,9 +57,15 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   }
 
-  if(m_roleArnHasBeenSet)
+  if(m_maxWorkerCountHasBeenSet)
   {
-   payload.WithString("roleArn", m_roleArn);
+   payload.WithInteger("maxWorkerCount", m_maxWorkerCount);
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

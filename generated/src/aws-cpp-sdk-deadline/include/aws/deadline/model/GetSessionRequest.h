@@ -48,20 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job ID for the session.</p>
-     */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline GetSessionRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline GetSessionRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline GetSessionRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The queue ID for the session.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
@@ -72,6 +58,20 @@ namespace Model
     inline GetSessionRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
     inline GetSessionRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
     inline GetSessionRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The job ID for the session.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
+    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
+    inline GetSessionRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+    inline GetSessionRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+    inline GetSessionRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
     ///@}
 
     ///@{
@@ -92,11 +92,11 @@ namespace Model
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
-
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;

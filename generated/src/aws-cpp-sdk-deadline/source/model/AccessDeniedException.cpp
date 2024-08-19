@@ -19,8 +19,8 @@ namespace Model
 {
 
 AccessDeniedException::AccessDeniedException() : 
-    m_contextHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,13 @@ AccessDeniedException::AccessDeniedException(JsonView jsonValue)
 
 AccessDeniedException& AccessDeniedException::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+    m_messageHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("context"))
   {
     Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("context").GetAllObjects();
@@ -42,19 +49,18 @@ AccessDeniedException& AccessDeniedException::operator =(JsonView jsonValue)
     m_contextHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("message"))
-  {
-    m_message = jsonValue.GetString("message");
-
-    m_messageHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue AccessDeniedException::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("message", m_message);
+
+  }
 
   if(m_contextHasBeenSet)
   {
@@ -64,12 +70,6 @@ JsonValue AccessDeniedException::Jsonize() const
      contextJsonMap.WithString(contextItem.first, contextItem.second);
    }
    payload.WithObject("context", std::move(contextJsonMap));
-
-  }
-
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
 
   }
 

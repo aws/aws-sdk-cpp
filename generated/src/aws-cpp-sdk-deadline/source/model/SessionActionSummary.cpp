@@ -19,15 +19,15 @@ namespace Model
 {
 
 SessionActionSummary::SessionActionSummary() : 
-    m_definitionHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_progressPercent(0.0),
-    m_progressPercentHasBeenSet(false),
     m_sessionActionIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
     m_status(SessionActionStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_workerUpdatedAtHasBeenSet(false)
+    m_startedAtHasBeenSet(false),
+    m_endedAtHasBeenSet(false),
+    m_workerUpdatedAtHasBeenSet(false),
+    m_progressPercent(0.0),
+    m_progressPercentHasBeenSet(false),
+    m_definitionHasBeenSet(false)
 {
 }
 
@@ -39,39 +39,11 @@ SessionActionSummary::SessionActionSummary(JsonView jsonValue)
 
 SessionActionSummary& SessionActionSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("definition"))
-  {
-    m_definition = jsonValue.GetObject("definition");
-
-    m_definitionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("endedAt"))
-  {
-    m_endedAt = jsonValue.GetString("endedAt");
-
-    m_endedAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("progressPercent"))
-  {
-    m_progressPercent = jsonValue.GetDouble("progressPercent");
-
-    m_progressPercentHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("sessionActionId"))
   {
     m_sessionActionId = jsonValue.GetString("sessionActionId");
 
     m_sessionActionIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startedAt"))
-  {
-    m_startedAt = jsonValue.GetString("startedAt");
-
-    m_startedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -81,11 +53,39 @@ SessionActionSummary& SessionActionSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("startedAt"))
+  {
+    m_startedAt = jsonValue.GetString("startedAt");
+
+    m_startedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endedAt"))
+  {
+    m_endedAt = jsonValue.GetString("endedAt");
+
+    m_endedAtHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("workerUpdatedAt"))
   {
     m_workerUpdatedAt = jsonValue.GetString("workerUpdatedAt");
 
     m_workerUpdatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("progressPercent"))
+  {
+    m_progressPercent = jsonValue.GetDouble("progressPercent");
+
+    m_progressPercentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("definition"))
+  {
+    m_definition = jsonValue.GetObject("definition");
+
+    m_definitionHasBeenSet = true;
   }
 
   return *this;
@@ -95,15 +95,30 @@ JsonValue SessionActionSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_definitionHasBeenSet)
+  if(m_sessionActionIdHasBeenSet)
   {
-   payload.WithObject("definition", m_definition.Jsonize());
+   payload.WithString("sessionActionId", m_sessionActionId);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", SessionActionStatusMapper::GetNameForSessionActionStatus(m_status));
+  }
+
+  if(m_startedAtHasBeenSet)
+  {
+   payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_endedAtHasBeenSet)
   {
    payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_workerUpdatedAtHasBeenSet)
+  {
+   payload.WithString("workerUpdatedAt", m_workerUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_progressPercentHasBeenSet)
@@ -112,25 +127,10 @@ JsonValue SessionActionSummary::Jsonize() const
 
   }
 
-  if(m_sessionActionIdHasBeenSet)
+  if(m_definitionHasBeenSet)
   {
-   payload.WithString("sessionActionId", m_sessionActionId);
+   payload.WithObject("definition", m_definition.Jsonize());
 
-  }
-
-  if(m_startedAtHasBeenSet)
-  {
-   payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", SessionActionStatusMapper::GetNameForSessionActionStatus(m_status));
-  }
-
-  if(m_workerUpdatedAtHasBeenSet)
-  {
-   payload.WithString("workerUpdatedAt", m_workerUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

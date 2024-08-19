@@ -19,10 +19,10 @@ namespace Model
 {
 
 JobParameter::JobParameter() : 
-    m_floatHasBeenSet(false),
     m_intHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_stringHasBeenSet(false)
+    m_floatHasBeenSet(false),
+    m_stringHasBeenSet(false),
+    m_pathHasBeenSet(false)
 {
 }
 
@@ -34,13 +34,6 @@ JobParameter::JobParameter(JsonView jsonValue)
 
 JobParameter& JobParameter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("float"))
-  {
-    m_float = jsonValue.GetString("float");
-
-    m_floatHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("int"))
   {
     m_int = jsonValue.GetString("int");
@@ -48,11 +41,11 @@ JobParameter& JobParameter::operator =(JsonView jsonValue)
     m_intHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("path"))
+  if(jsonValue.ValueExists("float"))
   {
-    m_path = jsonValue.GetString("path");
+    m_float = jsonValue.GetString("float");
 
-    m_pathHasBeenSet = true;
+    m_floatHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("string"))
@@ -62,6 +55,13 @@ JobParameter& JobParameter::operator =(JsonView jsonValue)
     m_stringHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("path"))
+  {
+    m_path = jsonValue.GetString("path");
+
+    m_pathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -69,27 +69,27 @@ JsonValue JobParameter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_floatHasBeenSet)
-  {
-   payload.WithString("float", m_float);
-
-  }
-
   if(m_intHasBeenSet)
   {
    payload.WithString("int", m_int);
 
   }
 
-  if(m_pathHasBeenSet)
+  if(m_floatHasBeenSet)
   {
-   payload.WithString("path", m_path);
+   payload.WithString("float", m_float);
 
   }
 
   if(m_stringHasBeenSet)
   {
    payload.WithString("string", m_string);
+
+  }
+
+  if(m_pathHasBeenSet)
+  {
+   payload.WithString("path", m_path);
 
   }
 

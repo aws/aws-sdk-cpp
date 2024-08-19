@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/AssignedSessionActionDefinition.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/AssignedSessionActionDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The definition of the assigned session action.</p>
-     */
-    inline const AssignedSessionActionDefinition& GetDefinition() const{ return m_definition; }
-    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const AssignedSessionActionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(AssignedSessionActionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline AssignedSessionAction& WithDefinition(const AssignedSessionActionDefinition& value) { SetDefinition(value); return *this;}
-    inline AssignedSessionAction& WithDefinition(AssignedSessionActionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The session action ID for the assigned session.</p>
      */
     inline const Aws::String& GetSessionActionId() const{ return m_sessionActionId; }
@@ -64,13 +52,25 @@ namespace Model
     inline AssignedSessionAction& WithSessionActionId(Aws::String&& value) { SetSessionActionId(std::move(value)); return *this;}
     inline AssignedSessionAction& WithSessionActionId(const char* value) { SetSessionActionId(value); return *this;}
     ///@}
-  private:
 
-    AssignedSessionActionDefinition m_definition;
-    bool m_definitionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The definition of the assigned session action.</p>
+     */
+    inline const AssignedSessionActionDefinition& GetDefinition() const{ return m_definition; }
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+    inline void SetDefinition(const AssignedSessionActionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
+    inline void SetDefinition(AssignedSessionActionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
+    inline AssignedSessionAction& WithDefinition(const AssignedSessionActionDefinition& value) { SetDefinition(value); return *this;}
+    inline AssignedSessionAction& WithDefinition(AssignedSessionActionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_sessionActionId;
     bool m_sessionActionIdHasBeenSet = false;
+
+    AssignedSessionActionDefinition m_definition;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

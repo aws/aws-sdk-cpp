@@ -16,11 +16,11 @@ using namespace Aws::Utils;
 CreateStorageProfileRequest::CreateStorageProfileRequest() : 
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_displayNameHasBeenSet(false),
     m_farmIdHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_osFamily(StorageProfileOperatingSystemFamily::NOT_SET),
-    m_osFamilyHasBeenSet(false)
+    m_osFamilyHasBeenSet(false),
+    m_fileSystemLocationsHasBeenSet(false)
 {
 }
 
@@ -34,6 +34,11 @@ Aws::String CreateStorageProfileRequest::SerializePayload() const
 
   }
 
+  if(m_osFamilyHasBeenSet)
+  {
+   payload.WithString("osFamily", StorageProfileOperatingSystemFamilyMapper::GetNameForStorageProfileOperatingSystemFamily(m_osFamily));
+  }
+
   if(m_fileSystemLocationsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
@@ -43,11 +48,6 @@ Aws::String CreateStorageProfileRequest::SerializePayload() const
    }
    payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
 
-  }
-
-  if(m_osFamilyHasBeenSet)
-  {
-   payload.WithString("osFamily", StorageProfileOperatingSystemFamilyMapper::GetNameForStorageProfileOperatingSystemFamily(m_osFamily));
   }
 
   return payload.View().WriteReadable();

@@ -19,28 +19,28 @@ namespace Model
 {
 
 JobSummary::JobSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
     m_jobIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_lifecycleStatus(JobLifecycleStatus::NOT_SET),
     m_lifecycleStatusHasBeenSet(false),
     m_lifecycleStatusMessageHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_createdByHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
+    m_updatedByHasBeenSet(false),
+    m_startedAtHasBeenSet(false),
+    m_endedAtHasBeenSet(false),
+    m_taskRunStatus(TaskRunStatus::NOT_SET),
+    m_taskRunStatusHasBeenSet(false),
+    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
+    m_targetTaskRunStatusHasBeenSet(false),
+    m_taskRunStatusCountsHasBeenSet(false),
     m_maxFailedTasksCount(0),
     m_maxFailedTasksCountHasBeenSet(false),
     m_maxRetriesPerTask(0),
-    m_maxRetriesPerTaskHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_taskRunStatus(TaskRunStatus::NOT_SET),
-    m_taskRunStatusHasBeenSet(false),
-    m_taskRunStatusCountsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+    m_maxRetriesPerTaskHasBeenSet(false)
 {
 }
 
@@ -52,32 +52,18 @@ JobSummary::JobSummary(JsonView jsonValue)
 
 JobSummary& JobSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
-
-    m_createdByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("endedAt"))
-  {
-    m_endedAt = jsonValue.GetString("endedAt");
-
-    m_endedAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
 
     m_jobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lifecycleStatus"))
@@ -94,27 +80,6 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_lifecycleStatusMessageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("maxFailedTasksCount"))
-  {
-    m_maxFailedTasksCount = jsonValue.GetInteger("maxFailedTasksCount");
-
-    m_maxFailedTasksCountHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("maxRetriesPerTask"))
-  {
-    m_maxRetriesPerTask = jsonValue.GetInteger("maxRetriesPerTask");
-
-    m_maxRetriesPerTaskHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
@@ -122,35 +87,18 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_priorityHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("startedAt"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_startedAt = jsonValue.GetString("startedAt");
+    m_createdAt = jsonValue.GetString("createdAt");
 
-    m_startedAtHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("targetTaskRunStatus"))
+  if(jsonValue.ValueExists("createdBy"))
   {
-    m_targetTaskRunStatus = JobTargetTaskRunStatusMapper::GetJobTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
+    m_createdBy = jsonValue.GetString("createdBy");
 
-    m_targetTaskRunStatusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("taskRunStatus"))
-  {
-    m_taskRunStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("taskRunStatus"));
-
-    m_taskRunStatusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("taskRunStatusCounts"))
-  {
-    Aws::Map<Aws::String, JsonView> taskRunStatusCountsJsonMap = jsonValue.GetObject("taskRunStatusCounts").GetAllObjects();
-    for(auto& taskRunStatusCountsItem : taskRunStatusCountsJsonMap)
-    {
-      m_taskRunStatusCounts[TaskRunStatusMapper::GetTaskRunStatusForName(taskRunStatusCountsItem.first)] = taskRunStatusCountsItem.second.AsInteger();
-    }
-    m_taskRunStatusCountsHasBeenSet = true;
+    m_createdByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -167,6 +115,58 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_updatedByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("startedAt"))
+  {
+    m_startedAt = jsonValue.GetString("startedAt");
+
+    m_startedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endedAt"))
+  {
+    m_endedAt = jsonValue.GetString("endedAt");
+
+    m_endedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("taskRunStatus"))
+  {
+    m_taskRunStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("taskRunStatus"));
+
+    m_taskRunStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetTaskRunStatus"))
+  {
+    m_targetTaskRunStatus = JobTargetTaskRunStatusMapper::GetJobTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
+
+    m_targetTaskRunStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("taskRunStatusCounts"))
+  {
+    Aws::Map<Aws::String, JsonView> taskRunStatusCountsJsonMap = jsonValue.GetObject("taskRunStatusCounts").GetAllObjects();
+    for(auto& taskRunStatusCountsItem : taskRunStatusCountsJsonMap)
+    {
+      m_taskRunStatusCounts[TaskRunStatusMapper::GetTaskRunStatusForName(taskRunStatusCountsItem.first)] = taskRunStatusCountsItem.second.AsInteger();
+    }
+    m_taskRunStatusCountsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxFailedTasksCount"))
+  {
+    m_maxFailedTasksCount = jsonValue.GetInteger("maxFailedTasksCount");
+
+    m_maxFailedTasksCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxRetriesPerTask"))
+  {
+    m_maxRetriesPerTask = jsonValue.GetInteger("maxRetriesPerTask");
+
+    m_maxRetriesPerTaskHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -174,25 +174,15 @@ JsonValue JobSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
-
-  }
-
-  if(m_endedAtHasBeenSet)
-  {
-   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_jobIdHasBeenSet)
   {
    payload.WithString("jobId", m_jobId);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
 
   }
 
@@ -207,27 +197,31 @@ JsonValue JobSummary::Jsonize() const
 
   }
 
-  if(m_maxFailedTasksCountHasBeenSet)
-  {
-   payload.WithInteger("maxFailedTasksCount", m_maxFailedTasksCount);
-
-  }
-
-  if(m_maxRetriesPerTaskHasBeenSet)
-  {
-   payload.WithInteger("maxRetriesPerTask", m_maxRetriesPerTask);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
   if(m_priorityHasBeenSet)
   {
    payload.WithInteger("priority", m_priority);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
+
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedByHasBeenSet)
+  {
+   payload.WithString("updatedBy", m_updatedBy);
 
   }
 
@@ -236,14 +230,19 @@ JsonValue JobSummary::Jsonize() const
    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_targetTaskRunStatusHasBeenSet)
+  if(m_endedAtHasBeenSet)
   {
-   payload.WithString("targetTaskRunStatus", JobTargetTaskRunStatusMapper::GetNameForJobTargetTaskRunStatus(m_targetTaskRunStatus));
+   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_taskRunStatusHasBeenSet)
   {
    payload.WithString("taskRunStatus", TaskRunStatusMapper::GetNameForTaskRunStatus(m_taskRunStatus));
+  }
+
+  if(m_targetTaskRunStatusHasBeenSet)
+  {
+   payload.WithString("targetTaskRunStatus", JobTargetTaskRunStatusMapper::GetNameForJobTargetTaskRunStatus(m_targetTaskRunStatus));
   }
 
   if(m_taskRunStatusCountsHasBeenSet)
@@ -257,14 +256,15 @@ JsonValue JobSummary::Jsonize() const
 
   }
 
-  if(m_updatedAtHasBeenSet)
+  if(m_maxFailedTasksCountHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithInteger("maxFailedTasksCount", m_maxFailedTasksCount);
+
   }
 
-  if(m_updatedByHasBeenSet)
+  if(m_maxRetriesPerTaskHasBeenSet)
   {
-   payload.WithString("updatedBy", m_updatedBy);
+   payload.WithInteger("maxRetriesPerTask", m_maxRetriesPerTask);
 
   }
 

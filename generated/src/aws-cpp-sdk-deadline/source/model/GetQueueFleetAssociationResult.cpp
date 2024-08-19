@@ -31,15 +31,9 @@ GetQueueFleetAssociationResult::GetQueueFleetAssociationResult(const Aws::Amazon
 GetQueueFleetAssociationResult& GetQueueFleetAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("queueId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
+    m_queueId = jsonValue.GetString("queueId");
 
   }
 
@@ -49,15 +43,21 @@ GetQueueFleetAssociationResult& GetQueueFleetAssociationResult::operator =(const
 
   }
 
-  if(jsonValue.ValueExists("queueId"))
-  {
-    m_queueId = jsonValue.GetString("queueId");
-
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = QueueFleetAssociationStatusMapper::GetQueueFleetAssociationStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
 
   }
 

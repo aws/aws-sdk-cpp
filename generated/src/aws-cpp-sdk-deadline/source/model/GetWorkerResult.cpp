@@ -31,15 +31,9 @@ GetWorkerResult::GetWorkerResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 GetWorkerResult& GetWorkerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("workerId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
+    m_workerId = jsonValue.GetString("workerId");
 
   }
 
@@ -61,15 +55,27 @@ GetWorkerResult& GetWorkerResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = WorkerStatusMapper::GetWorkerStatusForName(jsonValue.GetString("status"));
+
+  }
+
   if(jsonValue.ValueExists("log"))
   {
     m_log = jsonValue.GetObject("log");
 
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_status = WorkerStatusMapper::GetWorkerStatusForName(jsonValue.GetString("status"));
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
 
   }
 
@@ -82,12 +88,6 @@ GetWorkerResult& GetWorkerResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
-  }
-
-  if(jsonValue.ValueExists("workerId"))
-  {
-    m_workerId = jsonValue.GetString("workerId");
 
   }
 

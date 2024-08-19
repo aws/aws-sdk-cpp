@@ -19,14 +19,14 @@ namespace Model
 {
 
 JobDetailsEntity::JobDetailsEntity() : 
-    m_jobAttachmentSettingsHasBeenSet(false),
     m_jobIdHasBeenSet(false),
+    m_jobAttachmentSettingsHasBeenSet(false),
     m_jobRunAsUserHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_pathMappingRulesHasBeenSet(false),
     m_queueRoleArnHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false),
+    m_pathMappingRulesHasBeenSet(false)
 {
 }
 
@@ -38,18 +38,18 @@ JobDetailsEntity::JobDetailsEntity(JsonView jsonValue)
 
 JobDetailsEntity& JobDetailsEntity::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("jobAttachmentSettings"))
-  {
-    m_jobAttachmentSettings = jsonValue.GetObject("jobAttachmentSettings");
-
-    m_jobAttachmentSettingsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
 
     m_jobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobAttachmentSettings"))
+  {
+    m_jobAttachmentSettings = jsonValue.GetObject("jobAttachmentSettings");
+
+    m_jobAttachmentSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobRunAsUser"))
@@ -66,6 +66,13 @@ JobDetailsEntity& JobDetailsEntity::operator =(JsonView jsonValue)
     m_logGroupNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("queueRoleArn"))
+  {
+    m_queueRoleArn = jsonValue.GetString("queueRoleArn");
+
+    m_queueRoleArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -74,6 +81,13 @@ JobDetailsEntity& JobDetailsEntity::operator =(JsonView jsonValue)
       m_parameters[parametersItem.first] = parametersItem.second.AsObject();
     }
     m_parametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schemaVersion"))
+  {
+    m_schemaVersion = jsonValue.GetString("schemaVersion");
+
+    m_schemaVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pathMappingRules"))
@@ -86,20 +100,6 @@ JobDetailsEntity& JobDetailsEntity::operator =(JsonView jsonValue)
     m_pathMappingRulesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("queueRoleArn"))
-  {
-    m_queueRoleArn = jsonValue.GetString("queueRoleArn");
-
-    m_queueRoleArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("schemaVersion"))
-  {
-    m_schemaVersion = jsonValue.GetString("schemaVersion");
-
-    m_schemaVersionHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -107,15 +107,15 @@ JsonValue JobDetailsEntity::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_jobAttachmentSettingsHasBeenSet)
-  {
-   payload.WithObject("jobAttachmentSettings", m_jobAttachmentSettings.Jsonize());
-
-  }
-
   if(m_jobIdHasBeenSet)
   {
    payload.WithString("jobId", m_jobId);
+
+  }
+
+  if(m_jobAttachmentSettingsHasBeenSet)
+  {
+   payload.WithObject("jobAttachmentSettings", m_jobAttachmentSettings.Jsonize());
 
   }
 
@@ -131,6 +131,12 @@ JsonValue JobDetailsEntity::Jsonize() const
 
   }
 
+  if(m_queueRoleArnHasBeenSet)
+  {
+   payload.WithString("queueRoleArn", m_queueRoleArn);
+
+  }
+
   if(m_parametersHasBeenSet)
   {
    JsonValue parametersJsonMap;
@@ -142,6 +148,12 @@ JsonValue JobDetailsEntity::Jsonize() const
 
   }
 
+  if(m_schemaVersionHasBeenSet)
+  {
+   payload.WithString("schemaVersion", m_schemaVersion);
+
+  }
+
   if(m_pathMappingRulesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> pathMappingRulesJsonList(m_pathMappingRules.size());
@@ -150,18 +162,6 @@ JsonValue JobDetailsEntity::Jsonize() const
      pathMappingRulesJsonList[pathMappingRulesIndex].AsObject(m_pathMappingRules[pathMappingRulesIndex].Jsonize());
    }
    payload.WithArray("pathMappingRules", std::move(pathMappingRulesJsonList));
-
-  }
-
-  if(m_queueRoleArnHasBeenSet)
-  {
-   payload.WithString("queueRoleArn", m_queueRoleArn);
-
-  }
-
-  if(m_schemaVersionHasBeenSet)
-  {
-   payload.WithString("schemaVersion", m_schemaVersion);
 
   }
 

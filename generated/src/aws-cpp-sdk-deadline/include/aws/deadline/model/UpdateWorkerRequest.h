@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/DeadlineRequest.h>
-#include <aws/deadline/model/WorkerCapabilities.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/deadline/model/HostPropertiesRequest.h>
 #include <aws/deadline/model/UpdatedWorkerStatus.h>
+#include <aws/deadline/model/WorkerCapabilities.h>
+#include <aws/deadline/model/HostPropertiesRequest.h>
 #include <utility>
 
 namespace Aws
@@ -34,18 +34,6 @@ namespace Model
 
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>The worker capabilities to update.</p>
-     */
-    inline const WorkerCapabilities& GetCapabilities() const{ return m_capabilities; }
-    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const WorkerCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(WorkerCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline UpdateWorkerRequest& WithCapabilities(const WorkerCapabilities& value) { SetCapabilities(value); return *this;}
-    inline UpdateWorkerRequest& WithCapabilities(WorkerCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -77,14 +65,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The host properties to update.</p>
+     * <p>The worker ID to update.</p>
      */
-    inline const HostPropertiesRequest& GetHostProperties() const{ return m_hostProperties; }
-    inline bool HostPropertiesHasBeenSet() const { return m_hostPropertiesHasBeenSet; }
-    inline void SetHostProperties(const HostPropertiesRequest& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = value; }
-    inline void SetHostProperties(HostPropertiesRequest&& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = std::move(value); }
-    inline UpdateWorkerRequest& WithHostProperties(const HostPropertiesRequest& value) { SetHostProperties(value); return *this;}
-    inline UpdateWorkerRequest& WithHostProperties(HostPropertiesRequest&& value) { SetHostProperties(std::move(value)); return *this;}
+    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
+    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
+    inline UpdateWorkerRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
+    inline UpdateWorkerRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
+    inline UpdateWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
     ///@}
 
     ///@{
@@ -101,21 +91,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The worker ID to update.</p>
+     * <p>The worker capabilities to update.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline UpdateWorkerRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline UpdateWorkerRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline UpdateWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    inline const WorkerCapabilities& GetCapabilities() const{ return m_capabilities; }
+    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+    inline void SetCapabilities(const WorkerCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
+    inline void SetCapabilities(WorkerCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
+    inline UpdateWorkerRequest& WithCapabilities(const WorkerCapabilities& value) { SetCapabilities(value); return *this;}
+    inline UpdateWorkerRequest& WithCapabilities(WorkerCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The host properties to update.</p>
+     */
+    inline const HostPropertiesRequest& GetHostProperties() const{ return m_hostProperties; }
+    inline bool HostPropertiesHasBeenSet() const { return m_hostPropertiesHasBeenSet; }
+    inline void SetHostProperties(const HostPropertiesRequest& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = value; }
+    inline void SetHostProperties(HostPropertiesRequest&& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = std::move(value); }
+    inline UpdateWorkerRequest& WithHostProperties(const HostPropertiesRequest& value) { SetHostProperties(value); return *this;}
+    inline UpdateWorkerRequest& WithHostProperties(HostPropertiesRequest&& value) { SetHostProperties(std::move(value)); return *this;}
     ///@}
   private:
-
-    WorkerCapabilities m_capabilities;
-    bool m_capabilitiesHasBeenSet = false;
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
@@ -123,14 +120,17 @@ namespace Model
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    HostPropertiesRequest m_hostProperties;
-    bool m_hostPropertiesHasBeenSet = false;
+    Aws::String m_workerId;
+    bool m_workerIdHasBeenSet = false;
 
     UpdatedWorkerStatus m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::String m_workerId;
-    bool m_workerIdHasBeenSet = false;
+    WorkerCapabilities m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
+
+    HostPropertiesRequest m_hostProperties;
+    bool m_hostPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 GetQueueEnvironmentRequest::GetQueueEnvironmentRequest() : 
     m_farmIdHasBeenSet(false),
-    m_queueEnvironmentIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+    m_queueIdHasBeenSet(false),
+    m_queueEnvironmentIdHasBeenSet(false)
 {
 }
 

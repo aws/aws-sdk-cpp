@@ -23,6 +23,7 @@
 #include <aws/bedrock/model/CreateGuardrailVersionResult.h>
 #include <aws/bedrock/model/CreateModelCopyJobResult.h>
 #include <aws/bedrock/model/CreateModelCustomizationJobResult.h>
+#include <aws/bedrock/model/CreateModelInvocationJobResult.h>
 #include <aws/bedrock/model/CreateProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/DeleteCustomModelResult.h>
 #include <aws/bedrock/model/DeleteGuardrailResult.h>
@@ -34,6 +35,7 @@
 #include <aws/bedrock/model/GetGuardrailResult.h>
 #include <aws/bedrock/model/GetModelCopyJobResult.h>
 #include <aws/bedrock/model/GetModelCustomizationJobResult.h>
+#include <aws/bedrock/model/GetModelInvocationJobResult.h>
 #include <aws/bedrock/model/GetModelInvocationLoggingConfigurationResult.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/ListCustomModelsResult.h>
@@ -42,17 +44,20 @@
 #include <aws/bedrock/model/ListGuardrailsResult.h>
 #include <aws/bedrock/model/ListModelCopyJobsResult.h>
 #include <aws/bedrock/model/ListModelCustomizationJobsResult.h>
+#include <aws/bedrock/model/ListModelInvocationJobsResult.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsResult.h>
 #include <aws/bedrock/model/ListTagsForResourceResult.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationResult.h>
 #include <aws/bedrock/model/StopEvaluationJobResult.h>
 #include <aws/bedrock/model/StopModelCustomizationJobResult.h>
+#include <aws/bedrock/model/StopModelInvocationJobResult.h>
 #include <aws/bedrock/model/TagResourceResult.h>
 #include <aws/bedrock/model/UntagResourceResult.h>
 #include <aws/bedrock/model/UpdateGuardrailResult.h>
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/ListGuardrailsRequest.h>
 #include <aws/bedrock/model/ListCustomModelsRequest.h>
+#include <aws/bedrock/model/ListModelInvocationJobsRequest.h>
 #include <aws/bedrock/model/GetModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/ListEvaluationJobsRequest.h>
 #include <aws/bedrock/model/ListModelCustomizationJobsRequest.h>
@@ -105,6 +110,7 @@ namespace Aws
       class CreateGuardrailVersionRequest;
       class CreateModelCopyJobRequest;
       class CreateModelCustomizationJobRequest;
+      class CreateModelInvocationJobRequest;
       class CreateProvisionedModelThroughputRequest;
       class DeleteCustomModelRequest;
       class DeleteGuardrailRequest;
@@ -116,6 +122,7 @@ namespace Aws
       class GetGuardrailRequest;
       class GetModelCopyJobRequest;
       class GetModelCustomizationJobRequest;
+      class GetModelInvocationJobRequest;
       class GetModelInvocationLoggingConfigurationRequest;
       class GetProvisionedModelThroughputRequest;
       class ListCustomModelsRequest;
@@ -124,11 +131,13 @@ namespace Aws
       class ListGuardrailsRequest;
       class ListModelCopyJobsRequest;
       class ListModelCustomizationJobsRequest;
+      class ListModelInvocationJobsRequest;
       class ListProvisionedModelThroughputsRequest;
       class ListTagsForResourceRequest;
       class PutModelInvocationLoggingConfigurationRequest;
       class StopEvaluationJobRequest;
       class StopModelCustomizationJobRequest;
+      class StopModelInvocationJobRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateGuardrailRequest;
@@ -141,6 +150,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateGuardrailVersionResult, BedrockError> CreateGuardrailVersionOutcome;
       typedef Aws::Utils::Outcome<CreateModelCopyJobResult, BedrockError> CreateModelCopyJobOutcome;
       typedef Aws::Utils::Outcome<CreateModelCustomizationJobResult, BedrockError> CreateModelCustomizationJobOutcome;
+      typedef Aws::Utils::Outcome<CreateModelInvocationJobResult, BedrockError> CreateModelInvocationJobOutcome;
       typedef Aws::Utils::Outcome<CreateProvisionedModelThroughputResult, BedrockError> CreateProvisionedModelThroughputOutcome;
       typedef Aws::Utils::Outcome<DeleteCustomModelResult, BedrockError> DeleteCustomModelOutcome;
       typedef Aws::Utils::Outcome<DeleteGuardrailResult, BedrockError> DeleteGuardrailOutcome;
@@ -152,6 +162,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetGuardrailResult, BedrockError> GetGuardrailOutcome;
       typedef Aws::Utils::Outcome<GetModelCopyJobResult, BedrockError> GetModelCopyJobOutcome;
       typedef Aws::Utils::Outcome<GetModelCustomizationJobResult, BedrockError> GetModelCustomizationJobOutcome;
+      typedef Aws::Utils::Outcome<GetModelInvocationJobResult, BedrockError> GetModelInvocationJobOutcome;
       typedef Aws::Utils::Outcome<GetModelInvocationLoggingConfigurationResult, BedrockError> GetModelInvocationLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetProvisionedModelThroughputResult, BedrockError> GetProvisionedModelThroughputOutcome;
       typedef Aws::Utils::Outcome<ListCustomModelsResult, BedrockError> ListCustomModelsOutcome;
@@ -160,11 +171,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListGuardrailsResult, BedrockError> ListGuardrailsOutcome;
       typedef Aws::Utils::Outcome<ListModelCopyJobsResult, BedrockError> ListModelCopyJobsOutcome;
       typedef Aws::Utils::Outcome<ListModelCustomizationJobsResult, BedrockError> ListModelCustomizationJobsOutcome;
+      typedef Aws::Utils::Outcome<ListModelInvocationJobsResult, BedrockError> ListModelInvocationJobsOutcome;
       typedef Aws::Utils::Outcome<ListProvisionedModelThroughputsResult, BedrockError> ListProvisionedModelThroughputsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutModelInvocationLoggingConfigurationResult, BedrockError> PutModelInvocationLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<StopEvaluationJobResult, BedrockError> StopEvaluationJobOutcome;
       typedef Aws::Utils::Outcome<StopModelCustomizationJobResult, BedrockError> StopModelCustomizationJobOutcome;
+      typedef Aws::Utils::Outcome<StopModelInvocationJobResult, BedrockError> StopModelInvocationJobOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, BedrockError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, BedrockError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateGuardrailResult, BedrockError> UpdateGuardrailOutcome;
@@ -177,6 +190,7 @@ namespace Aws
       typedef std::future<CreateGuardrailVersionOutcome> CreateGuardrailVersionOutcomeCallable;
       typedef std::future<CreateModelCopyJobOutcome> CreateModelCopyJobOutcomeCallable;
       typedef std::future<CreateModelCustomizationJobOutcome> CreateModelCustomizationJobOutcomeCallable;
+      typedef std::future<CreateModelInvocationJobOutcome> CreateModelInvocationJobOutcomeCallable;
       typedef std::future<CreateProvisionedModelThroughputOutcome> CreateProvisionedModelThroughputOutcomeCallable;
       typedef std::future<DeleteCustomModelOutcome> DeleteCustomModelOutcomeCallable;
       typedef std::future<DeleteGuardrailOutcome> DeleteGuardrailOutcomeCallable;
@@ -188,6 +202,7 @@ namespace Aws
       typedef std::future<GetGuardrailOutcome> GetGuardrailOutcomeCallable;
       typedef std::future<GetModelCopyJobOutcome> GetModelCopyJobOutcomeCallable;
       typedef std::future<GetModelCustomizationJobOutcome> GetModelCustomizationJobOutcomeCallable;
+      typedef std::future<GetModelInvocationJobOutcome> GetModelInvocationJobOutcomeCallable;
       typedef std::future<GetModelInvocationLoggingConfigurationOutcome> GetModelInvocationLoggingConfigurationOutcomeCallable;
       typedef std::future<GetProvisionedModelThroughputOutcome> GetProvisionedModelThroughputOutcomeCallable;
       typedef std::future<ListCustomModelsOutcome> ListCustomModelsOutcomeCallable;
@@ -196,11 +211,13 @@ namespace Aws
       typedef std::future<ListGuardrailsOutcome> ListGuardrailsOutcomeCallable;
       typedef std::future<ListModelCopyJobsOutcome> ListModelCopyJobsOutcomeCallable;
       typedef std::future<ListModelCustomizationJobsOutcome> ListModelCustomizationJobsOutcomeCallable;
+      typedef std::future<ListModelInvocationJobsOutcome> ListModelInvocationJobsOutcomeCallable;
       typedef std::future<ListProvisionedModelThroughputsOutcome> ListProvisionedModelThroughputsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutModelInvocationLoggingConfigurationOutcome> PutModelInvocationLoggingConfigurationOutcomeCallable;
       typedef std::future<StopEvaluationJobOutcome> StopEvaluationJobOutcomeCallable;
       typedef std::future<StopModelCustomizationJobOutcome> StopModelCustomizationJobOutcomeCallable;
+      typedef std::future<StopModelInvocationJobOutcome> StopModelInvocationJobOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateGuardrailOutcome> UpdateGuardrailOutcomeCallable;
@@ -216,6 +233,7 @@ namespace Aws
     typedef std::function<void(const BedrockClient*, const Model::CreateGuardrailVersionRequest&, const Model::CreateGuardrailVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGuardrailVersionResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateModelCopyJobRequest&, const Model::CreateModelCopyJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelCopyJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateModelCustomizationJobRequest&, const Model::CreateModelCustomizationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelCustomizationJobResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::CreateModelInvocationJobRequest&, const Model::CreateModelInvocationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelInvocationJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateProvisionedModelThroughputRequest&, const Model::CreateProvisionedModelThroughputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProvisionedModelThroughputResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::DeleteCustomModelRequest&, const Model::DeleteCustomModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomModelResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::DeleteGuardrailRequest&, const Model::DeleteGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGuardrailResponseReceivedHandler;
@@ -227,6 +245,7 @@ namespace Aws
     typedef std::function<void(const BedrockClient*, const Model::GetGuardrailRequest&, const Model::GetGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGuardrailResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetModelCopyJobRequest&, const Model::GetModelCopyJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelCopyJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetModelCustomizationJobRequest&, const Model::GetModelCustomizationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelCustomizationJobResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::GetModelInvocationJobRequest&, const Model::GetModelInvocationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelInvocationJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetModelInvocationLoggingConfigurationRequest&, const Model::GetModelInvocationLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelInvocationLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetProvisionedModelThroughputRequest&, const Model::GetProvisionedModelThroughputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProvisionedModelThroughputResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListCustomModelsRequest&, const Model::ListCustomModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomModelsResponseReceivedHandler;
@@ -235,11 +254,13 @@ namespace Aws
     typedef std::function<void(const BedrockClient*, const Model::ListGuardrailsRequest&, const Model::ListGuardrailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGuardrailsResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListModelCopyJobsRequest&, const Model::ListModelCopyJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCopyJobsResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListModelCustomizationJobsRequest&, const Model::ListModelCustomizationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCustomizationJobsResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::ListModelInvocationJobsRequest&, const Model::ListModelInvocationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelInvocationJobsResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListProvisionedModelThroughputsRequest&, const Model::ListProvisionedModelThroughputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProvisionedModelThroughputsResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::PutModelInvocationLoggingConfigurationRequest&, const Model::PutModelInvocationLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutModelInvocationLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::StopEvaluationJobRequest&, const Model::StopEvaluationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEvaluationJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::StopModelCustomizationJobRequest&, const Model::StopModelCustomizationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopModelCustomizationJobResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::StopModelInvocationJobRequest&, const Model::StopModelInvocationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopModelInvocationJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::UpdateGuardrailRequest&, const Model::UpdateGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGuardrailResponseReceivedHandler;

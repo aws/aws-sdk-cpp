@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateFarmRequest::UpdateFarmRequest() : 
-    m_descriptionHasBeenSet(false),
+    m_farmIdHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_farmIdHasBeenSet(false)
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -23,15 +23,15 @@ Aws::String UpdateFarmRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

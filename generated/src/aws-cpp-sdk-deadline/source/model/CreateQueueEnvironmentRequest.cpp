@@ -17,12 +17,12 @@ CreateQueueEnvironmentRequest::CreateQueueEnvironmentRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_farmIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_templateHasBeenSet(false),
     m_templateType(EnvironmentTemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
+    m_templateTypeHasBeenSet(false),
+    m_templateHasBeenSet(false)
 {
 }
 
@@ -36,15 +36,15 @@ Aws::String CreateQueueEnvironmentRequest::SerializePayload() const
 
   }
 
+  if(m_templateTypeHasBeenSet)
+  {
+   payload.WithString("templateType", EnvironmentTemplateTypeMapper::GetNameForEnvironmentTemplateType(m_templateType));
+  }
+
   if(m_templateHasBeenSet)
   {
    payload.WithString("template", m_template);
 
-  }
-
-  if(m_templateTypeHasBeenSet)
-  {
-   payload.WithString("templateType", EnvironmentTemplateTypeMapper::GetNameForEnvironmentTemplateType(m_templateType));
   }
 
   return payload.View().WriteReadable();

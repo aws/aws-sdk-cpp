@@ -19,10 +19,10 @@ namespace Model
 {
 
 Ec2EbsVolume::Ec2EbsVolume() : 
-    m_iops(0),
-    m_iopsHasBeenSet(false),
     m_sizeGiB(0),
     m_sizeGiBHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
     m_throughputMiB(0),
     m_throughputMiBHasBeenSet(false)
 {
@@ -36,18 +36,18 @@ Ec2EbsVolume::Ec2EbsVolume(JsonView jsonValue)
 
 Ec2EbsVolume& Ec2EbsVolume::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("iops"))
-  {
-    m_iops = jsonValue.GetInteger("iops");
-
-    m_iopsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("sizeGiB"))
   {
     m_sizeGiB = jsonValue.GetInteger("sizeGiB");
 
     m_sizeGiBHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iops"))
+  {
+    m_iops = jsonValue.GetInteger("iops");
+
+    m_iopsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("throughputMiB"))
@@ -64,15 +64,15 @@ JsonValue Ec2EbsVolume::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_iopsHasBeenSet)
-  {
-   payload.WithInteger("iops", m_iops);
-
-  }
-
   if(m_sizeGiBHasBeenSet)
   {
    payload.WithInteger("sizeGiB", m_sizeGiB);
+
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+   payload.WithInteger("iops", m_iops);
 
   }
 

@@ -186,6 +186,22 @@ namespace Model
     inline Database& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
     inline Database& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Names of the connected AWS Systems Manager for SAP
+     * components.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetConnectedComponentArns() const{ return m_connectedComponentArns; }
+    inline bool ConnectedComponentArnsHasBeenSet() const { return m_connectedComponentArnsHasBeenSet; }
+    inline void SetConnectedComponentArns(const Aws::Vector<Aws::String>& value) { m_connectedComponentArnsHasBeenSet = true; m_connectedComponentArns = value; }
+    inline void SetConnectedComponentArns(Aws::Vector<Aws::String>&& value) { m_connectedComponentArnsHasBeenSet = true; m_connectedComponentArns = std::move(value); }
+    inline Database& WithConnectedComponentArns(const Aws::Vector<Aws::String>& value) { SetConnectedComponentArns(value); return *this;}
+    inline Database& WithConnectedComponentArns(Aws::Vector<Aws::String>&& value) { SetConnectedComponentArns(std::move(value)); return *this;}
+    inline Database& AddConnectedComponentArns(const Aws::String& value) { m_connectedComponentArnsHasBeenSet = true; m_connectedComponentArns.push_back(value); return *this; }
+    inline Database& AddConnectedComponentArns(Aws::String&& value) { m_connectedComponentArnsHasBeenSet = true; m_connectedComponentArns.push_back(std::move(value)); return *this; }
+    inline Database& AddConnectedComponentArns(const char* value) { m_connectedComponentArnsHasBeenSet = true; m_connectedComponentArns.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -220,6 +236,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdated;
     bool m_lastUpdatedHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_connectedComponentArns;
+    bool m_connectedComponentArnsHasBeenSet = false;
   };
 
 } // namespace Model

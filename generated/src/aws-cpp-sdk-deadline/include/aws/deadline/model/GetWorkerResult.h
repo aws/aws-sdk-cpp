@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/HostPropertiesResponse.h>
-#include <aws/deadline/model/LogConfiguration.h>
 #include <aws/deadline/model/WorkerStatus.h>
+#include <aws/deadline/model/LogConfiguration.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -38,26 +38,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource was created.</p>
+     * <p>The worker ID.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetWorkerResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetWorkerResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The user or system that created this resource.</p>
-     */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetWorkerResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetWorkerResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetWorkerResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline void SetWorkerId(const Aws::String& value) { m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerId = std::move(value); }
+    inline void SetWorkerId(const char* value) { m_workerId.assign(value); }
+    inline GetWorkerResult& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
+    inline GetWorkerResult& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
+    inline GetWorkerResult& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
     ///@}
 
     ///@{
@@ -99,6 +88,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of the worker.</p>
+     */
+    inline const WorkerStatus& GetStatus() const{ return m_status; }
+    inline void SetStatus(const WorkerStatus& value) { m_status = value; }
+    inline void SetStatus(WorkerStatus&& value) { m_status = std::move(value); }
+    inline GetWorkerResult& WithStatus(const WorkerStatus& value) { SetStatus(value); return *this;}
+    inline GetWorkerResult& WithStatus(WorkerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The logs for the associated worker.</p>
      */
     inline const LogConfiguration& GetLog() const{ return m_log; }
@@ -110,13 +110,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the worker.</p>
+     * <p>The date and time the resource was created.</p>
      */
-    inline const WorkerStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const WorkerStatus& value) { m_status = value; }
-    inline void SetStatus(WorkerStatus&& value) { m_status = std::move(value); }
-    inline GetWorkerResult& WithStatus(const WorkerStatus& value) { SetStatus(value); return *this;}
-    inline GetWorkerResult& WithStatus(WorkerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
+    inline GetWorkerResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline GetWorkerResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that created this resource.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
+    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
+    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
+    inline GetWorkerResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+    inline GetWorkerResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline GetWorkerResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
     ///@}
 
     ///@{
@@ -144,19 +157,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The worker ID.</p>
-     */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerId.assign(value); }
-    inline GetWorkerResult& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline GetWorkerResult& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline GetWorkerResult& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -168,9 +168,7 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-
-    Aws::String m_createdBy;
+    Aws::String m_workerId;
 
     Aws::String m_farmId;
 
@@ -178,15 +176,17 @@ namespace Model
 
     HostPropertiesResponse m_hostProperties;
 
+    WorkerStatus m_status;
+
     LogConfiguration m_log;
 
-    WorkerStatus m_status;
+    Aws::Utils::DateTime m_createdAt;
+
+    Aws::String m_createdBy;
 
     Aws::Utils::DateTime m_updatedAt;
 
     Aws::String m_updatedBy;
-
-    Aws::String m_workerId;
 
     Aws::String m_requestId;
   };

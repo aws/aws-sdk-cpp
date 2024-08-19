@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 UpdateQueueFleetAssociationRequest::UpdateQueueFleetAssociationRequest() : 
     m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
     m_queueIdHasBeenSet(false),
+    m_fleetIdHasBeenSet(false),
     m_status(UpdateQueueFleetAssociationStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {

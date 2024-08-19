@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/WorkerSessionSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The sessions in the response.</p>
+     */
+    inline const Aws::Vector<WorkerSessionSummary>& GetSessions() const{ return m_sessions; }
+    inline void SetSessions(const Aws::Vector<WorkerSessionSummary>& value) { m_sessions = value; }
+    inline void SetSessions(Aws::Vector<WorkerSessionSummary>&& value) { m_sessions = std::move(value); }
+    inline ListSessionsForWorkerResult& WithSessions(const Aws::Vector<WorkerSessionSummary>& value) { SetSessions(value); return *this;}
+    inline ListSessionsForWorkerResult& WithSessions(Aws::Vector<WorkerSessionSummary>&& value) { SetSessions(std::move(value)); return *this;}
+    inline ListSessionsForWorkerResult& AddSessions(const WorkerSessionSummary& value) { m_sessions.push_back(value); return *this; }
+    inline ListSessionsForWorkerResult& AddSessions(WorkerSessionSummary&& value) { m_sessions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The token for the next set of results, or <code>null</code> to start from the
      * beginning.</p>
      */
@@ -46,19 +59,6 @@ namespace Model
     inline ListSessionsForWorkerResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListSessionsForWorkerResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListSessionsForWorkerResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The sessions in the response.</p>
-     */
-    inline const Aws::Vector<WorkerSessionSummary>& GetSessions() const{ return m_sessions; }
-    inline void SetSessions(const Aws::Vector<WorkerSessionSummary>& value) { m_sessions = value; }
-    inline void SetSessions(Aws::Vector<WorkerSessionSummary>&& value) { m_sessions = std::move(value); }
-    inline ListSessionsForWorkerResult& WithSessions(const Aws::Vector<WorkerSessionSummary>& value) { SetSessions(value); return *this;}
-    inline ListSessionsForWorkerResult& WithSessions(Aws::Vector<WorkerSessionSummary>&& value) { SetSessions(std::move(value)); return *this;}
-    inline ListSessionsForWorkerResult& AddSessions(const WorkerSessionSummary& value) { m_sessions.push_back(value); return *this; }
-    inline ListSessionsForWorkerResult& AddSessions(WorkerSessionSummary&& value) { m_sessions.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<WorkerSessionSummary> m_sessions;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

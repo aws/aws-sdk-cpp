@@ -19,17 +19,17 @@ namespace Model
 {
 
 WorkerSummary::WorkerSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
+    m_workerIdHasBeenSet(false),
     m_farmIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_logHasBeenSet(false),
     m_status(WorkerStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_hostPropertiesHasBeenSet(false),
+    m_logHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_createdByHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+    m_updatedByHasBeenSet(false)
 {
 }
 
@@ -41,18 +41,11 @@ WorkerSummary::WorkerSummary(JsonView jsonValue)
 
 WorkerSummary& WorkerSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("workerId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
+    m_workerId = jsonValue.GetString("workerId");
 
-    m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
-
-    m_createdByHasBeenSet = true;
+    m_workerIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("farmId"))
@@ -69,6 +62,13 @@ WorkerSummary& WorkerSummary::operator =(JsonView jsonValue)
     m_fleetIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = WorkerStatusMapper::GetWorkerStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hostProperties"))
   {
     m_hostProperties = jsonValue.GetObject("hostProperties");
@@ -83,11 +83,18 @@ WorkerSummary& WorkerSummary::operator =(JsonView jsonValue)
     m_logHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_status = WorkerStatusMapper::GetWorkerStatusForName(jsonValue.GetString("status"));
+    m_createdAt = jsonValue.GetString("createdAt");
 
-    m_statusHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
+
+    m_createdByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -104,13 +111,6 @@ WorkerSummary& WorkerSummary::operator =(JsonView jsonValue)
     m_updatedByHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("workerId"))
-  {
-    m_workerId = jsonValue.GetString("workerId");
-
-    m_workerIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -118,14 +118,9 @@ JsonValue WorkerSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_workerIdHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
+   payload.WithString("workerId", m_workerId);
 
   }
 
@@ -141,6 +136,11 @@ JsonValue WorkerSummary::Jsonize() const
 
   }
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", WorkerStatusMapper::GetNameForWorkerStatus(m_status));
+  }
+
   if(m_hostPropertiesHasBeenSet)
   {
    payload.WithObject("hostProperties", m_hostProperties.Jsonize());
@@ -153,9 +153,15 @@ JsonValue WorkerSummary::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("status", WorkerStatusMapper::GetNameForWorkerStatus(m_status));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
+
   }
 
   if(m_updatedAtHasBeenSet)
@@ -166,12 +172,6 @@ JsonValue WorkerSummary::Jsonize() const
   if(m_updatedByHasBeenSet)
   {
    payload.WithString("updatedBy", m_updatedBy);
-
-  }
-
-  if(m_workerIdHasBeenSet)
-  {
-   payload.WithString("workerId", m_workerId);
 
   }
 

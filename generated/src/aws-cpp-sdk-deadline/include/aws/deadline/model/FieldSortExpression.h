@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/SortOrder.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The sort order for the field.</p>
+     */
+    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
+    inline FieldSortExpression& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
+    inline FieldSortExpression& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the field.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -51,25 +63,13 @@ namespace Model
     inline FieldSortExpression& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline FieldSortExpression& WithName(const char* value) { SetName(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The sort order for the field.</p>
-     */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline FieldSortExpression& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline FieldSortExpression& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
 
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

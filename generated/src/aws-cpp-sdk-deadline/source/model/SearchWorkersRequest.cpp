@@ -14,25 +14,19 @@ using namespace Aws::Utils;
 
 SearchWorkersRequest::SearchWorkersRequest() : 
     m_farmIdHasBeenSet(false),
-    m_filterExpressionsHasBeenSet(false),
     m_fleetIdsHasBeenSet(false),
+    m_filterExpressionsHasBeenSet(false),
+    m_sortExpressionsHasBeenSet(false),
     m_itemOffset(0),
     m_itemOffsetHasBeenSet(false),
     m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_sortExpressionsHasBeenSet(false)
+    m_pageSizeHasBeenSet(false)
 {
 }
 
 Aws::String SearchWorkersRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_filterExpressionsHasBeenSet)
-  {
-   payload.WithObject("filterExpressions", m_filterExpressions.Jsonize());
-
-  }
 
   if(m_fleetIdsHasBeenSet)
   {
@@ -45,15 +39,9 @@ Aws::String SearchWorkersRequest::SerializePayload() const
 
   }
 
-  if(m_itemOffsetHasBeenSet)
+  if(m_filterExpressionsHasBeenSet)
   {
-   payload.WithInteger("itemOffset", m_itemOffset);
-
-  }
-
-  if(m_pageSizeHasBeenSet)
-  {
-   payload.WithInteger("pageSize", m_pageSize);
+   payload.WithObject("filterExpressions", m_filterExpressions.Jsonize());
 
   }
 
@@ -65,6 +53,18 @@ Aws::String SearchWorkersRequest::SerializePayload() const
      sortExpressionsJsonList[sortExpressionsIndex].AsObject(m_sortExpressions[sortExpressionsIndex].Jsonize());
    }
    payload.WithArray("sortExpressions", std::move(sortExpressionsJsonList));
+
+  }
+
+  if(m_itemOffsetHasBeenSet)
+  {
+   payload.WithInteger("itemOffset", m_itemOffset);
+
+  }
+
+  if(m_pageSizeHasBeenSet)
+  {
+   payload.WithInteger("pageSize", m_pageSize);
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/FarmSummary.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Farms on the list.</p>
-     */
-    inline const Aws::Vector<FarmSummary>& GetFarms() const{ return m_farms; }
-    inline void SetFarms(const Aws::Vector<FarmSummary>& value) { m_farms = value; }
-    inline void SetFarms(Aws::Vector<FarmSummary>&& value) { m_farms = std::move(value); }
-    inline ListFarmsResult& WithFarms(const Aws::Vector<FarmSummary>& value) { SetFarms(value); return *this;}
-    inline ListFarmsResult& WithFarms(Aws::Vector<FarmSummary>&& value) { SetFarms(std::move(value)); return *this;}
-    inline ListFarmsResult& AddFarms(const FarmSummary& value) { m_farms.push_back(value); return *this; }
-    inline ListFarmsResult& AddFarms(FarmSummary&& value) { m_farms.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -67,6 +54,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Farms on the list.</p>
+     */
+    inline const Aws::Vector<FarmSummary>& GetFarms() const{ return m_farms; }
+    inline void SetFarms(const Aws::Vector<FarmSummary>& value) { m_farms = value; }
+    inline void SetFarms(Aws::Vector<FarmSummary>&& value) { m_farms = std::move(value); }
+    inline ListFarmsResult& WithFarms(const Aws::Vector<FarmSummary>& value) { SetFarms(value); return *this;}
+    inline ListFarmsResult& WithFarms(Aws::Vector<FarmSummary>&& value) { SetFarms(std::move(value)); return *this;}
+    inline ListFarmsResult& AddFarms(const FarmSummary& value) { m_farms.push_back(value); return *this; }
+    inline ListFarmsResult& AddFarms(FarmSummary&& value) { m_farms.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<FarmSummary> m_farms;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<FarmSummary> m_farms;
 
     Aws::String m_requestId;
   };

@@ -14,22 +14,46 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateBudgetRequest::CreateBudgetRequest() : 
-    m_actionsHasBeenSet(false),
-    m_approximateDollarLimit(0.0),
-    m_approximateDollarLimitHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
     m_farmIdHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_usageTrackingResourceHasBeenSet(false)
+    m_usageTrackingResourceHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_approximateDollarLimit(0.0),
+    m_approximateDollarLimitHasBeenSet(false),
+    m_actionsHasBeenSet(false),
+    m_scheduleHasBeenSet(false)
 {
 }
 
 Aws::String CreateBudgetRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_usageTrackingResourceHasBeenSet)
+  {
+   payload.WithObject("usageTrackingResource", m_usageTrackingResource.Jsonize());
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_approximateDollarLimitHasBeenSet)
+  {
+   payload.WithDouble("approximateDollarLimit", m_approximateDollarLimit);
+
+  }
 
   if(m_actionsHasBeenSet)
   {
@@ -42,33 +66,9 @@ Aws::String CreateBudgetRequest::SerializePayload() const
 
   }
 
-  if(m_approximateDollarLimitHasBeenSet)
-  {
-   payload.WithDouble("approximateDollarLimit", m_approximateDollarLimit);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
   if(m_scheduleHasBeenSet)
   {
    payload.WithObject("schedule", m_schedule.Jsonize());
-
-  }
-
-  if(m_usageTrackingResourceHasBeenSet)
-  {
-   payload.WithObject("usageTrackingResource", m_usageTrackingResource.Jsonize());
 
   }
 

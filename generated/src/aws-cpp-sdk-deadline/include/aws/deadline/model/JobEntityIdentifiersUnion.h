@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/EnvironmentDetailsIdentifiers.h>
-#include <aws/deadline/model/JobAttachmentDetailsIdentifiers.h>
 #include <aws/deadline/model/JobDetailsIdentifiers.h>
+#include <aws/deadline/model/JobAttachmentDetailsIdentifiers.h>
 #include <aws/deadline/model/StepDetailsIdentifiers.h>
+#include <aws/deadline/model/EnvironmentDetailsIdentifiers.h>
 #include <utility>
 
 namespace Aws
@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The environment details.</p>
+     * <p>The job details.</p>
      */
-    inline const EnvironmentDetailsIdentifiers& GetEnvironmentDetails() const{ return m_environmentDetails; }
-    inline bool EnvironmentDetailsHasBeenSet() const { return m_environmentDetailsHasBeenSet; }
-    inline void SetEnvironmentDetails(const EnvironmentDetailsIdentifiers& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = value; }
-    inline void SetEnvironmentDetails(EnvironmentDetailsIdentifiers&& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = std::move(value); }
-    inline JobEntityIdentifiersUnion& WithEnvironmentDetails(const EnvironmentDetailsIdentifiers& value) { SetEnvironmentDetails(value); return *this;}
-    inline JobEntityIdentifiersUnion& WithEnvironmentDetails(EnvironmentDetailsIdentifiers&& value) { SetEnvironmentDetails(std::move(value)); return *this;}
+    inline const JobDetailsIdentifiers& GetJobDetails() const{ return m_jobDetails; }
+    inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
+    inline void SetJobDetails(const JobDetailsIdentifiers& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
+    inline void SetJobDetails(JobDetailsIdentifiers&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
+    inline JobEntityIdentifiersUnion& WithJobDetails(const JobDetailsIdentifiers& value) { SetJobDetails(value); return *this;}
+    inline JobEntityIdentifiersUnion& WithJobDetails(JobDetailsIdentifiers&& value) { SetJobDetails(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,18 +66,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job details.</p>
-     */
-    inline const JobDetailsIdentifiers& GetJobDetails() const{ return m_jobDetails; }
-    inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
-    inline void SetJobDetails(const JobDetailsIdentifiers& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
-    inline void SetJobDetails(JobDetailsIdentifiers&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
-    inline JobEntityIdentifiersUnion& WithJobDetails(const JobDetailsIdentifiers& value) { SetJobDetails(value); return *this;}
-    inline JobEntityIdentifiersUnion& WithJobDetails(JobDetailsIdentifiers&& value) { SetJobDetails(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The step details.</p>
      */
     inline const StepDetailsIdentifiers& GetStepDetails() const{ return m_stepDetails; }
@@ -87,19 +75,31 @@ namespace Model
     inline JobEntityIdentifiersUnion& WithStepDetails(const StepDetailsIdentifiers& value) { SetStepDetails(value); return *this;}
     inline JobEntityIdentifiersUnion& WithStepDetails(StepDetailsIdentifiers&& value) { SetStepDetails(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The environment details.</p>
+     */
+    inline const EnvironmentDetailsIdentifiers& GetEnvironmentDetails() const{ return m_environmentDetails; }
+    inline bool EnvironmentDetailsHasBeenSet() const { return m_environmentDetailsHasBeenSet; }
+    inline void SetEnvironmentDetails(const EnvironmentDetailsIdentifiers& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = value; }
+    inline void SetEnvironmentDetails(EnvironmentDetailsIdentifiers&& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = std::move(value); }
+    inline JobEntityIdentifiersUnion& WithEnvironmentDetails(const EnvironmentDetailsIdentifiers& value) { SetEnvironmentDetails(value); return *this;}
+    inline JobEntityIdentifiersUnion& WithEnvironmentDetails(EnvironmentDetailsIdentifiers&& value) { SetEnvironmentDetails(std::move(value)); return *this;}
+    ///@}
   private:
-
-    EnvironmentDetailsIdentifiers m_environmentDetails;
-    bool m_environmentDetailsHasBeenSet = false;
-
-    JobAttachmentDetailsIdentifiers m_jobAttachmentDetails;
-    bool m_jobAttachmentDetailsHasBeenSet = false;
 
     JobDetailsIdentifiers m_jobDetails;
     bool m_jobDetailsHasBeenSet = false;
 
+    JobAttachmentDetailsIdentifiers m_jobAttachmentDetails;
+    bool m_jobAttachmentDetailsHasBeenSet = false;
+
     StepDetailsIdentifiers m_stepDetails;
     bool m_stepDetailsHasBeenSet = false;
+
+    EnvironmentDetailsIdentifiers m_environmentDetails;
+    bool m_environmentDetailsHasBeenSet = false;
   };
 
 } // namespace Model

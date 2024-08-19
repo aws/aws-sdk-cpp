@@ -19,14 +19,14 @@ namespace Model
 {
 
 DependencyCounts::DependencyCounts() : 
-    m_consumersResolved(0),
-    m_consumersResolvedHasBeenSet(false),
-    m_consumersUnresolved(0),
-    m_consumersUnresolvedHasBeenSet(false),
     m_dependenciesResolved(0),
     m_dependenciesResolvedHasBeenSet(false),
     m_dependenciesUnresolved(0),
-    m_dependenciesUnresolvedHasBeenSet(false)
+    m_dependenciesUnresolvedHasBeenSet(false),
+    m_consumersResolved(0),
+    m_consumersResolvedHasBeenSet(false),
+    m_consumersUnresolved(0),
+    m_consumersUnresolvedHasBeenSet(false)
 {
 }
 
@@ -38,20 +38,6 @@ DependencyCounts::DependencyCounts(JsonView jsonValue)
 
 DependencyCounts& DependencyCounts::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("consumersResolved"))
-  {
-    m_consumersResolved = jsonValue.GetInteger("consumersResolved");
-
-    m_consumersResolvedHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("consumersUnresolved"))
-  {
-    m_consumersUnresolved = jsonValue.GetInteger("consumersUnresolved");
-
-    m_consumersUnresolvedHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("dependenciesResolved"))
   {
     m_dependenciesResolved = jsonValue.GetInteger("dependenciesResolved");
@@ -66,24 +52,26 @@ DependencyCounts& DependencyCounts::operator =(JsonView jsonValue)
     m_dependenciesUnresolvedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("consumersResolved"))
+  {
+    m_consumersResolved = jsonValue.GetInteger("consumersResolved");
+
+    m_consumersResolvedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("consumersUnresolved"))
+  {
+    m_consumersUnresolved = jsonValue.GetInteger("consumersUnresolved");
+
+    m_consumersUnresolvedHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue DependencyCounts::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_consumersResolvedHasBeenSet)
-  {
-   payload.WithInteger("consumersResolved", m_consumersResolved);
-
-  }
-
-  if(m_consumersUnresolvedHasBeenSet)
-  {
-   payload.WithInteger("consumersUnresolved", m_consumersUnresolved);
-
-  }
 
   if(m_dependenciesResolvedHasBeenSet)
   {
@@ -94,6 +82,18 @@ JsonValue DependencyCounts::Jsonize() const
   if(m_dependenciesUnresolvedHasBeenSet)
   {
    payload.WithInteger("dependenciesUnresolved", m_dependenciesUnresolved);
+
+  }
+
+  if(m_consumersResolvedHasBeenSet)
+  {
+   payload.WithInteger("consumersResolved", m_consumersResolved);
+
+  }
+
+  if(m_consumersUnresolvedHasBeenSet)
+  {
+   payload.WithInteger("consumersUnresolved", m_consumersUnresolved);
 
   }
 

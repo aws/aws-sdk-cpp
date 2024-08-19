@@ -29,15 +29,15 @@ CreateMonitorResult::CreateMonitorResult(const Aws::AmazonWebServiceResult<JsonV
 CreateMonitorResult& CreateMonitorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("identityCenterApplicationArn"))
-  {
-    m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
-
-  }
-
   if(jsonValue.ValueExists("monitorId"))
   {
     m_monitorId = jsonValue.GetString("monitorId");
+
+  }
+
+  if(jsonValue.ValueExists("identityCenterApplicationArn"))
+  {
+    m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
 
   }
 

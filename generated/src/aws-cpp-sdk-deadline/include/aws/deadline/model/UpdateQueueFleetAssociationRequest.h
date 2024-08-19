@@ -49,20 +49,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fleet ID to update.</p>
-     */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline UpdateQueueFleetAssociationRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline UpdateQueueFleetAssociationRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline UpdateQueueFleetAssociationRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The queue ID to update.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
@@ -73,6 +59,20 @@ namespace Model
     inline UpdateQueueFleetAssociationRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
     inline UpdateQueueFleetAssociationRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
     inline UpdateQueueFleetAssociationRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The fleet ID to update.</p>
+     */
+    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
+    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
+    inline UpdateQueueFleetAssociationRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
+    inline UpdateQueueFleetAssociationRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
+    inline UpdateQueueFleetAssociationRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
     ///@}
 
     ///@{
@@ -91,11 +91,11 @@ namespace Model
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet = false;
-
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
 
     UpdateQueueFleetAssociationStatus m_status;
     bool m_statusHasBeenSet = false;

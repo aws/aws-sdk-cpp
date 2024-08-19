@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +35,62 @@ namespace Model
 
     ///@{
     /**
+     * <p>The farm ID of the farm to get.</p>
+     */
+    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline void SetFarmId(const Aws::String& value) { m_farmId = value; }
+    inline void SetFarmId(Aws::String&& value) { m_farmId = std::move(value); }
+    inline void SetFarmId(const char* value) { m_farmId.assign(value); }
+    inline GetFarmResult& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
+    inline GetFarmResult& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
+    inline GetFarmResult& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display name of the farm.</p>  <p>This field can store any
+     * content. Escape or encode this content before displaying it on a webpage or any
+     * other system that might interpret the content of this field.</p> 
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
+    inline GetFarmResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline GetFarmResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline GetFarmResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the farm.</p>  <p>This field can store any
+     * content. Escape or encode this content before displaying it on a webpage or any
+     * other system that might interpret the content of this field.</p> 
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline GetFarmResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline GetFarmResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline GetFarmResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the KMS key used on the farm.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
+    inline GetFarmResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+    inline GetFarmResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+    inline GetFarmResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -55,58 +111,6 @@ namespace Model
     inline GetFarmResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
     inline GetFarmResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
     inline GetFarmResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the farm.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetFarmResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetFarmResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetFarmResult& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The display name of the farm.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
-    inline GetFarmResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline GetFarmResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline GetFarmResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The farm ID of the farm to get.</p>
-     */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
-    inline void SetFarmId(const Aws::String& value) { m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmId.assign(value); }
-    inline GetFarmResult& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline GetFarmResult& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline GetFarmResult& WithFarmId(const char* value) { SetFarmId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the KMS key used on the farm.</p>
-     */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
-    inline GetFarmResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline GetFarmResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline GetFarmResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
     ///@}
 
     ///@{
@@ -145,17 +149,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-
-    Aws::String m_createdBy;
-
-    Aws::String m_description;
+    Aws::String m_farmId;
 
     Aws::String m_displayName;
 
-    Aws::String m_farmId;
+    Aws::String m_description;
 
     Aws::String m_kmsKeyArn;
+
+    Aws::Utils::DateTime m_createdAt;
+
+    Aws::String m_createdBy;
 
     Aws::Utils::DateTime m_updatedAt;
 

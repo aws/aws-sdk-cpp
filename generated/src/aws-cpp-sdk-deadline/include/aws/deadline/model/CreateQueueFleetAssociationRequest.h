@@ -48,20 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fleet ID.</p>
-     */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline CreateQueueFleetAssociationRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline CreateQueueFleetAssociationRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline CreateQueueFleetAssociationRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The queue ID.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
@@ -73,16 +59,30 @@ namespace Model
     inline CreateQueueFleetAssociationRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
     inline CreateQueueFleetAssociationRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The fleet ID.</p>
+     */
+    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
+    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
+    inline CreateQueueFleetAssociationRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
+    inline CreateQueueFleetAssociationRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
+    inline CreateQueueFleetAssociationRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet = false;
-
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
   };
 
 } // namespace Model

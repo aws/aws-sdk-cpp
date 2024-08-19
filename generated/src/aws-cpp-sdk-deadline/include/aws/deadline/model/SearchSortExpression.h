@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
+#include <aws/deadline/model/UserJobsFirst.h>
 #include <aws/deadline/model/FieldSortExpression.h>
 #include <aws/deadline/model/ParameterSortExpression.h>
-#include <aws/deadline/model/UserJobsFirst.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Options for sorting a particular user's jobs first.</p>
+     */
+    inline const UserJobsFirst& GetUserJobsFirst() const{ return m_userJobsFirst; }
+    inline bool UserJobsFirstHasBeenSet() const { return m_userJobsFirstHasBeenSet; }
+    inline void SetUserJobsFirst(const UserJobsFirst& value) { m_userJobsFirstHasBeenSet = true; m_userJobsFirst = value; }
+    inline void SetUserJobsFirst(UserJobsFirst&& value) { m_userJobsFirstHasBeenSet = true; m_userJobsFirst = std::move(value); }
+    inline SearchSortExpression& WithUserJobsFirst(const UserJobsFirst& value) { SetUserJobsFirst(value); return *this;}
+    inline SearchSortExpression& WithUserJobsFirst(UserJobsFirst&& value) { SetUserJobsFirst(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Options for sorting by a field.</p>
      */
     inline const FieldSortExpression& GetFieldSort() const{ return m_fieldSort; }
@@ -62,28 +74,16 @@ namespace Model
     inline SearchSortExpression& WithParameterSort(const ParameterSortExpression& value) { SetParameterSort(value); return *this;}
     inline SearchSortExpression& WithParameterSort(ParameterSortExpression&& value) { SetParameterSort(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Options for sorting a particular user's jobs first.</p>
-     */
-    inline const UserJobsFirst& GetUserJobsFirst() const{ return m_userJobsFirst; }
-    inline bool UserJobsFirstHasBeenSet() const { return m_userJobsFirstHasBeenSet; }
-    inline void SetUserJobsFirst(const UserJobsFirst& value) { m_userJobsFirstHasBeenSet = true; m_userJobsFirst = value; }
-    inline void SetUserJobsFirst(UserJobsFirst&& value) { m_userJobsFirstHasBeenSet = true; m_userJobsFirst = std::move(value); }
-    inline SearchSortExpression& WithUserJobsFirst(const UserJobsFirst& value) { SetUserJobsFirst(value); return *this;}
-    inline SearchSortExpression& WithUserJobsFirst(UserJobsFirst&& value) { SetUserJobsFirst(std::move(value)); return *this;}
-    ///@}
   private:
+
+    UserJobsFirst m_userJobsFirst;
+    bool m_userJobsFirstHasBeenSet = false;
 
     FieldSortExpression m_fieldSort;
     bool m_fieldSortHasBeenSet = false;
 
     ParameterSortExpression m_parameterSort;
     bool m_parameterSortHasBeenSet = false;
-
-    UserJobsFirst m_userJobsFirst;
-    bool m_userJobsFirstHasBeenSet = false;
   };
 
 } // namespace Model

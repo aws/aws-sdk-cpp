@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/deadline/model/DependencyCounts.h>
 #include <aws/deadline/model/StepLifecycleStatus.h>
-#include <aws/deadline/model/StepTargetTaskRunStatus.h>
 #include <aws/deadline/model/TaskRunStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/deadline/model/StepTargetTaskRunStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/deadline/model/DependencyCounts.h>
 #include <utility>
 
 namespace Aws
@@ -45,52 +45,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource was created.</p>
+     * <p>The step ID.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline StepSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline StepSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::String& GetStepId() const{ return m_stepId; }
+    inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
+    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
+    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
+    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
+    inline StepSummary& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
+    inline StepSummary& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
+    inline StepSummary& WithStepId(const char* value) { SetStepId(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The user or system that created this resource.</p>
+     * <p>The name of the step.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline StepSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline StepSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline StepSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of dependencies for the step.</p>
-     */
-    inline const DependencyCounts& GetDependencyCounts() const{ return m_dependencyCounts; }
-    inline bool DependencyCountsHasBeenSet() const { return m_dependencyCountsHasBeenSet; }
-    inline void SetDependencyCounts(const DependencyCounts& value) { m_dependencyCountsHasBeenSet = true; m_dependencyCounts = value; }
-    inline void SetDependencyCounts(DependencyCounts&& value) { m_dependencyCountsHasBeenSet = true; m_dependencyCounts = std::move(value); }
-    inline StepSummary& WithDependencyCounts(const DependencyCounts& value) { SetDependencyCounts(value); return *this;}
-    inline StepSummary& WithDependencyCounts(DependencyCounts&& value) { SetDependencyCounts(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time the resource ended running.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
-    inline StepSummary& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline StepSummary& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline StepSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline StepSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline StepSummary& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -117,58 +95,6 @@ namespace Model
     inline StepSummary& WithLifecycleStatusMessage(const Aws::String& value) { SetLifecycleStatusMessage(value); return *this;}
     inline StepSummary& WithLifecycleStatusMessage(Aws::String&& value) { SetLifecycleStatusMessage(std::move(value)); return *this;}
     inline StepSummary& WithLifecycleStatusMessage(const char* value) { SetLifecycleStatusMessage(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the step.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StepSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StepSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StepSummary& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time the resource started running.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
-    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
-    inline StepSummary& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline StepSummary& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The step ID.</p>
-     */
-    inline const Aws::String& GetStepId() const{ return m_stepId; }
-    inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-    inline StepSummary& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-    inline StepSummary& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-    inline StepSummary& WithStepId(const char* value) { SetStepId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The task status to start with on the job.</p>
-     */
-    inline const StepTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
-    inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }
-    inline void SetTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = value; }
-    inline void SetTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = std::move(value); }
-    inline StepSummary& WithTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { SetTargetTaskRunStatus(value); return *this;}
-    inline StepSummary& WithTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { SetTargetTaskRunStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,6 +135,44 @@ namespace Model
 
     ///@{
     /**
+     * <p>The task status to start with on the job.</p>
+     */
+    inline const StepTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
+    inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }
+    inline void SetTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = value; }
+    inline void SetTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = std::move(value); }
+    inline StepSummary& WithTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { SetTargetTaskRunStatus(value); return *this;}
+    inline StepSummary& WithTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { SetTargetTaskRunStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+    inline StepSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline StepSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that created this resource.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
+    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
+    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
+    inline StepSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+    inline StepSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline StepSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
@@ -232,19 +196,49 @@ namespace Model
     inline StepSummary& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
     inline StepSummary& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource started running.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
+    inline StepSummary& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+    inline StepSummary& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource ended running.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
+    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
+    inline StepSummary& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
+    inline StepSummary& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of dependencies for the step.</p>
+     */
+    inline const DependencyCounts& GetDependencyCounts() const{ return m_dependencyCounts; }
+    inline bool DependencyCountsHasBeenSet() const { return m_dependencyCountsHasBeenSet; }
+    inline void SetDependencyCounts(const DependencyCounts& value) { m_dependencyCountsHasBeenSet = true; m_dependencyCounts = value; }
+    inline void SetDependencyCounts(DependencyCounts&& value) { m_dependencyCountsHasBeenSet = true; m_dependencyCounts = std::move(value); }
+    inline StepSummary& WithDependencyCounts(const DependencyCounts& value) { SetDependencyCounts(value); return *this;}
+    inline StepSummary& WithDependencyCounts(DependencyCounts&& value) { SetDependencyCounts(std::move(value)); return *this;}
+    ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_stepId;
+    bool m_stepIdHasBeenSet = false;
 
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
-
-    DependencyCounts m_dependencyCounts;
-    bool m_dependencyCountsHasBeenSet = false;
-
-    Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     StepLifecycleStatus m_lifecycleStatus;
     bool m_lifecycleStatusHasBeenSet = false;
@@ -252,29 +246,35 @@ namespace Model
     Aws::String m_lifecycleStatusMessage;
     bool m_lifecycleStatusMessageHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet = false;
-
-    Aws::String m_stepId;
-    bool m_stepIdHasBeenSet = false;
-
-    StepTargetTaskRunStatus m_targetTaskRunStatus;
-    bool m_targetTaskRunStatusHasBeenSet = false;
-
     TaskRunStatus m_taskRunStatus;
     bool m_taskRunStatusHasBeenSet = false;
 
     Aws::Map<TaskRunStatus, int> m_taskRunStatusCounts;
     bool m_taskRunStatusCountsHasBeenSet = false;
 
+    StepTargetTaskRunStatus m_targetTaskRunStatus;
+    bool m_targetTaskRunStatusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
+
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startedAt;
+    bool m_startedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endedAt;
+    bool m_endedAtHasBeenSet = false;
+
+    DependencyCounts m_dependencyCounts;
+    bool m_dependencyCountsHasBeenSet = false;
   };
 
 } // namespace Model

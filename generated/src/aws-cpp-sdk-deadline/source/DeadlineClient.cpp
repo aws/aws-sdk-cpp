@@ -364,6 +364,11 @@ AssociateMemberToJobOutcome DeadlineClient::AssociateMemberToJob(const Associate
     AWS_LOGSTREAM_ERROR("AssociateMemberToJob", "Required field: FarmId, is not set");
     return AssociateMemberToJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
+  if (!request.QueueIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateMemberToJob", "Required field: QueueId, is not set");
+    return AssociateMemberToJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
   if (!request.JobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateMemberToJob", "Required field: JobId, is not set");
@@ -373,11 +378,6 @@ AssociateMemberToJobOutcome DeadlineClient::AssociateMemberToJob(const Associate
   {
     AWS_LOGSTREAM_ERROR("AssociateMemberToJob", "Required field: PrincipalId, is not set");
     return AssociateMemberToJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
-  }
-  if (!request.QueueIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("AssociateMemberToJob", "Required field: QueueId, is not set");
-    return AssociateMemberToJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateMemberToJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -420,15 +420,15 @@ AssociateMemberToQueueOutcome DeadlineClient::AssociateMemberToQueue(const Assoc
     AWS_LOGSTREAM_ERROR("AssociateMemberToQueue", "Required field: FarmId, is not set");
     return AssociateMemberToQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.PrincipalIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("AssociateMemberToQueue", "Required field: PrincipalId, is not set");
-    return AssociateMemberToQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateMemberToQueue", "Required field: QueueId, is not set");
     return AssociateMemberToQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.PrincipalIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateMemberToQueue", "Required field: PrincipalId, is not set");
+    return AssociateMemberToQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateMemberToQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -653,15 +653,15 @@ AssumeQueueRoleForWorkerOutcome DeadlineClient::AssumeQueueRoleForWorker(const A
     AWS_LOGSTREAM_ERROR("AssumeQueueRoleForWorker", "Required field: FleetId, is not set");
     return AssumeQueueRoleForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FleetId]", false));
   }
-  if (!request.QueueIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("AssumeQueueRoleForWorker", "Required field: QueueId, is not set");
-    return AssumeQueueRoleForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
-  }
   if (!request.WorkerIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssumeQueueRoleForWorker", "Required field: WorkerId, is not set");
     return AssumeQueueRoleForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkerId]", false));
+  }
+  if (!request.QueueIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssumeQueueRoleForWorker", "Required field: QueueId, is not set");
+    return AssumeQueueRoleForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssumeQueueRoleForWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1194,15 +1194,15 @@ DeleteBudgetOutcome DeadlineClient::DeleteBudget(const DeleteBudgetRequest& requ
 {
   AWS_OPERATION_GUARD(DeleteBudget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.BudgetIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteBudget", "Required field: BudgetId, is not set");
-    return DeleteBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BudgetId]", false));
-  }
   if (!request.FarmIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteBudget", "Required field: FarmId, is not set");
     return DeleteBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.BudgetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBudget", "Required field: BudgetId, is not set");
+    return DeleteBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BudgetId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1472,15 +1472,15 @@ DeleteQueueEnvironmentOutcome DeadlineClient::DeleteQueueEnvironment(const Delet
     AWS_LOGSTREAM_ERROR("DeleteQueueEnvironment", "Required field: FarmId, is not set");
     return DeleteQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.QueueEnvironmentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteQueueEnvironment", "Required field: QueueEnvironmentId, is not set");
-    return DeleteQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueEnvironmentId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteQueueEnvironment", "Required field: QueueId, is not set");
     return DeleteQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.QueueEnvironmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueueEnvironment", "Required field: QueueEnvironmentId, is not set");
+    return DeleteQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueEnvironmentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1521,15 +1521,15 @@ DeleteQueueFleetAssociationOutcome DeadlineClient::DeleteQueueFleetAssociation(c
     AWS_LOGSTREAM_ERROR("DeleteQueueFleetAssociation", "Required field: FarmId, is not set");
     return DeleteQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.FleetIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteQueueFleetAssociation", "Required field: FleetId, is not set");
-    return DeleteQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FleetId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteQueueFleetAssociation", "Required field: QueueId, is not set");
     return DeleteQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.FleetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueueFleetAssociation", "Required field: FleetId, is not set");
+    return DeleteQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FleetId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1751,6 +1751,11 @@ DisassociateMemberFromJobOutcome DeadlineClient::DisassociateMemberFromJob(const
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromJob", "Required field: FarmId, is not set");
     return DisassociateMemberFromJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
+  if (!request.QueueIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateMemberFromJob", "Required field: QueueId, is not set");
+    return DisassociateMemberFromJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
   if (!request.JobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromJob", "Required field: JobId, is not set");
@@ -1760,11 +1765,6 @@ DisassociateMemberFromJobOutcome DeadlineClient::DisassociateMemberFromJob(const
   {
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromJob", "Required field: PrincipalId, is not set");
     return DisassociateMemberFromJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
-  }
-  if (!request.QueueIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociateMemberFromJob", "Required field: QueueId, is not set");
-    return DisassociateMemberFromJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateMemberFromJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1807,15 +1807,15 @@ DisassociateMemberFromQueueOutcome DeadlineClient::DisassociateMemberFromQueue(c
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromQueue", "Required field: FarmId, is not set");
     return DisassociateMemberFromQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.PrincipalIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociateMemberFromQueue", "Required field: PrincipalId, is not set");
-    return DisassociateMemberFromQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromQueue", "Required field: QueueId, is not set");
     return DisassociateMemberFromQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.PrincipalIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateMemberFromQueue", "Required field: PrincipalId, is not set");
+    return DisassociateMemberFromQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateMemberFromQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1851,15 +1851,15 @@ GetBudgetOutcome DeadlineClient::GetBudget(const GetBudgetRequest& request) cons
 {
   AWS_OPERATION_GUARD(GetBudget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.BudgetIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetBudget", "Required field: BudgetId, is not set");
-    return GetBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BudgetId]", false));
-  }
   if (!request.FarmIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBudget", "Required field: FarmId, is not set");
     return GetBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.BudgetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBudget", "Required field: BudgetId, is not set");
+    return GetBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BudgetId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2136,15 +2136,15 @@ GetQueueEnvironmentOutcome DeadlineClient::GetQueueEnvironment(const GetQueueEnv
     AWS_LOGSTREAM_ERROR("GetQueueEnvironment", "Required field: FarmId, is not set");
     return GetQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.QueueEnvironmentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetQueueEnvironment", "Required field: QueueEnvironmentId, is not set");
-    return GetQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueEnvironmentId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetQueueEnvironment", "Required field: QueueId, is not set");
     return GetQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.QueueEnvironmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetQueueEnvironment", "Required field: QueueEnvironmentId, is not set");
+    return GetQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueEnvironmentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2185,15 +2185,15 @@ GetQueueFleetAssociationOutcome DeadlineClient::GetQueueFleetAssociation(const G
     AWS_LOGSTREAM_ERROR("GetQueueFleetAssociation", "Required field: FarmId, is not set");
     return GetQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.FleetIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetQueueFleetAssociation", "Required field: FleetId, is not set");
-    return GetQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FleetId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetQueueFleetAssociation", "Required field: QueueId, is not set");
     return GetQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.FleetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetQueueFleetAssociation", "Required field: FleetId, is not set");
+    return GetQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FleetId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2233,15 +2233,15 @@ GetSessionOutcome DeadlineClient::GetSession(const GetSessionRequest& request) c
     AWS_LOGSTREAM_ERROR("GetSession", "Required field: FarmId, is not set");
     return GetSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetSession", "Required field: JobId, is not set");
-    return GetSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetSession", "Required field: QueueId, is not set");
     return GetSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSession", "Required field: JobId, is not set");
+    return GetSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.SessionIdHasBeenSet())
   {
@@ -2289,15 +2289,15 @@ GetSessionActionOutcome DeadlineClient::GetSessionAction(const GetSessionActionR
     AWS_LOGSTREAM_ERROR("GetSessionAction", "Required field: FarmId, is not set");
     return GetSessionActionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetSessionAction", "Required field: JobId, is not set");
-    return GetSessionActionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetSessionAction", "Required field: QueueId, is not set");
     return GetSessionActionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSessionAction", "Required field: JobId, is not set");
+    return GetSessionActionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.SessionActionIdHasBeenSet())
   {
@@ -2340,15 +2340,15 @@ GetSessionsStatisticsAggregationOutcome DeadlineClient::GetSessionsStatisticsAgg
 {
   AWS_OPERATION_GUARD(GetSessionsStatisticsAggregation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSessionsStatisticsAggregation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AggregationIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetSessionsStatisticsAggregation", "Required field: AggregationId, is not set");
-    return GetSessionsStatisticsAggregationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AggregationId]", false));
-  }
   if (!request.FarmIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetSessionsStatisticsAggregation", "Required field: FarmId, is not set");
     return GetSessionsStatisticsAggregationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.AggregationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSessionsStatisticsAggregation", "Required field: AggregationId, is not set");
+    return GetSessionsStatisticsAggregationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AggregationId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSessionsStatisticsAggregation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2386,15 +2386,15 @@ GetStepOutcome DeadlineClient::GetStep(const GetStepRequest& request) const
     AWS_LOGSTREAM_ERROR("GetStep", "Required field: FarmId, is not set");
     return GetStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetStep", "Required field: JobId, is not set");
-    return GetStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStep", "Required field: QueueId, is not set");
     return GetStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStep", "Required field: JobId, is not set");
+    return GetStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.StepIdHasBeenSet())
   {
@@ -2533,15 +2533,15 @@ GetTaskOutcome DeadlineClient::GetTask(const GetTaskRequest& request) const
     AWS_LOGSTREAM_ERROR("GetTask", "Required field: FarmId, is not set");
     return GetTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetTask", "Required field: JobId, is not set");
-    return GetTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetTask", "Required field: QueueId, is not set");
     return GetTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTask", "Required field: JobId, is not set");
+    return GetTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.StepIdHasBeenSet())
   {
@@ -2854,15 +2854,15 @@ ListJobMembersOutcome DeadlineClient::ListJobMembers(const ListJobMembersRequest
     AWS_LOGSTREAM_ERROR("ListJobMembers", "Required field: FarmId, is not set");
     return ListJobMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListJobMembers", "Required field: JobId, is not set");
-    return ListJobMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListJobMembers", "Required field: QueueId, is not set");
     return ListJobMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobMembers", "Required field: JobId, is not set");
+    return ListJobMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListJobMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -3199,15 +3199,15 @@ ListSessionActionsOutcome DeadlineClient::ListSessionActions(const ListSessionAc
     AWS_LOGSTREAM_ERROR("ListSessionActions", "Required field: FarmId, is not set");
     return ListSessionActionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListSessionActions", "Required field: JobId, is not set");
-    return ListSessionActionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListSessionActions", "Required field: QueueId, is not set");
     return ListSessionActionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSessionActions", "Required field: JobId, is not set");
+    return ListSessionActionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSessionActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -3249,15 +3249,15 @@ ListSessionsOutcome DeadlineClient::ListSessions(const ListSessionsRequest& requ
     AWS_LOGSTREAM_ERROR("ListSessions", "Required field: FarmId, is not set");
     return ListSessionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListSessions", "Required field: JobId, is not set");
-    return ListSessionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListSessions", "Required field: QueueId, is not set");
     return ListSessionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSessions", "Required field: JobId, is not set");
+    return ListSessionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSessions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -3349,15 +3349,15 @@ ListStepConsumersOutcome DeadlineClient::ListStepConsumers(const ListStepConsume
     AWS_LOGSTREAM_ERROR("ListStepConsumers", "Required field: FarmId, is not set");
     return ListStepConsumersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListStepConsumers", "Required field: JobId, is not set");
-    return ListStepConsumersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListStepConsumers", "Required field: QueueId, is not set");
     return ListStepConsumersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListStepConsumers", "Required field: JobId, is not set");
+    return ListStepConsumersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.StepIdHasBeenSet())
   {
@@ -3406,15 +3406,15 @@ ListStepDependenciesOutcome DeadlineClient::ListStepDependencies(const ListStepD
     AWS_LOGSTREAM_ERROR("ListStepDependencies", "Required field: FarmId, is not set");
     return ListStepDependenciesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListStepDependencies", "Required field: JobId, is not set");
-    return ListStepDependenciesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListStepDependencies", "Required field: QueueId, is not set");
     return ListStepDependenciesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListStepDependencies", "Required field: JobId, is not set");
+    return ListStepDependenciesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.StepIdHasBeenSet())
   {
@@ -3463,15 +3463,15 @@ ListStepsOutcome DeadlineClient::ListSteps(const ListStepsRequest& request) cons
     AWS_LOGSTREAM_ERROR("ListSteps", "Required field: FarmId, is not set");
     return ListStepsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListSteps", "Required field: JobId, is not set");
-    return ListStepsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListSteps", "Required field: QueueId, is not set");
     return ListStepsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSteps", "Required field: JobId, is not set");
+    return ListStepsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSteps, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -3627,15 +3627,15 @@ ListTasksOutcome DeadlineClient::ListTasks(const ListTasksRequest& request) cons
     AWS_LOGSTREAM_ERROR("ListTasks", "Required field: FarmId, is not set");
     return ListTasksOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListTasks", "Required field: JobId, is not set");
-    return ListTasksOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTasks", "Required field: QueueId, is not set");
     return ListTasksOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTasks", "Required field: JobId, is not set");
+    return ListTasksOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.StepIdHasBeenSet())
   {
@@ -4019,15 +4019,15 @@ UpdateBudgetOutcome DeadlineClient::UpdateBudget(const UpdateBudgetRequest& requ
 {
   AWS_OPERATION_GUARD(UpdateBudget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.BudgetIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateBudget", "Required field: BudgetId, is not set");
-    return UpdateBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BudgetId]", false));
-  }
   if (!request.FarmIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateBudget", "Required field: FarmId, is not set");
     return UpdateBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.BudgetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBudget", "Required field: BudgetId, is not set");
+    return UpdateBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BudgetId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -4143,15 +4143,15 @@ UpdateJobOutcome DeadlineClient::UpdateJob(const UpdateJobRequest& request) cons
     AWS_LOGSTREAM_ERROR("UpdateJob", "Required field: FarmId, is not set");
     return UpdateJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateJob", "Required field: JobId, is not set");
-    return UpdateJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateJob", "Required field: QueueId, is not set");
     return UpdateJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJob", "Required field: JobId, is not set");
+    return UpdateJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -4269,15 +4269,15 @@ UpdateQueueEnvironmentOutcome DeadlineClient::UpdateQueueEnvironment(const Updat
     AWS_LOGSTREAM_ERROR("UpdateQueueEnvironment", "Required field: FarmId, is not set");
     return UpdateQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.QueueEnvironmentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateQueueEnvironment", "Required field: QueueEnvironmentId, is not set");
-    return UpdateQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueEnvironmentId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateQueueEnvironment", "Required field: QueueId, is not set");
     return UpdateQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.QueueEnvironmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQueueEnvironment", "Required field: QueueEnvironmentId, is not set");
+    return UpdateQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueEnvironmentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -4318,15 +4318,15 @@ UpdateQueueFleetAssociationOutcome DeadlineClient::UpdateQueueFleetAssociation(c
     AWS_LOGSTREAM_ERROR("UpdateQueueFleetAssociation", "Required field: FarmId, is not set");
     return UpdateQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.FleetIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateQueueFleetAssociation", "Required field: FleetId, is not set");
-    return UpdateQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FleetId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateQueueFleetAssociation", "Required field: QueueId, is not set");
     return UpdateQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.FleetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQueueFleetAssociation", "Required field: FleetId, is not set");
+    return UpdateQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FleetId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -4366,15 +4366,15 @@ UpdateSessionOutcome DeadlineClient::UpdateSession(const UpdateSessionRequest& r
     AWS_LOGSTREAM_ERROR("UpdateSession", "Required field: FarmId, is not set");
     return UpdateSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateSession", "Required field: JobId, is not set");
-    return UpdateSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateSession", "Required field: QueueId, is not set");
     return UpdateSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSession", "Required field: JobId, is not set");
+    return UpdateSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.SessionIdHasBeenSet())
   {
@@ -4422,15 +4422,15 @@ UpdateStepOutcome DeadlineClient::UpdateStep(const UpdateStepRequest& request) c
     AWS_LOGSTREAM_ERROR("UpdateStep", "Required field: FarmId, is not set");
     return UpdateStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateStep", "Required field: JobId, is not set");
-    return UpdateStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateStep", "Required field: QueueId, is not set");
     return UpdateStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateStep", "Required field: JobId, is not set");
+    return UpdateStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.StepIdHasBeenSet())
   {
@@ -4520,15 +4520,15 @@ UpdateTaskOutcome DeadlineClient::UpdateTask(const UpdateTaskRequest& request) c
     AWS_LOGSTREAM_ERROR("UpdateTask", "Required field: FarmId, is not set");
     return UpdateTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateTask", "Required field: JobId, is not set");
-    return UpdateTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateTask", "Required field: QueueId, is not set");
     return UpdateTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTask", "Required field: JobId, is not set");
+    return UpdateTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   if (!request.StepIdHasBeenSet())
   {

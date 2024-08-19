@@ -19,17 +19,17 @@ namespace Model
 {
 
 QueueSummary::QueueSummary() : 
+    m_farmIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_status(QueueStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_defaultBudgetAction(DefaultQueueBudgetAction::NOT_SET),
+    m_defaultBudgetActionHasBeenSet(false),
     m_blockedReason(QueueBlockedReason::NOT_SET),
     m_blockedReasonHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
-    m_defaultBudgetAction(DefaultQueueBudgetAction::NOT_SET),
-    m_defaultBudgetActionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_status(QueueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_updatedByHasBeenSet(false)
 {
@@ -43,6 +43,41 @@ QueueSummary::QueueSummary(JsonView jsonValue)
 
 QueueSummary& QueueSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("farmId"))
+  {
+    m_farmId = jsonValue.GetString("farmId");
+
+    m_farmIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queueId"))
+  {
+    m_queueId = jsonValue.GetString("queueId");
+
+    m_queueIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = QueueStatusMapper::GetQueueStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("defaultBudgetAction"))
+  {
+    m_defaultBudgetAction = DefaultQueueBudgetActionMapper::GetDefaultQueueBudgetActionForName(jsonValue.GetString("defaultBudgetAction"));
+
+    m_defaultBudgetActionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("blockedReason"))
   {
     m_blockedReason = QueueBlockedReasonMapper::GetQueueBlockedReasonForName(jsonValue.GetString("blockedReason"));
@@ -62,41 +97,6 @@ QueueSummary& QueueSummary::operator =(JsonView jsonValue)
     m_createdBy = jsonValue.GetString("createdBy");
 
     m_createdByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("defaultBudgetAction"))
-  {
-    m_defaultBudgetAction = DefaultQueueBudgetActionMapper::GetDefaultQueueBudgetActionForName(jsonValue.GetString("defaultBudgetAction"));
-
-    m_defaultBudgetActionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-
-    m_displayNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("farmId"))
-  {
-    m_farmId = jsonValue.GetString("farmId");
-
-    m_farmIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("queueId"))
-  {
-    m_queueId = jsonValue.GetString("queueId");
-
-    m_queueIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = QueueStatusMapper::GetQueueStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -120,6 +120,34 @@ JsonValue QueueSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_farmIdHasBeenSet)
+  {
+   payload.WithString("farmId", m_farmId);
+
+  }
+
+  if(m_queueIdHasBeenSet)
+  {
+   payload.WithString("queueId", m_queueId);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", QueueStatusMapper::GetNameForQueueStatus(m_status));
+  }
+
+  if(m_defaultBudgetActionHasBeenSet)
+  {
+   payload.WithString("defaultBudgetAction", DefaultQueueBudgetActionMapper::GetNameForDefaultQueueBudgetAction(m_defaultBudgetAction));
+  }
+
   if(m_blockedReasonHasBeenSet)
   {
    payload.WithString("blockedReason", QueueBlockedReasonMapper::GetNameForQueueBlockedReason(m_blockedReason));
@@ -134,34 +162,6 @@ JsonValue QueueSummary::Jsonize() const
   {
    payload.WithString("createdBy", m_createdBy);
 
-  }
-
-  if(m_defaultBudgetActionHasBeenSet)
-  {
-   payload.WithString("defaultBudgetAction", DefaultQueueBudgetActionMapper::GetNameForDefaultQueueBudgetAction(m_defaultBudgetAction));
-  }
-
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
-  if(m_farmIdHasBeenSet)
-  {
-   payload.WithString("farmId", m_farmId);
-
-  }
-
-  if(m_queueIdHasBeenSet)
-  {
-   payload.WithString("queueId", m_queueId);
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", QueueStatusMapper::GetNameForQueueStatus(m_status));
   }
 
   if(m_updatedAtHasBeenSet)

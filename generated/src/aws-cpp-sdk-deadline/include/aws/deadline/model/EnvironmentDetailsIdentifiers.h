@@ -39,20 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The environment ID.</p>
-     */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline EnvironmentDetailsIdentifiers& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline EnvironmentDetailsIdentifiers& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline EnvironmentDetailsIdentifiers& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The job ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -64,13 +50,27 @@ namespace Model
     inline EnvironmentDetailsIdentifiers& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
     inline EnvironmentDetailsIdentifiers& WithJobId(const char* value) { SetJobId(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The environment ID.</p>
+     */
+    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
+    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
+    inline EnvironmentDetailsIdentifiers& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
+    inline EnvironmentDetailsIdentifiers& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
+    inline EnvironmentDetailsIdentifiers& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
+
+    Aws::String m_environmentId;
+    bool m_environmentIdHasBeenSet = false;
   };
 
 } // namespace Model

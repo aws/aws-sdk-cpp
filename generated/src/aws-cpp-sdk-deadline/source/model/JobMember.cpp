@@ -20,14 +20,14 @@ namespace Model
 
 JobMember::JobMember() : 
     m_farmIdHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_membershipLevel(MembershipLevel::NOT_SET),
-    m_membershipLevelHasBeenSet(false),
     m_principalIdHasBeenSet(false),
     m_principalType(PrincipalType::NOT_SET),
     m_principalTypeHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+    m_identityStoreIdHasBeenSet(false),
+    m_membershipLevel(MembershipLevel::NOT_SET),
+    m_membershipLevelHasBeenSet(false)
 {
 }
 
@@ -46,11 +46,11 @@ JobMember& JobMember::operator =(JsonView jsonValue)
     m_farmIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("identityStoreId"))
+  if(jsonValue.ValueExists("queueId"))
   {
-    m_identityStoreId = jsonValue.GetString("identityStoreId");
+    m_queueId = jsonValue.GetString("queueId");
 
-    m_identityStoreIdHasBeenSet = true;
+    m_queueIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobId"))
@@ -58,13 +58,6 @@ JobMember& JobMember::operator =(JsonView jsonValue)
     m_jobId = jsonValue.GetString("jobId");
 
     m_jobIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("membershipLevel"))
-  {
-    m_membershipLevel = MembershipLevelMapper::GetMembershipLevelForName(jsonValue.GetString("membershipLevel"));
-
-    m_membershipLevelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("principalId"))
@@ -81,11 +74,18 @@ JobMember& JobMember::operator =(JsonView jsonValue)
     m_principalTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("queueId"))
+  if(jsonValue.ValueExists("identityStoreId"))
   {
-    m_queueId = jsonValue.GetString("queueId");
+    m_identityStoreId = jsonValue.GetString("identityStoreId");
 
-    m_queueIdHasBeenSet = true;
+    m_identityStoreIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("membershipLevel"))
+  {
+    m_membershipLevel = MembershipLevelMapper::GetMembershipLevelForName(jsonValue.GetString("membershipLevel"));
+
+    m_membershipLevelHasBeenSet = true;
   }
 
   return *this;
@@ -101,9 +101,9 @@ JsonValue JobMember::Jsonize() const
 
   }
 
-  if(m_identityStoreIdHasBeenSet)
+  if(m_queueIdHasBeenSet)
   {
-   payload.WithString("identityStoreId", m_identityStoreId);
+   payload.WithString("queueId", m_queueId);
 
   }
 
@@ -111,11 +111,6 @@ JsonValue JobMember::Jsonize() const
   {
    payload.WithString("jobId", m_jobId);
 
-  }
-
-  if(m_membershipLevelHasBeenSet)
-  {
-   payload.WithString("membershipLevel", MembershipLevelMapper::GetNameForMembershipLevel(m_membershipLevel));
   }
 
   if(m_principalIdHasBeenSet)
@@ -129,10 +124,15 @@ JsonValue JobMember::Jsonize() const
    payload.WithString("principalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
   }
 
-  if(m_queueIdHasBeenSet)
+  if(m_identityStoreIdHasBeenSet)
   {
-   payload.WithString("queueId", m_queueId);
+   payload.WithString("identityStoreId", m_identityStoreId);
 
+  }
+
+  if(m_membershipLevelHasBeenSet)
+  {
+   payload.WithString("membershipLevel", MembershipLevelMapper::GetNameForMembershipLevel(m_membershipLevel));
   }
 
   return payload;

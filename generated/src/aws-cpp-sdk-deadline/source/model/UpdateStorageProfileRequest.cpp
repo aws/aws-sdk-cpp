@@ -16,13 +16,13 @@ using namespace Aws::Utils;
 UpdateStorageProfileRequest::UpdateStorageProfileRequest() : 
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_displayNameHasBeenSet(false),
     m_farmIdHasBeenSet(false),
-    m_fileSystemLocationsToAddHasBeenSet(false),
-    m_fileSystemLocationsToRemoveHasBeenSet(false),
+    m_storageProfileIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_osFamily(StorageProfileOperatingSystemFamily::NOT_SET),
     m_osFamilyHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false)
+    m_fileSystemLocationsToAddHasBeenSet(false),
+    m_fileSystemLocationsToRemoveHasBeenSet(false)
 {
 }
 
@@ -34,6 +34,11 @@ Aws::String UpdateStorageProfileRequest::SerializePayload() const
   {
    payload.WithString("displayName", m_displayName);
 
+  }
+
+  if(m_osFamilyHasBeenSet)
+  {
+   payload.WithString("osFamily", StorageProfileOperatingSystemFamilyMapper::GetNameForStorageProfileOperatingSystemFamily(m_osFamily));
   }
 
   if(m_fileSystemLocationsToAddHasBeenSet)
@@ -56,11 +61,6 @@ Aws::String UpdateStorageProfileRequest::SerializePayload() const
    }
    payload.WithArray("fileSystemLocationsToRemove", std::move(fileSystemLocationsToRemoveJsonList));
 
-  }
-
-  if(m_osFamilyHasBeenSet)
-  {
-   payload.WithString("osFamily", StorageProfileOperatingSystemFamilyMapper::GetNameForStorageProfileOperatingSystemFamily(m_osFamily));
   }
 
   return payload.View().WriteReadable();

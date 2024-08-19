@@ -24,6 +24,7 @@ CreateFleetRequest::CreateFleetRequest() :
     m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
     m_overflowBehaviorHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_fleetServiceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -69,6 +70,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("imageId", m_imageId);
 
   }
 

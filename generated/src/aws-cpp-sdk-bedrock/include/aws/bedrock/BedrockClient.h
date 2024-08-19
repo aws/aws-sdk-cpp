@@ -247,6 +247,41 @@ namespace Bedrock
         }
 
         /**
+         * <p>Creates a job to invoke a model on multiple prompts (batch inference). Format
+         * your data according to <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-prerq.html#batch-inference-data">Format
+         * your inference data</a> and upload it to an Amazon S3 bucket. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html">Create
+         * a batch inference job</a>.</p> <p>The response returns a <code>jobArn</code>
+         * that you can use to stop or get details about the job. You can check the status
+         * of the job by sending a <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCustomizationJob.html">GetModelCustomizationJob</a>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelInvocationJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateModelInvocationJobOutcome CreateModelInvocationJob(const Model::CreateModelInvocationJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateModelInvocationJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateModelInvocationJobRequestT = Model::CreateModelInvocationJobRequest>
+        Model::CreateModelInvocationJobOutcomeCallable CreateModelInvocationJobCallable(const CreateModelInvocationJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateModelInvocationJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateModelInvocationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateModelInvocationJobRequestT = Model::CreateModelInvocationJobRequest>
+        void CreateModelInvocationJobAsync(const CreateModelInvocationJobRequestT& request, const CreateModelInvocationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateModelInvocationJob, request, handler, context);
+        }
+
+        /**
          * <p>Creates dedicated throughput for a base or custom model with the model units
          * and for the duration that you specify. For pricing details, see <a
          * href="http://aws.amazon.com/bedrock/pricing/">Amazon Bedrock Pricing</a>. For
@@ -563,6 +598,33 @@ namespace Bedrock
         }
 
         /**
+         * <p>Gets details about a batch inference job. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
+         * details about a batch inference job</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetModelInvocationJobOutcome GetModelInvocationJob(const Model::GetModelInvocationJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetModelInvocationJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetModelInvocationJobRequestT = Model::GetModelInvocationJobRequest>
+        Model::GetModelInvocationJobOutcomeCallable GetModelInvocationJobCallable(const GetModelInvocationJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetModelInvocationJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetModelInvocationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetModelInvocationJobRequestT = Model::GetModelInvocationJobRequest>
+        void GetModelInvocationJobAsync(const GetModelInvocationJobRequestT& request, const GetModelInvocationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetModelInvocationJob, request, handler, context);
+        }
+
+        /**
          * <p>Get the current configuration values for model invocation
          * logging.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationLoggingConfiguration">AWS
@@ -798,6 +860,33 @@ namespace Bedrock
         }
 
         /**
+         * <p>Lists all batch inference jobs in the account. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
+         * details about a batch inference job</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelInvocationJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelInvocationJobsOutcome ListModelInvocationJobs(const Model::ListModelInvocationJobsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListModelInvocationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListModelInvocationJobsRequestT = Model::ListModelInvocationJobsRequest>
+        Model::ListModelInvocationJobsOutcomeCallable ListModelInvocationJobsCallable(const ListModelInvocationJobsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListModelInvocationJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListModelInvocationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListModelInvocationJobsRequestT = Model::ListModelInvocationJobsRequest>
+        void ListModelInvocationJobsAsync(const ListModelInvocationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelInvocationJobsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListModelInvocationJobs, request, handler, context);
+        }
+
+        /**
          * <p>Lists the Provisioned Throughputs in the account. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
@@ -935,6 +1024,34 @@ namespace Bedrock
         void StopModelCustomizationJobAsync(const StopModelCustomizationJobRequestT& request, const StopModelCustomizationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::StopModelCustomizationJob, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a batch inference job. You're only charged for tokens that were already
+         * processed. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-stop">Stop
+         * a batch inference job</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopModelInvocationJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopModelInvocationJobOutcome StopModelInvocationJob(const Model::StopModelInvocationJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopModelInvocationJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopModelInvocationJobRequestT = Model::StopModelInvocationJobRequest>
+        Model::StopModelInvocationJobOutcomeCallable StopModelInvocationJobCallable(const StopModelInvocationJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::StopModelInvocationJob, request);
+        }
+
+        /**
+         * An Async wrapper for StopModelInvocationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopModelInvocationJobRequestT = Model::StopModelInvocationJobRequest>
+        void StopModelInvocationJobAsync(const StopModelInvocationJobRequestT& request, const StopModelInvocationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::StopModelInvocationJob, request, handler, context);
         }
 
         /**

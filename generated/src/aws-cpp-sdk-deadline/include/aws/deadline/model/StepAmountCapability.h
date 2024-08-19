@@ -40,26 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum amount.</p>
-     */
-    inline double GetMax() const{ return m_max; }
-    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-    inline StepAmountCapability& WithMax(double value) { SetMax(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The minimum amount.</p>
-     */
-    inline double GetMin() const{ return m_min; }
-    inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-    inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
-    inline StepAmountCapability& WithMin(double value) { SetMin(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the step.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -74,6 +54,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>The minimum amount.</p>
+     */
+    inline double GetMin() const{ return m_min; }
+    inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
+    inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
+    inline StepAmountCapability& WithMin(double value) { SetMin(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum amount.</p>
+     */
+    inline double GetMax() const{ return m_max; }
+    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
+    inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
+    inline StepAmountCapability& WithMax(double value) { SetMax(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The amount value.</p>
      */
     inline double GetValue() const{ return m_value; }
@@ -83,14 +83,14 @@ namespace Model
     ///@}
   private:
 
-    double m_max;
-    bool m_maxHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     double m_min;
     bool m_minHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    double m_max;
+    bool m_maxHasBeenSet = false;
 
     double m_value;
     bool m_valueHasBeenSet = false;

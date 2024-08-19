@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/deadline/model/TaskRunStatus.h>
 #include <aws/deadline/model/TaskTargetRunStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/deadline/model/TaskParameterValue.h>
 #include <utility>
 
@@ -39,6 +39,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The task ID.</p>
+     */
+    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
+    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
+    inline GetTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
+    inline GetTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
+    inline GetTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -63,13 +76,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource ended running.</p>
+     * <p>The run status for the task.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAt = std::move(value); }
-    inline GetTaskResult& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline GetTaskResult& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    inline const TaskRunStatus& GetRunStatus() const{ return m_runStatus; }
+    inline void SetRunStatus(const TaskRunStatus& value) { m_runStatus = value; }
+    inline void SetRunStatus(TaskRunStatus&& value) { m_runStatus = std::move(value); }
+    inline GetTaskResult& WithRunStatus(const TaskRunStatus& value) { SetRunStatus(value); return *this;}
+    inline GetTaskResult& WithRunStatus(TaskRunStatus&& value) { SetRunStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The run status with which to start the task.</p>
+     */
+    inline const TaskTargetRunStatus& GetTargetRunStatus() const{ return m_targetRunStatus; }
+    inline void SetTargetRunStatus(const TaskTargetRunStatus& value) { m_targetRunStatus = value; }
+    inline void SetTargetRunStatus(TaskTargetRunStatus&& value) { m_targetRunStatus = std::move(value); }
+    inline GetTaskResult& WithTargetRunStatus(const TaskTargetRunStatus& value) { SetTargetRunStatus(value); return *this;}
+    inline GetTaskResult& WithTargetRunStatus(TaskTargetRunStatus&& value) { SetTargetRunStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +103,6 @@ namespace Model
     inline int GetFailureRetryCount() const{ return m_failureRetryCount; }
     inline void SetFailureRetryCount(int value) { m_failureRetryCount = value; }
     inline GetTaskResult& WithFailureRetryCount(int value) { SetFailureRetryCount(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The latest session ID for the task.</p>
-     */
-    inline const Aws::String& GetLatestSessionActionId() const{ return m_latestSessionActionId; }
-    inline void SetLatestSessionActionId(const Aws::String& value) { m_latestSessionActionId = value; }
-    inline void SetLatestSessionActionId(Aws::String&& value) { m_latestSessionActionId = std::move(value); }
-    inline void SetLatestSessionActionId(const char* value) { m_latestSessionActionId.assign(value); }
-    inline GetTaskResult& WithLatestSessionActionId(const Aws::String& value) { SetLatestSessionActionId(value); return *this;}
-    inline GetTaskResult& WithLatestSessionActionId(Aws::String&& value) { SetLatestSessionActionId(std::move(value)); return *this;}
-    inline GetTaskResult& WithLatestSessionActionId(const char* value) { SetLatestSessionActionId(value); return *this;}
     ///@}
 
     ///@{
@@ -113,17 +124,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The run status for the task.</p>
-     */
-    inline const TaskRunStatus& GetRunStatus() const{ return m_runStatus; }
-    inline void SetRunStatus(const TaskRunStatus& value) { m_runStatus = value; }
-    inline void SetRunStatus(TaskRunStatus&& value) { m_runStatus = std::move(value); }
-    inline GetTaskResult& WithRunStatus(const TaskRunStatus& value) { SetRunStatus(value); return *this;}
-    inline GetTaskResult& WithRunStatus(TaskRunStatus&& value) { SetRunStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The date and time the resource started running.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
@@ -135,26 +135,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The run status with which to start the task.</p>
+     * <p>The date and time the resource ended running.</p>
      */
-    inline const TaskTargetRunStatus& GetTargetRunStatus() const{ return m_targetRunStatus; }
-    inline void SetTargetRunStatus(const TaskTargetRunStatus& value) { m_targetRunStatus = value; }
-    inline void SetTargetRunStatus(TaskTargetRunStatus&& value) { m_targetRunStatus = std::move(value); }
-    inline GetTaskResult& WithTargetRunStatus(const TaskTargetRunStatus& value) { SetTargetRunStatus(value); return *this;}
-    inline GetTaskResult& WithTargetRunStatus(TaskTargetRunStatus&& value) { SetTargetRunStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The task ID.</p>
-     */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
-    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-    inline GetTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline GetTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline GetTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAt = value; }
+    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAt = std::move(value); }
+    inline GetTaskResult& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
+    inline GetTaskResult& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,6 +169,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The latest session ID for the task.</p>
+     */
+    inline const Aws::String& GetLatestSessionActionId() const{ return m_latestSessionActionId; }
+    inline void SetLatestSessionActionId(const Aws::String& value) { m_latestSessionActionId = value; }
+    inline void SetLatestSessionActionId(Aws::String&& value) { m_latestSessionActionId = std::move(value); }
+    inline void SetLatestSessionActionId(const char* value) { m_latestSessionActionId.assign(value); }
+    inline GetTaskResult& WithLatestSessionActionId(const Aws::String& value) { SetLatestSessionActionId(value); return *this;}
+    inline GetTaskResult& WithLatestSessionActionId(Aws::String&& value) { SetLatestSessionActionId(std::move(value)); return *this;}
+    inline GetTaskResult& WithLatestSessionActionId(const char* value) { SetLatestSessionActionId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -193,29 +193,29 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_taskId;
+
     Aws::Utils::DateTime m_createdAt;
 
     Aws::String m_createdBy;
 
-    Aws::Utils::DateTime m_endedAt;
-
-    int m_failureRetryCount;
-
-    Aws::String m_latestSessionActionId;
-
-    Aws::Map<Aws::String, TaskParameterValue> m_parameters;
-
     TaskRunStatus m_runStatus;
-
-    Aws::Utils::DateTime m_startedAt;
 
     TaskTargetRunStatus m_targetRunStatus;
 
-    Aws::String m_taskId;
+    int m_failureRetryCount;
+
+    Aws::Map<Aws::String, TaskParameterValue> m_parameters;
+
+    Aws::Utils::DateTime m_startedAt;
+
+    Aws::Utils::DateTime m_endedAt;
 
     Aws::Utils::DateTime m_updatedAt;
 
     Aws::String m_updatedBy;
+
+    Aws::String m_latestSessionActionId;
 
     Aws::String m_requestId;
   };

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/BudgetSummary.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The budgets to include on the list.</p>
-     */
-    inline const Aws::Vector<BudgetSummary>& GetBudgets() const{ return m_budgets; }
-    inline void SetBudgets(const Aws::Vector<BudgetSummary>& value) { m_budgets = value; }
-    inline void SetBudgets(Aws::Vector<BudgetSummary>&& value) { m_budgets = std::move(value); }
-    inline ListBudgetsResult& WithBudgets(const Aws::Vector<BudgetSummary>& value) { SetBudgets(value); return *this;}
-    inline ListBudgetsResult& WithBudgets(Aws::Vector<BudgetSummary>&& value) { SetBudgets(std::move(value)); return *this;}
-    inline ListBudgetsResult& AddBudgets(const BudgetSummary& value) { m_budgets.push_back(value); return *this; }
-    inline ListBudgetsResult& AddBudgets(BudgetSummary&& value) { m_budgets.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -67,6 +54,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The budgets to include on the list.</p>
+     */
+    inline const Aws::Vector<BudgetSummary>& GetBudgets() const{ return m_budgets; }
+    inline void SetBudgets(const Aws::Vector<BudgetSummary>& value) { m_budgets = value; }
+    inline void SetBudgets(Aws::Vector<BudgetSummary>&& value) { m_budgets = std::move(value); }
+    inline ListBudgetsResult& WithBudgets(const Aws::Vector<BudgetSummary>& value) { SetBudgets(value); return *this;}
+    inline ListBudgetsResult& WithBudgets(Aws::Vector<BudgetSummary>&& value) { SetBudgets(std::move(value)); return *this;}
+    inline ListBudgetsResult& AddBudgets(const BudgetSummary& value) { m_budgets.push_back(value); return *this; }
+    inline ListBudgetsResult& AddBudgets(BudgetSummary&& value) { m_budgets.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<BudgetSummary> m_budgets;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<BudgetSummary> m_budgets;
 
     Aws::String m_requestId;
   };

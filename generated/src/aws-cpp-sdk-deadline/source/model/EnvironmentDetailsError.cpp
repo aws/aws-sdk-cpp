@@ -19,10 +19,10 @@ namespace Model
 {
 
 EnvironmentDetailsError::EnvironmentDetailsError() : 
+    m_jobIdHasBeenSet(false),
+    m_environmentIdHasBeenSet(false),
     m_code(JobEntityErrorCode::NOT_SET),
     m_codeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
@@ -35,11 +35,11 @@ EnvironmentDetailsError::EnvironmentDetailsError(JsonView jsonValue)
 
 EnvironmentDetailsError& EnvironmentDetailsError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("code"))
+  if(jsonValue.ValueExists("jobId"))
   {
-    m_code = JobEntityErrorCodeMapper::GetJobEntityErrorCodeForName(jsonValue.GetString("code"));
+    m_jobId = jsonValue.GetString("jobId");
 
-    m_codeHasBeenSet = true;
+    m_jobIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environmentId"))
@@ -49,11 +49,11 @@ EnvironmentDetailsError& EnvironmentDetailsError::operator =(JsonView jsonValue)
     m_environmentIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("jobId"))
+  if(jsonValue.ValueExists("code"))
   {
-    m_jobId = jsonValue.GetString("jobId");
+    m_code = JobEntityErrorCodeMapper::GetJobEntityErrorCodeForName(jsonValue.GetString("code"));
 
-    m_jobIdHasBeenSet = true;
+    m_codeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("message"))
@@ -70,9 +70,10 @@ JsonValue EnvironmentDetailsError::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
+  if(m_jobIdHasBeenSet)
   {
-   payload.WithString("code", JobEntityErrorCodeMapper::GetNameForJobEntityErrorCode(m_code));
+   payload.WithString("jobId", m_jobId);
+
   }
 
   if(m_environmentIdHasBeenSet)
@@ -81,10 +82,9 @@ JsonValue EnvironmentDetailsError::Jsonize() const
 
   }
 
-  if(m_jobIdHasBeenSet)
+  if(m_codeHasBeenSet)
   {
-   payload.WithString("jobId", m_jobId);
-
+   payload.WithString("code", JobEntityErrorCodeMapper::GetNameForJobEntityErrorCode(m_code));
   }
 
   if(m_messageHasBeenSet)

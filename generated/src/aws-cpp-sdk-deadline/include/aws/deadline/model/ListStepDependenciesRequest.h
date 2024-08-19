@@ -54,6 +54,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The queue ID for the step dependencies list.</p>
+     */
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
+    inline ListStepDependenciesRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline ListStepDependenciesRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline ListStepDependenciesRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The job ID for the step dependencies list.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -68,13 +82,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.</p>
+     * <p>The step ID to include on the list.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListStepDependenciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetStepId() const{ return m_stepId; }
+    inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
+    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
+    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
+    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
+    inline ListStepDependenciesRequest& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
+    inline ListStepDependenciesRequest& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
+    inline ListStepDependenciesRequest& WithStepId(const char* value) { SetStepId(value); return *this;}
     ///@}
 
     ///@{
@@ -94,50 +111,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>The queue ID for the step dependencies list.</p>
+     * <p>The maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline ListStepDependenciesRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline ListStepDependenciesRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline ListStepDependenciesRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The step ID to include on the list.</p>
-     */
-    inline const Aws::String& GetStepId() const{ return m_stepId; }
-    inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-    inline ListStepDependenciesRequest& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-    inline ListStepDependenciesRequest& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-    inline ListStepDependenciesRequest& WithStepId(const char* value) { SetStepId(value); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListStepDependenciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
+    Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_stepId;
+    bool m_stepIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
-
-    Aws::String m_stepId;
-    bool m_stepIdHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,11 +17,11 @@ using namespace Aws::Http;
 
 ListQueueFleetAssociationsRequest::ListQueueFleetAssociationsRequest() : 
     m_farmIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -33,17 +33,17 @@ Aws::String ListQueueFleetAssociationsRequest::SerializePayload() const
 void ListQueueFleetAssociationsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_queueIdHasBeenSet)
+    {
+      ss << m_queueId;
+      uri.AddQueryStringParameter("queueId", ss.str());
+      ss.str("");
+    }
+
     if(m_fleetIdHasBeenSet)
     {
       ss << m_fleetId;
       uri.AddQueryStringParameter("fleetId", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 
@@ -54,10 +54,10 @@ void ListQueueFleetAssociationsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_queueIdHasBeenSet)
+    if(m_maxResultsHasBeenSet)
     {
-      ss << m_queueId;
-      uri.AddQueryStringParameter("queueId", ss.str());
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

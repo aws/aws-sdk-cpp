@@ -67,20 +67,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job ID to update.</p>
-     */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline UpdateTaskRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline UpdateTaskRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline UpdateTaskRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The queue ID to update.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
@@ -91,6 +77,20 @@ namespace Model
     inline UpdateTaskRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
     inline UpdateTaskRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
     inline UpdateTaskRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The job ID to update.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
+    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
+    inline UpdateTaskRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+    inline UpdateTaskRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+    inline UpdateTaskRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
     ///@}
 
     ///@{
@@ -109,18 +109,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The run status with which to start the task.</p>
-     */
-    inline const TaskTargetRunStatus& GetTargetRunStatus() const{ return m_targetRunStatus; }
-    inline bool TargetRunStatusHasBeenSet() const { return m_targetRunStatusHasBeenSet; }
-    inline void SetTargetRunStatus(const TaskTargetRunStatus& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = value; }
-    inline void SetTargetRunStatus(TaskTargetRunStatus&& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = std::move(value); }
-    inline UpdateTaskRequest& WithTargetRunStatus(const TaskTargetRunStatus& value) { SetTargetRunStatus(value); return *this;}
-    inline UpdateTaskRequest& WithTargetRunStatus(TaskTargetRunStatus&& value) { SetTargetRunStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The task ID to update.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
@@ -132,6 +120,18 @@ namespace Model
     inline UpdateTaskRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
     inline UpdateTaskRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The run status with which to start the task.</p>
+     */
+    inline const TaskTargetRunStatus& GetTargetRunStatus() const{ return m_targetRunStatus; }
+    inline bool TargetRunStatusHasBeenSet() const { return m_targetRunStatusHasBeenSet; }
+    inline void SetTargetRunStatus(const TaskTargetRunStatus& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = value; }
+    inline void SetTargetRunStatus(TaskTargetRunStatus&& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = std::move(value); }
+    inline UpdateTaskRequest& WithTargetRunStatus(const TaskTargetRunStatus& value) { SetTargetRunStatus(value); return *this;}
+    inline UpdateTaskRequest& WithTargetRunStatus(TaskTargetRunStatus&& value) { SetTargetRunStatus(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken;
@@ -140,20 +140,20 @@ namespace Model
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
-
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;
 
-    TaskTargetRunStatus m_targetRunStatus;
-    bool m_targetRunStatusHasBeenSet = false;
-
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
+
+    TaskTargetRunStatus m_targetRunStatus;
+    bool m_targetRunStatusHasBeenSet = false;
   };
 
 } // namespace Model

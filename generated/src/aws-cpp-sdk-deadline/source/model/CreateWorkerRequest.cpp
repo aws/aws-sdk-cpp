@@ -14,11 +14,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateWorkerRequest::CreateWorkerRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
     m_farmIdHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false)
+    m_hostPropertiesHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 

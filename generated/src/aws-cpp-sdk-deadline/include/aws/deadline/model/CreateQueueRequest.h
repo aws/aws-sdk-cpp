@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/DeadlineRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/DefaultQueueBudgetAction.h>
 #include <aws/deadline/model/JobAttachmentSettings.h>
 #include <aws/deadline/model/JobRunAsUser.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -42,21 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage profile IDs to include in the queue.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAllowedStorageProfileIds() const{ return m_allowedStorageProfileIds; }
-    inline bool AllowedStorageProfileIdsHasBeenSet() const { return m_allowedStorageProfileIdsHasBeenSet; }
-    inline void SetAllowedStorageProfileIds(const Aws::Vector<Aws::String>& value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds = value; }
-    inline void SetAllowedStorageProfileIds(Aws::Vector<Aws::String>&& value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds = std::move(value); }
-    inline CreateQueueRequest& WithAllowedStorageProfileIds(const Aws::Vector<Aws::String>& value) { SetAllowedStorageProfileIds(value); return *this;}
-    inline CreateQueueRequest& WithAllowedStorageProfileIds(Aws::Vector<Aws::String>&& value) { SetAllowedStorageProfileIds(std::move(value)); return *this;}
-    inline CreateQueueRequest& AddAllowedStorageProfileIds(const Aws::String& value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds.push_back(value); return *this; }
-    inline CreateQueueRequest& AddAllowedStorageProfileIds(Aws::String&& value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds.push_back(std::move(value)); return *this; }
-    inline CreateQueueRequest& AddAllowedStorageProfileIds(const char* value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique token which the server uses to recognize retries of the same
      * request.</p>
      */
@@ -68,46 +53,6 @@ namespace Model
     inline CreateQueueRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
     inline CreateQueueRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline CreateQueueRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The default action to take on a queue if a budget isn't configured.</p>
-     */
-    inline const DefaultQueueBudgetAction& GetDefaultBudgetAction() const{ return m_defaultBudgetAction; }
-    inline bool DefaultBudgetActionHasBeenSet() const { return m_defaultBudgetActionHasBeenSet; }
-    inline void SetDefaultBudgetAction(const DefaultQueueBudgetAction& value) { m_defaultBudgetActionHasBeenSet = true; m_defaultBudgetAction = value; }
-    inline void SetDefaultBudgetAction(DefaultQueueBudgetAction&& value) { m_defaultBudgetActionHasBeenSet = true; m_defaultBudgetAction = std::move(value); }
-    inline CreateQueueRequest& WithDefaultBudgetAction(const DefaultQueueBudgetAction& value) { SetDefaultBudgetAction(value); return *this;}
-    inline CreateQueueRequest& WithDefaultBudgetAction(DefaultQueueBudgetAction&& value) { SetDefaultBudgetAction(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the queue.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateQueueRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateQueueRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateQueueRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The display name of the queue.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline CreateQueueRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline CreateQueueRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline CreateQueueRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
     ///@}
 
     ///@{
@@ -126,6 +71,50 @@ namespace Model
 
     ///@{
     /**
+     * <p>The display name of the queue.</p>  <p>This field can store any
+     * content. Escape or encode this content before displaying it on a webpage or any
+     * other system that might interpret the content of this field.</p> 
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline CreateQueueRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline CreateQueueRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline CreateQueueRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the queue.</p>  <p>This field can store any
+     * content. Escape or encode this content before displaying it on a webpage or any
+     * other system that might interpret the content of this field.</p> 
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateQueueRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateQueueRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline CreateQueueRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The default action to take on a queue if a budget isn't configured.</p>
+     */
+    inline const DefaultQueueBudgetAction& GetDefaultBudgetAction() const{ return m_defaultBudgetAction; }
+    inline bool DefaultBudgetActionHasBeenSet() const { return m_defaultBudgetActionHasBeenSet; }
+    inline void SetDefaultBudgetAction(const DefaultQueueBudgetAction& value) { m_defaultBudgetActionHasBeenSet = true; m_defaultBudgetAction = value; }
+    inline void SetDefaultBudgetAction(DefaultQueueBudgetAction&& value) { m_defaultBudgetActionHasBeenSet = true; m_defaultBudgetAction = std::move(value); }
+    inline CreateQueueRequest& WithDefaultBudgetAction(const DefaultQueueBudgetAction& value) { SetDefaultBudgetAction(value); return *this;}
+    inline CreateQueueRequest& WithDefaultBudgetAction(DefaultQueueBudgetAction&& value) { SetDefaultBudgetAction(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The job attachment settings for the queue. These are the Amazon S3 bucket
      * name and the Amazon S3 prefix.</p>
      */
@@ -135,6 +124,20 @@ namespace Model
     inline void SetJobAttachmentSettings(JobAttachmentSettings&& value) { m_jobAttachmentSettingsHasBeenSet = true; m_jobAttachmentSettings = std::move(value); }
     inline CreateQueueRequest& WithJobAttachmentSettings(const JobAttachmentSettings& value) { SetJobAttachmentSettings(value); return *this;}
     inline CreateQueueRequest& WithJobAttachmentSettings(JobAttachmentSettings&& value) { SetJobAttachmentSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IAM role ARN that workers will use while running jobs for this queue.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+    inline CreateQueueRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline CreateQueueRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+    inline CreateQueueRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
     ///@}
 
     ///@{
@@ -166,16 +169,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IAM role ARN that workers will use while running jobs for this queue.</p>
+     * <p>The storage profile IDs to include in the queue.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateQueueRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateQueueRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateQueueRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::Vector<Aws::String>& GetAllowedStorageProfileIds() const{ return m_allowedStorageProfileIds; }
+    inline bool AllowedStorageProfileIdsHasBeenSet() const { return m_allowedStorageProfileIdsHasBeenSet; }
+    inline void SetAllowedStorageProfileIds(const Aws::Vector<Aws::String>& value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds = value; }
+    inline void SetAllowedStorageProfileIds(Aws::Vector<Aws::String>&& value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds = std::move(value); }
+    inline CreateQueueRequest& WithAllowedStorageProfileIds(const Aws::Vector<Aws::String>& value) { SetAllowedStorageProfileIds(value); return *this;}
+    inline CreateQueueRequest& WithAllowedStorageProfileIds(Aws::Vector<Aws::String>&& value) { SetAllowedStorageProfileIds(std::move(value)); return *this;}
+    inline CreateQueueRequest& AddAllowedStorageProfileIds(const Aws::String& value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds.push_back(value); return *this; }
+    inline CreateQueueRequest& AddAllowedStorageProfileIds(Aws::String&& value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds.push_back(std::move(value)); return *this; }
+    inline CreateQueueRequest& AddAllowedStorageProfileIds(const char* value) { m_allowedStorageProfileIdsHasBeenSet = true; m_allowedStorageProfileIds.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -199,26 +203,26 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Aws::String> m_allowedStorageProfileIds;
-    bool m_allowedStorageProfileIdsHasBeenSet = false;
-
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
-
-    DefaultQueueBudgetAction m_defaultBudgetAction;
-    bool m_defaultBudgetActionHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
 
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    DefaultQueueBudgetAction m_defaultBudgetAction;
+    bool m_defaultBudgetActionHasBeenSet = false;
+
     JobAttachmentSettings m_jobAttachmentSettings;
     bool m_jobAttachmentSettingsHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     JobRunAsUser m_jobRunAsUser;
     bool m_jobRunAsUserHasBeenSet = false;
@@ -226,8 +230,8 @@ namespace Model
     Aws::Vector<Aws::String> m_requiredFileSystemLocationNames;
     bool m_requiredFileSystemLocationNamesHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
+    Aws::Vector<Aws::String> m_allowedStorageProfileIds;
+    bool m_allowedStorageProfileIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

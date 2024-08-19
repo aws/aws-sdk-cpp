@@ -20,12 +20,12 @@ namespace Model
 
 ManifestProperties::ManifestProperties() : 
     m_fileSystemLocationNameHasBeenSet(false),
-    m_inputManifestHashHasBeenSet(false),
-    m_inputManifestPathHasBeenSet(false),
-    m_outputRelativeDirectoriesHasBeenSet(false),
     m_rootPathHasBeenSet(false),
     m_rootPathFormat(PathFormat::NOT_SET),
-    m_rootPathFormatHasBeenSet(false)
+    m_rootPathFormatHasBeenSet(false),
+    m_outputRelativeDirectoriesHasBeenSet(false),
+    m_inputManifestPathHasBeenSet(false),
+    m_inputManifestHashHasBeenSet(false)
 {
 }
 
@@ -44,30 +44,6 @@ ManifestProperties& ManifestProperties::operator =(JsonView jsonValue)
     m_fileSystemLocationNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("inputManifestHash"))
-  {
-    m_inputManifestHash = jsonValue.GetString("inputManifestHash");
-
-    m_inputManifestHashHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("inputManifestPath"))
-  {
-    m_inputManifestPath = jsonValue.GetString("inputManifestPath");
-
-    m_inputManifestPathHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("outputRelativeDirectories"))
-  {
-    Aws::Utils::Array<JsonView> outputRelativeDirectoriesJsonList = jsonValue.GetArray("outputRelativeDirectories");
-    for(unsigned outputRelativeDirectoriesIndex = 0; outputRelativeDirectoriesIndex < outputRelativeDirectoriesJsonList.GetLength(); ++outputRelativeDirectoriesIndex)
-    {
-      m_outputRelativeDirectories.push_back(outputRelativeDirectoriesJsonList[outputRelativeDirectoriesIndex].AsString());
-    }
-    m_outputRelativeDirectoriesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("rootPath"))
   {
     m_rootPath = jsonValue.GetString("rootPath");
@@ -80,6 +56,30 @@ ManifestProperties& ManifestProperties::operator =(JsonView jsonValue)
     m_rootPathFormat = PathFormatMapper::GetPathFormatForName(jsonValue.GetString("rootPathFormat"));
 
     m_rootPathFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("outputRelativeDirectories"))
+  {
+    Aws::Utils::Array<JsonView> outputRelativeDirectoriesJsonList = jsonValue.GetArray("outputRelativeDirectories");
+    for(unsigned outputRelativeDirectoriesIndex = 0; outputRelativeDirectoriesIndex < outputRelativeDirectoriesJsonList.GetLength(); ++outputRelativeDirectoriesIndex)
+    {
+      m_outputRelativeDirectories.push_back(outputRelativeDirectoriesJsonList[outputRelativeDirectoriesIndex].AsString());
+    }
+    m_outputRelativeDirectoriesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputManifestPath"))
+  {
+    m_inputManifestPath = jsonValue.GetString("inputManifestPath");
+
+    m_inputManifestPathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputManifestHash"))
+  {
+    m_inputManifestHash = jsonValue.GetString("inputManifestHash");
+
+    m_inputManifestHashHasBeenSet = true;
   }
 
   return *this;
@@ -95,16 +95,15 @@ JsonValue ManifestProperties::Jsonize() const
 
   }
 
-  if(m_inputManifestHashHasBeenSet)
+  if(m_rootPathHasBeenSet)
   {
-   payload.WithString("inputManifestHash", m_inputManifestHash);
+   payload.WithString("rootPath", m_rootPath);
 
   }
 
-  if(m_inputManifestPathHasBeenSet)
+  if(m_rootPathFormatHasBeenSet)
   {
-   payload.WithString("inputManifestPath", m_inputManifestPath);
-
+   payload.WithString("rootPathFormat", PathFormatMapper::GetNameForPathFormat(m_rootPathFormat));
   }
 
   if(m_outputRelativeDirectoriesHasBeenSet)
@@ -118,15 +117,16 @@ JsonValue ManifestProperties::Jsonize() const
 
   }
 
-  if(m_rootPathHasBeenSet)
+  if(m_inputManifestPathHasBeenSet)
   {
-   payload.WithString("rootPath", m_rootPath);
+   payload.WithString("inputManifestPath", m_inputManifestPath);
 
   }
 
-  if(m_rootPathFormatHasBeenSet)
+  if(m_inputManifestHashHasBeenSet)
   {
-   payload.WithString("rootPathFormat", PathFormatMapper::GetNameForPathFormat(m_rootPathFormat));
+   payload.WithString("inputManifestHash", m_inputManifestHash);
+
   }
 
   return payload;

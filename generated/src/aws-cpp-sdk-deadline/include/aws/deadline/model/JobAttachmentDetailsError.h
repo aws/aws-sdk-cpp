@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/model/JobEntityErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/JobEntityErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error code.</p>
-     */
-    inline const JobEntityErrorCode& GetCode() const{ return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const JobEntityErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(JobEntityErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline JobAttachmentDetailsError& WithCode(const JobEntityErrorCode& value) { SetCode(value); return *this;}
-    inline JobAttachmentDetailsError& WithCode(JobEntityErrorCode&& value) { SetCode(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The job ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -62,6 +50,18 @@ namespace Model
     inline JobAttachmentDetailsError& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
     inline JobAttachmentDetailsError& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
     inline JobAttachmentDetailsError& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The error code.</p>
+     */
+    inline const JobEntityErrorCode& GetCode() const{ return m_code; }
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+    inline void SetCode(const JobEntityErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(JobEntityErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+    inline JobAttachmentDetailsError& WithCode(const JobEntityErrorCode& value) { SetCode(value); return *this;}
+    inline JobAttachmentDetailsError& WithCode(JobEntityErrorCode&& value) { SetCode(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,11 +79,11 @@ namespace Model
     ///@}
   private:
 
-    JobEntityErrorCode m_code;
-    bool m_codeHasBeenSet = false;
-
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
+
+    JobEntityErrorCode m_code;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

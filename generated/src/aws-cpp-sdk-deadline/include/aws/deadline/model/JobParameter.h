@@ -39,6 +39,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A signed integer represented as a string.</p>
+     */
+    inline const Aws::String& GetInt() const{ return m_int; }
+    inline bool IntHasBeenSet() const { return m_intHasBeenSet; }
+    inline void SetInt(const Aws::String& value) { m_intHasBeenSet = true; m_int = value; }
+    inline void SetInt(Aws::String&& value) { m_intHasBeenSet = true; m_int = std::move(value); }
+    inline void SetInt(const char* value) { m_intHasBeenSet = true; m_int.assign(value); }
+    inline JobParameter& WithInt(const Aws::String& value) { SetInt(value); return *this;}
+    inline JobParameter& WithInt(Aws::String&& value) { SetInt(std::move(value)); return *this;}
+    inline JobParameter& WithInt(const char* value) { SetInt(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A double precision IEEE-754 floating point number represented as a
      * string.</p>
      */
@@ -54,16 +68,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>A signed integer represented as a string.</p>
+     * <p>A UTF-8 string.</p>
      */
-    inline const Aws::String& GetInt() const{ return m_int; }
-    inline bool IntHasBeenSet() const { return m_intHasBeenSet; }
-    inline void SetInt(const Aws::String& value) { m_intHasBeenSet = true; m_int = value; }
-    inline void SetInt(Aws::String&& value) { m_intHasBeenSet = true; m_int = std::move(value); }
-    inline void SetInt(const char* value) { m_intHasBeenSet = true; m_int.assign(value); }
-    inline JobParameter& WithInt(const Aws::String& value) { SetInt(value); return *this;}
-    inline JobParameter& WithInt(Aws::String&& value) { SetInt(std::move(value)); return *this;}
-    inline JobParameter& WithInt(const char* value) { SetInt(value); return *this;}
+    inline const Aws::String& GetString() const{ return m_string; }
+    inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
+    inline void SetString(const Aws::String& value) { m_stringHasBeenSet = true; m_string = value; }
+    inline void SetString(Aws::String&& value) { m_stringHasBeenSet = true; m_string = std::move(value); }
+    inline void SetString(const char* value) { m_stringHasBeenSet = true; m_string.assign(value); }
+    inline JobParameter& WithString(const Aws::String& value) { SetString(value); return *this;}
+    inline JobParameter& WithString(Aws::String&& value) { SetString(std::move(value)); return *this;}
+    inline JobParameter& WithString(const char* value) { SetString(value); return *this;}
     ///@}
 
     ///@{
@@ -79,33 +93,19 @@ namespace Model
     inline JobParameter& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
     inline JobParameter& WithPath(const char* value) { SetPath(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A UTF-8 string.</p>
-     */
-    inline const Aws::String& GetString() const{ return m_string; }
-    inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
-    inline void SetString(const Aws::String& value) { m_stringHasBeenSet = true; m_string = value; }
-    inline void SetString(Aws::String&& value) { m_stringHasBeenSet = true; m_string = std::move(value); }
-    inline void SetString(const char* value) { m_stringHasBeenSet = true; m_string.assign(value); }
-    inline JobParameter& WithString(const Aws::String& value) { SetString(value); return *this;}
-    inline JobParameter& WithString(Aws::String&& value) { SetString(std::move(value)); return *this;}
-    inline JobParameter& WithString(const char* value) { SetString(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_float;
-    bool m_floatHasBeenSet = false;
 
     Aws::String m_int;
     bool m_intHasBeenSet = false;
 
-    Aws::String m_path;
-    bool m_pathHasBeenSet = false;
+    Aws::String m_float;
+    bool m_floatHasBeenSet = false;
 
     Aws::String m_string;
     bool m_stringHasBeenSet = false;
+
+    Aws::String m_path;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/StepSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The steps on the list.</p>
+     */
+    inline const Aws::Vector<StepSummary>& GetSteps() const{ return m_steps; }
+    inline void SetSteps(const Aws::Vector<StepSummary>& value) { m_steps = value; }
+    inline void SetSteps(Aws::Vector<StepSummary>&& value) { m_steps = std::move(value); }
+    inline ListStepsResult& WithSteps(const Aws::Vector<StepSummary>& value) { SetSteps(value); return *this;}
+    inline ListStepsResult& WithSteps(Aws::Vector<StepSummary>&& value) { SetSteps(std::move(value)); return *this;}
+    inline ListStepsResult& AddSteps(const StepSummary& value) { m_steps.push_back(value); return *this; }
+    inline ListStepsResult& AddSteps(StepSummary&& value) { m_steps.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
      * each page. To retrieve the next page, call the operation again using the
@@ -54,19 +67,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The steps on the list.</p>
-     */
-    inline const Aws::Vector<StepSummary>& GetSteps() const{ return m_steps; }
-    inline void SetSteps(const Aws::Vector<StepSummary>& value) { m_steps = value; }
-    inline void SetSteps(Aws::Vector<StepSummary>&& value) { m_steps = std::move(value); }
-    inline ListStepsResult& WithSteps(const Aws::Vector<StepSummary>& value) { SetSteps(value); return *this;}
-    inline ListStepsResult& WithSteps(Aws::Vector<StepSummary>&& value) { SetSteps(std::move(value)); return *this;}
-    inline ListStepsResult& AddSteps(const StepSummary& value) { m_steps.push_back(value); return *this; }
-    inline ListStepsResult& AddSteps(StepSummary&& value) { m_steps.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<StepSummary> m_steps;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

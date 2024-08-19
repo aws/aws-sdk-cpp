@@ -19,12 +19,12 @@ namespace Model
 {
 
 QueueFleetAssociationSummary::QueueFleetAssociationSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
     m_queueIdHasBeenSet(false),
+    m_fleetIdHasBeenSet(false),
     m_status(QueueFleetAssociationStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_createdByHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_updatedByHasBeenSet(false)
 {
@@ -38,6 +38,27 @@ QueueFleetAssociationSummary::QueueFleetAssociationSummary(JsonView jsonValue)
 
 QueueFleetAssociationSummary& QueueFleetAssociationSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("queueId"))
+  {
+    m_queueId = jsonValue.GetString("queueId");
+
+    m_queueIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fleetId"))
+  {
+    m_fleetId = jsonValue.GetString("fleetId");
+
+    m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = QueueFleetAssociationStatusMapper::GetQueueFleetAssociationStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -50,27 +71,6 @@ QueueFleetAssociationSummary& QueueFleetAssociationSummary::operator =(JsonView 
     m_createdBy = jsonValue.GetString("createdBy");
 
     m_createdByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("fleetId"))
-  {
-    m_fleetId = jsonValue.GetString("fleetId");
-
-    m_fleetIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("queueId"))
-  {
-    m_queueId = jsonValue.GetString("queueId");
-
-    m_queueIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = QueueFleetAssociationStatusMapper::GetQueueFleetAssociationStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -94,14 +94,9 @@ JsonValue QueueFleetAssociationSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_queueIdHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
+   payload.WithString("queueId", m_queueId);
 
   }
 
@@ -111,15 +106,20 @@ JsonValue QueueFleetAssociationSummary::Jsonize() const
 
   }
 
-  if(m_queueIdHasBeenSet)
-  {
-   payload.WithString("queueId", m_queueId);
-
-  }
-
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", QueueFleetAssociationStatusMapper::GetNameForQueueFleetAssociationStatus(m_status));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
+
   }
 
   if(m_updatedAtHasBeenSet)

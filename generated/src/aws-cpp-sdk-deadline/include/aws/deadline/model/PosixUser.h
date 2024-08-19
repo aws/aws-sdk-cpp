@@ -39,20 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the POSIX user's group.</p>
-     */
-    inline const Aws::String& GetGroup() const{ return m_group; }
-    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline PosixUser& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline PosixUser& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline PosixUser& WithGroup(const char* value) { SetGroup(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the POSIX user.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
@@ -64,13 +50,27 @@ namespace Model
     inline PosixUser& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
     inline PosixUser& WithUser(const char* value) { SetUser(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_group;
-    bool m_groupHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The name of the POSIX user's group.</p>
+     */
+    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
+    inline PosixUser& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
+    inline PosixUser& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
+    inline PosixUser& WithGroup(const char* value) { SetGroup(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_user;
     bool m_userHasBeenSet = false;
+
+    Aws::String m_group;
+    bool m_groupHasBeenSet = false;
   };
 
 } // namespace Model

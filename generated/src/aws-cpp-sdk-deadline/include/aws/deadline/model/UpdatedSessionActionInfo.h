@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/CompletedStatus.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -54,18 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource ended running.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
-    inline UpdatedSessionActionInfo& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline UpdatedSessionActionInfo& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The process exit code.</p>
      */
     inline int GetProcessExitCode() const{ return m_processExitCode; }
@@ -90,16 +78,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The percentage completed.</p>
-     */
-    inline double GetProgressPercent() const{ return m_progressPercent; }
-    inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
-    inline void SetProgressPercent(double value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
-    inline UpdatedSessionActionInfo& WithProgressPercent(double value) { SetProgressPercent(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The date and time the resource started running.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
@@ -108,6 +86,18 @@ namespace Model
     inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
     inline UpdatedSessionActionInfo& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
     inline UpdatedSessionActionInfo& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource ended running.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
+    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
+    inline UpdatedSessionActionInfo& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
+    inline UpdatedSessionActionInfo& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,13 +111,20 @@ namespace Model
     inline UpdatedSessionActionInfo& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
     inline UpdatedSessionActionInfo& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The percentage completed.</p>
+     */
+    inline double GetProgressPercent() const{ return m_progressPercent; }
+    inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
+    inline void SetProgressPercent(double value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
+    inline UpdatedSessionActionInfo& WithProgressPercent(double value) { SetProgressPercent(value); return *this;}
+    ///@}
   private:
 
     CompletedStatus m_completedStatus;
     bool m_completedStatusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet = false;
 
     int m_processExitCode;
     bool m_processExitCodeHasBeenSet = false;
@@ -135,14 +132,17 @@ namespace Model
     Aws::String m_progressMessage;
     bool m_progressMessageHasBeenSet = false;
 
-    double m_progressPercent;
-    bool m_progressPercentHasBeenSet = false;
-
     Aws::Utils::DateTime m_startedAt;
     bool m_startedAtHasBeenSet = false;
 
+    Aws::Utils::DateTime m_endedAt;
+    bool m_endedAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    double m_progressPercent;
+    bool m_progressPercentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,8 +21,8 @@ namespace Model
 SessionActionDefinitionSummary::SessionActionDefinitionSummary() : 
     m_envEnterHasBeenSet(false),
     m_envExitHasBeenSet(false),
-    m_syncInputJobAttachmentsHasBeenSet(false),
-    m_taskRunHasBeenSet(false)
+    m_taskRunHasBeenSet(false),
+    m_syncInputJobAttachmentsHasBeenSet(false)
 {
 }
 
@@ -48,18 +48,18 @@ SessionActionDefinitionSummary& SessionActionDefinitionSummary::operator =(JsonV
     m_envExitHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("syncInputJobAttachments"))
-  {
-    m_syncInputJobAttachments = jsonValue.GetObject("syncInputJobAttachments");
-
-    m_syncInputJobAttachmentsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("taskRun"))
   {
     m_taskRun = jsonValue.GetObject("taskRun");
 
     m_taskRunHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("syncInputJobAttachments"))
+  {
+    m_syncInputJobAttachments = jsonValue.GetObject("syncInputJobAttachments");
+
+    m_syncInputJobAttachmentsHasBeenSet = true;
   }
 
   return *this;
@@ -81,15 +81,15 @@ JsonValue SessionActionDefinitionSummary::Jsonize() const
 
   }
 
-  if(m_syncInputJobAttachmentsHasBeenSet)
-  {
-   payload.WithObject("syncInputJobAttachments", m_syncInputJobAttachments.Jsonize());
-
-  }
-
   if(m_taskRunHasBeenSet)
   {
    payload.WithObject("taskRun", m_taskRun.Jsonize());
+
+  }
+
+  if(m_syncInputJobAttachmentsHasBeenSet)
+  {
+   payload.WithObject("syncInputJobAttachments", m_syncInputJobAttachments.Jsonize());
 
   }
 
