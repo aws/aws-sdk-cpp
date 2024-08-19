@@ -41,6 +41,7 @@ namespace smithy
         static SigningOutcome SignRequest(std::shared_ptr<HttpRequest> HTTPRequest, const AuthSchemeOption& authSchemeOption,
                                           const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
         {
+            
             auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
             if (authSchemeIt == authSchemes.end())
             {
@@ -51,7 +52,7 @@ namespace smithy
                                      false/*retryable*/));
             }
 
-            AuthSchemesVariantT authScheme = *authSchemeIt;
+            const AuthSchemesVariantT& authScheme = authSchemeIt->second;
 
             return SignWithAuthScheme(std::move(HTTPRequest), authScheme, authSchemeOption);
         }
@@ -71,10 +72,10 @@ namespace smithy
                 assert(!"Auth scheme has not been found for a given auth option!");
                 return false;
             }
-            AuthSchemesVariantT authScheme = *authSchemeIt;
+            AuthSchemesVariantT authScheme = authSchemeIt->second;
 
             ClockSkewVisitor visitor(outcome, serverTime, authSchemeOption);
-            visitor.Visit(authScheme);
+            authScheme.Visit(visitor);
 
             return visitor.m_resultShouldWait;
         }
@@ -99,7 +100,7 @@ namespace smithy
                 // Auth Scheme Variant alternative contains the requested auth option
                 assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
 
-                using IdentityT = typename decltype(authScheme)::IdentityT;
+                using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
                 using IdentityResolver = IdentityResolverBase<IdentityT>;
                 using Signer = AwsSignerBase<IdentityT>;
 
@@ -113,12 +114,14 @@ namespace smithy
                     return;
                 }
 
-                static_assert(
-                    std::is_same<IdentityResolverBase<IdentityT>, typename decltype(identityResolver
-                                 )::IdentityT>::value, "Must be the same type");
-                static_assert(std::is_base_of<IdentityResolverBase<IdentityT>, decltype(identityResolver)>::value, "Must be the same type");
+                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties, m_targetAuthSchemeOption.identityProperties);
 
-                IdentityT identity = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties);
+                if (!identityResult.IsSuccess())
+                {
+                    result.emplace(identityResult.GetError());
+                    return;
+                }
+                auto identity = std::move(identityResult.GetResultWithOwnership());
 
                 std::shared_ptr<Signer> signer = authScheme.signer();
                 if (!signer)
@@ -130,11 +133,7 @@ namespace smithy
                     return;
                 }
 
-
-                static_assert(std::is_same<AwsSignerBase<IdentityT>, typename decltype(signer)::IdentityT>::value, "Must be the same type");
-                static_assert(std::is_base_of<AwsSignerBase<IdentityT>, decltype(signer)>::value, "Must be the same type");
-
-                result.emplace(signer->sign(m_httpRequest, identity, m_targetAuthSchemeOption.signerProperties));
+                result.emplace(signer->sign(m_httpRequest, *identity, m_targetAuthSchemeOption.signerProperties));
             }
         };
 
@@ -143,7 +142,8 @@ namespace smithy
                                           const AuthSchemeOption& targetAuthSchemeOption)
         {
             SignerVisitor visitor(httpRequest, targetAuthSchemeOption);
-            visitor.Visit(authSchemesVariant);
+            AuthSchemesVariantT authSchemesVariantCopy(authSchemesVariant); // TODO: allow const visiting
+            authSchemesVariantCopy.Visit(visitor);
 
             if (!visitor.result)
             {
@@ -177,7 +177,7 @@ namespace smithy
                 // Auth Scheme Variant alternative contains the requested auth option
                 assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
 
-                using IdentityT = typename decltype(authScheme)::IdentityT;
+                using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
                 using Signer = AwsSignerBase<IdentityT>;
 
                 std::shared_ptr<Signer> signer = authScheme.signer();
