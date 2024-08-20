@@ -112,10 +112,10 @@ namespace Model
     /**
      * <p>Filters the container instances by status. For example, if you specify the
      * <code>DRAINING</code> status, the results include only container instances that
-     * have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the
-     * default is to include container instances set to all states other than
-     * <code>INACTIVE</code>.</p>
+     * have been set to <code>DRAINING</code> using <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html">UpdateContainerInstancesState</a>.
+     * If you don't specify this parameter, the default is to include container
+     * instances set to all states other than <code>INACTIVE</code>.</p>
      */
     inline const ContainerInstanceStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

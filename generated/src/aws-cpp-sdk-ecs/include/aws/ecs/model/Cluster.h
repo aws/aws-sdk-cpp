@@ -155,8 +155,8 @@ namespace Model
     ///@{
     /**
      * <p>The number of services that are running on the cluster in an
-     * <code>ACTIVE</code> state. You can view these services with
-     * <a>ListServices</a>.</p>
+     * <code>ACTIVE</code> state. You can view these services with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">PListServices</a>.</p>
      */
     inline int GetActiveServicesCount() const{ return m_activeServicesCount; }
     inline bool ActiveServicesCountHasBeenSet() const { return m_activeServicesCountHasBeenSet; }

@@ -26,7 +26,9 @@ namespace Model
   /**
    * <p>Hostnames and IP address entries that are added to the
    * <code>/etc/hosts</code> file of a container via the <code>extraHosts</code>
-   * parameter of its <a>ContainerDefinition</a>. </p><p><h3>See Also:</h3>   <a
+   * parameter of its <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HostEntry">AWS API
    * Reference</a></p>
    */

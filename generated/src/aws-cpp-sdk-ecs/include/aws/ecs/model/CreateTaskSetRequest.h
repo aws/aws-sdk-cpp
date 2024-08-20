@@ -172,21 +172,25 @@ namespace Model
      * provider strategy consists of one or more capacity providers along with the
      * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
      * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
-     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
-     * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
-     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The Fargate capacity providers are available to all accounts
-     * and only need to be associated with a cluster to be used.</p> <p>The
-     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
-     * available capacity providers for a cluster after the cluster is created.</p>
+     * The <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
+     * API is used to associate a capacity provider with a cluster. Only capacity
+     * providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be
+     * used.</p> <p>If a <code>capacityProviderStrategy</code> is specified, the
+     * <code>launchType</code> parameter must be omitted. If no
+     * <code>capacityProviderStrategy</code> or <code>launchType</code> is specified,
+     * the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>If specifying a capacity provider that uses an Auto Scaling group, the
+     * capacity provider must already be created. New capacity providers can be created
+     * with the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProviderProvider.html">CreateCapacityProviderProvider</a>API
+     * operation.</p> <p>To use a Fargate capacity provider, specify either the
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The
+     * Fargate capacity providers are available to all accounts and only need to be
+     * associated with a cluster to be used.</p> <p>The <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
+     * API operation is used to update the list of available capacity providers for a
+     * cluster after the cluster is created.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }

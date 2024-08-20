@@ -275,12 +275,17 @@ namespace Aws
          * automatically to avoid service interruptions when a session expires. For more
          * information about authorization, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-         * <code>CreateSession</code> </a>.</p> </li> </ul> </dd> <dt>Special errors</dt>
-         * <dd> <ul> <li> <p>Error Code: <code>EntityTooSmall</code> </p> <ul> <li>
-         * <p>Description: Your proposed upload is smaller than the minimum allowed object
-         * size. Each part must be at least 5 MB in size, except the last part.</p> </li>
-         * <li> <p>HTTP Status Code: 400 Bad Request</p> </li> </ul> </li> <li> <p>Error
-         * Code: <code>InvalidPart</code> </p> <ul> <li> <p>Description: One or more of the
+         * <code>CreateSession</code> </a>.</p> </li> <li> <p> If you provide an <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">additional
+         * checksum value</a> in your <code>MultipartUpload</code> requests and the object
+         * is encrypted with Key Management Service, you must have permission to use the
+         * <code>kms:Decrypt</code> action for the <code>CompleteMultipartUpload</code>
+         * request to succeed.</p> </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li>
+         * <p>Error Code: <code>EntityTooSmall</code> </p> <ul> <li> <p>Description: Your
+         * proposed upload is smaller than the minimum allowed object size. Each part must
+         * be at least 5 MB in size, except the last part.</p> </li> <li> <p>HTTP Status
+         * Code: 400 Bad Request</p> </li> </ul> </li> <li> <p>Error Code:
+         * <code>InvalidPart</code> </p> <ul> <li> <p>Description: One or more of the
          * specified parts could not be found. The part might not have been uploaded, or
          * the specified ETag might not have matched the uploaded part's ETag.</p> </li>
          * <li> <p>HTTP Status Code: 400 Bad Request</p> </li> </ul> </li> <li> <p>Error
@@ -621,15 +626,16 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
          * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 User
          * Guide</i>.</p> </dd> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose
-         * bucket permissions</b> - For information about the permissions required to use
-         * the multipart upload API, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-         * upload and permissions</a> in the <i>Amazon S3 User Guide</i>. </p> <p>To
-         * perform a multipart upload with encryption by using an Amazon Web Services KMS
-         * key, the requester must have permission to the <code>kms:Decrypt</code> and
-         * <code>kms:GenerateDataKey*</code> actions on the key. These permissions are
-         * required because Amazon S3 must decrypt and read data from the encrypted file
-         * parts before it completes the multipart upload. For more information, see <a
+         * bucket permissions</b> - To perform a multipart upload with encryption using an
+         * Key Management Service (KMS) KMS key, the requester must have permission to the
+         * <code>kms:Decrypt</code> and <code>kms:GenerateDataKey</code> actions on the
+         * key. The requester must also have permissions for the
+         * <code>kms:GenerateDataKey</code> action for the
+         * <code>CreateMultipartUpload</code> API. Then, the requester needs permissions
+         * for the <code>kms:Decrypt</code> action on the <code>UploadPart</code> and
+         * <code>UploadPartCopy</code> APIs. These permissions are required because Amazon
+         * S3 must decrypt and read data from the encrypted file parts before it completes
+         * the multipart upload. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
          * upload API and permissions</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
@@ -5637,12 +5643,16 @@ namespace Aws
 
         /**
          *  <p>This operation is not supported by directory buckets.</p> 
-         * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This
-         * functionality is not supported for Amazon S3 on Outposts.</p> <p>This action
-         * performs the following types of requests: </p> <ul> <li> <p> <code>restore an
-         * archive</code> - Restore an archived object</p> </li> </ul> <p>For more
-         * information about the <code>S3</code> structure in the request body, see the
-         * following:</p> <ul> <li> <p> <a
+         *  <p>The <code>SELECT</code> job type for the RestoreObject operation
+         * is no longer available to new customers. Existing customers of Amazon S3 Select
+         * can continue to use the feature as usual. <a
+         * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+         * more</a> </p>  <p>Restores an archived copy of an object back into
+         * Amazon S3</p> <p>This functionality is not supported for Amazon S3 on
+         * Outposts.</p> <p>This action performs the following types of requests: </p> <ul>
+         * <li> <p> <code>restore an archive</code> - Restore an archived object</p> </li>
+         * </ul> <p>For more information about the <code>S3</code> structure in the request
+         * body, see the following:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Managing
@@ -5776,14 +5786,19 @@ namespace Aws
 
         /**
          *  <p>This operation is not supported by directory buckets.</p> 
-         * <p>This action filters the contents of an Amazon S3 object based on a simple
-         * structured query language (SQL) statement. In the request, along with the SQL
-         * expression, you must also specify a data serialization format (JSON, CSV, or
-         * Apache Parquet) of the object. Amazon S3 uses this format to parse object data
-         * into records, and returns only records that match the specified SQL expression.
-         * You must also specify the data serialization format for the response.</p>
-         * <p>This functionality is not supported for Amazon S3 on Outposts.</p> <p>For
-         * more information about Amazon S3 Select, see <a
+         *  <p>The SelectObjectContent operation is no longer available to new
+         * customers. Existing customers of Amazon S3 Select can continue to use the
+         * operation as usual. <a
+         * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+         * more</a> </p>  <p>This action filters the contents of an Amazon S3
+         * object based on a simple structured query language (SQL) statement. In the
+         * request, along with the SQL expression, you must also specify a data
+         * serialization format (JSON, CSV, or Apache Parquet) of the object. Amazon S3
+         * uses this format to parse object data into records, and returns only records
+         * that match the specified SQL expression. You must also specify the data
+         * serialization format for the response.</p> <p>This functionality is not
+         * supported for Amazon S3 on Outposts.</p> <p>For more information about Amazon S3
+         * Select, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
          * Content from Objects</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html">SELECT
@@ -5907,12 +5922,27 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
          * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>  <dl>
          * <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
-         * permissions</b> - For information on the permissions required to use the
-         * multipart upload API, see <a
+         * permissions</b> - To perform a multipart upload with encryption using an Key
+         * Management Service key, the requester must have permission to the
+         * <code>kms:Decrypt</code> and <code>kms:GenerateDataKey</code> actions on the
+         * key. The requester must also have permissions for the
+         * <code>kms:GenerateDataKey</code> action for the
+         * <code>CreateMultipartUpload</code> API. Then, the requester needs permissions
+         * for the <code>kms:Decrypt</code> action on the <code>UploadPart</code> and
+         * <code>UploadPartCopy</code> APIs.</p> <p>These permissions are required because
+         * Amazon S3 must decrypt and read data from the encrypted file parts before it
+         * completes the multipart upload. For more information about KMS permissions, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+         * data using server-side encryption with KMS</a> in the <i>Amazon S3 User
+         * Guide</i>. For information about the permissions required to use the multipart
+         * upload API, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-         * Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.</p> </li> <li>
-         * <p> <b>Directory bucket permissions</b> - To grant access to this API operation
-         * on a directory bucket, we recommend that you use the <a
+         * upload and permissions</a> and <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+         * upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
+         * <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+         * operation on a directory bucket, we recommend that you use the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
          * <code>CreateSession</code> </a> API operation for session-based authorization.
          * Specifically, you grant the <code>s3express:CreateSession</code> permission to
@@ -6059,25 +6089,39 @@ namespace Aws
          * </b> permission to read the source object that is being copied. </p> </li> <li>
          * <p>If the destination bucket is a general purpose bucket, you must have the <b>
          * <code>s3:PutObject</code> </b> permission to write the object copy to the
-         * destination bucket. </p> </li> </ul> <p>For information about permissions
-         * required to use the multipart upload API, see <a
+         * destination bucket. </p> </li> <li> <p>To perform a multipart upload with
+         * encryption using an Key Management Service key, the requester must have
+         * permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey</code>
+         * actions on the key. The requester must also have permissions for the
+         * <code>kms:GenerateDataKey</code> action for the
+         * <code>CreateMultipartUpload</code> API. Then, the requester needs permissions
+         * for the <code>kms:Decrypt</code> action on the <code>UploadPart</code> and
+         * <code>UploadPartCopy</code> APIs. These permissions are required because Amazon
+         * S3 must decrypt and read data from the encrypted file parts before it completes
+         * the multipart upload. For more information about KMS permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+         * data using server-side encryption with KMS</a> in the <i>Amazon S3 User
+         * Guide</i>. For information about the permissions required to use the multipart
+         * upload API, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+         * upload and permissions</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
          * upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
-         * <li> <p> <b>Directory bucket permissions</b> - You must have permissions in a
-         * bucket policy or an IAM identity-based policy based on the source and
-         * destination bucket types in an <code>UploadPartCopy</code> operation.</p> <ul>
-         * <li> <p>If the source object that you want to copy is in a directory bucket, you
-         * must have the <b> <code>s3express:CreateSession</code> </b> permission in the
-         * <code>Action</code> element of a policy to read the object. By default, the
-         * session is in the <code>ReadWrite</code> mode. If you want to restrict the
-         * access, you can explicitly set the <code>s3express:SessionMode</code> condition
-         * key to <code>ReadOnly</code> on the copy source bucket.</p> </li> <li> <p>If the
-         * copy destination is a directory bucket, you must have the <b>
-         * <code>s3express:CreateSession</code> </b> permission in the <code>Action</code>
-         * element of a policy to write the object to the destination. The
-         * <code>s3express:SessionMode</code> condition key cannot be set to
-         * <code>ReadOnly</code> on the copy destination. </p> </li> </ul> <p>For example
-         * policies, see <a
+         * </ul> </li> <li> <p> <b>Directory bucket permissions</b> - You must have
+         * permissions in a bucket policy or an IAM identity-based policy based on the
+         * source and destination bucket types in an <code>UploadPartCopy</code>
+         * operation.</p> <ul> <li> <p>If the source object that you want to copy is in a
+         * directory bucket, you must have the <b> <code>s3express:CreateSession</code>
+         * </b> permission in the <code>Action</code> element of a policy to read the
+         * object. By default, the session is in the <code>ReadWrite</code> mode. If you
+         * want to restrict the access, you can explicitly set the
+         * <code>s3express:SessionMode</code> condition key to <code>ReadOnly</code> on the
+         * copy source bucket.</p> </li> <li> <p>If the copy destination is a directory
+         * bucket, you must have the <b> <code>s3express:CreateSession</code> </b>
+         * permission in the <code>Action</code> element of a policy to write the object to
+         * the destination. The <code>s3express:SessionMode</code> condition key cannot be
+         * set to <code>ReadOnly</code> on the copy destination. </p> </li> </ul> <p>For
+         * example policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
          * bucket policies for S3 Express One Zone</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon

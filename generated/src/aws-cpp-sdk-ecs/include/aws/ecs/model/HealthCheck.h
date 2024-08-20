@@ -127,7 +127,7 @@ namespace Model
      * Console.</p> <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code>
      * </p> <p>An exit code of 0 indicates success, and non-zero exit code indicates
      * failure. For more information, see <code>HealthCheck</code> in tthe docker
-     * create-container command</p>
+     * conainer create command</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }

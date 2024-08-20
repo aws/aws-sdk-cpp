@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The Linux capabilities for the container that have been added to the default
      * configuration provided by Docker. This parameter maps to <code>CapAdd</code> in
-     * the docker create-container command and the <code>--cap-add</code> option to
+     * the docker conainer create command and the <code>--cap-add</code> option to
      * docker run.</p>  <p>Tasks launched on Fargate only support adding the
      * <code>SYS_PTRACE</code> kernel capability.</p>  <p>Valid values:
      * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" |
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>The Linux capabilities for the container that have been removed from the
      * default configuration provided by Docker. This parameter maps to
-     * <code>CapDrop</code> in the docker create-container command and the
+     * <code>CapDrop</code> in the docker conainer create command and the
      * <code>--cap-drop</code> option to docker run.</p> <p>Valid values: <code>"ALL" |
      * "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" |
      * "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" |

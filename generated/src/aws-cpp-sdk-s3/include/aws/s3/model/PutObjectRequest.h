@@ -358,6 +358,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>Uploads the object only if the object key name does not already exist in the
+     * bucket specified. Otherwise, Amazon S3 returns a <code>412 Precondition
+     * Failed</code> error.</p> <p>If a conflicting operation occurs during the upload
+     * S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409
+     * failure you should retry the upload.</p> <p>Expects the '*' (asterisk)
+     * character.</p> <p>For more information about conditional requests, see <a
+     * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional
+     * requests</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetIfNoneMatch() const{ return m_ifNoneMatch; }
+    inline bool IfNoneMatchHasBeenSet() const { return m_ifNoneMatchHasBeenSet; }
+    inline void SetIfNoneMatch(const Aws::String& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = value; }
+    inline void SetIfNoneMatch(Aws::String&& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = std::move(value); }
+    inline void SetIfNoneMatch(const char* value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch.assign(value); }
+    inline PutObjectRequest& WithIfNoneMatch(const Aws::String& value) { SetIfNoneMatch(value); return *this;}
+    inline PutObjectRequest& WithIfNoneMatch(Aws::String&& value) { SetIfNoneMatch(std::move(value)); return *this;}
+    inline PutObjectRequest& WithIfNoneMatch(const char* value) { SetIfNoneMatch(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
      * object.</p>  <ul> <li> <p>This functionality is not supported for
      * directory buckets.</p> </li> <li> <p>This functionality is not supported for
@@ -791,6 +813,9 @@ namespace Model
 
     Aws::Utils::DateTime m_expires;
     bool m_expiresHasBeenSet = false;
+
+    Aws::String m_ifNoneMatch;
+    bool m_ifNoneMatchHasBeenSet = false;
 
     Aws::String m_grantFullControl;
     bool m_grantFullControlHasBeenSet = false;

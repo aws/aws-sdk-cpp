@@ -52,6 +52,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>A failure code associated with the request.</p>
+     */
+    inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+    inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
+    inline void SetFailureCode(const char* value) { m_failureCodeHasBeenSet = true; m_failureCode.assign(value); }
+    inline VpcEndpointDetail& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
+    inline VpcEndpointDetail& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
+    inline VpcEndpointDetail& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A message associated with the failure code.</p>
+     */
+    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
+    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
+    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
+    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
+    inline VpcEndpointDetail& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
+    inline VpcEndpointDetail& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
+    inline VpcEndpointDetail& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the endpoint.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -139,6 +167,12 @@ namespace Model
 
     long long m_createdDate;
     bool m_createdDateHasBeenSet = false;
+
+    Aws::String m_failureCode;
+    bool m_failureCodeHasBeenSet = false;
+
+    Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;

@@ -448,7 +448,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>To retrieve the checksum, this mode must be enabled.</p>
+     * <p>To retrieve the checksum, this mode must be enabled.</p> <p>In addition, if
+     * you enable checksum mode and the object is uploaded with a <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a>
+     * and encrypted with an Key Management Service (KMS) key, you must have permission
+     * to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
      */
     inline const ChecksumMode& GetChecksumMode() const{ return m_checksumMode; }
     inline bool ChecksumModeHasBeenSet() const { return m_checksumModeHasBeenSet; }

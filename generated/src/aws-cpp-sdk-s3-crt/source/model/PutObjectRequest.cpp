@@ -35,6 +35,7 @@ PutObjectRequest::PutObjectRequest() :
     m_checksumSHA1HasBeenSet(false),
     m_checksumSHA256HasBeenSet(false),
     m_expiresHasBeenSet(false),
+    m_ifNoneMatchHasBeenSet(false),
     m_grantFullControlHasBeenSet(false),
     m_grantReadHasBeenSet(false),
     m_grantReadACPHasBeenSet(false),
@@ -176,6 +177,13 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
   if(m_expiresHasBeenSet)
   {
     headers.emplace("expires", m_expires.ToGmtString(Aws::Utils::DateFormat::RFC822));
+  }
+
+  if(m_ifNoneMatchHasBeenSet)
+  {
+    ss << m_ifNoneMatch;
+    headers.emplace("if-none-match",  ss.str());
+    ss.str("");
   }
 
   if(m_grantFullControlHasBeenSet)
