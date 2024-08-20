@@ -33,16 +33,16 @@ namespace Model
    * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it
    * must be the same value as the <code>containerPort</code>.</p> <p>Most fields of
    * this parameter (<code>containerPort</code>, <code>hostPort</code>,
-   * <code>protocol</code>) maps to <code>PortBindings</code> in the docker
-   * create-container command and the <code>--publish</code> option to <code>docker
-   * run</code>. If the network mode of a task definition is set to
-   * <code>host</code>, host ports must either be undefined or match the container
-   * port in the port mapping.</p>  <p>You can't expose the same container port
-   * for multiple protocols. If you attempt this, an error is returned.</p> 
-   * <p>After a task reaches the <code>RUNNING</code> status, manual and automatic
-   * host and container port assignments are visible in the
-   * <code>networkBindings</code> section of <a>DescribeTasks</a> API
-   * responses.</p><p><h3>See Also:</h3>   <a
+   * <code>protocol</code>) maps to <code>PortBindings</code> in the docker conainer
+   * create command and the <code>--publish</code> option to <code>docker run</code>.
+   * If the network mode of a task definition is set to <code>host</code>, host ports
+   * must either be undefined or match the container port in the port mapping.</p>
+   *  <p>You can't expose the same container port for multiple protocols. If
+   * you attempt this, an error is returned.</p>  <p>After a task reaches the
+   * <code>RUNNING</code> status, manual and automatic host and container port
+   * assignments are visible in the <code>networkBindings</code> section of <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>
+   * API responses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PortMapping">AWS API
    * Reference</a></p>
    */

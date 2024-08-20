@@ -258,9 +258,10 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition to the task.
      * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.</p>  <p>An error will be
-     * received if you specify the <code>SERVICE</code> option when running a task.</p>
-     * 
+     * creation, use the<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
+     * API action.</p>  <p>An error will be received if you specify the
+     * <code>SERVICE</code> option when running a task.</p> 
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }

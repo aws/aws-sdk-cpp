@@ -25,6 +25,8 @@ CollectionDetail::CollectionDetail() :
     m_createdDateHasBeenSet(false),
     m_dashboardEndpointHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_failureCodeHasBeenSet(false),
+    m_failureMessageHasBeenSet(false),
     m_idHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false),
     m_lastModifiedDate(0),
@@ -80,6 +82,20 @@ CollectionDetail& CollectionDetail::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureCode"))
+  {
+    m_failureCode = jsonValue.GetString("failureCode");
+
+    m_failureCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureMessage"))
+  {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+
+    m_failureMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -165,6 +181,18 @@ JsonValue CollectionDetail::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_failureCodeHasBeenSet)
+  {
+   payload.WithString("failureCode", m_failureCode);
+
+  }
+
+  if(m_failureMessageHasBeenSet)
+  {
+   payload.WithString("failureMessage", m_failureMessage);
 
   }
 

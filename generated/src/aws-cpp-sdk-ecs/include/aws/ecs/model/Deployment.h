@@ -262,8 +262,8 @@ namespace Model
      * deployment transitions to a <code>COMPLETED</code> state. If the service fails
      * to reach a steady state and circuit breaker is turned on, the deployment
      * transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
-     * state doesn't launch any new tasks. For more information, see
-     * <a>DeploymentCircuitBreaker</a>.</p>
+     * state doesn't launch any new tasks. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentCircuitBreaker.html">DeploymentCircuitBreaker</a>.</p>
      */
     inline const DeploymentRolloutState& GetRolloutState() const{ return m_rolloutState; }
     inline bool RolloutStateHasBeenSet() const { return m_rolloutStateHasBeenSet; }

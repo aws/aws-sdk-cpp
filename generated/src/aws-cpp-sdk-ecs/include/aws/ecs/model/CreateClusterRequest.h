@@ -89,8 +89,10 @@ namespace Model
     /**
      * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
-     * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * overrides the <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline const Aws::Vector<ClusterSetting>& GetSettings() const{ return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
@@ -156,7 +158,9 @@ namespace Model
      * APIs with no capacity provider strategy or launch type specified, the default
      * capacity provider strategy for the cluster is used.</p> <p>If a default capacity
      * provider strategy isn't defined for a cluster when it was created, it can be
-     * defined later with the <a>PutClusterCapacityProviders</a> API operation.</p>
+     * defined later with the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
+     * API operation.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetDefaultCapacityProviderStrategy() const{ return m_defaultCapacityProviderStrategy; }
     inline bool DefaultCapacityProviderStrategyHasBeenSet() const { return m_defaultCapacityProviderStrategyHasBeenSet; }

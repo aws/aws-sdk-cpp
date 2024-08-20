@@ -26,9 +26,11 @@ namespace Model
 
   /**
    * <p>An object representing the protection status details for a task. You can set
-   * the protection status with the <a>UpdateTaskProtection</a> API and get the
-   * status of tasks with the <a>GetTaskProtection</a> API.</p><p><h3>See Also:</h3> 
-   * <a
+   * the protection status with the <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskProtection.html">UpdateTaskProtection</a>
+   * API and get the status of tasks with the <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_GetTaskProtection.html">GetTaskProtection</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ProtectedTask">AWS
    * API Reference</a></p>
    */

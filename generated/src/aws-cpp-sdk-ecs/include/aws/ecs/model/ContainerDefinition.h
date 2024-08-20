@@ -63,8 +63,8 @@ namespace Model
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. This parameter maps to <code>name</code> in tthe docker
-     * create-container command and the <code>--name</code> option to docker run. </p>
+     * allowed. This parameter maps to <code>name</code> in tthe docker conainer create
+     * command and the <code>--name</code> option to docker run. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -85,7 +85,7 @@ namespace Model
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the docker create-container command and the
+     * <code>Image</code> in the docker conainer create command and the
      * <code>IMAGE</code> parameter of docker run.</p> <ul> <li> <p>When a new task
      * starts, the Amazon ECS container agent pulls the latest version of the specified
      * image and tag for the container to use. However, subsequent updates to a
@@ -128,7 +128,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of <code>cpu</code> units reserved for the container. This
-     * parameter maps to <code>CpuShares</code> in the docker create-container
+     * parameter maps to <code>CpuShares</code> in the docker conainer create
      * commandand the <code>--cpu-shares</code> option to docker run.</p> <p>This field
      * is optional for tasks using the Fargate launch type, and the only requirement is
      * that the total amount of CPU reserved for all containers within a task be lower
@@ -178,7 +178,7 @@ namespace Model
      * attempts to exceed the memory specified here, the container is killed. The total
      * amount of memory reserved for all containers within a task must be lower than
      * the task <code>memory</code> value, if one is specified. This parameter maps to
-     * <code>Memory</code> in thethe docker create-container command and the
+     * <code>Memory</code> in thethe docker conainer create command and the
      * <code>--memory</code> option to docker run.</p> <p>If using the Fargate launch
      * type, this parameter is optional.</p> <p>If using the EC2 launch type, you must
      * specify either a task-level memory value or a container-level memory value. If
@@ -207,25 +207,25 @@ namespace Model
      * needs to, up to either the hard limit specified with the <code>memory</code>
      * parameter (if applicable), or all of the available memory on the container
      * instance, whichever comes first. This parameter maps to
-     * <code>MemoryReservation</code> in the the docker create-container command and
-     * the <code>--memory-reservation</code> option to docker run.</p> <p>If a
-     * task-level memory value is not specified, you must specify a non-zero integer
-     * for one or both of <code>memory</code> or <code>memoryReservation</code> in a
-     * container definition. If you specify both, <code>memory</code> must be greater
-     * than <code>memoryReservation</code>. If you specify
-     * <code>memoryReservation</code>, then that value is subtracted from the available
-     * memory resources for the container instance where the container is placed.
-     * Otherwise, the value of <code>memory</code> is used.</p> <p>For example, if your
-     * container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB of
-     * memory for short periods of time, you can set a <code>memoryReservation</code>
-     * of 128 MiB, and a <code>memory</code> hard limit of 300 MiB. This configuration
-     * would allow the container to only reserve 128 MiB of memory from the remaining
-     * resources on the container instance, but also allow the container to consume
-     * more memory resources when needed.</p> <p>The Docker 20.10.0 or later daemon
-     * reserves a minimum of 6 MiB of memory for a container. So, don't specify less
-     * than 6 MiB of memory for your containers. </p> <p>The Docker 19.03.13-ce or
-     * earlier daemon reserves a minimum of 4 MiB of memory for a container. So, don't
-     * specify less than 4 MiB of memory for your containers.</p>
+     * <code>MemoryReservation</code> in the the docker conainer create command and the
+     * <code>--memory-reservation</code> option to docker run.</p> <p>If a task-level
+     * memory value is not specified, you must specify a non-zero integer for one or
+     * both of <code>memory</code> or <code>memoryReservation</code> in a container
+     * definition. If you specify both, <code>memory</code> must be greater than
+     * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>,
+     * then that value is subtracted from the available memory resources for the
+     * container instance where the container is placed. Otherwise, the value of
+     * <code>memory</code> is used.</p> <p>For example, if your container normally uses
+     * 128 MiB of memory, but occasionally bursts to 256 MiB of memory for short
+     * periods of time, you can set a <code>memoryReservation</code> of 128 MiB, and a
+     * <code>memory</code> hard limit of 300 MiB. This configuration would allow the
+     * container to only reserve 128 MiB of memory from the remaining resources on the
+     * container instance, but also allow the container to consume more memory
+     * resources when needed.</p> <p>The Docker 20.10.0 or later daemon reserves a
+     * minimum of 6 MiB of memory for a container. So, don't specify less than 6 MiB of
+     * memory for your containers. </p> <p>The Docker 19.03.13-ce or earlier daemon
+     * reserves a minimum of 4 MiB of memory for a container. So, don't specify less
+     * than 4 MiB of memory for your containers.</p>
      */
     inline int GetMemoryReservation() const{ return m_memoryReservation; }
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
@@ -241,7 +241,7 @@ namespace Model
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
      * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed.. This parameter maps to <code>Links</code>
-     * in the docker create-container command and the <code>--link</code> option to
+     * in the docker conainer create command and the <code>--link</code> option to
      * docker run.</p>  <p>This parameter is not supported for Windows
      * containers.</p>   <p>Containers that are collocated on a
      * single container instance may be able to communicate with each other without
@@ -269,7 +269,7 @@ namespace Model
      * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
      * than <code>localhost</code>. There's no loopback for port mappings on Windows,
      * so you can't access a container's mapped port from the host itself. </p> <p>This
-     * parameter maps to <code>PortBindings</code> in the the docker create-container
+     * parameter maps to <code>PortBindings</code> in the the docker conainer create
      * command and the <code>--publish</code> option to docker run. If the network mode
      * of a task definition is set to <code>none</code>, then you can't specify port
      * mappings. If the network mode of a task definition is set to <code>host</code>,
@@ -278,7 +278,9 @@ namespace Model
      * status, manual and automatic host and container port assignments are visible in
      * the <b>Network Bindings</b> section of a container description for a selected
      * task in the Amazon ECS console. The assignments are also visible in the
-     * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> 
+     * <code>networkBindings</code> section <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>
+     * responses.</p> 
      */
     inline const Aws::Vector<PortMapping>& GetPortMappings() const{ return m_portMappings; }
     inline bool PortMappingsHasBeenSet() const { return m_portMappingsHasBeenSet; }
@@ -336,7 +338,7 @@ namespace Model
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
      * entry point that's passed to the container. This parameter maps to
-     * <code>Entrypoint</code> in tthe docker create-container command and the
+     * <code>Entrypoint</code> in tthe docker conainer create command and the
      * <code>--entrypoint</code> option to docker run.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEntryPoint() const{ return m_entryPoint; }
@@ -353,7 +355,7 @@ namespace Model
     ///@{
     /**
      * <p>The command that's passed to the container. This parameter maps to
-     * <code>Cmd</code> in the docker create-container command and the
+     * <code>Cmd</code> in the docker conainer create command and the
      * <code>COMMAND</code> parameter to docker run. If there are multiple arguments,
      * each argument is a separated string in the array.</p>
      */
@@ -371,7 +373,7 @@ namespace Model
     ///@{
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
-     * <code>Env</code> in the docker create-container command and the
+     * <code>Env</code> in the docker conainer create command and the
      * <code>--env</code> option to docker run.</p>  <p>We don't recommend
      * that you use plaintext environment variables for sensitive information, such as
      * credential data.</p> 
@@ -416,7 +418,7 @@ namespace Model
     ///@{
     /**
      * <p>The mount points for data volumes in your container.</p> <p>This parameter
-     * maps to <code>Volumes</code> in the the docker create-container command and the
+     * maps to <code>Volumes</code> in the the docker conainer create command and the
      * <code>--volume</code> option to docker run.</p> <p>Windows containers can mount
      * whole directories on the same drive as <code>$env:ProgramData</code>. Windows
      * containers can't mount directories on a different drive, and mount point can't
@@ -435,7 +437,7 @@ namespace Model
     ///@{
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
-     * <code>VolumesFrom</code> in tthe docker create-container command and the
+     * <code>VolumesFrom</code> in tthe docker conainer create command and the
      * <code>--volumes-from</code> option to docker run.</p>
      */
     inline const Aws::Vector<VolumeFrom>& GetVolumesFrom() const{ return m_volumesFrom; }
@@ -451,7 +453,8 @@ namespace Model
     ///@{
     /**
      * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * kernel capabilities. For more information see <a>KernelCapabilities</a>.</p>
+     * kernel capabilities. For more information see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p>
      *  <p>This parameter is not supported for Windows containers.</p> 
      */
     inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
@@ -589,7 +592,7 @@ namespace Model
     ///@{
     /**
      * <p>The hostname to use for your container. This parameter maps to
-     * <code>Hostname</code> in thethe docker create-container command and the
+     * <code>Hostname</code> in thethe docker conainer create command and the
      * <code>--hostname</code> option to docker run.</p>  <p>The
      * <code>hostname</code> parameter is not supported if you're using the
      * <code>awsvpc</code> network mode.</p> 
@@ -607,7 +610,7 @@ namespace Model
     ///@{
     /**
      * <p>The user to use inside the container. This parameter maps to
-     * <code>User</code> in the docker create-container command and the
+     * <code>User</code> in the docker conainer create command and the
      * <code>--user</code> option to docker run.</p>  <p>When running tasks
      * using the <code>host</code> network mode, don't run containers using the root
      * user (UID 0). We recommend using a non-root user for better security.</p>
@@ -632,7 +635,7 @@ namespace Model
     ///@{
     /**
      * <p>The working directory to run commands inside the container in. This parameter
-     * maps to <code>WorkingDir</code> in the docker create-container command and the
+     * maps to <code>WorkingDir</code> in the docker conainer create command and the
      * <code>--workdir</code> option to docker run.</p>
      */
     inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
@@ -648,7 +651,7 @@ namespace Model
     ///@{
     /**
      * <p>When this parameter is true, networking is off within the container. This
-     * parameter maps to <code>NetworkDisabled</code> in the docker create-container
+     * parameter maps to <code>NetworkDisabled</code> in the docker conainer create
      * command.</p>  <p>This parameter is not supported for Windows
      * containers.</p> 
      */
@@ -662,7 +665,7 @@ namespace Model
     /**
      * <p>When this parameter is true, the container is given elevated privileges on
      * the host container instance (similar to the <code>root</code> user). This
-     * parameter maps to <code>Privileged</code> in the the docker create-container
+     * parameter maps to <code>Privileged</code> in the the docker conainer create
      * command and the <code>--privileged</code> option to docker run</p> 
      * <p>This parameter is not supported for Windows containers or tasks run on
      * Fargate.</p> 
@@ -677,9 +680,9 @@ namespace Model
     /**
      * <p>When this parameter is true, the container is given read-only access to its
      * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the
-     * docker create-container command and the <code>--read-only</code> option to
-     * docker run.</p>  <p>This parameter is not supported for Windows
-     * containers.</p> 
+     * docker conainer create command and the <code>--read-only</code> option to docker
+     * run.</p>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline bool GetReadonlyRootFilesystem() const{ return m_readonlyRootFilesystem; }
     inline bool ReadonlyRootFilesystemHasBeenSet() const { return m_readonlyRootFilesystemHasBeenSet; }
@@ -690,7 +693,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
-     * maps to <code>Dns</code> in the the docker create-container command and the
+     * maps to <code>Dns</code> in the the docker conainer create command and the
      * <code>--dns</code> option to docker run.</p>  <p>This parameter is not
      * supported for Windows containers.</p> 
      */
@@ -708,7 +711,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of DNS search domains that are presented to the container. This
-     * parameter maps to <code>DnsSearch</code> in the docker create-container command
+     * parameter maps to <code>DnsSearch</code> in the docker conainer create command
      * and the <code>--dns-search</code> option to docker run.</p>  <p>This
      * parameter is not supported for Windows containers.</p> 
      */
@@ -727,7 +730,7 @@ namespace Model
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
-     * <code>ExtraHosts</code> in the docker create-container command and the
+     * <code>ExtraHosts</code> in the docker conainer create command and the
      * <code>--add-host</code> option to docker run.</p>  <p>This parameter isn't
      * supported for Windows containers or tasks that use the <code>awsvpc</code>
      * network mode.</p> 
@@ -756,12 +759,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
      * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
-     * the docker create-container command and the <code>--security-opt</code> option
-     * to docker run.</p>  <p>The Amazon ECS container agent running on a
-     * container instance must register with the <code>ECS_SELINUX_CAPABLE=true</code>
-     * or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
-     * containers placed on that instance can use these security options. For more
-     * information, see <a
+     * the docker conainer create command and the <code>--security-opt</code> option to
+     * docker run.</p>  <p>The Amazon ECS container agent running on a container
+     * instance must register with the <code>ECS_SELINUX_CAPABLE=true</code> or
+     * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
+     * placed on that instance can use these security options. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>Valid values: "no-new-privileges" |
@@ -782,9 +785,8 @@ namespace Model
     /**
      * <p>When this parameter is <code>true</code>, you can deploy containerized
      * applications that require <code>stdin</code> or a <code>tty</code> to be
-     * allocated. This parameter maps to <code>OpenStdin</code> in the docker
-     * create-container command and the <code>--interactive</code> option to docker
-     * run.</p>
+     * allocated. This parameter maps to <code>OpenStdin</code> in the docker conainer
+     * create command and the <code>--interactive</code> option to docker run.</p>
      */
     inline bool GetInteractive() const{ return m_interactive; }
     inline bool InteractiveHasBeenSet() const { return m_interactiveHasBeenSet; }
@@ -795,7 +797,7 @@ namespace Model
     ///@{
     /**
      * <p>When this parameter is <code>true</code>, a TTY is allocated. This parameter
-     * maps to <code>Tty</code> in tthe docker create-container command and the
+     * maps to <code>Tty</code> in tthe docker conainer create command and the
      * <code>--tty</code> option to docker run.</p>
      */
     inline bool GetPseudoTerminal() const{ return m_pseudoTerminal; }
@@ -807,7 +809,7 @@ namespace Model
     ///@{
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
-     * <code>Labels</code> in the docker create-container command and the
+     * <code>Labels</code> in the docker conainer create command and the
      * <code>--label</code> option to docker run. This parameter requires version 1.18
      * of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container
@@ -834,19 +836,20 @@ namespace Model
      * <p>A list of <code>ulimits</code> to set in the container. If a
      * <code>ulimit</code> value is specified in a task definition, it overrides the
      * default values set by Docker. This parameter maps to <code>Ulimits</code> in
-     * tthe docker create-container command and the <code>--ulimit</code> option to
-     * docker run. Valid naming values are displayed in the <a>Ulimit</a> data
-     * type.</p> <p>Amazon ECS tasks hosted on Fargate use the default resource limit
-     * values set by the operating system with the exception of the <code>nofile</code>
-     * resource limit parameter which Fargate overrides. The <code>nofile</code>
-     * resource limit sets a restriction on the number of open files that a container
-     * can use. The default <code>nofile</code> soft limit is <code> 65535</code> and
-     * the default hard limit is <code>65535</code>.</p> <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not
-     * supported for Windows containers.</p> 
+     * tthe docker conainer create command and the <code>--ulimit</code> option to
+     * docker run. Valid naming values are displayed in the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Ulimit.html">Ulimit</a>
+     * data type.</p> <p>Amazon ECS tasks hosted on Fargate use the default resource
+     * limit values set by the operating system with the exception of the
+     * <code>nofile</code> resource limit parameter which Fargate overrides. The
+     * <code>nofile</code> resource limit sets a restriction on the number of open
+     * files that a container can use. The default <code>nofile</code> soft limit is
+     * <code> 65535</code> and the default hard limit is <code>65535</code>.</p>
+     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
+     * your container instance. To check the Docker Remote API version on your
+     * container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
+     *  <p>This parameter is not supported for Windows containers.</p> 
      */
     inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
     inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
@@ -861,7 +864,7 @@ namespace Model
     ///@{
     /**
      * <p>The log configuration specification for the container.</p> <p>This parameter
-     * maps to <code>LogConfig</code> in the docker create-container command and the
+     * maps to <code>LogConfig</code> in the docker conainer create command and the
      * <code>--log-driver</code> option to docker run. By default, containers use the
      * same logging driver that the Docker daemon uses. However the container can use a
      * different logging driver than the Docker daemon by specifying a log driver with
@@ -869,12 +872,13 @@ namespace Model
      * for a container, the log system must be configured properly on the container
      * instance (or on a different log server for remote logging options). </p> 
      * <p>Amazon ECS currently supports a subset of the logging drivers available to
-     * the Docker daemon (shown in the <a>LogConfiguration</a> data type). Additional
-     * log drivers may be available in future releases of the Amazon ECS container
-     * agent.</p>  <p>This parameter requires version 1.18 of the Docker Remote
-     * API or greater on your container instance. To check the Docker Remote API
-     * version on your container instance, log in to your container instance and run
-     * the following command: <code>sudo docker version --format
+     * the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_LogConfiguration.html">LogConfiguration</a>
+     * data type). Additional log drivers may be available in future releases of the
+     * Amazon ECS container agent.</p>  <p>This parameter requires version 1.18
+     * of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container
+     * instance and run the following command: <code>sudo docker version --format
      * '{{.Server.APIVersion}}'</code> </p>  <p>The Amazon ECS container agent
      * running on a container instance must register the logging drivers available on
      * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
@@ -896,7 +900,7 @@ namespace Model
     /**
      * <p>The container health check command and associated configuration parameters
      * for the container. This parameter maps to <code>HealthCheck</code> in the docker
-     * create-container command and the <code>HEALTHCHECK</code> parameter of docker
+     * conainer create command and the <code>HEALTHCHECK</code> parameter of docker
      * run.</p>
      */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
@@ -910,7 +914,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of namespaced kernel parameters to set in the container. This
-     * parameter maps to <code>Sysctls</code> in tthe docker create-container command
+     * parameter maps to <code>Sysctls</code> in tthe docker conainer create command
      * and the <code>--sysctl</code> option to docker run. For example, you can
      * configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer
      * lived connections.</p>

@@ -49,14 +49,15 @@ namespace Model
      * version of the container with the latest version. The number of containers
      * Amazon ECS adds or removes from the service during a rolling update is
      * controlled by adjusting the minimum and maximum number of healthy tasks allowed
-     * during a service deployment, as specified in the
-     * <a>DeploymentConfiguration</a>.</p> </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The
-     * blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green
-     * deployment model powered by CodeDeploy, which allows you to verify a new
-     * deployment of a service before sending production traffic to it.</p> </dd>
-     * <dt>EXTERNAL</dt> <dd> <p>The external (<code>EXTERNAL</code>) deployment type
-     * enables you to use any third-party deployment controller for full control over
-     * the deployment process for an Amazon ECS service.</p> </dd> </dl>
+     * during a service deployment, as specified in the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentConfiguration.html">DeploymentConfiguration</a>.</p>
+     * </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The blue/green (<code>CODE_DEPLOY</code>)
+     * deployment type uses the blue/green deployment model powered by CodeDeploy,
+     * which allows you to verify a new deployment of a service before sending
+     * production traffic to it.</p> </dd> <dt>EXTERNAL</dt> <dd> <p>The external
+     * (<code>EXTERNAL</code>) deployment type enables you to use any third-party
+     * deployment controller for full control over the deployment process for an Amazon
+     * ECS service.</p> </dd> </dl>
      */
     inline const DeploymentControllerType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

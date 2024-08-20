@@ -154,8 +154,10 @@ namespace Model
     ///@{
     /**
      * <p>The desired number of instantiations of the task definition to keep running
-     * on the service. This value is specified when the service is created with
-     * <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
+     * on the service. This value is specified when the service is created with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     * , and it can be modified with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
      */
     inline int GetDesiredCount() const{ return m_desiredCount; }
     inline bool DesiredCountHasBeenSet() const { return m_desiredCountHasBeenSet; }
@@ -254,8 +256,10 @@ namespace Model
     ///@{
     /**
      * <p>The task definition to use for tasks in the service. This value is specified
-     * when the service is created with <a>CreateService</a>, and it can be modified
-     * with <a>UpdateService</a>.</p>
+     * when the service is created with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>,
+     * and it can be modified with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }

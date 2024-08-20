@@ -238,9 +238,10 @@ namespace Model
      * <p>The container instance attributes required by your task. When an Amazon EC2
      * instance is registered to your cluster, the Amazon ECS container agent assigns
      * some standard attributes to the instance. You can apply custom attributes. These
-     * are specified as key-value pairs using the Amazon ECS console or the
-     * <a>PutAttributes</a> API. These attributes are used when determining task
-     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * are specified as key-value pairs using the Amazon ECS console or the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a>
+     * API. These attributes are used when determining task placement for tasks hosted
+     * on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
      * <p>This parameter isn't supported for tasks run on Fargate.</p> 

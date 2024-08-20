@@ -261,8 +261,9 @@ namespace Model
     ///@{
     /**
      * <p>The attributes set for the container instance, either by the Amazon ECS
-     * container agent at instance registration or manually with the
-     * <a>PutAttributes</a> operation.</p>
+     * container agent at instance registration or manually with the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a>
+     * operation.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }

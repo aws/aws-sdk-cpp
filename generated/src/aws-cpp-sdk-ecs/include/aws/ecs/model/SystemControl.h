@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A list of namespaced kernel parameters to set in the container. This
-   * parameter maps to <code>Sysctls</code> in tthe docker create-container command
+   * parameter maps to <code>Sysctls</code> in tthe docker conainer create command
    * and the <code>--sysctl</code> option to docker run. For example, you can
    * configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer
    * lived connections.</p> <p>We don't recommend that you specify network-related

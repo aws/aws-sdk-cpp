@@ -62,7 +62,7 @@ namespace Model
     ///@{
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
-     * <code>Devices</code> in tthe docker create-container command and the
+     * <code>Devices</code> in tthe docker conainer create command and the
      * <code>--device</code> option to docker run.</p>  <p>If you're using tasks
      * that use the Fargate launch type, the <code>devices</code> parameter isn't
      * supported.</p> 
@@ -80,9 +80,8 @@ namespace Model
     ///@{
     /**
      * <p>Run an <code>init</code> process inside the container that forwards signals
-     * and reaps processes. This parameter maps to the <code>--init</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. This parameter requires version 1.25 of the Docker Remote API or
+     * and reaps processes. This parameter maps to the <code>--init</code> option to
+     * docker run. This parameter requires version 1.25 of the Docker Remote API or
      * greater on your container instance. To check the Docker Remote API version on
      * your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
@@ -126,17 +125,16 @@ namespace Model
     ///@{
     /**
      * <p>The total amount of swap memory (in MiB) a container can use. This parameter
-     * will be translated to the <code>--memory-swap</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a> where the value would be the sum of the container memory plus the
-     * <code>maxSwap</code> value.</p> <p>If a <code>maxSwap</code> value of
-     * <code>0</code> is specified, the container will not use swap. Accepted values
-     * are <code>0</code> or any positive integer. If the <code>maxSwap</code>
-     * parameter is omitted, the container will use the swap configuration for the
-     * container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
-     * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * isn't supported.</p> <p>If you're using tasks on Amazon Linux 2023 the
+     * will be translated to the <code>--memory-swap</code> option to docker run where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code>
+     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
+     * the container will not use swap. Accepted values are <code>0</code> or any
+     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     * container will use the swap configuration for the container instance it is
+     * running on. A <code>maxSwap</code> value must be set for the
+     * <code>swappiness</code> parameter to be used.</p>  <p>If you're using
+     * tasks that use the Fargate launch type, the <code>maxSwap</code> parameter isn't
+     * supported.</p> <p>If you're using tasks on Amazon Linux 2023 the
      * <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline int GetMaxSwap() const{ return m_maxSwap; }
