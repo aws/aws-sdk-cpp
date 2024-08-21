@@ -49,8 +49,8 @@ namespace Model
     ///@{
     /**
      * <p> The unique identifier of a security control across standards. Values for
-     * this field typically consist of an Amazon Web Service name and a number (for
-     * example, APIGateway.3). This parameter differs from
+     * this field typically consist of an Amazon Web Servicesservice name and a number
+     * (for example, APIGateway.3). This parameter differs from
      * <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN)
      * assigned to a control. The ARN references the security control ID (for example,
      * arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).

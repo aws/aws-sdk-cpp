@@ -27,6 +27,8 @@ JobRun::JobRun() :
     m_jobNameHasBeenSet(false),
     m_jobMode(JobMode::NOT_SET),
     m_jobModeHasBeenSet(false),
+    m_jobRunQueuingEnabled(false),
+    m_jobRunQueuingEnabledHasBeenSet(false),
     m_startedOnHasBeenSet(false),
     m_lastModifiedOnHasBeenSet(false),
     m_completedOnHasBeenSet(false),
@@ -54,7 +56,8 @@ JobRun::JobRun() :
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
     m_maintenanceWindowHasBeenSet(false),
-    m_profileNameHasBeenSet(false)
+    m_profileNameHasBeenSet(false),
+    m_stateDetailHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_jobMode = JobModeMapper::GetJobModeForName(jsonValue.GetString("JobMode"));
 
     m_jobModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobRunQueuingEnabled"))
+  {
+    m_jobRunQueuingEnabled = jsonValue.GetBool("JobRunQueuingEnabled");
+
+    m_jobRunQueuingEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StartedOn"))
@@ -254,6 +264,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_profileNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StateDetail"))
+  {
+    m_stateDetail = jsonValue.GetString("StateDetail");
+
+    m_stateDetailHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -294,6 +311,12 @@ JsonValue JobRun::Jsonize() const
   if(m_jobModeHasBeenSet)
   {
    payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
+  }
+
+  if(m_jobRunQueuingEnabledHasBeenSet)
+  {
+   payload.WithBool("JobRunQueuingEnabled", m_jobRunQueuingEnabled);
+
   }
 
   if(m_startedOnHasBeenSet)
@@ -417,6 +440,12 @@ JsonValue JobRun::Jsonize() const
   if(m_profileNameHasBeenSet)
   {
    payload.WithString("ProfileName", m_profileName);
+
+  }
+
+  if(m_stateDetailHasBeenSet)
+  {
+   payload.WithString("StateDetail", m_stateDetail);
 
   }
 

@@ -272,6 +272,24 @@ namespace Model
     inline UpdateEventSourceMappingRequest& WithDocumentDBEventSourceConfig(const DocumentDBEventSourceConfig& value) { SetDocumentDBEventSourceConfig(value); return *this;}
     inline UpdateEventSourceMappingRequest& WithDocumentDBEventSourceConfig(DocumentDBEventSourceConfig&& value) { SetDocumentDBEventSourceConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The ARN of the Key Management Service (KMS) customer managed key that Lambda
+     * uses to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
+     * criteria</a>. By default, Lambda does not encrypt your filter criteria object.
+     * Specify this property to encrypt data using your own customer managed key. </p>
+     */
+    inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
+    inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
+    inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
+    inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
+    inline UpdateEventSourceMappingRequest& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
+    inline UpdateEventSourceMappingRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
+    inline UpdateEventSourceMappingRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_uUID;
@@ -321,6 +339,9 @@ namespace Model
 
     DocumentDBEventSourceConfig m_documentDBEventSourceConfig;
     bool m_documentDBEventSourceConfigHasBeenSet = false;
+
+    Aws::String m_kMSKeyArn;
+    bool m_kMSKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

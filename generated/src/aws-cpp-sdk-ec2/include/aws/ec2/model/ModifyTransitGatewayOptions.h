@@ -192,9 +192,11 @@ namespace Model
      * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
      * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
      * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
-     * transit gateway with active BGP sessions. You must first delete all transit
-     * gateway attachments that have BGP configured prior to modifying the ASN on the
-     * transit gateway.</p>
+     * transit gateway if it has the following attachments:</p> <ul> <li> <p>Dynamic
+     * VPN</p> </li> <li> <p>Static VPN</p> </li> <li> <p>Direct Connect Gateway</p>
+     * </li> <li> <p>Connect</p> </li> </ul> <p>You must first delete all transit
+     * gateway attachments configured prior to modifying the ASN on the transit
+     * gateway.</p>
      */
     inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
     inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }

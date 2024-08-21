@@ -133,6 +133,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether job run queuing is enabled for the job run.</p> <p>A value
+     * of true means job run queuing is enabled for the job run. If false or not
+     * populated, the job run will not be considered for queueing.</p>
+     */
+    inline bool GetJobRunQueuingEnabled() const{ return m_jobRunQueuingEnabled; }
+    inline bool JobRunQueuingEnabledHasBeenSet() const { return m_jobRunQueuingEnabledHasBeenSet; }
+    inline void SetJobRunQueuingEnabled(bool value) { m_jobRunQueuingEnabledHasBeenSet = true; m_jobRunQueuingEnabled = value; }
+    inline JobRun& WithJobRunQueuingEnabled(bool value) { SetJobRunQueuingEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time at which this job run was started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
@@ -495,6 +507,23 @@ namespace Model
     inline JobRun& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
     inline JobRun& WithProfileName(const char* value) { SetProfileName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This field holds details that pertain to the state of a job run. The field is
+     * nullable.</p> <p>For example, when a job run is in a WAITING state as a result
+     * of job run queuing, the field has the reason why the job run is in that
+     * state.</p>
+     */
+    inline const Aws::String& GetStateDetail() const{ return m_stateDetail; }
+    inline bool StateDetailHasBeenSet() const { return m_stateDetailHasBeenSet; }
+    inline void SetStateDetail(const Aws::String& value) { m_stateDetailHasBeenSet = true; m_stateDetail = value; }
+    inline void SetStateDetail(Aws::String&& value) { m_stateDetailHasBeenSet = true; m_stateDetail = std::move(value); }
+    inline void SetStateDetail(const char* value) { m_stateDetailHasBeenSet = true; m_stateDetail.assign(value); }
+    inline JobRun& WithStateDetail(const Aws::String& value) { SetStateDetail(value); return *this;}
+    inline JobRun& WithStateDetail(Aws::String&& value) { SetStateDetail(std::move(value)); return *this;}
+    inline JobRun& WithStateDetail(const char* value) { SetStateDetail(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -514,6 +543,9 @@ namespace Model
 
     JobMode m_jobMode;
     bool m_jobModeHasBeenSet = false;
+
+    bool m_jobRunQueuingEnabled;
+    bool m_jobRunQueuingEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedOn;
     bool m_startedOnHasBeenSet = false;
@@ -574,6 +606,9 @@ namespace Model
 
     Aws::String m_profileName;
     bool m_profileNameHasBeenSet = false;
+
+    Aws::String m_stateDetail;
+    bool m_stateDetailHasBeenSet = false;
   };
 
 } // namespace Model

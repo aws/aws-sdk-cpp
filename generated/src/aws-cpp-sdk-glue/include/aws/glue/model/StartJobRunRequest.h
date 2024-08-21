@@ -54,6 +54,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether job run queuing is enabled for the job run.</p> <p>A value
+     * of true means job run queuing is enabled for the job run. If false or not
+     * populated, the job run will not be considered for queueing.</p>
+     */
+    inline bool GetJobRunQueuingEnabled() const{ return m_jobRunQueuingEnabled; }
+    inline bool JobRunQueuingEnabledHasBeenSet() const { return m_jobRunQueuingEnabledHasBeenSet; }
+    inline void SetJobRunQueuingEnabled(bool value) { m_jobRunQueuingEnabledHasBeenSet = true; m_jobRunQueuingEnabled = value; }
+    inline StartJobRunRequest& WithJobRunQueuingEnabled(bool value) { SetJobRunQueuingEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of a previous <code>JobRun</code> to retry.</p>
      */
     inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
@@ -249,6 +261,9 @@ namespace Model
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
+
+    bool m_jobRunQueuingEnabled;
+    bool m_jobRunQueuingEnabledHasBeenSet = false;
 
     Aws::String m_jobRunId;
     bool m_jobRunIdHasBeenSet = false;

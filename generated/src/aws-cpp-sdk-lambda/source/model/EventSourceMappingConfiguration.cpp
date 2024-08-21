@@ -55,6 +55,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_documentDBEventSourceConfigHasBeenSet(false),
+    m_kMSKeyArnHasBeenSet(false),
+    m_filterCriteriaErrorHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
 }
@@ -268,6 +270,20 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_documentDBEventSourceConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KMSKeyArn"))
+  {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+
+    m_kMSKeyArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FilterCriteriaError"))
+  {
+    m_filterCriteriaError = jsonValue.GetObject("FilterCriteriaError");
+
+    m_filterCriteriaErrorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -451,6 +467,18 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_documentDBEventSourceConfigHasBeenSet)
   {
    payload.WithObject("DocumentDBEventSourceConfig", m_documentDBEventSourceConfig.Jsonize());
+
+  }
+
+  if(m_kMSKeyArnHasBeenSet)
+  {
+   payload.WithString("KMSKeyArn", m_kMSKeyArn);
+
+  }
+
+  if(m_filterCriteriaErrorHasBeenSet)
+  {
+   payload.WithObject("FilterCriteriaError", m_filterCriteriaError.Jsonize());
 
   }
 

@@ -47,7 +47,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Web Service that the configuration policy applies to. </p>
+     * <p> The Amazon Web Servicesservice that the configuration policy applies to.
+     * </p>
      */
     inline const SecurityHubPolicy& GetSecurityHub() const{ return m_securityHub; }
     inline bool SecurityHubHasBeenSet() const { return m_securityHubHasBeenSet; }

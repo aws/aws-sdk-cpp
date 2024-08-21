@@ -159,23 +159,24 @@ namespace Lambda
         }
 
         /**
-         * <p>Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web
-         * Services organization permission to use a function. You can apply the policy at
-         * the function level, or specify a qualifier to restrict access to a single
+         * <p>Grants an Amazon Web Servicesservice, Amazon Web Services account, or Amazon
+         * Web Services organization permission to use a function. You can apply the policy
+         * at the function level, or specify a qualifier to restrict access to a single
          * version or alias. If you use a qualifier, the invoker must use the full Amazon
          * Resource Name (ARN) of that version or alias to invoke the function. Note:
          * Lambda does not support adding policies to version $LATEST.</p> <p>To grant
          * permission to another account, specify the account ID as the
          * <code>Principal</code>. To grant permission to an organization defined in
          * Organizations, specify the organization ID as the <code>PrincipalOrgID</code>.
-         * For Amazon Web Services, the principal is a domain-style identifier that the
-         * service defines, such as <code>s3.amazonaws.com</code> or
-         * <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify
-         * the ARN of the associated resource as the <code>SourceArn</code>. If you grant
-         * permission to a service principal without specifying the source, other accounts
-         * could potentially configure resources in their account to invoke your Lambda
-         * function.</p> <p>This operation adds a statement to a resource-based permissions
-         * policy for the function. For more information about function policies, see <a
+         * For Amazon Web Servicesservices, the principal is a domain-style identifier that
+         * the service defines, such as <code>s3.amazonaws.com</code> or
+         * <code>sns.amazonaws.com</code>. For Amazon Web Servicesservices, you can also
+         * specify the ARN of the associated resource as the <code>SourceArn</code>. If you
+         * grant permission to a service principal without specifying the source, other
+         * accounts could potentially configure resources in their account to invoke your
+         * Lambda function.</p> <p>This operation adds a statement to a resource-based
+         * permissions policy for the function. For more information about function
+         * policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using
          * resource-based policies for Lambda</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
@@ -339,8 +340,9 @@ namespace Lambda
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package is a .zip file archive or container image that
          * contains your function code. The execution role grants the function permission
-         * to use Amazon Web Services, such as Amazon CloudWatch Logs for log streaming and
-         * X-Ray for request tracing.</p> <p>If the deployment package is a <a
+         * to use Amazon Web Servicesservices, such as Amazon CloudWatch Logs for log
+         * streaming and X-Ray for request tracing.</p> <p>If the deployment package is a
+         * <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
          * image</a>, then you set the package type to <code>Image</code>. For a container
          * image, the code property must include the URI of a container image in the Amazon
@@ -378,13 +380,13 @@ namespace Lambda
          * code package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set of signing profiles, which define the trusted
          * publishers for this function.</p> <p>If another Amazon Web Services account or
-         * an Amazon Web Service invokes your function, use <a>AddPermission</a> to grant
-         * permission by creating a resource-based Identity and Access Management (IAM)
-         * policy. You can grant permissions at the function level, on a version, or on an
-         * alias.</p> <p>To invoke your function directly, use <a>Invoke</a>. To invoke
-         * your function in response to events in other Amazon Web Services, create an
-         * event source mapping (<a>CreateEventSourceMapping</a>), or configure a function
-         * trigger in the other service. For more information, see <a
+         * an Amazon Web Servicesservice invokes your function, use <a>AddPermission</a> to
+         * grant permission by creating a resource-based Identity and Access Management
+         * (IAM) policy. You can grant permissions at the function level, on a version, or
+         * on an alias.</p> <p>To invoke your function directly, use <a>Invoke</a>. To
+         * invoke your function in response to events in other Amazon Web Servicesservices,
+         * create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
+         * function trigger in the other service. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Lambda functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
@@ -525,9 +527,9 @@ namespace Lambda
          * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
          * deleted. This doesn't require the user to have explicit permissions for
          * <a>DeleteAlias</a>.</p> <p>To delete Lambda event source mappings that invoke a
-         * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Services and
-         * resources that invoke your function directly, delete the trigger in the service
-         * where you originally configured it.</p><p><h3>See Also:</h3>   <a
+         * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Servicesservices
+         * and resources that invoke your function directly, delete the trigger in the
+         * service where you originally configured it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          */
@@ -1908,9 +1910,9 @@ namespace Lambda
         }
 
         /**
-         * <p>Revokes function-use permission from an Amazon Web Service or another Amazon
-         * Web Services account. You can get the ID of the statement from the output of
-         * <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Revokes function-use permission from an Amazon Web Servicesservice or another
+         * Amazon Web Services account. You can get the ID of the statement from the output
+         * of <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
          */
@@ -2172,8 +2174,8 @@ namespace Lambda
          * function and are locked when you publish a version. You can't modify the
          * configuration of a published version, only the unpublished version.</p> <p>To
          * configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant
-         * invoke permissions to an Amazon Web Services account or Amazon Web Service, use
-         * <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * invoke permissions to an Amazon Web Services account or Amazon Web
+         * Servicesservice, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          */

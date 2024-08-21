@@ -399,10 +399,10 @@ namespace Model
      * <p> The identifier for the given resource type. For Amazon Web Services
      * resources that are identified by Amazon Resource Names (ARNs), this is the ARN.
      * For Amazon Web Services resources that lack ARNs, this is the identifier as
-     * defined by the Amazon Web Service that created the resource. For non-Amazon Web
-     * Services resources, this is a unique identifier that is associated with the
-     * resource. </p> <p> Array Members: Minimum number of 1 item. Maximum number of
-     * 100 items. </p>
+     * defined by the Amazon Web Servicesservice that created the resource. For
+     * non-Amazon Web Services resources, this is a unique identifier that is
+     * associated with the resource. </p> <p> Array Members: Minimum number of 1 item.
+     * Maximum number of 100 items. </p>
      */
     inline const Aws::Vector<StringFilter>& GetResourceId() const{ return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }

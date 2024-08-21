@@ -94,8 +94,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Service or Amazon Web Services account that invokes the
-     * function. If you specify a service, use <code>SourceArn</code> or
+     * <p>The Amazon Web Servicesservice or Amazon Web Services account that invokes
+     * the function. If you specify a service, use <code>SourceArn</code> or
      * <code>SourceAccount</code> to limit who can invoke the function through that
      * service.</p>
      */
@@ -111,10 +111,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>For Amazon Web Services, the ARN of the Amazon Web Services resource that
-     * invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
-     * <p>Note that Lambda configures the comparison using the <code>StringLike</code>
-     * operator.</p>
+     * <p>For Amazon Web Servicesservices, the ARN of the Amazon Web Services resource
+     * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
@@ -128,10 +128,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>For Amazon Web Service, the ID of the Amazon Web Services account that owns
-     * the resource. Use this together with <code>SourceArn</code> to ensure that the
-     * specified account owns the resource. It is possible for an Amazon S3 bucket to
-     * be deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon Web Servicesservice, the ID of the Amazon Web Services account
+     * that owns the resource. Use this together with <code>SourceArn</code> to ensure
+     * that the specified account owns the resource. It is possible for an Amazon S3
+     * bucket to be deleted by its owner and recreated by another account.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
     inline bool SourceAccountHasBeenSet() const { return m_sourceAccountHasBeenSet; }

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceState.h>
 #include <aws/ec2/model/InstanceStatusSummary.h>
+#include <aws/ec2/model/EbsStatusSummary.h>
 #include <aws/ec2/model/InstanceStatusEvent.h>
 #include <utility>
 
@@ -138,6 +139,19 @@ namespace Model
     inline InstanceStatus& WithSystemStatus(const InstanceStatusSummary& value) { SetSystemStatus(value); return *this;}
     inline InstanceStatus& WithSystemStatus(InstanceStatusSummary&& value) { SetSystemStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Reports impaired functionality that stems from an attached Amazon EBS volume
+     * that is unreachable and unable to complete I/O operations.</p>
+     */
+    inline const EbsStatusSummary& GetAttachedEbsStatus() const{ return m_attachedEbsStatus; }
+    inline bool AttachedEbsStatusHasBeenSet() const { return m_attachedEbsStatusHasBeenSet; }
+    inline void SetAttachedEbsStatus(const EbsStatusSummary& value) { m_attachedEbsStatusHasBeenSet = true; m_attachedEbsStatus = value; }
+    inline void SetAttachedEbsStatus(EbsStatusSummary&& value) { m_attachedEbsStatusHasBeenSet = true; m_attachedEbsStatus = std::move(value); }
+    inline InstanceStatus& WithAttachedEbsStatus(const EbsStatusSummary& value) { SetAttachedEbsStatus(value); return *this;}
+    inline InstanceStatus& WithAttachedEbsStatus(EbsStatusSummary&& value) { SetAttachedEbsStatus(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_availabilityZone;
@@ -160,6 +174,9 @@ namespace Model
 
     InstanceStatusSummary m_systemStatus;
     bool m_systemStatusHasBeenSet = false;
+
+    EbsStatusSummary m_attachedEbsStatus;
+    bool m_attachedEbsStatusHasBeenSet = false;
   };
 
 } // namespace Model

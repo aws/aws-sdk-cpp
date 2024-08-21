@@ -95,7 +95,8 @@ namespace Model
     ///@{
     /**
      * <p> Identifies the source of the event that changed the finding. For example, an
-     * integrated Amazon Web Service or third-party partner integration may call <a
+     * integrated Amazon Web Servicesservice or third-party partner integration may
+     * call <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
      * <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">

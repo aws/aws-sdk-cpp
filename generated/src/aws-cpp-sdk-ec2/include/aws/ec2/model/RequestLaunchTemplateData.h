@@ -136,7 +136,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+     * <p>The ID of the AMI in the format <code>ami-0ac394d6a3example</code>.</p>
      * <p>Alternatively, you can specify a Systems Manager parameter, using one of the
      * following formats. The Systems Manager parameter will resolve to an AMI ID on
      * launch.</p> <p>To reference a public parameter:</p> <ul> <li> <p>

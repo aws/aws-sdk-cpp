@@ -16,6 +16,7 @@
 #include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/ScalingConfig.h>
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
+#include <aws/lambda/model/FilterCriteriaError.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -161,7 +162,11 @@ namespace Model
      * <p>An object that defines the filter criteria that determine whether Lambda
      * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
-     * event filtering</a>.</p>
+     * event filtering</a>.</p> <p>If filter criteria is encrypted, this field shows up
+     * as <code>null</code> in the response of ListEventSourceMapping API calls. You
+     * can view this field in plaintext in the response of GetEventSourceMapping and
+     * DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions
+     * for the correct KMS key.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
@@ -436,6 +441,36 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The ARN of the Key Management Service (KMS) customer managed key that Lambda
+     * uses to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
+     * criteria</a>.</p>
+     */
+    inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
+    inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
+    inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
+    inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
+    inline EventSourceMappingConfiguration& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
+    inline EventSourceMappingConfiguration& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
+    inline EventSourceMappingConfiguration& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains details about an error related to filter criteria
+     * encryption.</p>
+     */
+    inline const FilterCriteriaError& GetFilterCriteriaError() const{ return m_filterCriteriaError; }
+    inline bool FilterCriteriaErrorHasBeenSet() const { return m_filterCriteriaErrorHasBeenSet; }
+    inline void SetFilterCriteriaError(const FilterCriteriaError& value) { m_filterCriteriaErrorHasBeenSet = true; m_filterCriteriaError = value; }
+    inline void SetFilterCriteriaError(FilterCriteriaError&& value) { m_filterCriteriaErrorHasBeenSet = true; m_filterCriteriaError = std::move(value); }
+    inline EventSourceMappingConfiguration& WithFilterCriteriaError(const FilterCriteriaError& value) { SetFilterCriteriaError(value); return *this;}
+    inline EventSourceMappingConfiguration& WithFilterCriteriaError(FilterCriteriaError&& value) { SetFilterCriteriaError(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -528,6 +563,12 @@ namespace Model
 
     DocumentDBEventSourceConfig m_documentDBEventSourceConfig;
     bool m_documentDBEventSourceConfigHasBeenSet = false;
+
+    Aws::String m_kMSKeyArn;
+    bool m_kMSKeyArnHasBeenSet = false;
+
+    FilterCriteriaError m_filterCriteriaError;
+    bool m_filterCriteriaErrorHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

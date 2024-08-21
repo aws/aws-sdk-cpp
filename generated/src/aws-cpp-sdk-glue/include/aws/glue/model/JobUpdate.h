@@ -69,6 +69,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether job run queuing is enabled for the job runs for this
+     * job.</p> <p>A value of true means job run queuing is enabled for the job runs.
+     * If false or not populated, the job runs will not be considered for queueing.</p>
+     * <p>If this field does not match the value set in the job run, then the value
+     * from the job run field will be used.</p>
+     */
+    inline bool GetJobRunQueuingEnabled() const{ return m_jobRunQueuingEnabled; }
+    inline bool JobRunQueuingEnabledHasBeenSet() const { return m_jobRunQueuingEnabledHasBeenSet; }
+    inline void SetJobRunQueuingEnabled(bool value) { m_jobRunQueuingEnabledHasBeenSet = true; m_jobRunQueuingEnabled = value; }
+    inline JobUpdate& WithJobRunQueuingEnabled(bool value) { SetJobRunQueuingEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Description of the job being defined.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -433,6 +447,9 @@ namespace Model
 
     JobMode m_jobMode;
     bool m_jobModeHasBeenSet = false;
+
+    bool m_jobRunQueuingEnabled;
+    bool m_jobRunQueuingEnabledHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

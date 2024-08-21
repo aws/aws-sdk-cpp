@@ -19,26 +19,26 @@ namespace SecurityHub
    * <p>Security Hub provides you with a comprehensive view of your security state in
    * Amazon Web Services and helps you assess your Amazon Web Services environment
    * against security industry standards and best practices.</p> <p>Security Hub
-   * collects security data across Amazon Web Services accounts, Amazon Web Services,
-   * and supported third-party products and helps you analyze your security trends
-   * and identify the highest priority security issues.</p> <p>To help you manage the
-   * security state of your organization, Security Hub supports multiple security
-   * standards. These include the Amazon Web Services Foundational Security Best
-   * Practices (FSBP) standard developed by Amazon Web Services, and external
-   * compliance frameworks such as the Center for Internet Security (CIS), the
-   * Payment Card Industry Data Security Standard (PCI DSS), and the National
+   * collects security data across Amazon Web Services accounts, Amazon Web
+   * Servicesservices, and supported third-party products and helps you analyze your
+   * security trends and identify the highest priority security issues.</p> <p>To
+   * help you manage the security state of your organization, Security Hub supports
+   * multiple security standards. These include the Amazon Web Services Foundational
+   * Security Best Practices (FSBP) standard developed by Amazon Web Services, and
+   * external compliance frameworks such as the Center for Internet Security (CIS),
+   * the Payment Card Industry Data Security Standard (PCI DSS), and the National
    * Institute of Standards and Technology (NIST). Each standard includes several
    * security controls, each of which represents a security best practice. Security
    * Hub runs checks against security controls and generates control findings to help
    * you assess your compliance against security best practices.</p> <p>In addition
    * to generating control findings, Security Hub also receives findings from other
-   * Amazon Web Services, such as Amazon GuardDuty and Amazon Inspector, and
+   * Amazon Web Servicesservices, such as Amazon GuardDuty and Amazon Inspector, and
    * supported third-party products. This gives you a single pane of glass into a
    * variety of security-related issues. You can also send Security Hub findings to
-   * other Amazon Web Services and supported third-party products.</p> <p>Security
-   * Hub offers automation features that help you triage and remediate security
-   * issues. For example, you can use automation rules to automatically update
-   * critical findings when a security check fails. You can also leverage the
+   * other Amazon Web Servicesservices and supported third-party products.</p>
+   * <p>Security Hub offers automation features that help you triage and remediate
+   * security issues. For example, you can use automation rules to automatically
+   * update critical findings when a security check fails. You can also leverage the
    * integration with Amazon EventBridge to trigger automatic responses to specific
    * findings.</p> <p>This guide, the <i>Security Hub API Reference</i>, provides
    * information about the Security Hub API. This includes supported resources, HTTP
@@ -48,15 +48,15 @@ namespace SecurityHub
    * <i>Security Hub User Guide</i> </a>. The user guide explains key concepts and
    * provides procedures that demonstrate how to use Security Hub features. It also
    * provides information about topics such as integrating Security Hub with other
-   * Amazon Web Services.</p> <p>In addition to interacting with Security Hub by
-   * making calls to the Security Hub API, you can use a current version of an Amazon
-   * Web Services command line tool or SDK. Amazon Web Services provides tools and
-   * SDKs that consist of libraries and sample code for various languages and
+   * Amazon Web Servicesservices.</p> <p>In addition to interacting with Security Hub
+   * by making calls to the Security Hub API, you can use a current version of an
+   * Amazon Web Services command line tool or SDK. Amazon Web Services provides tools
+   * and SDKs that consist of libraries and sample code for various languages and
    * platforms, such as PowerShell, Java, Go, Python, C++, and .NET. These tools and
    * SDKs provide convenient, programmatic access to Security Hub and other Amazon
-   * Web Services . They also handle tasks such as signing requests, managing errors,
-   * and retrying requests automatically. For information about installing and using
-   * the Amazon Web Services tools and SDKs, see <a
+   * Web Servicesservices . They also handle tasks such as signing requests, managing
+   * errors, and retrying requests automatically. For information about installing
+   * and using the Amazon Web Services tools and SDKs, see <a
    * href="http://aws.amazon.com/developer/tools/">Tools to Build on Amazon Web
    * Services</a>.</p> <p>With the exception of operations that are related to
    * central configuration, Security Hub API requests are executed only in the Amazon
@@ -2152,12 +2152,14 @@ namespace SecurityHub
         /**
          * <p> <code>UpdateFindings</code> is a deprecated operation. Instead of
          * <code>UpdateFindings</code>, use the <code>BatchUpdateFindings</code>
-         * operation.</p> <p>Updates the <code>Note</code> and <code>RecordState</code> of
-         * the Security Hub-aggregated findings that the filter attributes specify. Any
-         * member account that can view the finding also sees the update to the
-         * finding.</p> <p>Finding updates made with <code>UpdateFindings</code> might not
-         * be persisted if the same finding is later updated by the finding provider
-         * through the <code>BatchImportFindings</code> operation.</p><p><h3>See Also:</h3>
+         * operation.</p> <p>The <code>UpdateFindings</code> operation updates the
+         * <code>Note</code> and <code>RecordState</code> of the Security Hub aggregated
+         * findings that the filter attributes specify. Any member account that can view
+         * the finding can also see the update to the finding.</p> <p>Finding updates made
+         * with <code>UpdateFindings</code> aren't persisted if the same finding is later
+         * updated by the finding provider through the <code>BatchImportFindings</code>
+         * operation. In addition, Security Hub doesn't record updates made with
+         * <code>UpdateFindings</code> in the finding history.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindings">AWS
          * API Reference</a></p>

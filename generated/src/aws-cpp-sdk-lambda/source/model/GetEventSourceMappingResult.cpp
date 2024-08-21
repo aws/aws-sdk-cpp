@@ -212,6 +212,18 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("KMSKeyArn"))
+  {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("FilterCriteriaError"))
+  {
+    m_filterCriteriaError = jsonValue.GetObject("FilterCriteriaError");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
