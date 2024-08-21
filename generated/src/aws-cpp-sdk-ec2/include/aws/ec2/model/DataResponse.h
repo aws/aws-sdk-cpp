@@ -90,9 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The metric used for the network performance request. Only
-     * <code>aggregate-latency</code> is supported, which shows network latency during
-     * a specified period. </p>
+     * <p>The metric used for the network performance request.</p>
      */
     inline const MetricType& GetMetric() const{ return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }

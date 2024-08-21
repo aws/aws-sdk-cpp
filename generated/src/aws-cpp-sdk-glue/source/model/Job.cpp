@@ -22,6 +22,8 @@ Job::Job() :
     m_nameHasBeenSet(false),
     m_jobMode(JobMode::NOT_SET),
     m_jobModeHasBeenSet(false),
+    m_jobRunQueuingEnabled(false),
+    m_jobRunQueuingEnabledHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -74,6 +76,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_jobMode = JobModeMapper::GetJobModeForName(jsonValue.GetString("JobMode"));
 
     m_jobModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobRunQueuingEnabled"))
+  {
+    m_jobRunQueuingEnabled = jsonValue.GetBool("JobRunQueuingEnabled");
+
+    m_jobRunQueuingEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -262,6 +271,12 @@ JsonValue Job::Jsonize() const
   if(m_jobModeHasBeenSet)
   {
    payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
+  }
+
+  if(m_jobRunQueuingEnabledHasBeenSet)
+  {
+   payload.WithBool("JobRunQueuingEnabled", m_jobRunQueuingEnabled);
+
   }
 
   if(m_descriptionHasBeenSet)

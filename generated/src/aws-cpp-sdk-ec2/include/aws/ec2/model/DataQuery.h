@@ -91,8 +91,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The metric, <code>aggregation-latency</code>, indicating that network latency
-     * is aggregated for the query. This is the only supported metric.</p>
+     * <p>The metric used for the network performance request.</p>
      */
     inline const MetricType& GetMetric() const{ return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }

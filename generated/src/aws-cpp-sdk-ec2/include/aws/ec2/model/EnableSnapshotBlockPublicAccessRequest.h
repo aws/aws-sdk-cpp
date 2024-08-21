@@ -43,17 +43,12 @@ namespace Model
      * <code>block-all-sharing</code> - Prevents all public sharing of snapshots in the
      * Region. Users in the account will no longer be able to request new public
      * sharing. Additionally, snapshots that are already publicly shared are treated as
-     * private and they are no longer publicly available.</p>  <p>If you enable
-     * block public access for snapshots in <code>block-all-sharing</code> mode, it
-     * does not change the permissions for snapshots that are already publicly shared.
-     * Instead, it prevents these snapshots from be publicly visible and publicly
-     * accessible. Therefore, the attributes for these snapshots still indicate that
-     * they are publicly shared, even though they are not publicly available.</p>
-     *  </li> <li> <p> <code>block-new-sharing</code> - Prevents only new public
-     * sharing of snapshots in the Region. Users in the account will no longer be able
-     * to request new public sharing. However, snapshots that are already publicly
-     * shared, remain publicly available.</p> </li> </ul> <p> <code>unblocked</code> is
-     * not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
+     * private and they are no longer publicly available.</p> </li> <li> <p>
+     * <code>block-new-sharing</code> - Prevents only new public sharing of snapshots
+     * in the Region. Users in the account will no longer be able to request new public
+     * sharing. However, snapshots that are already publicly shared, remain publicly
+     * available.</p> </li> </ul> <p> <code>unblocked</code> is not a valid value for
+     * <b>EnableSnapshotBlockPublicAccess</b>.</p>
      */
     inline const SnapshotBlockPublicAccessState& GetState() const{ return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

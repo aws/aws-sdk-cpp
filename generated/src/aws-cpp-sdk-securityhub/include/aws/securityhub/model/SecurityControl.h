@@ -46,8 +46,8 @@ namespace Model
     ///@{
     /**
      * <p> The unique identifier of a security control across standards. Values for
-     * this field typically consist of an Amazon Web Service name and a number, such as
-     * APIGateway.3. </p>
+     * this field typically consist of an Amazon Web Servicesservice name and a number,
+     * such as APIGateway.3. </p>
      */
     inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
@@ -153,8 +153,9 @@ namespace Model
     /**
      * <p> Identifies whether customizable properties of a security control are
      * reflected in Security Hub findings. A status of <code>READY</code> indicates
-     * findings include the current parameter values. A status of <code>UPDATING</code>
-     * indicates that all findings may not include the current parameter values. </p>
+     * that Security Hub uses the current control parameter values when running
+     * security checks of the control. A status of <code>UPDATING</code> indicates that
+     * all security checks might not use the current parameter values. </p>
      */
     inline const UpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
