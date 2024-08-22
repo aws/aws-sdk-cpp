@@ -1,5 +1,6 @@
 package com.amazonaws.util.awsclientgenerator.domainmodels.endpoints;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -9,8 +10,21 @@ import com.google.gson.JsonPrimitive;
 
 import java.lang.reflect.Type;
 import java.util.Map;
+import java.util.Vector;
 
 public class EndpointParameterValueDeserializer implements JsonDeserializer<EndpointParameterValue> {
+
+    public static boolean getArrayOfStrings(JsonArray array, Vector<String> result) {
+        boolean status = true;
+        for (JsonElement arrayElement : array) {
+            if (!arrayElement.isJsonPrimitive() || !arrayElement.getAsJsonPrimitive().isString()) {
+                status = false;
+                break;
+            }
+            result.add(arrayElement.getAsJsonPrimitive().getAsString());
+        }
+        return status;
+    }
 
     @Override
     public EndpointParameterValue deserialize(JsonElement jsonElement, Type type,
@@ -20,6 +34,7 @@ public class EndpointParameterValueDeserializer implements JsonDeserializer<Endp
             throw new JsonParseException("Unexpected params JSON value type, primitive expected!");
         }
         JsonPrimitive primitive = jsonElement.getAsJsonPrimitive();
+        
         if (primitive.isBoolean()) {
             retValue.setType(EndpointParameterValue.ParameterType.BOOLEAN);
             retValue.setBoolValue(primitive.getAsBoolean());
@@ -29,7 +44,16 @@ public class EndpointParameterValueDeserializer implements JsonDeserializer<Endp
         } else if (primitive.isNumber()) {
             retValue.setType(EndpointParameterValue.ParameterType.INTEGER);
             retValue.setIntValue(primitive.getAsInt());
-        } else {
+        } else if (primitive.isJsonArray())
+        {
+            Vector<String> arrayOfStrings = new Vector<>();
+            if(getArrayOfStrings(primitive.getAsJsonArray(), arrayOfStrings))
+            {
+                retValue.setType(EndpointParameterValue.ParameterType.STRING_ARRAY);
+                retValue.setStrArrayValue(arrayOfStrings);
+            }
+        }
+        else {
             throw new JsonParseException("Unexpected EndpointParameterValue value, primitive expected");
         }
 
