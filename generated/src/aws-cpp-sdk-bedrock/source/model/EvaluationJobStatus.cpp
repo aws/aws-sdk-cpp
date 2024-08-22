@@ -25,6 +25,7 @@ namespace Aws
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 
         EvaluationJobStatus GetEvaluationJobStatusForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == Stopped_HASH)
           {
             return EvaluationJobStatus::Stopped;
+          }
+          else if (hashCode == Deleting_HASH)
+          {
+            return EvaluationJobStatus::Deleting;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "Stopping";
           case EvaluationJobStatus::Stopped:
             return "Stopped";
+          case EvaluationJobStatus::Deleting:
+            return "Deleting";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

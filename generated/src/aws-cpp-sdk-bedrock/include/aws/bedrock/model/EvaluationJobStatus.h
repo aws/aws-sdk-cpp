@@ -20,7 +20,8 @@ namespace Model
     Completed,
     Failed,
     Stopping,
-    Stopped
+    Stopped,
+    Deleting
   };
 
 namespace EvaluationJobStatusMapper

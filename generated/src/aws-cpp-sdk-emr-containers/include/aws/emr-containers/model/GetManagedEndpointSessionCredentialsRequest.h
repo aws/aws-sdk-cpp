@@ -78,7 +78,7 @@ namespace Model
     ///@{
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is ���TOKEN.”</p>
+     * field is “TOKEN.”</p>
      */
     inline const Aws::String& GetCredentialType() const{ return m_credentialType; }
     inline bool CredentialTypeHasBeenSet() const { return m_credentialTypeHasBeenSet; }

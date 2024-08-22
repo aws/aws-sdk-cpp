@@ -45,7 +45,7 @@ namespace Model
      * <p>Used to specify supported built-in prompt datasets. Valid values are
      * <code>Builtin.Bold</code>, <code>Builtin.BoolQ</code>,
      * <code>Builtin.NaturalQuestions</code>, <code>Builtin.Gigaword</code>,
-     * <code>Builtin.RealToxicityPrompts</code>, <code>Builtin.TriviaQa</code>,
+     * <code>Builtin.RealToxicityPrompts</code>, <code>Builtin.TriviaQA</code>,
      * <code>Builtin.T-Rex</code>, <code>Builtin.WomensEcommerceClothingReviews</code>
      * and <code>Builtin.Wikitext2</code>.</p>
      */

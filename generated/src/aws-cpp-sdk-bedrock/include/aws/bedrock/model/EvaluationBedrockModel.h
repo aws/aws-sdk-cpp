@@ -28,7 +28,7 @@ namespace Model
    * evaluation job. Each Amazon Bedrock model supports different
    * <code>inferenceParams</code>. To learn more about supported inference parameters
    * for Amazon Bedrock models, see <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html">Inference
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
    * parameters for foundation models</a>.</p> <p>The <code>inferenceParams</code>
    * are specified using JSON. To successfully insert JSON as string make sure that
    * all quotations are properly escaped. For example,

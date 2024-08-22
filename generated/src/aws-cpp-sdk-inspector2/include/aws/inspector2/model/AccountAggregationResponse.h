@@ -55,6 +55,26 @@ namespace Model
 
     ///@{
     /**
+     * <p> The number of findings that have an exploit available. </p>
+     */
+    inline long long GetExploitAvailableCount() const{ return m_exploitAvailableCount; }
+    inline bool ExploitAvailableCountHasBeenSet() const { return m_exploitAvailableCountHasBeenSet; }
+    inline void SetExploitAvailableCount(long long value) { m_exploitAvailableCountHasBeenSet = true; m_exploitAvailableCount = value; }
+    inline AccountAggregationResponse& WithExploitAvailableCount(long long value) { SetExploitAvailableCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Details about the number of fixes. </p>
+     */
+    inline long long GetFixAvailableCount() const{ return m_fixAvailableCount; }
+    inline bool FixAvailableCountHasBeenSet() const { return m_fixAvailableCountHasBeenSet; }
+    inline void SetFixAvailableCount(long long value) { m_fixAvailableCountHasBeenSet = true; m_fixAvailableCount = value; }
+    inline AccountAggregationResponse& WithFixAvailableCount(long long value) { SetFixAvailableCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of findings by severity.</p>
      */
     inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
@@ -68,6 +88,12 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    long long m_exploitAvailableCount;
+    bool m_exploitAvailableCountHasBeenSet = false;
+
+    long long m_fixAvailableCount;
+    bool m_fixAvailableCountHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
     bool m_severityCountsHasBeenSet = false;

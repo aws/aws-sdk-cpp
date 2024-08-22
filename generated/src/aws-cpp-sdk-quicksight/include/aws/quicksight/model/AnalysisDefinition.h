@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/AnalysisDefaults.h>
 #include <aws/quicksight/model/AssetOptions.h>
+#include <aws/quicksight/model/QueryExecutionOptions.h>
 #include <aws/quicksight/model/DataSetIdentifierDeclaration.h>
 #include <aws/quicksight/model/SheetDefinition.h>
 #include <aws/quicksight/model/CalculatedField.h>
@@ -162,6 +163,16 @@ namespace Model
     inline AnalysisDefinition& WithOptions(const AssetOptions& value) { SetOptions(value); return *this;}
     inline AnalysisDefinition& WithOptions(AssetOptions&& value) { SetOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const QueryExecutionOptions& GetQueryExecutionOptions() const{ return m_queryExecutionOptions; }
+    inline bool QueryExecutionOptionsHasBeenSet() const { return m_queryExecutionOptionsHasBeenSet; }
+    inline void SetQueryExecutionOptions(const QueryExecutionOptions& value) { m_queryExecutionOptionsHasBeenSet = true; m_queryExecutionOptions = value; }
+    inline void SetQueryExecutionOptions(QueryExecutionOptions&& value) { m_queryExecutionOptionsHasBeenSet = true; m_queryExecutionOptions = std::move(value); }
+    inline AnalysisDefinition& WithQueryExecutionOptions(const QueryExecutionOptions& value) { SetQueryExecutionOptions(value); return *this;}
+    inline AnalysisDefinition& WithQueryExecutionOptions(QueryExecutionOptions&& value) { SetQueryExecutionOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<DataSetIdentifierDeclaration> m_dataSetIdentifierDeclarations;
@@ -187,6 +198,9 @@ namespace Model
 
     AssetOptions m_options;
     bool m_optionsHasBeenSet = false;
+
+    QueryExecutionOptions m_queryExecutionOptions;
+    bool m_queryExecutionOptionsHasBeenSet = false;
   };
 
 } // namespace Model

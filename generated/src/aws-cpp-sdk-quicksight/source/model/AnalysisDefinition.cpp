@@ -26,7 +26,8 @@ AnalysisDefinition::AnalysisDefinition() :
     m_filterGroupsHasBeenSet(false),
     m_columnConfigurationsHasBeenSet(false),
     m_analysisDefaultsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_optionsHasBeenSet(false),
+    m_queryExecutionOptionsHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,13 @@ AnalysisDefinition& AnalysisDefinition::operator =(JsonView jsonValue)
     m_optionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QueryExecutionOptions"))
+  {
+    m_queryExecutionOptions = jsonValue.GetObject("QueryExecutionOptions");
+
+    m_queryExecutionOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +202,12 @@ JsonValue AnalysisDefinition::Jsonize() const
   if(m_optionsHasBeenSet)
   {
    payload.WithObject("Options", m_options.Jsonize());
+
+  }
+
+  if(m_queryExecutionOptionsHasBeenSet)
+  {
+   payload.WithObject("QueryExecutionOptions", m_queryExecutionOptions.Jsonize());
 
   }
 
