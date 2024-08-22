@@ -138,6 +138,10 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
                 AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, "Endpoint str eval parameter: " << parameter.GetName() << " = " << parameter.GetStrValueNoCheck());
                 crtRequestCtx.AddString(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), Aws::Crt::ByteCursorFromCString(parameter.GetStrValueNoCheck().c_str()));
             }
+            else if(EndpointParameter::ParameterType::STRING_ARRAY == parameter.GetStoredType())
+            {
+
+            }
             else
             {
                 return ResolveEndpointOutcome(
