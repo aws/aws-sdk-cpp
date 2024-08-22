@@ -140,7 +140,8 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
             }
             else if(EndpointParameter::ParameterType::STRING_ARRAY == parameter.GetStoredType())
             {
-                Aws::Vector<Aws::Crt::ByteCursor> byteCursorArray;
+                
+                Aws::Crt::Vector<Aws::Crt::ByteCursor> byteCursorArray;
                 byteCursorArray.reserve(parameter.GetStrArrayValueNoCheck().size());
                 Aws::OStringStream os;
                 for (const auto &e: parameter.GetStrArrayValueNoCheck())
