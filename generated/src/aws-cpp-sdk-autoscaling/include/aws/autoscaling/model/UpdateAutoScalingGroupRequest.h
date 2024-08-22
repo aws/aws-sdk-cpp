@@ -170,7 +170,7 @@ namespace Model
     ///@{
     /**
      * <p>A comma-separated value string of one or more health check types.</p> <p>The
-     * valid values are <code>EC2</code>, <code>ELB</code>, and
+     * valid values are <code>EC2</code>, <code>EBS</code>, <code>ELB</code>, and
      * <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and
      * cannot be disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health

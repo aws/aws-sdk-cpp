@@ -20,6 +20,7 @@ namespace Model
 
 RegisteredUserDashboardFeatureConfigurations::RegisteredUserDashboardFeatureConfigurations() : 
     m_statePersistenceHasBeenSet(false),
+    m_sharedViewHasBeenSet(false),
     m_bookmarksHasBeenSet(false)
 {
 }
@@ -39,6 +40,13 @@ RegisteredUserDashboardFeatureConfigurations& RegisteredUserDashboardFeatureConf
     m_statePersistenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SharedView"))
+  {
+    m_sharedView = jsonValue.GetObject("SharedView");
+
+    m_sharedViewHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Bookmarks"))
   {
     m_bookmarks = jsonValue.GetObject("Bookmarks");
@@ -56,6 +64,12 @@ JsonValue RegisteredUserDashboardFeatureConfigurations::Jsonize() const
   if(m_statePersistenceHasBeenSet)
   {
    payload.WithObject("StatePersistence", m_statePersistence.Jsonize());
+
+  }
+
+  if(m_sharedViewHasBeenSet)
+  {
+   payload.WithObject("SharedView", m_sharedView.Jsonize());
 
   }
 

@@ -78,6 +78,34 @@ namespace Bedrock
         virtual ~BedrockClient();
 
         /**
+         * <p>Creates a batch deletion job. A model evaluation job can only be deleted if
+         * it has following status <code>FAILED</code>, <code>COMPLETED</code>, and
+         * <code>STOPPED</code>. You can request up to 25 model evaluation jobs be deleted
+         * in a single request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteEvaluationJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteEvaluationJobOutcome BatchDeleteEvaluationJob(const Model::BatchDeleteEvaluationJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteEvaluationJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteEvaluationJobRequestT = Model::BatchDeleteEvaluationJobRequest>
+        Model::BatchDeleteEvaluationJobOutcomeCallable BatchDeleteEvaluationJobCallable(const BatchDeleteEvaluationJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::BatchDeleteEvaluationJob, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteEvaluationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteEvaluationJobRequestT = Model::BatchDeleteEvaluationJobRequest>
+        void BatchDeleteEvaluationJobAsync(const BatchDeleteEvaluationJobRequestT& request, const BatchDeleteEvaluationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::BatchDeleteEvaluationJob, request, handler, context);
+        }
+
+        /**
          * <p>API operation for creating and managing Amazon Bedrock automatic model
          * evaluation jobs and model evaluation jobs that use human workers. To learn more
          * about the requirements for creating a model evaluation job see, <a
@@ -247,6 +275,34 @@ namespace Bedrock
         }
 
         /**
+         * <p>Creates a model import job to import model that you have customized in other
+         * environments, such as Amazon SageMaker. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+         * a customized model</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateModelImportJobOutcome CreateModelImportJob(const Model::CreateModelImportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateModelImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateModelImportJobRequestT = Model::CreateModelImportJobRequest>
+        Model::CreateModelImportJobOutcomeCallable CreateModelImportJobCallable(const CreateModelImportJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateModelImportJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateModelImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateModelImportJobRequestT = Model::CreateModelImportJobRequest>
+        void CreateModelImportJobAsync(const CreateModelImportJobRequestT& request, const CreateModelImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateModelImportJob, request, handler, context);
+        }
+
+        /**
          * <p>Creates a job to invoke a model on multiple prompts (batch inference). Format
          * your data according to <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-prerq.html#batch-inference-data">Format
@@ -370,6 +426,36 @@ namespace Bedrock
         void DeleteGuardrailAsync(const DeleteGuardrailRequestT& request, const DeleteGuardrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::DeleteGuardrail, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a custom model that you imported earlier. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+         * a customized model</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteImportedModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteImportedModelOutcome DeleteImportedModel(const Model::DeleteImportedModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteImportedModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteImportedModelRequestT = Model::DeleteImportedModelRequest>
+        Model::DeleteImportedModelOutcomeCallable DeleteImportedModelCallable(const DeleteImportedModelRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteImportedModel, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteImportedModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteImportedModelRequestT = Model::DeleteImportedModelRequest>
+        void DeleteImportedModelAsync(const DeleteImportedModelRequestT& request, const DeleteImportedModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteImportedModel, request, handler, context);
         }
 
         /**
@@ -539,6 +625,32 @@ namespace Bedrock
         }
 
         /**
+         * <p>Gets properties associated with a customized model you imported.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetImportedModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImportedModelOutcome GetImportedModel(const Model::GetImportedModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetImportedModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetImportedModelRequestT = Model::GetImportedModelRequest>
+        Model::GetImportedModelOutcomeCallable GetImportedModelCallable(const GetImportedModelRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetImportedModel, request);
+        }
+
+        /**
+         * An Async wrapper for GetImportedModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetImportedModelRequestT = Model::GetImportedModelRequest>
+        void GetImportedModelAsync(const GetImportedModelRequestT& request, const GetImportedModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetImportedModel, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about a model copy job. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
          * models to be used in other regions</a> in the <a
@@ -595,6 +707,36 @@ namespace Bedrock
         void GetModelCustomizationJobAsync(const GetModelCustomizationJobRequestT& request, const GetModelCustomizationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::GetModelCustomizationJob, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the properties associated with import model job, including the
+         * status of the job. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+         * a customized model</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetModelImportJobOutcome GetModelImportJob(const Model::GetModelImportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetModelImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetModelImportJobRequestT = Model::GetModelImportJobRequest>
+        Model::GetModelImportJobOutcomeCallable GetModelImportJobCallable(const GetModelImportJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetModelImportJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetModelImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetModelImportJobRequestT = Model::GetModelImportJobRequest>
+        void GetModelImportJobAsync(const GetModelImportJobRequestT& request, const GetModelImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetModelImportJob, request, handler, context);
         }
 
         /**
@@ -799,6 +941,36 @@ namespace Bedrock
         }
 
         /**
+         * <p>Returns a list of models you've imported. You can filter the results to
+         * return based on one or more criteria. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+         * a customized model</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListImportedModels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImportedModelsOutcome ListImportedModels(const Model::ListImportedModelsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListImportedModels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListImportedModelsRequestT = Model::ListImportedModelsRequest>
+        Model::ListImportedModelsOutcomeCallable ListImportedModelsCallable(const ListImportedModelsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListImportedModels, request);
+        }
+
+        /**
+         * An Async wrapper for ListImportedModels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListImportedModelsRequestT = Model::ListImportedModelsRequest>
+        void ListImportedModelsAsync(const ListImportedModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListImportedModelsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListImportedModels, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of model copy jobs that you have submitted. You can filter the
          * jobs to return based on one or more criteria. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
@@ -857,6 +1029,36 @@ namespace Bedrock
         void ListModelCustomizationJobsAsync(const ListModelCustomizationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelCustomizationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListModelCustomizationJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of import jobs you've submitted. You can filter the results to
+         * return based on one or more criteria. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+         * a customized model</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelImportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelImportJobsOutcome ListModelImportJobs(const Model::ListModelImportJobsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListModelImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListModelImportJobsRequestT = Model::ListModelImportJobsRequest>
+        Model::ListModelImportJobsOutcomeCallable ListModelImportJobsCallable(const ListModelImportJobsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListModelImportJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListModelImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListModelImportJobsRequestT = Model::ListModelImportJobsRequest>
+        void ListModelImportJobsAsync(const ListModelImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelImportJobsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListModelImportJobs, request, handler, context);
         }
 
         /**

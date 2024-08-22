@@ -51,7 +51,8 @@ namespace Model
     us_isob_east_1,
     ap_southeast_4,
     il_central_1,
-    ca_west_1
+    ca_west_1,
+    ap_southeast_5
   };
 
 namespace CloudWatchRegionMapper

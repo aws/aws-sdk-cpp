@@ -20,6 +20,10 @@ namespace Model
 
 FindingTypeAggregationResponse::FindingTypeAggregationResponse() : 
     m_accountIdHasBeenSet(false),
+    m_exploitAvailableCount(0),
+    m_exploitAvailableCountHasBeenSet(false),
+    m_fixAvailableCount(0),
+    m_fixAvailableCountHasBeenSet(false),
     m_severityCountsHasBeenSet(false)
 {
 }
@@ -39,6 +43,20 @@ FindingTypeAggregationResponse& FindingTypeAggregationResponse::operator =(JsonV
     m_accountIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("exploitAvailableCount"))
+  {
+    m_exploitAvailableCount = jsonValue.GetInt64("exploitAvailableCount");
+
+    m_exploitAvailableCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fixAvailableCount"))
+  {
+    m_fixAvailableCount = jsonValue.GetInt64("fixAvailableCount");
+
+    m_fixAvailableCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
@@ -56,6 +74,18 @@ JsonValue FindingTypeAggregationResponse::Jsonize() const
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("accountId", m_accountId);
+
+  }
+
+  if(m_exploitAvailableCountHasBeenSet)
+  {
+   payload.WithInt64("exploitAvailableCount", m_exploitAvailableCount);
+
+  }
+
+  if(m_fixAvailableCountHasBeenSet)
+  {
+   payload.WithInt64("fixAvailableCount", m_fixAvailableCount);
 
   }
 

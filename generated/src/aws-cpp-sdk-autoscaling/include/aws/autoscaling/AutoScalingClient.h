@@ -2067,9 +2067,9 @@ namespace AutoScaling
         /**
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health
-         * checks for instances in an Auto Scaling group</a> in the <i>Amazon EC2 Auto
-         * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/set-up-a-custom-health-check.html">Set
+         * up a custom health check for your Auto Scaling group</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">AWS
          * API Reference</a></p>
          */
