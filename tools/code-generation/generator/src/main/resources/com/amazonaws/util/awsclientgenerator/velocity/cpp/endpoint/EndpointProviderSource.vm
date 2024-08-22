@@ -37,6 +37,8 @@ namespace Endpoint
 #foreach($memberEntry in $serviceModel.clientContextParams.entrySet())
 #if(${memberEntry.value.type} == "boolean")
 #set($paramType = "bool")
+#elseif (${memberEntry.value.type} == " ")
+#set($paramType = "bool")
 #else
 #set($paramType = "Aws::String")
 #end
