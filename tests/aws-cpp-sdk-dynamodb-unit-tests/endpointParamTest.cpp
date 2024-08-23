@@ -78,12 +78,11 @@ TEST_F(EndpointTest, testStringArrayParam) {
 
     Aws::Endpoint::EndpointParameters parameters;
     // Static context parameters
-    parameters.emplace_back(Aws::String("stringArrayParam"), Aws::Vector<Aws::String>{"staticValue1"}, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    parameters.emplace_back(Aws::String("stringArrayParam"), Aws::Vector<Aws::String>{"staticValue2","staticValue1"}, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
 
     auto res = endpointProvider_sp->ResolveEndpoint(parameters);
     EXPECT_TRUE(res.IsSuccess());
     //std::cout<<"url="<<res.GetResult().GetURL()<<std::endl;
-    EXPECT_EQ( res.GetResult().GetURL(), "https://example.com/staticValue1");
+    EXPECT_EQ( res.GetResult().GetURL(), "https://example.com/staticValue2");
    
 }
-
