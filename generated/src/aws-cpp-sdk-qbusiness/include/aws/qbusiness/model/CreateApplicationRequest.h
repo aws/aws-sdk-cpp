@@ -7,8 +7,9 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/EncryptionConfiguration.h>
+#include <aws/qbusiness/model/IdentityType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/EncryptionConfiguration.h>
 #include <aws/qbusiness/model/AttachmentsConfiguration.h>
 #include <aws/qbusiness/model/QAppsConfiguration.h>
 #include <aws/qbusiness/model/PersonalizationConfiguration.h>
@@ -70,6 +71,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The authentication type being used by a Amazon Q Business application.</p>
+     */
+    inline const IdentityType& GetIdentityType() const{ return m_identityType; }
+    inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
+    inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
+    inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
+    inline CreateApplicationRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
+    inline CreateApplicationRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of an identity provider being used by an
+     * Amazon Q Business application.</p>
+     */
+    inline const Aws::String& GetIamIdentityProviderArn() const{ return m_iamIdentityProviderArn; }
+    inline bool IamIdentityProviderArnHasBeenSet() const { return m_iamIdentityProviderArnHasBeenSet; }
+    inline void SetIamIdentityProviderArn(const Aws::String& value) { m_iamIdentityProviderArnHasBeenSet = true; m_iamIdentityProviderArn = value; }
+    inline void SetIamIdentityProviderArn(Aws::String&& value) { m_iamIdentityProviderArnHasBeenSet = true; m_iamIdentityProviderArn = std::move(value); }
+    inline void SetIamIdentityProviderArn(const char* value) { m_iamIdentityProviderArnHasBeenSet = true; m_iamIdentityProviderArn.assign(value); }
+    inline CreateApplicationRequest& WithIamIdentityProviderArn(const Aws::String& value) { SetIamIdentityProviderArn(value); return *this;}
+    inline CreateApplicationRequest& WithIamIdentityProviderArn(Aws::String&& value) { SetIamIdentityProviderArn(std::move(value)); return *this;}
+    inline CreateApplicationRequest& WithIamIdentityProviderArn(const char* value) { SetIamIdentityProviderArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
      * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
@@ -81,6 +109,21 @@ namespace Model
     inline CreateApplicationRequest& WithIdentityCenterInstanceArn(const Aws::String& value) { SetIdentityCenterInstanceArn(value); return *this;}
     inline CreateApplicationRequest& WithIdentityCenterInstanceArn(Aws::String&& value) { SetIdentityCenterInstanceArn(std::move(value)); return *this;}
     inline CreateApplicationRequest& WithIdentityCenterInstanceArn(const char* value) { SetIdentityCenterInstanceArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The OIDC client ID for a Amazon Q Business application.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetClientIdsForOIDC() const{ return m_clientIdsForOIDC; }
+    inline bool ClientIdsForOIDCHasBeenSet() const { return m_clientIdsForOIDCHasBeenSet; }
+    inline void SetClientIdsForOIDC(const Aws::Vector<Aws::String>& value) { m_clientIdsForOIDCHasBeenSet = true; m_clientIdsForOIDC = value; }
+    inline void SetClientIdsForOIDC(Aws::Vector<Aws::String>&& value) { m_clientIdsForOIDCHasBeenSet = true; m_clientIdsForOIDC = std::move(value); }
+    inline CreateApplicationRequest& WithClientIdsForOIDC(const Aws::Vector<Aws::String>& value) { SetClientIdsForOIDC(value); return *this;}
+    inline CreateApplicationRequest& WithClientIdsForOIDC(Aws::Vector<Aws::String>&& value) { SetClientIdsForOIDC(std::move(value)); return *this;}
+    inline CreateApplicationRequest& AddClientIdsForOIDC(const Aws::String& value) { m_clientIdsForOIDCHasBeenSet = true; m_clientIdsForOIDC.push_back(value); return *this; }
+    inline CreateApplicationRequest& AddClientIdsForOIDC(Aws::String&& value) { m_clientIdsForOIDCHasBeenSet = true; m_clientIdsForOIDC.push_back(std::move(value)); return *this; }
+    inline CreateApplicationRequest& AddClientIdsForOIDC(const char* value) { m_clientIdsForOIDCHasBeenSet = true; m_clientIdsForOIDC.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -189,8 +232,17 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
+    IdentityType m_identityType;
+    bool m_identityTypeHasBeenSet = false;
+
+    Aws::String m_iamIdentityProviderArn;
+    bool m_iamIdentityProviderArnHasBeenSet = false;
+
     Aws::String m_identityCenterInstanceArn;
     bool m_identityCenterInstanceArnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_clientIdsForOIDC;
+    bool m_clientIdsForOIDCHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

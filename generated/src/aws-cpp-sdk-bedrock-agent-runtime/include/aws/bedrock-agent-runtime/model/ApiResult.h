@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/ConfirmationState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent-runtime/model/ResponseState.h>
 #include <aws/bedrock-agent-runtime/model/ContentBody.h>
@@ -75,6 +76,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Controls the API operations or functions to invoke based on the user
+     * confirmation.</p>
+     */
+    inline const ConfirmationState& GetConfirmationState() const{ return m_confirmationState; }
+    inline bool ConfirmationStateHasBeenSet() const { return m_confirmationStateHasBeenSet; }
+    inline void SetConfirmationState(const ConfirmationState& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = value; }
+    inline void SetConfirmationState(ConfirmationState&& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = std::move(value); }
+    inline ApiResult& WithConfirmationState(const ConfirmationState& value) { SetConfirmationState(value); return *this;}
+    inline ApiResult& WithConfirmationState(ConfirmationState&& value) { SetConfirmationState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The HTTP method for the API operation.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
@@ -139,6 +153,9 @@ namespace Model
 
     Aws::String m_apiPath;
     bool m_apiPathHasBeenSet = false;
+
+    ConfirmationState m_confirmationState;
+    bool m_confirmationStateHasBeenSet = false;
 
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet = false;

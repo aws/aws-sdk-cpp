@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/ConfirmationState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent-runtime/model/ResponseState.h>
 #include <aws/bedrock-agent-runtime/model/ContentBody.h>
@@ -61,6 +62,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains the user confirmation information about the function that was
+     * called.</p>
+     */
+    inline const ConfirmationState& GetConfirmationState() const{ return m_confirmationState; }
+    inline bool ConfirmationStateHasBeenSet() const { return m_confirmationStateHasBeenSet; }
+    inline void SetConfirmationState(const ConfirmationState& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = value; }
+    inline void SetConfirmationState(ConfirmationState&& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = std::move(value); }
+    inline FunctionResult& WithConfirmationState(const ConfirmationState& value) { SetConfirmationState(value); return *this;}
+    inline FunctionResult& WithConfirmationState(ConfirmationState&& value) { SetConfirmationState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the function that was called.</p>
      */
     inline const Aws::String& GetFunction() const{ return m_function; }
@@ -111,6 +125,9 @@ namespace Model
 
     Aws::String m_actionGroup;
     bool m_actionGroupHasBeenSet = false;
+
+    ConfirmationState m_confirmationState;
+    bool m_confirmationStateHasBeenSet = false;
 
     Aws::String m_function;
     bool m_functionHasBeenSet = false;

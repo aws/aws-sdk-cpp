@@ -20,7 +20,8 @@ UpdateWebExperienceRequest::UpdateWebExperienceRequest() :
     m_subtitleHasBeenSet(false),
     m_welcomeMessageHasBeenSet(false),
     m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
-    m_samplePromptsControlModeHasBeenSet(false)
+    m_samplePromptsControlModeHasBeenSet(false),
+    m_identityProviderConfigurationHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,12 @@ Aws::String UpdateWebExperienceRequest::SerializePayload() const
   if(m_samplePromptsControlModeHasBeenSet)
   {
    payload.WithString("samplePromptsControlMode", WebExperienceSamplePromptsControlModeMapper::GetNameForWebExperienceSamplePromptsControlMode(m_samplePromptsControlMode));
+  }
+
+  if(m_identityProviderConfigurationHasBeenSet)
+  {
+   payload.WithObject("identityProviderConfiguration", m_identityProviderConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

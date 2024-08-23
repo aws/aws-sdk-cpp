@@ -18,6 +18,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetApplicationResult::GetApplicationResult() : 
+    m_identityType(IdentityType::NOT_SET),
     m_status(ApplicationStatus::NOT_SET)
 {
 }
@@ -46,6 +47,18 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("applicationArn"))
   {
     m_applicationArn = jsonValue.GetString("applicationArn");
+
+  }
+
+  if(jsonValue.ValueExists("identityType"))
+  {
+    m_identityType = IdentityTypeMapper::GetIdentityTypeForName(jsonValue.GetString("identityType"));
+
+  }
+
+  if(jsonValue.ValueExists("iamIdentityProviderArn"))
+  {
+    m_iamIdentityProviderArn = jsonValue.GetString("iamIdentityProviderArn");
 
   }
 
@@ -113,6 +126,21 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
   {
     m_personalizationConfiguration = jsonValue.GetObject("personalizationConfiguration");
 
+  }
+
+  if(jsonValue.ValueExists("autoSubscriptionConfiguration"))
+  {
+    m_autoSubscriptionConfiguration = jsonValue.GetObject("autoSubscriptionConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("clientIdsForOIDC"))
+  {
+    Aws::Utils::Array<JsonView> clientIdsForOIDCJsonList = jsonValue.GetArray("clientIdsForOIDC");
+    for(unsigned clientIdsForOIDCIndex = 0; clientIdsForOIDCIndex < clientIdsForOIDCJsonList.GetLength(); ++clientIdsForOIDCIndex)
+    {
+      m_clientIdsForOIDC.push_back(clientIdsForOIDCJsonList[clientIdsForOIDCIndex].AsString());
+    }
   }
 
 

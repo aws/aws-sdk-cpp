@@ -84,10 +84,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configuration information to connect to your data source repository. For
-     * configuration templates for your specific data source, see <a
+     * <p>Configuration information to connect your data source repository to Amazon Q
+     * Business. Use this parameter to provide a JSON schema with configuration
+     * information specific to your data source connector.</p> <p>Each data source has
+     * a JSON schema provided by Amazon Q Business that you must use. For example, the
+     * Amazon S3 and Web Crawler connectors require the following JSON schemas:</p>
+     * <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/s3-api.html">Amazon
+     * S3 JSON schema</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/web-crawler-api.html">Web
+     * Crawler JSON schema</a> </p> </li> </ul> <p>You can find configuration templates
+     * for your specific data source using the following steps:</p> <ol> <li>
+     * <p>Navigate to the <a
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported
-     * connectors</a>.</p>
+     * connectors</a> page in the Amazon Q Business User Guide, and select the data
+     * source of your choice.</p> </li> <li> <p>Then, from your specific data source
+     * connector page, select <b>Using the API</b>. You will find the JSON schema for
+     * your data source, including parameter descriptions, in this section.</p> </li>
+     * </ol>
      */
     inline Aws::Utils::DocumentView GetConfiguration() const{ return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

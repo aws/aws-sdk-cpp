@@ -37,7 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the prompt.</p>
+     * <p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you
+     * specified a version in the request).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }

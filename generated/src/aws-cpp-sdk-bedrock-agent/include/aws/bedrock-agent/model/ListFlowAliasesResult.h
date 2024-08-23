@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list, each member of which contains information about a flow alias.</p>
+     * <p>A list, each member of which contains information about an alias.</p>
      */
     inline const Aws::Vector<FlowAliasSummary>& GetFlowAliasSummaries() const{ return m_flowAliasSummaries; }
     inline void SetFlowAliasSummaries(const Aws::Vector<FlowAliasSummary>& value) { m_flowAliasSummaries = value; }

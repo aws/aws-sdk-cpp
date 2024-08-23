@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/WebExperienceSamplePromptsControlMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/IdentityProviderConfiguration.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -109,7 +110,10 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the service role attached to your web
-     * experience.</p>
+     * experience.</p>  <p>You must provide this value if you're using IAM
+     * Identity Center to manage end user access to your application. If you're using
+     * legacy identity management to manage user access, you don't need to provide this
+     * value.</p> 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -152,6 +156,19 @@ namespace Model
     inline CreateWebExperienceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline CreateWebExperienceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the identity provider (IdP) used to authenticate end users
+     * of an Amazon Q Business web experience.</p>
+     */
+    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const{ return m_identityProviderConfiguration; }
+    inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }
+    inline void SetIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = value; }
+    inline void SetIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::move(value); }
+    inline CreateWebExperienceRequest& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
+    inline CreateWebExperienceRequest& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -177,6 +194,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    IdentityProviderConfiguration m_identityProviderConfiguration;
+    bool m_identityProviderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -683,8 +683,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Deletes a prompt or a prompt version from the Prompt management tool. For
-         * more information, see <a
+         * <p>Deletes a prompt or a version of it, depending on whether you include the
+         * <code>promptVersion</code> field or not. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-delete.html">Delete
          * prompts from the Prompt management tool</a> and <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-delete.html">Delete
@@ -1026,8 +1026,9 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Retrieves information about a prompt or a version of it. For more
-         * information, see <a
+         * <p>Retrieves information about the working draft (<code>DRAFT</code> version) of
+         * a prompt or a version of it, depending on whether you include the
+         * <code>promptVersion</code> field or not. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
          * information about prompts using Prompt management</a> and <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html">View
@@ -1347,8 +1348,10 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Returns a list of prompts from the Prompt management tool and information
-         * about each prompt. For more information, see <a
+         * <p>Returns either information about the working draft (<code>DRAFT</code>
+         * version) of each prompt in an account, or information about of all versions of a
+         * prompt, depending on whether you include the <code>promptIdentifier</code> field
+         * or not. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
          * information about prompts using Prompt management</a> in the Amazon Bedrock User
          * Guide.</p><p><h3>See Also:</h3>   <a

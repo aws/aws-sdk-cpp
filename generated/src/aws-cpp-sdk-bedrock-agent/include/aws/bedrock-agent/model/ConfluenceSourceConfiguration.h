@@ -56,9 +56,9 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name of an Secrets Manager secret that stores your
-     * authentication credentials for your SharePoint site/sites. For more information
-     * on the key-value pairs that must be included in your secret, depending on your
-     * authentication type, see <a
+     * authentication credentials for your Confluence instance URL. For more
+     * information on the key-value pairs that must be included in your secret,
+     * depending on your authentication type, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/confluence-data-source-connector.html#configuration-confluence-connector">Confluence
      * connection configuration</a>.</p>
      */

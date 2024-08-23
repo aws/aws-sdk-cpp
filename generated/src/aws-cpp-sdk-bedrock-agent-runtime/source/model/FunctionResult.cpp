@@ -20,6 +20,8 @@ namespace Model
 
 FunctionResult::FunctionResult() : 
     m_actionGroupHasBeenSet(false),
+    m_confirmationState(ConfirmationState::NOT_SET),
+    m_confirmationStateHasBeenSet(false),
     m_functionHasBeenSet(false),
     m_responseBodyHasBeenSet(false),
     m_responseState(ResponseState::NOT_SET),
@@ -40,6 +42,13 @@ FunctionResult& FunctionResult::operator =(JsonView jsonValue)
     m_actionGroup = jsonValue.GetString("actionGroup");
 
     m_actionGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("confirmationState"))
+  {
+    m_confirmationState = ConfirmationStateMapper::GetConfirmationStateForName(jsonValue.GetString("confirmationState"));
+
+    m_confirmationStateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("function"))
@@ -77,6 +86,11 @@ JsonValue FunctionResult::Jsonize() const
   {
    payload.WithString("actionGroup", m_actionGroup);
 
+  }
+
+  if(m_confirmationStateHasBeenSet)
+  {
+   payload.WithString("confirmationState", ConfirmationStateMapper::GetNameForConfirmationState(m_confirmationState));
   }
 
   if(m_functionHasBeenSet)

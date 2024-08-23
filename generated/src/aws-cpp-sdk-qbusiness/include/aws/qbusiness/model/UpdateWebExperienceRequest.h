@@ -8,6 +8,7 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/WebExperienceSamplePromptsControlMode.h>
+#include <aws/qbusiness/model/IdentityProviderConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +133,19 @@ namespace Model
     inline UpdateWebExperienceRequest& WithSamplePromptsControlMode(const WebExperienceSamplePromptsControlMode& value) { SetSamplePromptsControlMode(value); return *this;}
     inline UpdateWebExperienceRequest& WithSamplePromptsControlMode(WebExperienceSamplePromptsControlMode&& value) { SetSamplePromptsControlMode(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the identity provider (IdP) used to authenticate end users
+     * of an Amazon Q Business web experience.</p>
+     */
+    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const{ return m_identityProviderConfiguration; }
+    inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }
+    inline void SetIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = value; }
+    inline void SetIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::move(value); }
+    inline UpdateWebExperienceRequest& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
+    inline UpdateWebExperienceRequest& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -154,6 +168,9 @@ namespace Model
 
     WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
     bool m_samplePromptsControlModeHasBeenSet = false;
+
+    IdentityProviderConfiguration m_identityProviderConfiguration;
+    bool m_identityProviderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

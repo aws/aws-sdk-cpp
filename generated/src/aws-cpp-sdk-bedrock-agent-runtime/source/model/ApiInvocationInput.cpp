@@ -20,6 +20,8 @@ namespace Model
 
 ApiInvocationInput::ApiInvocationInput() : 
     m_actionGroupHasBeenSet(false),
+    m_actionInvocationType(ActionInvocationType::NOT_SET),
+    m_actionInvocationTypeHasBeenSet(false),
     m_apiPathHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -40,6 +42,13 @@ ApiInvocationInput& ApiInvocationInput::operator =(JsonView jsonValue)
     m_actionGroup = jsonValue.GetString("actionGroup");
 
     m_actionGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("actionInvocationType"))
+  {
+    m_actionInvocationType = ActionInvocationTypeMapper::GetActionInvocationTypeForName(jsonValue.GetString("actionInvocationType"));
+
+    m_actionInvocationTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("apiPath"))
@@ -84,6 +93,11 @@ JsonValue ApiInvocationInput::Jsonize() const
   {
    payload.WithString("actionGroup", m_actionGroup);
 
+  }
+
+  if(m_actionInvocationTypeHasBeenSet)
+  {
+   payload.WithString("actionInvocationType", ActionInvocationTypeMapper::GetNameForActionInvocationType(m_actionInvocationType));
   }
 
   if(m_apiPathHasBeenSet)

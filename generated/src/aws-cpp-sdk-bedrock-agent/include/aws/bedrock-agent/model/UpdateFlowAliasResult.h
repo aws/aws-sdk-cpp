@@ -100,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the flow alias.</p>
+     * <p>The name of the alias.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline void SetName(const Aws::String& value) { m_name = value; }
@@ -126,7 +126,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the flow alias was last updated.</p>
+     * <p>The time at which the alias was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }

@@ -91,7 +91,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description for the prompt version.</p>
+     * <p>A description for the version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline void SetDescription(const Aws::String& value) { m_description = value; }
@@ -117,7 +117,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the prompt version.</p>
+     * <p>The name of the prompt.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline void SetName(const Aws::String& value) { m_name = value; }

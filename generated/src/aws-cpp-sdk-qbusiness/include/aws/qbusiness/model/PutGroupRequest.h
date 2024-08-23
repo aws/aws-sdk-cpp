@@ -68,11 +68,7 @@ namespace Model
     /**
      * <p>The list that contains your users or sub groups that belong the same group.
      * For example, the group "Company" includes the user "CEO" and the sub groups
-     * "Research", "Engineering", and "Sales and Marketing".</p> <p>If you have more
-     * than 1000 users and/or sub groups for a single group, you need to provide the
-     * path to the S3 file that lists your users and sub groups for a group. Your sub
-     * groups can contain more than 1000 users, but the list of sub groups that belong
-     * to a group (and/or users) must be no more than 1000.</p>
+     * "Research", "Engineering", and "Sales and Marketing".</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }

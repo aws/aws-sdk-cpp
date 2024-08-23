@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/ActionInvocationType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/FunctionParameter.h>
 #include <utility>
@@ -59,6 +60,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about the function to invoke,</p>
+     */
+    inline const ActionInvocationType& GetActionInvocationType() const{ return m_actionInvocationType; }
+    inline bool ActionInvocationTypeHasBeenSet() const { return m_actionInvocationTypeHasBeenSet; }
+    inline void SetActionInvocationType(const ActionInvocationType& value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = value; }
+    inline void SetActionInvocationType(ActionInvocationType&& value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = std::move(value); }
+    inline FunctionInvocationInput& WithActionInvocationType(const ActionInvocationType& value) { SetActionInvocationType(value); return *this;}
+    inline FunctionInvocationInput& WithActionInvocationType(ActionInvocationType&& value) { SetActionInvocationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the function.</p>
      */
     inline const Aws::String& GetFunction() const{ return m_function; }
@@ -88,6 +101,9 @@ namespace Model
 
     Aws::String m_actionGroup;
     bool m_actionGroupHasBeenSet = false;
+
+    ActionInvocationType m_actionInvocationType;
+    bool m_actionInvocationTypeHasBeenSet = false;
 
     Aws::String m_function;
     bool m_functionHasBeenSet = false;

@@ -20,6 +20,8 @@ namespace Model
 
 FunctionInvocationInput::FunctionInvocationInput() : 
     m_actionGroupHasBeenSet(false),
+    m_actionInvocationType(ActionInvocationType::NOT_SET),
+    m_actionInvocationTypeHasBeenSet(false),
     m_functionHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
@@ -38,6 +40,13 @@ FunctionInvocationInput& FunctionInvocationInput::operator =(JsonView jsonValue)
     m_actionGroup = jsonValue.GetString("actionGroup");
 
     m_actionGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("actionInvocationType"))
+  {
+    m_actionInvocationType = ActionInvocationTypeMapper::GetActionInvocationTypeForName(jsonValue.GetString("actionInvocationType"));
+
+    m_actionInvocationTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("function"))
@@ -68,6 +77,11 @@ JsonValue FunctionInvocationInput::Jsonize() const
   {
    payload.WithString("actionGroup", m_actionGroup);
 
+  }
+
+  if(m_actionInvocationTypeHasBeenSet)
+  {
+   payload.WithString("actionInvocationType", ActionInvocationTypeMapper::GetNameForActionInvocationType(m_actionInvocationType));
   }
 
   if(m_functionHasBeenSet)

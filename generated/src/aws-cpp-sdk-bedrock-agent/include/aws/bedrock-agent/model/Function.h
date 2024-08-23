@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/bedrock-agent/model/RequireConfirmation.h>
 #include <aws/bedrock-agent/model/ParameterDetail.h>
 #include <utility>
 
@@ -97,6 +98,19 @@ namespace Model
     inline Function& AddParameters(const char* key, ParameterDetail&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
     inline Function& AddParameters(const char* key, const ParameterDetail& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information if user confirmation is required to invoke the
+     * function.</p>
+     */
+    inline const RequireConfirmation& GetRequireConfirmation() const{ return m_requireConfirmation; }
+    inline bool RequireConfirmationHasBeenSet() const { return m_requireConfirmationHasBeenSet; }
+    inline void SetRequireConfirmation(const RequireConfirmation& value) { m_requireConfirmationHasBeenSet = true; m_requireConfirmation = value; }
+    inline void SetRequireConfirmation(RequireConfirmation&& value) { m_requireConfirmationHasBeenSet = true; m_requireConfirmation = std::move(value); }
+    inline Function& WithRequireConfirmation(const RequireConfirmation& value) { SetRequireConfirmation(value); return *this;}
+    inline Function& WithRequireConfirmation(RequireConfirmation&& value) { SetRequireConfirmation(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -107,6 +121,9 @@ namespace Model
 
     Aws::Map<Aws::String, ParameterDetail> m_parameters;
     bool m_parametersHasBeenSet = false;
+
+    RequireConfirmation m_requireConfirmation;
+    bool m_requireConfirmationHasBeenSet = false;
   };
 
 } // namespace Model
