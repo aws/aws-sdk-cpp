@@ -30,31 +30,35 @@ public class EndpointParameterValueDeserializer implements JsonDeserializer<Endp
     public EndpointParameterValue deserialize(JsonElement jsonElement, Type type,
                                                         JsonDeserializationContext context) throws JsonParseException {
         EndpointParameterValue retValue = new EndpointParameterValue();
-        if (!jsonElement.isJsonPrimitive()) {
-            throw new JsonParseException("Unexpected params JSON value type, primitive expected!");
+        if (jsonElement.isJsonPrimitive()) 
+        {
+            JsonPrimitive primitive = jsonElement.getAsJsonPrimitive();
+            if (primitive.isBoolean()) {
+                retValue.setType(EndpointParameterValue.ParameterType.BOOLEAN);
+                retValue.setBoolValue(primitive.getAsBoolean());
+            } else if (primitive.isString()) {
+                retValue.setType(EndpointParameterValue.ParameterType.STRING);
+                retValue.setStrValue(primitive.getAsString());
+            } else if (primitive.isNumber()) {
+                retValue.setType(EndpointParameterValue.ParameterType.INTEGER);
+                retValue.setIntValue(primitive.getAsInt());
+            }
+            else{
+                throw new JsonParseException("Unexpected EndpointParameterValue value, primitive expected");
+            }
         }
-        JsonPrimitive primitive = jsonElement.getAsJsonPrimitive();
-        
-        if (primitive.isBoolean()) {
-            retValue.setType(EndpointParameterValue.ParameterType.BOOLEAN);
-            retValue.setBoolValue(primitive.getAsBoolean());
-        } else if (primitive.isString()) {
-            retValue.setType(EndpointParameterValue.ParameterType.STRING);
-            retValue.setStrValue(primitive.getAsString());
-        } else if (primitive.isNumber()) {
-            retValue.setType(EndpointParameterValue.ParameterType.INTEGER);
-            retValue.setIntValue(primitive.getAsInt());
-        } else if (primitive.isJsonArray())
+        else if(jsonElement.isJsonArray())
         {
             Vector<String> arrayOfStrings = new Vector<>();
-            if(getArrayOfStrings(primitive.getAsJsonArray(), arrayOfStrings))
+            if(getArrayOfStrings(jsonElement.getAsJsonArray(), arrayOfStrings))
             {
                 retValue.setType(EndpointParameterValue.ParameterType.STRING_ARRAY);
                 retValue.setStrArrayValue(arrayOfStrings);
             }
         }
-        else {
-            throw new JsonParseException("Unexpected EndpointParameterValue value, primitive expected");
+        else
+        {
+            throw new JsonParseException("Unexpected params JSON value type, primitive or string array expected!");
         }
 
         return retValue;

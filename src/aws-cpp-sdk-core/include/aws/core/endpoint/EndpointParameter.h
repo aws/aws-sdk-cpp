@@ -53,7 +53,7 @@ namespace Aws
             {}
 
             EndpointParameter(Aws::String name, const Aws::Vector<Aws::String>& initialValue, ParameterOrigin parameterOrigin = ParameterOrigin::NOT_SET)
-                    : m_storedType(ParameterType::STRING),
+                    : m_storedType(ParameterType::STRING_ARRAY),
                       m_parameterOrigin(parameterOrigin),
                       m_name(std::move(name)),
                       m_stringArrayValue(initialValue)

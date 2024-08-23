@@ -26,7 +26,7 @@ public class EndpointParameterValue {
             return strValueEscaped;
         } else if (ParameterType.STRING_ARRAY == this.type){
             StringBuilder sb = new StringBuilder();
-            sb.append("{");
+            sb.append("Aws::Vector<Aws::String>{");
             //add in list form, escaped string
             for (int i = 0; i < strArrayValue.size(); i++) {
                 String elem = strArrayValue.get(i);

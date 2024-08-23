@@ -225,21 +225,21 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
                 });
 
         serviceModel.getOperations().values().stream()
-                .filter(operationEntry -> operationEntry.getName().equals("WriteGetObjectResponse"))
+                .filter(operationEntry -> operationEntry != null && operationEntry.getName() != null && "WriteGetObjectResponse".equals(operationEntry.getName() ))
                 .forEach(operationEntry -> {
                     operationEntry.setRequiresServiceNameOverride(true);
                     operationEntry.setServiceNameOverride("s3-object-lambda");
                     operationEntry.setSupportsChunkedEncoding(true);
                 });
 
-        serviceModel.getOperations().values().stream()
+        /*serviceModel.getOperations().values().stream()
                 .filter(operationEntry -> operationEntry.getName().equals("WriteGetObjectResponse"))
                 .forEach(operationEntry -> {
                     operationEntry.setRequiresServiceNameOverride(true);
                     operationEntry.setServiceNameOverride("s3-object-lambda");
                     operationEntry.setSupportsChunkedEncoding(true);
                 });
-
+        */
 
         if (serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3") ||
                 serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3-CRT")) {

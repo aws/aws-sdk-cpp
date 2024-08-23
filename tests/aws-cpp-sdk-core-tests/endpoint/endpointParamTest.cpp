@@ -1,0 +1,93 @@
+
+
+#include <aws/dynamodb/DynamoDBEndpointRules.h>
+#include <aws/dynamodb/DynamoDBEndpointProvider.h>
+
+#include <aws/core/utils/memory/stl/AWSArray.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
+
+using namespace Aws::DynamoDB;
+
+const size_t DynamoDBEndpointRules::RulesBlobStrLen = 497;
+const size_t DynamoDBEndpointRules::RulesBlobSize = 498;
+
+using RulesBlobT = Aws::Array<const char, DynamoDBEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
+'{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
+'e','r','s','"',':','{','"','s','t','r','i','n','g','A','r','r','a','y','P','a','r','a','m','"',':',
+'{','"','t','y','p','e','"',':','"','s','t','r','i','n','g','A','r','r','a','y','"',',','"','r','e',
+'q','u','i','r','e','d','"',':','t','r','u','e',',','"','d','e','f','a','u','l','t','"',':','[','"',
+'d','e','f','a','u','l','t','V','a','l','u','e','1','"',',','"','d','e','f','a','u','l','t','V','a',
+'l','u','e','2','"',']',',','"','d','o','c','u','m','e','n','t','a','t','i','o','n','"',':','"','d',
+'o','c','s','"','}','}',',','"','r','u','l','e','s','"',':','[','{','"','d','o','c','u','m','e','n',
+'t','a','t','i','o','n','"',':','"','T','e','m','p','l','a','t','e',' ','f','i','r','s','t',' ','a',
+'r','r','a','y',' ','v','a','l','u','e',' ','i','n','t','o',' ','U','R','I',' ','i','f',' ','s','e',
+'t','"',',','"','c','o','n','d','i','t','i','o','n','s','"',':','[','{','"','f','n','"',':','"','g',
+'e','t','A','t','t','r','"',',','"','a','r','g','v','"',':','[','{','"','r','e','f','"',':','"','s',
+'t','r','i','n','g','A','r','r','a','y','P','a','r','a','m','"','}',',','"','[','0',']','"',']',',',
+'"','a','s','s','i','g','n','"',':','"','a','r','r','a','y','V','a','l','u','e','"','}',']',',','"',
+'e','n','d','p','o','i','n','t','"',':','{','"','u','r','l','"',':','"','h','t','t','p','s',':','/',
+'/','e','x','a','m','p','l','e','.','c','o','m','/','{','a','r','r','a','y','V','a','l','u','e','}',
+'"','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',',','{','"','c',
+'o','n','d','i','t','i','o','n','s','"',':','[',']',',','"','d','o','c','u','m','e','n','t','a','t',
+'i','o','n','"',':','"','e','r','r','o','r',' ','f','a','l','l','t','h','r','o','u','g','h','"',',',
+'"','e','r','r','o','r','"',':','"','n','o',' ','a','r','r','a','y',' ','v','a','l','u','e','s',' ',
+'s','e','t','"',',','"','t','y','p','e','"',':','"','e','r','r','o','r','"','}',']','}','\0'
+}};
+
+const char* DynamoDBEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
+
+
+class  DynamoDBEndpointProviderTest : public Endpoint::DynamoDBDefaultEpProviderBase
+{
+public:
+    using DynamoDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+    DynamoDBEndpointProviderTest()
+      : Endpoint::DynamoDBDefaultEpProviderBase(Aws::DynamoDB::DynamoDBEndpointRules::GetRulesBlob(), Aws::DynamoDB::DynamoDBEndpointRules::RulesBlobSize)
+    {}
+
+    ~DynamoDBEndpointProviderTest()
+    {
+    }
+
+};
+
+class EndpointTest : public Aws::Testing::AwsCppSdkGTestSuite {
+    
+
+    protected:
+    static const char ALLOCATION_TAG[];
+    
+   
+    public:
+    void SetUp() override{
+    }
+    
+};
+
+
+
+TEST_F(EndpointTest, testStringArrayParam) {
+
+    std::shared_ptr<DynamoDBEndpointProviderTest> endpointProvider_sp = Aws::MakeShared<DynamoDBEndpointProviderTest>(ALLOCATION_TAG);
+
+    Aws::Endpoint::EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("stringArrayParam"), Aws::Vector<Aws::String>{"staticValue1"}, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+
+    auto res = endpointProvider_sp->ResolveEndpoint(parameters);
+
+    //Aws::Endpoint::EndpointParameter p1 {};
+    EXPECT_TRUE(res.IsSuccess());
+
+    EXPECT_TRUE(res.GetResult().GetAttributes().has_value());
+
+    std::cout<<"backend attr="<<res.GetResult().GetAttributes().value().backend<<std::endl;
+    std::cout<<"url="<<res.GetResult().GetURL()<<std::endl;
+    //std::cout<<"authscheme name attr="<<res.GetResult().GetAttributes().value().authScheme.GetName()<<std::endl;
+}
+
