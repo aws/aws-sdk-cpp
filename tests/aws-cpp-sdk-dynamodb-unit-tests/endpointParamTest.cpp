@@ -86,3 +86,19 @@ TEST_F(EndpointTest, testStringArrayParam) {
     EXPECT_EQ( res.GetResult().GetURL(), "https://example.com/staticValue2");
    
 }
+
+
+TEST_F(EndpointTest, testStringArrayParamError) {
+
+    std::shared_ptr<DynamoDBEndpointProviderTest> endpointProvider_sp = Aws::MakeShared<DynamoDBEndpointProviderTest>(ALLOCATION_TAG);
+
+    Aws::Endpoint::EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("stringArrayParam"), Aws::Vector<Aws::String>{}, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+
+    auto res = endpointProvider_sp->ResolveEndpoint(parameters);
+    EXPECT_FALSE(res.IsSuccess());
+    //std::cout<<"url="<<res.GetResult().GetURL()<<std::endl;
+    //EXPECT_EQ( res.GetResult().GetURL(), "https://example.com/staticValue2");
+   
+}
