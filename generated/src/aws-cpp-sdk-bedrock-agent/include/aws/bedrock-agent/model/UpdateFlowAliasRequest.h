@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description for the flow alias.</p>
+     * <p>A description for the alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the flow alias.</p>
+     * <p>The name of the alias.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

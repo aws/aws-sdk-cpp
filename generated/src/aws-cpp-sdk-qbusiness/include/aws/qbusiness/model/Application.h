@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/ApplicationStatus.h>
+#include <aws/qbusiness/model/IdentityType.h>
 #include <utility>
 
 namespace Aws
@@ -105,6 +106,18 @@ namespace Model
     inline Application& WithStatus(const ApplicationStatus& value) { SetStatus(value); return *this;}
     inline Application& WithStatus(ApplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The authentication type being used by a Amazon Q Business application.</p>
+     */
+    inline const IdentityType& GetIdentityType() const{ return m_identityType; }
+    inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
+    inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
+    inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
+    inline Application& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
+    inline Application& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_displayName;
@@ -121,6 +134,9 @@ namespace Model
 
     ApplicationStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    IdentityType m_identityType;
+    bool m_identityTypeHasBeenSet = false;
   };
 
 } // namespace Model

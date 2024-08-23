@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the flow version.</p> <p>This data type is used in
-   * the following API operations:</p> <ul> <li> <p> <a
+   * <p>Contains information about a version of a flow.</p> <p>This data type is used
+   * in the following API operations:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListFlowVersions.html#API_agent_ListFlowVersions_ResponseSyntax">ListFlowVersions
    * response</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/FlowVersionSummary">AWS
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at the flow version was created.</p>
+     * <p>The time at the version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }

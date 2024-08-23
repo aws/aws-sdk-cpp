@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/IdentityType.h>
 #include <aws/qbusiness/model/ApplicationStatus.h>
 #include <aws/qbusiness/model/EncryptionConfiguration.h>
 #include <aws/core/utils/DateTime.h>
@@ -13,6 +14,8 @@
 #include <aws/qbusiness/model/AppliedAttachmentsConfiguration.h>
 #include <aws/qbusiness/model/QAppsConfiguration.h>
 #include <aws/qbusiness/model/PersonalizationConfiguration.h>
+#include <aws/qbusiness/model/AutoSubscriptionConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +79,31 @@ namespace Model
     inline GetApplicationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
     inline GetApplicationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
     inline GetApplicationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The authentication type being used by a Amazon Q Business application.</p>
+     */
+    inline const IdentityType& GetIdentityType() const{ return m_identityType; }
+    inline void SetIdentityType(const IdentityType& value) { m_identityType = value; }
+    inline void SetIdentityType(IdentityType&& value) { m_identityType = std::move(value); }
+    inline GetApplicationResult& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
+    inline GetApplicationResult& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of an identity provider being used by an
+     * Amazon Q Business application.</p>
+     */
+    inline const Aws::String& GetIamIdentityProviderArn() const{ return m_iamIdentityProviderArn; }
+    inline void SetIamIdentityProviderArn(const Aws::String& value) { m_iamIdentityProviderArn = value; }
+    inline void SetIamIdentityProviderArn(Aws::String&& value) { m_iamIdentityProviderArn = std::move(value); }
+    inline void SetIamIdentityProviderArn(const char* value) { m_iamIdentityProviderArn.assign(value); }
+    inline GetApplicationResult& WithIamIdentityProviderArn(const Aws::String& value) { SetIamIdentityProviderArn(value); return *this;}
+    inline GetApplicationResult& WithIamIdentityProviderArn(Aws::String&& value) { SetIamIdentityProviderArn(std::move(value)); return *this;}
+    inline GetApplicationResult& WithIamIdentityProviderArn(const char* value) { SetIamIdentityProviderArn(value); return *this;}
     ///@}
 
     ///@{
@@ -217,6 +245,32 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Settings for auto-subscription behavior for this application. This is only
+     * applicable to SAML and OIDC applications.</p>
+     */
+    inline const AutoSubscriptionConfiguration& GetAutoSubscriptionConfiguration() const{ return m_autoSubscriptionConfiguration; }
+    inline void SetAutoSubscriptionConfiguration(const AutoSubscriptionConfiguration& value) { m_autoSubscriptionConfiguration = value; }
+    inline void SetAutoSubscriptionConfiguration(AutoSubscriptionConfiguration&& value) { m_autoSubscriptionConfiguration = std::move(value); }
+    inline GetApplicationResult& WithAutoSubscriptionConfiguration(const AutoSubscriptionConfiguration& value) { SetAutoSubscriptionConfiguration(value); return *this;}
+    inline GetApplicationResult& WithAutoSubscriptionConfiguration(AutoSubscriptionConfiguration&& value) { SetAutoSubscriptionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The OIDC client ID for a Amazon Q Business application.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetClientIdsForOIDC() const{ return m_clientIdsForOIDC; }
+    inline void SetClientIdsForOIDC(const Aws::Vector<Aws::String>& value) { m_clientIdsForOIDC = value; }
+    inline void SetClientIdsForOIDC(Aws::Vector<Aws::String>&& value) { m_clientIdsForOIDC = std::move(value); }
+    inline GetApplicationResult& WithClientIdsForOIDC(const Aws::Vector<Aws::String>& value) { SetClientIdsForOIDC(value); return *this;}
+    inline GetApplicationResult& WithClientIdsForOIDC(Aws::Vector<Aws::String>&& value) { SetClientIdsForOIDC(std::move(value)); return *this;}
+    inline GetApplicationResult& AddClientIdsForOIDC(const Aws::String& value) { m_clientIdsForOIDC.push_back(value); return *this; }
+    inline GetApplicationResult& AddClientIdsForOIDC(Aws::String&& value) { m_clientIdsForOIDC.push_back(std::move(value)); return *this; }
+    inline GetApplicationResult& AddClientIdsForOIDC(const char* value) { m_clientIdsForOIDC.push_back(value); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -233,6 +287,10 @@ namespace Model
     Aws::String m_applicationId;
 
     Aws::String m_applicationArn;
+
+    IdentityType m_identityType;
+
+    Aws::String m_iamIdentityProviderArn;
 
     Aws::String m_identityCenterApplicationArn;
 
@@ -255,6 +313,10 @@ namespace Model
     QAppsConfiguration m_qAppsConfiguration;
 
     PersonalizationConfiguration m_personalizationConfiguration;
+
+    AutoSubscriptionConfiguration m_autoSubscriptionConfiguration;
+
+    Aws::Vector<Aws::String> m_clientIdsForOIDC;
 
     Aws::String m_requestId;
   };

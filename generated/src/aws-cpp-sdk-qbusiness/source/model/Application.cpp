@@ -24,7 +24,9 @@ Application::Application() :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_status(ApplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_identityType(IdentityType::NOT_SET),
+    m_identityTypeHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,13 @@ Application& Application::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("identityType"))
+  {
+    m_identityType = IdentityTypeMapper::GetIdentityTypeForName(jsonValue.GetString("identityType"));
+
+    m_identityTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +112,11 @@ JsonValue Application::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ApplicationStatusMapper::GetNameForApplicationStatus(m_status));
+  }
+
+  if(m_identityTypeHasBeenSet)
+  {
+   payload.WithString("identityType", IdentityTypeMapper::GetNameForIdentityType(m_identityType));
   }
 
   return payload;

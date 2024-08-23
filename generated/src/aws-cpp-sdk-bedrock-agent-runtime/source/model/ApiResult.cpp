@@ -21,6 +21,8 @@ namespace Model
 ApiResult::ApiResult() : 
     m_actionGroupHasBeenSet(false),
     m_apiPathHasBeenSet(false),
+    m_confirmationState(ConfirmationState::NOT_SET),
+    m_confirmationStateHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
     m_httpStatusCode(0),
     m_httpStatusCodeHasBeenSet(false),
@@ -50,6 +52,13 @@ ApiResult& ApiResult::operator =(JsonView jsonValue)
     m_apiPath = jsonValue.GetString("apiPath");
 
     m_apiPathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("confirmationState"))
+  {
+    m_confirmationState = ConfirmationStateMapper::GetConfirmationStateForName(jsonValue.GetString("confirmationState"));
+
+    m_confirmationStateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("httpMethod"))
@@ -100,6 +109,11 @@ JsonValue ApiResult::Jsonize() const
   {
    payload.WithString("apiPath", m_apiPath);
 
+  }
+
+  if(m_confirmationStateHasBeenSet)
+  {
+   payload.WithString("confirmationState", ConfirmationStateMapper::GetNameForConfirmationState(m_confirmationState));
   }
 
   if(m_httpMethodHasBeenSet)

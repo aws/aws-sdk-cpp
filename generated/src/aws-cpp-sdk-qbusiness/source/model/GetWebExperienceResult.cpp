@@ -104,6 +104,12 @@ GetWebExperienceResult& GetWebExperienceResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("identityProviderConfiguration"))
+  {
+    m_identityProviderConfiguration = jsonValue.GetObject("identityProviderConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");

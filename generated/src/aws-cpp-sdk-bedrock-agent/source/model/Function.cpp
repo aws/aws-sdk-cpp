@@ -21,7 +21,9 @@ namespace Model
 Function::Function() : 
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_requireConfirmation(RequireConfirmation::NOT_SET),
+    m_requireConfirmationHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,13 @@ Function& Function::operator =(JsonView jsonValue)
     m_parametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("requireConfirmation"))
+  {
+    m_requireConfirmation = RequireConfirmationMapper::GetRequireConfirmationForName(jsonValue.GetString("requireConfirmation"));
+
+    m_requireConfirmationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -85,6 +94,11 @@ JsonValue Function::Jsonize() const
    }
    payload.WithObject("parameters", std::move(parametersJsonMap));
 
+  }
+
+  if(m_requireConfirmationHasBeenSet)
+  {
+   payload.WithString("requireConfirmation", RequireConfirmationMapper::GetNameForRequireConfirmation(m_requireConfirmation));
   }
 
   return payload;

@@ -43,7 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the prompt.</p>
+     * <p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you
+     * specified a version in the request).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

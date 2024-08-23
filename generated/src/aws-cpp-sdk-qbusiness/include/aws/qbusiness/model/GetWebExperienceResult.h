@@ -9,6 +9,7 @@
 #include <aws/qbusiness/model/WebExperienceStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/WebExperienceSamplePromptsControlMode.h>
+#include <aws/qbusiness/model/IdentityProviderConfiguration.h>
 #include <aws/qbusiness/model/ErrorDetail.h>
 #include <utility>
 
@@ -196,6 +197,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Information about the identity provider (IdP) used to authenticate end users
+     * of an Amazon Q Business web experience.</p>
+     */
+    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const{ return m_identityProviderConfiguration; }
+    inline void SetIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { m_identityProviderConfiguration = value; }
+    inline void SetIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { m_identityProviderConfiguration = std::move(value); }
+    inline GetWebExperienceResult& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
+    inline GetWebExperienceResult& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a description of the error that caused
      * the data source connector to fail.</p>
@@ -242,6 +255,8 @@ namespace Model
     WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
 
     Aws::String m_roleArn;
+
+    IdentityProviderConfiguration m_identityProviderConfiguration;
 
     ErrorDetail m_error;
 

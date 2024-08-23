@@ -129,7 +129,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the flow version.</p>
+     * <p>The name of the version.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline void SetName(const Aws::String& value) { m_name = value; }

@@ -54,7 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the prompt about which you want to retrieve information.</p>
+     * <p>The version of the prompt about which you want to retrieve information. Omit
+     * this field to return information about the working draft of the prompt.</p>
      */
     inline const Aws::String& GetPromptVersion() const{ return m_promptVersion; }
     inline bool PromptVersionHasBeenSet() const { return m_promptVersionHasBeenSet; }

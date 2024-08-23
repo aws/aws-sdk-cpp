@@ -10,6 +10,7 @@
 #include <aws/qbusiness/model/AttachmentsConfiguration.h>
 #include <aws/qbusiness/model/QAppsConfiguration.h>
 #include <aws/qbusiness/model/PersonalizationConfiguration.h>
+#include <aws/qbusiness/model/AutoSubscriptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +147,20 @@ namespace Model
     inline UpdateApplicationRequest& WithPersonalizationConfiguration(const PersonalizationConfiguration& value) { SetPersonalizationConfiguration(value); return *this;}
     inline UpdateApplicationRequest& WithPersonalizationConfiguration(PersonalizationConfiguration&& value) { SetPersonalizationConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An option to enable updating the default subscription type assigned to an
+     * Amazon Q Business application using IAM identity federation for user
+     * management.</p>
+     */
+    inline const AutoSubscriptionConfiguration& GetAutoSubscriptionConfiguration() const{ return m_autoSubscriptionConfiguration; }
+    inline bool AutoSubscriptionConfigurationHasBeenSet() const { return m_autoSubscriptionConfigurationHasBeenSet; }
+    inline void SetAutoSubscriptionConfiguration(const AutoSubscriptionConfiguration& value) { m_autoSubscriptionConfigurationHasBeenSet = true; m_autoSubscriptionConfiguration = value; }
+    inline void SetAutoSubscriptionConfiguration(AutoSubscriptionConfiguration&& value) { m_autoSubscriptionConfigurationHasBeenSet = true; m_autoSubscriptionConfiguration = std::move(value); }
+    inline UpdateApplicationRequest& WithAutoSubscriptionConfiguration(const AutoSubscriptionConfiguration& value) { SetAutoSubscriptionConfiguration(value); return *this;}
+    inline UpdateApplicationRequest& WithAutoSubscriptionConfiguration(AutoSubscriptionConfiguration&& value) { SetAutoSubscriptionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -171,6 +186,9 @@ namespace Model
 
     PersonalizationConfiguration m_personalizationConfiguration;
     bool m_personalizationConfigurationHasBeenSet = false;
+
+    AutoSubscriptionConfiguration m_autoSubscriptionConfiguration;
+    bool m_autoSubscriptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

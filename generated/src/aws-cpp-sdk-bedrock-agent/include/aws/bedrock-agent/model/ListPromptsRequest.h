@@ -70,7 +70,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the prompt.</p>
+     * <p>The unique identifier of the prompt for whose versions you want to return
+     * information. Omit this field to list information about all prompts in an
+     * account.</p>
      */
     inline const Aws::String& GetPromptIdentifier() const{ return m_promptIdentifier; }
     inline bool PromptIdentifierHasBeenSet() const { return m_promptIdentifierHasBeenSet; }

@@ -54,7 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the prompt to delete.</p>
+     * <p>The version of the prompt to delete. To delete the prompt, omit this
+     * field.</p>
      */
     inline const Aws::String& GetPromptVersion() const{ return m_promptVersion; }
     inline bool PromptVersionHasBeenSet() const { return m_promptVersionHasBeenSet; }

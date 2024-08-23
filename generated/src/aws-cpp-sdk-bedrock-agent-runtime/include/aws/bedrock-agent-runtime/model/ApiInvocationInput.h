@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/ActionInvocationType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/ApiRequestBody.h>
 #include <aws/bedrock-agent-runtime/model/ApiParameter.h>
@@ -56,6 +57,18 @@ namespace Model
     inline ApiInvocationInput& WithActionGroup(const Aws::String& value) { SetActionGroup(value); return *this;}
     inline ApiInvocationInput& WithActionGroup(Aws::String&& value) { SetActionGroup(std::move(value)); return *this;}
     inline ApiInvocationInput& WithActionGroup(const char* value) { SetActionGroup(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about the API operation to invoke.</p>
+     */
+    inline const ActionInvocationType& GetActionInvocationType() const{ return m_actionInvocationType; }
+    inline bool ActionInvocationTypeHasBeenSet() const { return m_actionInvocationTypeHasBeenSet; }
+    inline void SetActionInvocationType(const ActionInvocationType& value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = value; }
+    inline void SetActionInvocationType(ActionInvocationType&& value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = std::move(value); }
+    inline ApiInvocationInput& WithActionInvocationType(const ActionInvocationType& value) { SetActionInvocationType(value); return *this;}
+    inline ApiInvocationInput& WithActionInvocationType(ActionInvocationType&& value) { SetActionInvocationType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,6 +130,9 @@ namespace Model
 
     Aws::String m_actionGroup;
     bool m_actionGroupHasBeenSet = false;
+
+    ActionInvocationType m_actionInvocationType;
+    bool m_actionInvocationTypeHasBeenSet = false;
 
     Aws::String m_apiPath;
     bool m_apiPathHasBeenSet = false;

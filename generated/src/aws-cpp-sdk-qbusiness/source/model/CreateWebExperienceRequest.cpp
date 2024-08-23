@@ -22,7 +22,8 @@ CreateWebExperienceRequest::CreateWebExperienceRequest() :
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_identityProviderConfigurationHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,12 @@ Aws::String CreateWebExperienceRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_identityProviderConfigurationHasBeenSet)
+  {
+   payload.WithObject("identityProviderConfiguration", m_identityProviderConfiguration.Jsonize());
 
   }
 
