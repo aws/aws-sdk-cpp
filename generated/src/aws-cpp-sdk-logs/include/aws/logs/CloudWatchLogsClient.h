@@ -2605,7 +2605,6 @@ namespace CloudWatchLogs
       void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
       CloudWatchLogsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudWatchLogsEndpointProviderBase> m_endpointProvider;
   };
 

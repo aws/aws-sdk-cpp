@@ -2256,7 +2256,6 @@ namespace DynamoDB
 
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
       DynamoDBClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DynamoDBEndpointProviderBase> m_endpointProvider;
   };
 

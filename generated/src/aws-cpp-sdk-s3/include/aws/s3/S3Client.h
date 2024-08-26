@@ -6364,7 +6364,6 @@ namespace Aws
         friend class Aws::Client::ClientWithAsyncTemplateMethods<S3Client>;
         void init(const S3ClientConfiguration& clientConfiguration);
         S3ClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Utils::Threading::Executor> m_executor;
         std::shared_ptr<S3EndpointProviderBase> m_endpointProvider;
     };
 

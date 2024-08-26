@@ -6382,7 +6382,6 @@ namespace Aws
                                         const Aws::AmazonWebServiceRequest *request,
                                         const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
         S3Crt::ClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Utils::Threading::Executor> m_executor;
         struct aws_s3_client* m_s3CrtClient = {};
         struct aws_signing_config_aws m_s3CrtSigningConfig = {};
         struct CrtClientShutdownCallbackDataWrapper m_wrappedData = {};

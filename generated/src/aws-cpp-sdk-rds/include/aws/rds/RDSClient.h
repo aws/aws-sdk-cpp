@@ -5253,7 +5253,6 @@ namespace Aws
         void init(const RDSClientConfiguration& clientConfiguration);
 
         RDSClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<RDSEndpointProviderBase> m_endpointProvider;
     };
   } // namespace RDS
