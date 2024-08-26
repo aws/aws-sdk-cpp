@@ -423,9 +423,9 @@ static size_t SeekBody(void* userdata, curl_off_t offset, int origin)
     return CURL_SEEKFUNC_OK;
 }
 #if LIBCURL_VERSION_NUM >= 0x072000 // 7.32.0
-static int CurlProgressCallback(void *userdata, curl_off_t, curl_off_t, curl_off_t, curl_off_t)
+int CurlHttpClient::CurlProgressCallback(void *userdata, curl_off_t, curl_off_t, curl_off_t, curl_off_t)
 #else
-static int CurlProgressCallback(void *userdata, double, double, double, double)
+int CurlHttpClient::CurlProgressCallback(void *userdata, double, double, double, double)
 #endif
 {
     CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
@@ -436,16 +436,33 @@ static int CurlProgressCallback(void *userdata, double, double, double, double)
         curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
         return 0;
     }
-    // forcing "underflow" on the IOStream with ConcurrentStreamBuf to move data from back buffer to put area
-    int peekVal = ioStream->peek();
-    AWS_UNREFERENCED_PARAM(peekVal);
 
-    // forcing curl to try to ReadBody again (~to poll body IOStream for HTTP2)
-    // This is a spin pause-unpause in case of no data provided by a customer callback
-    // But otherwise curl will slow down the transfer and start calling as at frequency of 1s
-    //   see https://curl.se/mail/lib-2020-07/0046.html
-    // we should use multi handle or another HTTP client in the future to avoid this
-    curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
+    if (context->m_client->m_perfMode == TransferLibPerformanceMode::LOW_LATENCY)
+    {
+        // forcing "underflow" on the IOStream with ConcurrentStreamBuf to move data from back buffer to put area
+        int peekVal = ioStream->peek();
+        AWS_UNREFERENCED_PARAM(peekVal);
+
+        // forcing curl to try to ReadBody again (~to poll body IOStream for HTTP2)
+        // This is a spin pause-unpause in case of no data provided by a customer callback
+        // But otherwise curl will slow down the transfer and start calling as at frequency of 1s
+        //   see https://curl.se/mail/lib-2020-07/0046.html
+        // we should use multi handle or another HTTP client in the future to avoid this
+        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
+    }
+    else
+    {
+        char output[1];
+        if (ioStream->readsome(output, 1) > 0)
+        {
+            ioStream->unget();
+            if (!ioStream->good())
+            {
+                AWS_LOGSTREAM_WARN(CURL_HTTP_CLIENT_TAG, "Input stream failed to perform unget().");
+            }
+            curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
+        }
+    }
 
     return 0;
 }
@@ -616,6 +633,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_caFile(clientConfig.caFile), m_proxyCaPath(clientConfig.proxyCaPath), m_proxyCaFile(clientConfig.proxyCaFile),
     m_disableExpectHeader(clientConfig.disableExpectHeader),
     m_enableHttpClientTrace(clientConfig.enableHttpClientTrace || FORCE_ENABLE_CURL_LOGGING),
+    m_perfMode(clientConfig.httpLibPerfMode),
     m_telemetryProvider(clientConfig.telemetryProvider)
 {
     if (clientConfig.followRedirects == FollowRedirectsPolicy::NEVER ||
@@ -833,10 +851,10 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
                 curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, ReadBodyStreaming);
                 curl_easy_setopt(connectionHandle, CURLOPT_NOPROGRESS, 0L);
 #if LIBCURL_VERSION_NUM >= 0x072000 // 7.32.0
-                curl_easy_setopt(connectionHandle, CURLOPT_XFERINFOFUNCTION, CurlProgressCallback);
+                curl_easy_setopt(connectionHandle, CURLOPT_XFERINFOFUNCTION, CurlHttpClient::CurlProgressCallback);
                 curl_easy_setopt(connectionHandle, CURLOPT_XFERINFODATA, &readContext);
 #else
-                curl_easy_setopt(connectionHandle, CURLOPT_PROGRESSFUNCTION, CurlProgressCallback);
+                curl_easy_setopt(connectionHandle, CURLOPT_PROGRESSFUNCTION, CurlHttpClient::CurlProgressCallback);
                 curl_easy_setopt(connectionHandle, CURLOPT_PROGRESSDATA, &readContext);
 #endif
             }

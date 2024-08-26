@@ -41,6 +41,15 @@ namespace Aws
             WIN_HTTP_CLIENT
         };
 
+        /**
+         * Configuration for a HTTP client, currently used only by libCurl
+         */
+        enum class TransferLibPerformanceMode
+        {
+            LOW_LATENCY = 0, // run http client for a lower latency, at the expense of CPU
+            REGULAR
+        };
+
         namespace HttpMethodMapper
         {
             /**
