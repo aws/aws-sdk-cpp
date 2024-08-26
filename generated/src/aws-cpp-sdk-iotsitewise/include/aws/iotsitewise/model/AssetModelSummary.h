@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/model/AssetModelType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotsitewise/model/AssetModelStatus.h>
-#include <aws/iotsitewise/model/AssetModelType.h>
 #include <utility>
 
 namespace Aws
@@ -56,6 +56,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+    inline AssetModelSummary& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+    inline AssetModelSummary& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+    inline AssetModelSummary& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the asset model, which has the following format.</p> <p>
@@ -84,6 +100,22 @@ namespace Model
     inline AssetModelSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline AssetModelSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline AssetModelSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
+    inline bool AssetModelTypeHasBeenSet() const { return m_assetModelTypeHasBeenSet; }
+    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = value; }
+    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = std::move(value); }
+    inline AssetModelSummary& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
+    inline AssetModelSummary& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,45 +170,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
-     * asset model that you can use to create assets. Can't be included as a component
-     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
-     * component that you can include in the composite models of other asset models.
-     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     * <p>The version number of the asset model.</p>
      */
-    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
-    inline bool AssetModelTypeHasBeenSet() const { return m_assetModelTypeHasBeenSet; }
-    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = value; }
-    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = std::move(value); }
-    inline AssetModelSummary& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
-    inline AssetModelSummary& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The external ID of the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
-    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline AssetModelSummary& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline AssetModelSummary& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline AssetModelSummary& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+    inline AssetModelSummary& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+    inline AssetModelSummary& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
+    inline AssetModelSummary& WithVersion(const char* value) { SetVersion(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    AssetModelType m_assetModelType;
+    bool m_assetModelTypeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -190,11 +210,8 @@ namespace Model
     AssetModelStatus m_status;
     bool m_statusHasBeenSet = false;
 
-    AssetModelType m_assetModelType;
-    bool m_assetModelTypeHasBeenSet = false;
-
-    Aws::String m_externalId;
-    bool m_externalIdHasBeenSet = false;
+    Aws::String m_version;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

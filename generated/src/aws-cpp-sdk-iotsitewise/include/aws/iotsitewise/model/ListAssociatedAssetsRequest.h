@@ -59,18 +59,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset.
-     * (This can be either the actual ID in UUID format, or else
-     * <code>externalId:</code> followed by the external ID, if it has one. For more
-     * information, see <a
+     * <p>(Optional) If you don't provide a <code>hierarchyId</code>, all the immediate
+     * assets in the <code>traversalDirection</code> will be returned. </p> <p> The ID
+     * of the hierarchy by which child assets are associated to the asset. (This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
-     * hierarchy ID, use the <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
-     * or <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
-     * operations. This parameter is required if you choose <code>CHILD</code> for
-     * <code>traversalDirection</code>.</p> <p>For more information, see <a
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
@@ -88,10 +84,9 @@ namespace Model
     /**
      * <p>The direction to list associated assets. Choose one of the following
      * options:</p> <ul> <li> <p> <code>CHILD</code> – The list includes all child
-     * assets associated to the asset. The <code>hierarchyId</code> parameter is
-     * required if you choose <code>CHILD</code>.</p> </li> <li> <p>
-     * <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
-     * </ul> <p>Default: <code>CHILD</code> </p>
+     * assets associated to the asset.</p> </li> <li> <p> <code>PARENT</code> – The
+     * list includes the asset's parent asset.</p> </li> </ul> <p>Default:
+     * <code>CHILD</code> </p>
      */
     inline const TraversalDirection& GetTraversalDirection() const{ return m_traversalDirection; }
     inline bool TraversalDirectionHasBeenSet() const { return m_traversalDirectionHasBeenSet; }

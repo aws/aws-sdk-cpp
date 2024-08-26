@@ -41,42 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the asset model hierarchy definition (as specified in the <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
-     * or <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-     * API operation).</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssetModelHierarchyDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssetModelHierarchyDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssetModelHierarchyDefinition& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of an asset model for this hierarchy. This can be either the actual ID
-     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
-     * it has one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetChildAssetModelId() const{ return m_childAssetModelId; }
-    inline bool ChildAssetModelIdHasBeenSet() const { return m_childAssetModelIdHasBeenSet; }
-    inline void SetChildAssetModelId(const Aws::String& value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId = value; }
-    inline void SetChildAssetModelId(Aws::String&& value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId = std::move(value); }
-    inline void SetChildAssetModelId(const char* value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId.assign(value); }
-    inline AssetModelHierarchyDefinition& WithChildAssetModelId(const Aws::String& value) { SetChildAssetModelId(value); return *this;}
-    inline AssetModelHierarchyDefinition& WithChildAssetModelId(Aws::String&& value) { SetChildAssetModelId(std::move(value)); return *this;}
-    inline AssetModelHierarchyDefinition& WithChildAssetModelId(const char* value) { SetChildAssetModelId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID to assign to the asset model hierarchy, if desired. IoT SiteWise
      * automatically generates a unique ID for you, so this parameter is never
      * required. However, if you prefer to supply your own ID instead, you can specify
@@ -110,19 +74,55 @@ namespace Model
     inline AssetModelHierarchyDefinition& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
     inline AssetModelHierarchyDefinition& WithExternalId(const char* value) { SetExternalId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the asset model hierarchy definition (as specified in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * API operation).</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline AssetModelHierarchyDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline AssetModelHierarchyDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline AssetModelHierarchyDefinition& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of an asset model for this hierarchy. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChildAssetModelId() const{ return m_childAssetModelId; }
+    inline bool ChildAssetModelIdHasBeenSet() const { return m_childAssetModelIdHasBeenSet; }
+    inline void SetChildAssetModelId(const Aws::String& value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId = value; }
+    inline void SetChildAssetModelId(Aws::String&& value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId = std::move(value); }
+    inline void SetChildAssetModelId(const char* value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId.assign(value); }
+    inline AssetModelHierarchyDefinition& WithChildAssetModelId(const Aws::String& value) { SetChildAssetModelId(value); return *this;}
+    inline AssetModelHierarchyDefinition& WithChildAssetModelId(Aws::String&& value) { SetChildAssetModelId(std::move(value)); return *this;}
+    inline AssetModelHierarchyDefinition& WithChildAssetModelId(const char* value) { SetChildAssetModelId(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_childAssetModelId;
-    bool m_childAssetModelIdHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_childAssetModelId;
+    bool m_childAssetModelIdHasBeenSet = false;
   };
 
 } // namespace Model

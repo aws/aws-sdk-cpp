@@ -5,6 +5,7 @@
 
 #include <aws/iotsitewise/model/CreateAssetModelCompositeModelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -14,8 +15,8 @@ using namespace Aws::Utils;
 
 CreateAssetModelCompositeModelRequest::CreateAssetModelCompositeModelRequest() : 
     m_assetModelIdHasBeenSet(false),
-    m_parentAssetModelCompositeModelIdHasBeenSet(false),
     m_assetModelCompositeModelExternalIdHasBeenSet(false),
+    m_parentAssetModelCompositeModelIdHasBeenSet(false),
     m_assetModelCompositeModelIdHasBeenSet(false),
     m_assetModelCompositeModelDescriptionHasBeenSet(false),
     m_assetModelCompositeModelNameHasBeenSet(false),
@@ -23,7 +24,11 @@ CreateAssetModelCompositeModelRequest::CreateAssetModelCompositeModelRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_composedAssetModelIdHasBeenSet(false),
-    m_assetModelCompositeModelPropertiesHasBeenSet(false)
+    m_assetModelCompositeModelPropertiesHasBeenSet(false),
+    m_ifMatchHasBeenSet(false),
+    m_ifNoneMatchHasBeenSet(false),
+    m_matchForVersionType(AssetModelVersionType::NOT_SET),
+    m_matchForVersionTypeHasBeenSet(false)
 {
 }
 
@@ -31,15 +36,15 @@ Aws::String CreateAssetModelCompositeModelRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_parentAssetModelCompositeModelIdHasBeenSet)
-  {
-   payload.WithString("parentAssetModelCompositeModelId", m_parentAssetModelCompositeModelId);
-
-  }
-
   if(m_assetModelCompositeModelExternalIdHasBeenSet)
   {
    payload.WithString("assetModelCompositeModelExternalId", m_assetModelCompositeModelExternalId);
+
+  }
+
+  if(m_parentAssetModelCompositeModelIdHasBeenSet)
+  {
+   payload.WithString("parentAssetModelCompositeModelId", m_parentAssetModelCompositeModelId);
 
   }
 
@@ -91,6 +96,33 @@ Aws::String CreateAssetModelCompositeModelRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection CreateAssetModelCompositeModelRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_ifMatchHasBeenSet)
+  {
+    ss << m_ifMatch;
+    headers.emplace("if-match",  ss.str());
+    ss.str("");
+  }
+
+  if(m_ifNoneMatchHasBeenSet)
+  {
+    ss << m_ifNoneMatch;
+    headers.emplace("if-none-match",  ss.str());
+    ss.str("");
+  }
+
+  if(m_matchForVersionTypeHasBeenSet && m_matchForVersionType != AssetModelVersionType::NOT_SET)
+  {
+    headers.emplace("match-for-version-type", AssetModelVersionTypeMapper::GetNameForAssetModelVersionType(m_matchForVersionType));
+  }
+
+  return headers;
+
 }
 
 

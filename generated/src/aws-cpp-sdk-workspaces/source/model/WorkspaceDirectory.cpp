@@ -40,12 +40,14 @@ WorkspaceDirectory::WorkspaceDirectory() :
     m_selfservicePermissionsHasBeenSet(false),
     m_samlPropertiesHasBeenSet(false),
     m_certificateBasedAuthPropertiesHasBeenSet(false),
+    m_microsoftEntraConfigHasBeenSet(false),
     m_workspaceDirectoryNameHasBeenSet(false),
     m_workspaceDirectoryDescriptionHasBeenSet(false),
     m_userIdentityType(UserIdentityType::NOT_SET),
     m_userIdentityTypeHasBeenSet(false),
     m_workspaceType(WorkspaceType::NOT_SET),
     m_workspaceTypeHasBeenSet(false),
+    m_iDCConfigHasBeenSet(false),
     m_activeDirectoryConfigHasBeenSet(false),
     m_streamingPropertiesHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -195,6 +197,13 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
     m_certificateBasedAuthPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MicrosoftEntraConfig"))
+  {
+    m_microsoftEntraConfig = jsonValue.GetObject("MicrosoftEntraConfig");
+
+    m_microsoftEntraConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("WorkspaceDirectoryName"))
   {
     m_workspaceDirectoryName = jsonValue.GetString("WorkspaceDirectoryName");
@@ -221,6 +230,13 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
     m_workspaceType = WorkspaceTypeMapper::GetWorkspaceTypeForName(jsonValue.GetString("WorkspaceType"));
 
     m_workspaceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IDCConfig"))
+  {
+    m_iDCConfig = jsonValue.GetObject("IDCConfig");
+
+    m_iDCConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ActiveDirectoryConfig"))
@@ -371,6 +387,12 @@ JsonValue WorkspaceDirectory::Jsonize() const
 
   }
 
+  if(m_microsoftEntraConfigHasBeenSet)
+  {
+   payload.WithObject("MicrosoftEntraConfig", m_microsoftEntraConfig.Jsonize());
+
+  }
+
   if(m_workspaceDirectoryNameHasBeenSet)
   {
    payload.WithString("WorkspaceDirectoryName", m_workspaceDirectoryName);
@@ -391,6 +413,12 @@ JsonValue WorkspaceDirectory::Jsonize() const
   if(m_workspaceTypeHasBeenSet)
   {
    payload.WithString("WorkspaceType", WorkspaceTypeMapper::GetNameForWorkspaceType(m_workspaceType));
+  }
+
+  if(m_iDCConfigHasBeenSet)
+  {
+   payload.WithObject("IDCConfig", m_iDCConfig.Jsonize());
+
   }
 
   if(m_activeDirectoryConfigHasBeenSet)

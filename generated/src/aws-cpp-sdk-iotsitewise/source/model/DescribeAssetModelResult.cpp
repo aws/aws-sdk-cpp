@@ -37,6 +37,12 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("assetModelExternalId"))
+  {
+    m_assetModelExternalId = jsonValue.GetString("assetModelExternalId");
+
+  }
+
   if(jsonValue.ValueExists("assetModelArn"))
   {
     m_assetModelArn = jsonValue.GetString("assetModelArn");
@@ -46,6 +52,12 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("assetModelName"))
   {
     m_assetModelName = jsonValue.GetString("assetModelName");
+
+  }
+
+  if(jsonValue.ValueExists("assetModelType"))
+  {
+    m_assetModelType = AssetModelTypeMapper::GetAssetModelTypeForName(jsonValue.GetString("assetModelType"));
 
   }
 
@@ -82,6 +94,15 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("assetModelCompositeModelSummaries"))
+  {
+    Aws::Utils::Array<JsonView> assetModelCompositeModelSummariesJsonList = jsonValue.GetArray("assetModelCompositeModelSummaries");
+    for(unsigned assetModelCompositeModelSummariesIndex = 0; assetModelCompositeModelSummariesIndex < assetModelCompositeModelSummariesJsonList.GetLength(); ++assetModelCompositeModelSummariesIndex)
+    {
+      m_assetModelCompositeModelSummaries.push_back(assetModelCompositeModelSummariesJsonList[assetModelCompositeModelSummariesIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("assetModelCreationDate"))
   {
     m_assetModelCreationDate = jsonValue.GetDouble("assetModelCreationDate");
@@ -100,29 +121,20 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("assetModelType"))
+  if(jsonValue.ValueExists("assetModelVersion"))
   {
-    m_assetModelType = AssetModelTypeMapper::GetAssetModelTypeForName(jsonValue.GetString("assetModelType"));
-
-  }
-
-  if(jsonValue.ValueExists("assetModelCompositeModelSummaries"))
-  {
-    Aws::Utils::Array<JsonView> assetModelCompositeModelSummariesJsonList = jsonValue.GetArray("assetModelCompositeModelSummaries");
-    for(unsigned assetModelCompositeModelSummariesIndex = 0; assetModelCompositeModelSummariesIndex < assetModelCompositeModelSummariesJsonList.GetLength(); ++assetModelCompositeModelSummariesIndex)
-    {
-      m_assetModelCompositeModelSummaries.push_back(assetModelCompositeModelSummariesJsonList[assetModelCompositeModelSummariesIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("assetModelExternalId"))
-  {
-    m_assetModelExternalId = jsonValue.GetString("assetModelExternalId");
+    m_assetModelVersion = jsonValue.GetString("assetModelVersion");
 
   }
 
 
   const auto& headers = result.GetHeaderValueCollection();
+  const auto& eTagIter = headers.find("etag");
+  if(eTagIter != headers.end())
+  {
+    m_eTag = eTagIter->second;
+  }
+
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {

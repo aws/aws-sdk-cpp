@@ -43,6 +43,42 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID to assign to the composite model, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+    inline AssetModelCompositeModelDefinition& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline AssetModelCompositeModelDefinition& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline AssetModelCompositeModelDefinition& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An external ID to assign to the composite model. The external ID must be
+     * unique among composite models within this asset model. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+    inline AssetModelCompositeModelDefinition& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+    inline AssetModelCompositeModelDefinition& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+    inline AssetModelCompositeModelDefinition& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the composite model.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -97,43 +133,13 @@ namespace Model
     inline AssetModelCompositeModelDefinition& AddProperties(const AssetModelPropertyDefinition& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
     inline AssetModelCompositeModelDefinition& AddProperties(AssetModelPropertyDefinition&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID to assign to the composite model, if desired. IoT SiteWise
-     * automatically generates a unique ID for you, so this parameter is never
-     * required. However, if you prefer to supply your own ID instead, you can specify
-     * it here in UUID format. If you specify your own ID, it must be globally
-     * unique.</p>
-     */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssetModelCompositeModelDefinition& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssetModelCompositeModelDefinition& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssetModelCompositeModelDefinition& WithId(const char* value) { SetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An external ID to assign to the composite model. The external ID must be
-     * unique among composite models within this asset model. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
-    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline AssetModelCompositeModelDefinition& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline AssetModelCompositeModelDefinition& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline AssetModelCompositeModelDefinition& WithExternalId(const char* value) { SetExternalId(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -146,12 +152,6 @@ namespace Model
 
     Aws::Vector<AssetModelPropertyDefinition> m_properties;
     bool m_propertiesHasBeenSet = false;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    Aws::String m_externalId;
-    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

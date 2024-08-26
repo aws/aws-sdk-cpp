@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/model/AssetModelType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotsitewise/model/AssetModelStatus.h>
-#include <aws/iotsitewise/model/AssetModelType.h>
 #include <aws/iotsitewise/model/AssetModelProperty.h>
 #include <aws/iotsitewise/model/AssetModelHierarchy.h>
 #include <aws/iotsitewise/model/AssetModelCompositeModel.h>
@@ -55,6 +55,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The external ID of the asset model, if any.</p>
+     */
+    inline const Aws::String& GetAssetModelExternalId() const{ return m_assetModelExternalId; }
+    inline void SetAssetModelExternalId(const Aws::String& value) { m_assetModelExternalId = value; }
+    inline void SetAssetModelExternalId(Aws::String&& value) { m_assetModelExternalId = std::move(value); }
+    inline void SetAssetModelExternalId(const char* value) { m_assetModelExternalId.assign(value); }
+    inline DescribeAssetModelResult& WithAssetModelExternalId(const Aws::String& value) { SetAssetModelExternalId(value); return *this;}
+    inline DescribeAssetModelResult& WithAssetModelExternalId(Aws::String&& value) { SetAssetModelExternalId(std::move(value)); return *this;}
+    inline DescribeAssetModelResult& WithAssetModelExternalId(const char* value) { SetAssetModelExternalId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the asset model, which has the following format.</p> <p>
@@ -81,6 +94,21 @@ namespace Model
     inline DescribeAssetModelResult& WithAssetModelName(const Aws::String& value) { SetAssetModelName(value); return *this;}
     inline DescribeAssetModelResult& WithAssetModelName(Aws::String&& value) { SetAssetModelName(std::move(value)); return *this;}
     inline DescribeAssetModelResult& WithAssetModelName(const char* value) { SetAssetModelName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
+    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelType = value; }
+    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelType = std::move(value); }
+    inline DescribeAssetModelResult& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
+    inline DescribeAssetModelResult& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,6 +171,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset model.</p>
+     */
+    inline const Aws::Vector<AssetModelCompositeModelSummary>& GetAssetModelCompositeModelSummaries() const{ return m_assetModelCompositeModelSummaries; }
+    inline void SetAssetModelCompositeModelSummaries(const Aws::Vector<AssetModelCompositeModelSummary>& value) { m_assetModelCompositeModelSummaries = value; }
+    inline void SetAssetModelCompositeModelSummaries(Aws::Vector<AssetModelCompositeModelSummary>&& value) { m_assetModelCompositeModelSummaries = std::move(value); }
+    inline DescribeAssetModelResult& WithAssetModelCompositeModelSummaries(const Aws::Vector<AssetModelCompositeModelSummary>& value) { SetAssetModelCompositeModelSummaries(value); return *this;}
+    inline DescribeAssetModelResult& WithAssetModelCompositeModelSummaries(Aws::Vector<AssetModelCompositeModelSummary>&& value) { SetAssetModelCompositeModelSummaries(std::move(value)); return *this;}
+    inline DescribeAssetModelResult& AddAssetModelCompositeModelSummaries(const AssetModelCompositeModelSummary& value) { m_assetModelCompositeModelSummaries.push_back(value); return *this; }
+    inline DescribeAssetModelResult& AddAssetModelCompositeModelSummaries(AssetModelCompositeModelSummary&& value) { m_assetModelCompositeModelSummaries.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The date the asset model was created, in Unix epoch time.</p>
      */
     inline const Aws::Utils::DateTime& GetAssetModelCreationDate() const{ return m_assetModelCreationDate; }
@@ -177,44 +219,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
-     * asset model that you can use to create assets. Can't be included as a component
-     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
-     * component that you can include in the composite models of other asset models.
-     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     * <p>The version of the asset model. See <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html">
+     * Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
-    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelType = value; }
-    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelType = std::move(value); }
-    inline DescribeAssetModelResult& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
-    inline DescribeAssetModelResult& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
+    inline const Aws::String& GetAssetModelVersion() const{ return m_assetModelVersion; }
+    inline void SetAssetModelVersion(const Aws::String& value) { m_assetModelVersion = value; }
+    inline void SetAssetModelVersion(Aws::String&& value) { m_assetModelVersion = std::move(value); }
+    inline void SetAssetModelVersion(const char* value) { m_assetModelVersion.assign(value); }
+    inline DescribeAssetModelResult& WithAssetModelVersion(const Aws::String& value) { SetAssetModelVersion(value); return *this;}
+    inline DescribeAssetModelResult& WithAssetModelVersion(Aws::String&& value) { SetAssetModelVersion(std::move(value)); return *this;}
+    inline DescribeAssetModelResult& WithAssetModelVersion(const char* value) { SetAssetModelVersion(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The list of the immediate child custom composite model summaries for the
-     * asset model.</p>
+     * <p>The entity tag (ETag) is a hash of the retrieved version of the asset model.
+     * It's used to make concurrent updates safely to the resource. See <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic
+     * locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>. </p>
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">
+     * Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User
+     * Guide</i>.</p>
      */
-    inline const Aws::Vector<AssetModelCompositeModelSummary>& GetAssetModelCompositeModelSummaries() const{ return m_assetModelCompositeModelSummaries; }
-    inline void SetAssetModelCompositeModelSummaries(const Aws::Vector<AssetModelCompositeModelSummary>& value) { m_assetModelCompositeModelSummaries = value; }
-    inline void SetAssetModelCompositeModelSummaries(Aws::Vector<AssetModelCompositeModelSummary>&& value) { m_assetModelCompositeModelSummaries = std::move(value); }
-    inline DescribeAssetModelResult& WithAssetModelCompositeModelSummaries(const Aws::Vector<AssetModelCompositeModelSummary>& value) { SetAssetModelCompositeModelSummaries(value); return *this;}
-    inline DescribeAssetModelResult& WithAssetModelCompositeModelSummaries(Aws::Vector<AssetModelCompositeModelSummary>&& value) { SetAssetModelCompositeModelSummaries(std::move(value)); return *this;}
-    inline DescribeAssetModelResult& AddAssetModelCompositeModelSummaries(const AssetModelCompositeModelSummary& value) { m_assetModelCompositeModelSummaries.push_back(value); return *this; }
-    inline DescribeAssetModelResult& AddAssetModelCompositeModelSummaries(AssetModelCompositeModelSummary&& value) { m_assetModelCompositeModelSummaries.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The external ID of the asset model, if any.</p>
-     */
-    inline const Aws::String& GetAssetModelExternalId() const{ return m_assetModelExternalId; }
-    inline void SetAssetModelExternalId(const Aws::String& value) { m_assetModelExternalId = value; }
-    inline void SetAssetModelExternalId(Aws::String&& value) { m_assetModelExternalId = std::move(value); }
-    inline void SetAssetModelExternalId(const char* value) { m_assetModelExternalId.assign(value); }
-    inline DescribeAssetModelResult& WithAssetModelExternalId(const Aws::String& value) { SetAssetModelExternalId(value); return *this;}
-    inline DescribeAssetModelResult& WithAssetModelExternalId(Aws::String&& value) { SetAssetModelExternalId(std::move(value)); return *this;}
-    inline DescribeAssetModelResult& WithAssetModelExternalId(const char* value) { SetAssetModelExternalId(value); return *this;}
+    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline void SetETag(const Aws::String& value) { m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
+    inline void SetETag(const char* value) { m_eTag.assign(value); }
+    inline DescribeAssetModelResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline DescribeAssetModelResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
+    inline DescribeAssetModelResult& WithETag(const char* value) { SetETag(value); return *this;}
     ///@}
 
     ///@{
@@ -231,9 +266,13 @@ namespace Model
 
     Aws::String m_assetModelId;
 
+    Aws::String m_assetModelExternalId;
+
     Aws::String m_assetModelArn;
 
     Aws::String m_assetModelName;
+
+    AssetModelType m_assetModelType;
 
     Aws::String m_assetModelDescription;
 
@@ -243,17 +282,17 @@ namespace Model
 
     Aws::Vector<AssetModelCompositeModel> m_assetModelCompositeModels;
 
+    Aws::Vector<AssetModelCompositeModelSummary> m_assetModelCompositeModelSummaries;
+
     Aws::Utils::DateTime m_assetModelCreationDate;
 
     Aws::Utils::DateTime m_assetModelLastUpdateDate;
 
     AssetModelStatus m_assetModelStatus;
 
-    AssetModelType m_assetModelType;
+    Aws::String m_assetModelVersion;
 
-    Aws::Vector<AssetModelCompositeModelSummary> m_assetModelCompositeModelSummaries;
-
-    Aws::String m_assetModelExternalId;
+    Aws::String m_eTag;
 
     Aws::String m_requestId;
   };

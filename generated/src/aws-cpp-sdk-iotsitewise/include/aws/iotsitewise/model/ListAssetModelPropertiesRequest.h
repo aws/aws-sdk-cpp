@@ -97,6 +97,24 @@ namespace Model
     inline ListAssetModelPropertiesRequest& WithFilter(const ListAssetModelPropertiesFilter& value) { SetFilter(value); return *this;}
     inline ListAssetModelPropertiesRequest& WithFilter(ListAssetModelPropertiesFilter&& value) { SetFilter(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version alias that specifies the latest or active version of the asset
+     * model. The details are returned in the response. The default value is
+     * <code>LATEST</code>. See <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html">
+     * Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAssetModelVersion() const{ return m_assetModelVersion; }
+    inline bool AssetModelVersionHasBeenSet() const { return m_assetModelVersionHasBeenSet; }
+    inline void SetAssetModelVersion(const Aws::String& value) { m_assetModelVersionHasBeenSet = true; m_assetModelVersion = value; }
+    inline void SetAssetModelVersion(Aws::String&& value) { m_assetModelVersionHasBeenSet = true; m_assetModelVersion = std::move(value); }
+    inline void SetAssetModelVersion(const char* value) { m_assetModelVersionHasBeenSet = true; m_assetModelVersion.assign(value); }
+    inline ListAssetModelPropertiesRequest& WithAssetModelVersion(const Aws::String& value) { SetAssetModelVersion(value); return *this;}
+    inline ListAssetModelPropertiesRequest& WithAssetModelVersion(Aws::String&& value) { SetAssetModelVersion(std::move(value)); return *this;}
+    inline ListAssetModelPropertiesRequest& WithAssetModelVersion(const char* value) { SetAssetModelVersion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_assetModelId;
@@ -110,6 +128,9 @@ namespace Model
 
     ListAssetModelPropertiesFilter m_filter;
     bool m_filterHasBeenSet = false;
+
+    Aws::String m_assetModelVersion;
+    bool m_assetModelVersionHasBeenSet = false;
   };
 
 } // namespace Model
