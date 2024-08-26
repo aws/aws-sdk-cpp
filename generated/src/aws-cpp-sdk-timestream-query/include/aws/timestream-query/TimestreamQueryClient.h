@@ -519,7 +519,6 @@ namespace TimestreamQuery
 
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
       TimestreamQueryClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TimestreamQueryEndpointProviderBase> m_endpointProvider;
   };
 
