@@ -274,6 +274,11 @@ namespace Aws
              */
             Aws::Http::TransferLibType httpLibOverride;
             /**
+             * Configure low latency or low cpu consumption http client operation mode.
+             * Currently applies only to streaming APIs and libCurl. Defaults to LOW_LATENCY
+             */
+            Aws::Http::TransferLibPerformanceMode httpLibPerfMode = Http::TransferLibPerformanceMode::LOW_LATENCY;
+            /**
              * Sets the behavior how http stack handles 30x redirect codes.
              */
             FollowRedirectsPolicy followRedirects;
