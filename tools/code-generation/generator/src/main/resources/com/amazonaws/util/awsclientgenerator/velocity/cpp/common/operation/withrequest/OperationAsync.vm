@@ -7,7 +7,7 @@
 #end#if($serviceModel.metadata.serviceId == "S3" && $operation.s3CrtEnabled)
 void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, ${refText}request, handler, context]()
+  m_clientConfiguration.executor->Submit( [this, ${refText}request, handler, context]()
     {
       handler(this, request, ${operation.name}(request), context);
     } );

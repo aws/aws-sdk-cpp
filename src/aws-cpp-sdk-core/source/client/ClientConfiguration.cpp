@@ -17,6 +17,7 @@
 #include <aws/core/Version.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <smithy/tracing/NoopTelemetryProvider.h>
 
 #include <aws/crt/Config.h>
 
@@ -38,6 +39,19 @@ static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR = "request_min_
 static const char* AWS_EXECUTION_ENV = "AWS_EXECUTION_ENV";
 static const char* DISABLE_IMDSV1_CONFIG_VAR = "AWS_EC2_METADATA_V1_DISABLED";
 static const char* DISABLE_IMDSV1_ENV_VAR = "ec2_metadata_v1_disabled";
+
+ClientConfiguration::ProviderFactories ClientConfiguration::ProviderFactories::defaultFactories = []()
+{
+    ProviderFactories factories;
+
+    factories.retryStrategyCreateFn = [](){return InitRetryStrategy();};
+    factories.executorCreateFn = [](){return Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>(CLIENT_CONFIG_TAG);};
+    factories.writeRateLimiterCreateFn = [](){return nullptr;};
+    factories.readRateLimiterCreateFn = [](){return nullptr;};
+    factories.telemetryProviderCreateFn = [](){return smithy::components::tracing::NoopTelemetryProvider::CreateProvider();};
+
+    return factories;
+}();
 
 Aws::String FilterUserAgentToken(char const * const source)
 {
@@ -131,7 +145,6 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.lowSpeedLimit = 1;
     clientConfig.proxyScheme = Aws::Http::Scheme::HTTP;
     clientConfig.proxyPort = 0;
-    clientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>(CLIENT_CONFIG_TAG);
     clientConfig.verifySSL = true;
     clientConfig.writeRateLimiter = nullptr;
     clientConfig.readRateLimiter = nullptr;
@@ -235,7 +248,6 @@ ClientConfiguration::ClientConfiguration()
 {
     this->disableIMDS = false;
     setLegacyClientConfigurationParameters(*this);
-    retryStrategy = InitRetryStrategy();
 
     if (!this->disableIMDS &&
         region.empty() &&
@@ -259,7 +271,6 @@ ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &co
 {
     this->disableIMDS = configuration.shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);
-    retryStrategy = InitRetryStrategy();
 
     if (!this->disableIMDS &&
         region.empty() &&
@@ -318,10 +329,6 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisable
         Aws::Config::Defaults::SetSmartDefaultsConfigurationParameters(*this, profileDefaultsMode,
                                                                        hasEc2MetadataRegion, ec2MetadataRegion);
         return;
-    }
-    if (!retryStrategy)
-    {
-        retryStrategy = InitRetryStrategy();
     }
 
     AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "User specified profile: [" << profile << "] is not found, will use the SDK resolved one.");

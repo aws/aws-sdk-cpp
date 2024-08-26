@@ -77,16 +77,44 @@ namespace client
         using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
         using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
 
-        AwsSmithyClientBase(const Aws::Client::ClientConfiguration& clientConfig,
+        AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
-          m_clientConfig(clientConfig),
+          m_clientConfig(std::move(clientConfig)),
           m_serviceName(std::move(serviceName)),
-          m_userAgent(Aws::Client::ComputeUserAgentString(&clientConfig)),
+          m_userAgent(),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller))
-        {}
+        {
+            if (!m_clientConfig->retryStrategy)
+            {
+                assert(m_clientConfig->configFactories.retryStrategyCreateFn);
+                m_clientConfig->retryStrategy = m_clientConfig->configFactories.retryStrategyCreateFn();
+            }
+            if (!m_clientConfig->executor)
+            {
+                assert(m_clientConfig->configFactories.executorCreateFn);
+                m_clientConfig->executor = m_clientConfig->configFactories.executorCreateFn();
+            }
+            if (!m_clientConfig->writeRateLimiter)
+            {
+                assert(m_clientConfig->configFactories.writeRateLimiterCreateFn);
+                m_clientConfig->writeRateLimiter = m_clientConfig->configFactories.writeRateLimiterCreateFn();
+            }
+            if (!m_clientConfig->readRateLimiter)
+            {
+                assert(m_clientConfig->configFactories.readRateLimiterCreateFn);
+                m_clientConfig->readRateLimiter = m_clientConfig->configFactories.readRateLimiterCreateFn();
+            }
+            if (!m_clientConfig->telemetryProvider)
+            {
+                assert(m_clientConfig->configFactories.telemetryProviderCreateFn);
+                m_clientConfig->telemetryProvider = m_clientConfig->configFactories.telemetryProviderCreateFn();
+            }
+
+            m_userAgent = Aws::Client::ComputeUserAgentString(m_clientConfig.get());
+        }
 
         AwsSmithyClientBase(const AwsSmithyClientBase&) = delete;
         AwsSmithyClientBase(AwsSmithyClientBase&&) = delete;
@@ -127,7 +155,7 @@ namespace client
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
 
     protected:
-        Aws::Client::ClientConfiguration m_clientConfig;
+        Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;
 

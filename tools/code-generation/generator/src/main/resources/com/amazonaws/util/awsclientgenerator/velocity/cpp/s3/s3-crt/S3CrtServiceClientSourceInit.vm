@@ -44,10 +44,10 @@
 #set($credentialsParam = ", m_credProvider")
 #set($credentialsArg = ", const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider")
 #set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider)")
-#set($defaultCredentialsProviderChainMember = ", m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider))")
+#set($defaultCredentialsProviderChainMember = "m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider))")
 #set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
-#set($simpleCredentialsProviderMember = ", m_credProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials))")
-#set($credentialsProviderMember = ", m_credProvider(credentialsProvider)")
+#set($simpleCredentialsProviderMember = "m_credProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials))")
+#set($credentialsProviderMember = "m_credProvider(credentialsProvider)")
 #set($credentialProviderArg = ", const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider")
 #set($hasEventStreamInputOperation = false)
 #foreach($operation in $serviceModel.operations)
@@ -67,7 +67,6 @@ ${className}::${className}(const ${className} &rhs) :
         Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>(),
     m_clientConfiguration(rhs.m_clientConfiguration),
-    m_executor(rhs.m_clientConfiguration.executor),
     m_endpointProvider(rhs.m_endpointProvider),
     m_identityProvider(rhs.m_identityProvider){}
 
@@ -84,7 +83,6 @@ ${className}& ${className}::operator=(const ${className} &rhs) {
           rhs.m_clientConfiguration.payloadSigningPolicy,
           /*doubleEncodeValue*/ false);
     m_clientConfiguration = rhs.m_clientConfiguration;
-    m_executor = rhs.m_executor;
     m_endpointProvider = rhs.m_endpointProvider;
     init(m_clientConfiguration, m_credProvider);
     return *this;
@@ -102,7 +100,6 @@ ${className}::${className}(${className} &&rhs) noexcept :
             Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>(),
     m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
-    m_executor(std::move(rhs.m_clientConfiguration.executor)),
     m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
 
 ${className}& ${className}::operator=(${className} &&rhs) noexcept {
@@ -118,7 +115,6 @@ ${className}& ${className}::operator=(${className} &&rhs) noexcept {
         rhs.m_clientConfiguration.payloadSigningPolicy,
         /*doubleEncodeValue*/ false);
   m_clientConfiguration = std::move(rhs.m_clientConfiguration);
-  m_executor = std::move(rhs.m_executor);
   m_endpointProvider = std::move(rhs.m_endpointProvider);
   init(m_clientConfiguration, m_credProvider);
   return *this;
@@ -137,9 +133,8 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember},
-#else
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+    ${defaultCredentialsProviderChainMember},
+#else${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
@@ -158,9 +153,8 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember},
-#else
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+    ${simpleCredentialsProviderMember},
+#else${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
@@ -180,9 +174,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${credentialsProviderMember},
+    ${credentialsProviderMember},
 #else
-    m_executor(clientConfiguration.executor)${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+    ${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
@@ -196,9 +190,9 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember},
+    ${defaultCredentialsProviderChainMember},
 #else
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+    ${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
@@ -212,9 +206,9 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember},
+    ${simpleCredentialsProviderMember},
 #else
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+    ${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
@@ -229,9 +223,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit},
+    ${virtualAddressingInit},
 #else
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember},
+    ${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
@@ -246,9 +240,9 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit},
+    ${virtualAddressingInit},
 #else
-    m_executor(clientConfiguration.executor)${virtualAddressingInit},
+    ${virtualAddressingInit},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
@@ -279,6 +273,14 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
     const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider)
 {
   AWSClient::SetServiceClientName("${metadata.serviceId}");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
 #if($serviceModel.endpointRules)
   m_endpointProvider = Aws::MakeShared<S3CrtEndpointProvider>(ALLOCATION_TAG);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);

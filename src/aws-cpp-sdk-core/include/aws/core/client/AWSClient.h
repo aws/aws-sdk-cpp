@@ -169,6 +169,8 @@ namespace Aws
                                              const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
                                              const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
 
+            const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() const { return m_httpClient; }
+
             /**
              * Stop all requests immediately.
              * In flight requests will likely fail.

@@ -1,6 +1,7 @@
 #if(!${onlyGeneratedOperations})
 #set($additionalCtorSignatureArgs = {})
 #set($ctorMemberInitList = [])
+#set($addArgDummy = $ctorMemberInitList.add("m_clientConfiguration(clientConfiguration)"))
 #set($signerCtorArgs = [])
 #set($additionalCtorArgs = {})
 #if($signPayloadsOptional)
@@ -94,7 +95,6 @@ ${className}::${className}(const ${className} &rhs) :
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
             Aws::Client::ClientWithAsyncTemplateMethods<${className}>(),
     m_clientConfiguration(rhs.m_clientConfiguration),
-    m_executor(rhs.m_clientConfiguration.executor),
     m_endpointProvider(rhs.m_endpointProvider) {}
 
 ${className}& ${className}::operator=(const ${className} &rhs) {
@@ -110,7 +110,6 @@ ${className}& ${className}::operator=(const ${className} &rhs) {
           rhs.m_clientConfiguration.payloadSigningPolicy,
           /*doubleEncodeValue*/ false);
     m_clientConfiguration = rhs.m_clientConfiguration;
-    m_executor = rhs.m_executor;
     m_endpointProvider = rhs.m_endpointProvider;
     init(m_clientConfiguration);
     return *this;
@@ -128,7 +127,6 @@ S3Client::S3Client(${className} &&rhs) noexcept :
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
             Aws::Client::ClientWithAsyncTemplateMethods<S3Client>(),
     m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
-    m_executor(std::move(rhs.m_clientConfiguration.executor)),
     m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
 
 ${className}& ${className}::operator=(${className} &&rhs) noexcept {
@@ -144,7 +142,6 @@ ${className}& ${className}::operator=(${className} &&rhs) noexcept {
         rhs.m_clientConfiguration.payloadSigningPolicy,
         /*doubleEncodeValue*/ false);
   m_clientConfiguration = std::move(rhs.m_clientConfiguration);
-  m_executor = std::move(rhs.m_executor);
   m_endpointProvider = std::move(rhs.m_endpointProvider);
   init(m_clientConfiguration);
   return *this;
@@ -169,11 +166,6 @@ ${className}& ${className}::operator=(${className} &&rhs) noexcept {
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, bearerTokenProvider),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-#if($serviceModel.endpointRules)
-  m_clientConfiguration(clientConfiguration),
-#end
-  m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())
-#else,#end
 #foreach($ctorMemberInit in $ctorMemberInitList)
   ${ctorMemberInit}#if( $foreach.hasNext ),
 
@@ -214,11 +206,6 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #else#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-#if($serviceModel.endpointRules)
-  m_clientConfiguration(clientConfiguration),
-#end
-  m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
-#end
 #foreach($ctorMemberInit in $ctorMemberInitList)
   ${ctorMemberInit}#if( $foreach.hasNext ),
 #else#end
@@ -258,11 +245,6 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #else#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-#if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
-    m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
-#end
 #foreach($ctorMemberInit in $ctorMemberInitList)
     ${ctorMemberInit}#if( $foreach.hasNext ),
 #else#end
@@ -302,11 +284,6 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #else#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-#if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
-    m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
-#end
 #foreach($ctorMemberInit in $ctorMemberInitList)
     ${ctorMemberInit}#if( $foreach.hasNext ),
 #else#end
@@ -333,10 +310,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             signerProvider,
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-#if($serviceModel.endpointRules)
-  m_clientConfiguration(clientConfiguration),
-#end
-  m_executor(clientConfiguration.executor)${virtualAddressingInit}
+${virtualAddressingInit}
 {
   init(m_clientConfiguration);
 }
@@ -362,6 +336,14 @@ std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& ${className}::
 void ${className}::init(const ${clientConfigurationCls}& config)
 {
   AWSClient::SetServiceClientName("${metadata.serviceId}");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
 #if($serviceModel.endpointRules)
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);

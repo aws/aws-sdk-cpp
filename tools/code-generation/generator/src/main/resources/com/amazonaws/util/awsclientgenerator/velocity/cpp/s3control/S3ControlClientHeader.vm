@@ -96,7 +96,6 @@ namespace ${metadata.namespace}
 #if($serviceModel.endpointRules)
         ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
 #end
-        std::shared_ptr<Utils::Threading::Executor> m_executor;
 #if(!$serviceModel.endpointRules)
         bool m_useDualStack = false;
         bool m_useArnRegion = false;

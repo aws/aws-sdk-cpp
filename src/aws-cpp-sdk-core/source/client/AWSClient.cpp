@@ -119,13 +119,19 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_region(configuration.region),
-    m_telemetryProvider(configuration.telemetryProvider),
+    m_telemetryProvider(configuration.telemetryProvider ? configuration.telemetryProvider : configuration.configFactories.telemetryProviderCreateFn()),
     m_signerProvider(Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(AWS_CLIENT_LOG_TAG, signer)),
-    m_httpClient(CreateHttpClient(configuration)),
+    m_httpClient(CreateHttpClient(
+        [&configuration, this]()
+        {
+            ClientConfiguration tempConfig(configuration);
+            tempConfig.telemetryProvider = m_telemetryProvider;
+            return tempConfig;
+        }())),
     m_errorMarshaller(errorMarshaller),
-    m_retryStrategy(configuration.retryStrategy),
-    m_writeRateLimiter(configuration.writeRateLimiter),
-    m_readRateLimiter(configuration.readRateLimiter),
+    m_retryStrategy(configuration.retryStrategy ? configuration.retryStrategy : configuration.configFactories.retryStrategyCreateFn()),
+    m_writeRateLimiter(configuration.writeRateLimiter ? configuration.writeRateLimiter : configuration.configFactories.writeRateLimiterCreateFn()),
+    m_readRateLimiter(configuration.readRateLimiter ? configuration.readRateLimiter : configuration.configFactories.readRateLimiterCreateFn()),
     m_userAgent(Aws::Client::ComputeUserAgentString(&configuration)),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
@@ -138,13 +144,19 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_region(configuration.region),
-    m_telemetryProvider(configuration.telemetryProvider),
+    m_telemetryProvider(configuration.telemetryProvider ? configuration.telemetryProvider : configuration.configFactories.telemetryProviderCreateFn()),
     m_signerProvider(signerProvider),
-    m_httpClient(CreateHttpClient(configuration)),
+    m_httpClient(CreateHttpClient(
+        [&configuration, this]()
+        {
+            ClientConfiguration tempConfig(configuration);
+            tempConfig.telemetryProvider = m_telemetryProvider;
+            return tempConfig;
+        }())),
     m_errorMarshaller(errorMarshaller),
-    m_retryStrategy(configuration.retryStrategy),
-    m_writeRateLimiter(configuration.writeRateLimiter),
-    m_readRateLimiter(configuration.readRateLimiter),
+    m_retryStrategy(configuration.retryStrategy ? configuration.retryStrategy : configuration.configFactories.retryStrategyCreateFn()),
+    m_writeRateLimiter(configuration.writeRateLimiter ? configuration.writeRateLimiter : configuration.configFactories.writeRateLimiterCreateFn()),
+    m_readRateLimiter(configuration.readRateLimiter ? configuration.readRateLimiter : configuration.configFactories.readRateLimiterCreateFn()),
     m_userAgent(Aws::Client::ComputeUserAgentString(&configuration)),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
