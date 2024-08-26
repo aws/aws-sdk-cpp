@@ -172,7 +172,6 @@ S3CrtClient::S3CrtClient(const S3CrtClient &rhs) :
         Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>(),
     m_clientConfiguration(rhs.m_clientConfiguration),
-    m_executor(rhs.m_clientConfiguration.executor),
     m_endpointProvider(rhs.m_endpointProvider),
     m_identityProvider(rhs.m_identityProvider){}
 
@@ -189,7 +188,6 @@ S3CrtClient& S3CrtClient::operator=(const S3CrtClient &rhs) {
           rhs.m_clientConfiguration.payloadSigningPolicy,
           /*doubleEncodeValue*/ false);
     m_clientConfiguration = rhs.m_clientConfiguration;
-    m_executor = rhs.m_executor;
     m_endpointProvider = rhs.m_endpointProvider;
     init(m_clientConfiguration, m_credProvider);
     return *this;
@@ -207,7 +205,6 @@ S3CrtClient::S3CrtClient(S3CrtClient &&rhs) noexcept :
             Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>(),
     m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
-    m_executor(std::move(rhs.m_clientConfiguration.executor)),
     m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
 
 S3CrtClient& S3CrtClient::operator=(S3CrtClient &&rhs) noexcept {
@@ -223,7 +220,6 @@ S3CrtClient& S3CrtClient::operator=(S3CrtClient &&rhs) noexcept {
         rhs.m_clientConfiguration.payloadSigningPolicy,
         /*doubleEncodeValue*/ false);
   m_clientConfiguration = std::move(rhs.m_clientConfiguration);
-  m_executor = std::move(rhs.m_executor);
   m_endpointProvider = std::move(rhs.m_endpointProvider);
   init(m_clientConfiguration, m_credProvider);
   return *this;
@@ -240,7 +236,7 @@ S3CrtClient::S3CrtClient(const S3Crt::ClientConfiguration& clientConfiguration, 
             false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-    m_executor(clientConfiguration.executor), m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider)),
+    m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider)),
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration, m_credProvider);
@@ -257,7 +253,7 @@ S3CrtClient::S3CrtClient(const AWSCredentials& credentials, const S3Crt::ClientC
             false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-    m_executor(clientConfiguration.executor), m_credProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)),
+    m_credProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)),
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration, m_credProvider);
@@ -275,7 +271,7 @@ S3CrtClient::S3CrtClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-    m_executor(clientConfiguration.executor), m_credProvider(credentialsProvider),
+    m_credProvider(credentialsProvider),
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration, m_credProvider);
@@ -300,6 +296,14 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
     const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider)
 {
   AWSClient::SetServiceClientName("S3");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   m_endpointProvider = Aws::MakeShared<S3CrtEndpointProvider>(ALLOCATION_TAG);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
@@ -711,6 +715,7 @@ static void CopyObjectRequestShutdownCallback(void *user_data)
 
 void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
+  AWS_ASYNC_OPERATION_GUARD(CopyObject);
   if (!m_endpointProvider) {
     return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
   }
@@ -866,6 +871,7 @@ static void GetObjectRequestShutdownCallback(void *user_data)
 
 void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
+  AWS_ASYNC_OPERATION_GUARD(GetObject);
   if (!m_endpointProvider) {
     return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
   }
@@ -985,6 +991,7 @@ static void PutObjectRequestShutdownCallback(void *user_data)
 
 void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
+  AWS_ASYNC_OPERATION_GUARD(PutObject);
   if (!m_endpointProvider) {
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
   }

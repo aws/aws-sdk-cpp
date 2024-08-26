@@ -158,7 +158,6 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const CognitoIdenti
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -174,7 +173,6 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const AWSCredential
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -190,7 +188,6 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const std::shared_p
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -205,7 +202,6 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const std::shared_p
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -220,7 +216,6 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const AWSCredential
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -235,7 +230,6 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const std::shared_p
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -255,6 +249,14 @@ std::shared_ptr<CognitoIdentityProviderEndpointProviderBase>& CognitoIdentityPro
 void CognitoIdentityProviderClient::init(const CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Cognito Identity Provider");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

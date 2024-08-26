@@ -159,7 +159,6 @@ namespace TranscribeStreamingService
       void init(const TranscribeStreamingServiceClientConfiguration& clientConfiguration);
 
       TranscribeStreamingServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> m_endpointProvider;
   };
 

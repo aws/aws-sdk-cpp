@@ -370,7 +370,6 @@ namespace TimestreamInfluxDB
       void init(const TimestreamInfluxDBClientConfiguration& clientConfiguration);
 
       TimestreamInfluxDBClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TimestreamInfluxDBEndpointProviderBase> m_endpointProvider;
   };
 

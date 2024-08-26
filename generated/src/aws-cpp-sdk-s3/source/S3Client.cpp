@@ -158,7 +158,6 @@ S3Client::S3Client(const S3Client &rhs) :
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
             Aws::Client::ClientWithAsyncTemplateMethods<S3Client>(),
     m_clientConfiguration(rhs.m_clientConfiguration),
-    m_executor(rhs.m_clientConfiguration.executor),
     m_endpointProvider(rhs.m_endpointProvider) {}
 
 S3Client& S3Client::operator=(const S3Client &rhs) {
@@ -174,7 +173,6 @@ S3Client& S3Client::operator=(const S3Client &rhs) {
           rhs.m_clientConfiguration.payloadSigningPolicy,
           /*doubleEncodeValue*/ false);
     m_clientConfiguration = rhs.m_clientConfiguration;
-    m_executor = rhs.m_executor;
     m_endpointProvider = rhs.m_endpointProvider;
     init(m_clientConfiguration);
     return *this;
@@ -192,7 +190,6 @@ S3Client::S3Client(S3Client &&rhs) noexcept :
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
             Aws::Client::ClientWithAsyncTemplateMethods<S3Client>(),
     m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
-    m_executor(std::move(rhs.m_clientConfiguration.executor)),
     m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
 
 S3Client& S3Client::operator=(S3Client &&rhs) noexcept {
@@ -208,7 +205,6 @@ S3Client& S3Client::operator=(S3Client &&rhs) noexcept {
         rhs.m_clientConfiguration.payloadSigningPolicy,
         /*doubleEncodeValue*/ false);
   m_clientConfiguration = std::move(rhs.m_clientConfiguration);
-  m_executor = std::move(rhs.m_executor);
   m_endpointProvider = std::move(rhs.m_endpointProvider);
   init(m_clientConfiguration);
   return *this;
@@ -226,7 +222,6 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
                                                                 /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -245,7 +240,6 @@ S3Client::S3Client(const AWSCredentials& credentials,
                                                                 /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -264,7 +258,6 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
                                                                 /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -285,7 +278,6 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
                                                                 /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -306,7 +298,6 @@ S3Client::S3Client(const AWSCredentials& credentials,
                                                                 /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -327,7 +318,6 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
                                                                 /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -347,6 +337,14 @@ std::shared_ptr<S3EndpointProviderBase>& S3Client::accessEndpointProvider()
 void S3Client::init(const S3::S3ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("S3");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }
@@ -508,13 +506,13 @@ CopyObjectOutcomeCallable S3Client::CopyObjectCallable(const CopyObjectRequest& 
 {
   auto task = Aws::MakeShared< std::packaged_task< CopyObjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyObject(request); } );
   auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
+  m_clientConfiguration.executor->Submit(packagedFunction);
   return task->get_future();
 }
 
 void S3Client::CopyObjectAsync(const CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  m_clientConfiguration.executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CopyObject(request), context);
     } );
@@ -2261,13 +2259,13 @@ GetObjectOutcomeCallable S3Client::GetObjectCallable(const GetObjectRequest& req
 {
   auto task = Aws::MakeShared< std::packaged_task< GetObjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetObject(request); } );
   auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
+  m_clientConfiguration.executor->Submit(packagedFunction);
   return task->get_future();
 }
 
 void S3Client::GetObjectAsync(const GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  m_clientConfiguration.executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetObject(request), context);
     } );
@@ -4008,13 +4006,13 @@ PutObjectOutcomeCallable S3Client::PutObjectCallable(const PutObjectRequest& req
 {
   auto task = Aws::MakeShared< std::packaged_task< PutObjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutObject(request); } );
   auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
+  m_clientConfiguration.executor->Submit(packagedFunction);
   return task->get_future();
 }
 
 void S3Client::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  m_clientConfiguration.executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutObject(request), context);
     } );
