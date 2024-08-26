@@ -37,8 +37,8 @@ namespace client
             const std::shared_ptr<EndpointProviderT> endpointProvider,
             const std::shared_ptr<ServiceAuthSchemeResolverT>& authSchemeResolver,
             const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
-            : AwsSmithyClientBase(clientConfig, serviceName, httpClient, errorMarshaller),
-              m_clientConfig(clientConfig),
+            : AwsSmithyClientBase(Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, clientConfig), serviceName, httpClient, errorMarshaller),
+              m_clientConfig(*AwsSmithyClientBase::m_clientConfig.get()),
               m_endpointProvider(endpointProvider),
               m_authSchemeResolver(authSchemeResolver),
               m_authSchemes(authSchemes)
@@ -119,7 +119,7 @@ namespace client
         }
 
     protected:
-        ServiceClientConfigurationT m_clientConfig{};
+        ServiceClientConfigurationT& m_clientConfig;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};

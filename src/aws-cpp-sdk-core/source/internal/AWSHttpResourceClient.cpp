@@ -81,7 +81,7 @@ namespace Aws
         AWSHttpResourceClient::AWSHttpResourceClient(const Aws::Client::ClientConfiguration& clientConfiguration, const char* logtag)
         : m_logtag(logtag),
           m_userAgent(Aws::Client::ComputeUserAgentString(&clientConfiguration)),
-          m_retryStrategy(clientConfiguration.retryStrategy),
+          m_retryStrategy(clientConfiguration.retryStrategy ? clientConfiguration.retryStrategy : clientConfiguration.configFactories.retryStrategyCreateFn()),
           m_httpClient(nullptr)
         {
             AWS_LOGSTREAM_INFO(m_logtag.c_str(),
