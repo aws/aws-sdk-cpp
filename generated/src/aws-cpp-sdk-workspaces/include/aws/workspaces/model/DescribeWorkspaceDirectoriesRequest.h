@@ -8,6 +8,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/model/DescribeWorkspaceDirectoriesFilter.h>
 #include <utility>
 
 namespace Aws
@@ -90,6 +91,20 @@ namespace Model
     inline DescribeWorkspaceDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline DescribeWorkspaceDirectoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The filter condition for the WorkSpaces.</p>
+     */
+    inline const Aws::Vector<DescribeWorkspaceDirectoriesFilter>& GetFilters() const{ return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    inline void SetFilters(const Aws::Vector<DescribeWorkspaceDirectoriesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<DescribeWorkspaceDirectoriesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+    inline DescribeWorkspaceDirectoriesRequest& WithFilters(const Aws::Vector<DescribeWorkspaceDirectoriesFilter>& value) { SetFilters(value); return *this;}
+    inline DescribeWorkspaceDirectoriesRequest& WithFilters(Aws::Vector<DescribeWorkspaceDirectoriesFilter>&& value) { SetFilters(std::move(value)); return *this;}
+    inline DescribeWorkspaceDirectoriesRequest& AddFilters(const DescribeWorkspaceDirectoriesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeWorkspaceDirectoriesRequest& AddFilters(DescribeWorkspaceDirectoriesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_directoryIds;
@@ -103,6 +118,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<DescribeWorkspaceDirectoriesFilter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

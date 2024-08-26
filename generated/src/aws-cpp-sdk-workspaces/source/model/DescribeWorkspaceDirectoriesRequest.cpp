@@ -17,7 +17,8 @@ DescribeWorkspaceDirectoriesRequest::DescribeWorkspaceDirectoriesRequest() :
     m_workspaceDirectoryNamesHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,17 @@ Aws::String DescribeWorkspaceDirectoriesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("Filters", std::move(filtersJsonList));
 
   }
 

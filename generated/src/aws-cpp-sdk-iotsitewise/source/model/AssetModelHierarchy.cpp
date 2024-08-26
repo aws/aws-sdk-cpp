@@ -20,9 +20,9 @@ namespace Model
 
 AssetModelHierarchy::AssetModelHierarchy() : 
     m_idHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_childAssetModelIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_childAssetModelIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +41,13 @@ AssetModelHierarchy& AssetModelHierarchy::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+
+    m_externalIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -53,13 +60,6 @@ AssetModelHierarchy& AssetModelHierarchy::operator =(JsonView jsonValue)
     m_childAssetModelId = jsonValue.GetString("childAssetModelId");
 
     m_childAssetModelIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("externalId"))
-  {
-    m_externalId = jsonValue.GetString("externalId");
-
-    m_externalIdHasBeenSet = true;
   }
 
   return *this;
@@ -75,6 +75,12 @@ JsonValue AssetModelHierarchy::Jsonize() const
 
   }
 
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -84,12 +90,6 @@ JsonValue AssetModelHierarchy::Jsonize() const
   if(m_childAssetModelIdHasBeenSet)
   {
    payload.WithString("childAssetModelId", m_childAssetModelId);
-
-  }
-
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
 
   }
 

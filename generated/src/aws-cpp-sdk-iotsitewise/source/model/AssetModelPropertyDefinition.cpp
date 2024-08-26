@@ -19,14 +19,14 @@ namespace Model
 {
 
 AssetModelPropertyDefinition::AssetModelPropertyDefinition() : 
+    m_idHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_dataType(PropertyDataType::NOT_SET),
     m_dataTypeHasBeenSet(false),
     m_dataTypeSpecHasBeenSet(false),
     m_unitHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -38,6 +38,20 @@ AssetModelPropertyDefinition::AssetModelPropertyDefinition(JsonView jsonValue)
 
 AssetModelPropertyDefinition& AssetModelPropertyDefinition::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+
+    m_externalIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -73,26 +87,24 @@ AssetModelPropertyDefinition& AssetModelPropertyDefinition::operator =(JsonView 
     m_typeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("externalId"))
-  {
-    m_externalId = jsonValue.GetString("externalId");
-
-    m_externalIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue AssetModelPropertyDefinition::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
+
+  }
 
   if(m_nameHasBeenSet)
   {
@@ -120,18 +132,6 @@ JsonValue AssetModelPropertyDefinition::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithObject("type", m_type.Jsonize());
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
 
   }
 

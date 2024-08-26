@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SIMPLE_AD,
     AD_CONNECTOR,
-    CUSTOMER_MANAGED
+    CUSTOMER_MANAGED,
+    AWS_IAM_IDENTITY_CENTER
   };
 
 namespace WorkspaceDirectoryTypeMapper

@@ -1797,9 +1797,9 @@ namespace IoTSiteWise
 
         /**
          * <p>Retrieves a paginated list of associated assets.</p> <p>You can use this
-         * operation to do the following:</p> <ul> <li> <p>List child assets associated to
-         * a parent asset by a hierarchy that you specify.</p> </li> <li> <p>List an
-         * asset's parent asset.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * operation to do the following:</p> <ul> <li> <p> <code>CHILD</code> - List all
+         * child assets associated to the asset.</p> </li> <li> <p> <code>PARENT</code> -
+         * List the asset's parent asset.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">AWS
          * API Reference</a></p>
          */

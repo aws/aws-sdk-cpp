@@ -7,6 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/model/AssetModelVersionType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -37,6 +38,8 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
     AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+    AWS_IOTSITEWISE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     ///@{
@@ -82,6 +85,56 @@ namespace Model
     inline DeleteAssetModelCompositeModelRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline DeleteAssetModelCompositeModelRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The expected current entity tag (ETag) for the asset model’s latest or active
+     * version (specified using <code>matchForVersionType</code>). The delete request
+     * is rejected if the tag does not match the latest or active version's current
+     * entity tag. See <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic
+     * locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
+    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
+    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
+    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
+    inline DeleteAssetModelCompositeModelRequest& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
+    inline DeleteAssetModelCompositeModelRequest& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
+    inline DeleteAssetModelCompositeModelRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Accepts <b>*</b> to reject the delete request if an active version (specified
+     * using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists
+     * for the asset model.</p>
+     */
+    inline const Aws::String& GetIfNoneMatch() const{ return m_ifNoneMatch; }
+    inline bool IfNoneMatchHasBeenSet() const { return m_ifNoneMatchHasBeenSet; }
+    inline void SetIfNoneMatch(const Aws::String& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = value; }
+    inline void SetIfNoneMatch(Aws::String&& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = std::move(value); }
+    inline void SetIfNoneMatch(const char* value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch.assign(value); }
+    inline DeleteAssetModelCompositeModelRequest& WithIfNoneMatch(const Aws::String& value) { SetIfNoneMatch(value); return *this;}
+    inline DeleteAssetModelCompositeModelRequest& WithIfNoneMatch(Aws::String&& value) { SetIfNoneMatch(std::move(value)); return *this;}
+    inline DeleteAssetModelCompositeModelRequest& WithIfNoneMatch(const char* value) { SetIfNoneMatch(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the asset model version type (<code>LATEST</code> or
+     * <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or
+     * <code>If-None-Match</code> headers to determine the target ETag for the delete
+     * operation.</p>
+     */
+    inline const AssetModelVersionType& GetMatchForVersionType() const{ return m_matchForVersionType; }
+    inline bool MatchForVersionTypeHasBeenSet() const { return m_matchForVersionTypeHasBeenSet; }
+    inline void SetMatchForVersionType(const AssetModelVersionType& value) { m_matchForVersionTypeHasBeenSet = true; m_matchForVersionType = value; }
+    inline void SetMatchForVersionType(AssetModelVersionType&& value) { m_matchForVersionTypeHasBeenSet = true; m_matchForVersionType = std::move(value); }
+    inline DeleteAssetModelCompositeModelRequest& WithMatchForVersionType(const AssetModelVersionType& value) { SetMatchForVersionType(value); return *this;}
+    inline DeleteAssetModelCompositeModelRequest& WithMatchForVersionType(AssetModelVersionType&& value) { SetMatchForVersionType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_assetModelId;
@@ -92,6 +145,15 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_ifMatch;
+    bool m_ifMatchHasBeenSet = false;
+
+    Aws::String m_ifNoneMatch;
+    bool m_ifNoneMatchHasBeenSet = false;
+
+    AssetModelVersionType m_matchForVersionType;
+    bool m_matchForVersionTypeHasBeenSet = false;
   };
 
 } // namespace Model

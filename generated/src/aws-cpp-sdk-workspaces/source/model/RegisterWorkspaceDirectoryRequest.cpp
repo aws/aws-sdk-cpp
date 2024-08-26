@@ -26,6 +26,8 @@ RegisterWorkspaceDirectoryRequest::RegisterWorkspaceDirectoryRequest() :
     m_workspaceDirectoryDescriptionHasBeenSet(false),
     m_userIdentityType(UserIdentityType::NOT_SET),
     m_userIdentityTypeHasBeenSet(false),
+    m_idcInstanceArnHasBeenSet(false),
+    m_microsoftEntraConfigHasBeenSet(false),
     m_workspaceType(WorkspaceType::NOT_SET),
     m_workspaceTypeHasBeenSet(false),
     m_activeDirectoryConfigHasBeenSet(false)
@@ -96,6 +98,18 @@ Aws::String RegisterWorkspaceDirectoryRequest::SerializePayload() const
   if(m_userIdentityTypeHasBeenSet)
   {
    payload.WithString("UserIdentityType", UserIdentityTypeMapper::GetNameForUserIdentityType(m_userIdentityType));
+  }
+
+  if(m_idcInstanceArnHasBeenSet)
+  {
+   payload.WithString("IdcInstanceArn", m_idcInstanceArn);
+
+  }
+
+  if(m_microsoftEntraConfigHasBeenSet)
+  {
+   payload.WithObject("MicrosoftEntraConfig", m_microsoftEntraConfig.Jsonize());
+
   }
 
   if(m_workspaceTypeHasBeenSet)

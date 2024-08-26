@@ -18,13 +18,44 @@ using namespace Aws::Http;
 DeleteAssetModelRequest::DeleteAssetModelRequest() : 
     m_assetModelIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_ifMatchHasBeenSet(false),
+    m_ifNoneMatchHasBeenSet(false),
+    m_matchForVersionType(AssetModelVersionType::NOT_SET),
+    m_matchForVersionTypeHasBeenSet(false)
 {
 }
 
 Aws::String DeleteAssetModelRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection DeleteAssetModelRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_ifMatchHasBeenSet)
+  {
+    ss << m_ifMatch;
+    headers.emplace("if-match",  ss.str());
+    ss.str("");
+  }
+
+  if(m_ifNoneMatchHasBeenSet)
+  {
+    ss << m_ifNoneMatch;
+    headers.emplace("if-none-match",  ss.str());
+    ss.str("");
+  }
+
+  if(m_matchForVersionTypeHasBeenSet && m_matchForVersionType != AssetModelVersionType::NOT_SET)
+  {
+    headers.emplace("match-for-version-type", AssetModelVersionTypeMapper::GetNameForAssetModelVersionType(m_matchForVersionType));
+  }
+
+  return headers;
+
 }
 
 void DeleteAssetModelRequest::AddQueryStringParameters(URI& uri) const

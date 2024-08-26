@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoTSiteWise
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAssetModelCompositeModel"; }
 
     AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
+
+    AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     ///@{
@@ -67,6 +73,24 @@ namespace Model
     inline DescribeAssetModelCompositeModelRequest& WithAssetModelCompositeModelId(Aws::String&& value) { SetAssetModelCompositeModelId(std::move(value)); return *this;}
     inline DescribeAssetModelCompositeModelRequest& WithAssetModelCompositeModelId(const char* value) { SetAssetModelCompositeModelId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version alias that specifies the latest or active version of the asset
+     * model. The details are returned in the response. The default value is
+     * <code>LATEST</code>. See <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html">
+     * Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAssetModelVersion() const{ return m_assetModelVersion; }
+    inline bool AssetModelVersionHasBeenSet() const { return m_assetModelVersionHasBeenSet; }
+    inline void SetAssetModelVersion(const Aws::String& value) { m_assetModelVersionHasBeenSet = true; m_assetModelVersion = value; }
+    inline void SetAssetModelVersion(Aws::String&& value) { m_assetModelVersionHasBeenSet = true; m_assetModelVersion = std::move(value); }
+    inline void SetAssetModelVersion(const char* value) { m_assetModelVersionHasBeenSet = true; m_assetModelVersion.assign(value); }
+    inline DescribeAssetModelCompositeModelRequest& WithAssetModelVersion(const Aws::String& value) { SetAssetModelVersion(value); return *this;}
+    inline DescribeAssetModelCompositeModelRequest& WithAssetModelVersion(Aws::String&& value) { SetAssetModelVersion(std::move(value)); return *this;}
+    inline DescribeAssetModelCompositeModelRequest& WithAssetModelVersion(const char* value) { SetAssetModelVersion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_assetModelId;
@@ -74,6 +98,9 @@ namespace Model
 
     Aws::String m_assetModelCompositeModelId;
     bool m_assetModelCompositeModelIdHasBeenSet = false;
+
+    Aws::String m_assetModelVersion;
+    bool m_assetModelVersionHasBeenSet = false;
   };
 
 } // namespace Model

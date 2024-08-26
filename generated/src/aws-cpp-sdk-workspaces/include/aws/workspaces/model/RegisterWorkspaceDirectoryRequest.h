@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/Tenancy.h>
 #include <aws/workspaces/model/UserIdentityType.h>
+#include <aws/workspaces/model/MicrosoftEntraConfig.h>
 #include <aws/workspaces/model/WorkspaceType.h>
 #include <aws/workspaces/model/ActiveDirectoryConfig.h>
 #include <aws/workspaces/model/Tag.h>
@@ -175,6 +176,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+     */
+    inline const Aws::String& GetIdcInstanceArn() const{ return m_idcInstanceArn; }
+    inline bool IdcInstanceArnHasBeenSet() const { return m_idcInstanceArnHasBeenSet; }
+    inline void SetIdcInstanceArn(const Aws::String& value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn = value; }
+    inline void SetIdcInstanceArn(Aws::String&& value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn = std::move(value); }
+    inline void SetIdcInstanceArn(const char* value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn.assign(value); }
+    inline RegisterWorkspaceDirectoryRequest& WithIdcInstanceArn(const Aws::String& value) { SetIdcInstanceArn(value); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithIdcInstanceArn(Aws::String&& value) { SetIdcInstanceArn(std::move(value)); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithIdcInstanceArn(const char* value) { SetIdcInstanceArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The details about Microsoft Entra config.</p>
+     */
+    inline const MicrosoftEntraConfig& GetMicrosoftEntraConfig() const{ return m_microsoftEntraConfig; }
+    inline bool MicrosoftEntraConfigHasBeenSet() const { return m_microsoftEntraConfigHasBeenSet; }
+    inline void SetMicrosoftEntraConfig(const MicrosoftEntraConfig& value) { m_microsoftEntraConfigHasBeenSet = true; m_microsoftEntraConfig = value; }
+    inline void SetMicrosoftEntraConfig(MicrosoftEntraConfig&& value) { m_microsoftEntraConfigHasBeenSet = true; m_microsoftEntraConfig = std::move(value); }
+    inline RegisterWorkspaceDirectoryRequest& WithMicrosoftEntraConfig(const MicrosoftEntraConfig& value) { SetMicrosoftEntraConfig(value); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithMicrosoftEntraConfig(MicrosoftEntraConfig&& value) { SetMicrosoftEntraConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
      */
     inline const WorkspaceType& GetWorkspaceType() const{ return m_workspaceType; }
@@ -224,6 +251,12 @@ namespace Model
 
     UserIdentityType m_userIdentityType;
     bool m_userIdentityTypeHasBeenSet = false;
+
+    Aws::String m_idcInstanceArn;
+    bool m_idcInstanceArnHasBeenSet = false;
+
+    MicrosoftEntraConfig m_microsoftEntraConfig;
+    bool m_microsoftEntraConfigHasBeenSet = false;
 
     WorkspaceType m_workspaceType;
     bool m_workspaceTypeHasBeenSet = false;

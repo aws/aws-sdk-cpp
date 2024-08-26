@@ -15,8 +15,10 @@
 #include <aws/workspaces/model/SelfservicePermissions.h>
 #include <aws/workspaces/model/SamlProperties.h>
 #include <aws/workspaces/model/CertificateBasedAuthProperties.h>
+#include <aws/workspaces/model/MicrosoftEntraConfig.h>
 #include <aws/workspaces/model/UserIdentityType.h>
 #include <aws/workspaces/model/WorkspaceType.h>
+#include <aws/workspaces/model/IDCConfig.h>
 #include <aws/workspaces/model/ActiveDirectoryConfig.h>
 #include <aws/workspaces/model/StreamingProperties.h>
 #include <utility>
@@ -312,6 +314,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies details about Microsoft Entra configurations.</p>
+     */
+    inline const MicrosoftEntraConfig& GetMicrosoftEntraConfig() const{ return m_microsoftEntraConfig; }
+    inline bool MicrosoftEntraConfigHasBeenSet() const { return m_microsoftEntraConfigHasBeenSet; }
+    inline void SetMicrosoftEntraConfig(const MicrosoftEntraConfig& value) { m_microsoftEntraConfigHasBeenSet = true; m_microsoftEntraConfig = value; }
+    inline void SetMicrosoftEntraConfig(MicrosoftEntraConfig&& value) { m_microsoftEntraConfigHasBeenSet = true; m_microsoftEntraConfig = std::move(value); }
+    inline WorkspaceDirectory& WithMicrosoftEntraConfig(const MicrosoftEntraConfig& value) { SetMicrosoftEntraConfig(value); return *this;}
+    inline WorkspaceDirectory& WithMicrosoftEntraConfig(MicrosoftEntraConfig&& value) { SetMicrosoftEntraConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name fo the WorkSpace directory.</p>
      */
     inline const Aws::String& GetWorkspaceDirectoryName() const{ return m_workspaceDirectoryName; }
@@ -360,6 +374,18 @@ namespace Model
     inline void SetWorkspaceType(WorkspaceType&& value) { m_workspaceTypeHasBeenSet = true; m_workspaceType = std::move(value); }
     inline WorkspaceDirectory& WithWorkspaceType(const WorkspaceType& value) { SetWorkspaceType(value); return *this;}
     inline WorkspaceDirectory& WithWorkspaceType(WorkspaceType&& value) { SetWorkspaceType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies details about identity center configurations.</p>
+     */
+    inline const IDCConfig& GetIDCConfig() const{ return m_iDCConfig; }
+    inline bool IDCConfigHasBeenSet() const { return m_iDCConfigHasBeenSet; }
+    inline void SetIDCConfig(const IDCConfig& value) { m_iDCConfigHasBeenSet = true; m_iDCConfig = value; }
+    inline void SetIDCConfig(IDCConfig&& value) { m_iDCConfigHasBeenSet = true; m_iDCConfig = std::move(value); }
+    inline WorkspaceDirectory& WithIDCConfig(const IDCConfig& value) { SetIDCConfig(value); return *this;}
+    inline WorkspaceDirectory& WithIDCConfig(IDCConfig&& value) { SetIDCConfig(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -455,6 +481,9 @@ namespace Model
     CertificateBasedAuthProperties m_certificateBasedAuthProperties;
     bool m_certificateBasedAuthPropertiesHasBeenSet = false;
 
+    MicrosoftEntraConfig m_microsoftEntraConfig;
+    bool m_microsoftEntraConfigHasBeenSet = false;
+
     Aws::String m_workspaceDirectoryName;
     bool m_workspaceDirectoryNameHasBeenSet = false;
 
@@ -466,6 +495,9 @@ namespace Model
 
     WorkspaceType m_workspaceType;
     bool m_workspaceTypeHasBeenSet = false;
+
+    IDCConfig m_iDCConfig;
+    bool m_iDCConfigHasBeenSet = false;
 
     ActiveDirectoryConfig m_activeDirectoryConfig;
     bool m_activeDirectoryConfigHasBeenSet = false;

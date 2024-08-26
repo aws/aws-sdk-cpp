@@ -21,7 +21,8 @@ ListAssetModelPropertiesRequest::ListAssetModelPropertiesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_filter(ListAssetModelPropertiesFilter::NOT_SET),
-    m_filterHasBeenSet(false)
+    m_filterHasBeenSet(false),
+    m_assetModelVersionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,13 @@ void ListAssetModelPropertiesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << ListAssetModelPropertiesFilterMapper::GetNameForListAssetModelPropertiesFilter(m_filter);
       uri.AddQueryStringParameter("filter", ss.str());
+      ss.str("");
+    }
+
+    if(m_assetModelVersionHasBeenSet)
+    {
+      ss << m_assetModelVersion;
+      uri.AddQueryStringParameter("assetModelVersion", ss.str());
       ss.str("");
     }
 

@@ -7,9 +7,9 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/model/AssetModelType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/iotsitewise/model/AssetModelType.h>
 #include <aws/iotsitewise/model/AssetModelPropertyDefinition.h>
 #include <aws/iotsitewise/model/AssetModelHierarchyDefinition.h>
 #include <aws/iotsitewise/model/AssetModelCompositeModelDefinition.h>
@@ -51,6 +51,56 @@ namespace Model
     inline CreateAssetModelRequest& WithAssetModelName(const Aws::String& value) { SetAssetModelName(value); return *this;}
     inline CreateAssetModelRequest& WithAssetModelName(Aws::String&& value) { SetAssetModelName(std::move(value)); return *this;}
     inline CreateAssetModelRequest& WithAssetModelName(const char* value) { SetAssetModelName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
+    inline bool AssetModelTypeHasBeenSet() const { return m_assetModelTypeHasBeenSet; }
+    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = value; }
+    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = std::move(value); }
+    inline CreateAssetModelRequest& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
+    inline CreateAssetModelRequest& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
+    inline bool AssetModelIdHasBeenSet() const { return m_assetModelIdHasBeenSet; }
+    inline void SetAssetModelId(const Aws::String& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = value; }
+    inline void SetAssetModelId(Aws::String&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::move(value); }
+    inline void SetAssetModelId(const char* value) { m_assetModelIdHasBeenSet = true; m_assetModelId.assign(value); }
+    inline CreateAssetModelRequest& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
+    inline CreateAssetModelRequest& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
+    inline CreateAssetModelRequest& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAssetModelExternalId() const{ return m_assetModelExternalId; }
+    inline bool AssetModelExternalIdHasBeenSet() const { return m_assetModelExternalIdHasBeenSet; }
+    inline void SetAssetModelExternalId(const Aws::String& value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId = value; }
+    inline void SetAssetModelExternalId(Aws::String&& value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId = std::move(value); }
+    inline void SetAssetModelExternalId(const char* value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId.assign(value); }
+    inline CreateAssetModelRequest& WithAssetModelExternalId(const Aws::String& value) { SetAssetModelExternalId(value); return *this;}
+    inline CreateAssetModelRequest& WithAssetModelExternalId(Aws::String&& value) { SetAssetModelExternalId(std::move(value)); return *this;}
+    inline CreateAssetModelRequest& WithAssetModelExternalId(const char* value) { SetAssetModelExternalId(value); return *this;}
     ///@}
 
     ///@{
@@ -168,60 +218,19 @@ namespace Model
     inline CreateAssetModelRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline CreateAssetModelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
-    inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
-    inline bool AssetModelIdHasBeenSet() const { return m_assetModelIdHasBeenSet; }
-    inline void SetAssetModelId(const Aws::String& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = value; }
-    inline void SetAssetModelId(Aws::String&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::move(value); }
-    inline void SetAssetModelId(const char* value) { m_assetModelIdHasBeenSet = true; m_assetModelId.assign(value); }
-    inline CreateAssetModelRequest& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
-    inline CreateAssetModelRequest& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
-    inline CreateAssetModelRequest& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An external ID to assign to the asset model. The external ID must be unique
-     * within your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetAssetModelExternalId() const{ return m_assetModelExternalId; }
-    inline bool AssetModelExternalIdHasBeenSet() const { return m_assetModelExternalIdHasBeenSet; }
-    inline void SetAssetModelExternalId(const Aws::String& value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId = value; }
-    inline void SetAssetModelExternalId(Aws::String&& value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId = std::move(value); }
-    inline void SetAssetModelExternalId(const char* value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId.assign(value); }
-    inline CreateAssetModelRequest& WithAssetModelExternalId(const Aws::String& value) { SetAssetModelExternalId(value); return *this;}
-    inline CreateAssetModelRequest& WithAssetModelExternalId(Aws::String&& value) { SetAssetModelExternalId(std::move(value)); return *this;}
-    inline CreateAssetModelRequest& WithAssetModelExternalId(const char* value) { SetAssetModelExternalId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
-     * asset model that you can use to create assets. Can't be included as a component
-     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
-     * component that you can include in the composite models of other asset models.
-     * You can't create assets directly from this type of asset model. </p> </li> </ul>
-     */
-    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
-    inline bool AssetModelTypeHasBeenSet() const { return m_assetModelTypeHasBeenSet; }
-    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = value; }
-    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = std::move(value); }
-    inline CreateAssetModelRequest& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
-    inline CreateAssetModelRequest& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_assetModelName;
     bool m_assetModelNameHasBeenSet = false;
+
+    AssetModelType m_assetModelType;
+    bool m_assetModelTypeHasBeenSet = false;
+
+    Aws::String m_assetModelId;
+    bool m_assetModelIdHasBeenSet = false;
+
+    Aws::String m_assetModelExternalId;
+    bool m_assetModelExternalIdHasBeenSet = false;
 
     Aws::String m_assetModelDescription;
     bool m_assetModelDescriptionHasBeenSet = false;
@@ -240,15 +249,6 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_assetModelId;
-    bool m_assetModelIdHasBeenSet = false;
-
-    Aws::String m_assetModelExternalId;
-    bool m_assetModelExternalIdHasBeenSet = false;
-
-    AssetModelType m_assetModelType;
-    bool m_assetModelTypeHasBeenSet = false;
   };
 
 } // namespace Model

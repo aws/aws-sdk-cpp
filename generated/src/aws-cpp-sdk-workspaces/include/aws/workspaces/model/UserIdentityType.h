@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CUSTOMER_MANAGED,
-    AWS_DIRECTORY_SERVICE
+    AWS_DIRECTORY_SERVICE,
+    AWS_IAM_IDENTITY_CENTER
   };
 
 namespace UserIdentityTypeMapper
