@@ -265,7 +265,6 @@ namespace ${rootNamespace}
         ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
 #end
 #end
-        std::shared_ptr<Utils::Threading::Executor> m_executor;
 #if($serviceNamespace == "S3Crt")
         struct aws_s3_client* m_s3CrtClient = {};
         struct aws_signing_config_aws m_s3CrtSigningConfig = {};

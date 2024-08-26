@@ -57,6 +57,18 @@ namespace Aws
         TransferManager::TransferManager(const TransferManagerConfiguration& configuration) : m_transferConfig(configuration)
         {
             assert(m_transferConfig.s3Client);
+            if (!m_transferConfig.transferExecutor)
+            {
+                if(!m_transferConfig.spExecutor && m_transferConfig.executorCreateFn)
+                {
+                    m_transferConfig.spExecutor = m_transferConfig.executorCreateFn();
+                }
+                m_transferConfig.transferExecutor = m_transferConfig.spExecutor.get();
+            }
+            if (!m_transferConfig.transferExecutor)
+            {
+                AWS_LOGSTREAM_FATAL(CLASS_TAG, "Failed to init TransferManager: transferExecutor is null");
+            }
             assert(m_transferConfig.transferExecutor);
             m_transferConfig.s3Client->AppendToUserAgent("ft/s3-transfer");
             for (uint64_t i = 0; i < m_transferConfig.transferBufferMaxHeapSize; i += m_transferConfig.bufferSize)

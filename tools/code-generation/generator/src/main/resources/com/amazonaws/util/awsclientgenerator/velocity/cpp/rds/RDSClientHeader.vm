@@ -90,7 +90,6 @@ namespace ${rootNamespace}
 #if($serviceModel.endpointRules)
         ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
 #end
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
 #if($serviceModel.endpointRules)
         std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
 #end

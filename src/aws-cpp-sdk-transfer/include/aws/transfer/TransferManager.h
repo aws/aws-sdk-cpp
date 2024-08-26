@@ -39,10 +39,14 @@ namespace Aws
          */
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), computeContentMD5(false), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5)
+            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor)
+              : s3Client(nullptr),
+                transferExecutor(executor),
+                computeContentMD5(false),
+                transferBufferMaxHeapSize(10 * MB5),
+                bufferSize(MB5)
             {
             }
-
             /**
              * S3 Client to use for transfers. You are responsible for setting this.
              */
@@ -53,6 +57,18 @@ namespace Aws
              * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
              */
             Aws::Utils::Threading::Executor* transferExecutor = nullptr;
+
+            /**
+             * Threading Executor shared pointer.
+             * Created and owned by Transfer manager if no raw pointer `transferExecutor` is provided.
+             */
+            std::shared_ptr<Aws::Utils::Threading::Executor> spExecutor = nullptr;
+
+            /**
+             * Threading Executor factory method. Default creates a factory that creates DefaultExecutor
+             */
+            std::function<std::shared_ptr<Utils::Threading::Executor>()> executorCreateFn;
+
             /**
              * When true, TransferManager will calculate the MD5 digest of the content being uploaded.
              * The digest is sent to S3 via an HTTP header enabling the service to perform integrity checks.

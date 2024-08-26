@@ -72,7 +72,7 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
         else
         {
             //Check if compression is required
-            Aws::Client::CompressionAlgorithm selectedCompressionAlgorithm = pRequest->GetSelectedCompressionAlgorithm(m_clientConfig.requestCompressionConfig);
+            Aws::Client::CompressionAlgorithm selectedCompressionAlgorithm = pRequest->GetSelectedCompressionAlgorithm(m_clientConfig->requestCompressionConfig);
             if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
                 RequestPayloadCompression::AddCompressedContentBodyToRequest(pRequest, httpRequest, selectedCompressionAlgorithm, m_httpClient);
             } else {
@@ -186,7 +186,7 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
           pRequestCtx->m_httpRequest = BuildHttpRequest(pRequestCtx, pRequestCtx->m_endpoint.GetURI(), pRequestCtx->m_method);
       },
       TracingUtils::SMITHY_CLIENT_SERIALIZATION_METRIC,
-      *m_clientConfig.telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+      *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
       {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
@@ -206,7 +206,7 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
                                                                           pRequestCtx->m_requestName,
                                                                           pRequestCtx->m_httpRequest);
 
-    if(m_clientConfig.retryStrategy && !m_clientConfig.retryStrategy->HasSendToken())
+    if(m_clientConfig->retryStrategy && !m_clientConfig->retryStrategy->HasSendToken())
     {
         auto errOutcome = HttpResponseOutcome(ClientError(CoreErrors::SLOW_DOWN,
                                                                 "",
@@ -223,7 +223,7 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
             return this->SignRequest(pRequestCtx->m_httpRequest, pRequestCtx->m_authSchemeOption);
         },
         TracingUtils::SMITHY_CLIENT_SIGNING_METRIC,
-        *m_clientConfig.telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
          {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
@@ -260,20 +260,20 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
             m_httpClient->MakeAsyncRequest(pRequestCtx->m_httpRequest,
                                            pRequestCtx->m_pExecutor,
                                            responseHandler,
-                                           m_clientConfig.readRateLimiter.get(),
-                                           m_clientConfig.writeRateLimiter.get());
+                                           m_clientConfig->readRateLimiter.get(),
+                                           m_clientConfig->writeRateLimiter.get());
     },
     TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
-    *m_clientConfig.telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+    *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
     {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
      {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 #else
     auto httpResponse = TracingUtils::MakeCallWithTiming<std::shared_ptr<HttpResponse>>(
         [&]() -> std::shared_ptr<HttpResponse> {
-            return m_httpClient->MakeRequest(signedHttpRequest, m_clientConfig.readRateLimiter.get(), m_clientConfig.writeRateLimiter.get());
+            return m_httpClient->MakeRequest(signedHttpRequest, m_clientConfig->readRateLimiter.get(), m_clientConfig->writeRateLimiter.get());
         },
         TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
-        *m_clientConfig.telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
     pRequestCtx->m_pExecutor->Submit([httpResponse, httpResponseHandler]() mutable
@@ -319,16 +319,16 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
     {
         if (pRequestCtx->m_retryCount == 0)
         {
-            m_clientConfig.retryStrategy->RequestBookkeeping(outcome);
+            m_clientConfig->retryStrategy->RequestBookkeeping(outcome);
         }
         else
         {
             assert(pRequestCtx->m_lastError);
-            m_clientConfig.retryStrategy->RequestBookkeeping(outcome, pRequestCtx->m_lastError.value());
+            m_clientConfig->retryStrategy->RequestBookkeeping(outcome, pRequestCtx->m_lastError.value());
         }
         coreMetrics.httpClientMetrics = pRequestCtx->m_httpRequest->GetRequestMetrics();
         TracingUtils::EmitCoreHttpMetrics(pRequestCtx->m_httpRequest->GetRequestMetrics(),
-            *m_clientConfig.telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
             {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         if (outcome.IsSuccess())
@@ -374,7 +374,7 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
               const Aws::String regionFromResponse = m_errorMarshaller->ExtractRegion(outcome.GetError());
               const Aws::String& signerRegion = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion() ?
                                                 pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion().value() : "";
-              if (m_clientConfig.region == Aws::Region::AWS_GLOBAL && !regionFromResponse.empty() &&
+              if (m_clientConfig->region == Aws::Region::AWS_GLOBAL && !regionFromResponse.empty() &&
                   regionFromResponse != signerRegion) {
                 pRequestCtx->m_endpoint.AccessAttributes()->authScheme.SetSigningRegion(regionFromResponse);
                 AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Need to retry with a correct region");
@@ -386,21 +386,21 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
 
         long sleepMillis = TracingUtils::MakeCallWithTiming<long>(
             [&]() -> long {
-                return m_clientConfig.retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount));
+                return m_clientConfig->retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount));
             },
             TracingUtils::SMITHY_CLIENT_SERVICE_BACKOFF_DELAY_METRIC,
-            *m_clientConfig.telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
             {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         bool shouldSleep = !retryWithCorrectRegion;
-        if (m_clientConfig.enableClockSkewAdjustment)
+        if (m_clientConfig->enableClockSkewAdjustment)
         {
             // AdjustClockSkew returns true means clock skew was the problem and skew was adjusted, false otherwise.
             // sleep if clock skew and region was NOT the problem. AdjustClockSkew may update error inside outcome.
             shouldSleep |= !this->AdjustClockSkew(outcome, pRequestCtx->m_authSchemeOption);
         }
 
-        if (!retryWithCorrectRegion && !m_clientConfig.retryStrategy->ShouldRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount)))
+        if (!retryWithCorrectRegion && !m_clientConfig->retryStrategy->ShouldRetry(outcome.GetError(), static_cast<long>(pRequestCtx->m_retryCount)))
         {
             break;
         }
@@ -435,10 +435,10 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
         }
         if (serverTime.WasParseSuccessful() && serverTime != Utils::DateTime())
         {
-            pRequestCtx->m_requestInfo.ttl = Utils::DateTime::Now() + clockSkew + std::chrono::milliseconds(m_clientConfig.requestTimeoutMs);
+            pRequestCtx->m_requestInfo.ttl = Utils::DateTime::Now() + clockSkew + std::chrono::milliseconds(m_clientConfig->requestTimeoutMs);
         }
         pRequestCtx->m_requestInfo.attempt ++;
-        pRequestCtx->m_requestInfo.maxAttempts = m_clientConfig.retryStrategy->GetMaxAttempts();
+        pRequestCtx->m_requestInfo.maxAttempts = m_clientConfig->retryStrategy->GetMaxAttempts();
 
         Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), pRequestCtx->m_requestName, pRequestCtx->m_httpRequest, pRequestCtx->m_monitoringContexts);
 
@@ -447,7 +447,7 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
         return;
     } while(false); // end of goto in a form of "do { break; } while(false);"
 
-    auto meter = m_clientConfig.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+    auto meter = m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {});
     auto counter = meter->CreateCounter(TracingUtils::SMITHY_CLIENT_SERVICE_ATTEMPTS_METRIC, TracingUtils::COUNT_METRIC_TYPE, "");
     counter->add(pRequestCtx->m_requestInfo.attempt, {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
                                                       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
