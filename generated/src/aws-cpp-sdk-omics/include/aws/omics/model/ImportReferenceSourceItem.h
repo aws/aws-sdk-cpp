@@ -125,6 +125,20 @@ namespace Model
     inline ImportReferenceSourceItem& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline ImportReferenceSourceItem& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The source's reference ID.</p>
+     */
+    inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
+    inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
+    inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
+    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
+    inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
+    inline ImportReferenceSourceItem& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
+    inline ImportReferenceSourceItem& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
+    inline ImportReferenceSourceItem& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_sourceFile;
@@ -144,6 +158,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_referenceId;
+    bool m_referenceIdHasBeenSet = false;
   };
 
 } // namespace Model

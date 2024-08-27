@@ -809,7 +809,6 @@ namespace STS
         void init(const STSClientConfiguration& clientConfiguration);
 
         STSClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<STSEndpointProviderBase> m_endpointProvider;
   };
 

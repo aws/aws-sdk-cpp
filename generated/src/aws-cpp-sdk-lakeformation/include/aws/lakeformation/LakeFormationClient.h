@@ -1595,7 +1595,6 @@ namespace LakeFormation
       void init(const LakeFormationClientConfiguration& clientConfiguration);
 
       LakeFormationClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LakeFormationEndpointProviderBase> m_endpointProvider;
   };
 

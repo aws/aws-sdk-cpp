@@ -773,7 +773,6 @@ namespace IoTEvents
       void init(const IoTEventsClientConfiguration& clientConfiguration);
 
       IoTEventsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTEventsEndpointProviderBase> m_endpointProvider;
   };
 

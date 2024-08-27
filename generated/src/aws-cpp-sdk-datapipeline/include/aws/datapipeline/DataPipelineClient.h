@@ -657,7 +657,6 @@ namespace DataPipeline
       void init(const DataPipelineClientConfiguration& clientConfiguration);
 
       DataPipelineClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DataPipelineEndpointProviderBase> m_endpointProvider;
   };
 

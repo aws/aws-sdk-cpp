@@ -3071,7 +3071,6 @@ namespace ConfigService
       void init(const ConfigServiceClientConfiguration& clientConfiguration);
 
       ConfigServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConfigServiceEndpointProviderBase> m_endpointProvider;
   };
 

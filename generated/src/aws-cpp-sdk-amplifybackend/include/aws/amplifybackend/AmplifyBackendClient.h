@@ -874,7 +874,6 @@ namespace AmplifyBackend
       void init(const AmplifyBackendClientConfiguration& clientConfiguration);
 
       AmplifyBackendClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AmplifyBackendEndpointProviderBase> m_endpointProvider;
   };
 

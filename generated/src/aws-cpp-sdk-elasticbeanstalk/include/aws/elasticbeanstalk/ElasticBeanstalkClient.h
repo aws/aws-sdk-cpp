@@ -1442,7 +1442,6 @@ namespace ElasticBeanstalk
         void init(const ElasticBeanstalkClientConfiguration& clientConfiguration);
 
         ElasticBeanstalkClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<ElasticBeanstalkEndpointProviderBase> m_endpointProvider;
   };
 

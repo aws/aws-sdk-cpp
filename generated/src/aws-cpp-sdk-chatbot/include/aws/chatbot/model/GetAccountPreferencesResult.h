@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * Preferences which apply for AWS Chatbot usage in the calling AWS account.
+     * <p>The preferences related to AWS Chatbot usage in the calling AWS account.</p>
      */
     inline const AccountPreferences& GetAccountPreferences() const{ return m_accountPreferences; }
     inline void SetAccountPreferences(const AccountPreferences& value) { m_accountPreferences = value; }

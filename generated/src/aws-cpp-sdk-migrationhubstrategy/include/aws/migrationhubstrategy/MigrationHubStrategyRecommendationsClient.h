@@ -660,7 +660,6 @@ namespace MigrationHubStrategyRecommendations
       void init(const MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration);
 
       MigrationHubStrategyRecommendationsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> m_endpointProvider;
   };
 

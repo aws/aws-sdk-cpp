@@ -1845,7 +1845,6 @@ namespace Chime
       void init(const ChimeClientConfiguration& clientConfiguration);
 
       ChimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ChimeEndpointProviderBase> m_endpointProvider;
   };
 

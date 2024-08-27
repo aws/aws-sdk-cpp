@@ -755,7 +755,6 @@ namespace BackupGateway
       void init(const BackupGatewayClientConfiguration& clientConfiguration);
 
       BackupGatewayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BackupGatewayEndpointProviderBase> m_endpointProvider;
   };
 

@@ -265,7 +265,6 @@ namespace ImportExport
         void init(const ImportExportClientConfiguration& clientConfiguration);
 
         ImportExportClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<ImportExportEndpointProviderBase> m_endpointProvider;
   };
 

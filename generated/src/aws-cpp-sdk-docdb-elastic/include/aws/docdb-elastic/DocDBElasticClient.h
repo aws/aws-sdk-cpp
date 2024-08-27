@@ -506,7 +506,6 @@ namespace DocDBElastic
       void init(const DocDBElasticClientConfiguration& clientConfiguration);
 
       DocDBElasticClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DocDBElasticEndpointProviderBase> m_endpointProvider;
   };
 

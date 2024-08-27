@@ -236,6 +236,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The read set's creation job ID.</p>
+     */
+    inline const Aws::String& GetCreationJobId() const{ return m_creationJobId; }
+    inline void SetCreationJobId(const Aws::String& value) { m_creationJobId = value; }
+    inline void SetCreationJobId(Aws::String&& value) { m_creationJobId = std::move(value); }
+    inline void SetCreationJobId(const char* value) { m_creationJobId.assign(value); }
+    inline GetReadSetMetadataResult& WithCreationJobId(const Aws::String& value) { SetCreationJobId(value); return *this;}
+    inline GetReadSetMetadataResult& WithCreationJobId(Aws::String&& value) { SetCreationJobId(std::move(value)); return *this;}
+    inline GetReadSetMetadataResult& WithCreationJobId(const char* value) { SetCreationJobId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -278,6 +291,8 @@ namespace Model
     CreationType m_creationType;
 
     ETag m_etag;
+
+    Aws::String m_creationJobId;
 
     Aws::String m_requestId;
   };

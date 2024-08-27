@@ -119,7 +119,6 @@ AppSyncClient::AppSyncClient(const AppSync::AppSyncClientConfiguration& clientCo
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -135,7 +134,6 @@ AppSyncClient::AppSyncClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -151,7 +149,6 @@ AppSyncClient::AppSyncClient(const std::shared_ptr<AWSCredentialsProvider>& cred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -166,7 +163,6 @@ AppSyncClient::AppSyncClient(const std::shared_ptr<AWSCredentialsProvider>& cred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -181,7 +177,6 @@ AppSyncClient::AppSyncClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -196,7 +191,6 @@ AppSyncClient::AppSyncClient(const std::shared_ptr<AWSCredentialsProvider>& cred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -216,6 +210,14 @@ std::shared_ptr<AppSyncEndpointProviderBase>& AppSyncClient::accessEndpointProvi
 void AppSyncClient::init(const AppSync::AppSyncClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("AppSync");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

@@ -980,7 +980,6 @@ namespace KinesisVideo
       void init(const KinesisVideoClientConfiguration& clientConfiguration);
 
       KinesisVideoClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KinesisVideoEndpointProviderBase> m_endpointProvider;
   };
 

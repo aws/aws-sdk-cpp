@@ -753,7 +753,6 @@ namespace EMRContainers
       void init(const EMRContainersClientConfiguration& clientConfiguration);
 
       EMRContainersClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EMRContainersEndpointProviderBase> m_endpointProvider;
   };
 

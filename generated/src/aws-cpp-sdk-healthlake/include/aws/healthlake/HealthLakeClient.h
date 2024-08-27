@@ -422,7 +422,6 @@ namespace HealthLake
       void init(const HealthLakeClientConfiguration& clientConfiguration);
 
       HealthLakeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<HealthLakeEndpointProviderBase> m_endpointProvider;
   };
 

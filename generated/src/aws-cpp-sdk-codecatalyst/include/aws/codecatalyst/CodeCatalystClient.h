@@ -1128,7 +1128,6 @@ namespace CodeCatalyst
       void init(const CodeCatalystClientConfiguration& clientConfiguration);
 
       CodeCatalystClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeCatalystEndpointProviderBase> m_endpointProvider;
   };
 

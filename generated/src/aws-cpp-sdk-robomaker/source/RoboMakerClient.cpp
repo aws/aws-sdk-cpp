@@ -97,7 +97,6 @@ RoboMakerClient::RoboMakerClient(const RoboMaker::RoboMakerClientConfiguration& 
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -113,7 +112,6 @@ RoboMakerClient::RoboMakerClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -129,7 +127,6 @@ RoboMakerClient::RoboMakerClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -144,7 +141,6 @@ RoboMakerClient::RoboMakerClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -159,7 +155,6 @@ RoboMakerClient::RoboMakerClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -174,7 +169,6 @@ RoboMakerClient::RoboMakerClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -194,6 +188,14 @@ std::shared_ptr<RoboMakerEndpointProviderBase>& RoboMakerClient::accessEndpointP
 void RoboMakerClient::init(const RoboMaker::RoboMakerClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("RoboMaker");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

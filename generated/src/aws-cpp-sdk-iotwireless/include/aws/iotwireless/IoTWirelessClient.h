@@ -2860,7 +2860,6 @@ namespace IoTWireless
       void init(const IoTWirelessClientConfiguration& clientConfiguration);
 
       IoTWirelessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTWirelessEndpointProviderBase> m_endpointProvider;
   };
 

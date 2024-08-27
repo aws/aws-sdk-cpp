@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
+     * <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to
+     * retrieve.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }

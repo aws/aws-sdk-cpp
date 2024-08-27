@@ -775,7 +775,6 @@ namespace Support
       void init(const SupportClientConfiguration& clientConfiguration);
 
       SupportClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SupportEndpointProviderBase> m_endpointProvider;
   };
 

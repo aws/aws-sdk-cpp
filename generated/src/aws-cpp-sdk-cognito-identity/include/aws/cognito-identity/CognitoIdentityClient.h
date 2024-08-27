@@ -779,7 +779,6 @@ namespace CognitoIdentity
       void init(const CognitoIdentityClientConfiguration& clientConfiguration);
 
       CognitoIdentityClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CognitoIdentityEndpointProviderBase> m_endpointProvider;
   };
 

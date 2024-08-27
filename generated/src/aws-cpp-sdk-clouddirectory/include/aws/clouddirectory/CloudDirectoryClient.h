@@ -1879,7 +1879,6 @@ namespace CloudDirectory
       void init(const CloudDirectoryClientConfiguration& clientConfiguration);
 
       CloudDirectoryClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudDirectoryEndpointProviderBase> m_endpointProvider;
   };
 

@@ -2692,7 +2692,6 @@ namespace deadline
       void init(const DeadlineClientConfiguration& clientConfiguration);
 
       DeadlineClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DeadlineEndpointProviderBase> m_endpointProvider;
   };
 

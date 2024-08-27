@@ -204,7 +204,6 @@ namespace MigrationHubConfig
       void init(const MigrationHubConfigClientConfiguration& clientConfiguration);
 
       MigrationHubConfigClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MigrationHubConfigEndpointProviderBase> m_endpointProvider;
   };
 

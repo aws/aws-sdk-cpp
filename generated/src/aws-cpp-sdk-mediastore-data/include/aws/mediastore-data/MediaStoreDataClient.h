@@ -218,7 +218,6 @@ namespace MediaStoreData
       void init(const MediaStoreDataClientConfiguration& clientConfiguration);
 
       MediaStoreDataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MediaStoreDataEndpointProviderBase> m_endpointProvider;
   };
 

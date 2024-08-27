@@ -118,7 +118,6 @@ namespace FreeTier
       void init(const FreeTierClientConfiguration& clientConfiguration);
 
       FreeTierClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<FreeTierEndpointProviderBase> m_endpointProvider;
   };
 

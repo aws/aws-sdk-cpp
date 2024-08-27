@@ -626,7 +626,6 @@ namespace CloudWatchRUM
       void init(const CloudWatchRUMClientConfiguration& clientConfiguration);
 
       CloudWatchRUMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudWatchRUMEndpointProviderBase> m_endpointProvider;
   };
 

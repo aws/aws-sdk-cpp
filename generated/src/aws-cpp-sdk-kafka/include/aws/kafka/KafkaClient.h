@@ -1526,7 +1526,6 @@ namespace Kafka
       void init(const KafkaClientConfiguration& clientConfiguration);
 
       KafkaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KafkaEndpointProviderBase> m_endpointProvider;
   };
 

@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity to delete.
+     * <p>The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
+     * identity to delete.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * Id from Microsoft Teams for user.
+     * <p>The Microsoft Teams user ID.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }

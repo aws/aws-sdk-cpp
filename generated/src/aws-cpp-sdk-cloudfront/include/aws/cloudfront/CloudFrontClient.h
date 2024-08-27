@@ -3415,7 +3415,6 @@ namespace CloudFront
         void init(const CloudFrontClientConfiguration& clientConfiguration);
 
         CloudFrontClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<CloudFrontEndpointProviderBase> m_endpointProvider;
   };
 

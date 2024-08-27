@@ -1060,7 +1060,6 @@ namespace Amplify
       void init(const AmplifyClientConfiguration& clientConfiguration);
 
       AmplifyClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AmplifyEndpointProviderBase> m_endpointProvider;
   };
 

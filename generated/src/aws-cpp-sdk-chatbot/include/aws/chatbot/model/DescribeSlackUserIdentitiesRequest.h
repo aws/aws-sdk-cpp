@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the SlackChannelConfiguration associated with the user identities to
-     * describe.
+     * <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated
+     * with the user identities to describe.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
@@ -49,9 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
+     * <p> An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * MaxResults. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -65,9 +66,9 @@ namespace Model
 
     ///@{
     /**
-     * The maximum number of results to include in the response. If more results exist
-     * than the specified MaxResults value, a token is included in the response so that
-     * the remaining results can be retrieved.
+     * <p>The maximum number of results to include in the response. If more results
+     * exist than the specified MaxResults value, a token is included in the response
+     * so that the remaining results can be retrieved. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

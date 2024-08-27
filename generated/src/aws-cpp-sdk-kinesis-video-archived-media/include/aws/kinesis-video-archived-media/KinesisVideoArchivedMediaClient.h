@@ -538,7 +538,6 @@ namespace KinesisVideoArchivedMedia
       void init(const KinesisVideoArchivedMediaClientConfiguration& clientConfiguration);
 
       KinesisVideoArchivedMediaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase> m_endpointProvider;
   };
 

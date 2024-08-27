@@ -355,7 +355,8 @@ namespace Omics
         }
 
         /**
-         * <p>Creates a run group.</p><p><h3>See Also:</h3>   <a
+         * <p>You can optionally create a run group to limit the compute resources for the
+         * runs that you add to the group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunGroup">AWS
          * API Reference</a></p>
          */
@@ -408,8 +409,8 @@ namespace Omics
          * <p>Creates a cross-account shared resource. The resource owner makes an offer to
          * share the resource with the principal subscriber (an AWS user with a different
          * account than the resource owner).</p> <p>The following resources support
-         * cross-account sharing:</p> <ul> <li> <p>Healthomics variant stores</p> </li>
-         * <li> <p>Healthomics annotation stores</p> </li> <li> <p>Private workflows</p>
+         * cross-account sharing:</p> <ul> <li> <p>HealthOmics variant stores</p> </li>
+         * <li> <p>HealthOmics annotation stores</p> </li> <li> <p>Private workflows</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">AWS
          * API Reference</a></p>
@@ -2172,7 +2173,6 @@ namespace Omics
       void init(const OmicsClientConfiguration& clientConfiguration);
 
       OmicsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<OmicsEndpointProviderBase> m_endpointProvider;
   };
 

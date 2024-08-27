@@ -1051,7 +1051,6 @@ namespace KinesisAnalyticsV2
       void init(const KinesisAnalyticsV2ClientConfiguration& clientConfiguration);
 
       KinesisAnalyticsV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase> m_endpointProvider;
   };
 

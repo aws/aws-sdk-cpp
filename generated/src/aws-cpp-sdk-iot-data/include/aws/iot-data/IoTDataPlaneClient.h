@@ -315,7 +315,6 @@ namespace IoTDataPlane
       void init(const IoTDataPlaneClientConfiguration& clientConfiguration);
 
       IoTDataPlaneClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTDataPlaneEndpointProviderBase> m_endpointProvider;
   };
 

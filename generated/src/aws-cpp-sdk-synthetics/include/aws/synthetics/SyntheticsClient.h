@@ -742,7 +742,6 @@ namespace Synthetics
       void init(const SyntheticsClientConfiguration& clientConfiguration);
 
       SyntheticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SyntheticsEndpointProviderBase> m_endpointProvider;
   };
 

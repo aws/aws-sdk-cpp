@@ -737,7 +737,6 @@ namespace Route53RecoveryControlConfig
       void init(const Route53RecoveryControlConfigClientConfiguration& clientConfiguration);
 
       Route53RecoveryControlConfigClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> m_endpointProvider;
   };
 

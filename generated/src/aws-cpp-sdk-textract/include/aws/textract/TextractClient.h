@@ -973,7 +973,6 @@ namespace Textract
       void init(const TextractClientConfiguration& clientConfiguration);
 
       TextractClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TextractEndpointProviderBase> m_endpointProvider;
   };
 

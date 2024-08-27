@@ -798,7 +798,6 @@ namespace ResourceExplorer2
       void init(const ResourceExplorer2ClientConfiguration& clientConfiguration);
 
       ResourceExplorer2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ResourceExplorer2EndpointProviderBase> m_endpointProvider;
   };
 

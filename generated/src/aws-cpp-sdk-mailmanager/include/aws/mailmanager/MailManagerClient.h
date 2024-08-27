@@ -1298,7 +1298,6 @@ namespace MailManager
       void init(const MailManagerClientConfiguration& clientConfiguration);
 
       MailManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MailManagerEndpointProviderBase> m_endpointProvider;
   };
 

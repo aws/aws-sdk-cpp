@@ -1528,7 +1528,6 @@ namespace RedshiftServerless
       void init(const RedshiftServerlessClientConfiguration& clientConfiguration);
 
       RedshiftServerlessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RedshiftServerlessEndpointProviderBase> m_endpointProvider;
   };
 

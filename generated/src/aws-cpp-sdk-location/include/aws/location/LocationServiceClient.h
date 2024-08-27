@@ -1815,7 +1815,6 @@ namespace LocationService
       void init(const LocationServiceClientConfiguration& clientConfiguration);
 
       LocationServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LocationServiceEndpointProviderBase> m_endpointProvider;
   };
 

@@ -1811,7 +1811,6 @@ namespace OpenSearchService
       void init(const OpenSearchServiceClientConfiguration& clientConfiguration);
 
       OpenSearchServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<OpenSearchServiceEndpointProviderBase> m_endpointProvider;
   };
 

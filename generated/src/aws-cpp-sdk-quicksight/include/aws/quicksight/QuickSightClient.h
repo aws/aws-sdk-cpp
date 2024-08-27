@@ -5033,7 +5033,6 @@ namespace QuickSight
       void init(const QuickSightClientConfiguration& clientConfiguration);
 
       QuickSightClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<QuickSightEndpointProviderBase> m_endpointProvider;
   };
 

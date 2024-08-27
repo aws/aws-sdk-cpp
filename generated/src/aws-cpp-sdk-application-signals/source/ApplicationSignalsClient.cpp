@@ -70,7 +70,6 @@ ApplicationSignalsClient::ApplicationSignalsClient(const ApplicationSignals::App
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ApplicationSignalsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationSignalsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -86,7 +85,6 @@ ApplicationSignalsClient::ApplicationSignalsClient(const AWSCredentials& credent
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ApplicationSignalsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationSignalsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -102,7 +100,6 @@ ApplicationSignalsClient::ApplicationSignalsClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ApplicationSignalsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationSignalsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -117,7 +114,6 @@ ApplicationSignalsClient::ApplicationSignalsClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ApplicationSignalsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<ApplicationSignalsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -132,7 +128,6 @@ ApplicationSignalsClient::ApplicationSignalsClient(const AWSCredentials& credent
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ApplicationSignalsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<ApplicationSignalsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -147,7 +142,6 @@ ApplicationSignalsClient::ApplicationSignalsClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ApplicationSignalsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<ApplicationSignalsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -167,6 +161,14 @@ std::shared_ptr<ApplicationSignalsEndpointProviderBase>& ApplicationSignalsClien
 void ApplicationSignalsClient::init(const ApplicationSignals::ApplicationSignalsClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Application Signals");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

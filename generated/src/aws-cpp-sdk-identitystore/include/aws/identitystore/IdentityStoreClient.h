@@ -641,7 +641,6 @@ namespace IdentityStore
       void init(const IdentityStoreClientConfiguration& clientConfiguration);
 
       IdentityStoreClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IdentityStoreEndpointProviderBase> m_endpointProvider;
   };
 

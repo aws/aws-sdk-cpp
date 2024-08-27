@@ -34,9 +34,9 @@ namespace Model
 
     ///@{
     /**
-     * The maximum number of results to include in the response. If more results exist
-     * than the specified MaxResults value, a token is included in the response so that
-     * the remaining results can be retrieved.
+     * <p>The maximum number of results to include in the response. If more results
+     * exist than the specified MaxResults value, a token is included in the response
+     * so that the remaining results can be retrieved.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -46,9 +46,10 @@ namespace Model
 
     ///@{
     /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
+     * <p>An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * MaxResults.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -62,11 +63,13 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID,
-     * you must perform the initial authorization flow with Microsoft Teams in the AWS
-     * Chatbot console. Then you can copy and paste the team ID from the console. For
-     * more details, see steps 1-4 in Get started with Microsoft Teams in the AWS
-     * Chatbot Administrator Guide.
+     * <p> The ID of the Microsoft Teams authorized with AWS Chatbot.</p> <p>To get the
+     * team ID, you must perform the initial authorization flow with Microsoft Teams in
+     * the AWS Chatbot console. Then you can copy and paste the team ID from the
+     * console. For more information, see <a
+     * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step
+     * 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetTeamId() const{ return m_teamId; }
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }

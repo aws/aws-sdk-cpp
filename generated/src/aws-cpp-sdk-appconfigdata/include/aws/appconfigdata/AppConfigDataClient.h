@@ -192,7 +192,6 @@ namespace AppConfigData
       void init(const AppConfigDataClientConfiguration& clientConfiguration);
 
       AppConfigDataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AppConfigDataEndpointProviderBase> m_endpointProvider;
   };
 

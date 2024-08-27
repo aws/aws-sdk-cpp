@@ -1456,7 +1456,6 @@ namespace SNS
         void init(const SNSClientConfiguration& clientConfiguration);
 
         SNSClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<SNSEndpointProviderBase> m_endpointProvider;
   };
 

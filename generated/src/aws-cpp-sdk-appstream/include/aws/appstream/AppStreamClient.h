@@ -2224,7 +2224,6 @@ namespace AppStream
       void init(const AppStreamClientConfiguration& clientConfiguration);
 
       AppStreamClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AppStreamEndpointProviderBase> m_endpointProvider;
   };
 

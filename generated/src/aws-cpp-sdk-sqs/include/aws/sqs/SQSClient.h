@@ -1024,7 +1024,6 @@ namespace SQS
       void init(const SQSClientConfiguration& clientConfiguration);
 
       SQSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;
   };
 

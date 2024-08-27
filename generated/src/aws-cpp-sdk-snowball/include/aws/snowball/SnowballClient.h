@@ -894,7 +894,6 @@ namespace Snowball
       void init(const SnowballClientConfiguration& clientConfiguration);
 
       SnowballClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SnowballEndpointProviderBase> m_endpointProvider;
   };
 

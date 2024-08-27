@@ -1872,7 +1872,6 @@ namespace DirectConnect
       void init(const DirectConnectClientConfiguration& clientConfiguration);
 
       DirectConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DirectConnectEndpointProviderBase> m_endpointProvider;
   };
 

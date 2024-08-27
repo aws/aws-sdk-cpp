@@ -454,7 +454,6 @@ namespace CodeStarNotifications
       void init(const CodeStarNotificationsClientConfiguration& clientConfiguration);
 
       CodeStarNotificationsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeStarNotificationsEndpointProviderBase> m_endpointProvider;
   };
 

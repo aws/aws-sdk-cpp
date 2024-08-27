@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the configuration.
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }

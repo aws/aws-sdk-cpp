@@ -391,7 +391,6 @@ namespace SSMQuickSetup
       void init(const SSMQuickSetupClientConfiguration& clientConfiguration);
 
       SSMQuickSetupClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SSMQuickSetupEndpointProviderBase> m_endpointProvider;
   };
 

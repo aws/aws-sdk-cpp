@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * A Slack Workspace.<p><h3>See Also:</h3>   <a
+   * <p>A Slack workspace. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/SlackWorkspace">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
+     * <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
      */
     inline const Aws::String& GetSlackTeamId() const{ return m_slackTeamId; }
     inline bool SlackTeamIdHasBeenSet() const { return m_slackTeamIdHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * Name of the Slack Workspace.
+     * <p>The name of the Slack workspace.</p>
      */
     inline const Aws::String& GetSlackTeamName() const{ return m_slackTeamName; }
     inline bool SlackTeamNameHasBeenSet() const { return m_slackTeamNameHasBeenSet; }

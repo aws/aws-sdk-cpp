@@ -3417,7 +3417,6 @@ namespace WAF
       void init(const WAFClientConfiguration& clientConfiguration);
 
       WAFClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WAFEndpointProviderBase> m_endpointProvider;
   };
 

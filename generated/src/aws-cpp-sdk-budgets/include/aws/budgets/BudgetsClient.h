@@ -801,7 +801,6 @@ namespace Budgets
       void init(const BudgetsClientConfiguration& clientConfiguration);
 
       BudgetsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BudgetsEndpointProviderBase> m_endpointProvider;
   };
 

@@ -1543,7 +1543,6 @@ namespace IoTFleetWise
       void init(const IoTFleetWiseClientConfiguration& clientConfiguration);
 
       IoTFleetWiseClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTFleetWiseEndpointProviderBase> m_endpointProvider;
   };
 

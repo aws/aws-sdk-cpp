@@ -3342,7 +3342,6 @@ namespace DataZone
       void init(const DataZoneClientConfiguration& clientConfiguration);
 
       DataZoneClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DataZoneEndpointProviderBase> m_endpointProvider;
   };
 

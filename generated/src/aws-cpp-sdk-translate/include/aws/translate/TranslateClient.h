@@ -621,7 +621,6 @@ namespace Translate
       void init(const TranslateClientConfiguration& clientConfiguration);
 
       TranslateClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TranslateEndpointProviderBase> m_endpointProvider;
   };
 

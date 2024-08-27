@@ -182,7 +182,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workflow's storage capacity in gibibytes.</p>
+     * <p>The workflow's default run storage capacity in gibibytes.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
     inline void SetStorageCapacity(int value) { m_storageCapacity = value; }

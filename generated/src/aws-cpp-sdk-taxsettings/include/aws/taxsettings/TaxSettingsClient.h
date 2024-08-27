@@ -432,7 +432,6 @@ namespace TaxSettings
       void init(const TaxSettingsClientConfiguration& clientConfiguration);
 
       TaxSettingsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TaxSettingsEndpointProviderBase> m_endpointProvider;
   };
 

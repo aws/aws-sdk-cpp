@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The configuration for a Slack channel configured with AWS Chatbot.
+     * <p>The configuration for a Slack channel configured with AWS Chatbot.</p>
      */
     inline const SlackChannelConfiguration& GetChannelConfiguration() const{ return m_channelConfiguration; }
     inline void SetChannelConfiguration(const SlackChannelConfiguration& value) { m_channelConfiguration = value; }

@@ -344,7 +344,6 @@ namespace CloudControlApi
       void init(const CloudControlApiClientConfiguration& clientConfiguration);
 
       CloudControlApiClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudControlApiEndpointProviderBase> m_endpointProvider;
   };
 

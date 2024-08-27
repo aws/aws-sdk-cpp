@@ -928,7 +928,6 @@ namespace XRay
       void init(const XRayClientConfiguration& clientConfiguration);
 
       XRayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<XRayEndpointProviderBase> m_endpointProvider;
   };
 

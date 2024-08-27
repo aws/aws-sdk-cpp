@@ -2189,7 +2189,6 @@ namespace Macie2
       void init(const Macie2ClientConfiguration& clientConfiguration);
 
       Macie2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Macie2EndpointProviderBase> m_endpointProvider;
   };
 

@@ -107,7 +107,6 @@ VPCLatticeClient::VPCLatticeClient(const VPCLattice::VPCLatticeClientConfigurati
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VPCLatticeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -123,7 +122,6 @@ VPCLatticeClient::VPCLatticeClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VPCLatticeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -139,7 +137,6 @@ VPCLatticeClient::VPCLatticeClient(const std::shared_ptr<AWSCredentialsProvider>
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VPCLatticeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -154,7 +151,6 @@ VPCLatticeClient::VPCLatticeClient(const std::shared_ptr<AWSCredentialsProvider>
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VPCLatticeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -169,7 +165,6 @@ VPCLatticeClient::VPCLatticeClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VPCLatticeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -184,7 +179,6 @@ VPCLatticeClient::VPCLatticeClient(const std::shared_ptr<AWSCredentialsProvider>
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VPCLatticeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -204,6 +198,14 @@ std::shared_ptr<VPCLatticeEndpointProviderBase>& VPCLatticeClient::accessEndpoin
 void VPCLatticeClient::init(const VPCLattice::VPCLatticeClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("VPC Lattice");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

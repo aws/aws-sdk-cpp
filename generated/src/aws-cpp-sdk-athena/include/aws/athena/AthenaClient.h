@@ -1963,7 +1963,6 @@ namespace Athena
       void init(const AthenaClientConfiguration& clientConfiguration);
 
       AthenaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AthenaEndpointProviderBase> m_endpointProvider;
   };
 

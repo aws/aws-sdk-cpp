@@ -1082,7 +1082,6 @@ namespace Inspector
       void init(const InspectorClientConfiguration& clientConfiguration);
 
       InspectorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<InspectorEndpointProviderBase> m_endpointProvider;
   };
 

@@ -137,7 +137,6 @@ OmicsClient::OmicsClient(const Omics::OmicsClientConfiguration& clientConfigurat
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -153,7 +152,6 @@ OmicsClient::OmicsClient(const AWSCredentials& credentials,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -169,7 +167,6 @@ OmicsClient::OmicsClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -184,7 +181,6 @@ OmicsClient::OmicsClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -199,7 +195,6 @@ OmicsClient::OmicsClient(const AWSCredentials& credentials,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -214,7 +209,6 @@ OmicsClient::OmicsClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -234,6 +228,14 @@ std::shared_ptr<OmicsEndpointProviderBase>& OmicsClient::accessEndpointProvider(
 void OmicsClient::init(const Omics::OmicsClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Omics");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

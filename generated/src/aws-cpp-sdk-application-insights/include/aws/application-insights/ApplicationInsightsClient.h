@@ -966,7 +966,6 @@ namespace ApplicationInsights
       void init(const ApplicationInsightsClientConfiguration& clientConfiguration);
 
       ApplicationInsightsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ApplicationInsightsEndpointProviderBase> m_endpointProvider;
   };
 

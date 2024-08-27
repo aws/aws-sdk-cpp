@@ -166,7 +166,6 @@ namespace ApiGatewayManagementApi
       void init(const ApiGatewayManagementApiClientConfiguration& clientConfiguration);
 
       ApiGatewayManagementApiClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ApiGatewayManagementApiEndpointProviderBase> m_endpointProvider;
   };
 

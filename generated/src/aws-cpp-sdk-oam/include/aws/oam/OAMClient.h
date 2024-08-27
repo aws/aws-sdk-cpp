@@ -554,7 +554,6 @@ namespace OAM
       void init(const OAMClientConfiguration& clientConfiguration);
 
       OAMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<OAMEndpointProviderBase> m_endpointProvider;
   };
 

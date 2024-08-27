@@ -7282,7 +7282,6 @@ namespace IoT
       void init(const IoTClientConfiguration& clientConfiguration);
 
       IoTClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTEndpointProviderBase> m_endpointProvider;
   };
 

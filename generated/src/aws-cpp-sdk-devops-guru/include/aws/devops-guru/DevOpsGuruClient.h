@@ -977,7 +977,6 @@ namespace DevOpsGuru
       void init(const DevOpsGuruClientConfiguration& clientConfiguration);
 
       DevOpsGuruClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DevOpsGuruEndpointProviderBase> m_endpointProvider;
   };
 

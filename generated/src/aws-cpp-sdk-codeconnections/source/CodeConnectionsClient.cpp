@@ -82,7 +82,6 @@ CodeConnectionsClient::CodeConnectionsClient(const CodeConnections::CodeConnecti
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeConnectionsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeConnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -98,7 +97,6 @@ CodeConnectionsClient::CodeConnectionsClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeConnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeConnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -114,7 +112,6 @@ CodeConnectionsClient::CodeConnectionsClient(const std::shared_ptr<AWSCredential
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeConnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeConnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -129,7 +126,6 @@ CodeConnectionsClient::CodeConnectionsClient(const std::shared_ptr<AWSCredential
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeConnectionsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<CodeConnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -144,7 +140,6 @@ CodeConnectionsClient::CodeConnectionsClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeConnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<CodeConnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -159,7 +154,6 @@ CodeConnectionsClient::CodeConnectionsClient(const std::shared_ptr<AWSCredential
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeConnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<CodeConnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -179,6 +173,14 @@ std::shared_ptr<CodeConnectionsEndpointProviderBase>& CodeConnectionsClient::acc
 void CodeConnectionsClient::init(const CodeConnections::CodeConnectionsClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("CodeConnections");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

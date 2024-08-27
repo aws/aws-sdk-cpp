@@ -3259,7 +3259,6 @@ namespace Pinpoint
       void init(const PinpointClientConfiguration& clientConfiguration);
 
       PinpointClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PinpointEndpointProviderBase> m_endpointProvider;
   };
 

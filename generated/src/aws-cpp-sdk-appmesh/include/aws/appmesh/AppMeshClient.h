@@ -1134,7 +1134,6 @@ namespace AppMesh
       void init(const AppMeshClientConfiguration& clientConfiguration);
 
       AppMeshClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AppMeshEndpointProviderBase> m_endpointProvider;
   };
 

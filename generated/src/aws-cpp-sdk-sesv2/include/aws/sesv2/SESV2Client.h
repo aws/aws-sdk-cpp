@@ -2687,7 +2687,6 @@ namespace SESV2
       void init(const SESV2ClientConfiguration& clientConfiguration);
 
       SESV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SESV2EndpointProviderBase> m_endpointProvider;
   };
 

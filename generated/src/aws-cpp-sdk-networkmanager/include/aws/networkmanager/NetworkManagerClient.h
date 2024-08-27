@@ -2328,7 +2328,6 @@ namespace NetworkManager
       void init(const NetworkManagerClientConfiguration& clientConfiguration);
 
       NetworkManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<NetworkManagerEndpointProviderBase> m_endpointProvider;
   };
 

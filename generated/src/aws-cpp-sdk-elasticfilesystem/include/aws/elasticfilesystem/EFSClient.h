@@ -1188,7 +1188,6 @@ namespace EFS
       void init(const EFSClientConfiguration& clientConfiguration);
 
       EFSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EFSEndpointProviderBase> m_endpointProvider;
   };
 

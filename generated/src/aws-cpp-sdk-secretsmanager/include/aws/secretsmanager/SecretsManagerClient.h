@@ -1184,7 +1184,6 @@ namespace SecretsManager
       void init(const SecretsManagerClientConfiguration& clientConfiguration);
 
       SecretsManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SecretsManagerEndpointProviderBase> m_endpointProvider;
   };
 

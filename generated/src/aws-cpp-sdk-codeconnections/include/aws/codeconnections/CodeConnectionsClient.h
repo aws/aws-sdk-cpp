@@ -840,7 +840,6 @@ namespace CodeConnections
       void init(const CodeConnectionsClientConfiguration& clientConfiguration);
 
       CodeConnectionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeConnectionsEndpointProviderBase> m_endpointProvider;
   };
 

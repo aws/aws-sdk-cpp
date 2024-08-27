@@ -1324,7 +1324,6 @@ namespace QConnect
       void init(const QConnectClientConfiguration& clientConfiguration);
 
       QConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<QConnectEndpointProviderBase> m_endpointProvider;
   };
 

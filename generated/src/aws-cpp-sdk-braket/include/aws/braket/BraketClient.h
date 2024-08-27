@@ -424,7 +424,6 @@ namespace Braket
       void init(const BraketClientConfiguration& clientConfiguration);
 
       BraketClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BraketEndpointProviderBase> m_endpointProvider;
   };
 

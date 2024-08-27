@@ -1126,7 +1126,6 @@ namespace IVS
       void init(const IVSClientConfiguration& clientConfiguration);
 
       IVSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IVSEndpointProviderBase> m_endpointProvider;
   };
 

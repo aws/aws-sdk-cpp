@@ -218,7 +218,6 @@ namespace SageMakerRuntime
       void init(const SageMakerRuntimeClientConfiguration& clientConfiguration);
 
       SageMakerRuntimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SageMakerRuntimeEndpointProviderBase> m_endpointProvider;
   };
 

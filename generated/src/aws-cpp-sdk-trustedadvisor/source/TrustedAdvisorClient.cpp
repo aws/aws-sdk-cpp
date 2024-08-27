@@ -66,7 +66,6 @@ TrustedAdvisorClient::TrustedAdvisorClient(const TrustedAdvisor::TrustedAdvisorC
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -82,7 +81,6 @@ TrustedAdvisorClient::TrustedAdvisorClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -98,7 +96,6 @@ TrustedAdvisorClient::TrustedAdvisorClient(const std::shared_ptr<AWSCredentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -113,7 +110,6 @@ TrustedAdvisorClient::TrustedAdvisorClient(const std::shared_ptr<AWSCredentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -128,7 +124,6 @@ TrustedAdvisorClient::TrustedAdvisorClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -143,7 +138,6 @@ TrustedAdvisorClient::TrustedAdvisorClient(const std::shared_ptr<AWSCredentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -163,6 +157,14 @@ std::shared_ptr<TrustedAdvisorEndpointProviderBase>& TrustedAdvisorClient::acces
 void TrustedAdvisorClient::init(const TrustedAdvisor::TrustedAdvisorClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("TrustedAdvisor");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

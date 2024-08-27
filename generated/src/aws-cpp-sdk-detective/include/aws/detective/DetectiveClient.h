@@ -983,7 +983,6 @@ namespace Detective
       void init(const DetectiveClientConfiguration& clientConfiguration);
 
       DetectiveClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DetectiveEndpointProviderBase> m_endpointProvider;
   };
 

@@ -1127,7 +1127,6 @@ namespace ConnectWisdomService
       void init(const ConnectWisdomServiceClientConfiguration& clientConfiguration);
 
       ConnectWisdomServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> m_endpointProvider;
   };
 

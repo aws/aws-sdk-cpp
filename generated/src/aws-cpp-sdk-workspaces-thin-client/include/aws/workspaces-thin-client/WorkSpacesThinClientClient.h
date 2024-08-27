@@ -502,7 +502,6 @@ namespace WorkSpacesThinClient
       void init(const WorkSpacesThinClientClientConfiguration& clientConfiguration);
 
       WorkSpacesThinClientClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> m_endpointProvider;
   };
 

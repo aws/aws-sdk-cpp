@@ -68,7 +68,6 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const CodeStarNotificat
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -84,7 +83,6 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const AWSCredentials& c
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -100,7 +98,6 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const std::shared_ptr<A
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -115,7 +112,6 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const std::shared_ptr<A
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -130,7 +126,6 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const AWSCredentials& c
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -145,7 +140,6 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const std::shared_ptr<A
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -165,6 +159,14 @@ std::shared_ptr<CodeStarNotificationsEndpointProviderBase>& CodeStarNotification
 void CodeStarNotificationsClient::init(const CodeStarNotifications::CodeStarNotificationsClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("codestar notifications");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

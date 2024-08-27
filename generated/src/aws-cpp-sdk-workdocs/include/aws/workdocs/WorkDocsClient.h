@@ -1300,7 +1300,6 @@ namespace WorkDocs
       void init(const WorkDocsClientConfiguration& clientConfiguration);
 
       WorkDocsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WorkDocsEndpointProviderBase> m_endpointProvider;
   };
 

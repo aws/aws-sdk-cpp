@@ -778,7 +778,6 @@ namespace CodeGuruProfiler
       void init(const CodeGuruProfilerClientConfiguration& clientConfiguration);
 
       CodeGuruProfilerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeGuruProfilerEndpointProviderBase> m_endpointProvider;
   };
 

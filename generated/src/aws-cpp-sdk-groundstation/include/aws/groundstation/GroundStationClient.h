@@ -942,7 +942,6 @@ namespace GroundStation
       void init(const GroundStationClientConfiguration& clientConfiguration);
 
       GroundStationClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GroundStationEndpointProviderBase> m_endpointProvider;
   };
 

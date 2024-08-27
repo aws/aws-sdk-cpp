@@ -766,7 +766,6 @@ namespace mediapackagev2
       void init(const Mediapackagev2ClientConfiguration& clientConfiguration);
 
       Mediapackagev2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Mediapackagev2EndpointProviderBase> m_endpointProvider;
   };
 

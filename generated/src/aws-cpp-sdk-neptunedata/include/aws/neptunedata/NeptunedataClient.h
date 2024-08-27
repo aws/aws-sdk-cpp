@@ -1531,7 +1531,6 @@ namespace neptunedata
       void init(const NeptunedataClientConfiguration& clientConfiguration);
 
       NeptunedataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<NeptunedataEndpointProviderBase> m_endpointProvider;
   };
 

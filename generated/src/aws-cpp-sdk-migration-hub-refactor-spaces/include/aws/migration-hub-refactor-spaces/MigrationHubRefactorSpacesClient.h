@@ -830,7 +830,6 @@ namespace MigrationHubRefactorSpaces
       void init(const MigrationHubRefactorSpacesClientConfiguration& clientConfiguration);
 
       MigrationHubRefactorSpacesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> m_endpointProvider;
   };
 

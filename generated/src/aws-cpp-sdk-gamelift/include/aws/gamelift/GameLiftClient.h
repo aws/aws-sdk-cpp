@@ -4447,7 +4447,6 @@ namespace GameLift
       void init(const GameLiftClientConfiguration& clientConfiguration);
 
       GameLiftClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GameLiftEndpointProviderBase> m_endpointProvider;
   };
 

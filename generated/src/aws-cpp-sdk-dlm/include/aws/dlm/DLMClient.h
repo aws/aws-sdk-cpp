@@ -313,7 +313,6 @@ namespace DLM
       void init(const DLMClientConfiguration& clientConfiguration);
 
       DLMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DLMEndpointProviderBase> m_endpointProvider;
   };
 

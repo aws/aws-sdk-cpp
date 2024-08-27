@@ -1598,7 +1598,6 @@ namespace ChimeSDKMessaging
       void init(const ChimeSDKMessagingClientConfiguration& clientConfiguration);
 
       ChimeSDKMessagingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> m_endpointProvider;
   };
 

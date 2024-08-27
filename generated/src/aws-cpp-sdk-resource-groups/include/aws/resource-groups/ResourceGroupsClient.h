@@ -654,7 +654,6 @@ namespace ResourceGroups
       void init(const ResourceGroupsClientConfiguration& clientConfiguration);
 
       ResourceGroupsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ResourceGroupsEndpointProviderBase> m_endpointProvider;
   };
 

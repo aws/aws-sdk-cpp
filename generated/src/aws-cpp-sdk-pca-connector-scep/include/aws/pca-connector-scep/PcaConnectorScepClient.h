@@ -425,7 +425,6 @@ namespace PcaConnectorScep
       void init(const PcaConnectorScepClientConfiguration& clientConfiguration);
 
       PcaConnectorScepClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PcaConnectorScepEndpointProviderBase> m_endpointProvider;
   };
 

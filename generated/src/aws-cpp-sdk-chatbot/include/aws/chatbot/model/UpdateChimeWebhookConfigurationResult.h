@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * Chime webhook configuration.
+     * <p>A Amazon Chime webhook configuration.</p>
      */
     inline const ChimeWebhookConfiguration& GetWebhookConfiguration() const{ return m_webhookConfiguration; }
     inline void SetWebhookConfiguration(const ChimeWebhookConfiguration& value) { m_webhookConfiguration = value; }

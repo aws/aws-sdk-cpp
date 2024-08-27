@@ -111,7 +111,9 @@ namespace Model
     Zayd,
     Danielle,
     Gregory,
-    Burcu
+    Burcu,
+    Jitka,
+    Sabrina
   };
 
 namespace VoiceIdMapper

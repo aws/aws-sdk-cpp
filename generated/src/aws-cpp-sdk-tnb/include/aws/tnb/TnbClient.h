@@ -1066,7 +1066,6 @@ namespace tnb
       void init(const TnbClientConfiguration& clientConfiguration);
 
       TnbClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TnbEndpointProviderBase> m_endpointProvider;
   };
 

@@ -3148,7 +3148,6 @@ namespace APIGateway
       void init(const APIGatewayClientConfiguration& clientConfiguration);
 
       APIGatewayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<APIGatewayEndpointProviderBase> m_endpointProvider;
   };
 

@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the SlackChannelConfiguration associated with the user identity to
-     * delete.
+     * <p>The ARN of the SlackChannelConfiguration associated with the user identity to
+     * delete.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
+     * <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
      */
     inline const Aws::String& GetSlackTeamId() const{ return m_slackTeamId; }
     inline bool SlackTeamIdHasBeenSet() const { return m_slackTeamIdHasBeenSet; }
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the user in Slack.
+     * <p>The ID of the user in Slack</p>
      */
     inline const Aws::String& GetSlackUserId() const{ return m_slackUserId; }
     inline bool SlackUserIdHasBeenSet() const { return m_slackUserIdHasBeenSet; }

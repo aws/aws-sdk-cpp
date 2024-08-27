@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * A list of tags applied to the configuration.
+     * <p>Key-value pairs that are assigned to a resource, usually for the purpose of
+     * grouping and searching for items. Tags are metadata that you define.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }

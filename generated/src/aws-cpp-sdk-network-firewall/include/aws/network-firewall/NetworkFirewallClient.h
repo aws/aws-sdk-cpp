@@ -1193,7 +1193,6 @@ namespace NetworkFirewall
       void init(const NetworkFirewallClientConfiguration& clientConfiguration);
 
       NetworkFirewallClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<NetworkFirewallEndpointProviderBase> m_endpointProvider;
   };
 

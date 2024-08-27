@@ -229,7 +229,6 @@ namespace PersonalizeEvents
       void init(const PersonalizeEventsClientConfiguration& clientConfiguration);
 
       PersonalizeEventsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PersonalizeEventsEndpointProviderBase> m_endpointProvider;
   };
 

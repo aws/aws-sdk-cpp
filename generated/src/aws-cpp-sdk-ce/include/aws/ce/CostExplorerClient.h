@@ -1287,7 +1287,6 @@ namespace CostExplorer
       void init(const CostExplorerClientConfiguration& clientConfiguration);
 
       CostExplorerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CostExplorerEndpointProviderBase> m_endpointProvider;
   };
 

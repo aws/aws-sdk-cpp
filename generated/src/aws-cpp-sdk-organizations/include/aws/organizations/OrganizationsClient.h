@@ -2236,7 +2236,6 @@ namespace Organizations
       void init(const OrganizationsClientConfiguration& clientConfiguration);
 
       OrganizationsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<OrganizationsEndpointProviderBase> m_endpointProvider;
   };
 

@@ -1155,7 +1155,6 @@ namespace RoboMaker
       void init(const RoboMakerClientConfiguration& clientConfiguration);
 
       RoboMakerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RoboMakerEndpointProviderBase> m_endpointProvider;
   };
 

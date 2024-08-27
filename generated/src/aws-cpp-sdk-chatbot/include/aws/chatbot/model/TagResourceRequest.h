@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the configuration.
+     * <p>The ARN of the configuration.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of tags to apply to the configuration.
+     * <p>A list of tags to apply to the configuration.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

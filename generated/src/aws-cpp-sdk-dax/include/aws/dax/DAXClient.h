@@ -658,7 +658,6 @@ namespace DAX
       void init(const DAXClientConfiguration& clientConfiguration);
 
       DAXClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DAXEndpointProviderBase> m_endpointProvider;
   };
 

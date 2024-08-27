@@ -909,7 +909,6 @@ namespace SSMIncidents
       void init(const SSMIncidentsClientConfiguration& clientConfiguration);
 
       SSMIncidentsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SSMIncidentsEndpointProviderBase> m_endpointProvider;
   };
 

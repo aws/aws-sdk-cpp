@@ -35,7 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the configuration.
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
@@ -49,7 +51,9 @@ namespace Model
 
     ///@{
     /**
-     * A list of tag keys to remove from the configuration.
+     * <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and
+     * search for resources by type. This metadata can be attached to resources for any
+     * purpose.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }

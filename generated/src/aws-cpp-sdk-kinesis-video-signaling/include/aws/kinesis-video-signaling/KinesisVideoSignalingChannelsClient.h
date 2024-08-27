@@ -157,7 +157,6 @@ namespace KinesisVideoSignalingChannels
       void init(const KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration);
 
       KinesisVideoSignalingChannelsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> m_endpointProvider;
   };
 

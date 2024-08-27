@@ -2044,7 +2044,6 @@ namespace WellArchitected
       void init(const WellArchitectedClientConfiguration& clientConfiguration);
 
       WellArchitectedClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WellArchitectedEndpointProviderBase> m_endpointProvider;
   };
 

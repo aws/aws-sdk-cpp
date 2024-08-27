@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * Identifes a User level permission for a channel configuration.<p><h3>See
+   * <p>Identifes a user level permission for a channel configuration. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/SlackUserIdentity">AWS
    * API Reference</a></p>
@@ -40,9 +40,11 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a
-     * user-defined role that AWS Chatbot will assume. This is not the service-linked
-     * role. For more information, see IAM Policies for AWS Chatbot.
+     * <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked
+     * role.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM
+     * policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.
+     * </p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -56,7 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the SlackChannelConfiguration associated with the user identity.
+     * <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated
+     * with the user identity to delete.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
@@ -70,7 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
+     * <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
      */
     inline const Aws::String& GetSlackTeamId() const{ return m_slackTeamId; }
     inline bool SlackTeamIdHasBeenSet() const { return m_slackTeamIdHasBeenSet; }
@@ -84,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the user in Slack.
+     * <p>The ID of the user in Slack</p>
      */
     inline const Aws::String& GetSlackUserId() const{ return m_slackUserId; }
     inline bool SlackUserIdHasBeenSet() const { return m_slackUserIdHasBeenSet; }
@@ -98,8 +101,8 @@ namespace Model
 
     ///@{
     /**
-     * The AWS user identity ARN used to associate a Slack User Identity with an IAM
-     * Role.
+     * <p>The AWS user identity ARN used to associate a Slack user ID with an IAM
+     * Role.</p>
      */
     inline const Aws::String& GetAwsUserIdentity() const{ return m_awsUserIdentity; }
     inline bool AwsUserIdentityHasBeenSet() const { return m_awsUserIdentityHasBeenSet; }

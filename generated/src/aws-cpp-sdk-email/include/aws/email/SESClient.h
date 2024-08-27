@@ -2433,7 +2433,6 @@ namespace SES
         void init(const SESClientConfiguration& clientConfiguration);
 
         SESClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<SESEndpointProviderBase> m_endpointProvider;
   };
 

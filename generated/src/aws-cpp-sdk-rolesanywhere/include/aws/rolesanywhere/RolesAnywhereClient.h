@@ -924,7 +924,6 @@ namespace RolesAnywhere
       void init(const RolesAnywhereClientConfiguration& clientConfiguration);
 
       RolesAnywhereClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RolesAnywhereEndpointProviderBase> m_endpointProvider;
   };
 

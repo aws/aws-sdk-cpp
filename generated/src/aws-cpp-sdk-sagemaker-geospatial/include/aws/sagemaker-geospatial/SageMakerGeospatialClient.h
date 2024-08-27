@@ -577,7 +577,6 @@ namespace SageMakerGeospatial
       void init(const SageMakerGeospatialClientConfiguration& clientConfiguration);
 
       SageMakerGeospatialClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SageMakerGeospatialEndpointProviderBase> m_endpointProvider;
   };
 

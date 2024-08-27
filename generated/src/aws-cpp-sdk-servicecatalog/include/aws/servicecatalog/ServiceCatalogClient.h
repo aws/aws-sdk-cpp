@@ -2628,7 +2628,6 @@ namespace ServiceCatalog
       void init(const ServiceCatalogClientConfiguration& clientConfiguration);
 
       ServiceCatalogClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ServiceCatalogEndpointProviderBase> m_endpointProvider;
   };
 

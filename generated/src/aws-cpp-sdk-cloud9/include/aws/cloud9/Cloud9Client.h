@@ -450,7 +450,6 @@ namespace Cloud9
       void init(const Cloud9ClientConfiguration& clientConfiguration);
 
       Cloud9ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Cloud9EndpointProviderBase> m_endpointProvider;
   };
 

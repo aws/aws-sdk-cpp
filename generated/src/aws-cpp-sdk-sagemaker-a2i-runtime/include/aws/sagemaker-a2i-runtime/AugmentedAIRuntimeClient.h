@@ -243,7 +243,6 @@ namespace AugmentedAIRuntime
       void init(const AugmentedAIRuntimeClientConfiguration& clientConfiguration);
 
       AugmentedAIRuntimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> m_endpointProvider;
   };
 

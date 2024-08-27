@@ -7459,7 +7459,6 @@ namespace Connect
       void init(const ConnectClientConfiguration& clientConfiguration);
 
       ConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectEndpointProviderBase> m_endpointProvider;
   };
 

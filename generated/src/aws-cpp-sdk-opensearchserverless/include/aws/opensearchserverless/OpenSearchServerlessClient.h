@@ -1142,7 +1142,6 @@ namespace OpenSearchServerless
       void init(const OpenSearchServerlessClientConfiguration& clientConfiguration);
 
       OpenSearchServerlessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<OpenSearchServerlessEndpointProviderBase> m_endpointProvider;
   };
 

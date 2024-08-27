@@ -611,7 +611,6 @@ namespace ivschat
       void init(const IvschatClientConfiguration& clientConfiguration);
 
       IvschatClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IvschatEndpointProviderBase> m_endpointProvider;
   };
 

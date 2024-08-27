@@ -1103,7 +1103,6 @@ namespace IoTTwinMaker
       void init(const IoTTwinMakerClientConfiguration& clientConfiguration);
 
       IoTTwinMakerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTTwinMakerEndpointProviderBase> m_endpointProvider;
   };
 

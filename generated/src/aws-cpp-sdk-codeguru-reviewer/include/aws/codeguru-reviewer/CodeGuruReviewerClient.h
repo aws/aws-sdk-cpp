@@ -500,7 +500,6 @@ namespace CodeGuruReviewer
       void init(const CodeGuruReviewerClientConfiguration& clientConfiguration);
 
       CodeGuruReviewerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeGuruReviewerEndpointProviderBase> m_endpointProvider;
   };
 

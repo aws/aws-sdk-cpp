@@ -3235,7 +3235,6 @@ namespace Rekognition
       void init(const RekognitionClientConfiguration& clientConfiguration);
 
       RekognitionClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RekognitionEndpointProviderBase> m_endpointProvider;
   };
 

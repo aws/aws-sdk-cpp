@@ -1578,7 +1578,6 @@ namespace QBusiness
       void init(const QBusinessClientConfiguration& clientConfiguration);
 
       QBusinessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<QBusinessEndpointProviderBase> m_endpointProvider;
   };
 

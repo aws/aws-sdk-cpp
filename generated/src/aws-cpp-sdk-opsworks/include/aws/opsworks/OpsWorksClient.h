@@ -2480,7 +2480,6 @@ namespace OpsWorks
       void init(const OpsWorksClientConfiguration& clientConfiguration);
 
       OpsWorksClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<OpsWorksEndpointProviderBase> m_endpointProvider;
   };
 

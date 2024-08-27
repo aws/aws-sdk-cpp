@@ -50,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of CPUs to use in the group.</p>
+     * <p>The maximum number of CPUs that can run concurrently across all active runs
+     * in the run group.</p>
      */
     inline int GetMaxCpus() const{ return m_maxCpus; }
     inline bool MaxCpusHasBeenSet() const { return m_maxCpusHasBeenSet; }
@@ -60,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of concurrent runs for the group.</p>
+     * <p>The maximum number of runs that can be running at the same time.</p>
      */
     inline int GetMaxRuns() const{ return m_maxRuns; }
     inline bool MaxRunsHasBeenSet() const { return m_maxRunsHasBeenSet; }
@@ -70,7 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A maximum run time for the group in minutes.</p>
+     * <p>The maximum time for each run (in minutes). If a run exceeds the maximum run
+     * time, the run fails automatically.</p>
      */
     inline int GetMaxDuration() const{ return m_maxDuration; }
     inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
@@ -114,7 +116,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum GPUs that can be used by a run group.</p>
+     * <p>The maximum number of GPUs that can run concurrently across all active runs
+     * in the run group.</p>
      */
     inline int GetMaxGpus() const{ return m_maxGpus; }
     inline bool MaxGpusHasBeenSet() const { return m_maxGpusHasBeenSet; }

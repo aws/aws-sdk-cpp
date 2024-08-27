@@ -264,7 +264,6 @@ namespace Pricing
       void init(const PricingClientConfiguration& clientConfiguration);
 
       PricingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PricingEndpointProviderBase> m_endpointProvider;
   };
 

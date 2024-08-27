@@ -1485,7 +1485,6 @@ namespace CloudWatch
         void init(const CloudWatchClientConfiguration& clientConfiguration);
 
         CloudWatchClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<CloudWatchEndpointProviderBase> m_endpointProvider;
   };
 

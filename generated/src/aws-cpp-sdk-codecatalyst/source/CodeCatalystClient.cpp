@@ -91,7 +91,8 @@ const char* CodeCatalystClient::GetAllocationTag() {return ALLOCATION_TAG;}
             Aws::MakeShared<Aws::Auth::BearerTokenAuthSignerProvider>(ALLOCATION_TAG, bearerTokenProvider),
             Aws::MakeShared<CodeCatalystErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG)){
+
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG)){
   init(m_clientConfiguration);
 }
 
@@ -101,8 +102,7 @@ const char* CodeCatalystClient::GetAllocationTag() {return ALLOCATION_TAG;}
                                            const Client::ClientConfiguration& clientConfiguration) :  BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::BearerTokenAuthSignerProvider>(ALLOCATION_TAG, bearerTokenProvider),
             Aws::MakeShared<CodeCatalystErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),  m_endpointProvider(Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG)){
+  m_clientConfiguration(clientConfiguration),  m_endpointProvider(Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG)){
   init(m_clientConfiguration);
 }
 
@@ -121,6 +121,14 @@ std::shared_ptr<CodeCatalystEndpointProviderBase>& CodeCatalystClient::accessEnd
 void CodeCatalystClient::init(const CodeCatalyst::CodeCatalystClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("CodeCatalyst");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

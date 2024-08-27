@@ -739,7 +739,6 @@ namespace ECRPublic
       void init(const ECRPublicClientConfiguration& clientConfiguration);
 
       ECRPublicClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ECRPublicEndpointProviderBase> m_endpointProvider;
   };
 

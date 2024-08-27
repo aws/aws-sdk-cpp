@@ -888,7 +888,6 @@ namespace CloudSearch
         void init(const CloudSearchClientConfiguration& clientConfiguration);
 
         CloudSearchClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<CloudSearchEndpointProviderBase> m_endpointProvider;
   };
 

@@ -2465,7 +2465,6 @@ namespace Greengrass
       void init(const GreengrassClientConfiguration& clientConfiguration);
 
       GreengrassClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GreengrassEndpointProviderBase> m_endpointProvider;
   };
 

@@ -290,7 +290,6 @@ namespace ElasticInference
       void init(const ElasticInferenceClientConfiguration& clientConfiguration);
 
       ElasticInferenceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ElasticInferenceEndpointProviderBase> m_endpointProvider;
   };
 

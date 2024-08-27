@@ -1220,7 +1220,6 @@ namespace CloudWatchEvidently
       void init(const CloudWatchEvidentlyClientConfiguration& clientConfiguration);
 
       CloudWatchEvidentlyClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> m_endpointProvider;
   };
 

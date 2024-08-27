@@ -648,7 +648,6 @@ namespace ChimeSDKMeetings
       void init(const ChimeSDKMeetingsClientConfiguration& clientConfiguration);
 
       ChimeSDKMeetingsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> m_endpointProvider;
   };
 

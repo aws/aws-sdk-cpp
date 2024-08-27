@@ -303,17 +303,15 @@ namespace Bedrock
         }
 
         /**
-         * <p>Creates a job to invoke a model on multiple prompts (batch inference). Format
+         * <p>Creates a batch inference job to invoke a model on multiple prompts. Format
          * your data according to <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-prerq.html#batch-inference-data">Format
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data">Format
          * your inference data</a> and upload it to an Amazon S3 bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html">Create
-         * a batch inference job</a>.</p> <p>The response returns a <code>jobArn</code>
-         * that you can use to stop or get details about the job. You can check the status
-         * of the job by sending a <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCustomizationJob.html">GetModelCustomizationJob</a>
-         * request.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html">Process
+         * multiple prompts with batch inference</a>.</p> <p>The response returns a
+         * <code>jobArn</code> that you can use to stop or get details about the
+         * job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelInvocationJob">AWS
          * API Reference</a></p>
          */
@@ -651,6 +649,32 @@ namespace Bedrock
         }
 
         /**
+         * <p>Gets information about an inference profile. For more information, see the
+         * Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetInferenceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInferenceProfileOutcome GetInferenceProfile(const Model::GetInferenceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetInferenceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInferenceProfileRequestT = Model::GetInferenceProfileRequest>
+        Model::GetInferenceProfileOutcomeCallable GetInferenceProfileCallable(const GetInferenceProfileRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetInferenceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for GetInferenceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInferenceProfileRequestT = Model::GetInferenceProfileRequest>
+        void GetInferenceProfileAsync(const GetInferenceProfileRequestT& request, const GetInferenceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetInferenceProfile, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about a model copy job. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
          * models to be used in other regions</a> in the <a
@@ -968,6 +992,32 @@ namespace Bedrock
         void ListImportedModelsAsync(const ListImportedModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListImportedModelsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListImportedModels, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of inference profiles that you can use.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListInferenceProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInferenceProfilesOutcome ListInferenceProfiles(const Model::ListInferenceProfilesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListInferenceProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInferenceProfilesRequestT = Model::ListInferenceProfilesRequest>
+        Model::ListInferenceProfilesOutcomeCallable ListInferenceProfilesCallable(const ListInferenceProfilesRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListInferenceProfiles, request);
+        }
+
+        /**
+         * An Async wrapper for ListInferenceProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInferenceProfilesRequestT = Model::ListInferenceProfilesRequest>
+        void ListInferenceProfilesAsync(const ListInferenceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInferenceProfilesRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListInferenceProfiles, request, handler, context);
         }
 
         /**
@@ -1404,7 +1454,6 @@ namespace Bedrock
       void init(const BedrockClientConfiguration& clientConfiguration);
 
       BedrockClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BedrockEndpointProviderBase> m_endpointProvider;
   };
 

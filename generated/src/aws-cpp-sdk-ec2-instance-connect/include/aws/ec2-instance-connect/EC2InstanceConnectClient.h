@@ -153,7 +153,6 @@ namespace EC2InstanceConnect
       void init(const EC2InstanceConnectClientConfiguration& clientConfiguration);
 
       EC2InstanceConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EC2InstanceConnectEndpointProviderBase> m_endpointProvider;
   };
 

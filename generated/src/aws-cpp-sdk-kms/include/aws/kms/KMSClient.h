@@ -3799,7 +3799,6 @@ namespace KMS
       void init(const KMSClientConfiguration& clientConfiguration);
 
       KMSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KMSEndpointProviderBase> m_endpointProvider;
   };
 

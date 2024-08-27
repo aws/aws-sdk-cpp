@@ -433,7 +433,6 @@ namespace Account
       void init(const AccountClientConfiguration& clientConfiguration);
 
       AccountClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AccountEndpointProviderBase> m_endpointProvider;
   };
 

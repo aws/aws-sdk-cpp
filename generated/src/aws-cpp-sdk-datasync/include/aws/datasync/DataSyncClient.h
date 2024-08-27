@@ -1785,7 +1785,6 @@ namespace DataSync
       void init(const DataSyncClientConfiguration& clientConfiguration);
 
       DataSyncClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DataSyncEndpointProviderBase> m_endpointProvider;
   };
 

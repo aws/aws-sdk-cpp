@@ -367,7 +367,6 @@ namespace TrustedAdvisor
       void init(const TrustedAdvisorClientConfiguration& clientConfiguration);
 
       TrustedAdvisorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TrustedAdvisorEndpointProviderBase> m_endpointProvider;
   };
 

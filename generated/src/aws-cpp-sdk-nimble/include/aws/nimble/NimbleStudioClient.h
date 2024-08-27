@@ -1383,7 +1383,6 @@ namespace NimbleStudio
       void init(const NimbleStudioClientConfiguration& clientConfiguration);
 
       NimbleStudioClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<NimbleStudioEndpointProviderBase> m_endpointProvider;
   };
 

@@ -2335,7 +2335,6 @@ namespace ElastiCache
         void init(const ElastiCacheClientConfiguration& clientConfiguration);
 
         ElastiCacheClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<ElastiCacheEndpointProviderBase> m_endpointProvider;
   };
 

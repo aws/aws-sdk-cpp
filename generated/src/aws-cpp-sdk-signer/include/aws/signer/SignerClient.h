@@ -646,7 +646,6 @@ namespace signer
       void init(const SignerClientConfiguration& clientConfiguration);
 
       SignerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SignerEndpointProviderBase> m_endpointProvider;
   };
 

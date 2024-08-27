@@ -113,7 +113,6 @@ namespace inspectorscan
       void init(const InspectorscanClientConfiguration& clientConfiguration);
 
       InspectorscanClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<InspectorscanEndpointProviderBase> m_endpointProvider;
   };
 

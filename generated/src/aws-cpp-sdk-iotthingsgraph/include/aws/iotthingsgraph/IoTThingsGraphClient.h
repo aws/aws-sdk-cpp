@@ -92,7 +92,6 @@ namespace IoTThingsGraph
       void init(const IoTThingsGraphClientConfiguration& clientConfiguration);
 
       IoTThingsGraphClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTThingsGraphEndpointProviderBase> m_endpointProvider;
   };
 

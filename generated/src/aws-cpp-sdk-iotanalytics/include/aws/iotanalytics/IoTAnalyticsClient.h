@@ -988,7 +988,6 @@ namespace IoTAnalytics
       void init(const IoTAnalyticsClientConfiguration& clientConfiguration);
 
       IoTAnalyticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTAnalyticsEndpointProviderBase> m_endpointProvider;
   };
 

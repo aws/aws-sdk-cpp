@@ -2920,7 +2920,6 @@ namespace LexModelsV2
       void init(const LexModelsV2ClientConfiguration& clientConfiguration);
 
       LexModelsV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LexModelsV2EndpointProviderBase> m_endpointProvider;
   };
 

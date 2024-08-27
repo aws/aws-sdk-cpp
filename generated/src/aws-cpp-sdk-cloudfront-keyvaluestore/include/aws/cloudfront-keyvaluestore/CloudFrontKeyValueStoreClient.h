@@ -239,7 +239,6 @@ namespace CloudFrontKeyValueStore
       void init(const CloudFrontKeyValueStoreClientConfiguration& clientConfiguration);
 
       CloudFrontKeyValueStoreClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudFrontKeyValueStoreEndpointProviderBase> m_endpointProvider;
   };
 

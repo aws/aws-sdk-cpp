@@ -719,7 +719,6 @@ namespace FIS
       void init(const FISClientConfiguration& clientConfiguration);
 
       FISClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<FISEndpointProviderBase> m_endpointProvider;
   };
 

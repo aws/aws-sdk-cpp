@@ -61,7 +61,6 @@ ArtifactClient::ArtifactClient(const Artifact::ArtifactClientConfiguration& clie
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ArtifactErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -77,7 +76,6 @@ ArtifactClient::ArtifactClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -93,7 +91,6 @@ ArtifactClient::ArtifactClient(const std::shared_ptr<AWSCredentialsProvider>& cr
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -108,7 +105,6 @@ ArtifactClient::ArtifactClient(const std::shared_ptr<AWSCredentialsProvider>& cr
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ArtifactErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<ArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -123,7 +119,6 @@ ArtifactClient::ArtifactClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<ArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -138,7 +133,6 @@ ArtifactClient::ArtifactClient(const std::shared_ptr<AWSCredentialsProvider>& cr
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<ArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -158,6 +152,14 @@ std::shared_ptr<ArtifactEndpointProviderBase>& ArtifactClient::accessEndpointPro
 void ArtifactClient::init(const Artifact::ArtifactClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Artifact");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

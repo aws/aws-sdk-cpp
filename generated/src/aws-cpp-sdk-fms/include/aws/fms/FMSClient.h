@@ -1263,7 +1263,6 @@ namespace FMS
       void init(const FMSClientConfiguration& clientConfiguration);
 
       FMSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<FMSEndpointProviderBase> m_endpointProvider;
   };
 

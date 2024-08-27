@@ -1372,7 +1372,6 @@ namespace LookoutEquipment
       void init(const LookoutEquipmentClientConfiguration& clientConfiguration);
 
       LookoutEquipmentClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LookoutEquipmentEndpointProviderBase> m_endpointProvider;
   };
 

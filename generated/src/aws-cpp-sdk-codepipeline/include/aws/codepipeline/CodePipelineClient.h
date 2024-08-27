@@ -1341,7 +1341,6 @@ namespace CodePipeline
       void init(const CodePipelineClientConfiguration& clientConfiguration);
 
       CodePipelineClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodePipelineEndpointProviderBase> m_endpointProvider;
   };
 

@@ -1395,7 +1395,6 @@ namespace LexModelBuildingService
       void init(const LexModelBuildingServiceClientConfiguration& clientConfiguration);
 
       LexModelBuildingServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> m_endpointProvider;
   };
 

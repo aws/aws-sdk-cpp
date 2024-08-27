@@ -404,7 +404,6 @@ namespace LaunchWizard
       void init(const LaunchWizardClientConfiguration& clientConfiguration);
 
       LaunchWizardClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LaunchWizardEndpointProviderBase> m_endpointProvider;
   };
 

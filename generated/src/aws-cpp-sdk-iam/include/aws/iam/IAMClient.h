@@ -5766,7 +5766,6 @@ namespace IAM
         void init(const IAMClientConfiguration& clientConfiguration);
 
         IAMClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<IAMEndpointProviderBase> m_endpointProvider;
   };
 

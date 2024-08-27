@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * A Microsoft Teams team that has been authorized with AWS Chatbot.<p><h3>See
+   * <p>A Microsoft Teams team that is authorized with AWS Chatbot.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ConfiguredTeam">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Microsoft Teams tenant.
+     * <p>The ID of the Microsoft Teams tenant.</p>
      */
     inline const Aws::String& GetTenantId() const{ return m_tenantId; }
     inline bool TenantIdHasBeenSet() const { return m_tenantIdHasBeenSet; }
@@ -54,11 +54,13 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID,
-     * you must perform the initial authorization flow with Microsoft Teams in the AWS
-     * Chatbot console. Then you can copy and paste the team ID from the console. For
-     * more details, see steps 1-4 in Get started with Microsoft Teams in the AWS
-     * Chatbot Administrator Guide.
+     * <p> The ID of the Microsoft Teams authorized with AWS Chatbot.</p> <p>To get the
+     * team ID, you must perform the initial authorization flow with Microsoft Teams in
+     * the AWS Chatbot console. Then you can copy and paste the team ID from the
+     * console. For more information, see <a
+     * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step
+     * 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetTeamId() const{ return m_teamId; }
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
@@ -72,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the Microsoft Teams Team.
+     * <p>The name of the Microsoft Teams Team.</p>
      */
     inline const Aws::String& GetTeamName() const{ return m_teamName; }
     inline bool TeamNameHasBeenSet() const { return m_teamNameHasBeenSet; }

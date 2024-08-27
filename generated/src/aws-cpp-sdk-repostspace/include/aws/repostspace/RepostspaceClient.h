@@ -382,7 +382,6 @@ namespace repostspace
       void init(const RepostspaceClientConfiguration& clientConfiguration);
 
       RepostspaceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RepostspaceEndpointProviderBase> m_endpointProvider;
   };
 

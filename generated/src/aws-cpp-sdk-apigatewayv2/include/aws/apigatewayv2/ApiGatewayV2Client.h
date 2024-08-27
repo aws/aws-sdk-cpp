@@ -1886,7 +1886,6 @@ namespace ApiGatewayV2
       void init(const ApiGatewayV2ClientConfiguration& clientConfiguration);
 
       ApiGatewayV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ApiGatewayV2EndpointProviderBase> m_endpointProvider;
   };
 

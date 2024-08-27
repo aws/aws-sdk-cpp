@@ -823,7 +823,6 @@ namespace MediaConvert
       void init(const MediaConvertClientConfiguration& clientConfiguration);
 
       MediaConvertClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MediaConvertEndpointProviderBase> m_endpointProvider;
   };
 

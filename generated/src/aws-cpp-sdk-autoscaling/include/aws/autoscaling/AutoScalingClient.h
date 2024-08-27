@@ -2310,7 +2310,6 @@ namespace AutoScaling
         void init(const AutoScalingClientConfiguration& clientConfiguration);
 
         AutoScalingClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<AutoScalingEndpointProviderBase> m_endpointProvider;
   };
 

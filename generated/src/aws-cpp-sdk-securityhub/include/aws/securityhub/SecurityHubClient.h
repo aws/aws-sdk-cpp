@@ -2321,7 +2321,6 @@ namespace SecurityHub
       void init(const SecurityHubClientConfiguration& clientConfiguration);
 
       SecurityHubClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SecurityHubEndpointProviderBase> m_endpointProvider;
   };
 

@@ -362,7 +362,6 @@ namespace RecycleBin
       void init(const RecycleBinClientConfiguration& clientConfiguration);
 
       RecycleBinClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RecycleBinEndpointProviderBase> m_endpointProvider;
   };
 

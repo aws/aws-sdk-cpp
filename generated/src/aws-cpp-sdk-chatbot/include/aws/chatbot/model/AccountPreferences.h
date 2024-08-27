@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * Preferences which apply for AWS Chatbot usage in the calling AWS
-   * account.<p><h3>See Also:</h3>   <a
+   * <p>Preferences related to AWS Chatbot usage in the calling AWS
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AccountPreferences">AWS
    * API Reference</a></p>
    */
@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * Enables use of a user role requirement in your chat configuration.
+     * <p>Enables use of a user role requirement in your chat configuration.</p>
      */
     inline bool GetUserAuthorizationRequired() const{ return m_userAuthorizationRequired; }
     inline bool UserAuthorizationRequiredHasBeenSet() const { return m_userAuthorizationRequiredHasBeenSet; }
@@ -48,14 +48,15 @@ namespace Model
 
     ///@{
     /**
-     * Turns on training data collection. This helps improve the AWS Chatbot experience
-     * by allowing AWS Chatbot to store and use your customer information, such as AWS
-     * Chatbot configurations, notifications, user inputs, AWS Chatbot generated
-     * responses, and interaction data. This data helps us to continuously improve and
-     * develop Artificial Intelligence (AI) technologies. Your data is not shared with
-     * any third parties and is protected using sophisticated controls to prevent
-     * unauthorized access and misuse. AWS Chatbot does not store or use interactions
-     * in chat channels with Amazon Q for training AWS Chatbot’s AI technologies.
+     * <p>Turns on training data collection.</p> <p>This helps improve the AWS Chatbot
+     * experience by allowing AWS Chatbot to store and use your customer information,
+     * such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot
+     * generated responses, and interaction data. This data helps us to continuously
+     * improve and develop Artificial Intelligence (AI) technologies. Your data is not
+     * shared with any third parties and is protected using sophisticated controls to
+     * prevent unauthorized access and misuse. AWS Chatbot does not store or use
+     * interactions in chat channels with Amazon Q for training AI technologies for AWS
+     * Chatbot. </p>
      */
     inline bool GetTrainingDataCollectionEnabled() const{ return m_trainingDataCollectionEnabled; }
     inline bool TrainingDataCollectionEnabledHasBeenSet() const { return m_trainingDataCollectionEnabledHasBeenSet; }

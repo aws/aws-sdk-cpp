@@ -872,7 +872,6 @@ namespace LookoutMetrics
       void init(const LookoutMetricsClientConfiguration& clientConfiguration);
 
       LookoutMetricsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LookoutMetricsEndpointProviderBase> m_endpointProvider;
   };
 

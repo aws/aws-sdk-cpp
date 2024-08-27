@@ -907,7 +907,6 @@ namespace ComputeOptimizer
       void init(const ComputeOptimizerClientConfiguration& clientConfiguration);
 
       ComputeOptimizerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ComputeOptimizerEndpointProviderBase> m_endpointProvider;
   };
 

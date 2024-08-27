@@ -908,7 +908,6 @@ namespace ChimeSDKMediaPipelines
       void init(const ChimeSDKMediaPipelinesClientConfiguration& clientConfiguration);
 
       ChimeSDKMediaPipelinesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase> m_endpointProvider;
   };
 

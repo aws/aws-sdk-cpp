@@ -115,7 +115,6 @@ namespace SageMakerMetrics
       void init(const SageMakerMetricsClientConfiguration& clientConfiguration);
 
       SageMakerMetricsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SageMakerMetricsEndpointProviderBase> m_endpointProvider;
   };
 

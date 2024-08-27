@@ -1785,7 +1785,6 @@ namespace GlobalAccelerator
       void init(const GlobalAcceleratorClientConfiguration& clientConfiguration);
 
       GlobalAcceleratorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GlobalAcceleratorEndpointProviderBase> m_endpointProvider;
   };
 

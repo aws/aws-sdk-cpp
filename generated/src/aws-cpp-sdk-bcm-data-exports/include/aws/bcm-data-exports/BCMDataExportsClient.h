@@ -417,7 +417,6 @@ namespace BCMDataExports
       void init(const BCMDataExportsClientConfiguration& clientConfiguration);
 
       BCMDataExportsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BCMDataExportsEndpointProviderBase> m_endpointProvider;
   };
 

@@ -639,7 +639,6 @@ namespace SsmSap
       void init(const SsmSapClientConfiguration& clientConfiguration);
 
       SsmSapClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SsmSapEndpointProviderBase> m_endpointProvider;
   };
 

@@ -1284,7 +1284,6 @@ namespace CodeDeploy
       void init(const CodeDeployClientConfiguration& clientConfiguration);
 
       CodeDeployClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeDeployEndpointProviderBase> m_endpointProvider;
   };
 

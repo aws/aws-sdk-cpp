@@ -539,7 +539,6 @@ namespace ARCZonalShift
       void init(const ARCZonalShiftClientConfiguration& clientConfiguration);
 
       ARCZonalShiftClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ARCZonalShiftEndpointProviderBase> m_endpointProvider;
   };
 
