@@ -819,7 +819,6 @@ namespace PrometheusService
       void init(const PrometheusServiceClientConfiguration& clientConfiguration);
 
       PrometheusServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PrometheusServiceEndpointProviderBase> m_endpointProvider;
   };
 

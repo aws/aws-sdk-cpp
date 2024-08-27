@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * An AWS Chatbot configuration for Amazon Chime.<p><h3>See Also:</h3>   <a
+   * <p>An AWS Chatbot configuration for Amazon Chime.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ChimeWebhookConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,9 +41,11 @@ namespace Model
 
     ///@{
     /**
-     * Description of the webhook. Recommend using the convention
-     * `RoomName/WebhookName`. See Chime setup tutorial for more details:
-     * https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
+     * <p>A description of the webhook. We recommend using the convention
+     * <code>RoomName/WebhookName</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html">Tutorial:
+     * Get started with Amazon Chime</a> in the <i> AWS Chatbot Administrator
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetWebhookDescription() const{ return m_webhookDescription; }
     inline bool WebhookDescriptionHasBeenSet() const { return m_webhookDescriptionHasBeenSet; }
@@ -57,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the ChimeWebhookConfiguration.
+     * <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
@@ -71,9 +73,11 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a
-     * user-defined role that AWS Chatbot will assume. This is not the service-linked
-     * role. For more information, see IAM Policies for AWS Chatbot.
+     * <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked
+     * role.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM
+     * policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.
+     * </p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -87,7 +91,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+     * <p>The Amazon Resource Names (ARNs) of the SNS topics that deliver notifications
+     * to AWS Chatbot.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSnsTopicArns() const{ return m_snsTopicArns; }
     inline bool SnsTopicArnsHasBeenSet() const { return m_snsTopicArnsHasBeenSet; }
@@ -102,7 +107,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the configuration.
+     * <p>The name of the configuration.</p>
      */
     inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
     inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
@@ -116,9 +121,8 @@ namespace Model
 
     ///@{
     /**
-     * Specifies the logging level for this configuration. This property affects the
-     * log entries pushed to Amazon CloudWatch Logs.Logging levels include ERROR, INFO,
-     * or NONE.
+     * <p>Logging levels include <code>ERROR</code>, <code>INFO</code>, or
+     * <code>NONE</code>.</p>
      */
     inline const Aws::String& GetLoggingLevel() const{ return m_loggingLevel; }
     inline bool LoggingLevelHasBeenSet() const { return m_loggingLevelHasBeenSet; }
@@ -132,7 +136,8 @@ namespace Model
 
     ///@{
     /**
-     * A list of tags applied to the configuration.
+     * <p>A map of tags assigned to a resource. A tag is a string-to-string map of
+     * key-value pairs.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

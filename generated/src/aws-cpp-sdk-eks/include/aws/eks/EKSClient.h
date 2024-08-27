@@ -1788,7 +1788,6 @@ namespace EKS
       void init(const EKSClientConfiguration& clientConfiguration);
 
       EKSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EKSEndpointProviderBase> m_endpointProvider;
   };
 

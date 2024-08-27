@@ -1737,7 +1737,6 @@ namespace ResilienceHub
       void init(const ResilienceHubClientConfiguration& clientConfiguration);
 
       ResilienceHubClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ResilienceHubEndpointProviderBase> m_endpointProvider;
   };
 

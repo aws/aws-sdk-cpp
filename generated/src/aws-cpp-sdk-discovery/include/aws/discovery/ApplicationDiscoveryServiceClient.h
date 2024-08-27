@@ -895,7 +895,6 @@ namespace ApplicationDiscoveryService
       void init(const ApplicationDiscoveryServiceClientConfiguration& clientConfiguration);
 
       ApplicationDiscoveryServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> m_endpointProvider;
   };
 

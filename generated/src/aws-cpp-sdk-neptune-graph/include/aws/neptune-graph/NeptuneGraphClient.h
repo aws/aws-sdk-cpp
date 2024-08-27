@@ -815,7 +815,6 @@ namespace NeptuneGraph
       void init(const NeptuneGraphClientConfiguration& clientConfiguration);
 
       NeptuneGraphClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<NeptuneGraphEndpointProviderBase> m_endpointProvider;
   };
 

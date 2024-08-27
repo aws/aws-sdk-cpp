@@ -220,7 +220,6 @@ namespace AgreementService
       void init(const AgreementServiceClientConfiguration& clientConfiguration);
 
       AgreementServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AgreementServiceEndpointProviderBase> m_endpointProvider;
   };
 

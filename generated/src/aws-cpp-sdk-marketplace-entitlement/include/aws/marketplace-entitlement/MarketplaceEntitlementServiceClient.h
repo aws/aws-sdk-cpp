@@ -119,7 +119,6 @@ namespace MarketplaceEntitlementService
       void init(const MarketplaceEntitlementServiceClientConfiguration& clientConfiguration);
 
       MarketplaceEntitlementServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MarketplaceEntitlementServiceEndpointProviderBase> m_endpointProvider;
   };
 

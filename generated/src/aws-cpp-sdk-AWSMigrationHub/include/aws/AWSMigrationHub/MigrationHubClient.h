@@ -600,7 +600,6 @@ namespace MigrationHub
       void init(const MigrationHubClientConfiguration& clientConfiguration);
 
       MigrationHubClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MigrationHubEndpointProviderBase> m_endpointProvider;
   };
 

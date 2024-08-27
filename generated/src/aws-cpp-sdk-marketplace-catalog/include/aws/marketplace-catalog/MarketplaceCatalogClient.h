@@ -460,7 +460,6 @@ namespace MarketplaceCatalog
       void init(const MarketplaceCatalogClientConfiguration& clientConfiguration);
 
       MarketplaceCatalogClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MarketplaceCatalogEndpointProviderBase> m_endpointProvider;
   };
 

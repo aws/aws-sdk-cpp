@@ -182,7 +182,6 @@ namespace PersonalizeRuntime
       void init(const PersonalizeRuntimeClientConfiguration& clientConfiguration);
 
       PersonalizeRuntimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> m_endpointProvider;
   };
 

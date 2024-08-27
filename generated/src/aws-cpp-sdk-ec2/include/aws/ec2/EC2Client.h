@@ -19187,7 +19187,6 @@ namespace EC2
         void init(const EC2ClientConfiguration& clientConfiguration);
 
         EC2ClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<EC2EndpointProviderBase> m_endpointProvider;
   };
 

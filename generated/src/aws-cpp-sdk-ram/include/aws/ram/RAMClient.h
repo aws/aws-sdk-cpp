@@ -1079,7 +1079,6 @@ namespace RAM
       void init(const RAMClientConfiguration& clientConfiguration);
 
       RAMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RAMEndpointProviderBase> m_endpointProvider;
   };
 

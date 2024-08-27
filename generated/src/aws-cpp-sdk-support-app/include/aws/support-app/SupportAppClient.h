@@ -415,7 +415,6 @@ namespace SupportApp
       void init(const SupportAppClientConfiguration& clientConfiguration);
 
       SupportAppClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SupportAppEndpointProviderBase> m_endpointProvider;
   };
 

@@ -3040,7 +3040,6 @@ namespace DatabaseMigrationService
       void init(const DatabaseMigrationServiceClientConfiguration& clientConfiguration);
 
       DatabaseMigrationServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> m_endpointProvider;
   };
 

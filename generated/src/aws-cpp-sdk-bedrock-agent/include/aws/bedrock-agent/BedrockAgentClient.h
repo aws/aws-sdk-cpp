@@ -1800,7 +1800,6 @@ namespace BedrockAgent
       void init(const BedrockAgentClientConfiguration& clientConfiguration);
 
       BedrockAgentClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BedrockAgentEndpointProviderBase> m_endpointProvider;
   };
 

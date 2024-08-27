@@ -64,7 +64,6 @@ ConnectParticipantClient::ConnectParticipantClient(const ConnectParticipant::Con
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -80,7 +79,6 @@ ConnectParticipantClient::ConnectParticipantClient(const AWSCredentials& credent
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -96,7 +94,6 @@ ConnectParticipantClient::ConnectParticipantClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -111,7 +108,6 @@ ConnectParticipantClient::ConnectParticipantClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -126,7 +122,6 @@ ConnectParticipantClient::ConnectParticipantClient(const AWSCredentials& credent
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -141,7 +136,6 @@ ConnectParticipantClient::ConnectParticipantClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -161,6 +155,14 @@ std::shared_ptr<ConnectParticipantEndpointProviderBase>& ConnectParticipantClien
 void ConnectParticipantClient::init(const ConnectParticipant::ConnectParticipantClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("ConnectParticipant");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

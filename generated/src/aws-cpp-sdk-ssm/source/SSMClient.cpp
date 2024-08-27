@@ -195,7 +195,6 @@ SSMClient::SSMClient(const SSM::SSMClientConfiguration& clientConfiguration,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -211,7 +210,6 @@ SSMClient::SSMClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -227,7 +225,6 @@ SSMClient::SSMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -242,7 +239,6 @@ SSMClient::SSMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -257,7 +253,6 @@ SSMClient::SSMClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -272,7 +267,6 @@ SSMClient::SSMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -292,6 +286,14 @@ std::shared_ptr<SSMEndpointProviderBase>& SSMClient::accessEndpointProvider()
 void SSMClient::init(const SSM::SSMClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("SSM");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

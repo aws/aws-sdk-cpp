@@ -752,7 +752,6 @@ namespace CleanRoomsML
       void init(const CleanRoomsMLClientConfiguration& clientConfiguration);
 
       CleanRoomsMLClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CleanRoomsMLEndpointProviderBase> m_endpointProvider;
   };
 

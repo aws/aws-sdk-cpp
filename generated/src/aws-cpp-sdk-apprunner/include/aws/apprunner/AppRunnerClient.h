@@ -1159,7 +1159,6 @@ namespace AppRunner
       void init(const AppRunnerClientConfiguration& clientConfiguration);
 
       AppRunnerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AppRunnerEndpointProviderBase> m_endpointProvider;
   };
 

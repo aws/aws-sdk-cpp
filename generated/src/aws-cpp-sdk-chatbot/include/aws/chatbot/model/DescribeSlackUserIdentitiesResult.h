@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of Slack User Identities.
+     * <p>A list of Slack User Identities.</p>
      */
     inline const Aws::Vector<SlackUserIdentity>& GetSlackUserIdentities() const{ return m_slackUserIdentities; }
     inline void SetSlackUserIdentities(const Aws::Vector<SlackUserIdentity>& value) { m_slackUserIdentities = value; }
@@ -49,9 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
+     * <p> An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * MaxResults. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

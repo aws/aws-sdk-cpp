@@ -581,7 +581,6 @@ namespace ApplicationAutoScaling
       void init(const ApplicationAutoScalingClientConfiguration& clientConfiguration);
 
       ApplicationAutoScalingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> m_endpointProvider;
   };
 

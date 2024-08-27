@@ -882,7 +882,6 @@ namespace ChimeSDKIdentity
       void init(const ChimeSDKIdentityClientConfiguration& clientConfiguration);
 
       ChimeSDKIdentityClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> m_endpointProvider;
   };
 

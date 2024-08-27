@@ -1674,7 +1674,6 @@ namespace EMR
       void init(const EMRClientConfiguration& clientConfiguration);
 
       EMRClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EMREndpointProviderBase> m_endpointProvider;
   };
 

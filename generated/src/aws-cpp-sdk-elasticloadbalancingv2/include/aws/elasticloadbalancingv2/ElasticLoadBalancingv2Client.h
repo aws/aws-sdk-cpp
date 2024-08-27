@@ -1458,7 +1458,6 @@ namespace ElasticLoadBalancingv2
         void init(const ElasticLoadBalancingv2ClientConfiguration& clientConfiguration);
 
         ElasticLoadBalancingv2ClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase> m_endpointProvider;
   };
 

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of Slack Workspaces registered with AWS Chatbot.
+     * <p>A list of Slack workspaces registered with AWS Chatbot.</p>
      */
     inline const Aws::Vector<SlackWorkspace>& GetSlackWorkspaces() const{ return m_slackWorkspaces; }
     inline void SetSlackWorkspaces(const Aws::Vector<SlackWorkspace>& value) { m_slackWorkspaces = value; }
@@ -49,9 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
+     * <p> An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * MaxResults. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

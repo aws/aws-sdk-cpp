@@ -1001,7 +1001,6 @@ namespace SecurityLake
       void init(const SecurityLakeClientConfiguration& clientConfiguration);
 
       SecurityLakeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SecurityLakeEndpointProviderBase> m_endpointProvider;
   };
 

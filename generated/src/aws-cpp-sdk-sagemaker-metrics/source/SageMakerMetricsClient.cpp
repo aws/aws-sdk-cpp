@@ -56,7 +56,6 @@ SageMakerMetricsClient::SageMakerMetricsClient(const SageMakerMetrics::SageMaker
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerMetricsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -72,7 +71,6 @@ SageMakerMetricsClient::SageMakerMetricsClient(const AWSCredentials& credentials
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerMetricsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -88,7 +86,6 @@ SageMakerMetricsClient::SageMakerMetricsClient(const std::shared_ptr<AWSCredenti
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerMetricsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -103,7 +100,6 @@ SageMakerMetricsClient::SageMakerMetricsClient(const std::shared_ptr<AWSCredenti
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerMetricsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<SageMakerMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -118,7 +114,6 @@ SageMakerMetricsClient::SageMakerMetricsClient(const AWSCredentials& credentials
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerMetricsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<SageMakerMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -133,7 +128,6 @@ SageMakerMetricsClient::SageMakerMetricsClient(const std::shared_ptr<AWSCredenti
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerMetricsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<SageMakerMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -153,6 +147,14 @@ std::shared_ptr<SageMakerMetricsEndpointProviderBase>& SageMakerMetricsClient::a
 void SageMakerMetricsClient::init(const SageMakerMetrics::SageMakerMetricsClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("SageMaker Metrics");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

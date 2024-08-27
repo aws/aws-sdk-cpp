@@ -2260,7 +2260,6 @@ namespace Lambda
       void init(const LambdaClientConfiguration& clientConfiguration);
 
       LambdaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LambdaEndpointProviderBase> m_endpointProvider;
   };
 

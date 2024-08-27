@@ -559,7 +559,6 @@ namespace ApplicationSignals
       void init(const ApplicationSignalsClientConfiguration& clientConfiguration);
 
       ApplicationSignalsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ApplicationSignalsEndpointProviderBase> m_endpointProvider;
   };
 

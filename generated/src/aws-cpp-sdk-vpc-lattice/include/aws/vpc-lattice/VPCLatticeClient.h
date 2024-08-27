@@ -1533,7 +1533,6 @@ namespace VPCLattice
       void init(const VPCLatticeClientConfiguration& clientConfiguration);
 
       VPCLatticeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<VPCLatticeEndpointProviderBase> m_endpointProvider;
   };
 

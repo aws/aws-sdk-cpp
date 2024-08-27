@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
+     * <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
      */
     inline const Aws::String& GetSlackTeamId() const{ return m_slackTeamId; }
     inline bool SlackTeamIdHasBeenSet() const { return m_slackTeamIdHasBeenSet; }

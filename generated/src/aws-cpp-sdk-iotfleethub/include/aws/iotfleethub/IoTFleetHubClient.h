@@ -299,7 +299,6 @@ namespace IoTFleetHub
       void init(const IoTFleetHubClientConfiguration& clientConfiguration);
 
       IoTFleetHubClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTFleetHubEndpointProviderBase> m_endpointProvider;
   };
 

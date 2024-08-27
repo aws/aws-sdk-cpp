@@ -1050,7 +1050,6 @@ namespace AccessAnalyzer
       void init(const AccessAnalyzerClientConfiguration& clientConfiguration);
 
       AccessAnalyzerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AccessAnalyzerEndpointProviderBase> m_endpointProvider;
   };
 

@@ -2462,7 +2462,6 @@ namespace PinpointSMSVoiceV2
       void init(const PinpointSMSVoiceV2ClientConfiguration& clientConfiguration);
 
       PinpointSMSVoiceV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PinpointSMSVoiceV2EndpointProviderBase> m_endpointProvider;
   };
 

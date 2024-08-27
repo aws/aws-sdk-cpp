@@ -1479,7 +1479,6 @@ namespace Kinesis
       void init(const KinesisClientConfiguration& clientConfiguration);
 
       KinesisClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KinesisEndpointProviderBase> m_endpointProvider;
   };
 

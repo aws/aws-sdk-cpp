@@ -2592,7 +2592,6 @@ namespace Backup
       void init(const BackupClientConfiguration& clientConfiguration);
 
       BackupClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BackupEndpointProviderBase> m_endpointProvider;
   };
 

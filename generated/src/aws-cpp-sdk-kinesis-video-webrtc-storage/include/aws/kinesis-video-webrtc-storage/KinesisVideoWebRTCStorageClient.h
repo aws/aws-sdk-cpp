@@ -178,7 +178,6 @@ namespace KinesisVideoWebRTCStorage
       void init(const KinesisVideoWebRTCStorageClientConfiguration& clientConfiguration);
 
       KinesisVideoWebRTCStorageClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> m_endpointProvider;
   };
 

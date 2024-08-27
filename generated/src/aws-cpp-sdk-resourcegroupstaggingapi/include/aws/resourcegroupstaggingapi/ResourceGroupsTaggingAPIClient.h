@@ -377,7 +377,6 @@ namespace ResourceGroupsTaggingAPI
       void init(const ResourceGroupsTaggingAPIClientConfiguration& clientConfiguration);
 
       ResourceGroupsTaggingAPIClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase> m_endpointProvider;
   };
 

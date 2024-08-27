@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * An AWS Chatbot configuration for Slack.<p><h3>See Also:</h3>   <a
+   * <p>An AWS Chatbot configuration for Slack.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/SlackChannelConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * Name of the Slack Workspace.
+     * <p>Name of the Slack workspace.</p>
      */
     inline const Aws::String& GetSlackTeamName() const{ return m_slackTeamName; }
     inline bool SlackTeamNameHasBeenSet() const { return m_slackTeamNameHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Slack workspace authorized with AWS Chatbot.
+     * <p>The ID of the Slack workspace authorized with Amazon Chime.</p>
      */
     inline const Aws::String& GetSlackTeamId() const{ return m_slackTeamId; }
     inline bool SlackTeamIdHasBeenSet() const { return m_slackTeamIdHasBeenSet; }
@@ -69,9 +69,9 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Slack channel. To get the ID, open Slack, right click on the
-     * channel name in the left pane, then choose Copy Link. The channel ID is the
-     * 9-character string at the end of the URL. For example, ABCBBLZZZ.
+     * <p>The ID of the Slack channel.</p> <p>To get this ID, open Slack, right click
+     * on the channel name in the left pane, then choose Copy Link. The channel ID is
+     * the 9-character string at the end of the URL. For example, ABCBBLZZZ. </p>
      */
     inline const Aws::String& GetSlackChannelId() const{ return m_slackChannelId; }
     inline bool SlackChannelIdHasBeenSet() const { return m_slackChannelIdHasBeenSet; }
@@ -85,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the Slack Channel.
+     * <p>The name of the Slack channel.</p>
      */
     inline const Aws::String& GetSlackChannelName() const{ return m_slackChannelName; }
     inline bool SlackChannelNameHasBeenSet() const { return m_slackChannelNameHasBeenSet; }
@@ -99,7 +99,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the SlackChannelConfiguration.
+     * <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
@@ -113,9 +113,11 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a
-     * user-defined role that AWS Chatbot will assume. This is not the service-linked
-     * role. For more information, see IAM Policies for AWS Chatbot.
+     * <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked
+     * role.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM
+     * policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.
+     * </p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -129,7 +131,7 @@ namespace Model
 
     ///@{
     /**
-     * The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+     * <p>The ARNs of the SNS topics that deliver notifications to AWS Chatbot.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSnsTopicArns() const{ return m_snsTopicArns; }
     inline bool SnsTopicArnsHasBeenSet() const { return m_snsTopicArnsHasBeenSet; }
@@ -144,7 +146,7 @@ namespace Model
 
     ///@{
     /**
-     * The name of the configuration.
+     * <p>The name of the configuration.</p>
      */
     inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
     inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
@@ -158,7 +160,8 @@ namespace Model
 
     ///@{
     /**
-     * Logging levels include ERROR, INFO, or NONE.
+     * <p>Logging levels include <code>ERROR</code>, <code>INFO</code>, or
+     * <code>NONE</code>.</p>
      */
     inline const Aws::String& GetLoggingLevel() const{ return m_loggingLevel; }
     inline bool LoggingLevelHasBeenSet() const { return m_loggingLevelHasBeenSet; }
@@ -172,8 +175,9 @@ namespace Model
 
     ///@{
     /**
-     * The list of IAM policy ARNs that are applied as channel guardrails. The AWS
-     * managed 'AdministratorAccess' policy is applied by default if this is not set.
+     * <p>The list of IAM policy ARNs that are applied as channel guardrails. The AWS
+     * managed <code>AdministratorAccess</code> policy is applied by default if this is
+     * not set. </p>
      */
     inline const Aws::Vector<Aws::String>& GetGuardrailPolicyArns() const{ return m_guardrailPolicyArns; }
     inline bool GuardrailPolicyArnsHasBeenSet() const { return m_guardrailPolicyArnsHasBeenSet; }
@@ -188,7 +192,7 @@ namespace Model
 
     ///@{
     /**
-     * Enables use of a user role requirement in your chat configuration.
+     * <p>Enables use of a user role requirement in your chat configuration.</p>
      */
     inline bool GetUserAuthorizationRequired() const{ return m_userAuthorizationRequired; }
     inline bool UserAuthorizationRequiredHasBeenSet() const { return m_userAuthorizationRequiredHasBeenSet; }
@@ -198,7 +202,8 @@ namespace Model
 
     ///@{
     /**
-     * A list of tags applied to the configuration.
+     * <p>A map of tags assigned to a resource. A tag is a string-to-string map of
+     * key-value pairs.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

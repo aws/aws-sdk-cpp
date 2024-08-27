@@ -235,7 +235,6 @@ namespace S3Outposts
       void init(const S3OutpostsClientConfiguration& clientConfiguration);
 
       S3OutpostsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<S3OutpostsEndpointProviderBase> m_endpointProvider;
   };
 

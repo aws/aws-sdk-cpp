@@ -4264,7 +4264,6 @@ namespace SSM
       void init(const SSMClientConfiguration& clientConfiguration);
 
       SSMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SSMEndpointProviderBase> m_endpointProvider;
   };
 

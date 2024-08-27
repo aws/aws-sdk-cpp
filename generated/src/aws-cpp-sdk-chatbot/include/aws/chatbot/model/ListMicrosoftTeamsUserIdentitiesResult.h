@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * User level permissions associated to a channel configuration.
+     * <p>User level permissions associated to a channel configuration.</p>
      */
     inline const Aws::Vector<TeamsUserIdentity>& GetTeamsUserIdentities() const{ return m_teamsUserIdentities; }
     inline void SetTeamsUserIdentities(const Aws::Vector<TeamsUserIdentity>& value) { m_teamsUserIdentities = value; }
@@ -49,9 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
+     * <p>An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * MaxResults. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

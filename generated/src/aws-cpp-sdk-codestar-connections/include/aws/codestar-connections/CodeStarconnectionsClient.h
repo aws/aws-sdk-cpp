@@ -841,7 +841,6 @@ namespace CodeStarconnections
       void init(const CodeStarconnectionsClientConfiguration& clientConfiguration);
 
       CodeStarconnectionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeStarconnectionsEndpointProviderBase> m_endpointProvider;
   };
 

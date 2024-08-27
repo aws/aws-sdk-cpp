@@ -2958,7 +2958,6 @@ namespace StorageGateway
       void init(const StorageGatewayClientConfiguration& clientConfiguration);
 
       StorageGatewayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<StorageGatewayEndpointProviderBase> m_endpointProvider;
   };
 

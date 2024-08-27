@@ -2355,7 +2355,6 @@ namespace WorkMail
       void init(const WorkMailClientConfiguration& clientConfiguration);
 
       WorkMailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WorkMailEndpointProviderBase> m_endpointProvider;
   };
 

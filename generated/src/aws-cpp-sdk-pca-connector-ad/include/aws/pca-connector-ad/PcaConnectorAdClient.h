@@ -750,7 +750,6 @@ namespace PcaConnectorAd
       void init(const PcaConnectorAdClientConfiguration& clientConfiguration);
 
       PcaConnectorAdClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PcaConnectorAdEndpointProviderBase> m_endpointProvider;
   };
 

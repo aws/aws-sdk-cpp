@@ -598,7 +598,6 @@ namespace CognitoSync
       void init(const CognitoSyncClientConfiguration& clientConfiguration);
 
       CognitoSyncClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CognitoSyncEndpointProviderBase> m_endpointProvider;
   };
 

@@ -123,7 +123,6 @@ namespace ConnectContactLens
       void init(const ConnectContactLensClientConfiguration& clientConfiguration);
 
       ConnectContactLensClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectContactLensEndpointProviderBase> m_endpointProvider;
   };
 

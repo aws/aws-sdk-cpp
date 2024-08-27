@@ -3810,7 +3810,6 @@ namespace S3Control
         friend class Aws::Client::ClientWithAsyncTemplateMethods<S3ControlClient>;
         void init(const S3ControlClientConfiguration& clientConfiguration);
         S3ControlClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Utils::Threading::Executor> m_executor;
         std::shared_ptr<S3ControlEndpointProviderBase> m_endpointProvider;
     };
 

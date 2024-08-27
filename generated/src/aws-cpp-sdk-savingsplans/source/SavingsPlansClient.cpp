@@ -65,7 +65,6 @@ SavingsPlansClient::SavingsPlansClient(const SavingsPlans::SavingsPlansClientCon
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -81,7 +80,6 @@ SavingsPlansClient::SavingsPlansClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -97,7 +95,6 @@ SavingsPlansClient::SavingsPlansClient(const std::shared_ptr<AWSCredentialsProvi
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -112,7 +109,6 @@ SavingsPlansClient::SavingsPlansClient(const std::shared_ptr<AWSCredentialsProvi
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -127,7 +123,6 @@ SavingsPlansClient::SavingsPlansClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -142,7 +137,6 @@ SavingsPlansClient::SavingsPlansClient(const std::shared_ptr<AWSCredentialsProvi
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -162,6 +156,14 @@ std::shared_ptr<SavingsPlansEndpointProviderBase>& SavingsPlansClient::accessEnd
 void SavingsPlansClient::init(const SavingsPlans::SavingsPlansClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("savingsplans");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

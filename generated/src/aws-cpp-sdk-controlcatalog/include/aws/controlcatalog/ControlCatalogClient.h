@@ -247,7 +247,6 @@ namespace ControlCatalog
       void init(const ControlCatalogClientConfiguration& clientConfiguration);
 
       ControlCatalogClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ControlCatalogEndpointProviderBase> m_endpointProvider;
   };
 

@@ -215,7 +215,6 @@ IAMClient::IAMClient(const IAM::IAMClientConfiguration& clientConfiguration,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IAMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -231,7 +230,6 @@ IAMClient::IAMClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IAMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -247,7 +245,6 @@ IAMClient::IAMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IAMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -262,7 +259,6 @@ IAMClient::IAMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<IAMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -277,7 +273,6 @@ IAMClient::IAMClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<IAMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -292,7 +287,6 @@ IAMClient::IAMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<IAMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -312,6 +306,14 @@ std::shared_ptr<IAMEndpointProviderBase>& IAMClient::accessEndpointProvider()
 void IAMClient::init(const IAM::IAMClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("IAM");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

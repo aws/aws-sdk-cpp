@@ -16,7 +16,17 @@ namespace Aws
 namespace chatbot
 {
   /**
-   * AWS Chatbot API
+   * <p>The <i>AWS Chatbot API Reference</i> provides descriptions, API request
+   * parameters, and the XML response for each of the AWS Chatbot API actions.</p>
+   * <p>AWS Chatbot APIs are currently available in the following Regions:</p> <ul>
+   * <li> <p>US East (Ohio) - <code>us-east-2</code> </p> </li> <li> <p>US West
+   * (Oregon) - <code>us-west-2</code> </p> </li> <li> <p>Asia Pacific (Singapore) -
+   * <code>ap-southeast-1</code> </p> </li> <li> <p>Europe (Ireland) -
+   * <code>eu-west-1</code> </p> </li> </ul> <p>The AWS Chatbot console can only be
+   * used in US East (Ohio). Your configuration data however, is stored in each of
+   * the relevant available Regions.</p>  <p>Your AWS CloudTrail events are
+   * logged in whatever Region you call from, not US East (N. Virginia) by
+   * default.</p> 
    */
   class AWS_CHATBOT_API ChatbotClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient>
   {
@@ -77,7 +87,8 @@ namespace chatbot
         virtual ~ChatbotClient();
 
         /**
-         * Creates Chime Webhook Configuration<p><h3>See Also:</h3>   <a
+         * <p>Creates an AWS Chatbot configuration for Amazon Chime.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateChimeWebhookConfiguration">AWS
          * API Reference</a></p>
          */
@@ -102,7 +113,8 @@ namespace chatbot
         }
 
         /**
-         * Creates MS Teams Channel Configuration<p><h3>See Also:</h3>   <a
+         * <p>Creates an AWS Chatbot configuration for Microsoft Teams.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateMicrosoftTeamsChannelConfiguration">AWS
          * API Reference</a></p>
          */
@@ -127,7 +139,7 @@ namespace chatbot
         }
 
         /**
-         * Creates Slack Channel Configuration<p><h3>See Also:</h3>   <a
+         * <p>Creates an AWS Chatbot confugration for Slack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateSlackChannelConfiguration">AWS
          * API Reference</a></p>
          */
@@ -152,7 +164,8 @@ namespace chatbot
         }
 
         /**
-         * Deletes a Chime Webhook Configuration<p><h3>See Also:</h3>   <a
+         * <p>Deletes a Amazon Chime webhook configuration for AWS Chatbot.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteChimeWebhookConfiguration">AWS
          * API Reference</a></p>
          */
@@ -177,7 +190,8 @@ namespace chatbot
         }
 
         /**
-         * Deletes MS Teams Channel Configuration<p><h3>See Also:</h3>   <a
+         * <p>Deletes a Microsoft Teams channel configuration for AWS Chatbot</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsChannelConfiguration">AWS
          * API Reference</a></p>
          */
@@ -202,9 +216,9 @@ namespace chatbot
         }
 
         /**
-         * Deletes the Microsoft Teams team authorization allowing for channels to be
+         * <p>Deletes the Microsoft Teams team authorization allowing for channels to be
          * configured in that Microsoft Teams team. Note that the Microsoft Teams team must
-         * have no channels configured to remove it.<p><h3>See Also:</h3>   <a
+         * have no channels configured to remove it. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsConfiguredTeam">AWS
          * API Reference</a></p>
          */
@@ -229,7 +243,8 @@ namespace chatbot
         }
 
         /**
-         * Deletes a Teams user identity<p><h3>See Also:</h3>   <a
+         * <p>Identifes a user level permission for a channel configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsUserIdentity">AWS
          * API Reference</a></p>
          */
@@ -254,7 +269,8 @@ namespace chatbot
         }
 
         /**
-         * Deletes Slack Channel Configuration<p><h3>See Also:</h3>   <a
+         * <p>Deletes a Slack channel configuration for AWS Chatbot</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackChannelConfiguration">AWS
          * API Reference</a></p>
          */
@@ -279,7 +295,8 @@ namespace chatbot
         }
 
         /**
-         * Deletes a Slack user identity<p><h3>See Also:</h3>   <a
+         * <p>Deletes a user level permission for a Slack channel
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackUserIdentity">AWS
          * API Reference</a></p>
          */
@@ -304,9 +321,9 @@ namespace chatbot
         }
 
         /**
-         * Deletes the Slack workspace authorization that allows channels to be configured
-         * in that workspace. This requires all configured channels in the workspace to be
-         * deleted.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the Slack workspace authorization that allows channels to be
+         * configured in that workspace. This requires all configured channels in the
+         * workspace to be deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackWorkspaceAuthorization">AWS
          * API Reference</a></p>
          */
@@ -331,8 +348,8 @@ namespace chatbot
         }
 
         /**
-         * Lists Chime Webhook Configurations optionally filtered by
-         * ChatConfigurationArn<p><h3>See Also:</h3>   <a
+         * <p>Lists Amazon Chime webhook configurations optionally filtered by
+         * ChatConfigurationArn</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeChimeWebhookConfigurations">AWS
          * API Reference</a></p>
          */
@@ -357,8 +374,8 @@ namespace chatbot
         }
 
         /**
-         * Lists Slack Channel Configurations optionally filtered by
-         * ChatConfigurationArn<p><h3>See Also:</h3>   <a
+         * <p>Lists Slack channel configurations optionally filtered by
+         * ChatConfigurationArn</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackChannelConfigurations">AWS
          * API Reference</a></p>
          */
@@ -383,7 +400,8 @@ namespace chatbot
         }
 
         /**
-         * Lists all Slack user identities with a mapped role.<p><h3>See Also:</h3>   <a
+         * <p>Lists all Slack user identities with a mapped role.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackUserIdentities">AWS
          * API Reference</a></p>
          */
@@ -408,7 +426,8 @@ namespace chatbot
         }
 
         /**
-         * Lists all authorized Slack Workspaces for AWS Account<p><h3>See Also:</h3>   <a
+         * <p>List all authorized Slack workspaces connected to the AWS Account onboarded
+         * with AWS Chatbot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackWorkspaces">AWS
          * API Reference</a></p>
          */
@@ -433,7 +452,7 @@ namespace chatbot
         }
 
         /**
-         * Get Chatbot account level preferences<p><h3>See Also:</h3>   <a
+         * <p>Returns AWS Chatbot account preferences.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetAccountPreferences">AWS
          * API Reference</a></p>
          */
@@ -458,7 +477,8 @@ namespace chatbot
         }
 
         /**
-         * Get a single MS Teams Channel Configurations<p><h3>See Also:</h3>   <a
+         * <p>Returns a Microsoft Teams channel configuration in an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetMicrosoftTeamsChannelConfiguration">AWS
          * API Reference</a></p>
          */
@@ -483,8 +503,8 @@ namespace chatbot
         }
 
         /**
-         * Lists MS Teams Channel Configurations optionally filtered by TeamId<p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all AWS Chatbot Microsoft Teams channel configurations in an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsChannelConfigurations">AWS
          * API Reference</a></p>
          */
@@ -509,7 +529,8 @@ namespace chatbot
         }
 
         /**
-         * Lists all authorized MS teams for AWS Account<p><h3>See Also:</h3>   <a
+         * <p>Lists all authorized Microsoft Teams for an AWS Account</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsConfiguredTeams">AWS
          * API Reference</a></p>
          */
@@ -534,7 +555,7 @@ namespace chatbot
         }
 
         /**
-         * Lists all Microsoft Teams user identities with a mapped role.<p><h3>See
+         * <p>A list all Microsoft Teams user identities with a mapped role.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsUserIdentities">AWS
          * API Reference</a></p>
@@ -560,7 +581,9 @@ namespace chatbot
         }
 
         /**
-         * Retrieves the list of tags applied to a configuration.<p><h3>See Also:</h3>   <a
+         * <p>Lists all of the tags associated with the Amazon Resource Name (ARN) that you
+         * specify. The resource can be a user, server, or role.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -585,7 +608,9 @@ namespace chatbot
         }
 
         /**
-         * Applies the supplied tags to a configuration.<p><h3>See Also:</h3>   <a
+         * <p>Attaches a key-value pair to a resource, as identified by its Amazon Resource
+         * Name (ARN). Resources are users, servers, roles, and other
+         * entities.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/TagResource">AWS
          * API Reference</a></p>
          */
@@ -610,7 +635,9 @@ namespace chatbot
         }
 
         /**
-         * Removes the supplied tags from a configuration<p><h3>See Also:</h3>   <a
+         * <p>Detaches a key-value pair from a resource, as identified by its Amazon
+         * Resource Name (ARN). Resources are users, servers, roles, and other
+         * entities.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -635,7 +662,7 @@ namespace chatbot
         }
 
         /**
-         * Update Chatbot account level preferences<p><h3>See Also:</h3>   <a
+         * <p>Updates AWS Chatbot account preferences.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateAccountPreferences">AWS
          * API Reference</a></p>
          */
@@ -660,7 +687,7 @@ namespace chatbot
         }
 
         /**
-         * Updates a Chime Webhook Configuration<p><h3>See Also:</h3>   <a
+         * <p>Updates a Amazon Chime webhook configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateChimeWebhookConfiguration">AWS
          * API Reference</a></p>
          */
@@ -685,7 +712,8 @@ namespace chatbot
         }
 
         /**
-         * Updates MS Teams Channel Configuration<p><h3>See Also:</h3>   <a
+         * <p>Updates an Microsoft Teams channel configuration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateMicrosoftTeamsChannelConfiguration">AWS
          * API Reference</a></p>
          */
@@ -710,7 +738,7 @@ namespace chatbot
         }
 
         /**
-         * Updates Slack Channel Configuration<p><h3>See Also:</h3>   <a
+         * <p>Updates a Slack channel configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateSlackChannelConfiguration">AWS
          * API Reference</a></p>
          */
@@ -742,7 +770,6 @@ namespace chatbot
       void init(const ChatbotClientConfiguration& clientConfiguration);
 
       ChatbotClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ChatbotEndpointProviderBase> m_endpointProvider;
   };
 

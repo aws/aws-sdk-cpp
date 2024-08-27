@@ -541,7 +541,6 @@ namespace SimSpaceWeaver
       void init(const SimSpaceWeaverClientConfiguration& clientConfiguration);
 
       SimSpaceWeaverClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SimSpaceWeaverEndpointProviderBase> m_endpointProvider;
   };
 

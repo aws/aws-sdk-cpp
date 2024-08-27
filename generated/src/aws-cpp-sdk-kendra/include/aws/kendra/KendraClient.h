@@ -2084,7 +2084,6 @@ namespace kendra
       void init(const KendraClientConfiguration& clientConfiguration);
 
       KendraClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KendraEndpointProviderBase> m_endpointProvider;
   };
 

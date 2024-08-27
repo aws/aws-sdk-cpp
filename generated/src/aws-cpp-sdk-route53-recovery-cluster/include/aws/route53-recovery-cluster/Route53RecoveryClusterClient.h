@@ -326,7 +326,6 @@ namespace Route53RecoveryCluster
       void init(const Route53RecoveryClusterClientConfiguration& clientConfiguration);
 
       Route53RecoveryClusterClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> m_endpointProvider;
   };
 

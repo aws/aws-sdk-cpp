@@ -2114,7 +2114,6 @@ namespace FraudDetector
       void init(const FraudDetectorClientConfiguration& clientConfiguration);
 
       FraudDetectorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<FraudDetectorEndpointProviderBase> m_endpointProvider;
   };
 

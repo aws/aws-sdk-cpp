@@ -1391,7 +1391,6 @@ namespace drs
       void init(const DrsClientConfiguration& clientConfiguration);
 
       DrsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DrsEndpointProviderBase> m_endpointProvider;
   };
 

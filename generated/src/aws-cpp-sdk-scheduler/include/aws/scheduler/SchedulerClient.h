@@ -409,7 +409,6 @@ namespace Scheduler
       void init(const SchedulerClientConfiguration& clientConfiguration);
 
       SchedulerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SchedulerEndpointProviderBase> m_endpointProvider;
   };
 

@@ -193,6 +193,20 @@ namespace Model
     inline ImportReadSetSourceItem& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline ImportReadSetSourceItem& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The source's read set ID.</p>
+     */
+    inline const Aws::String& GetReadSetId() const{ return m_readSetId; }
+    inline bool ReadSetIdHasBeenSet() const { return m_readSetIdHasBeenSet; }
+    inline void SetReadSetId(const Aws::String& value) { m_readSetIdHasBeenSet = true; m_readSetId = value; }
+    inline void SetReadSetId(Aws::String&& value) { m_readSetIdHasBeenSet = true; m_readSetId = std::move(value); }
+    inline void SetReadSetId(const char* value) { m_readSetIdHasBeenSet = true; m_readSetId.assign(value); }
+    inline ImportReadSetSourceItem& WithReadSetId(const Aws::String& value) { SetReadSetId(value); return *this;}
+    inline ImportReadSetSourceItem& WithReadSetId(Aws::String&& value) { SetReadSetId(std::move(value)); return *this;}
+    inline ImportReadSetSourceItem& WithReadSetId(const char* value) { SetReadSetId(value); return *this;}
+    ///@}
   private:
 
     SourceFiles m_sourceFiles;
@@ -227,6 +241,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_readSetId;
+    bool m_readSetIdHasBeenSet = false;
   };
 
 } // namespace Model

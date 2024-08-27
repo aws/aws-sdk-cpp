@@ -505,7 +505,6 @@ namespace Route53Profiles
       void init(const Route53ProfilesClientConfiguration& clientConfiguration);
 
       Route53ProfilesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Route53ProfilesEndpointProviderBase> m_endpointProvider;
   };
 

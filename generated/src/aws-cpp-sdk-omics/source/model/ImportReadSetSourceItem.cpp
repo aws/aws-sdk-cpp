@@ -31,7 +31,8 @@ ImportReadSetSourceItem::ImportReadSetSourceItem() :
     m_referenceArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_readSetIdHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,13 @@ ImportReadSetSourceItem& ImportReadSetSourceItem::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("readSetId"))
+  {
+    m_readSetId = jsonValue.GetString("readSetId");
+
+    m_readSetIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -196,6 +204,12 @@ JsonValue ImportReadSetSourceItem::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_readSetIdHasBeenSet)
+  {
+   payload.WithString("readSetId", m_readSetId);
 
   }
 

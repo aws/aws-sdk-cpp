@@ -1015,7 +1015,6 @@ namespace SMS
       void init(const SMSClientConfiguration& clientConfiguration);
 
       SMSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SMSEndpointProviderBase> m_endpointProvider;
   };
 

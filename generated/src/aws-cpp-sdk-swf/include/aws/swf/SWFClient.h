@@ -1850,7 +1850,6 @@ namespace SWF
       void init(const SWFClientConfiguration& clientConfiguration);
 
       SWFClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SWFEndpointProviderBase> m_endpointProvider;
   };
 

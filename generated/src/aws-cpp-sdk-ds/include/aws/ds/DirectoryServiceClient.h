@@ -1958,7 +1958,6 @@ namespace DirectoryService
       void init(const DirectoryServiceClientConfiguration& clientConfiguration);
 
       DirectoryServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DirectoryServiceEndpointProviderBase> m_endpointProvider;
   };
 

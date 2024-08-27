@@ -2122,7 +2122,6 @@ namespace DeviceFarm
       void init(const DeviceFarmClientConfiguration& clientConfiguration);
 
       DeviceFarmClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DeviceFarmEndpointProviderBase> m_endpointProvider;
   };
 

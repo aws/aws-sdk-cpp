@@ -3557,7 +3557,6 @@ namespace WAFRegional
       void init(const WAFRegionalClientConfiguration& clientConfiguration);
 
       WAFRegionalClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WAFRegionalEndpointProviderBase> m_endpointProvider;
   };
 

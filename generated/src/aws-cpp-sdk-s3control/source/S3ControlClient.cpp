@@ -151,7 +151,6 @@ S3ControlClient::S3ControlClient(const S3Control::S3ControlClientConfiguration& 
                                              /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -169,7 +168,6 @@ S3ControlClient::S3ControlClient(const AWSCredentials& credentials,
                                              /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -187,7 +185,6 @@ S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -204,7 +201,6 @@ S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -221,7 +217,6 @@ S3ControlClient::S3ControlClient(const AWSCredentials& credentials,
                                              /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -238,7 +233,6 @@ S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              /*doubleEncodeValue*/ false),
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -258,6 +252,14 @@ std::shared_ptr<S3ControlEndpointProviderBase>& S3ControlClient::accessEndpointP
 void S3ControlClient::init(const S3Control::S3ControlClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("S3 Control");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

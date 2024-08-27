@@ -1899,7 +1899,6 @@ namespace mgn
       void init(const MgnClientConfiguration& clientConfiguration);
 
       MgnClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MgnEndpointProviderBase> m_endpointProvider;
   };
 

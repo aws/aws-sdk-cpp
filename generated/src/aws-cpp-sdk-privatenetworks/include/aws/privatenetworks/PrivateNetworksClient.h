@@ -782,7 +782,6 @@ namespace PrivateNetworks
       void init(const PrivateNetworksClientConfiguration& clientConfiguration);
 
       PrivateNetworksClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PrivateNetworksEndpointProviderBase> m_endpointProvider;
   };
 

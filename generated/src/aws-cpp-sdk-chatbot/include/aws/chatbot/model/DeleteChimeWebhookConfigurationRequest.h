@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the ChimeWebhookConfiguration to delete.
+     * <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to
+     * delete.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }

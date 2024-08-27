@@ -631,7 +631,6 @@ namespace CloudHSMV2
       void init(const CloudHSMV2ClientConfiguration& clientConfiguration);
 
       CloudHSMV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudHSMV2EndpointProviderBase> m_endpointProvider;
   };
 

@@ -1124,7 +1124,6 @@ namespace Shield
       void init(const ShieldClientConfiguration& clientConfiguration);
 
       ShieldClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ShieldEndpointProviderBase> m_endpointProvider;
   };
 

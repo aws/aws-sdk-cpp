@@ -964,7 +964,6 @@ namespace MachineLearning
       void init(const MachineLearningClientConfiguration& clientConfiguration);
 
       MachineLearningClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MachineLearningEndpointProviderBase> m_endpointProvider;
   };
 

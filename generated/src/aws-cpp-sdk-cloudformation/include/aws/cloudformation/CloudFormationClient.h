@@ -2640,7 +2640,6 @@ namespace CloudFormation
         void init(const CloudFormationClientConfiguration& clientConfiguration);
 
         CloudFormationClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<CloudFormationEndpointProviderBase> m_endpointProvider;
   };
 

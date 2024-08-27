@@ -832,7 +832,6 @@ namespace B2BI
       void init(const B2BIClientConfiguration& clientConfiguration);
 
       B2BIClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<B2BIEndpointProviderBase> m_endpointProvider;
   };
 

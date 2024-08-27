@@ -435,7 +435,6 @@ namespace CodeGuruSecurity
       void init(const CodeGuruSecurityClientConfiguration& clientConfiguration);
 
       CodeGuruSecurityClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeGuruSecurityEndpointProviderBase> m_endpointProvider;
   };
 

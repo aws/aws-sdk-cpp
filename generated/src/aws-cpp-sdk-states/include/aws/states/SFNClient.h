@@ -1542,7 +1542,6 @@ namespace SFN
       void init(const SFNClientConfiguration& clientConfiguration);
 
       SFNClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SFNEndpointProviderBase> m_endpointProvider;
   };
 

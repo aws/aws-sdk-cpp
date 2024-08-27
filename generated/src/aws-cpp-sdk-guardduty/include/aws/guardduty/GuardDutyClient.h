@@ -2185,7 +2185,6 @@ namespace GuardDuty
       void init(const GuardDutyClientConfiguration& clientConfiguration);
 
       GuardDutyClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GuardDutyEndpointProviderBase> m_endpointProvider;
   };
 

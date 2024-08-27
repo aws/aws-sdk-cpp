@@ -312,7 +312,6 @@ namespace IoTSecureTunneling
       void init(const IoTSecureTunnelingClientConfiguration& clientConfiguration);
 
       IoTSecureTunnelingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> m_endpointProvider;
   };
 

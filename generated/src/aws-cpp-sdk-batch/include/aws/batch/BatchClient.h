@@ -868,7 +868,6 @@ namespace Batch
       void init(const BatchClientConfiguration& clientConfiguration);
 
       BatchClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BatchEndpointProviderBase> m_endpointProvider;
   };
 

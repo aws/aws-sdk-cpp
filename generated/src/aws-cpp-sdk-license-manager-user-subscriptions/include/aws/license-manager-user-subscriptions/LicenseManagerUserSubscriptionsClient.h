@@ -383,7 +383,6 @@ namespace LicenseManagerUserSubscriptions
       void init(const LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration);
 
       LicenseManagerUserSubscriptionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> m_endpointProvider;
   };
 

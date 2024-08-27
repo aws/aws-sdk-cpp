@@ -36,9 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
+     * <p>An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * MaxResults.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
@@ -51,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * A list of AWS Chatbot channel configurations for Microsoft Teams.
+     * <p>A list of AWS Chatbot channel configurations for Microsoft Teams.</p>
      */
     inline const Aws::Vector<TeamsChannelConfiguration>& GetTeamChannelConfigurations() const{ return m_teamChannelConfigurations; }
     inline void SetTeamChannelConfigurations(const Aws::Vector<TeamsChannelConfiguration>& value) { m_teamChannelConfigurations = value; }

@@ -674,7 +674,6 @@ namespace QLDB
       void init(const QLDBClientConfiguration& clientConfiguration);
 
       QLDBClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<QLDBEndpointProviderBase> m_endpointProvider;
   };
 

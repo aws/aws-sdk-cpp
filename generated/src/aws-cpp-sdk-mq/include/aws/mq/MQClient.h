@@ -693,7 +693,6 @@ namespace MQ
       void init(const MQClientConfiguration& clientConfiguration);
 
       MQClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MQEndpointProviderBase> m_endpointProvider;
   };
 

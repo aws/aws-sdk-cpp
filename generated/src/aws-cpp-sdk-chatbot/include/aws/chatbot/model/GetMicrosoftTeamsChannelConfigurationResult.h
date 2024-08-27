@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * The configuration for a Microsoft Teams channel configured with AWS Chatbot.
+     * <p>The configuration for a Microsoft Teams channel configured with AWS
+     * Chatbot.</p>
      */
     inline const TeamsChannelConfiguration& GetChannelConfiguration() const{ return m_channelConfiguration; }
     inline void SetChannelConfiguration(const TeamsChannelConfiguration& value) { m_channelConfiguration = value; }

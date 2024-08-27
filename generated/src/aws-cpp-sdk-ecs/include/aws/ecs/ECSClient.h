@@ -2141,7 +2141,6 @@ namespace ECS
       void init(const ECSClientConfiguration& clientConfiguration);
 
       ECSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ECSEndpointProviderBase> m_endpointProvider;
   };
 

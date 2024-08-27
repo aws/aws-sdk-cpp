@@ -1050,7 +1050,6 @@ namespace ControlTower
       void init(const ControlTowerClientConfiguration& clientConfiguration);
 
       ControlTowerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ControlTowerEndpointProviderBase> m_endpointProvider;
   };
 

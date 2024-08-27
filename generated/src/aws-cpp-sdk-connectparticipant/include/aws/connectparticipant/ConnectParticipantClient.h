@@ -402,7 +402,6 @@ namespace ConnectParticipant
       void init(const ConnectParticipantClientConfiguration& clientConfiguration);
 
       ConnectParticipantClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectParticipantEndpointProviderBase> m_endpointProvider;
   };
 

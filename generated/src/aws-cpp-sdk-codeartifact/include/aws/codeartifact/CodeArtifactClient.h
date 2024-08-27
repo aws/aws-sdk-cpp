@@ -1652,7 +1652,6 @@ namespace CodeArtifact
       void init(const CodeArtifactClientConfiguration& clientConfiguration);
 
       CodeArtifactClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeArtifactEndpointProviderBase> m_endpointProvider;
   };
 

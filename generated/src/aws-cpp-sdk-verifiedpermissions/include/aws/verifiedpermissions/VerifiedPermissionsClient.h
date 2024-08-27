@@ -975,7 +975,6 @@ namespace VerifiedPermissions
       void init(const VerifiedPermissionsClientConfiguration& clientConfiguration);
 
       VerifiedPermissionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<VerifiedPermissionsEndpointProviderBase> m_endpointProvider;
   };
 

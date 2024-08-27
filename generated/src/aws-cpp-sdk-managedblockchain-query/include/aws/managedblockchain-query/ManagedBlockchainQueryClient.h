@@ -347,7 +347,6 @@ namespace ManagedBlockchainQuery
       void init(const ManagedBlockchainQueryClientConfiguration& clientConfiguration);
 
       ManagedBlockchainQueryClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase> m_endpointProvider;
   };
 

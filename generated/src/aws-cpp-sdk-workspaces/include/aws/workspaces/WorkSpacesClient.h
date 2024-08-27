@@ -2630,7 +2630,6 @@ namespace WorkSpaces
       void init(const WorkSpacesClientConfiguration& clientConfiguration);
 
       WorkSpacesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WorkSpacesEndpointProviderBase> m_endpointProvider;
   };
 

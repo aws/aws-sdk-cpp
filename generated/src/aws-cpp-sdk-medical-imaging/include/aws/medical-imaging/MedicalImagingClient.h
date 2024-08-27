@@ -648,7 +648,6 @@ namespace MedicalImaging
       void init(const MedicalImagingClientConfiguration& clientConfiguration);
 
       MedicalImagingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MedicalImagingEndpointProviderBase> m_endpointProvider;
   };
 

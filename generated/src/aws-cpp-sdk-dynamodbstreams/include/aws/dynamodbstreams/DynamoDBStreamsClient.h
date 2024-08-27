@@ -215,7 +215,6 @@ namespace DynamoDBStreams
       void init(const DynamoDBStreamsClientConfiguration& clientConfiguration);
 
       DynamoDBStreamsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DynamoDBStreamsEndpointProviderBase> m_endpointProvider;
   };
 

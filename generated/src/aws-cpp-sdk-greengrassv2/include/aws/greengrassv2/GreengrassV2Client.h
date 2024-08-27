@@ -1004,7 +1004,6 @@ namespace GreengrassV2
       void init(const GreengrassV2ClientConfiguration& clientConfiguration);
 
       GreengrassV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GreengrassV2EndpointProviderBase> m_endpointProvider;
   };
 

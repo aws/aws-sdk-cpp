@@ -9,6 +9,7 @@
 #include <aws/omics/model/ReferenceStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/ReferenceFiles.h>
+#include <aws/omics/model/ReferenceCreationType.h>
 #include <utility>
 
 namespace Aws
@@ -158,6 +159,30 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The reference's creation type.</p>
+     */
+    inline const ReferenceCreationType& GetCreationType() const{ return m_creationType; }
+    inline void SetCreationType(const ReferenceCreationType& value) { m_creationType = value; }
+    inline void SetCreationType(ReferenceCreationType&& value) { m_creationType = std::move(value); }
+    inline GetReferenceMetadataResult& WithCreationType(const ReferenceCreationType& value) { SetCreationType(value); return *this;}
+    inline GetReferenceMetadataResult& WithCreationType(ReferenceCreationType&& value) { SetCreationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The reference's creation job ID.</p>
+     */
+    inline const Aws::String& GetCreationJobId() const{ return m_creationJobId; }
+    inline void SetCreationJobId(const Aws::String& value) { m_creationJobId = value; }
+    inline void SetCreationJobId(Aws::String&& value) { m_creationJobId = std::move(value); }
+    inline void SetCreationJobId(const char* value) { m_creationJobId.assign(value); }
+    inline GetReferenceMetadataResult& WithCreationJobId(const Aws::String& value) { SetCreationJobId(value); return *this;}
+    inline GetReferenceMetadataResult& WithCreationJobId(Aws::String&& value) { SetCreationJobId(std::move(value)); return *this;}
+    inline GetReferenceMetadataResult& WithCreationJobId(const char* value) { SetCreationJobId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -188,6 +213,10 @@ namespace Model
     Aws::Utils::DateTime m_updateTime;
 
     ReferenceFiles m_files;
+
+    ReferenceCreationType m_creationType;
+
+    Aws::String m_creationJobId;
 
     Aws::String m_requestId;
   };

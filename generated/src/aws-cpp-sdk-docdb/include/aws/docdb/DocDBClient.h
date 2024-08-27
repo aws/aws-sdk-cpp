@@ -1670,7 +1670,6 @@ namespace DocDB
         void init(const DocDBClientConfiguration& clientConfiguration);
 
         DocDBClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<DocDBEndpointProviderBase> m_endpointProvider;
   };
 

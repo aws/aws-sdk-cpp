@@ -866,7 +866,6 @@ namespace DataExchange
       void init(const DataExchangeClientConfiguration& clientConfiguration);
 
       DataExchangeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DataExchangeEndpointProviderBase> m_endpointProvider;
   };
 

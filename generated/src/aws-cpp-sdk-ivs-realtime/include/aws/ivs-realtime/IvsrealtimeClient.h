@@ -936,7 +936,6 @@ namespace ivsrealtime
       void init(const IvsrealtimeClientConfiguration& clientConfiguration);
 
       IvsrealtimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IvsrealtimeEndpointProviderBase> m_endpointProvider;
   };
 

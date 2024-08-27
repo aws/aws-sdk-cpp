@@ -1985,7 +1985,6 @@ namespace Route53Resolver
       void init(const Route53ResolverClientConfiguration& clientConfiguration);
 
       Route53ResolverClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Route53ResolverEndpointProviderBase> m_endpointProvider;
   };
 

@@ -763,7 +763,6 @@ namespace ComprehendMedical
       void init(const ComprehendMedicalClientConfiguration& clientConfiguration);
 
       ComprehendMedicalClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ComprehendMedicalEndpointProviderBase> m_endpointProvider;
   };
 

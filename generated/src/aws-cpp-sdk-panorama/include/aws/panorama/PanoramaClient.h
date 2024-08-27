@@ -951,7 +951,6 @@ namespace Panorama
       void init(const PanoramaClientConfiguration& clientConfiguration);
 
       PanoramaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PanoramaEndpointProviderBase> m_endpointProvider;
   };
 

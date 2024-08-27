@@ -225,7 +225,6 @@ namespace SSOOIDC
       void init(const SSOOIDCClientConfiguration& clientConfiguration);
 
       SSOOIDCClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SSOOIDCEndpointProviderBase> m_endpointProvider;
   };
 

@@ -145,7 +145,6 @@ namespace ForecastQueryService
       void init(const ForecastQueryServiceClientConfiguration& clientConfiguration);
 
       ForecastQueryServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ForecastQueryServiceEndpointProviderBase> m_endpointProvider;
   };
 

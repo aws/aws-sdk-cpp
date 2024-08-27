@@ -129,6 +129,12 @@ GetReadSetMetadataResult& GetReadSetMetadataResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("creationJobId"))
+  {
+    m_creationJobId = jsonValue.GetString("creationJobId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

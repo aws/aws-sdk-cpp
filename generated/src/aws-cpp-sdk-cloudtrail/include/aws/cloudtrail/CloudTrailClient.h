@@ -1623,7 +1623,6 @@ namespace CloudTrail
       void init(const CloudTrailClientConfiguration& clientConfiguration);
 
       CloudTrailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudTrailEndpointProviderBase> m_endpointProvider;
   };
 

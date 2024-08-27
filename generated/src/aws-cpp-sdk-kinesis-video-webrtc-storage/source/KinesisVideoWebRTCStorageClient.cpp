@@ -57,7 +57,6 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const KinesisVi
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -73,7 +72,6 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const AWSCreden
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -89,7 +87,6 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const std::shar
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -104,7 +101,6 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const std::shar
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -119,7 +115,6 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const AWSCreden
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -134,7 +129,6 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const std::shar
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -154,6 +148,14 @@ std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase>& KinesisVideoWebR
 void KinesisVideoWebRTCStorageClient::init(const KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Kinesis Video WebRTC Storage");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

@@ -3973,7 +3973,6 @@ namespace Redshift
         void init(const RedshiftClientConfiguration& clientConfiguration);
 
         RedshiftClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<RedshiftEndpointProviderBase> m_endpointProvider;
   };
 

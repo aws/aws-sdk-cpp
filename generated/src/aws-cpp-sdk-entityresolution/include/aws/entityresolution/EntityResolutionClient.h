@@ -1086,7 +1086,6 @@ namespace EntityResolution
       void init(const EntityResolutionClientConfiguration& clientConfiguration);
 
       EntityResolutionClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EntityResolutionEndpointProviderBase> m_endpointProvider;
   };
 

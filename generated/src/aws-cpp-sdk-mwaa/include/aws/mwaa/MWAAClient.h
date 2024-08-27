@@ -379,7 +379,6 @@ namespace MWAA
       void init(const MWAAClientConfiguration& clientConfiguration);
 
       MWAAClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MWAAEndpointProviderBase> m_endpointProvider;
   };
 

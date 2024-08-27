@@ -192,7 +192,6 @@ namespace MarketplaceDeployment
       void init(const MarketplaceDeploymentClientConfiguration& clientConfiguration);
 
       MarketplaceDeploymentClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> m_endpointProvider;
   };
 

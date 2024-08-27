@@ -913,7 +913,6 @@ namespace Route53RecoveryReadiness
       void init(const Route53RecoveryReadinessClientConfiguration& clientConfiguration);
 
       Route53RecoveryReadinessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> m_endpointProvider;
   };
 

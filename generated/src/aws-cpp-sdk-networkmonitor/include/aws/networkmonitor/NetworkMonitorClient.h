@@ -454,7 +454,6 @@ namespace NetworkMonitor
       void init(const NetworkMonitorClientConfiguration& clientConfiguration);
 
       NetworkMonitorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<NetworkMonitorEndpointProviderBase> m_endpointProvider;
   };
 

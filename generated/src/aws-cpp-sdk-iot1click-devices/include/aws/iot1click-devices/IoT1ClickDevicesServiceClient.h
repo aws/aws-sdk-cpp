@@ -450,7 +450,6 @@ namespace IoT1ClickDevicesService
       void init(const IoT1ClickDevicesServiceClientConfiguration& clientConfiguration);
 
       IoT1ClickDevicesServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> m_endpointProvider;
   };
 

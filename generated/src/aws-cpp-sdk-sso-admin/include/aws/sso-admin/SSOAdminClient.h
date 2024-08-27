@@ -2093,7 +2093,6 @@ namespace SSOAdmin
       void init(const SSOAdminClientConfiguration& clientConfiguration);
 
       SSOAdminClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SSOAdminEndpointProviderBase> m_endpointProvider;
   };
 

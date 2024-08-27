@@ -644,7 +644,6 @@ namespace PaymentCryptographyData
       void init(const PaymentCryptographyDataClientConfiguration& clientConfiguration);
 
       PaymentCryptographyDataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PaymentCryptographyDataEndpointProviderBase> m_endpointProvider;
   };
 

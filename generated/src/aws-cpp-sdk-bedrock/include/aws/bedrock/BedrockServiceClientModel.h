@@ -37,6 +37,7 @@
 #include <aws/bedrock/model/GetFoundationModelResult.h>
 #include <aws/bedrock/model/GetGuardrailResult.h>
 #include <aws/bedrock/model/GetImportedModelResult.h>
+#include <aws/bedrock/model/GetInferenceProfileResult.h>
 #include <aws/bedrock/model/GetModelCopyJobResult.h>
 #include <aws/bedrock/model/GetModelCustomizationJobResult.h>
 #include <aws/bedrock/model/GetModelImportJobResult.h>
@@ -48,6 +49,7 @@
 #include <aws/bedrock/model/ListFoundationModelsResult.h>
 #include <aws/bedrock/model/ListGuardrailsResult.h>
 #include <aws/bedrock/model/ListImportedModelsResult.h>
+#include <aws/bedrock/model/ListInferenceProfilesResult.h>
 #include <aws/bedrock/model/ListModelCopyJobsResult.h>
 #include <aws/bedrock/model/ListModelCustomizationJobsResult.h>
 #include <aws/bedrock/model/ListModelImportJobsResult.h>
@@ -63,17 +65,18 @@
 #include <aws/bedrock/model/UpdateGuardrailResult.h>
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/ListGuardrailsRequest.h>
-#include <aws/bedrock/model/ListCustomModelsRequest.h>
-#include <aws/bedrock/model/ListModelImportJobsRequest.h>
 #include <aws/bedrock/model/ListModelInvocationJobsRequest.h>
-#include <aws/bedrock/model/GetModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/ListEvaluationJobsRequest.h>
 #include <aws/bedrock/model/ListModelCustomizationJobsRequest.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsRequest.h>
-#include <aws/bedrock/model/ListFoundationModelsRequest.h>
 #include <aws/bedrock/model/ListImportedModelsRequest.h>
-#include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/ListModelCopyJobsRequest.h>
+#include <aws/bedrock/model/ListCustomModelsRequest.h>
+#include <aws/bedrock/model/ListModelImportJobsRequest.h>
+#include <aws/bedrock/model/ListInferenceProfilesRequest.h>
+#include <aws/bedrock/model/GetModelInvocationLoggingConfigurationRequest.h>
+#include <aws/bedrock/model/ListFoundationModelsRequest.h>
+#include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationRequest.h>
 /* End of service model headers required in BedrockClient header */
 
 namespace Aws
@@ -133,6 +136,7 @@ namespace Aws
       class GetFoundationModelRequest;
       class GetGuardrailRequest;
       class GetImportedModelRequest;
+      class GetInferenceProfileRequest;
       class GetModelCopyJobRequest;
       class GetModelCustomizationJobRequest;
       class GetModelImportJobRequest;
@@ -144,6 +148,7 @@ namespace Aws
       class ListFoundationModelsRequest;
       class ListGuardrailsRequest;
       class ListImportedModelsRequest;
+      class ListInferenceProfilesRequest;
       class ListModelCopyJobsRequest;
       class ListModelCustomizationJobsRequest;
       class ListModelImportJobsRequest;
@@ -180,6 +185,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetFoundationModelResult, BedrockError> GetFoundationModelOutcome;
       typedef Aws::Utils::Outcome<GetGuardrailResult, BedrockError> GetGuardrailOutcome;
       typedef Aws::Utils::Outcome<GetImportedModelResult, BedrockError> GetImportedModelOutcome;
+      typedef Aws::Utils::Outcome<GetInferenceProfileResult, BedrockError> GetInferenceProfileOutcome;
       typedef Aws::Utils::Outcome<GetModelCopyJobResult, BedrockError> GetModelCopyJobOutcome;
       typedef Aws::Utils::Outcome<GetModelCustomizationJobResult, BedrockError> GetModelCustomizationJobOutcome;
       typedef Aws::Utils::Outcome<GetModelImportJobResult, BedrockError> GetModelImportJobOutcome;
@@ -191,6 +197,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListFoundationModelsResult, BedrockError> ListFoundationModelsOutcome;
       typedef Aws::Utils::Outcome<ListGuardrailsResult, BedrockError> ListGuardrailsOutcome;
       typedef Aws::Utils::Outcome<ListImportedModelsResult, BedrockError> ListImportedModelsOutcome;
+      typedef Aws::Utils::Outcome<ListInferenceProfilesResult, BedrockError> ListInferenceProfilesOutcome;
       typedef Aws::Utils::Outcome<ListModelCopyJobsResult, BedrockError> ListModelCopyJobsOutcome;
       typedef Aws::Utils::Outcome<ListModelCustomizationJobsResult, BedrockError> ListModelCustomizationJobsOutcome;
       typedef Aws::Utils::Outcome<ListModelImportJobsResult, BedrockError> ListModelImportJobsOutcome;
@@ -227,6 +234,7 @@ namespace Aws
       typedef std::future<GetFoundationModelOutcome> GetFoundationModelOutcomeCallable;
       typedef std::future<GetGuardrailOutcome> GetGuardrailOutcomeCallable;
       typedef std::future<GetImportedModelOutcome> GetImportedModelOutcomeCallable;
+      typedef std::future<GetInferenceProfileOutcome> GetInferenceProfileOutcomeCallable;
       typedef std::future<GetModelCopyJobOutcome> GetModelCopyJobOutcomeCallable;
       typedef std::future<GetModelCustomizationJobOutcome> GetModelCustomizationJobOutcomeCallable;
       typedef std::future<GetModelImportJobOutcome> GetModelImportJobOutcomeCallable;
@@ -238,6 +246,7 @@ namespace Aws
       typedef std::future<ListFoundationModelsOutcome> ListFoundationModelsOutcomeCallable;
       typedef std::future<ListGuardrailsOutcome> ListGuardrailsOutcomeCallable;
       typedef std::future<ListImportedModelsOutcome> ListImportedModelsOutcomeCallable;
+      typedef std::future<ListInferenceProfilesOutcome> ListInferenceProfilesOutcomeCallable;
       typedef std::future<ListModelCopyJobsOutcome> ListModelCopyJobsOutcomeCallable;
       typedef std::future<ListModelCustomizationJobsOutcome> ListModelCustomizationJobsOutcomeCallable;
       typedef std::future<ListModelImportJobsOutcome> ListModelImportJobsOutcomeCallable;
@@ -277,6 +286,7 @@ namespace Aws
     typedef std::function<void(const BedrockClient*, const Model::GetFoundationModelRequest&, const Model::GetFoundationModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFoundationModelResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetGuardrailRequest&, const Model::GetGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGuardrailResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetImportedModelRequest&, const Model::GetImportedModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportedModelResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::GetInferenceProfileRequest&, const Model::GetInferenceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInferenceProfileResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetModelCopyJobRequest&, const Model::GetModelCopyJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelCopyJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetModelCustomizationJobRequest&, const Model::GetModelCustomizationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelCustomizationJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetModelImportJobRequest&, const Model::GetModelImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelImportJobResponseReceivedHandler;
@@ -288,6 +298,7 @@ namespace Aws
     typedef std::function<void(const BedrockClient*, const Model::ListFoundationModelsRequest&, const Model::ListFoundationModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFoundationModelsResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListGuardrailsRequest&, const Model::ListGuardrailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGuardrailsResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListImportedModelsRequest&, const Model::ListImportedModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportedModelsResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::ListInferenceProfilesRequest&, const Model::ListInferenceProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceProfilesResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListModelCopyJobsRequest&, const Model::ListModelCopyJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCopyJobsResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListModelCustomizationJobsRequest&, const Model::ListModelCustomizationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCustomizationJobsResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::ListModelImportJobsRequest&, const Model::ListModelImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelImportJobsResponseReceivedHandler;

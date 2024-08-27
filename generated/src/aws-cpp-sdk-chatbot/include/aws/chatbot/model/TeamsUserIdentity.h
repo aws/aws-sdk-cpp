@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * Identifes a user level permission for a channel configuration.<p><h3>See
+   * <p>Identifes a user level permission for a channel configuration.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/TeamsUserIdentity">AWS
    * API Reference</a></p>
@@ -40,9 +40,11 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a
-     * user-defined role that AWS Chatbot will assume. This is not the service-linked
-     * role. For more information, see IAM Policies for AWS Chatbot.
+     * <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked
+     * role.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM
+     * policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.
+     * </p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -56,8 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
-     * identity.
+     * <p>The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration
+     * associated with the user identity to delete.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
@@ -71,11 +73,13 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID,
-     * you must perform the initial authorization flow with Microsoft Teams in the AWS
-     * Chatbot console. Then you can copy and paste the team ID from the console. For
-     * more details, see steps 1-4 in Get started with Microsoft Teams in the AWS
-     * Chatbot Administrator Guide.
+     * <p> The ID of the Microsoft Teams authorized with AWS Chatbot.</p> <p>To get the
+     * team ID, you must perform the initial authorization flow with Microsoft Teams in
+     * the AWS Chatbot console. Then you can copy and paste the team ID from the
+     * console. For more information, see <a
+     * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step
+     * 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetTeamId() const{ return m_teamId; }
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
@@ -89,7 +93,7 @@ namespace Model
 
     ///@{
     /**
-     * Id from Microsoft Teams for user.
+     * <p>The Microsoft Teams user ID.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
@@ -103,8 +107,8 @@ namespace Model
 
     ///@{
     /**
-     * The AWS user identity ARN used to associate a Microsoft Teams User Identity with
-     * an IAM Role.
+     * <p>The AWS user identity ARN used to associate a Microsoft Teams user Identity
+     * with an IAM Role.</p>
      */
     inline const Aws::String& GetAwsUserIdentity() const{ return m_awsUserIdentity; }
     inline bool AwsUserIdentityHasBeenSet() const { return m_awsUserIdentityHasBeenSet; }
@@ -118,7 +122,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Microsoft Teams channel.
+     * <p>The ID of the Microsoft Teams channel.</p>
      */
     inline const Aws::String& GetTeamsChannelId() const{ return m_teamsChannelId; }
     inline bool TeamsChannelIdHasBeenSet() const { return m_teamsChannelIdHasBeenSet; }
@@ -132,7 +136,7 @@ namespace Model
 
     ///@{
     /**
-     * The ID of the Microsoft Teams tenant.
+     * <p>The ID of the Microsoft Teams tenant.</p>
      */
     inline const Aws::String& GetTeamsTenantId() const{ return m_teamsTenantId; }
     inline bool TeamsTenantIdHasBeenSet() const { return m_teamsTenantIdHasBeenSet; }

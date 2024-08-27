@@ -338,7 +338,6 @@ namespace KendraRanking
       void init(const KendraRankingClientConfiguration& clientConfiguration);
 
       KendraRankingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KendraRankingEndpointProviderBase> m_endpointProvider;
   };
 

@@ -609,7 +609,6 @@ namespace ACM
       void init(const ACMClientConfiguration& clientConfiguration);
 
       ACMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ACMEndpointProviderBase> m_endpointProvider;
   };
 

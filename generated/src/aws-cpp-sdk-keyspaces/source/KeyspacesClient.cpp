@@ -69,7 +69,6 @@ KeyspacesClient::KeyspacesClient(const Keyspaces::KeyspacesClientConfiguration& 
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -85,7 +84,6 @@ KeyspacesClient::KeyspacesClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -101,7 +99,6 @@ KeyspacesClient::KeyspacesClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -116,7 +113,6 @@ KeyspacesClient::KeyspacesClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -131,7 +127,6 @@ KeyspacesClient::KeyspacesClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -146,7 +141,6 @@ KeyspacesClient::KeyspacesClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -166,6 +160,14 @@ std::shared_ptr<KeyspacesEndpointProviderBase>& KeyspacesClient::accessEndpointP
 void KeyspacesClient::init(const Keyspaces::KeyspacesClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Keyspaces");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

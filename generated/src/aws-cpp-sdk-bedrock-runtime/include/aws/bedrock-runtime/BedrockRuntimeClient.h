@@ -257,7 +257,6 @@ namespace BedrockRuntime
       void init(const BedrockRuntimeClientConfiguration& clientConfiguration);
 
       BedrockRuntimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BedrockRuntimeEndpointProviderBase> m_endpointProvider;
   };
 

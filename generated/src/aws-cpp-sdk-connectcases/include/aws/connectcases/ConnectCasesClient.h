@@ -1071,7 +1071,6 @@ namespace ConnectCases
       void init(const ConnectCasesClientConfiguration& clientConfiguration);
 
       ConnectCasesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectCasesEndpointProviderBase> m_endpointProvider;
   };
 

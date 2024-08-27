@@ -6142,7 +6142,6 @@ namespace Glue
       void init(const GlueClientConfiguration& clientConfiguration);
 
       GlueClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GlueEndpointProviderBase> m_endpointProvider;
   };
 

@@ -813,7 +813,6 @@ namespace AmplifyUIBuilder
       void init(const AmplifyUIBuilderClientConfiguration& clientConfiguration);
 
       AmplifyUIBuilderClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> m_endpointProvider;
   };
 

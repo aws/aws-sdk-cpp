@@ -809,7 +809,6 @@ namespace Appflow
       void init(const AppflowClientConfiguration& clientConfiguration);
 
       AppflowClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AppflowEndpointProviderBase> m_endpointProvider;
   };
 

@@ -1590,7 +1590,6 @@ namespace CustomerProfiles
       void init(const CustomerProfilesClientConfiguration& clientConfiguration);
 
       CustomerProfilesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CustomerProfilesEndpointProviderBase> m_endpointProvider;
   };
 

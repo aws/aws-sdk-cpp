@@ -1329,7 +1329,6 @@ namespace PinpointEmail
       void init(const PinpointEmailClientConfiguration& clientConfiguration);
 
       PinpointEmailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PinpointEmailEndpointProviderBase> m_endpointProvider;
   };
 

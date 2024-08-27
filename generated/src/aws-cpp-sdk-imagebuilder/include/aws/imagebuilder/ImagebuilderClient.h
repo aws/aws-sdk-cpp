@@ -2039,7 +2039,6 @@ namespace imagebuilder
       void init(const ImagebuilderClientConfiguration& clientConfiguration);
 
       ImagebuilderClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ImagebuilderEndpointProviderBase> m_endpointProvider;
   };
 

@@ -719,7 +719,6 @@ namespace AppIntegrationsService
       void init(const AppIntegrationsServiceClientConfiguration& clientConfiguration);
 
       AppIntegrationsServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> m_endpointProvider;
   };
 

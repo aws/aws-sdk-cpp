@@ -2558,7 +2558,6 @@ namespace Route53
         void init(const Route53ClientConfiguration& clientConfiguration);
 
         Route53ClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<Route53EndpointProviderBase> m_endpointProvider;
   };
 

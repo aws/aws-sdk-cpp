@@ -922,7 +922,6 @@ namespace Outposts
       void init(const OutpostsClientConfiguration& clientConfiguration);
 
       OutpostsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<OutpostsEndpointProviderBase> m_endpointProvider;
   };
 

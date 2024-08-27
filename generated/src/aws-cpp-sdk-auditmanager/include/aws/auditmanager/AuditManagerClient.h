@@ -1879,7 +1879,6 @@ namespace AuditManager
       void init(const AuditManagerClientConfiguration& clientConfiguration);
 
       AuditManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AuditManagerEndpointProviderBase> m_endpointProvider;
   };
 

@@ -4906,7 +4906,6 @@ namespace Lightsail
       void init(const LightsailClientConfiguration& clientConfiguration);
 
       LightsailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LightsailEndpointProviderBase> m_endpointProvider;
   };
 

@@ -2401,7 +2401,6 @@ namespace Personalize
       void init(const PersonalizeClientConfiguration& clientConfiguration);
 
       PersonalizeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PersonalizeEndpointProviderBase> m_endpointProvider;
   };
 

@@ -495,7 +495,6 @@ namespace KafkaConnect
       void init(const KafkaConnectClientConfiguration& clientConfiguration);
 
       KafkaConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KafkaConnectEndpointProviderBase> m_endpointProvider;
   };
 

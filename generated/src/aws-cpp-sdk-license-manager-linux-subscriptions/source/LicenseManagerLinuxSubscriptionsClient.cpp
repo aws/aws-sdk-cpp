@@ -66,7 +66,6 @@ LicenseManagerLinuxSubscriptionsClient::LicenseManagerLinuxSubscriptionsClient(c
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LicenseManagerLinuxSubscriptionsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -82,7 +81,6 @@ LicenseManagerLinuxSubscriptionsClient::LicenseManagerLinuxSubscriptionsClient(c
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LicenseManagerLinuxSubscriptionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -98,7 +96,6 @@ LicenseManagerLinuxSubscriptionsClient::LicenseManagerLinuxSubscriptionsClient(c
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LicenseManagerLinuxSubscriptionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -113,7 +110,6 @@ LicenseManagerLinuxSubscriptionsClient::LicenseManagerLinuxSubscriptionsClient(c
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LicenseManagerLinuxSubscriptionsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -128,7 +124,6 @@ LicenseManagerLinuxSubscriptionsClient::LicenseManagerLinuxSubscriptionsClient(c
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LicenseManagerLinuxSubscriptionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -143,7 +138,6 @@ LicenseManagerLinuxSubscriptionsClient::LicenseManagerLinuxSubscriptionsClient(c
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LicenseManagerLinuxSubscriptionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -163,6 +157,14 @@ std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase>& LicenseMa
 void LicenseManagerLinuxSubscriptionsClient::init(const LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("License Manager Linux Subscriptions");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

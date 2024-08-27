@@ -485,7 +485,6 @@ namespace IoTDeviceAdvisor
       void init(const IoTDeviceAdvisorClientConfiguration& clientConfiguration);
 
       IoTDeviceAdvisorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> m_endpointProvider;
   };
 

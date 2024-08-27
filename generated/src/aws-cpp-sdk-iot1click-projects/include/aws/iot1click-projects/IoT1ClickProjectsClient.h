@@ -502,7 +502,6 @@ namespace IoT1ClickProjects
       void init(const IoT1ClickProjectsClientConfiguration& clientConfiguration);
 
       IoT1ClickProjectsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> m_endpointProvider;
   };
 

@@ -847,7 +847,6 @@ namespace VoiceID
       void init(const VoiceIDClientConfiguration& clientConfiguration);
 
       VoiceIDClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<VoiceIDEndpointProviderBase> m_endpointProvider;
   };
 

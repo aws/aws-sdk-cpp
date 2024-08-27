@@ -427,7 +427,6 @@ namespace SnowDeviceManagement
       void init(const SnowDeviceManagementClientConfiguration& clientConfiguration);
 
       SnowDeviceManagementClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SnowDeviceManagementEndpointProviderBase> m_endpointProvider;
   };
 

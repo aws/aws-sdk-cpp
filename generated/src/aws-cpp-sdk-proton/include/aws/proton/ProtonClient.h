@@ -2676,7 +2676,6 @@ namespace Proton
       void init(const ProtonClientConfiguration& clientConfiguration);
 
       ProtonClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ProtonEndpointProviderBase> m_endpointProvider;
   };
 

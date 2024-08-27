@@ -162,7 +162,6 @@ IoTWirelessClient::IoTWirelessClient(const IoTWireless::IoTWirelessClientConfigu
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -178,7 +177,6 @@ IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -194,7 +192,6 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -209,7 +206,6 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -224,7 +220,6 @@ IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -239,7 +234,6 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -259,6 +253,14 @@ std::shared_ptr<IoTWirelessEndpointProviderBase>& IoTWirelessClient::accessEndpo
 void IoTWirelessClient::init(const IoTWireless::IoTWirelessClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("IoT Wireless");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

@@ -680,7 +680,6 @@ namespace Firehose
       void init(const FirehoseClientConfiguration& clientConfiguration);
 
       FirehoseClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<FirehoseEndpointProviderBase> m_endpointProvider;
   };
 
