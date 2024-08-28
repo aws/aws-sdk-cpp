@@ -16,11 +16,47 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+
+import lombok.Data;
 import lombok.Value;
 import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+
+import software.amazon.smithy.utils.Pair;
+import software.amazon.smithy.rulesengine.language.syntax.expressions.ExpressionVisitor;
+import software.amazon.smithy.jmespath.ast.AndExpression;
+import software.amazon.smithy.jmespath.ast.ComparatorExpression;
+import software.amazon.smithy.jmespath.ast.CurrentExpression;
+import software.amazon.smithy.jmespath.ast.ExpressionTypeExpression;
+import software.amazon.smithy.jmespath.ast.FieldExpression;
+import software.amazon.smithy.jmespath.ast.FilterProjectionExpression;
+import software.amazon.smithy.jmespath.ast.FlattenExpression;
+import software.amazon.smithy.jmespath.ast.FunctionExpression;
+import software.amazon.smithy.jmespath.ast.IndexExpression;
+import software.amazon.smithy.jmespath.ast.LiteralExpression;
+import software.amazon.smithy.jmespath.ast.MultiSelectHashExpression;
+import software.amazon.smithy.jmespath.ast.MultiSelectListExpression;
+import software.amazon.smithy.jmespath.ast.NotExpression;
+import software.amazon.smithy.jmespath.ast.ObjectProjectionExpression;
+import software.amazon.smithy.jmespath.ast.OrExpression;
+import software.amazon.smithy.build.SmithyBuildException;
+import software.amazon.smithy.jmespath.ast.ProjectionExpression;
+import software.amazon.smithy.jmespath.ast.SliceExpression;
+import software.amazon.smithy.jmespath.ast.Subexpression;
+import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.ListShape;
+import software.amazon.smithy.model.shapes.MemberShape;
+import software.amazon.smithy.model.shapes.StructureShape;
+import software.amazon.smithy.jmespath.JmespathExpression;
+
+import java.text.MessageFormat;
+
 
 public class C2jModelToGeneratorModelTransformer {
 
@@ -136,6 +172,213 @@ public class C2jModelToGeneratorModelTransformer {
             "Request", "SdkRequest", "CppSdkRequest"
     );
 
+    public static String capitalizeFirstLetter(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;  // Return the original string if it's null or empty
+        }
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
+    private static final class CppEndpointsJmesPathVisitor implements
+    software.amazon.smithy.jmespath.ExpressionVisitor<Pair<String, Shape>> 
+    {
+        final CppCodeGeneratorContext context;
+        final Shape input;
+
+        CppEndpointsJmesPathVisitor(CppCodeGeneratorContext context, Shape input) {
+            this.context = context;
+            this.input = input;
+        }
+
+
+        @Override
+        public Pair<String, Shape> visitObjectProjection(ObjectProjectionExpression expression) {
+            Pair<String, Shape> left = expression.getLeft().accept(this);
+            
+            if (left.right.isMap()) {
+                /* 
+                Pair<String, Shape> right =
+                        expression.getRight().accept(
+                                new CppEndpointsJmesPathVisitor(
+                                        context,
+                                        left.right.
+                                        context.model().expectShape(
+                                                left.right.asMapShape().get().getValue().getTarget())));
+                return Pair.of(
+                        left.left + ".values.map { |o| o" + right.left + " }.compact",
+                        right.right
+                );
+                
+                */
+
+                return left;
+            } else {
+                throw new SmithyBuildException("ObjectProjection can be applied only to Map shapes.");
+            }
+        }
+        @Override
+        public Pair<String, Shape> visitProjection(ProjectionExpression expression) {
+            Pair<String, Shape> left = expression.getLeft().accept(this);
+            if (left.right.isList()) {
+
+                context.getCppCode().append(";\n");
+                String varName = left.right.getName() + "_elem";
+                context.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, context.getVarName().peek().left, context.getIndentationPrefix()) );
+                context.getCppCode().append(context.getIndentationPrefix()).append("{\n");
+                context.OpenVariableScope(varName);
+                Shape rightShape = left.right.getListMember().getShape();
+
+                //only if leaf element, emplace the element into the result
+                if(rightShape.isString() || rightShape.isStructure() )
+                {
+                    context.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0}", context.getVarName().peek().left, context.getIndentationPrefix()));
+                }
+
+                Pair<String, Shape> right =
+                        expression.getRight().accept(
+                                new CppEndpointsJmesPathVisitor(context, left.right.getListMember().getShape()));
+                
+                if(rightShape.isString() || rightShape.isStructure() )
+                {
+                    context.getCppCode().append(");\n");
+                }
+                context.CloseVariableScope();
+                context.getCppCode().append(context.getIndentationPrefix()).append("}\n");
+
+                return Pair.of(
+                        left.left,
+                        right.right
+                );
+
+                /*return Pair.of(
+                        left.left + ".map { |o| o" + right.left + " }.compact",
+                        right.right
+                );*/
+
+            } else {
+                throw new SmithyBuildException("Projection can only be applied to List Shapes.");
+            }
+        }
+        
+        @Override
+        public Pair<String, Shape> visitFunction(FunctionExpression expression) {
+            if (expression.getName().equals("keys")) {
+                return Pair.of(
+                        expression.getArguments().get(0).accept(this).left + ".to_h.keys",
+                        null);
+            } else {
+                throw new SmithyBuildException("Unsupported JMESPath expression");
+            }
+        }
+
+        @Override
+        public Pair<String, Shape> visitField(FieldExpression expression) {
+            ShapeMember member = input.getMembers().get(expression.getName());
+
+            if(member == null)
+            {
+                throw new SmithyBuildException("Failed to get field from expression");
+            }
+
+            if(context.getVarName().isEmpty())
+            {
+                String varName = expression.getName() + "_elem";
+                context.AddVariableInScope(varName);
+                context.getCppCode().append(MessageFormat.format("{1}auto {0} = (*this)", varName,context.getIndentationPrefix()));
+            }
+            
+            context.getCppCode().append(MessageFormat.format(".Get{0}()", capitalizeFirstLetter(expression.getName())));
+ 
+            return Pair.of(
+                    MessageFormat.format(".Get{0}();\n", capitalizeFirstLetter(expression.getName())),
+                    member.getShape());
+        }
+
+        @Override
+        public Pair<String, Shape> visitSubexpression(Subexpression expression) {
+
+            Pair<String, Shape> left = expression.getLeft().accept(this);
+        
+            Pair<String, Shape> right =
+                    expression.getRight().accept(new CppEndpointsJmesPathVisitor(context, left.right));
+
+            return Pair.of(
+                    //left.left + right.left,
+                    left.left,
+                    right.right
+            );
+        }
+
+    
+        
+
+        @Override
+        public Pair<String, Shape> visitExpressionType(ExpressionTypeExpression expression) {
+            return expression.getExpression().accept(this);
+        }
+
+        @Override
+        public Pair<String, Shape> visitComparator(ComparatorExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitCurrentNode(CurrentExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitFlatten(FlattenExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitIndex(IndexExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitLiteral(LiteralExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitMultiSelectList(MultiSelectListExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitMultiSelectHash(MultiSelectHashExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitAnd(AndExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitOr(OrExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitNot(NotExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitFilterProjection(FilterProjectionExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+
+        @Override
+        public Pair<String, Shape> visitSlice(SliceExpression expression) {
+            throw new SmithyBuildException("Unsupported JMESPath expression");
+        }
+    
+    }
+
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
         this.standalone = standalone;
@@ -156,6 +399,8 @@ public class C2jModelToGeneratorModelTransformer {
 
         serviceModel.setShapes(shapes);
         serviceModel.setOperations(operations);
+        //for overations with context params, extract using jmespath expression and populate in endpoint params
+
         serviceModel.setServiceErrors(allErrors);
         serviceModel.getMetadata().setHasEndpointTrait(hasEndpointTrait);
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
@@ -562,6 +807,8 @@ public class C2jModelToGeneratorModelTransformer {
         if (operation.isRequireEndpointDiscovery()) {
             requireEndpointDiscovery = true;
         }
+        
+
 
         // Documentation
         String crossLinkedShapeDocs =
@@ -592,9 +839,10 @@ public class C2jModelToGeneratorModelTransformer {
         } else {
             operation.setSignerName("Aws::Auth::NULL_SIGNER");
         }
-
+        //set operation context params
 
         operation.setStaticContextParams(c2jOperation.getStaticContextParams());
+       
 
         // input
         if (c2jOperation.getInput() != null) {
@@ -643,12 +891,46 @@ public class C2jModelToGeneratorModelTransformer {
                     }
                 }
             }
-        }
+            Map<String, Map<String, String>> operationContextParams = c2jOperation.getOperationContextParams();
+            if (operationContextParams != null )
+            {
+                
+                String path = null;
+                //get path from context param
+                for (Map.Entry<String, Map<String, String>> outerEntry: operationContextParams.entrySet()) {
+                    Map<String, String> innerMap = outerEntry.getValue();
+                    String pathValue = innerMap.get("path");
+                    if(pathValue != null)
+                    {
+                        path = pathValue;
+                    }
+                }
+                if(path != null && !path.isEmpty())
+                {
+                    CppCodeGeneratorContext ctxt = new CppCodeGeneratorContext();
 
+                    String value = JmespathExpression.parse(path)
+                                        .accept(new CppEndpointsJmesPathVisitor(ctxt,
+                                            requestShape)).left;
+
+                    String[] lines = ctxt.getCppCode().toString().split("\n");
+
+                    List<String> lineList = new ArrayList<>();
+
+                    for (String line : lines) {
+                        lineList.add(line);
+                    }
+
+                    operation.setOperationContextParamsCode(Optional.of(lineList));
+
+                }
+                //add else case if necessary
+                
+            }
+        }
         // output
         if (c2jOperation.getOutput() != null) {
             Shape resultShape = renameShape(shapes.get(c2jOperation.getOutput().getShape()), c2jOperation.getName(), SHAPE_SDK_RESULT_SUFFIX);
-
             resultShape.setResult(true);
             resultShape.setReferenced(true);
             resultShape.getReferencedBy().add(c2jOperation.getName());

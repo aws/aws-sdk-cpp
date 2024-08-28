@@ -6,6 +6,7 @@
 package com.amazonaws.util.awsclientgenerator.domainmodels.c2j;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValue;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointPathExpression;
 import lombok.Data;
 
 import java.lang.*;
@@ -23,6 +24,8 @@ public class C2jOperation {
     private List<C2jError> errors;
     private String documentation;
     private Map<String, Map<String, EndpointParameterValue>> staticContextParams;
+    //operation context params
+    private Map<String, Map<String, String>> operationContextParams;
     private boolean deprecated;
     private boolean httpChecksumRequired;
     private C2jHttpChecksum httpChecksum;

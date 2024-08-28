@@ -5,3 +5,13 @@
      */
     ${exportMacro} EndpointParameters GetEndpointContextParams() const override;
 #end
+#if($operation.operationContextParamsCode.isPresent())
+    ${exportMacro} Aws::Vector<Aws::String> parsedJmesPathExpression(){       
+#set($indentationPrefix = "        ")
+${indentationPrefix}Aws::Vector<Aws::String> result;
+#foreach($item in ${operation.operationContextParamsCode.get()})
+$indentationPrefix${item}
+#end
+${indentationPrefix}return result;
+    }
+#end

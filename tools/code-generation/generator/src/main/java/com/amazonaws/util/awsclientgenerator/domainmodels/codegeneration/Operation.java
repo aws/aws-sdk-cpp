@@ -6,10 +6,13 @@
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValue;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointPathExpression;
 import lombok.Data;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+
 
 @Data
 public class Operation {
@@ -30,6 +33,9 @@ public class Operation {
 
     // Endpoint Rule static context parameters
     private Map<String, Map<String, EndpointParameterValue>> staticContextParams;
+
+    //operation context params
+    private Optional<List<String>> operationContextParamsCode;
 
     // ARN supports.
     private boolean arnEndpointAllowed;
