@@ -1,0 +1,35 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/appconfig/model/UpdateAccountSettingsRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::AppConfig::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
+    m_deletionProtectionHasBeenSet(false)
+{
+}
+
+Aws::String UpdateAccountSettingsRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithObject("DeletionProtection", m_deletionProtection.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+
+
+

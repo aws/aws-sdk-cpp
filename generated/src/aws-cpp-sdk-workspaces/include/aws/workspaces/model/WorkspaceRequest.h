@@ -150,7 +150,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the user-decoupled WorkSpace.</p>
+     * <p>The name of the user-decoupled WorkSpace.</p>  <p>
+     * <code>WorkspaceName</code> is required if <code>UserName</code> is
+     * <code>[UNDEFINED]</code> for user-decoupled WorkSpaces.
+     * <code>WorkspaceName</code> is not applicable if <code>UserName</code> is
+     * specified for user-assigned WorkSpaces.</p> 
      */
     inline const Aws::String& GetWorkspaceName() const{ return m_workspaceName; }
     inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }

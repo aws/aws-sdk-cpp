@@ -94,14 +94,13 @@ namespace Model
      * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li> <li>
      * <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li> <li>
      * <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li> <li>
-     * <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li> <li> <p>CALABASH_TEST_PACKAGE</p>
-     * </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li> <li>
-     * <p>UIAUTOMATION_TEST_PACKAGE</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE</p>
-     * </li> <li> <p>XCTEST_TEST_PACKAGE</p> </li> <li> <p>XCTEST_UI_TEST_PACKAGE</p>
-     * </li> <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li> <li>
-     * <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC</p>
-     * </li> <li> <p>APPIUM_NODE_TEST_SPEC</p> </li> <li> <p>APPIUM_RUBY_TEST_SPEC</p>
-     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li> <li>
+     * <p>INSTRUMENTATION_TEST_PACKAGE</p> </li> <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+     * <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li> <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
+     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li> <li>
+     * <p>APPIUM_PYTHON_TEST_SPEC</p> </li> <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+     * <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li> <li>
      * <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li> <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p>
      * </li> <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li> <li>

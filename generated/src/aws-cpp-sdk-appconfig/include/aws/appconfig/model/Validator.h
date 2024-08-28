@@ -29,8 +29,10 @@ namespace Model
    * configuration that you want to deploy functions as intended. To validate your
    * application configuration data, you provide a schema or an Amazon Web Services
    * Lambda function that runs against the configuration. The configuration
-   * deployment or update can only proceed when the configuration data is
-   * valid.</p><p><h3>See Also:</h3>   <a
+   * deployment or update can only proceed when the configuration data is valid. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html#appconfig-creating-configuration-and-profile-validators">About
+   * validators</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/Validator">AWS
    * API Reference</a></p>
    */

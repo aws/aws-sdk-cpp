@@ -23,6 +23,7 @@ namespace Aws
         static const int service_managed_ip_HASH = HashingUtils::HashString("service-managed-ip");
         static const int service_managed_byoip_HASH = HashingUtils::HashString("service-managed-byoip");
         static const int amazon_owned_eip_HASH = HashingUtils::HashString("amazon-owned-eip");
+        static const int amazon_owned_contig_HASH = HashingUtils::HashString("amazon-owned-contig");
         static const int byoip_HASH = HashingUtils::HashString("byoip");
         static const int ec2_public_ip_HASH = HashingUtils::HashString("ec2-public-ip");
 
@@ -41,6 +42,10 @@ namespace Aws
           else if (hashCode == amazon_owned_eip_HASH)
           {
             return IpamPublicAddressType::amazon_owned_eip;
+          }
+          else if (hashCode == amazon_owned_contig_HASH)
+          {
+            return IpamPublicAddressType::amazon_owned_contig;
           }
           else if (hashCode == byoip_HASH)
           {
@@ -72,6 +77,8 @@ namespace Aws
             return "service-managed-byoip";
           case IpamPublicAddressType::amazon_owned_eip:
             return "amazon-owned-eip";
+          case IpamPublicAddressType::amazon_owned_contig:
+            return "amazon-owned-contig";
           case IpamPublicAddressType::byoip:
             return "byoip";
           case IpamPublicAddressType::ec2_public_ip:

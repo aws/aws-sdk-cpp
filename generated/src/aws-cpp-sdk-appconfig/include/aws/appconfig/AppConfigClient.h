@@ -381,8 +381,12 @@ namespace AppConfig
         }
 
         /**
-         * <p>Creates a new configuration in the AppConfig hosted configuration
-         * store.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new configuration in the AppConfig hosted configuration store. If
+         * you're creating a feature flag, we recommend you familiarize yourself with the
+         * JSON schema for feature flag data. For more information, see <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type
+         * reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">AWS
          * API Reference</a></p>
          */
@@ -407,8 +411,7 @@ namespace AppConfig
         }
 
         /**
-         * <p>Deletes an application. Deleting an application does not delete a
-         * configuration from a host.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteApplication">AWS
          * API Reference</a></p>
          */
@@ -433,8 +436,10 @@ namespace AppConfig
         }
 
         /**
-         * <p>Deletes a configuration profile. Deleting a configuration profile does not
-         * delete a configuration from a host.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a configuration profile.</p> <p>To prevent users from unintentionally
+         * deleting actively-used configuration profiles, enable <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html">deletion
+         * protection</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteConfigurationProfile">AWS
          * API Reference</a></p>
          */
@@ -459,8 +464,7 @@ namespace AppConfig
         }
 
         /**
-         * <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete
-         * a configuration from a host.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a deployment strategy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteDeploymentStrategy">AWS
          * API Reference</a></p>
          */
@@ -485,8 +489,10 @@ namespace AppConfig
         }
 
         /**
-         * <p>Deletes an environment. Deleting an environment does not delete a
-         * configuration from a host.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an environment.</p> <p>To prevent users from unintentionally deleting
+         * actively-used environments, enable <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html">deletion
+         * protection</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteEnvironment">AWS
          * API Reference</a></p>
          */
@@ -586,6 +592,32 @@ namespace AppConfig
         void DeleteHostedConfigurationVersionAsync(const DeleteHostedConfigurationVersionRequestT& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppConfigClient::DeleteHostedConfigurationVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about the status of the <code>DeletionProtection</code>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetAccountSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
+        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&AppConfigClient::GetAccountSettings, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
+        void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&AppConfigClient::GetAccountSettings, request, handler, context);
         }
 
         /**
@@ -1146,6 +1178,32 @@ namespace AppConfig
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppConfigClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the value of the <code>DeletionProtection</code>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateAccountSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
+        Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&AppConfigClient::UpdateAccountSettings, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
+        void UpdateAccountSettingsAsync(const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&AppConfigClient::UpdateAccountSettings, request, handler, context);
         }
 
         /**

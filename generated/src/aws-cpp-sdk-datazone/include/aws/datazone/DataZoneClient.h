@@ -843,7 +843,7 @@ namespace DataZone
         }
 
         /**
-         * <p>Deletes an data product in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a data product in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataProduct">AWS
          * API Reference</a></p>
          */
