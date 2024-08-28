@@ -250,6 +250,8 @@ if (LEGACY_BUILD)
     aws_use_package(aws-checksums)
     aws_use_package(aws-c-event-stream)
     aws_use_package(aws-c-s3)
+    aws_use_package(aws-c-compression)
+    aws_use_package(aws-c-sdkutils)
     set(AWS_COMMON_RUNTIME_LIBS ${DEP_AWS_LIBS})
 
     include(compiler_settings)
