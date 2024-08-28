@@ -74,17 +74,13 @@ namespace Model
     ///@{
     /**
      * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p>  <p>For Android, an
-     * app explorer that traverses an Android app, interacting with it and capturing
-     * screenshots at the same time.</p>  </li> <li> <p>APPIUM_JAVA_JUNIT</p>
-     * </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li> <p>APPIUM_PYTHON</p> </li> <li>
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>APPIUM_JAVA_JUNIT</p> </li> <li>
+     * <p>APPIUM_JAVA_TESTNG</p> </li> <li> <p>APPIUM_PYTHON</p> </li> <li>
      * <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> <li>
      * <p>APPIUM_WEB_PYTHON</p> </li> <li> <p>APPIUM_WEB_NODE</p> </li> <li>
-     * <p>APPIUM_WEB_RUBY</p> </li> <li> <p>CALABASH</p> </li> <li>
-     * <p>INSTRUMENTATION</p> </li> <li> <p>UIAUTOMATION</p> </li> <li>
-     * <p>UIAUTOMATOR</p> </li> <li> <p>XCTEST</p> </li> <li> <p>XCTEST_UI</p> </li>
-     * </ul>
+     * <p>APPIUM_WEB_RUBY</p> </li> <li> <p>INSTRUMENTATION</p> </li> <li>
+     * <p>XCTEST</p> </li> <li> <p>XCTEST_UI</p> </li> </ul>
      */
     inline const TestType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/appconfig/AppConfigRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appconfig/model/DeletionProtectionCheck.h>
 #include <utility>
 
 namespace Aws
@@ -30,6 +31,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteConfigurationProfile"; }
 
     AWS_APPCONFIG_API Aws::String SerializePayload() const override;
+
+    AWS_APPCONFIG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     ///@{
@@ -60,6 +63,32 @@ namespace Model
     inline DeleteConfigurationProfileRequest& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
     inline DeleteConfigurationProfileRequest& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A parameter to configure deletion protection. If enabled, deletion protection
+     * prevents a user from deleting a configuration profile if your application has
+     * called either <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
+     * or for the configuration profile during the specified interval. </p> <p>This
+     * parameter supports the following values:</p> <ul> <li> <p> <code>BYPASS</code>:
+     * Instructs AppConfig to bypass the deletion protection check and delete a
+     * configuration profile even if deletion protection would have otherwise prevented
+     * it. </p> </li> <li> <p> <code>APPLY</code>: Instructs the deletion protection
+     * check to run, even if deletion protection is disabled at the account level.
+     * <code>APPLY</code> also forces the deletion protection check to run against
+     * resources created in the past hour, which are normally excluded from deletion
+     * protection checks. </p> </li> <li> <p> <code>ACCOUNT_DEFAULT</code>: The default
+     * setting, which instructs AppConfig to implement the deletion protection value
+     * specified in the <code>UpdateAccountSettings</code> API.</p> </li> </ul>
+     */
+    inline const DeletionProtectionCheck& GetDeletionProtectionCheck() const{ return m_deletionProtectionCheck; }
+    inline bool DeletionProtectionCheckHasBeenSet() const { return m_deletionProtectionCheckHasBeenSet; }
+    inline void SetDeletionProtectionCheck(const DeletionProtectionCheck& value) { m_deletionProtectionCheckHasBeenSet = true; m_deletionProtectionCheck = value; }
+    inline void SetDeletionProtectionCheck(DeletionProtectionCheck&& value) { m_deletionProtectionCheckHasBeenSet = true; m_deletionProtectionCheck = std::move(value); }
+    inline DeleteConfigurationProfileRequest& WithDeletionProtectionCheck(const DeletionProtectionCheck& value) { SetDeletionProtectionCheck(value); return *this;}
+    inline DeleteConfigurationProfileRequest& WithDeletionProtectionCheck(DeletionProtectionCheck&& value) { SetDeletionProtectionCheck(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -67,6 +96,9 @@ namespace Model
 
     Aws::String m_configurationProfileId;
     bool m_configurationProfileIdHasBeenSet = false;
+
+    DeletionProtectionCheck m_deletionProtectionCheck;
+    bool m_deletionProtectionCheckHasBeenSet = false;
   };
 
 } // namespace Model

@@ -2225,8 +2225,8 @@ namespace WorkSpaces
 
         /**
          * <p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless
-         * it has a running mode of <code>AutoStop</code> and a state of
-         * <code>STOPPED</code>.</p><p><h3>See Also:</h3>   <a
+         * it has a running mode of <code>AutoStop</code> or <code>Manual</code> and a
+         * state of <code>STOPPED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">AWS
          * API Reference</a></p>
          */
@@ -2278,9 +2278,9 @@ namespace WorkSpaces
         }
 
         /**
-         * <p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it
-         * has a running mode of <code>AutoStop</code> and a state of
-         * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
+         * <p>Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it
+         * has a running mode of <code>AutoStop</code> or <code>Manual</code> and a state
+         * of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
          * <code>ERROR</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">AWS
          * API Reference</a></p>

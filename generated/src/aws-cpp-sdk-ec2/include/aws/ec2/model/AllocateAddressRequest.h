@@ -141,6 +141,20 @@ namespace Model
     inline AllocateAddressRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
     inline AllocateAddressRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of an IPAM pool.</p>
+     */
+    inline const Aws::String& GetIpamPoolId() const{ return m_ipamPoolId; }
+    inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
+    inline void SetIpamPoolId(const Aws::String& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = value; }
+    inline void SetIpamPoolId(Aws::String&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::move(value); }
+    inline void SetIpamPoolId(const char* value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId.assign(value); }
+    inline AllocateAddressRequest& WithIpamPoolId(const Aws::String& value) { SetIpamPoolId(value); return *this;}
+    inline AllocateAddressRequest& WithIpamPoolId(Aws::String&& value) { SetIpamPoolId(std::move(value)); return *this;}
+    inline AllocateAddressRequest& WithIpamPoolId(const char* value) { SetIpamPoolId(value); return *this;}
+    ///@}
   private:
 
     DomainType m_domain;
@@ -163,6 +177,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
+
+    Aws::String m_ipamPoolId;
+    bool m_ipamPoolIdHasBeenSet = false;
   };
 
 } // namespace Model
