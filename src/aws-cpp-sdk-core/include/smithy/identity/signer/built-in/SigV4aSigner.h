@@ -32,8 +32,8 @@ namespace smithy {
         
     public:
         using SigV4aAuthSchemeParameters = smithy::DefaultAuthSchemeResolverParameters;
-        explicit AwsSigV4aSigner(const SigV4aAuthSchemeParameters& parameters)
-            :  m_parameters{parameters}
+        explicit AwsSigV4aSigner(const Aws::String& serviceName, const Aws::String& region)
+            :  m_serviceName(serviceName), m_region(region)
         {
         }
 
@@ -136,8 +136,8 @@ namespace smithy {
         {
             awsSigningConfig.SetSigningAlgorithm(static_cast<Aws::Crt::Auth::SigningAlgorithm>(Aws::Auth::AWSSigningAlgorithm::ASYMMETRIC_SIGV4));
             awsSigningConfig.SetSignatureType(m_signatureType);
-            awsSigningConfig.SetRegion((*m_parameters.region).c_str());
-            awsSigningConfig.SetService((m_parameters.serviceName).c_str());
+            awsSigningConfig.SetRegion(m_region.c_str());
+            awsSigningConfig.SetService(m_region.c_str());
             awsSigningConfig.SetSigningTimepoint(GetSigningTimestamp().UnderlyingTimestamp());
             awsSigningConfig.SetUseDoubleUriEncode(m_urlEscape);
             awsSigningConfig.SetShouldNormalizeUriPath(true);
@@ -174,7 +174,7 @@ namespace smithy {
             }
             else if (m_signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams)
             {
-                if (ServiceRequireUnsignedPayload(m_parameters.serviceName))
+                if (ServiceRequireUnsignedPayload(m_serviceName))
                 {
                     awsSigningConfig.SetSignedBodyValue(UNSIGNED_PAYLOAD);
                 }
@@ -205,7 +205,8 @@ namespace smithy {
             return "s3" == serviceName || "s3-object-lambda" == serviceName;
         }
 
-        SigV4aAuthSchemeParameters m_parameters;
+        Aws::String m_serviceName;
+        Aws::String m_region;
         //params that can be exposed later
         long long m_expirationTimeInSeconds{0};
         const bool m_includeSha256HashHeader{true};

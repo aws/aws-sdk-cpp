@@ -130,11 +130,6 @@ TEST_F(SmithyClientTest, testSigV4) {
 
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
 
-    smithy::SigV4AuthScheme::SigV4AuthSchemeParameters params;
-    params.serviceName = "MyService";
-    params.region = "us-west2";
-    params.operation = "TestOperation";
-
     Aws::String key{"aws.auth#sigv4"};  
 
     //add mock credentials provider for the test to the credentials provider chain
@@ -143,7 +138,7 @@ TEST_F(SmithyClientTest, testSigV4) {
     //create resolver with the credentials provider chain
     auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
 
-    SigVariant val{smithy::SigV4AuthScheme( credentialsResolver, params)};
+    SigVariant val{smithy::SigV4AuthScheme( credentialsResolver, "MyService", "us-west-2")};
     
     authSchemesMap.emplace(key, val);
 
@@ -196,7 +191,7 @@ TEST_F(SmithyClientTest, testSigV4a) {
     Aws::String key{"aws.auth#sigv4a"};
     auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
 
-    SigVariant val{smithy::SigV4aAuthScheme(credentialsResolver, params)};
+    SigVariant val{smithy::SigV4aAuthScheme(credentialsResolver, "MyService", "us-west-2")};
     
     authSchemesMap.emplace(key, val);
 
