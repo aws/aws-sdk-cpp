@@ -8,6 +8,7 @@
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/StateMachineType.h>
+#include <aws/states/model/ValidateStateMachineDefinitionSeverity.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,35 @@ namespace Model
     inline ValidateStateMachineDefinitionRequest& WithType(const StateMachineType& value) { SetType(value); return *this;}
     inline ValidateStateMachineDefinitionRequest& WithType(StateMachineType&& value) { SetType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Minimum level of diagnostics to return. <code>ERROR</code> returns only
+     * <code>ERROR</code> diagnostics, whereas <code>WARNING</code> returns both
+     * <code>WARNING</code> and <code>ERROR</code> diagnostics. The default is
+     * <code>ERROR</code>. </p>
+     */
+    inline const ValidateStateMachineDefinitionSeverity& GetSeverity() const{ return m_severity; }
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+    inline void SetSeverity(const ValidateStateMachineDefinitionSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline void SetSeverity(ValidateStateMachineDefinitionSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
+    inline ValidateStateMachineDefinitionRequest& WithSeverity(const ValidateStateMachineDefinitionSeverity& value) { SetSeverity(value); return *this;}
+    inline ValidateStateMachineDefinitionRequest& WithSeverity(ValidateStateMachineDefinitionSeverity&& value) { SetSeverity(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of diagnostics that are returned per call. The default and
+     * maximum value is 100. Setting the value to 0 will also use the default of
+     * 100.</p> <p>If the number of diagnostics returned in the response exceeds
+     * <code>maxResults</code>, the value of the <code>truncated</code> field in the
+     * response will be set to <code>true</code>.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ValidateStateMachineDefinitionRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_definition;
@@ -71,6 +101,12 @@ namespace Model
 
     StateMachineType m_type;
     bool m_typeHasBeenSet = false;
+
+    ValidateStateMachineDefinitionSeverity m_severity;
+    bool m_severityHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

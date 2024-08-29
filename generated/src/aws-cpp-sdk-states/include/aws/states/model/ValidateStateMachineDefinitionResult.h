@@ -63,6 +63,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The result value will be <code>true</code> if the number of diagnostics found
+     * in the workflow definition exceeds <code>maxResults</code>. When all diagnostics
+     * results are returned, the value will be <code>false</code>.</p>
+     */
+    inline bool GetTruncated() const{ return m_truncated; }
+    inline void SetTruncated(bool value) { m_truncated = value; }
+    inline ValidateStateMachineDefinitionResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -77,6 +88,8 @@ namespace Model
     ValidateStateMachineDefinitionResultCode m_result;
 
     Aws::Vector<ValidateStateMachineDefinitionDiagnostic> m_diagnostics;
+
+    bool m_truncated;
 
     Aws::String m_requestId;
   };

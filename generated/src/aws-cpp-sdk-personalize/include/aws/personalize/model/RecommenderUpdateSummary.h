@@ -82,11 +82,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the recommender update.</p> <p>A recommender can be in one of
-     * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
-     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
-     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
+     * <p>The status of the recommender update. A recommender update can be in one of
+     * the following states:</p> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE
+     * -or- CREATE FAILED</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int WARNING_HASH = HashingUtils::HashString("WARNING");
 
 
         ValidateStateMachineDefinitionSeverity GetValidateStateMachineDefinitionSeverityForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ERROR__HASH)
           {
             return ValidateStateMachineDefinitionSeverity::ERROR_;
+          }
+          else if (hashCode == WARNING_HASH)
+          {
+            return ValidateStateMachineDefinitionSeverity::WARNING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case ValidateStateMachineDefinitionSeverity::ERROR_:
             return "ERROR";
+          case ValidateStateMachineDefinitionSeverity::WARNING:
+            return "WARNING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -18,7 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 ValidateStateMachineDefinitionResult::ValidateStateMachineDefinitionResult() : 
-    m_result(ValidateStateMachineDefinitionResultCode::NOT_SET)
+    m_result(ValidateStateMachineDefinitionResultCode::NOT_SET),
+    m_truncated(false)
 {
 }
 
@@ -44,6 +45,12 @@ ValidateStateMachineDefinitionResult& ValidateStateMachineDefinitionResult::oper
     {
       m_diagnostics.push_back(diagnosticsJsonList[diagnosticsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("truncated"))
+  {
+    m_truncated = jsonValue.GetBool("truncated");
+
   }
 
 

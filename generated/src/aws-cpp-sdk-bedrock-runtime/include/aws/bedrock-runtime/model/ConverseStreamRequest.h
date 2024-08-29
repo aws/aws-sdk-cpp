@@ -64,10 +64,15 @@ namespace Model
     ///@{
     /**
      * <p>The ID for the model.</p> <p>The <code>modelId</code> to provide depends on
-     * the type of model that you use:</p> <ul> <li> <p>If you use a base model,
-     * specify the model ID or its ARN. For a list of model IDs for base models, see <a
+     * the type of model or throughput that you use:</p> <ul> <li> <p>If you use a base
+     * model, specify the model ID or its ARN. For a list of model IDs for base models,
+     * see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon
      * Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User
+     * Guide.</p> </li> <li> <p>If you use an inference profile, specify the inference
+     * profile ID or its ARN. For a list of inference profile IDs, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported
+     * Regions and models for cross-region inference</a> in the Amazon Bedrock User
      * Guide.</p> </li> <li> <p>If you use a provisioned model, specify the ARN of the
      * Provisioned Throughput. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run
@@ -77,7 +82,9 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
      * a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p> </li>
-     * </ul>
+     * </ul> <p>The Converse API doesn't support <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported
+     * models</a>.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }

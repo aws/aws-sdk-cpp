@@ -1552,14 +1552,18 @@ namespace WAFV2
         }
 
         /**
-         * <p>Attaches an IAM policy to the specified resource. Use this to share a rule
-         * group across accounts.</p> <p>You must be the owner of the rule group to perform
-         * this operation.</p> <p>This action is subject to the following restrictions:</p>
-         * <ul> <li> <p>You can attach only one policy with each
-         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The ARN in the
+         * <p>Use this to share a rule group with other accounts.</p> <p>This action
+         * attaches an IAM policy to the specified resource. You must be the owner of the
+         * rule group to perform this operation.</p> <p>This action is subject to the
+         * following restrictions:</p> <ul> <li> <p>You can attach only one policy with
+         * each <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The ARN in the
          * request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist
          * in the same Region.</p> </li> <li> <p>The user making the request must be the
-         * owner of the rule group.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * owner of the rule group.</p> </li> </ul> <p>If a rule group has been shared with
+         * your account, you can access it through the call <code>GetRuleGroup</code>, and
+         * you can reference it in <code>CreateWebACL</code> and <code>UpdateWebACL</code>.
+         * Rule groups that are shared with you don't appear in your WAF console rule
+         * groups listing. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy">AWS
          * API Reference</a></p>
          */
