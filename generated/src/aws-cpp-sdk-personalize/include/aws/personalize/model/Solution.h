@@ -10,6 +10,7 @@
 #include <aws/personalize/model/AutoMLResult.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/personalize/model/SolutionVersionSummary.h>
+#include <aws/personalize/model/SolutionUpdateSummary.h>
 #include <utility>
 
 namespace Aws
@@ -28,15 +29,15 @@ namespace Model
 {
 
   /**
-   *  <p>After you create a solution, you can’t change its configuration.
-   * By default, all new solutions use automatic training. With automatic training,
-   * you incur training costs while your solution is active. You can't stop automatic
-   * training for a solution. To avoid unnecessary costs, make sure to delete the
-   * solution when you are finished. For information about training costs, see <a
-   * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
-   * pricing</a>.</p>  <p>An object that provides information about a
-   * solution. A solution includes the custom recipe, customized parameters, and
-   * trained models (Solution Versions) that Amazon Personalize uses to generate
+   *  <p>By default, all new solutions use automatic training. With
+   * automatic training, you incur training costs while your solution is active. To
+   * avoid unnecessary costs, when you are finished you can <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">update
+   * the solution</a> to turn off automatic training. For information about training
+   * costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+   * Personalize pricing</a>.</p>  <p>An object that provides information
+   * about a solution. A solution includes the custom recipe, customized parameters,
+   * and trained models (Solution Versions) that Amazon Personalize uses to generate
    * recommendations. </p> <p>After you create a solution, you can’t change its
    * configuration. If you need to make changes, you can <a
    * href="https://docs.aws.amazon.com/personalize/latest/dg/cloning-solution.html">clone
@@ -248,6 +249,18 @@ namespace Model
     inline Solution& WithLatestSolutionVersion(const SolutionVersionSummary& value) { SetLatestSolutionVersion(value); return *this;}
     inline Solution& WithLatestSolutionVersion(SolutionVersionSummary&& value) { SetLatestSolutionVersion(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Provides a summary of the latest updates to the solution.</p>
+     */
+    inline const SolutionUpdateSummary& GetLatestSolutionUpdate() const{ return m_latestSolutionUpdate; }
+    inline bool LatestSolutionUpdateHasBeenSet() const { return m_latestSolutionUpdateHasBeenSet; }
+    inline void SetLatestSolutionUpdate(const SolutionUpdateSummary& value) { m_latestSolutionUpdateHasBeenSet = true; m_latestSolutionUpdate = value; }
+    inline void SetLatestSolutionUpdate(SolutionUpdateSummary&& value) { m_latestSolutionUpdateHasBeenSet = true; m_latestSolutionUpdate = std::move(value); }
+    inline Solution& WithLatestSolutionUpdate(const SolutionUpdateSummary& value) { SetLatestSolutionUpdate(value); return *this;}
+    inline Solution& WithLatestSolutionUpdate(SolutionUpdateSummary&& value) { SetLatestSolutionUpdate(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -291,6 +304,9 @@ namespace Model
 
     SolutionVersionSummary m_latestSolutionVersion;
     bool m_latestSolutionVersionHasBeenSet = false;
+
+    SolutionUpdateSummary m_latestSolutionUpdate;
+    bool m_latestSolutionUpdateHasBeenSet = false;
   };
 
 } // namespace Model

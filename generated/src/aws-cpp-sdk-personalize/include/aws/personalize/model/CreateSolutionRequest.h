@@ -94,11 +94,11 @@ namespace Model
      * <code>AutoTrainingConfig</code> as part of solution configuration. For more
      * information about automatic training, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
-     * automatic training</a>.</p> <p> Automatic solution version creation starts one
-     * hour after the solution is ACTIVE. If you manually create a solution version
-     * within the hour, the solution skips the first automatic training. </p> <p> After
-     * training starts, you can get the solution version's Amazon Resource Name (ARN)
-     * with the <a
+     * automatic training</a>.</p> <p> Automatic solution version creation starts
+     * within one hour after the solution is ACTIVE. If you manually create a solution
+     * version within the hour, the solution skips the first automatic training. </p>
+     * <p> After training starts, you can get the solution version's Amazon Resource
+     * Name (ARN) with the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
      * API operation. To get its status, use the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
@@ -163,10 +163,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration to use with the solution. When <code>performAutoML</code>
-     * is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code>
-     * section of the solution configuration.</p>  <p>Amazon Personalize doesn't
-     * support configuring the <code>hpoObjective</code> at this time.</p> 
+     * <p>The configuration properties for the solution. When
+     * <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the
+     * <code>autoMLConfig</code> section of the solution configuration.</p> 
+     * <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
+     * at this time.</p> 
      */
     inline const SolutionConfig& GetSolutionConfig() const{ return m_solutionConfig; }
     inline bool SolutionConfigHasBeenSet() const { return m_solutionConfigHasBeenSet; }

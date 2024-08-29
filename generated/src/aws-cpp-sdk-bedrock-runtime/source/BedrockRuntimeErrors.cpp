@@ -63,7 +63,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == MODEL_NOT_READY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_NOT_READY), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_NOT_READY), RetryableType::RETRYABLE);
   }
   else if (hashCode == MODEL_ERROR_HASH)
   {

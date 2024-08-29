@@ -16,7 +16,8 @@ namespace Model
   enum class ValidateStateMachineDefinitionSeverity
   {
     NOT_SET,
-    ERROR_
+    ERROR_,
+    WARNING
   };
 
 namespace ValidateStateMachineDefinitionSeverityMapper

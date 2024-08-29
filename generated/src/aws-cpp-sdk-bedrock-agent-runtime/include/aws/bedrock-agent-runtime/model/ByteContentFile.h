@@ -41,9 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The byte value of the file to attach, encoded as Base-64 string. The maximum
-     * size of all files that is attached is 10MB. You can attach a maximum of 5 files.
-     * </p>
+     * <p>The raw bytes of the file to attach. The maximum size of all files that is
+     * attached is 10MB. You can attach a maximum of 5 files. </p>
      */
     inline const Aws::Utils::CryptoBuffer& GetData() const{ return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }

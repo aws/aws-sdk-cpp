@@ -35,7 +35,8 @@ Solution::Solution() :
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestSolutionVersionHasBeenSet(false)
+    m_latestSolutionVersionHasBeenSet(false),
+    m_latestSolutionUpdateHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,13 @@ Solution& Solution::operator =(JsonView jsonValue)
     m_latestSolutionVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("latestSolutionUpdate"))
+  {
+    m_latestSolutionUpdate = jsonValue.GetObject("latestSolutionUpdate");
+
+    m_latestSolutionUpdateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -231,6 +239,12 @@ JsonValue Solution::Jsonize() const
   if(m_latestSolutionVersionHasBeenSet)
   {
    payload.WithObject("latestSolutionVersion", m_latestSolutionVersion.Jsonize());
+
+  }
+
+  if(m_latestSolutionUpdateHasBeenSet)
+  {
+   payload.WithObject("latestSolutionUpdate", m_latestSolutionUpdate.Jsonize());
 
   }
 

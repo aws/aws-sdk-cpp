@@ -696,21 +696,21 @@ namespace Personalize
         }
 
         /**
-         *  <p>After you create a solution, you can’t change its configuration.
-         * By default, all new solutions use automatic training. With automatic training,
-         * you incur training costs while your solution is active. You can't stop automatic
-         * training for a solution. To avoid unnecessary costs, make sure to delete the
-         * solution when you are finished. For information about training costs, see <a
-         * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
-         * pricing</a>.</p>  <p>Creates the configuration for training a model
-         * (creating a solution version). This configuration includes the recipe to use for
-         * model training and optional training configuration, such as columns to use in
-         * training and feature transformation parameters. For more information about
-         * configuring a solution, see <a
+         *  <p>By default, all new solutions use automatic training. With
+         * automatic training, you incur training costs while your solution is active. To
+         * avoid unnecessary costs, when you are finished you can <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">update
+         * the solution</a> to turn off automatic training. For information about training
+         * costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+         * Personalize pricing</a>.</p>  <p>Creates the configuration for
+         * training a model (creating a solution version). This configuration includes the
+         * recipe to use for model training and optional training configuration, such as
+         * columns to use in training and feature transformation parameters. For more
+         * information about configuring a solution, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
          * and configuring a solution</a>. </p> <p> By default, new solutions use automatic
          * training to create solution versions every 7 days. You can change the training
-         * frequency. Automatic solution version creation starts one hour after the
+         * frequency. Automatic solution version creation starts within one hour after the
          * solution is ACTIVE. If you manually create a solution version within the hour,
          * the solution skips the first automatic training. For more information, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
@@ -739,6 +739,8 @@ namespace Personalize
          * If you use manual training, the status must be ACTIVE before you call
          * <code>CreateSolutionVersion</code>.</p> <p class="title"> <b>Related APIs</b>
          * </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">UpdateSolution</a>
+         * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
@@ -2391,6 +2393,41 @@ namespace Personalize
         void UpdateRecommenderAsync(const UpdateRecommenderRequestT& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PersonalizeClient::UpdateRecommender, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an Amazon Personalize solution to use a different automatic training
+         * configuration. When you update a solution, you can change whether the solution
+         * uses automatic training, and you can change the training frequency. For more
+         * information about updating a solution, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-solution.html">Updating
+         * a solution</a>.</p> <p>A solution update can be in one of the following
+         * states:</p> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
+         * FAILED</p> <p>To get the status of a solution update, call the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+         * API operation and find the status in the <code>latestSolutionUpdate</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateSolution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSolutionOutcome UpdateSolution(const Model::UpdateSolutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSolution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSolutionRequestT = Model::UpdateSolutionRequest>
+        Model::UpdateSolutionOutcomeCallable UpdateSolutionCallable(const UpdateSolutionRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::UpdateSolution, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSolution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSolutionRequestT = Model::UpdateSolutionRequest>
+        void UpdateSolutionAsync(const UpdateSolutionRequestT& request, const UpdateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::UpdateSolution, request, handler, context);
         }
 
 

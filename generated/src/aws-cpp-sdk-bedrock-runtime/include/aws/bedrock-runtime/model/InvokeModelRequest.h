@@ -66,7 +66,12 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
      * a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p> </li>
-     * </ul>
+     * <li> <p>If you use an <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported
+     * model</a>, specify the ARN of the imported model. You can get the model ARN from
+     * a successful call to <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html">CreateModelImportJob</a>
+     * or from the Imported models page in the Amazon Bedrock console.</p> </li> </ul>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
