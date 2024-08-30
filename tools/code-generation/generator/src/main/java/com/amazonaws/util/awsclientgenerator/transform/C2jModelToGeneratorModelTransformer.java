@@ -234,21 +234,13 @@ public class C2jModelToGeneratorModelTransformer {
             if (shapeMember != null) 
             {
                 context.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, context.getVarName().peek().left, context.getIndentationPrefix()) );
-                context.getCppCode().append(context.getIndentationPrefix()).append("{\n");
                 context.OpenVariableScope(varName);
 
                 Pair<String, Shape> right =
                         expression.getRight().accept(
                                 new CppEndpointsJmesPathVisitor(context, shapeMember.getShape()));
-
-                //only if leaf element, emplace the element into the result
-                if(right.right.isString() )
-                {
-                    context.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0});\n", context.getVarName().peek().left, context.getIndentationPrefix()));
-                }
                 
                 context.CloseVariableScope();
-                context.getCppCode().append(context.getIndentationPrefix()).append("}\n");
 
                 return Pair.of(
                         left.left,
@@ -285,15 +277,9 @@ public class C2jModelToGeneratorModelTransformer {
 
                 String varName =  expression.getName()+"Elem";
                 context.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, context.getVarName().peek().left, context.getIndentationPrefix()) );
-                context.getCppCode().append(context.getIndentationPrefix()).append("{\n");
                 context.OpenVariableScope(varName);
-
-    
-                context.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0}.first);\n", context.getVarName().peek().left, context.getIndentationPrefix()));
-                
-                
+                context.addInScopeVariableToResult();
                 context.CloseVariableScope();
-                context.getCppCode().append(context.getIndentationPrefix()).append("}\n");
                 
 
                 return Pair.of(
@@ -325,24 +311,24 @@ public class C2jModelToGeneratorModelTransformer {
             String varName = expression.getName() + "Elem";
             //if a new scope started, declare variable accessed
             if (
-                context.isStartOfNewScope()
+                context.isStartOfNewScope() ||
+                context.getVarName().isEmpty()
             )
             {
-                context.getCppCode().append(MessageFormat.format("{0}auto& {1} = {2}", context.getIndentationPrefix(), varName, context.getVarName().peek().left));
                 context.AddVariableInScope(varName);
             }
-            //if first time scope
-            else if(context.getVarName().isEmpty())
-            {
-                context.getCppCode().append(MessageFormat.format("{0}auto& {1} = (*this)", context.getIndentationPrefix(),varName));
-                context.AddVariableInScope(varName);
-            }
+
             //chain accessors
             context.getCppCode().append(MessageFormat.format(".Get{0}()", capitalizeFirstLetter(expression.getName())));
 
             if (!member.getShape().isStructure())
             {
                 context.getCppCode().append(";\n");
+                //if leaf element, push to result
+                if(member.getShape().isString())
+                {
+                    context.addInScopeVariableToResult();
+                }
             }
 
             return Pair.of(

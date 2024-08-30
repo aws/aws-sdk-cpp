@@ -1,6 +1,8 @@
 package com.amazonaws.util.awsclientgenerator.transform;
 
 import lombok.Data;
+
+import java.text.MessageFormat;
 import java.util.Stack;
 import software.amazon.smithy.utils.Pair;
 
@@ -31,11 +33,20 @@ public final class CppCodeGeneratorContext{
 
     public void AddVariableInScope(String var)
     {
+        if(!this.getVarName().isEmpty())
+        {
+            this.getCppCode().append(MessageFormat.format("{0}auto& {1} = {2}", this.getIndentationPrefix(), var, this.getVarName().peek().left));
+        }
+        else
+        {
+            this.getCppCode().append(MessageFormat.format("{0}auto& {1} = (*this)", this.getIndentationPrefix(),var));
+        }
         this.varName.push(Pair.of(var, false));
     }
  
     public void OpenVariableScope(String var)
     {
+        this.getCppCode().append(this.getIndentationPrefix()).append("{\n");
         this.varName.push(Pair.of(var, true));
         this.codeIndetation++;
     }
@@ -61,6 +72,7 @@ public final class CppCodeGeneratorContext{
         {
             throw new RuntimeException("Trying to close scope when scope was never opened:");
         }
+        this.getCppCode().append(this.getIndentationPrefix()).append("}\n");
     }
 
     public boolean isStartOfNewScope(){
@@ -68,6 +80,11 @@ public final class CppCodeGeneratorContext{
                 this.getCppCode().length() > 2 &&
                 this.getCppCode().substring(this.getCppCode().length() - 2).equals("{\n")
             );
+    }
+
+    public void addInScopeVariableToResult()
+    {
+        this.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0});\n", this.getVarName().peek().left, this.getIndentationPrefix()));
     }
 
 };
