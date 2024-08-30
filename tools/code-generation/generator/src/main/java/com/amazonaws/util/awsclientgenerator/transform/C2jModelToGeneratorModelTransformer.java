@@ -222,7 +222,7 @@ public class C2jModelToGeneratorModelTransformer {
             Pair<String, Shape> left = expression.getLeft().accept(this);
             
             ShapeMember shapeMember = null;
-            String varName =  left.left + "Elem";;
+            String varName =  left.left + "Elem";
             if (left.right.isList())
             {   
                 
@@ -268,9 +268,38 @@ public class C2jModelToGeneratorModelTransformer {
         @Override
         public Pair<String, Shape> visitFunction(FunctionExpression expression) {
             if (expression.getName().equals("keys")) {
+
+                Pair<String, Shape> left = expression.getArguments().get(0).accept(this);
+
+                if(!left.right.isMap())
+                {
+                    throw new SmithyBuildException("keys function not associated with Map type");
+                }
+                
+                ShapeMember shapeMember = left.right.getMapKey();
+
+                if(!shapeMember.getShape().isString())
+                {
+                    throw new SmithyBuildException("map key of type other than string is not supported");
+                }
+
+                String varName =  expression.getName()+"Elem";
+                context.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, context.getVarName().peek().left, context.getIndentationPrefix()) );
+                context.getCppCode().append(context.getIndentationPrefix()).append("{\n");
+                context.OpenVariableScope(varName);
+
+    
+                context.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0}.first);\n", context.getVarName().peek().left, context.getIndentationPrefix()));
+                
+                
+                context.CloseVariableScope();
+                context.getCppCode().append(context.getIndentationPrefix()).append("}\n");
+                
+
                 return Pair.of(
-                        expression.getArguments().get(0).accept(this).left + ".to_h.keys",
+                        expression.getName(),
                         null);
+                
             } else {
                 throw new SmithyBuildException("Unsupported JMESPath expression");
             }
