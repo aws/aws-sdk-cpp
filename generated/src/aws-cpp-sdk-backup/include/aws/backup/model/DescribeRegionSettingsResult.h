@@ -35,8 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns a list of all services along with the opt-in preferences in the
-     * Region.</p>
+     * <p>The services along with the opt-in preferences in the Region.</p>
      */
     inline const Aws::Map<Aws::String, bool>& GetResourceTypeOptInPreference() const{ return m_resourceTypeOptInPreference; }
     inline void SetResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { m_resourceTypeOptInPreference = value; }
@@ -52,13 +51,12 @@ namespace Model
     /**
      * <p>Returns whether Backup fully manages the backups for a resource type.</p>
      * <p>For the benefits of full Backup management, see <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
-     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">Full
+     * Backup management</a>.</p> <p>For a list of resource types and whether each
      * supports full Backup management, see the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-     * Feature availability by resource</a> table.</p> <p>If
-     * <code>"DynamoDB":false</code>, you can enable full Backup management for
-     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+     * availability by resource</a> table.</p> <p>If <code>"DynamoDB":false</code>, you
+     * can enable full Backup management for DynamoDB backup by enabling <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
      * Backup's advanced DynamoDB backup features</a>.</p>
      */

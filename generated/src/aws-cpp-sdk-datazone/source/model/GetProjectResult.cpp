@@ -55,6 +55,12 @@ GetProjectResult& GetProjectResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("domainUnitId"))
+  {
+    m_domainUnitId = jsonValue.GetString("domainUnitId");
+
+  }
+
   if(jsonValue.ValueExists("failureReasons"))
   {
     Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");

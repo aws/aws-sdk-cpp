@@ -42,8 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
-     * point.</p>
+     * <p>The Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
      */
     inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
     inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
@@ -57,8 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
-     * resource.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies a saved resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -72,8 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the Amazon Web Services resource type that is saved as a recovery
-     * point.</p>
+     * <p>The Amazon Web Services resource type that is saved as a recovery point.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -87,8 +84,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the name of the backup vault (the logical container in which backups
-     * are stored).</p>
+     * <p>The name of the backup vault (the logical container in which backups are
+     * stored).</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }

@@ -76,10 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of conditions that you define for resources in your restore testing
-     * plan using tags.</p> <p>For example, <code>"StringEquals": { "Key":
-     * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
-     * are case sensitive.</p>
+     * <p>The conditions that you define for resources in your restore testing plan
+     * using tags.</p>
      */
     inline const ProtectedResourceConditions& GetProtectedResourceConditions() const{ return m_protectedResourceConditions; }
     inline bool ProtectedResourceConditionsHasBeenSet() const { return m_protectedResourceConditionsHasBeenSet; }

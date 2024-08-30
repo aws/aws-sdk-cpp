@@ -132,6 +132,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the root domain unit.</p>
+     */
+    inline const Aws::String& GetRootDomainUnitId() const{ return m_rootDomainUnitId; }
+    inline void SetRootDomainUnitId(const Aws::String& value) { m_rootDomainUnitId = value; }
+    inline void SetRootDomainUnitId(Aws::String&& value) { m_rootDomainUnitId = std::move(value); }
+    inline void SetRootDomainUnitId(const char* value) { m_rootDomainUnitId.assign(value); }
+    inline CreateDomainResult& WithRootDomainUnitId(const Aws::String& value) { SetRootDomainUnitId(value); return *this;}
+    inline CreateDomainResult& WithRootDomainUnitId(Aws::String&& value) { SetRootDomainUnitId(std::move(value)); return *this;}
+    inline CreateDomainResult& WithRootDomainUnitId(const char* value) { SetRootDomainUnitId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The single-sign on configuration of the Amazon DataZone domain.</p>
      */
     inline const SingleSignOn& GetSingleSignOn() const{ return m_singleSignOn; }
@@ -195,6 +208,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_portalUrl;
+
+    Aws::String m_rootDomainUnitId;
 
     SingleSignOn m_singleSignOn;
 

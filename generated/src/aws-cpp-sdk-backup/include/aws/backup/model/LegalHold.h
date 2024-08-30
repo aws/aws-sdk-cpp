@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the title of a legal hold.</p>
+     * <p>The title of a legal hold.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
@@ -61,8 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>,
-     * <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+     * <p>The status of the legal hold.</p>
      */
     inline const LegalHoldStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -74,7 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the description of a legal hold.</p>
+     * <p>The description of a legal hold.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -88,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>ID of specific legal hold on one or more recovery points.</p>
+     * <p>The ID of the legal hold.</p>
      */
     inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
     inline bool LegalHoldIdHasBeenSet() const { return m_legalHoldIdHasBeenSet; }
@@ -102,8 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is an Amazon Resource Number (ARN) that uniquely identifies the legal
-     * hold; for example,
+     * <p>The Amazon Resource Name (ARN) of the legal hold; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline const Aws::String& GetLegalHoldArn() const{ return m_legalHoldArn; }
@@ -118,7 +116,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the time in number format when legal hold was created.</p>
+     * <p>The time when the legal hold was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
@@ -130,7 +128,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the time in number format when legal hold was cancelled.</p>
+     * <p>The time when the legal hold was cancelled.</p>
      */
     inline const Aws::Utils::DateTime& GetCancellationDate() const{ return m_cancellationDate; }
     inline bool CancellationDateHasBeenSet() const { return m_cancellationDateHasBeenSet; }

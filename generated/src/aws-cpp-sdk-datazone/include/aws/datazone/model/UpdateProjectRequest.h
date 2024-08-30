@@ -50,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon DataZone domain in which a project is to be
-     * updated.</p>
+     * <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
      */
     inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }

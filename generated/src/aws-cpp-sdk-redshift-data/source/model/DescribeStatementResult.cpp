@@ -130,6 +130,12 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("SessionId"))
+  {
+    m_sessionId = jsonValue.GetString("SessionId");
+
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusStringMapper::GetStatusStringForName(jsonValue.GetString("Status"));

@@ -57,8 +57,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Region where they are created. They consist of lowercase letters, numbers, and
-     * hyphens.</p>
+     * Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultName = value; }
@@ -72,7 +71,7 @@ namespace Model
     ///@{
     /**
      * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
     inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
@@ -87,8 +86,8 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
      * the resource was originally backed up in; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
-     * recovery is restored to the same Amazon Web Services account or Region, this
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>. If
+     * the recovery is restored to the same Amazon Web Services account or Region, this
      * value will be <code>null</code>.</p>
      */
     inline const Aws::String& GetSourceBackupVaultArn() const{ return m_sourceBackupVaultArn; }
@@ -175,7 +174,9 @@ namespace Model
      * continuous backup where a user has taken some action that causes the continuous
      * backup to be disabled. This can be caused by the removal of permissions, turning
      * off versioning, turning off events being sent to EventBridge, or disabling the
-     * EventBridge rules that are put in place by Backup.</p> <p>To resolve
+     * EventBridge rules that are put in place by Backup. For recovery points of Amazon
+     * S3, Amazon RDS, and Amazon Aurora resources, this status occurs when the
+     * retention period of a continuous backup rule is changed.</p> <p>To resolve
      * <code>STOPPED</code> status, ensure that all requested permissions are in place
      * and that versioning is enabled on the S3 bucket. Once these conditions are met,
      * the next instance of a backup rule running will result in a new continuous
@@ -263,11 +264,10 @@ namespace Model
      * 90 days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Resource types that are able to be transitioned to cold storage are listed in
-     * the "Lifecycle to cold storage" section of the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-     * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * <p>Resource types that can transition to cold storage are listed in the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+     * availability by resource</a> table. Backup ignores this expression for other
+     * resource types.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycle = value; }
@@ -344,9 +344,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the identifier of a resource within a composite group, such as nested
-     * (child) recovery point belonging to a composite (parent) stack. The ID is
-     * transferred from the <a
+     * <p>The identifier of a resource within a composite group, such as nested (child)
+     * recovery point belonging to a composite (parent) stack. The ID is transferred
+     * from the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
      * logical ID</a> within a stack.</p>
      */
@@ -371,8 +371,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the non-unique name of the resource that belongs to the specified
-     * backup.</p>
+     * <p>The name of the resource that belongs to the specified backup.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
     inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
@@ -385,8 +384,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the type of vault in which the described recovery point is
-     * stored.</p>
+     * <p>The type of vault in which the described recovery point is stored.</p>
      */
     inline const VaultType& GetVaultType() const{ return m_vaultType; }
     inline void SetVaultType(const VaultType& value) { m_vaultType = value; }

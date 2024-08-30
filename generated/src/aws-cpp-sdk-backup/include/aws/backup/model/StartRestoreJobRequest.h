@@ -50,33 +50,43 @@ namespace Model
 
     ///@{
     /**
-     * <p>A set of metadata key-value pairs. Contains information, such as a resource
-     * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed up by calling
+     * <p>A set of metadata key-value pairs.</p> <p>You can get configuration metadata
+     * about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
-     * name if the original already exists.</p> <p>You need to specify specific
-     * metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
-     * <ul> <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system
-     * that is backed up by Backup. Returned in
-     * <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p>
-     * <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
-     * system is encrypted. If <code>KmsKeyId</code> is specified,
-     * <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p>
-     * <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
-     * encrypt the restored file system. You can specify a key from another Amazon Web
-     * Services account provided that key it is properly shared with your account via
-     * Amazon Web Services KMS.</p> </li> <li> <p> <code>PerformanceMode</code>:
-     * Specifies the throughput mode of the file system.</p> </li> <li> <p>
-     * <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-     * (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A
-     * Boolean value that, if true, specifies that the recovery point is restored to a
-     * new Amazon EFS file system.</p> </li> <li> <p> <code>ItemsToRestore</code>: An
-     * array of one to five strings where each string is a file path. Use
-     * <code>ItemsToRestore</code> to restore specific files or directories rather than
-     * the entire file system. This parameter is optional. For example,
-     * <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
+     * name if the original already exists.</p> <p>For more information about the
+     * metadata for each resource, see the following:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-aur.html#aur-restore-cli">Metadata
+     * for Amazon Aurora</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-docdb.html#docdb-restore-cli">Metadata
+     * for Amazon DocumentDB</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-application-stacks.html#restoring-cfn-cli">Metadata
+     * for CloudFormation</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-dynamodb.html#ddb-restore-cli">Metadata
+     * for Amazon DynamoDB</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-ebs.html#ebs-restore-cli">
+     * Metadata for Amazon EBS</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-ec2.html#restoring-ec2-cli">Metadata
+     * for Amazon EC2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-efs.html#efs-restore-cli">Metadata
+     * for Amazon EFS</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-fsx.html#fsx-restore-cli">Metadata
+     * for Amazon FSx</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-nep.html#nep-restore-cli">Metadata
+     * for Amazon Neptune</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-rds.html#rds-restore-cli">Metadata
+     * for Amazon RDS</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/redshift-restores.html#redshift-restore-api">Metadata
+     * for Amazon Redshift</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-storage-gateway.html#restoring-sgw-cli">Metadata
+     * for Storage Gateway</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-s3.html#s3-restore-cli">Metadata
+     * for Amazon S3</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/timestream-restore.html#timestream-restore-api">Metadata
+     * for Amazon Timestream</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-vm.html#vm-restore-cli">Metadata
+     * for virtual machines</a> </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
@@ -129,20 +139,19 @@ namespace Model
     ///@{
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-     * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
-     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
-     * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
-     * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
-     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
-     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
-     * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
-     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
-     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
-     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
-     * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> - Amazon Aurora</p> </li> <li>
+     * <p> <code>DocumentDB</code> - Amazon DocumentDB</p> </li> <li> <p>
+     * <code>CloudFormation</code> - CloudFormation</p> </li> <li> <p>
+     * <code>DynamoDB</code> - Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code> -
+     * Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> - Amazon Elastic
+     * Compute Cloud</p> </li> <li> <p> <code>EFS</code> - Amazon Elastic File
+     * System</p> </li> <li> <p> <code>FSx</code> - Amazon FSx</p> </li> <li> <p>
+     * <code>Neptune</code> - Amazon Neptune</p> </li> <li> <p> <code>RDS</code> -
+     * Amazon Relational Database Service</p> </li> <li> <p> <code>Redshift</code> -
+     * Amazon Redshift</p> </li> <li> <p> <code>Storage Gateway</code> - Storage
+     * Gateway</p> </li> <li> <p> <code>S3</code> - Amazon Simple Storage Service</p>
+     * </li> <li> <p> <code>Timestream</code> - Amazon Timestream</p> </li> <li> <p>
+     * <code>VirtualMachine</code> - Virtual machines</p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

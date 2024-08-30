@@ -33,11 +33,10 @@ namespace Model
    * days. Therefore, the “retention” setting must be 90 days greater than the
    * “transition to cold after days” setting. The “transition to cold after days”
    * setting cannot be changed after a backup has been transitioned to cold.</p>
-   * <p>Resource types that are able to be transitioned to cold storage are listed in
-   * the "Lifecycle to cold storage" section of the <a
-   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-   * Feature availability by resource</a> table. Backup ignores this expression for
-   * other resource types.</p><p><h3>See Also:</h3>   <a
+   * <p>Resource types that can transition to cold storage are listed in the <a
+   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+   * availability by resource</a> table. Backup ignores this expression for other
+   * resource types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CalculatedLifecycle">AWS
    * API Reference</a></p>
    */

@@ -65,8 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the required restore testing selection name of the restore testing
-     * selection you wish to update.</p>
+     * <p>The required restore testing selection name of the restore testing selection
+     * you wish to update.</p>
      */
     inline const Aws::String& GetRestoreTestingSelectionName() const{ return m_restoreTestingSelectionName; }
     inline bool RestoreTestingSelectionNameHasBeenSet() const { return m_restoreTestingSelectionNameHasBeenSet; }

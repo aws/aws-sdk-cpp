@@ -59,6 +59,12 @@ UpdateDomainResult& UpdateDomainResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("rootDomainUnitId"))
+  {
+    m_rootDomainUnitId = jsonValue.GetString("rootDomainUnitId");
+
+  }
+
   if(jsonValue.ValueExists("singleSignOn"))
   {
     m_singleSignOn = jsonValue.GetObject("singleSignOn");

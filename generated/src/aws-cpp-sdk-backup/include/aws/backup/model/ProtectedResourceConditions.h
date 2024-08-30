@@ -25,10 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A list of conditions that you define for resources in your restore testing
-   * plan using tags.</p> <p>For example, <code>"StringEquals": { "Key":
-   * "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
-   * are case sensitive.</p><p><h3>See Also:</h3>   <a
+   * <p>The conditions that you define for resources in your restore testing plan
+   * using tags.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ProtectedResourceConditions">AWS
    * API Reference</a></p>
    */

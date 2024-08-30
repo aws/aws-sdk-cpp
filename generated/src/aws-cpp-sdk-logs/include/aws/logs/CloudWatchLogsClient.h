@@ -1760,8 +1760,8 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
          * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
          * logical destinations.</p> </li> </ul> <p>Each account can have one account-level
-         * subscription filter policy. If you are updating an existing filter, you must
-         * specify the correct name in <code>PolicyName</code>. To perform a
+         * subscription filter policy per Region. If you are updating an existing filter,
+         * you must specify the correct name in <code>PolicyName</code>. To perform a
          * <code>PutAccountPolicy</code> subscription filter operation for any destination
          * except a Lambda function, you must also have the <code>iam:PassRole</code>
          * permission.</p><p><h3>See Also:</h3>   <a
@@ -2123,16 +2123,24 @@ namespace CloudWatchLogs
          * log events ingested through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
          * <p>The maximum number of metric filters that can be associated with a log group
-         * is 100.</p> <p>When you create a metric filter, you can also optionally assign a
-         * unit and dimensions to the metric that is created.</p>  <p>Metrics
-         * extracted from log events are charged as custom metrics. To prevent unexpected
-         * high charges, do not specify high-cardinality fields such as
-         * <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different
-         * value found for a dimension is treated as a separate metric and accrues charges
-         * as a separate custom metric. </p> <p>CloudWatch Logs might disable a metric
-         * filter if it generates 1,000 different name/value pairs for your specified
-         * dimensions within one hour.</p> <p>You can also set up a billing alarm to alert
-         * you if your charges are higher than expected. For more information, see <a
+         * is 100.</p> <p>Using regular expressions to create metric filters is supported.
+         * For these filters, there is a quotas of quota of two regular expression patterns
+         * within a single filter pattern. There is also a quota of five regular expression
+         * patterns per log group. For more information about using regular expressions in
+         * metric filters, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+         * Filter pattern syntax for metric filters, subscription filters, filter log
+         * events, and Live Tail</a>.</p> <p>When you create a metric filter, you can also
+         * optionally assign a unit and dimensions to the metric that is created.</p>
+         *  <p>Metrics extracted from log events are charged as custom metrics.
+         * To prevent unexpected high charges, do not specify high-cardinality fields such
+         * as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each
+         * different value found for a dimension is treated as a separate metric and
+         * accrues charges as a separate custom metric. </p> <p>CloudWatch Logs might
+         * disable a metric filter if it generates 1,000 different name/value pairs for
+         * your specified dimensions within one hour.</p> <p>You can also set up a billing
+         * alarm to alert you if your charges are higher than expected. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
          * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
          * Charges</a>. </p> <p><h3>See Also:</h3>   <a
@@ -2285,9 +2293,17 @@ namespace CloudWatchLogs
          * <p>An Lambda function that belongs to the same account as the subscription
          * filter, for same-account delivery.</p> </li> </ul> <p>Each log group can have up
          * to two subscription filters associated with it. If you are updating an existing
-         * filter, you must specify the correct name in <code>filterName</code>. </p> <p>To
-         * perform a <code>PutSubscriptionFilter</code> operation for any destination
-         * except a Lambda function, you must also have the <code>iam:PassRole</code>
+         * filter, you must specify the correct name in <code>filterName</code>. </p>
+         * <p>Using regular expressions to create subscription filters is supported. For
+         * these filters, there is a quotas of quota of two regular expression patterns
+         * within a single filter pattern. There is also a quota of five regular expression
+         * patterns per log group. For more information about using regular expressions in
+         * subscription filters, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+         * Filter pattern syntax for metric filters, subscription filters, filter log
+         * events, and Live Tail</a>.</p> <p>To perform a
+         * <code>PutSubscriptionFilter</code> operation for any destination except a Lambda
+         * function, you must also have the <code>iam:PassRole</code>
          * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
@@ -2335,10 +2351,10 @@ namespace CloudWatchLogs
          * CloudWatch Logs buffers up to 10 <code>LiveTailSessionUpdate</code> events or
          * 5000 log events, after which it starts dropping the oldest events.</p> </li>
          * <li> <p>A <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionStreamingException.html">SessionStreamingException</a>
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionStreamingException">SessionStreamingException</a>
          * object is returned if an unknown error occurs on the server side.</p> </li> <li>
          * <p>A <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionTimeoutException.html">SessionTimeoutException</a>
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException">SessionTimeoutException</a>
          * object is returned when the session times out, after it has been kept open for
          * three hours.</p> </li> </ul>  <p>You can end a session before it
          * times out by closing the session stream or by closing the client that is

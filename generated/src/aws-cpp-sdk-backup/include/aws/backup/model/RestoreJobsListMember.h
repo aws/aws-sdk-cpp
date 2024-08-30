@@ -170,8 +170,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>The IAM role ARN used to create the target recovery point; for example,
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -252,7 +252,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the status of validation run on the indicated restore job.</p>
+     * <p>The status of validation run on the indicated restore job.</p>
      */
     inline const RestoreValidationStatus& GetValidationStatus() const{ return m_validationStatus; }
     inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }

@@ -63,6 +63,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the domain unit. This parameter is not required and if it is not
+     * specified, then the project is created at the root domain unit level.</p>
+     */
+    inline const Aws::String& GetDomainUnitId() const{ return m_domainUnitId; }
+    inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
+    inline void SetDomainUnitId(const Aws::String& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = value; }
+    inline void SetDomainUnitId(Aws::String&& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = std::move(value); }
+    inline void SetDomainUnitId(const char* value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId.assign(value); }
+    inline CreateProjectRequest& WithDomainUnitId(const Aws::String& value) { SetDomainUnitId(value); return *this;}
+    inline CreateProjectRequest& WithDomainUnitId(Aws::String&& value) { SetDomainUnitId(std::move(value)); return *this;}
+    inline CreateProjectRequest& WithDomainUnitId(const char* value) { SetDomainUnitId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The glossary terms that can be used in this Amazon DataZone project.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const{ return m_glossaryTerms; }
@@ -96,6 +111,9 @@ namespace Model
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
+
+    Aws::String m_domainUnitId;
+    bool m_domainUnitIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_glossaryTerms;
     bool m_glossaryTermsHasBeenSet = false;

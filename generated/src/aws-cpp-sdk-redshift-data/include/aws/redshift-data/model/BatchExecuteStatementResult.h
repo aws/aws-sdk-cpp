@@ -7,6 +7,7 @@
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of colon (:) separated names of database groups.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDbGroups() const{ return m_dbGroups; }
+    inline void SetDbGroups(const Aws::Vector<Aws::String>& value) { m_dbGroups = value; }
+    inline void SetDbGroups(Aws::Vector<Aws::String>&& value) { m_dbGroups = std::move(value); }
+    inline BatchExecuteStatementResult& WithDbGroups(const Aws::Vector<Aws::String>& value) { SetDbGroups(value); return *this;}
+    inline BatchExecuteStatementResult& WithDbGroups(Aws::Vector<Aws::String>&& value) { SetDbGroups(std::move(value)); return *this;}
+    inline BatchExecuteStatementResult& AddDbGroups(const Aws::String& value) { m_dbGroups.push_back(value); return *this; }
+    inline BatchExecuteStatementResult& AddDbGroups(Aws::String&& value) { m_dbGroups.push_back(std::move(value)); return *this; }
+    inline BatchExecuteStatementResult& AddDbGroups(const char* value) { m_dbGroups.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The database user name.</p>
      */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
@@ -114,6 +129,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The session identifier of the query.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
+    inline BatchExecuteStatementResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline BatchExecuteStatementResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline BatchExecuteStatementResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is
      * not returned when connecting to a provisioned cluster.</p>
      */
@@ -144,11 +172,15 @@ namespace Model
 
     Aws::String m_database;
 
+    Aws::Vector<Aws::String> m_dbGroups;
+
     Aws::String m_dbUser;
 
     Aws::String m_id;
 
     Aws::String m_secretArn;
+
+    Aws::String m_sessionId;
 
     Aws::String m_workgroupName;
 

@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p>Includes information about tags you define to assign tagged resources to a
-   * backup plan.</p><p><h3>See Also:</h3>   <a
+   * backup plan.</p> <p>Include the prefix <code>aws:ResourceTag</code> in your
+   * tags. For example, <code>"aws:ResourceTag/TagKey1":
+   * "Value1"</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ConditionParameter">AWS
    * API Reference</a></p>
    */

@@ -72,8 +72,8 @@ namespace Model
     ///@{
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
-     * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, the action returns an
+     * you specify a value for both <code>logStreamNames</code> and
+     * <code>logStreamNamePrefix</code>, the action returns an
      * <code>InvalidParameterException</code> error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogStreamNames() const{ return m_logStreamNames; }
@@ -91,10 +91,8 @@ namespace Model
     /**
      * <p>Filters the results to include only events from log streams that have names
      * starting with this prefix.</p> <p>If you specify a value for both
-     * <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
-     * for <code>logStreamNamePrefix</code> does not match any log stream names
-     * specified in <code>logStreamNames</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
     inline bool LogStreamNamePrefixHasBeenSet() const { return m_logStreamNamePrefixHasBeenSet; }

@@ -36,10 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of your report plans with detailed information for each plan. This
-     * information includes the Amazon Resource Name (ARN), report plan name,
-     * description, settings, delivery channel, deployment status, creation time, and
-     * last times the report plan attempted to and successfully ran.</p>
+     * <p>The report plans with detailed information for each plan. This information
+     * includes the Amazon Resource Name (ARN), report plan name, description,
+     * settings, delivery channel, deployment status, creation time, and last times the
+     * report plan attempted to and successfully ran.</p>
      */
     inline const Aws::Vector<ReportPlan>& GetReportPlans() const{ return m_reportPlans; }
     inline void SetReportPlans(const Aws::Vector<ReportPlan>& value) { m_reportPlans = value; }

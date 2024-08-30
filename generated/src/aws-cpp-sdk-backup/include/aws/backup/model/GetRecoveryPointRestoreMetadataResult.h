@@ -36,7 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
     inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the resource type associated with the recovery point.</p>
+     * <p>The resource type of the recovery point.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }

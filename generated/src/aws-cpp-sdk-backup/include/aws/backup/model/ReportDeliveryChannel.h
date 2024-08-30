@@ -73,8 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or
-     * both. If not specified, the default format is <code>CSV</code>.</p>
+     * <p>The format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If
+     * not specified, the default format is <code>CSV</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFormats() const{ return m_formats; }
     inline bool FormatsHasBeenSet() const { return m_formatsHasBeenSet; }

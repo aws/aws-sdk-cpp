@@ -40,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Legal hold ID required to remove the specified legal hold on a recovery
-     * point.</p>
+     * <p>The ID of the legal hold.</p>
      */
     inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
     inline bool LegalHoldIdHasBeenSet() const { return m_legalHoldIdHasBeenSet; }
@@ -55,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>String describing the reason for removing the legal hold.</p>
+     * <p>A string the describes the reason for removing the legal hold.</p>
      */
     inline const Aws::String& GetCancelDescription() const{ return m_cancelDescription; }
     inline bool CancelDescriptionHasBeenSet() const { return m_cancelDescriptionHasBeenSet; }
@@ -69,8 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The integer amount in days specifying amount of days after this API operation
-     * to remove legal hold.</p>
+     * <p>The integer amount, in days, after which to remove legal hold.</p>
      */
     inline long long GetRetainRecordInDays() const{ return m_retainRecordInDays; }
     inline bool RetainRecordInDaysHasBeenSet() const { return m_retainRecordInDaysHasBeenSet; }

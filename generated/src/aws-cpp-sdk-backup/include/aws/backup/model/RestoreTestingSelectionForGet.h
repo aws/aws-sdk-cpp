@@ -178,8 +178,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the unique name of the restore testing selection that belongs to the
-     * related restore testing plan.</p>
+     * <p>The unique name of the restore testing selection that belongs to the related
+     * restore testing plan.</p>
      */
     inline const Aws::String& GetRestoreTestingSelectionName() const{ return m_restoreTestingSelectionName; }
     inline bool RestoreTestingSelectionNameHasBeenSet() const { return m_restoreTestingSelectionNameHasBeenSet; }

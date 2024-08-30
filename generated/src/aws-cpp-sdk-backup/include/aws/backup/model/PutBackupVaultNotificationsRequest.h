@@ -38,8 +38,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * Amazon Web Services Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
@@ -80,9 +79,9 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
-     * (for reference) and are no longer in use. They are no longer supported and will
-     * not return statuses or notifications. Refer to the list above for current
+     * </p> </li> </ul>  <p>The list below includes both supported events and
+     * deprecated events that are no longer in use (for reference). Deprecated events
+     * do not return statuses or notifications. Refer to the list above for the
      * supported events.</p> 
      */
     inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const{ return m_backupVaultEvents; }

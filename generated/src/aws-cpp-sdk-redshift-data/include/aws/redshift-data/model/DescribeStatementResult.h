@@ -219,6 +219,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The session identifier of the query.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
+    inline DescribeStatementResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline DescribeStatementResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline DescribeStatementResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the SQL statement being described. Status values are defined as
      * follows: </p> <ul> <li> <p>ABORTED - The query run was stopped by the user. </p>
      * </li> <li> <p>ALL - A status value that includes all query statuses. This value
@@ -314,6 +327,8 @@ namespace Model
     long long m_resultSize;
 
     Aws::String m_secretArn;
+
+    Aws::String m_sessionId;
 
     StatusString m_status;
 

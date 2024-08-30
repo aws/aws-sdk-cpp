@@ -41,9 +41,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or
-     * more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults
-     * (list of selectors), defaults to empty list if not listed.</p>
+     * <p> <code>RecoveryPointSelection</code> has five parameters (three required and
+     * two optional). The values you specify determine which recovery point is included
+     * in the restore test. You must indicate with <code>Algorithm</code> if you want
+     * the latest recovery point within your <code>SelectionWindowDays</code> or if you
+     * want a random recovery point, and you must indicate through
+     * <code>IncludeVaults</code> from which vaults the recovery points can be
+     * chosen.</p> <p> <code>Algorithm</code> (<i>required</i>) Valid values:
+     * "<code>LATEST_WITHIN_WINDOW</code>" or "<code>RANDOM_WITHIN_WINDOW</code>".</p>
+     * <p> <code>Recovery point types</code> (<i>required</i>) Valid values:
+     * "<code>SNAPSHOT</code>" and/or "<code>CONTINUOUS</code>". Include
+     * <code>SNAPSHOT</code> to restore only snapshot recovery points; include
+     * <code>CONTINUOUS</code> to restore continuous recovery points (point in time
+     * restore / PITR); use both to restore either a snapshot or a continuous recovery
+     * point. The recovery point will be determined by the value for
+     * <code>Algorithm</code>.</p> <p> <code>IncludeVaults</code> (<i>required</i>).
+     * You must include one or more backup vaults. Use the wildcard ["*"] or specific
+     * ARNs.</p> <p> <code>SelectionWindowDays</code> (<i>optional</i>) Value must be
+     * an integer (in days) from 1 to 365. If not included, the value defaults to
+     * <code>30</code>.</p> <p> <code>ExcludeVaults</code> (<i>optional</i>). You can
+     * choose to input one or more specific backup vault ARNs to exclude those vaults'
+     * contents from restore eligibility. Or, you can include a list of selectors. If
+     * this parameter and its value are not included, it defaults to empty list.</p>
      */
     inline const RestoreTestingRecoveryPointSelection& GetRecoveryPointSelection() const{ return m_recoveryPointSelection; }
     inline bool RecoveryPointSelectionHasBeenSet() const { return m_recoveryPointSelectionHasBeenSet; }

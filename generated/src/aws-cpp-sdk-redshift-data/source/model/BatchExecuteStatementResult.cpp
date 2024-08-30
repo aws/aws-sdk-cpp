@@ -47,6 +47,15 @@ BatchExecuteStatementResult& BatchExecuteStatementResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("DbGroups"))
+  {
+    Aws::Utils::Array<JsonView> dbGroupsJsonList = jsonValue.GetArray("DbGroups");
+    for(unsigned dbGroupsIndex = 0; dbGroupsIndex < dbGroupsJsonList.GetLength(); ++dbGroupsIndex)
+    {
+      m_dbGroups.push_back(dbGroupsJsonList[dbGroupsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("DbUser"))
   {
     m_dbUser = jsonValue.GetString("DbUser");
@@ -62,6 +71,12 @@ BatchExecuteStatementResult& BatchExecuteStatementResult::operator =(const Aws::
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
+
+  }
+
+  if(jsonValue.ValueExists("SessionId"))
+  {
+    m_sessionId = jsonValue.GetString("SessionId");
 
   }
 

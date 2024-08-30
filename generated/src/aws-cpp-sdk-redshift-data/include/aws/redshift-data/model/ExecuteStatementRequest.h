@@ -129,6 +129,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>The session identifier of the query.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline ExecuteStatementRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline ExecuteStatementRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline ExecuteStatementRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of seconds to keep the session alive after the query finishes. The
+     * maximum time a session can keep alive is 24 hours. After 24 hours, the session
+     * is forced closed and the query is terminated.</p>
+     */
+    inline int GetSessionKeepAliveSeconds() const{ return m_sessionKeepAliveSeconds; }
+    inline bool SessionKeepAliveSecondsHasBeenSet() const { return m_sessionKeepAliveSecondsHasBeenSet; }
+    inline void SetSessionKeepAliveSeconds(int value) { m_sessionKeepAliveSecondsHasBeenSet = true; m_sessionKeepAliveSeconds = value; }
+    inline ExecuteStatementRequest& WithSessionKeepAliveSeconds(int value) { SetSessionKeepAliveSeconds(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The SQL statement text to run. </p>
      */
     inline const Aws::String& GetSql() const{ return m_sql; }
@@ -201,6 +227,12 @@ namespace Model
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
+
+    int m_sessionKeepAliveSeconds;
+    bool m_sessionKeepAliveSecondsHasBeenSet = false;
 
     Aws::String m_sql;
     bool m_sqlHasBeenSet = false;

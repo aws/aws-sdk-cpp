@@ -69,8 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of the controls that make up the framework. Each control in the list
-     * has a name, input parameters, and scope.</p>
+     * <p>The controls that make up the framework. Each control in the list has a name,
+     * input parameters, and scope.</p>
      */
     inline const Aws::Vector<FrameworkControl>& GetFrameworkControls() const{ return m_frameworkControls; }
     inline bool FrameworkControlsHasBeenSet() const { return m_frameworkControlsHasBeenSet; }
@@ -101,8 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>The tags to assign to the framework.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFrameworkTags() const{ return m_frameworkTags; }
     inline bool FrameworkTagsHasBeenSet() const { return m_frameworkTagsHasBeenSet; }

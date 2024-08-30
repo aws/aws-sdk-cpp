@@ -7,6 +7,7 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/backup/model/VaultType.h>
+#include <aws/backup/model/VaultState.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -38,8 +39,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Region where they are created. They consist of lowercase letters, numbers, and
-     * hyphens.</p>
+     * Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultName = value; }
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for
      * example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
     inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
@@ -67,13 +67,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the type of vault described.</p>
+     * <p>The type of vault described.</p>
      */
     inline const VaultType& GetVaultType() const{ return m_vaultType; }
     inline void SetVaultType(const VaultType& value) { m_vaultType = value; }
     inline void SetVaultType(VaultType&& value) { m_vaultType = std::move(value); }
     inline DescribeBackupVaultResult& WithVaultType(const VaultType& value) { SetVaultType(value); return *this;}
     inline DescribeBackupVaultResult& WithVaultType(VaultType&& value) { SetVaultType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current state of the vault.-&gt;</p>
+     */
+    inline const VaultState& GetVaultState() const{ return m_vaultState; }
+    inline void SetVaultState(const VaultState& value) { m_vaultState = value; }
+    inline void SetVaultState(VaultState&& value) { m_vaultState = std::move(value); }
+    inline DescribeBackupVaultResult& WithVaultState(const VaultState& value) { SetVaultState(value); return *this;}
+    inline DescribeBackupVaultResult& WithVaultState(VaultState&& value) { SetVaultState(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,7 +156,7 @@ namespace Model
     /**
      * <p>The Backup Vault Lock setting that specifies the minimum retention period
      * that the vault retains its recovery points. If this parameter is not specified,
-     * Vault Lock does not enforce a minimum retention period.</p> <p>If specified, any
+     * Vault Lock will not enforce a minimum retention period.</p> <p>If specified, any
      * backup or copy job to the vault must have a lifecycle policy with a retention
      * period equal to or longer than the minimum retention period. If the job's
      * retention period is shorter than that minimum retention period, then the vault
@@ -209,6 +220,8 @@ namespace Model
     Aws::String m_backupVaultArn;
 
     VaultType m_vaultType;
+
+    VaultState m_vaultState;
 
     Aws::String m_encryptionKeyArn;
 

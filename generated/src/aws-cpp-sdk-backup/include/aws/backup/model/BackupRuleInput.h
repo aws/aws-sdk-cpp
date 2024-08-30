@@ -61,8 +61,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * Amazon Web Services Region where they are created.</p>
      */
     inline const Aws::String& GetTargetBackupVaultName() const{ return m_targetBackupVaultName; }
     inline bool TargetBackupVaultNameHasBeenSet() const { return m_targetBackupVaultNameHasBeenSet; }
@@ -127,13 +126,13 @@ namespace Model
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
-     * setting cannot be changed after a backup has been transitioned to cold.</p>
-     * <p>Resource types that are able to be transitioned to cold storage are listed in
-     * the "Lifecycle to cold storage" section of the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-     * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p> <p>This parameter has a maximum value of 100 years
-     * (36,500 days).</p>
+     * setting cannot be changed after a backup has been transitioned to cold
+     * storage.</p> <p>Resource types that can transition to cold storage are listed in
+     * the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+     * availability by resource</a> table. Backup ignores this expression for other
+     * resource types.</p> <p>This parameter has a maximum value of 100 years (36,500
+     * days).</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
@@ -145,8 +144,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>To help organize your resources, you can assign your own metadata to the
-     * resources that you create. Each tag is a key-value pair.</p>
+     * <p>The tags to assign to the resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRecoveryPointTags() const{ return m_recoveryPointTags; }
     inline bool RecoveryPointTagsHasBeenSet() const { return m_recoveryPointTagsHasBeenSet; }
@@ -192,7 +190,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the timezone in which the schedule expression is set. By default,
+     * <p>The timezone in which the schedule expression is set. By default,
      * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
      */
     inline const Aws::String& GetScheduleExpressionTimezone() const{ return m_scheduleExpressionTimezone; }

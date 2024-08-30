@@ -38,8 +38,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Logically
      * air-gapped backup vaults are identified by names that are unique to the account
-     * used to create them and the Region where they are created. They consist of
-     * lowercase letters, numbers, and hyphens.</p>
+     * used to create them and the Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultName = value; }
@@ -52,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the ARN (Amazon Resource Name) of the vault being created.</p>
+     * <p>The ARN (Amazon Resource Name) of the vault.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
     inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
@@ -79,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the current state of the vault.</p>
+     * <p>The current state of the vault.</p>
      */
     inline const VaultState& GetVaultState() const{ return m_vaultState; }
     inline void SetVaultState(const VaultState& value) { m_vaultState = value; }

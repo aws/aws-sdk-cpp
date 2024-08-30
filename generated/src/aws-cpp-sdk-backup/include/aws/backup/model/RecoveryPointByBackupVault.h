@@ -64,8 +64,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * Amazon Web Services Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
@@ -80,7 +79,7 @@ namespace Model
     ///@{
     /**
      * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
     inline bool BackupVaultArnHasBeenSet() const { return m_backupVaultArnHasBeenSet; }
@@ -184,7 +183,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     * <p>A message explaining the current status of the recovery point.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
@@ -258,11 +257,10 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Resource types that are able to be transitioned to cold storage are listed in
-     * the "Lifecycle to cold storage" section of the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-     * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * <p>Resource types that can transition to cold storage are listed in the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+     * availability by resource</a> table. Backup ignores this expression for other
+     * resource types.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
@@ -317,8 +315,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
-     * point.</p>
+     * <p>The Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
      */
     inline const Aws::String& GetParentRecoveryPointArn() const{ return m_parentRecoveryPointArn; }
     inline bool ParentRecoveryPointArnHasBeenSet() const { return m_parentRecoveryPointArnHasBeenSet; }
@@ -332,9 +329,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the identifier of a resource within a composite group, such as nested
-     * (child) recovery point belonging to a composite (parent) stack. The ID is
-     * transferred from the <a
+     * <p>The identifier of a resource within a composite group, such as nested (child)
+     * recovery point belonging to a composite (parent) stack. The ID is transferred
+     * from the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
      * logical ID</a> within a stack.</p>
      */
@@ -361,8 +358,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the non-unique name of the resource that belongs to the specified
-     * backup.</p>
+     * <p>The non-unique name of the resource that belongs to the specified backup.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
@@ -376,8 +372,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the type of vault in which the described recovery point is
-     * stored.</p>
+     * <p>The type of vault in which the described recovery point is stored.</p>
      */
     inline const VaultType& GetVaultType() const{ return m_vaultType; }
     inline bool VaultTypeHasBeenSet() const { return m_vaultTypeHasBeenSet; }

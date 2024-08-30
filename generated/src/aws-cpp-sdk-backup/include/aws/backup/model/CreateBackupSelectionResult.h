@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Uniquely identifies a backup plan.</p>
+     * <p>The ID of the backup plan.</p>
      */
     inline const Aws::String& GetBackupPlanId() const{ return m_backupPlanId; }
     inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanId = value; }

@@ -52,8 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Metadata that you can assign to help organize the resources that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>The tags to assign to the backup vault.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetBackupVaultTags() const{ return m_backupVaultTags; }
     inline bool BackupVaultTagsHasBeenSet() const { return m_backupVaultTagsHasBeenSet; }

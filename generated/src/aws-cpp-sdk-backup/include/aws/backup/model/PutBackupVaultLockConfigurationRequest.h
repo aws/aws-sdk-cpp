@@ -52,15 +52,17 @@ namespace Model
      * <p>The Backup Vault Lock configuration that specifies the minimum retention
      * period that the vault retains its recovery points. This setting can be useful
      * if, for example, your organization's policies require you to retain certain data
-     * for at least seven years (2555 days).</p> <p>If this parameter is not specified,
-     * Vault Lock will not enforce a minimum retention period.</p> <p>If this parameter
-     * is specified, any backup or copy job to the vault must have a lifecycle policy
-     * with a retention period equal to or longer than the minimum retention period. If
-     * the job's retention period is shorter than that minimum retention period, then
-     * the vault fails that backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. The shortest minimum retention
-     * period you can specify is 1 day. Recovery points already saved in the vault
-     * prior to Vault Lock are not affected.</p>
+     * for at least seven years (2555 days).</p> <p>This parameter is required when a
+     * vault lock is created through CloudFormation; otherwise, this parameter is
+     * optional. If this parameter is not specified, Vault Lock will not enforce a
+     * minimum retention period.</p> <p>If this parameter is specified, any backup or
+     * copy job to the vault must have a lifecycle policy with a retention period equal
+     * to or longer than the minimum retention period. If the job's retention period is
+     * shorter than that minimum retention period, then the vault fails that backup or
+     * copy job, and you should either modify your lifecycle settings or use a
+     * different vault. The shortest minimum retention period you can specify is 1 day.
+     * Recovery points already saved in the vault prior to Vault Lock are not
+     * affected.</p>
      */
     inline long long GetMinRetentionDays() const{ return m_minRetentionDays; }
     inline bool MinRetentionDaysHasBeenSet() const { return m_minRetentionDaysHasBeenSet; }

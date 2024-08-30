@@ -80,9 +80,8 @@ namespace Backup
         virtual ~BackupClient();
 
         /**
-         * <p>This action removes the specified legal hold on a recovery point. This action
-         * can only be performed by a user with sufficient permissions.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified legal hold on a recovery point. This action can only be
+         * performed by a user with sufficient permissions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold">AWS
          * API Reference</a></p>
          */
@@ -222,9 +221,9 @@ namespace Backup
         }
 
         /**
-         * <p>This action creates a legal hold on a recovery point (backup). A legal hold
-         * is a restraint on altering or deleting a backup until an authorized user cancels
-         * the legal hold. Any actions to delete or disassociate a recovery point will fail
+         * <p>Creates a legal hold on a recovery point (backup). A legal hold is a
+         * restraint on altering or deleting a backup until an authorized user cancels the
+         * legal hold. Any actions to delete or disassociate a recovery point will fail
          * with an error if one or more active legal holds are on the recovery
          * point.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold">AWS
@@ -251,12 +250,11 @@ namespace Backup
         }
 
         /**
-         * <p>This request creates a logical container to where backups may be copied.</p>
-         * <p>This request includes a name, the Region, the maximum number of retention
-         * days, the minimum number of retention days, and optionally can include tags and
-         * a creator request ID.</p>  <p>Do not include sensitive data, such as
-         * passport numbers, in the name of a backup vault.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a logical container to where backups may be copied.</p> <p>This
+         * request includes a name, the Region, the maximum number of retention days, the
+         * minimum number of retention days, and optionally can include tags and a creator
+         * request ID.</p>  <p>Do not include sensitive data, such as passport
+         * numbers, in the name of a backup vault.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault">AWS
          * API Reference</a></p>
          */
@@ -309,11 +307,9 @@ namespace Backup
         }
 
         /**
-         * <p>This is the first of two steps to create a restore testing plan; once this
-         * request is successful, finish the procedure with request
-         * CreateRestoreTestingSelection.</p> <p>You must include the parameter
-         * RestoreTestingPlan. You may optionally include CreatorRequestId and
-         * Tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a restore testing plan.</p> <p>The first of two steps to create a
+         * restore testing plan. After this request is successful, finish the procedure
+         * using CreateRestoreTestingSelection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingPlan">AWS
          * API Reference</a></p>
          */
@@ -1459,8 +1455,7 @@ namespace Backup
         }
 
         /**
-         * <p>Returns metadata of your saved backup plan templates, including the template
-         * ID, name, and the creation and deletion dates.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the backup plan templates.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlanTemplates">AWS
          * API Reference</a></p>
          */
@@ -1512,10 +1507,7 @@ namespace Backup
         }
 
         /**
-         * <p>Returns a list of all active backup plans for an authenticated account. The
-         * list contains information such as Amazon Resource Names (ARNs), plan IDs,
-         * creation and deletion dates, version IDs, plan names, and creator request
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the active backup plans for the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlans">AWS
          * API Reference</a></p>
          */
@@ -1804,10 +1796,10 @@ namespace Backup
         }
 
         /**
-         * <p>Returns detailed information about all the recovery points of the type
-         * specified by a resource Amazon Resource Name (ARN).</p>  <p>For Amazon EFS
-         * and Amazon EC2, this action only lists recovery points created by Backup.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>The information about the recovery points of the type specified by a resource
+         * Amazon Resource Name (ARN).</p>  <p>For Amazon EFS and Amazon EC2, this
+         * action only lists recovery points created by Backup.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByResource">AWS
          * API Reference</a></p>
          */
@@ -2020,12 +2012,8 @@ namespace Backup
         }
 
         /**
-         * <p>Returns a list of key-value pairs assigned to a target recovery point, backup
-         * plan, or backup vault.</p> <p> <code>ListTags</code> only works for resource
-         * types that support full Backup management of their backups. Those resource types
-         * are listed in the "Full Backup management" section of the <a
-         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-         * Feature availability by resource</a> table.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the tags assigned to the resource, such as a target recovery point,
+         * backup plan, or backup vault.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">AWS API
          * Reference</a></p>
          */
@@ -2086,8 +2074,11 @@ namespace Backup
          * assessed by Cohasset Associates for use in environments that are subject to SEC
          * 17a-4, CFTC, and FINRA regulations. For more information about how Backup Vault
          * Lock relates to these regulations, see the <a
-         * href="samples/cohassetreport.zip">Cohasset Associates Compliance Assessment.</a>
-         * </p> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/samples/cohassetreport.zip">Cohasset
+         * Associates Compliance Assessment.</a> </p>  <p>For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Backup
+         * Vault Lock</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2272,7 +2263,7 @@ namespace Backup
         /**
          * <p>Attempts to cancel a job to create a one-time backup of a resource.</p>
          * <p>This action is not supported for the following services: Amazon FSx for
-         * Windows File Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP , Amazon
+         * Windows File Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP, Amazon
          * FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS,
          * Amazon Aurora, and Amazon Neptune.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StopBackupJob">AWS
@@ -2300,7 +2291,9 @@ namespace Backup
 
         /**
          * <p>Assigns a set of key-value pairs to a recovery point, backup plan, or backup
-         * vault identified by an Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * vault identified by an Amazon Resource Name (ARN).</p> <p>This API is supported
+         * for recovery points for resource types including Aurora, Amazon DocumentDB.
+         * Amazon EBS, Amazon FSx, Neptune, and Amazon RDS.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/TagResource">AWS
          * API Reference</a></p>
          */
@@ -2326,7 +2319,9 @@ namespace Backup
 
         /**
          * <p>Removes a set of key-value pairs from a recovery point, backup plan, or
-         * backup vault identified by an Amazon Resource Name (ARN)</p><p><h3>See
+         * backup vault identified by an Amazon Resource Name (ARN)</p> <p>This API is not
+         * supported for recovery points for resource types including Aurora, Amazon
+         * DocumentDB. Amazon EBS, Amazon FSx, Neptune, and Amazon RDS.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UntagResource">AWS
          * API Reference</a></p>
@@ -2352,9 +2347,8 @@ namespace Backup
         }
 
         /**
-         * <p>Updates an existing backup plan identified by its <code>backupPlanId</code>
-         * with the input document in JSON format. The new version is uniquely identified
-         * by a <code>VersionId</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified backup plan. The new version is uniquely identified by
+         * its ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateBackupPlan">AWS
          * API Reference</a></p>
          */
@@ -2379,8 +2373,7 @@ namespace Backup
         }
 
         /**
-         * <p>Updates an existing framework identified by its <code>FrameworkName</code>
-         * with the input document in JSON format.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified framework.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateFramework">AWS
          * API Reference</a></p>
          */
@@ -2436,17 +2429,20 @@ namespace Backup
          * <p>Sets the transition lifecycle of a recovery point.</p> <p>The lifecycle
          * defines when a protected resource is transitioned to cold storage and when it
          * expires. Backup transitions and expires backups automatically according to the
-         * lifecycle that you define.</p> <p>Backups transitioned to cold storage must be
-         * stored in cold storage for a minimum of 90 days. Therefore, the “retention”
-         * setting must be 90 days greater than the “transition to cold after days”
-         * setting. The “transition to cold after days” setting cannot be changed after a
-         * backup has been transitioned to cold.</p> <p>Resource types that are able to be
-         * transitioned to cold storage are listed in the "Lifecycle to cold storage"
-         * section of the <a
-         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-         * Feature availability by resource</a> table. Backup ignores this expression for
-         * other resource types.</p> <p>This operation does not support continuous
-         * backups.</p><p><h3>See Also:</h3>   <a
+         * lifecycle that you define.</p> <p>Resource types that can transition to cold
+         * storage are listed in the <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+         * availability by resource</a> table. Backup ignores this expression for other
+         * resource types.</p> <p>Backups transitioned to cold storage must be stored in
+         * cold storage for a minimum of 90 days. Therefore, the “retention” setting must
+         * be 90 days greater than the “transition to cold after days” setting. The
+         * “transition to cold after days” setting cannot be changed after a backup has
+         * been transitioned to cold.</p>  <p>If your lifecycle currently uses
+         * the parameters <code>DeleteAfterDays</code> and
+         * <code>MoveToColdStorageAfterDays</code>, include these parameters and their
+         * values when you call this operation. Not including them may result in your plan
+         * updating with null values.</p>  <p>This operation does not support
+         * continuous backups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointLifecycle">AWS
          * API Reference</a></p>
          */
@@ -2498,8 +2494,7 @@ namespace Backup
         }
 
         /**
-         * <p>Updates an existing report plan identified by its <code>ReportPlanName</code>
-         * with the input document in JSON format.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified report plan.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateReportPlan">AWS
          * API Reference</a></p>
          */
@@ -2555,12 +2550,10 @@ namespace Backup
         }
 
         /**
-         * <p>Most elements except the <code>RestoreTestingSelectionName</code> can be
-         * updated with this request.</p> <p> <code>RestoreTestingSelection</code> can use
-         * either protected resource ARNs or conditions, but not both. That is, if your
-         * selection has <code>ProtectedResourceArns</code>, requesting an update with the
-         * parameter <code>ProtectedResourceConditions</code> will be
-         * unsuccessful.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified restore testing selection.</p> <p>Most elements except
+         * the <code>RestoreTestingSelectionName</code> can be updated with this
+         * request.</p> <p>You can use either protected resource ARNs or conditions, but
+         * not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">AWS
          * API Reference</a></p>
          */

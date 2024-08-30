@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateProjectRequest::CreateProjectRequest() : 
     m_descriptionHasBeenSet(false),
     m_domainIdentifierHasBeenSet(false),
+    m_domainUnitIdHasBeenSet(false),
     m_glossaryTermsHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
@@ -27,6 +28,12 @@ Aws::String CreateProjectRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_domainUnitIdHasBeenSet)
+  {
+   payload.WithString("domainUnitId", m_domainUnitId);
 
   }
 

@@ -52,8 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of backup plan list items containing metadata about your saved
-     * backup plans.</p>
+     * <p>Information about the backup plans.</p>
      */
     inline const Aws::Vector<BackupPlansListMember>& GetBackupPlansList() const{ return m_backupPlansList; }
     inline void SetBackupPlansList(const Aws::Vector<BackupPlansListMember>& value) { m_backupPlansList = value; }

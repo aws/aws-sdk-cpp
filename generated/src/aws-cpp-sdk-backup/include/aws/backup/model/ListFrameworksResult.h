@@ -36,9 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of frameworks with details for each framework, including the framework
-     * name, Amazon Resource Name (ARN), description, number of controls, creation
-     * time, and deployment status.</p>
+     * <p>The frameworks with details for each framework, including the framework name,
+     * Amazon Resource Name (ARN), description, number of controls, creation time, and
+     * deployment status.</p>
      */
     inline const Aws::Vector<Framework>& GetFrameworks() const{ return m_frameworks; }
     inline void SetFrameworks(const Aws::Vector<Framework>& value) { m_frameworks = value; }
