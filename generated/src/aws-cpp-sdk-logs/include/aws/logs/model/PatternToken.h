@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A tructures that contains information about one pattern token related to an
+   * <p>A structure that contains information about one pattern token related to an
    * anomaly.</p> <p>For more information about patterns and tokens, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogAnomalyDetector.html">CreateLogAnomalyDetector</a>.
    * </p><p><h3>See Also:</h3>   <a

@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the list of protected resources by backup vault within the vault(s)
-     * you specify by name.</p>
+     * <p>The list of protected resources by backup vault within the vault(s) you
+     * specify by name.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the list of protected resources by backup vault within the vault(s)
-     * you specify by account ID.</p>
+     * <p>The list of protected resources by backup vault within the vault(s) you
+     * specify by account ID.</p>
      */
     inline const Aws::String& GetBackupVaultAccountId() const{ return m_backupVaultAccountId; }
     inline bool BackupVaultAccountIdHasBeenSet() const { return m_backupVaultAccountIdHasBeenSet; }

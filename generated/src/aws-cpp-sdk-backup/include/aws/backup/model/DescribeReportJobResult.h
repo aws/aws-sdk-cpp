@@ -35,9 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of information about a report job, including its completion and
-     * creation times, report destination, unique report job ID, Amazon Resource Name
-     * (ARN), report template, status, and status message.</p>
+     * <p>The information about a report job, including its completion and creation
+     * times, report destination, unique report job ID, Amazon Resource Name (ARN),
+     * report template, status, and status message.</p>
      */
     inline const ReportJob& GetReportJob() const{ return m_reportJob; }
     inline void SetReportJob(const ReportJob& value) { m_reportJob = value; }

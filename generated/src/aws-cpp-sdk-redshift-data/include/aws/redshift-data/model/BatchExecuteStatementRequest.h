@@ -114,6 +114,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>The session identifier of the query.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline BatchExecuteStatementRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline BatchExecuteStatementRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline BatchExecuteStatementRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of seconds to keep the session alive after the query finishes. The
+     * maximum time a session can keep alive is 24 hours. After 24 hours, the session
+     * is forced closed and the query is terminated.</p>
+     */
+    inline int GetSessionKeepAliveSeconds() const{ return m_sessionKeepAliveSeconds; }
+    inline bool SessionKeepAliveSecondsHasBeenSet() const { return m_sessionKeepAliveSecondsHasBeenSet; }
+    inline void SetSessionKeepAliveSeconds(int value) { m_sessionKeepAliveSecondsHasBeenSet = true; m_sessionKeepAliveSeconds = value; }
+    inline BatchExecuteStatementRequest& WithSessionKeepAliveSeconds(int value) { SetSessionKeepAliveSeconds(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
      * a single transaction. They run serially in the order of the array. Subsequent
      * SQL statements don't start until the previous statement in the array completes.
@@ -188,6 +214,12 @@ namespace Model
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
+
+    int m_sessionKeepAliveSeconds;
+    bool m_sessionKeepAliveSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sqls;
     bool m_sqlsHasBeenSet = false;

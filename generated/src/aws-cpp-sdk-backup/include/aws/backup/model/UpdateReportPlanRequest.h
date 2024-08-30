@@ -68,9 +68,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A structure that contains information about where to deliver your reports,
-     * specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
-     * reports.</p>
+     * <p>The information about where to deliver your reports, specifically your Amazon
+     * S3 bucket name, S3 key prefix, and the formats of your reports.</p>
      */
     inline const ReportDeliveryChannel& GetReportDeliveryChannel() const{ return m_reportDeliveryChannel; }
     inline bool ReportDeliveryChannelHasBeenSet() const { return m_reportDeliveryChannelHasBeenSet; }
@@ -82,10 +81,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p>
-     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <p>The report template for the report. Reports are built using a report
+     * template. The report templates are:</p> <p> <code>RESOURCE_COMPLIANCE_REPORT |
+     * CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT |
+     * RESTORE_JOB_REPORT</code> </p> <p>If the report template is
      * <code>RESOURCE_COMPLIANCE_REPORT</code> or
      * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
      * report coverage by Amazon Web Services Regions and frameworks.</p>

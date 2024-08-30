@@ -34,8 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
+     * <p>The ID of the legal hold.</p>
      */
     inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
     inline bool LegalHoldIdHasBeenSet() const { return m_legalHoldIdHasBeenSet; }

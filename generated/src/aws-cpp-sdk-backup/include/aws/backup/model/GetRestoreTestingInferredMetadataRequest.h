@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the account ID of the specified backup vault.</p>
+     * <p>The account ID of the specified backup vault.</p>
      */
     inline const Aws::String& GetBackupVaultAccountId() const{ return m_backupVaultAccountId; }
     inline bool BackupVaultAccountIdHasBeenSet() const { return m_backupVaultAccountIdHasBeenSet; }

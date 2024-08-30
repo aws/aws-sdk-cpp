@@ -73,7 +73,8 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault;
      * for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.
+     * </p>
      */
     inline const Aws::String& GetSourceBackupVaultArn() const{ return m_sourceBackupVaultArn; }
     inline bool SourceBackupVaultArnHasBeenSet() const { return m_sourceBackupVaultArnHasBeenSet; }
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy
      * vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetDestinationBackupVaultArn() const{ return m_destinationBackupVaultArn; }
     inline bool DestinationBackupVaultArnHasBeenSet() const { return m_destinationBackupVaultArnHasBeenSet; }
@@ -281,9 +282,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the identifier of a resource within a composite group, such as nested
-     * (child) recovery point belonging to a composite (parent) stack. The ID is
-     * transferred from the <a
+     * <p>The identifier of a resource within a composite group, such as nested (child)
+     * recovery point belonging to a composite (parent) stack. The ID is transferred
+     * from the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
      * logical ID</a> within a stack.</p>
      */
@@ -299,7 +300,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the number of child (nested) copy jobs.</p>
+     * <p>The number of child (nested) copy jobs.</p>
      */
     inline long long GetNumberOfChildJobs() const{ return m_numberOfChildJobs; }
     inline bool NumberOfChildJobsHasBeenSet() const { return m_numberOfChildJobsHasBeenSet; }
@@ -323,8 +324,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the non-unique name of the resource that belongs to the specified
-     * backup.</p>
+     * <p>The non-unique name of the resource that belongs to the specified backup.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }

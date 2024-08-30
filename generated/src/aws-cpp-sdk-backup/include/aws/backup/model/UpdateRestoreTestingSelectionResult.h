@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the time the resource testing selection was updated successfully.</p>
+     * <p>The time the resource testing selection was updated successfully.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
@@ -59,8 +59,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the restore testing plan with which the updated restore testing
-     * selection is associated.</p>
+     * <p>The restore testing plan with which the updated restore testing selection is
+     * associated.</p>
      */
     inline const Aws::String& GetRestoreTestingPlanName() const{ return m_restoreTestingPlanName; }
     inline void SetRestoreTestingPlanName(const Aws::String& value) { m_restoreTestingPlanName = value; }
@@ -73,7 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the returned restore testing selection name.</p>
+     * <p>The returned restore testing selection name.</p>
      */
     inline const Aws::String& GetRestoreTestingSelectionName() const{ return m_restoreTestingSelectionName; }
     inline void SetRestoreTestingSelectionName(const Aws::String& value) { m_restoreTestingSelectionName = value; }
@@ -86,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the time the update completed for the restore testing selection.</p>
+     * <p>The time the update completed for the restore testing selection.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }

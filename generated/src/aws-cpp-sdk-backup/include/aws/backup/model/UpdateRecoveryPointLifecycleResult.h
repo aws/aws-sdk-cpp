@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
     inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
@@ -72,11 +72,10 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold.</p>
-     * <p>Resource types that are able to be transitioned to cold storage are listed in
-     * the "Lifecycle to cold storage" section of the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-     * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * <p>Resource types that can transition to cold storage are listed in the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+     * availability by resource</a> table. Backup ignores this expression for other
+     * resource types.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycle = value; }

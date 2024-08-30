@@ -1,0 +1,60 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/datazone/model/CreateDomainUnitPolicyGrantDetail.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DataZone
+{
+namespace Model
+{
+
+CreateDomainUnitPolicyGrantDetail::CreateDomainUnitPolicyGrantDetail() : 
+    m_includeChildDomainUnits(false),
+    m_includeChildDomainUnitsHasBeenSet(false)
+{
+}
+
+CreateDomainUnitPolicyGrantDetail::CreateDomainUnitPolicyGrantDetail(JsonView jsonValue)
+  : CreateDomainUnitPolicyGrantDetail()
+{
+  *this = jsonValue;
+}
+
+CreateDomainUnitPolicyGrantDetail& CreateDomainUnitPolicyGrantDetail::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("includeChildDomainUnits"))
+  {
+    m_includeChildDomainUnits = jsonValue.GetBool("includeChildDomainUnits");
+
+    m_includeChildDomainUnitsHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue CreateDomainUnitPolicyGrantDetail::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_includeChildDomainUnitsHasBeenSet)
+  {
+   payload.WithBool("includeChildDomainUnits", m_includeChildDomainUnits);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace DataZone
+} // namespace Aws

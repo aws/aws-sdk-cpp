@@ -38,8 +38,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * Amazon Web Services Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
@@ -143,12 +142,11 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Resource types that are able to be transitioned to cold storage are listed in
-     * the "Lifecycle to cold storage" section of the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-     * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p> <p>This parameter has a maximum value of 100 years
-     * (36,500 days).</p>
+     * <p>Resource types that can transition to cold storage are listed in the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+     * availability by resource</a> table. Backup ignores this expression for other
+     * resource types.</p> <p>This parameter has a maximum value of 100 years (36,500
+     * days).</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
@@ -160,8 +158,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>To help organize your resources, you can assign your own metadata to the
-     * resources that you create. Each tag is a key-value pair.</p>
+     * <p>The tags to assign to the resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRecoveryPointTags() const{ return m_recoveryPointTags; }
     inline bool RecoveryPointTagsHasBeenSet() const { return m_recoveryPointTagsHasBeenSet; }
@@ -180,10 +177,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
-     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
-     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <p>The backup option for a selected resource. This option is only available for
+     * Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid values: Set
+     * to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code>
+     * backup option and create a Windows VSS backup. Set to
      * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
      * <code>WindowsVSS</code> option is not enabled by default.</p>
      */

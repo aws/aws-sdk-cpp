@@ -139,6 +139,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The session identifier of the query.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline StatementData& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline StatementData& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline StatementData& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the SQL statement. </p>
      */
     inline const Aws::String& GetStatementName() const{ return m_statementName; }
@@ -197,6 +211,9 @@ namespace Model
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_statementName;
     bool m_statementNameHasBeenSet = false;

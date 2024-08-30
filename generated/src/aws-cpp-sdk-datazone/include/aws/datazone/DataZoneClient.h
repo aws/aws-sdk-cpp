@@ -134,6 +134,58 @@ namespace DataZone
         }
 
         /**
+         * <p>Adds the owner of an entity (a domain unit).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddEntityOwner">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddEntityOwnerOutcome AddEntityOwner(const Model::AddEntityOwnerRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddEntityOwner that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AddEntityOwnerRequestT = Model::AddEntityOwnerRequest>
+        Model::AddEntityOwnerOutcomeCallable AddEntityOwnerCallable(const AddEntityOwnerRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::AddEntityOwner, request);
+        }
+
+        /**
+         * An Async wrapper for AddEntityOwner that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AddEntityOwnerRequestT = Model::AddEntityOwnerRequest>
+        void AddEntityOwnerAsync(const AddEntityOwnerRequestT& request, const AddEntityOwnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::AddEntityOwner, request, handler, context);
+        }
+
+        /**
+         * <p>Adds a policy grant (an authorization policy) to a specified entity,
+         * including domain units, environment blueprint configurations, or environment
+         * profiles.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddPolicyGrant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddPolicyGrantOutcome AddPolicyGrant(const Model::AddPolicyGrantRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddPolicyGrant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AddPolicyGrantRequestT = Model::AddPolicyGrantRequest>
+        Model::AddPolicyGrantOutcomeCallable AddPolicyGrantCallable(const AddPolicyGrantRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::AddPolicyGrant, request);
+        }
+
+        /**
+         * An Async wrapper for AddPolicyGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AddPolicyGrantRequestT = Model::AddPolicyGrantRequest>
+        void AddPolicyGrantAsync(const AddPolicyGrantRequestT& request, const AddPolicyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::AddPolicyGrant, request, handler, context);
+        }
+
+        /**
          * <p>Associates the environment role in Amazon DataZone.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateEnvironmentRole">AWS
@@ -408,6 +460,31 @@ namespace DataZone
         void CreateDomainAsync(const CreateDomainRequestT& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::CreateDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a domain unit in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDomainUnit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDomainUnitOutcome CreateDomainUnit(const Model::CreateDomainUnitRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDomainUnit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDomainUnitRequestT = Model::CreateDomainUnitRequest>
+        Model::CreateDomainUnitOutcomeCallable CreateDomainUnitCallable(const CreateDomainUnitRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::CreateDomainUnit, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDomainUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDomainUnitRequestT = Model::CreateDomainUnitRequest>
+        void CreateDomainUnitAsync(const CreateDomainUnitRequestT& request, const CreateDomainUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::CreateDomainUnit, request, handler, context);
         }
 
         /**
@@ -915,6 +992,31 @@ namespace DataZone
         void DeleteDomainAsync(const DeleteDomainRequestT& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::DeleteDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a domain unit.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDomainUnit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDomainUnitOutcome DeleteDomainUnit(const Model::DeleteDomainUnitRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDomainUnit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDomainUnitRequestT = Model::DeleteDomainUnitRequest>
+        Model::DeleteDomainUnitOutcomeCallable DeleteDomainUnitCallable(const DeleteDomainUnitRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DeleteDomainUnit, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDomainUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDomainUnitRequestT = Model::DeleteDomainUnitRequest>
+        void DeleteDomainUnitAsync(const DeleteDomainUnitRequestT& request, const DeleteDomainUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DeleteDomainUnit, request, handler, context);
         }
 
         /**
@@ -1477,6 +1579,31 @@ namespace DataZone
         void GetDomainAsync(const GetDomainRequestT& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::GetDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the details of the specified domain unit.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDomainUnit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDomainUnitOutcome GetDomainUnit(const Model::GetDomainUnitRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDomainUnit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDomainUnitRequestT = Model::GetDomainUnitRequest>
+        Model::GetDomainUnitOutcomeCallable GetDomainUnitCallable(const GetDomainUnitRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetDomainUnit, request);
+        }
+
+        /**
+         * An Async wrapper for GetDomainUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDomainUnitRequestT = Model::GetDomainUnitRequest>
+        void GetDomainUnitAsync(const GetDomainUnitRequestT& request, const GetDomainUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetDomainUnit, request, handler, context);
         }
 
         /**
@@ -2164,6 +2291,32 @@ namespace DataZone
         }
 
         /**
+         * <p>Lists child domain units for the specified parent domain unit.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDomainUnitsForParent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDomainUnitsForParentOutcome ListDomainUnitsForParent(const Model::ListDomainUnitsForParentRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDomainUnitsForParent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDomainUnitsForParentRequestT = Model::ListDomainUnitsForParentRequest>
+        Model::ListDomainUnitsForParentOutcomeCallable ListDomainUnitsForParentCallable(const ListDomainUnitsForParentRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListDomainUnitsForParent, request);
+        }
+
+        /**
+         * An Async wrapper for ListDomainUnitsForParent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDomainUnitsForParentRequestT = Model::ListDomainUnitsForParentRequest>
+        void ListDomainUnitsForParentAsync(const ListDomainUnitsForParentRequestT& request, const ListDomainUnitsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListDomainUnitsForParent, request, handler, context);
+        }
+
+        /**
          * <p>Lists Amazon DataZone domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDomains">AWS
          * API Reference</a></p>
@@ -2186,6 +2339,31 @@ namespace DataZone
         void ListDomainsAsync(const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainsRequestT& request = {}) const
         {
             return SubmitAsync(&DataZoneClient::ListDomains, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the entity (domain units) owners.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEntityOwners">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEntityOwnersOutcome ListEntityOwners(const Model::ListEntityOwnersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEntityOwners that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEntityOwnersRequestT = Model::ListEntityOwnersRequest>
+        Model::ListEntityOwnersOutcomeCallable ListEntityOwnersCallable(const ListEntityOwnersRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListEntityOwners, request);
+        }
+
+        /**
+         * An Async wrapper for ListEntityOwners that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEntityOwnersRequestT = Model::ListEntityOwnersRequest>
+        void ListEntityOwnersAsync(const ListEntityOwnersRequestT& request, const ListEntityOwnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListEntityOwners, request, handler, context);
         }
 
         /**
@@ -2389,6 +2567,31 @@ namespace DataZone
         void ListNotificationsAsync(const ListNotificationsRequestT& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::ListNotifications, request, handler, context);
+        }
+
+        /**
+         * <p>Lists policy grants.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListPolicyGrants">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPolicyGrantsOutcome ListPolicyGrants(const Model::ListPolicyGrantsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPolicyGrants that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPolicyGrantsRequestT = Model::ListPolicyGrantsRequest>
+        Model::ListPolicyGrantsOutcomeCallable ListPolicyGrantsCallable(const ListPolicyGrantsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListPolicyGrants, request);
+        }
+
+        /**
+         * An Async wrapper for ListPolicyGrants that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPolicyGrantsRequestT = Model::ListPolicyGrantsRequest>
+        void ListPolicyGrantsAsync(const ListPolicyGrantsRequestT& request, const ListPolicyGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListPolicyGrants, request, handler, context);
         }
 
         /**
@@ -2721,6 +2924,56 @@ namespace DataZone
         }
 
         /**
+         * <p>Removes an owner from an entity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemoveEntityOwner">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveEntityOwnerOutcome RemoveEntityOwner(const Model::RemoveEntityOwnerRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveEntityOwner that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RemoveEntityOwnerRequestT = Model::RemoveEntityOwnerRequest>
+        Model::RemoveEntityOwnerOutcomeCallable RemoveEntityOwnerCallable(const RemoveEntityOwnerRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::RemoveEntityOwner, request);
+        }
+
+        /**
+         * An Async wrapper for RemoveEntityOwner that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RemoveEntityOwnerRequestT = Model::RemoveEntityOwnerRequest>
+        void RemoveEntityOwnerAsync(const RemoveEntityOwnerRequestT& request, const RemoveEntityOwnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::RemoveEntityOwner, request, handler, context);
+        }
+
+        /**
+         * <p>Removes a policy grant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemovePolicyGrant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemovePolicyGrantOutcome RemovePolicyGrant(const Model::RemovePolicyGrantRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemovePolicyGrant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RemovePolicyGrantRequestT = Model::RemovePolicyGrantRequest>
+        Model::RemovePolicyGrantOutcomeCallable RemovePolicyGrantCallable(const RemovePolicyGrantRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::RemovePolicyGrant, request);
+        }
+
+        /**
+         * An Async wrapper for RemovePolicyGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RemovePolicyGrantRequestT = Model::RemovePolicyGrantRequest>
+        void RemovePolicyGrantAsync(const RemovePolicyGrantRequestT& request, const RemovePolicyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::RemovePolicyGrant, request, handler, context);
+        }
+
+        /**
          * <p>Revokes a specified subscription in Amazon DataZone.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RevokeSubscription">AWS
@@ -3047,6 +3300,31 @@ namespace DataZone
         void UpdateDomainAsync(const UpdateDomainRequestT& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::UpdateDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the domain unit.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDomainUnit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDomainUnitOutcome UpdateDomainUnit(const Model::UpdateDomainUnitRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDomainUnit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDomainUnitRequestT = Model::UpdateDomainUnitRequest>
+        Model::UpdateDomainUnitOutcomeCallable UpdateDomainUnitCallable(const UpdateDomainUnitRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::UpdateDomainUnit, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDomainUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDomainUnitRequestT = Model::UpdateDomainUnitRequest>
+        void UpdateDomainUnitAsync(const UpdateDomainUnitRequestT& request, const UpdateDomainUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::UpdateDomainUnit, request, handler, context);
         }
 
         /**

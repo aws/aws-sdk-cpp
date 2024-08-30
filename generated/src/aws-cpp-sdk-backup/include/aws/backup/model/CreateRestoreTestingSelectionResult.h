@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the time the resource testing selection was created successfully.</p>
+     * <p>The time that the resource testing selection was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
@@ -46,8 +46,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the ARN of the restore testing plan with which the restore testing
-     * selection is associated.</p>
+     * <p>The ARN of the restore testing plan with which the restore testing selection
+     * is associated.</p>
      */
     inline const Aws::String& GetRestoreTestingPlanArn() const{ return m_restoreTestingPlanArn; }
     inline void SetRestoreTestingPlanArn(const Aws::String& value) { m_restoreTestingPlanArn = value; }
@@ -60,9 +60,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique string that is the name of the restore testing plan.</p> <p>The name
-     * cannot be changed after creation. The name consists of only alphanumeric
-     * characters and underscores. Maximum length is 50.</p>
+     * <p>The name of the restore testing plan.</p> <p>The name cannot be changed after
+     * creation. The name consists of only alphanumeric characters and underscores.
+     * Maximum length is 50.</p>
      */
     inline const Aws::String& GetRestoreTestingPlanName() const{ return m_restoreTestingPlanName; }
     inline void SetRestoreTestingPlanName(const Aws::String& value) { m_restoreTestingPlanName = value; }
@@ -75,8 +75,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the unique name of the restore testing selection that belongs to the
-     * related restore testing plan.</p>
+     * <p>The name of the restore testing selection for the related restore testing
+     * plan.</p>
      */
     inline const Aws::String& GetRestoreTestingSelectionName() const{ return m_restoreTestingSelectionName; }
     inline void SetRestoreTestingSelectionName(const Aws::String& value) { m_restoreTestingSelectionName = value; }

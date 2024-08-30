@@ -83,7 +83,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>These are the accounts to be included in the report.</p>
+     * <p>These are the accounts to be included in the report.</p> <p>Use string value
+     * of <code>ROOT</code> to include all organizational units.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
@@ -113,7 +114,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>These are the Regions to be included in the report.</p>
+     * <p>These are the Regions to be included in the report.</p> <p>Use the wildcard
+     * as the string value to include all Regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }

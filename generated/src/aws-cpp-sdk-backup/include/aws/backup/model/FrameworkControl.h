@@ -57,8 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>ParameterName</code> and <code>ParameterValue</code>
-     * pairs.</p>
+     * <p>The name/value pairs.</p>
      */
     inline const Aws::Vector<ControlInputParameter>& GetControlInputParameters() const{ return m_controlInputParameters; }
     inline bool ControlInputParametersHasBeenSet() const { return m_controlInputParametersHasBeenSet; }

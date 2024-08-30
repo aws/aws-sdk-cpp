@@ -77,8 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the non-unique name of the resource that belongs to the specified
-     * backup.</p>
+     * <p>The name of the resource that belongs to the specified backup.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
     inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
@@ -91,8 +90,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
-     * most recent backup recovery point.</p>
+     * <p>The ARN (Amazon Resource Name) of the backup vault that contains the most
+     * recent backup recovery point.</p>
      */
     inline const Aws::String& GetLastBackupVaultArn() const{ return m_lastBackupVaultArn; }
     inline void SetLastBackupVaultArn(const Aws::String& value) { m_lastBackupVaultArn = value; }
@@ -105,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     * <p>The ARN (Amazon Resource Name) of the most recent recovery point.</p>
      */
     inline const Aws::String& GetLastRecoveryPointArn() const{ return m_lastRecoveryPointArn; }
     inline void SetLastRecoveryPointArn(const Aws::String& value) { m_lastRecoveryPointArn = value; }
@@ -118,7 +117,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the time in minutes the most recent restore job took to complete.</p>
+     * <p>The time, in minutes, that the most recent restore job took to complete.</p>
      */
     inline long long GetLatestRestoreExecutionTimeMinutes() const{ return m_latestRestoreExecutionTimeMinutes; }
     inline void SetLatestRestoreExecutionTimeMinutes(long long value) { m_latestRestoreExecutionTimeMinutes = value; }
@@ -127,7 +126,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the creation date of the most recent restore job.</p>
+     * <p>The creation date of the most recent restore job.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestRestoreJobCreationDate() const{ return m_latestRestoreJobCreationDate; }
     inline void SetLatestRestoreJobCreationDate(const Aws::Utils::DateTime& value) { m_latestRestoreJobCreationDate = value; }
@@ -138,7 +137,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the date the most recent recovery point was created.</p>
+     * <p>The date the most recent recovery point was created.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestRestoreRecoveryPointCreationDate() const{ return m_latestRestoreRecoveryPointCreationDate; }
     inline void SetLatestRestoreRecoveryPointCreationDate(const Aws::Utils::DateTime& value) { m_latestRestoreRecoveryPointCreationDate = value; }

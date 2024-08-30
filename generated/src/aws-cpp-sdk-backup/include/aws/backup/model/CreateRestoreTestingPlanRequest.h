@@ -71,9 +71,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional tags to include. A tag is a key-value pair you can use to manage,
-     * filter, and search for your resources. Allowed characters include UTF-8
-     * letters,numbers, spaces, and the following characters: + - = . _ : /.</p>
+     * <p>The tags to assign to the restore testing plan.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

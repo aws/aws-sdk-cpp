@@ -42,8 +42,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * Amazon Web Services Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
@@ -73,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the account ID of the specified backup vault.</p>
+     * <p>The account ID of the specified backup vault.</p>
      */
     inline const Aws::String& GetBackupVaultAccountId() const{ return m_backupVaultAccountId; }
     inline bool BackupVaultAccountIdHasBeenSet() const { return m_backupVaultAccountIdHasBeenSet; }

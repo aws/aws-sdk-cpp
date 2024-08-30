@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the Amazon Web Services Regions within the job summary.</p>
+     * <p>The Amazon Web Services Regions within the job summary.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }

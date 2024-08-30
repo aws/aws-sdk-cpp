@@ -117,11 +117,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the period that sets the boundaries for returned results.</p> <ul>
-     * <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p>
-     * </li> <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the
-     * prior 7 days.</p> </li> <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job
-     * count for prior 14 days.</p> </li> </ul>
+     * <p>The period for the returned results.</p> <ul> <li> <p> <code>ONE_DAY</code> -
+     * The daily job count for the prior 14 days.</p> </li> <li> <p>
+     * <code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p>
+     * </li> <li> <p> <code>FOURTEEN_DAYS</code> - The aggregated job count for prior
+     * 14 days.</p> </li> </ul>
      */
     inline const AggregationPeriod& GetAggregationPeriod() const{ return m_aggregationPeriod; }
     inline bool AggregationPeriodHasBeenSet() const { return m_aggregationPeriodHasBeenSet; }

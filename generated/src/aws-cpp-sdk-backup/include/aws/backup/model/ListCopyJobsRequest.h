@@ -129,13 +129,14 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
-     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
-     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
-     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
-     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
-     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
-     * machines</p> </li> </ul>
+     * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>S3</code> for Amazon Simple Storage Service
+     * (Amazon S3)</p> </li> <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA
+     * databases on Amazon Elastic Compute Cloud instances</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
+     * <code>VirtualMachine</code> for VMware virtual machines</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
@@ -151,7 +152,8 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.
+     * </p>
      */
     inline const Aws::String& GetByDestinationVaultArn() const{ return m_byDestinationVaultArn; }
     inline bool ByDestinationVaultArnHasBeenSet() const { return m_byDestinationVaultArnHasBeenSet; }

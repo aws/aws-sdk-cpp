@@ -77,8 +77,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of the controls that make up the framework. Each control in the list
-     * has a name, input parameters, and scope.</p>
+     * <p>The controls that make up the framework. Each control in the list has a name,
+     * input parameters, and scope.</p>
      */
     inline const Aws::Vector<FrameworkControl>& GetFrameworkControls() const{ return m_frameworkControls; }
     inline void SetFrameworkControls(const Aws::Vector<FrameworkControl>& value) { m_frameworkControls = value; }

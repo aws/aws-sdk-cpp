@@ -73,8 +73,7 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * Amazon Web Services Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
@@ -90,7 +89,7 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for
      * example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
     inline bool BackupVaultArnHasBeenSet() const { return m_backupVaultArnHasBeenSet; }
@@ -376,8 +375,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the non-unique name of the resource that belongs to the specified
-     * backup.</p>
+     * <p>The non-unique name of the resource that belongs to the specified backup.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
@@ -391,7 +389,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the date on which the backup job was initiated.</p>
+     * <p>The date on which the backup job was initiated.</p>
      */
     inline const Aws::Utils::DateTime& GetInitiationDate() const{ return m_initiationDate; }
     inline bool InitiationDateHasBeenSet() const { return m_initiationDateHasBeenSet; }

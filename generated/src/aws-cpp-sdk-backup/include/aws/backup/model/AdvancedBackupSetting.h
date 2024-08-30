@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A list of backup options for each resource type.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The backup options for each resource type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AdvancedBackupSetting">AWS
    * API Reference</a></p>
    */

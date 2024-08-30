@@ -101,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the restore testing plan name.</p>
+     * <p>The restore testing plan name.</p>
      */
     inline const Aws::String& GetRestoreTestingPlanName() const{ return m_restoreTestingPlanName; }
     inline bool RestoreTestingPlanNameHasBeenSet() const { return m_restoreTestingPlanNameHasBeenSet; }

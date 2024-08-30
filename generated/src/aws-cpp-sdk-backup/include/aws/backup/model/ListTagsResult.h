@@ -51,8 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>To help organize your resources, you can assign your own metadata to the
-     * resources you create. Each tag is a key-value pair.</p>
+     * <p>Information about the tags.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }

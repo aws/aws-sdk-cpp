@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the string title of the legal hold.</p>
+     * <p>The title of the legal hold.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the string description of the legal hold.</p>
+     * <p>The description of the legal hold.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -80,8 +80,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This specifies criteria to assign a set of resources, such as resource types
-     * or backup vaults.</p>
+     * <p>The criteria to assign a set of resources, such as resource types or backup
+     * vaults.</p>
      */
     inline const RecoveryPointSelection& GetRecoveryPointSelection() const{ return m_recoveryPointSelection; }
     inline bool RecoveryPointSelectionHasBeenSet() const { return m_recoveryPointSelectionHasBeenSet; }

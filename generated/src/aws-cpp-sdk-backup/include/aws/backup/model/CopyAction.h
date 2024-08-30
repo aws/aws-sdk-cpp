@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetDestinationBackupVaultArn() const{ return m_destinationBackupVaultArn; }
     inline bool DestinationBackupVaultArnHasBeenSet() const { return m_destinationBackupVaultArnHasBeenSet; }

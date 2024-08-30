@@ -36,9 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This request returns a summary that contains Region, Account, State,
-     * ResourceType, MessageCategory, StartTime, EndTime, and Count of included
-     * jobs.</p>
+     * <p>The summary information.</p>
      */
     inline const Aws::Vector<BackupJobSummary>& GetBackupJobSummaries() const{ return m_backupJobSummaries; }
     inline void SetBackupJobSummaries(const Aws::Vector<BackupJobSummary>& value) { m_backupJobSummaries = value; }
@@ -51,11 +49,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the period that sets the boundaries for returned results.</p> <ul>
-     * <li> <p> <code>ONE_DAY</code> for daily job count for the prior 14 days.</p>
-     * </li> <li> <p> <code>SEVEN_DAYS</code> for the aggregated job count for the
-     * prior 7 days.</p> </li> <li> <p> <code>FOURTEEN_DAYS</code> for aggregated job
-     * count for prior 14 days.</p> </li> </ul>
+     * <p>The period for the returned results.</p> <ul> <li> <p> <code>ONE_DAY</code> -
+     * The daily job count for the prior 14 days.</p> </li> <li> <p>
+     * <code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p>
+     * </li> <li> <p> <code>FOURTEEN_DAYS</code> - The aggregated job count for prior
+     * 14 days.</p> </li> </ul>
      */
     inline const Aws::String& GetAggregationPeriod() const{ return m_aggregationPeriod; }
     inline void SetAggregationPeriod(const Aws::String& value) { m_aggregationPeriod = value; }

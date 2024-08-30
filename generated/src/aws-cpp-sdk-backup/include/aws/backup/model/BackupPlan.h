@@ -45,7 +45,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * <p>The display name of a backup plan. Must contain only alphanumeric or '-_.'
+     * special characters.</p> <p>If this is set in the console, it can contain 1 to 50
+     * characters; if this is set through CLI or API, it can contain 1 to 200
      * characters.</p>
      */
     inline const Aws::String& GetBackupPlanName() const{ return m_backupPlanName; }

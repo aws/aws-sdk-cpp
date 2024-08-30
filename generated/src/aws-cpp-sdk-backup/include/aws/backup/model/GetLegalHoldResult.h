@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the string title of the legal hold.</p>
+     * <p>The title of the legal hold.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
     inline void SetTitle(const Aws::String& value) { m_title = value; }
@@ -50,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>,
-     * <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+     * <p>The status of the legal hold.</p>
      */
     inline const LegalHoldStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const LegalHoldStatus& value) { m_status = value; }
@@ -62,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the returned string description of the legal hold.</p>
+     * <p>The description of the legal hold.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline void SetDescription(const Aws::String& value) { m_description = value; }
@@ -75,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>String describing the reason for removing the legal hold.</p>
+     * <p>The reason for removing the legal hold.</p>
      */
     inline const Aws::String& GetCancelDescription() const{ return m_cancelDescription; }
     inline void SetCancelDescription(const Aws::String& value) { m_cancelDescription = value; }
@@ -88,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the returned ID associated with a specified legal hold.</p>
+     * <p>The ID of the legal hold.</p>
      */
     inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
     inline void SetLegalHoldId(const Aws::String& value) { m_legalHoldId = value; }
@@ -101,9 +100,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the returned framework ARN for the specified legal hold. An Amazon
-     * Resource Name (ARN) uniquely identifies a resource. The format of the ARN
-     * depends on the resource type.</p>
+     * <p>The framework ARN for the specified legal hold. The format of the ARN depends
+     * on the resource type.</p>
      */
     inline const Aws::String& GetLegalHoldArn() const{ return m_legalHoldArn; }
     inline void SetLegalHoldArn(const Aws::String& value) { m_legalHoldArn = value; }
@@ -116,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Time in number format when legal hold was created.</p>
+     * <p>The time when the legal hold was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
@@ -127,7 +125,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Time in number when legal hold was cancelled.</p>
+     * <p>The time when the legal hold was cancelled.</p>
      */
     inline const Aws::Utils::DateTime& GetCancellationDate() const{ return m_cancellationDate; }
     inline void SetCancellationDate(const Aws::Utils::DateTime& value) { m_cancellationDate = value; }
@@ -138,8 +136,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the date and time until which the legal hold record will be
-     * retained.</p>
+     * <p>The date and time until which the legal hold record is retained.</p>
      */
     inline const Aws::Utils::DateTime& GetRetainRecordUntil() const{ return m_retainRecordUntil; }
     inline void SetRetainRecordUntil(const Aws::Utils::DateTime& value) { m_retainRecordUntil = value; }
@@ -150,8 +147,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This specifies criteria to assign a set of resources, such as resource types
-     * or backup vaults.</p>
+     * <p>The criteria to assign a set of resources, such as resource types or backup
+     * vaults.</p>
      */
     inline const RecoveryPointSelection& GetRecoveryPointSelection() const{ return m_recoveryPointSelection; }
     inline void SetRecoveryPointSelection(const RecoveryPointSelection& value) { m_recoveryPointSelection = value; }

@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the status of your restore validation.</p>
+     * <p>The status of your restore validation.</p>
      */
     inline const RestoreValidationStatus& GetValidationStatus() const{ return m_validationStatus; }
     inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }

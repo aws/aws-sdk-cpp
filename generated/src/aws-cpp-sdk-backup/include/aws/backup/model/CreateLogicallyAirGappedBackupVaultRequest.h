@@ -35,7 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the name of the vault that is being created.</p>
+     * <p>The name of a logical container where backups are stored. Logically
+     * air-gapped backup vaults are identified by names that are unique to the account
+     * used to create them and the Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
@@ -49,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>These are the tags that will be included in the newly-created vault.</p>
+     * <p>The tags to assign to the vault.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetBackupVaultTags() const{ return m_backupVaultTags; }
     inline bool BackupVaultTagsHasBeenSet() const { return m_backupVaultTagsHasBeenSet; }
@@ -68,8 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
-     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+     * <p>The ID of the creation request.</p> <p>This parameter is optional. If used,
+     * this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
@@ -84,12 +86,7 @@ namespace Model
     ///@{
     /**
      * <p>This setting specifies the minimum retention period that the vault retains
-     * its recovery points. If this parameter is not specified, no minimum retention
-     * period is enforced.</p> <p>If specified, any backup or copy job to the vault
-     * must have a lifecycle policy with a retention period equal to or longer than the
-     * minimum retention period. If a job retention period is shorter than that minimum
-     * retention period, then the vault fails the backup or copy job, and you should
-     * either modify your lifecycle settings or use a different vault.</p>
+     * its recovery points.</p> <p>The minimum value accepted is 7 days.</p>
      */
     inline long long GetMinRetentionDays() const{ return m_minRetentionDays; }
     inline bool MinRetentionDaysHasBeenSet() const { return m_minRetentionDaysHasBeenSet; }
@@ -99,15 +96,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the setting that specifies the maximum retention period that the
-     * vault retains its recovery points. If this parameter is not specified, Backup
-     * does not enforce a maximum retention period on the recovery points in the vault
-     * (allowing indefinite storage).</p> <p>If specified, any backup or copy job to
-     * the vault must have a lifecycle policy with a retention period equal to or
-     * shorter than the maximum retention period. If the job retention period is longer
-     * than that maximum retention period, then the vault fails the backup or copy job,
-     * and you should either modify your lifecycle settings or use a different
-     * vault.</p>
+     * <p>The maximum retention period that the vault retains its recovery points.</p>
      */
     inline long long GetMaxRetentionDays() const{ return m_maxRetentionDays; }
     inline bool MaxRetentionDaysHasBeenSet() const { return m_maxRetentionDaysHasBeenSet; }

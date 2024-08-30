@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the time the resource testing plan was created.</p>
+     * <p>The time the resource testing plan was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
@@ -73,7 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the time the update completed for the restore testing plan.</p>
+     * <p>The time the update completed for the restore testing plan.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }

@@ -36,8 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is a list of the recovery points returned by
-     * <code>ListRecoveryPointsByLegalHold</code>.</p>
+     * <p>The recovery points.</p>
      */
     inline const Aws::Vector<RecoveryPointMember>& GetRecoveryPoints() const{ return m_recoveryPoints; }
     inline void SetRecoveryPoints(const Aws::Vector<RecoveryPointMember>& value) { m_recoveryPoints = value; }
@@ -50,8 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This return is the next item following a partial list of returned
-     * resources.</p>
+     * <p>The next item following a partial list of returned resources.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

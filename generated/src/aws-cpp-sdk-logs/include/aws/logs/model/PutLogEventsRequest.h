@@ -8,6 +8,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/logs/model/Entity.h>
 #include <aws/logs/model/InputLogEvent.h>
 #include <utility>
 
@@ -97,6 +98,18 @@ namespace Model
     inline PutLogEventsRequest& WithSequenceToken(Aws::String&& value) { SetSequenceToken(std::move(value)); return *this;}
     inline PutLogEventsRequest& WithSequenceToken(const char* value) { SetSequenceToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Entity& GetEntity() const{ return m_entity; }
+    inline bool EntityHasBeenSet() const { return m_entityHasBeenSet; }
+    inline void SetEntity(const Entity& value) { m_entityHasBeenSet = true; m_entity = value; }
+    inline void SetEntity(Entity&& value) { m_entityHasBeenSet = true; m_entity = std::move(value); }
+    inline PutLogEventsRequest& WithEntity(const Entity& value) { SetEntity(value); return *this;}
+    inline PutLogEventsRequest& WithEntity(Entity&& value) { SetEntity(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_logGroupName;
@@ -110,6 +123,9 @@ namespace Model
 
     Aws::String m_sequenceToken;
     bool m_sequenceTokenHasBeenSet = false;
+
+    Entity m_entity;
+    bool m_entityHasBeenSet = false;
   };
 
 } // namespace Model

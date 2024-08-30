@@ -43,9 +43,9 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>  <p>Backup vault name might not be
-     * available when a supported service creates the backup.</p> 
+     * Amazon Web Services Region where they are created.</p>  <p>Backup vault
+     * name might not be available when a supported service creates the backup.</p>
+     * 
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
@@ -124,13 +124,14 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
-     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
-     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
-     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
-     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
-     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
-     * machines</p> </li> </ul>
+     * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>S3</code> for Amazon Simple Storage Service
+     * (Amazon S3)</p> </li> <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA
+     * databases on Amazon Elastic Compute Cloud instances</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
+     * <code>VirtualMachine</code> for VMware virtual machines</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }

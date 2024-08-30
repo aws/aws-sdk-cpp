@@ -35,8 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Uniquely identifies the backup plan to be associated with the selection of
-     * resources.</p>
+     * <p>The ID of the backup plan.</p>
      */
     inline const Aws::String& GetBackupPlanId() const{ return m_backupPlanId; }
     inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
@@ -50,8 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the body of a request to assign a set of resources to a backup
-     * plan.</p>
+     * <p>The body of a request to assign a set of resources to a backup plan.</p>
      */
     inline const BackupSelection& GetBackupSelection() const{ return m_backupSelection; }
     inline bool BackupSelectionHasBeenSet() const { return m_backupSelectionHasBeenSet; }

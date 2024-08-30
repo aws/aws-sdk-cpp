@@ -7,6 +7,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/RejectedLogEventsInfo.h>
+#include <aws/logs/model/RejectedEntityInfo.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const RejectedEntityInfo& GetRejectedEntityInfo() const{ return m_rejectedEntityInfo; }
+    inline void SetRejectedEntityInfo(const RejectedEntityInfo& value) { m_rejectedEntityInfo = value; }
+    inline void SetRejectedEntityInfo(RejectedEntityInfo&& value) { m_rejectedEntityInfo = std::move(value); }
+    inline PutLogEventsResult& WithRejectedEntityInfo(const RejectedEntityInfo& value) { SetRejectedEntityInfo(value); return *this;}
+    inline PutLogEventsResult& WithRejectedEntityInfo(RejectedEntityInfo&& value) { SetRejectedEntityInfo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,6 +90,8 @@ namespace Model
     Aws::String m_nextSequenceToken;
 
     RejectedLogEventsInfo m_rejectedLogEventsInfo;
+
+    RejectedEntityInfo m_rejectedEntityInfo;
 
     Aws::String m_requestId;
   };

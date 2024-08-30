@@ -54,8 +54,7 @@ namespace Model
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the Amazon Web Services Region where they are created. They consist of
-     * lowercase letters, numbers, and hyphens.</p>
+     * them and the Amazon Web Services Region where they are created.</p>
      */
     inline const Aws::String& GetSourceBackupVaultName() const{ return m_sourceBackupVaultName; }
     inline bool SourceBackupVaultNameHasBeenSet() const { return m_sourceBackupVaultNameHasBeenSet; }
@@ -71,7 +70,7 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup
      * vault to copy to; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetDestinationBackupVaultArn() const{ return m_destinationBackupVaultArn; }
     inline bool DestinationBackupVaultArnHasBeenSet() const { return m_destinationBackupVaultArnHasBeenSet; }

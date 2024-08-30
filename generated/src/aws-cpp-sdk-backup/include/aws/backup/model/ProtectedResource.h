@@ -88,8 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the non-unique name of the resource that belongs to the specified
-     * backup.</p>
+     * <p>The non-unique name of the resource that belongs to the specified backup.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
@@ -103,8 +102,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
-     * most recent backup recovery point.</p>
+     * <p>The ARN (Amazon Resource Name) of the backup vault that contains the most
+     * recent backup recovery point.</p>
      */
     inline const Aws::String& GetLastBackupVaultArn() const{ return m_lastBackupVaultArn; }
     inline bool LastBackupVaultArnHasBeenSet() const { return m_lastBackupVaultArnHasBeenSet; }
@@ -118,7 +117,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     * <p>The ARN (Amazon Resource Name) of the most recent recovery point.</p>
      */
     inline const Aws::String& GetLastRecoveryPointArn() const{ return m_lastRecoveryPointArn; }
     inline bool LastRecoveryPointArnHasBeenSet() const { return m_lastRecoveryPointArnHasBeenSet; }

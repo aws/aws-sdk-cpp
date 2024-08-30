@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Uniquely identifies a backup plan.</p>
+     * <p>The ID of the backup plan.</p>
      */
     inline const Aws::String& GetBackupPlanId() const{ return m_backupPlanId; }
     inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanId = value; }
@@ -93,9 +93,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>BackupOptions</code> settings for a resource type. This
-     * option is only available for Windows Volume Shadow Copy Service (VSS) backup
-     * jobs.</p>
+     * <p>The settings for a resource type. This option is only available for Windows
+     * Volume Shadow Copy Service (VSS) backup jobs.</p>
      */
     inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const{ return m_advancedBackupSettings; }
     inline void SetAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { m_advancedBackupSettings = value; }

@@ -20,6 +20,8 @@
 /* Service model headers required in DataZoneClient header */
 #include <aws/datazone/model/AcceptPredictionsResult.h>
 #include <aws/datazone/model/AcceptSubscriptionRequestResult.h>
+#include <aws/datazone/model/AddEntityOwnerResult.h>
+#include <aws/datazone/model/AddPolicyGrantResult.h>
 #include <aws/datazone/model/AssociateEnvironmentRoleResult.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunResult.h>
 #include <aws/datazone/model/CancelSubscriptionResult.h>
@@ -31,6 +33,7 @@
 #include <aws/datazone/model/CreateDataProductRevisionResult.h>
 #include <aws/datazone/model/CreateDataSourceResult.h>
 #include <aws/datazone/model/CreateDomainResult.h>
+#include <aws/datazone/model/CreateDomainUnitResult.h>
 #include <aws/datazone/model/CreateEnvironmentResult.h>
 #include <aws/datazone/model/CreateEnvironmentActionResult.h>
 #include <aws/datazone/model/CreateEnvironmentProfileResult.h>
@@ -50,6 +53,7 @@
 #include <aws/datazone/model/DeleteDataProductResult.h>
 #include <aws/datazone/model/DeleteDataSourceResult.h>
 #include <aws/datazone/model/DeleteDomainResult.h>
+#include <aws/datazone/model/DeleteDomainUnitResult.h>
 #include <aws/datazone/model/DeleteEnvironmentBlueprintConfigurationResult.h>
 #include <aws/datazone/model/DeleteFormTypeResult.h>
 #include <aws/datazone/model/DeleteGlossaryResult.h>
@@ -67,6 +71,7 @@
 #include <aws/datazone/model/GetDataSourceResult.h>
 #include <aws/datazone/model/GetDataSourceRunResult.h>
 #include <aws/datazone/model/GetDomainResult.h>
+#include <aws/datazone/model/GetDomainUnitResult.h>
 #include <aws/datazone/model/GetEnvironmentResult.h>
 #include <aws/datazone/model/GetEnvironmentActionResult.h>
 #include <aws/datazone/model/GetEnvironmentBlueprintResult.h>
@@ -94,7 +99,9 @@
 #include <aws/datazone/model/ListDataSourceRunActivitiesResult.h>
 #include <aws/datazone/model/ListDataSourceRunsResult.h>
 #include <aws/datazone/model/ListDataSourcesResult.h>
+#include <aws/datazone/model/ListDomainUnitsForParentResult.h>
 #include <aws/datazone/model/ListDomainsResult.h>
+#include <aws/datazone/model/ListEntityOwnersResult.h>
 #include <aws/datazone/model/ListEnvironmentActionsResult.h>
 #include <aws/datazone/model/ListEnvironmentBlueprintConfigurationsResult.h>
 #include <aws/datazone/model/ListEnvironmentBlueprintsResult.h>
@@ -103,6 +110,7 @@
 #include <aws/datazone/model/ListLineageNodeHistoryResult.h>
 #include <aws/datazone/model/ListMetadataGenerationRunsResult.h>
 #include <aws/datazone/model/ListNotificationsResult.h>
+#include <aws/datazone/model/ListPolicyGrantsResult.h>
 #include <aws/datazone/model/ListProjectMembershipsResult.h>
 #include <aws/datazone/model/ListProjectsResult.h>
 #include <aws/datazone/model/ListSubscriptionGrantsResult.h>
@@ -116,6 +124,8 @@
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationResult.h>
 #include <aws/datazone/model/RejectPredictionsResult.h>
 #include <aws/datazone/model/RejectSubscriptionRequestResult.h>
+#include <aws/datazone/model/RemoveEntityOwnerResult.h>
+#include <aws/datazone/model/RemovePolicyGrantResult.h>
 #include <aws/datazone/model/RevokeSubscriptionResult.h>
 #include <aws/datazone/model/SearchResult.h>
 #include <aws/datazone/model/SearchGroupProfilesResult.h>
@@ -129,6 +139,7 @@
 #include <aws/datazone/model/UpdateAssetFilterResult.h>
 #include <aws/datazone/model/UpdateDataSourceResult.h>
 #include <aws/datazone/model/UpdateDomainResult.h>
+#include <aws/datazone/model/UpdateDomainUnitResult.h>
 #include <aws/datazone/model/UpdateEnvironmentResult.h>
 #include <aws/datazone/model/UpdateEnvironmentActionResult.h>
 #include <aws/datazone/model/UpdateEnvironmentProfileResult.h>
@@ -184,6 +195,8 @@ namespace Aws
       /* Service model forward declarations required in DataZoneClient header */
       class AcceptPredictionsRequest;
       class AcceptSubscriptionRequestRequest;
+      class AddEntityOwnerRequest;
+      class AddPolicyGrantRequest;
       class AssociateEnvironmentRoleRequest;
       class CancelMetadataGenerationRunRequest;
       class CancelSubscriptionRequest;
@@ -195,6 +208,7 @@ namespace Aws
       class CreateDataProductRevisionRequest;
       class CreateDataSourceRequest;
       class CreateDomainRequest;
+      class CreateDomainUnitRequest;
       class CreateEnvironmentRequest;
       class CreateEnvironmentActionRequest;
       class CreateEnvironmentProfileRequest;
@@ -215,6 +229,7 @@ namespace Aws
       class DeleteDataProductRequest;
       class DeleteDataSourceRequest;
       class DeleteDomainRequest;
+      class DeleteDomainUnitRequest;
       class DeleteEnvironmentRequest;
       class DeleteEnvironmentActionRequest;
       class DeleteEnvironmentBlueprintConfigurationRequest;
@@ -237,6 +252,7 @@ namespace Aws
       class GetDataSourceRequest;
       class GetDataSourceRunRequest;
       class GetDomainRequest;
+      class GetDomainUnitRequest;
       class GetEnvironmentRequest;
       class GetEnvironmentActionRequest;
       class GetEnvironmentBlueprintRequest;
@@ -264,7 +280,9 @@ namespace Aws
       class ListDataSourceRunActivitiesRequest;
       class ListDataSourceRunsRequest;
       class ListDataSourcesRequest;
+      class ListDomainUnitsForParentRequest;
       class ListDomainsRequest;
+      class ListEntityOwnersRequest;
       class ListEnvironmentActionsRequest;
       class ListEnvironmentBlueprintConfigurationsRequest;
       class ListEnvironmentBlueprintsRequest;
@@ -273,6 +291,7 @@ namespace Aws
       class ListLineageNodeHistoryRequest;
       class ListMetadataGenerationRunsRequest;
       class ListNotificationsRequest;
+      class ListPolicyGrantsRequest;
       class ListProjectMembershipsRequest;
       class ListProjectsRequest;
       class ListSubscriptionGrantsRequest;
@@ -286,6 +305,8 @@ namespace Aws
       class PutEnvironmentBlueprintConfigurationRequest;
       class RejectPredictionsRequest;
       class RejectSubscriptionRequestRequest;
+      class RemoveEntityOwnerRequest;
+      class RemovePolicyGrantRequest;
       class RevokeSubscriptionRequest;
       class SearchRequest;
       class SearchGroupProfilesRequest;
@@ -299,6 +320,7 @@ namespace Aws
       class UpdateAssetFilterRequest;
       class UpdateDataSourceRequest;
       class UpdateDomainRequest;
+      class UpdateDomainUnitRequest;
       class UpdateEnvironmentRequest;
       class UpdateEnvironmentActionRequest;
       class UpdateEnvironmentProfileRequest;
@@ -315,6 +337,8 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AcceptPredictionsResult, DataZoneError> AcceptPredictionsOutcome;
       typedef Aws::Utils::Outcome<AcceptSubscriptionRequestResult, DataZoneError> AcceptSubscriptionRequestOutcome;
+      typedef Aws::Utils::Outcome<AddEntityOwnerResult, DataZoneError> AddEntityOwnerOutcome;
+      typedef Aws::Utils::Outcome<AddPolicyGrantResult, DataZoneError> AddPolicyGrantOutcome;
       typedef Aws::Utils::Outcome<AssociateEnvironmentRoleResult, DataZoneError> AssociateEnvironmentRoleOutcome;
       typedef Aws::Utils::Outcome<CancelMetadataGenerationRunResult, DataZoneError> CancelMetadataGenerationRunOutcome;
       typedef Aws::Utils::Outcome<CancelSubscriptionResult, DataZoneError> CancelSubscriptionOutcome;
@@ -326,6 +350,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateDataProductRevisionResult, DataZoneError> CreateDataProductRevisionOutcome;
       typedef Aws::Utils::Outcome<CreateDataSourceResult, DataZoneError> CreateDataSourceOutcome;
       typedef Aws::Utils::Outcome<CreateDomainResult, DataZoneError> CreateDomainOutcome;
+      typedef Aws::Utils::Outcome<CreateDomainUnitResult, DataZoneError> CreateDomainUnitOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentResult, DataZoneError> CreateEnvironmentOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentActionResult, DataZoneError> CreateEnvironmentActionOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentProfileResult, DataZoneError> CreateEnvironmentProfileOutcome;
@@ -346,6 +371,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteDataProductResult, DataZoneError> DeleteDataProductOutcome;
       typedef Aws::Utils::Outcome<DeleteDataSourceResult, DataZoneError> DeleteDataSourceOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainResult, DataZoneError> DeleteDomainOutcome;
+      typedef Aws::Utils::Outcome<DeleteDomainUnitResult, DataZoneError> DeleteDomainUnitOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentActionOutcome;
       typedef Aws::Utils::Outcome<DeleteEnvironmentBlueprintConfigurationResult, DataZoneError> DeleteEnvironmentBlueprintConfigurationOutcome;
@@ -368,6 +394,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDataSourceResult, DataZoneError> GetDataSourceOutcome;
       typedef Aws::Utils::Outcome<GetDataSourceRunResult, DataZoneError> GetDataSourceRunOutcome;
       typedef Aws::Utils::Outcome<GetDomainResult, DataZoneError> GetDomainOutcome;
+      typedef Aws::Utils::Outcome<GetDomainUnitResult, DataZoneError> GetDomainUnitOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentResult, DataZoneError> GetEnvironmentOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentActionResult, DataZoneError> GetEnvironmentActionOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentBlueprintResult, DataZoneError> GetEnvironmentBlueprintOutcome;
@@ -395,7 +422,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDataSourceRunActivitiesResult, DataZoneError> ListDataSourceRunActivitiesOutcome;
       typedef Aws::Utils::Outcome<ListDataSourceRunsResult, DataZoneError> ListDataSourceRunsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourcesResult, DataZoneError> ListDataSourcesOutcome;
+      typedef Aws::Utils::Outcome<ListDomainUnitsForParentResult, DataZoneError> ListDomainUnitsForParentOutcome;
       typedef Aws::Utils::Outcome<ListDomainsResult, DataZoneError> ListDomainsOutcome;
+      typedef Aws::Utils::Outcome<ListEntityOwnersResult, DataZoneError> ListEntityOwnersOutcome;
       typedef Aws::Utils::Outcome<ListEnvironmentActionsResult, DataZoneError> ListEnvironmentActionsOutcome;
       typedef Aws::Utils::Outcome<ListEnvironmentBlueprintConfigurationsResult, DataZoneError> ListEnvironmentBlueprintConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListEnvironmentBlueprintsResult, DataZoneError> ListEnvironmentBlueprintsOutcome;
@@ -404,6 +433,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListLineageNodeHistoryResult, DataZoneError> ListLineageNodeHistoryOutcome;
       typedef Aws::Utils::Outcome<ListMetadataGenerationRunsResult, DataZoneError> ListMetadataGenerationRunsOutcome;
       typedef Aws::Utils::Outcome<ListNotificationsResult, DataZoneError> ListNotificationsOutcome;
+      typedef Aws::Utils::Outcome<ListPolicyGrantsResult, DataZoneError> ListPolicyGrantsOutcome;
       typedef Aws::Utils::Outcome<ListProjectMembershipsResult, DataZoneError> ListProjectMembershipsOutcome;
       typedef Aws::Utils::Outcome<ListProjectsResult, DataZoneError> ListProjectsOutcome;
       typedef Aws::Utils::Outcome<ListSubscriptionGrantsResult, DataZoneError> ListSubscriptionGrantsOutcome;
@@ -417,6 +447,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutEnvironmentBlueprintConfigurationResult, DataZoneError> PutEnvironmentBlueprintConfigurationOutcome;
       typedef Aws::Utils::Outcome<RejectPredictionsResult, DataZoneError> RejectPredictionsOutcome;
       typedef Aws::Utils::Outcome<RejectSubscriptionRequestResult, DataZoneError> RejectSubscriptionRequestOutcome;
+      typedef Aws::Utils::Outcome<RemoveEntityOwnerResult, DataZoneError> RemoveEntityOwnerOutcome;
+      typedef Aws::Utils::Outcome<RemovePolicyGrantResult, DataZoneError> RemovePolicyGrantOutcome;
       typedef Aws::Utils::Outcome<RevokeSubscriptionResult, DataZoneError> RevokeSubscriptionOutcome;
       typedef Aws::Utils::Outcome<SearchResult, DataZoneError> SearchOutcome;
       typedef Aws::Utils::Outcome<SearchGroupProfilesResult, DataZoneError> SearchGroupProfilesOutcome;
@@ -430,6 +462,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateAssetFilterResult, DataZoneError> UpdateAssetFilterOutcome;
       typedef Aws::Utils::Outcome<UpdateDataSourceResult, DataZoneError> UpdateDataSourceOutcome;
       typedef Aws::Utils::Outcome<UpdateDomainResult, DataZoneError> UpdateDomainOutcome;
+      typedef Aws::Utils::Outcome<UpdateDomainUnitResult, DataZoneError> UpdateDomainUnitOutcome;
       typedef Aws::Utils::Outcome<UpdateEnvironmentResult, DataZoneError> UpdateEnvironmentOutcome;
       typedef Aws::Utils::Outcome<UpdateEnvironmentActionResult, DataZoneError> UpdateEnvironmentActionOutcome;
       typedef Aws::Utils::Outcome<UpdateEnvironmentProfileResult, DataZoneError> UpdateEnvironmentProfileOutcome;
@@ -446,6 +479,8 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<AcceptPredictionsOutcome> AcceptPredictionsOutcomeCallable;
       typedef std::future<AcceptSubscriptionRequestOutcome> AcceptSubscriptionRequestOutcomeCallable;
+      typedef std::future<AddEntityOwnerOutcome> AddEntityOwnerOutcomeCallable;
+      typedef std::future<AddPolicyGrantOutcome> AddPolicyGrantOutcomeCallable;
       typedef std::future<AssociateEnvironmentRoleOutcome> AssociateEnvironmentRoleOutcomeCallable;
       typedef std::future<CancelMetadataGenerationRunOutcome> CancelMetadataGenerationRunOutcomeCallable;
       typedef std::future<CancelSubscriptionOutcome> CancelSubscriptionOutcomeCallable;
@@ -457,6 +492,7 @@ namespace Aws
       typedef std::future<CreateDataProductRevisionOutcome> CreateDataProductRevisionOutcomeCallable;
       typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
       typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
+      typedef std::future<CreateDomainUnitOutcome> CreateDomainUnitOutcomeCallable;
       typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
       typedef std::future<CreateEnvironmentActionOutcome> CreateEnvironmentActionOutcomeCallable;
       typedef std::future<CreateEnvironmentProfileOutcome> CreateEnvironmentProfileOutcomeCallable;
@@ -477,6 +513,7 @@ namespace Aws
       typedef std::future<DeleteDataProductOutcome> DeleteDataProductOutcomeCallable;
       typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
       typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
+      typedef std::future<DeleteDomainUnitOutcome> DeleteDomainUnitOutcomeCallable;
       typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
       typedef std::future<DeleteEnvironmentActionOutcome> DeleteEnvironmentActionOutcomeCallable;
       typedef std::future<DeleteEnvironmentBlueprintConfigurationOutcome> DeleteEnvironmentBlueprintConfigurationOutcomeCallable;
@@ -499,6 +536,7 @@ namespace Aws
       typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
       typedef std::future<GetDataSourceRunOutcome> GetDataSourceRunOutcomeCallable;
       typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
+      typedef std::future<GetDomainUnitOutcome> GetDomainUnitOutcomeCallable;
       typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
       typedef std::future<GetEnvironmentActionOutcome> GetEnvironmentActionOutcomeCallable;
       typedef std::future<GetEnvironmentBlueprintOutcome> GetEnvironmentBlueprintOutcomeCallable;
@@ -526,7 +564,9 @@ namespace Aws
       typedef std::future<ListDataSourceRunActivitiesOutcome> ListDataSourceRunActivitiesOutcomeCallable;
       typedef std::future<ListDataSourceRunsOutcome> ListDataSourceRunsOutcomeCallable;
       typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
+      typedef std::future<ListDomainUnitsForParentOutcome> ListDomainUnitsForParentOutcomeCallable;
       typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
+      typedef std::future<ListEntityOwnersOutcome> ListEntityOwnersOutcomeCallable;
       typedef std::future<ListEnvironmentActionsOutcome> ListEnvironmentActionsOutcomeCallable;
       typedef std::future<ListEnvironmentBlueprintConfigurationsOutcome> ListEnvironmentBlueprintConfigurationsOutcomeCallable;
       typedef std::future<ListEnvironmentBlueprintsOutcome> ListEnvironmentBlueprintsOutcomeCallable;
@@ -535,6 +575,7 @@ namespace Aws
       typedef std::future<ListLineageNodeHistoryOutcome> ListLineageNodeHistoryOutcomeCallable;
       typedef std::future<ListMetadataGenerationRunsOutcome> ListMetadataGenerationRunsOutcomeCallable;
       typedef std::future<ListNotificationsOutcome> ListNotificationsOutcomeCallable;
+      typedef std::future<ListPolicyGrantsOutcome> ListPolicyGrantsOutcomeCallable;
       typedef std::future<ListProjectMembershipsOutcome> ListProjectMembershipsOutcomeCallable;
       typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
       typedef std::future<ListSubscriptionGrantsOutcome> ListSubscriptionGrantsOutcomeCallable;
@@ -548,6 +589,8 @@ namespace Aws
       typedef std::future<PutEnvironmentBlueprintConfigurationOutcome> PutEnvironmentBlueprintConfigurationOutcomeCallable;
       typedef std::future<RejectPredictionsOutcome> RejectPredictionsOutcomeCallable;
       typedef std::future<RejectSubscriptionRequestOutcome> RejectSubscriptionRequestOutcomeCallable;
+      typedef std::future<RemoveEntityOwnerOutcome> RemoveEntityOwnerOutcomeCallable;
+      typedef std::future<RemovePolicyGrantOutcome> RemovePolicyGrantOutcomeCallable;
       typedef std::future<RevokeSubscriptionOutcome> RevokeSubscriptionOutcomeCallable;
       typedef std::future<SearchOutcome> SearchOutcomeCallable;
       typedef std::future<SearchGroupProfilesOutcome> SearchGroupProfilesOutcomeCallable;
@@ -561,6 +604,7 @@ namespace Aws
       typedef std::future<UpdateAssetFilterOutcome> UpdateAssetFilterOutcomeCallable;
       typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
       typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
+      typedef std::future<UpdateDomainUnitOutcome> UpdateDomainUnitOutcomeCallable;
       typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
       typedef std::future<UpdateEnvironmentActionOutcome> UpdateEnvironmentActionOutcomeCallable;
       typedef std::future<UpdateEnvironmentProfileOutcome> UpdateEnvironmentProfileOutcomeCallable;
@@ -580,6 +624,8 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const DataZoneClient*, const Model::AcceptPredictionsRequest&, const Model::AcceptPredictionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptPredictionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::AcceptSubscriptionRequestRequest&, const Model::AcceptSubscriptionRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptSubscriptionRequestResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::AddEntityOwnerRequest&, const Model::AddEntityOwnerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddEntityOwnerResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::AddPolicyGrantRequest&, const Model::AddPolicyGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPolicyGrantResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::AssociateEnvironmentRoleRequest&, const Model::AssociateEnvironmentRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEnvironmentRoleResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CancelMetadataGenerationRunRequest&, const Model::CancelMetadataGenerationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMetadataGenerationRunResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CancelSubscriptionRequest&, const Model::CancelSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSubscriptionResponseReceivedHandler;
@@ -591,6 +637,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::CreateDataProductRevisionRequest&, const Model::CreateDataProductRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataProductRevisionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::CreateDomainUnitRequest&, const Model::CreateDomainUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainUnitResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateEnvironmentActionRequest&, const Model::CreateEnvironmentActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentActionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateEnvironmentProfileRequest&, const Model::CreateEnvironmentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentProfileResponseReceivedHandler;
@@ -611,6 +658,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDataProductRequest&, const Model::DeleteDataProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataProductResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::DeleteDomainUnitRequest&, const Model::DeleteDomainUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainUnitResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentActionRequest&, const Model::DeleteEnvironmentActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentActionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentBlueprintConfigurationRequest&, const Model::DeleteEnvironmentBlueprintConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentBlueprintConfigurationResponseReceivedHandler;
@@ -633,6 +681,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRunRequest&, const Model::GetDataSourceRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceRunResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::GetDomainUnitRequest&, const Model::GetDomainUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainUnitResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetEnvironmentActionRequest&, const Model::GetEnvironmentActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentActionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetEnvironmentBlueprintRequest&, const Model::GetEnvironmentBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentBlueprintResponseReceivedHandler;
@@ -660,7 +709,9 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourceRunActivitiesRequest&, const Model::ListDataSourceRunActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceRunActivitiesResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourceRunsRequest&, const Model::ListDataSourceRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceRunsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListDomainUnitsForParentRequest&, const Model::ListDomainUnitsForParentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainUnitsForParentResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListEntityOwnersRequest&, const Model::ListEntityOwnersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntityOwnersResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListEnvironmentActionsRequest&, const Model::ListEnvironmentActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentActionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListEnvironmentBlueprintConfigurationsRequest&, const Model::ListEnvironmentBlueprintConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentBlueprintConfigurationsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListEnvironmentBlueprintsRequest&, const Model::ListEnvironmentBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentBlueprintsResponseReceivedHandler;
@@ -669,6 +720,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::ListLineageNodeHistoryRequest&, const Model::ListLineageNodeHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLineageNodeHistoryResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListMetadataGenerationRunsRequest&, const Model::ListMetadataGenerationRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetadataGenerationRunsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListNotificationsRequest&, const Model::ListNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotificationsResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListPolicyGrantsRequest&, const Model::ListPolicyGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyGrantsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListProjectMembershipsRequest&, const Model::ListProjectMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectMembershipsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListSubscriptionGrantsRequest&, const Model::ListSubscriptionGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionGrantsResponseReceivedHandler;
@@ -682,6 +734,8 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::PutEnvironmentBlueprintConfigurationRequest&, const Model::PutEnvironmentBlueprintConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEnvironmentBlueprintConfigurationResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::RejectPredictionsRequest&, const Model::RejectPredictionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectPredictionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::RejectSubscriptionRequestRequest&, const Model::RejectSubscriptionRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectSubscriptionRequestResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::RemoveEntityOwnerRequest&, const Model::RemoveEntityOwnerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveEntityOwnerResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::RemovePolicyGrantRequest&, const Model::RemovePolicyGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePolicyGrantResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::RevokeSubscriptionRequest&, const Model::RevokeSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::SearchRequest&, const Model::SearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::SearchGroupProfilesRequest&, const Model::SearchGroupProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGroupProfilesResponseReceivedHandler;
@@ -695,6 +749,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::UpdateAssetFilterRequest&, const Model::UpdateAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssetFilterResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::UpdateDomainUnitRequest&, const Model::UpdateDomainUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainUnitResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateEnvironmentActionRequest&, const Model::UpdateEnvironmentActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentActionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateEnvironmentProfileRequest&, const Model::UpdateEnvironmentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentProfileResponseReceivedHandler;

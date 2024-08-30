@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code>
-     * and one or more sets of <code>Rules</code>.</p>
+     * <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or
+     * more sets of <code>Rules</code>.</p>
      */
     inline const BackupPlanInput& GetBackupPlan() const{ return m_backupPlan; }
     inline bool BackupPlanHasBeenSet() const { return m_backupPlanHasBeenSet; }
@@ -49,9 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>To help organize your resources, you can assign your own metadata to the
-     * resources that you create. Each tag is a key-value pair. The specified tags are
-     * assigned to all backups created with this plan.</p>
+     * <p>The tags to assign to the backup plan.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetBackupPlanTags() const{ return m_backupPlanTags; }
     inline bool BackupPlanTagsHasBeenSet() const { return m_backupPlanTagsHasBeenSet; }

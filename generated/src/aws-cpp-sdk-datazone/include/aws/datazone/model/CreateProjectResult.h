@@ -89,6 +89,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the domain unit.</p>
+     */
+    inline const Aws::String& GetDomainUnitId() const{ return m_domainUnitId; }
+    inline void SetDomainUnitId(const Aws::String& value) { m_domainUnitId = value; }
+    inline void SetDomainUnitId(Aws::String&& value) { m_domainUnitId = std::move(value); }
+    inline void SetDomainUnitId(const char* value) { m_domainUnitId.assign(value); }
+    inline CreateProjectResult& WithDomainUnitId(const Aws::String& value) { SetDomainUnitId(value); return *this;}
+    inline CreateProjectResult& WithDomainUnitId(Aws::String&& value) { SetDomainUnitId(std::move(value)); return *this;}
+    inline CreateProjectResult& WithDomainUnitId(const char* value) { SetDomainUnitId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the error message that is returned if the operation cannot be
      * successfully completed.</p>
      */
@@ -182,6 +195,8 @@ namespace Model
     Aws::String m_description;
 
     Aws::String m_domainId;
+
+    Aws::String m_domainUnitId;
 
     Aws::Vector<ProjectDeletionError> m_failureReasons;
 

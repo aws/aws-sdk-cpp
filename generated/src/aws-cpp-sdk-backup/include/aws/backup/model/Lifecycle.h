@@ -22,18 +22,19 @@ namespace Model
 {
 
   /**
-   * <p>Contains an array of <code>Transition</code> objects specifying how long in
-   * days before a recovery point transitions to cold storage or is deleted.</p>
-   * <p>Backups transitioned to cold storage must be stored in cold storage for a
-   * minimum of 90 days. Therefore, on the console, the “retention” setting must be
-   * 90 days greater than the “transition to cold after days” setting. The
-   * “transition to cold after days” setting cannot be changed after a backup has
-   * been transitioned to cold.</p> <p>Resource types that are able to be
-   * transitioned to cold storage are listed in the "Lifecycle to cold storage"
-   * section of the <a
-   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-   * Feature availability by resource</a> table. Backup ignores this expression for
-   * other resource types.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the time period, in days, before a recovery point transitions to
+   * cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be
+   * stored in cold storage for a minimum of 90 days. Therefore, on the console, the
+   * retention setting must be 90 days greater than the transition to cold after days
+   * setting. The transition to cold after days setting can't be changed after a
+   * backup has been transitioned to cold.</p> <p>Resource types that can transition
+   * to cold storage are listed in the <a
+   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+   * availability by resource</a> table. Backup ignores this expression for other
+   * resource types.</p> <p>To remove the existing lifecycle and retention periods
+   * and keep your recovery points indefinitely, specify -1 for
+   * <code>MoveToColdStorageAfterDays</code> and
+   * <code>DeleteAfterDays</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Lifecycle">AWS
    * API Reference</a></p>
    */
@@ -48,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the number of days after creation that a recovery point is moved to
-     * cold storage.</p>
+     * <p>The number of days after creation that a recovery point is moved to cold
+     * storage.</p>
      */
     inline long long GetMoveToColdStorageAfterDays() const{ return m_moveToColdStorageAfterDays; }
     inline bool MoveToColdStorageAfterDaysHasBeenSet() const { return m_moveToColdStorageAfterDaysHasBeenSet; }
@@ -59,8 +60,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
+     * <p>The number of days after creation that a recovery point is deleted. This
+     * value must be at least 90 days after the number of days specified in
+     * <code>MoveToColdStorageAfterDays</code>.</p>
      */
     inline long long GetDeleteAfterDays() const{ return m_deleteAfterDays; }
     inline bool DeleteAfterDaysHasBeenSet() const { return m_deleteAfterDaysHasBeenSet; }
@@ -70,9 +72,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional Boolean. If this is true, this setting will instruct your backup
-     * plan to transition supported resources to archive (cold) storage tier in
-     * accordance with your lifecycle settings.</p>
+     * <p>If the value is true, your backup plan transitions supported resources to
+     * archive (cold) storage tier in accordance with your lifecycle settings.</p>
      */
     inline bool GetOptInToArchiveForSupportedResources() const{ return m_optInToArchiveForSupportedResources; }
     inline bool OptInToArchiveForSupportedResourcesHasBeenSet() const { return m_optInToArchiveForSupportedResourcesHasBeenSet; }

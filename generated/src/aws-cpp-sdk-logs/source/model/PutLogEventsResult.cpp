@@ -41,6 +41,12 @@ PutLogEventsResult& PutLogEventsResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("rejectedEntityInfo"))
+  {
+    m_rejectedEntityInfo = jsonValue.GetObject("rejectedEntityInfo");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

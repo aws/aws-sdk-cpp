@@ -23,6 +23,7 @@ ProjectSummary::ProjectSummary() :
     m_createdByHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_domainIdHasBeenSet(false),
+    m_domainUnitIdHasBeenSet(false),
     m_failureReasonsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -66,6 +67,13 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
     m_domainId = jsonValue.GetString("domainId");
 
     m_domainIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("domainUnitId"))
+  {
+    m_domainUnitId = jsonValue.GetString("domainUnitId");
+
+    m_domainUnitIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("failureReasons"))
@@ -133,6 +141,12 @@ JsonValue ProjectSummary::Jsonize() const
   if(m_domainIdHasBeenSet)
   {
    payload.WithString("domainId", m_domainId);
+
+  }
+
+  if(m_domainUnitIdHasBeenSet)
+  {
+   payload.WithString("domainUnitId", m_domainUnitId);
 
   }
 
