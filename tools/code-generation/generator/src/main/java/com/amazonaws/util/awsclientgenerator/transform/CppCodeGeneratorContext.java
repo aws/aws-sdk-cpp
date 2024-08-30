@@ -63,4 +63,11 @@ public final class CppCodeGeneratorContext{
         }
     }
 
+    public boolean isStartOfNewScope(){
+        return (
+                this.getCppCode().length() > 2 &&
+                this.getCppCode().substring(this.getCppCode().length() - 2).equals("{\n")
+            );
+    }
+
 };

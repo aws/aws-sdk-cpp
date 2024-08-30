@@ -218,30 +218,35 @@ public class C2jModelToGeneratorModelTransformer {
         }
         @Override
         public Pair<String, Shape> visitProjection(ProjectionExpression expression) {
-            Pair<String, Shape> left = expression.getLeft().accept(this);
-            if (left.right.isList()) {
 
-                context.getCppCode().append(";\n");
-                String varName = left.right.getName() + "_elem";
+            Pair<String, Shape> left = expression.getLeft().accept(this);
+            
+            ShapeMember shapeMember = null;
+            String varName =  left.left + "Elem";;
+            if (left.right.isList())
+            {   
+                
+                shapeMember = left.right.getListMember();
+                
+            }
+
+            
+            if (shapeMember != null) 
+            {
                 context.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, context.getVarName().peek().left, context.getIndentationPrefix()) );
                 context.getCppCode().append(context.getIndentationPrefix()).append("{\n");
                 context.OpenVariableScope(varName);
-                Shape rightShape = left.right.getListMember().getShape();
-
-                //only if leaf element, emplace the element into the result
-                if(rightShape.isString() || rightShape.isStructure() )
-                {
-                    context.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0}", context.getVarName().peek().left, context.getIndentationPrefix()));
-                }
 
                 Pair<String, Shape> right =
                         expression.getRight().accept(
-                                new CppEndpointsJmesPathVisitor(context, left.right.getListMember().getShape()));
-                
-                if(rightShape.isString() || rightShape.isStructure() )
+                                new CppEndpointsJmesPathVisitor(context, shapeMember.getShape()));
+
+                //only if leaf element, emplace the element into the result
+                if(right.right.isString() )
                 {
-                    context.getCppCode().append(");\n");
+                    context.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0});\n", context.getVarName().peek().left, context.getIndentationPrefix()));
                 }
+                
                 context.CloseVariableScope();
                 context.getCppCode().append(context.getIndentationPrefix()).append("}\n");
 
@@ -273,24 +278,46 @@ public class C2jModelToGeneratorModelTransformer {
 
         @Override
         public Pair<String, Shape> visitField(FieldExpression expression) {
-            ShapeMember member = input.getMembers().get(expression.getName());
+
+            //if shape is list, then fetch list member else struct
+            //currently assume this is always for a struct
+            ShapeMember member = null;
+            if(this.input.isStructure())
+            {
+                member = this.input.getMembers().get(expression.getName());
+            }
 
             if(member == null)
             {
                 throw new SmithyBuildException("Failed to get field from expression");
             }
-
-            if(context.getVarName().isEmpty())
-            {
-                String varName = expression.getName() + "_elem";
-                context.AddVariableInScope(varName);
-                context.getCppCode().append(MessageFormat.format("{1}auto {0} = (*this)", varName,context.getIndentationPrefix()));
-            }
             
+            //at the start of each code block
+            String varName = expression.getName() + "Elem";
+            //if a new scope started, declare variable accessed
+            if (
+                context.isStartOfNewScope()
+            )
+            {
+                context.getCppCode().append(MessageFormat.format("{0}auto& {1} = {2}", context.getIndentationPrefix(), varName, context.getVarName().peek().left));
+                context.AddVariableInScope(varName);
+            }
+            //if first time scope
+            else if(context.getVarName().isEmpty())
+            {
+                context.getCppCode().append(MessageFormat.format("{0}auto& {1} = (*this)", context.getIndentationPrefix(),varName));
+                context.AddVariableInScope(varName);
+            }
+            //chain accessors
             context.getCppCode().append(MessageFormat.format(".Get{0}()", capitalizeFirstLetter(expression.getName())));
- 
+
+            if (!member.getShape().isStructure())
+            {
+                context.getCppCode().append(";\n");
+            }
+
             return Pair.of(
-                    MessageFormat.format(".Get{0}();\n", capitalizeFirstLetter(expression.getName())),
+                    expression.getName(),
                     member.getShape());
         }
 
@@ -298,13 +325,13 @@ public class C2jModelToGeneratorModelTransformer {
         public Pair<String, Shape> visitSubexpression(Subexpression expression) {
 
             Pair<String, Shape> left = expression.getLeft().accept(this);
+
         
             Pair<String, Shape> right =
                     expression.getRight().accept(new CppEndpointsJmesPathVisitor(context, left.right));
 
             return Pair.of(
-                    //left.left + right.left,
-                    left.left,
+                    left.left + right.left,
                     right.right
             );
         }
