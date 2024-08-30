@@ -4,7 +4,6 @@
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
     ${exportMacro} EndpointParameters GetEndpointContextParams() const override;
-
 #if($operation.operationContextParamsCode)
     ${exportMacro} Aws::Vector<Aws::String> getOperationContextParams() const;
 #end

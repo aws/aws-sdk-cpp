@@ -30,7 +30,6 @@ ${typeInfo.className}::EndpointParameters ${typeInfo.className}::GetEndpointCont
     return parameters;
 }
 #end
-
 #if($operation.operationContextParamsCode)
 //Accessor for dynamic context endpoint params
 #set($entry = $operation.operationContextParamsCode.entrySet().iterator().next())
