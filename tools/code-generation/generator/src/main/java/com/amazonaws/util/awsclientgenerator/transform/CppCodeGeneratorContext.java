@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.text.MessageFormat;
 import java.util.Stack;
+import java.util.Optional;
 import software.amazon.smithy.utils.Pair;
 
 @Data
@@ -82,9 +83,16 @@ public final class CppCodeGeneratorContext{
             );
     }
 
-    public void addInScopeVariableToResult()
+    public void addInScopeVariableToResult(Optional<String> accessorSuffix)
     {
-        this.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0});\n", this.getVarName().peek().left, this.getIndentationPrefix()));
+        if(accessorSuffix.isPresent())
+        {
+            this.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0}.{2});\n", this.getVarName().peek().left, this.getIndentationPrefix(),accessorSuffix.get()));
+        }
+        else
+        {
+            this.getCppCode().append(MessageFormat.format("{1}result.emplace_back({0});\n", this.getVarName().peek().left, this.getIndentationPrefix()));
+        }
     }
 
 };

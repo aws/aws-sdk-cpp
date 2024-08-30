@@ -278,7 +278,7 @@ public class C2jModelToGeneratorModelTransformer {
                 String varName =  expression.getName()+"Elem";
                 context.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, context.getVarName().peek().left, context.getIndentationPrefix()) );
                 context.OpenVariableScope(varName);
-                context.addInScopeVariableToResult();
+                context.addInScopeVariableToResult(Optional.of("first"));
                 context.CloseVariableScope();
                 
 
@@ -327,7 +327,7 @@ public class C2jModelToGeneratorModelTransformer {
                 //if leaf element, push to result
                 if(member.getShape().isString())
                 {
-                    context.addInScopeVariableToResult();
+                    context.addInScopeVariableToResult(Optional.empty());
                 }
             }
 
@@ -940,32 +940,34 @@ public class C2jModelToGeneratorModelTransformer {
                 String path = null;
                 //get path from context param
                 for (Map.Entry<String, Map<String, String>> outerEntry: operationContextParams.entrySet()) {
+                    String outerKey = outerEntry.getKey();
                     Map<String, String> innerMap = outerEntry.getValue();
                     String pathValue = innerMap.get("path");
                     if(pathValue != null)
                     {
-                        path = pathValue;
+               
+                        CppCodeGeneratorContext ctxt = new CppCodeGeneratorContext();
+
+                        String value = JmespathExpression.parse(pathValue)
+                                            .accept(new CppEndpointsJmesPathVisitor(ctxt,
+                                                requestShape)).left;
+
+                        String[] lines = ctxt.getCppCode().toString().split("\n");
+
+                        List<String> lineList = new ArrayList<>();
+
+                        for (String line : lines) {
+                            lineList.add(line);
+                        }
+                        Map<String, List<String>> operationContextParamMap = new HashMap<>();
+                        operationContextParamMap.put( outerKey,lineList);
+
+                        operation.setOperationContextParamsCode(operationContextParamMap);
+
+                
                     }
                 }
-                if(path != null && !path.isEmpty())
-                {
-                    CppCodeGeneratorContext ctxt = new CppCodeGeneratorContext();
-
-                    String value = JmespathExpression.parse(path)
-                                        .accept(new CppEndpointsJmesPathVisitor(ctxt,
-                                            requestShape)).left;
-
-                    String[] lines = ctxt.getCppCode().toString().split("\n");
-
-                    List<String> lineList = new ArrayList<>();
-
-                    for (String line : lines) {
-                        lineList.add(line);
-                    }
-
-                    operation.setOperationContextParamsCode(Optional.of(lineList));
-
-                }
+                
                 //add else case if necessary
                 
             }

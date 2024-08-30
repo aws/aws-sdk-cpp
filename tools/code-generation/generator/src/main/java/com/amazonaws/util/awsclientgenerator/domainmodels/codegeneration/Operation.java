@@ -35,7 +35,7 @@ public class Operation {
     private Map<String, Map<String, EndpointParameterValue>> staticContextParams;
 
     //operation context params
-    private Optional<List<String>> operationContextParamsCode;
+    private Map<String, List<String>> operationContextParamsCode;
 
     // ARN supports.
     private boolean arnEndpointAllowed;
