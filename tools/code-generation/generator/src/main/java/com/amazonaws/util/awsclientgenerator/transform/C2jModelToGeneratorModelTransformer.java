@@ -182,39 +182,17 @@ public class C2jModelToGeneratorModelTransformer {
     private static final class CppEndpointsJmesPathVisitor implements
     software.amazon.smithy.jmespath.ExpressionVisitor<Pair<String, Shape>> 
     {
-        final CppCodeGeneratorContext context;
+        final OperationContextCppCodeGenerator context;
         final Shape input;
 
-        CppEndpointsJmesPathVisitor(CppCodeGeneratorContext context, Shape input) {
+        CppEndpointsJmesPathVisitor(OperationContextCppCodeGenerator context, Shape input) {
             this.context = context;
             this.input = input;
         }
 
-
         @Override
         public Pair<String, Shape> visitObjectProjection(ObjectProjectionExpression expression) {
-            Pair<String, Shape> left = expression.getLeft().accept(this);
-            
-            if (left.right.isMap()) {
-                /* 
-                Pair<String, Shape> right =
-                        expression.getRight().accept(
-                                new CppEndpointsJmesPathVisitor(
-                                        context,
-                                        left.right.
-                                        context.model().expectShape(
-                                                left.right.asMapShape().get().getValue().getTarget())));
-                return Pair.of(
-                        left.left + ".values.map { |o| o" + right.left + " }.compact",
-                        right.right
-                );
-                
-                */
-
-                return left;
-            } else {
-                throw new SmithyBuildException("ObjectProjection can be applied only to Map shapes.");
-            }
+            throw new SmithyBuildException("Unsupported JMESPath expression");
         }
         @Override
         public Pair<String, Shape> visitProjection(ProjectionExpression expression) {
@@ -233,7 +211,7 @@ public class C2jModelToGeneratorModelTransformer {
             
             if (shapeMember != null) 
             {
-                context.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, context.getVarName().peek().left, context.getIndentationPrefix()) );
+                context.RangeBasedForLoop(varName);
                 context.OpenVariableScope(varName);
 
                 Pair<String, Shape> right =
@@ -246,11 +224,6 @@ public class C2jModelToGeneratorModelTransformer {
                         left.left,
                         right.right
                 );
-
-                /*return Pair.of(
-                        left.left + ".map { |o| o" + right.left + " }.compact",
-                        right.right
-                );*/
 
             } else {
                 throw new SmithyBuildException("Projection can only be applied to List Shapes.");
@@ -276,7 +249,7 @@ public class C2jModelToGeneratorModelTransformer {
                 }
 
                 String varName =  expression.getName()+"Elem";
-                context.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, context.getVarName().peek().left, context.getIndentationPrefix()) );
+                context.RangeBasedForLoop(varName);
                 context.OpenVariableScope(varName);
                 context.addInScopeVariableToResult(Optional.of("first"));
                 context.CloseVariableScope();
@@ -946,7 +919,7 @@ public class C2jModelToGeneratorModelTransformer {
                     if(pathValue != null)
                     {
                
-                        CppCodeGeneratorContext ctxt = new CppCodeGeneratorContext();
+                        OperationContextCppCodeGenerator ctxt = new OperationContextCppCodeGenerator();
 
                         String value = JmespathExpression.parse(pathValue)
                                             .accept(new CppEndpointsJmesPathVisitor(ctxt,

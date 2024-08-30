@@ -8,7 +8,7 @@ import java.util.Optional;
 import software.amazon.smithy.utils.Pair;
 
 @Data
-public final class CppCodeGeneratorContext{
+public final class OperationContextCppCodeGenerator{
 
     private final StringBuilder cppCode;
     //tracking reference variable, bool = true means start of a scope
@@ -16,7 +16,7 @@ public final class CppCodeGeneratorContext{
 
     private Integer codeIndetation;
 
-    public CppCodeGeneratorContext(){
+    public OperationContextCppCodeGenerator(){
         this.cppCode = new StringBuilder();
         this.varName = new Stack<>();
         this.codeIndetation = 0;
@@ -45,6 +45,11 @@ public final class CppCodeGeneratorContext{
         this.varName.push(Pair.of(var, false));
     }
  
+    public void RangeBasedForLoop(String varName)
+    {
+        this.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, this.getVarName().peek().left, this.getIndentationPrefix()) );
+    }
+
     public void OpenVariableScope(String var)
     {
         this.getCppCode().append(this.getIndentationPrefix()).append("{\n");
