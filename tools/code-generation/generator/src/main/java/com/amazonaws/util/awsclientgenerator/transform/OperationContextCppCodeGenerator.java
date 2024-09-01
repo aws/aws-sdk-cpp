@@ -32,7 +32,7 @@ public final class OperationContextCppCodeGenerator{
         return sb.toString();
     }
 
-    public void AddVariableInScope(String var)
+    public void addVariableInScope(String var)
     {
         if(!this.getVarName().isEmpty())
         {
@@ -45,18 +45,18 @@ public final class OperationContextCppCodeGenerator{
         this.varName.push(Pair.of(var, false));
     }
  
-    public void RangeBasedForLoop(String varName)
+    public void rangeBasedForLoop(String varName)
     {
         this.getCppCode().append(MessageFormat.format("{2}for (auto& {0} : {1})\n", varName, this.getVarName().peek().left, this.getIndentationPrefix()) );
     }
 
-    public void OpenVariableScope(String var)
+    public void openVariableScope(String var)
     {
         this.getCppCode().append(this.getIndentationPrefix()).append("{\n");
         this.varName.push(Pair.of(var, true));
         this.codeIndetation++;
     }
-    public void CloseVariableScope()
+    public void closeVariableScope()
     {
         Boolean scopeOpenFound = false;
         //pop stack till open found

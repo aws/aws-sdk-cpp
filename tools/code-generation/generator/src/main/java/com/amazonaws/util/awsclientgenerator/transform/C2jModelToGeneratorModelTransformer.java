@@ -211,14 +211,14 @@ public class C2jModelToGeneratorModelTransformer {
             
             if (shapeMember != null) 
             {
-                context.RangeBasedForLoop(varName);
-                context.OpenVariableScope(varName);
+                context.rangeBasedForLoop(varName);
+                context.openVariableScope(varName);
 
                 Pair<String, Shape> right =
                         expression.getRight().accept(
                                 new CppEndpointsJmesPathVisitor(context, shapeMember.getShape()));
                 
-                context.CloseVariableScope();
+                context.closeVariableScope();
 
                 return Pair.of(
                         left.left,
@@ -249,10 +249,10 @@ public class C2jModelToGeneratorModelTransformer {
                 }
 
                 String varName =  expression.getName()+"Elem";
-                context.RangeBasedForLoop(varName);
-                context.OpenVariableScope(varName);
+                context.rangeBasedForLoop(varName);
+                context.openVariableScope(varName);
                 context.addInScopeVariableToResult(Optional.of("first"));
-                context.CloseVariableScope();
+                context.closeVariableScope();
                 
 
                 return Pair.of(
@@ -288,7 +288,7 @@ public class C2jModelToGeneratorModelTransformer {
                 context.getVarName().isEmpty()
             )
             {
-                context.AddVariableInScope(varName);
+                context.addVariableInScope(varName);
             }
 
             //chain accessors
