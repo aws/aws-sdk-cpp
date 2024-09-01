@@ -5,6 +5,6 @@
      */
     ${exportMacro} EndpointParameters GetEndpointContextParams() const override;
 #if($operation.operationContextParamsCode)
-    ${exportMacro} Aws::Vector<Aws::String> getOperationContextParams() const;
+    ${exportMacro} Aws::Vector<Aws::String> GetOperationContextParams() const;
 #end
 #end
