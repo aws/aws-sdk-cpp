@@ -10,11 +10,11 @@ import com.google.gson.JsonPrimitive;
 
 import java.lang.reflect.Type;
 import java.util.Map;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class EndpointParameterValueDeserializer implements JsonDeserializer<EndpointParameterValue> {
 
-    public static boolean getArrayOfStrings(JsonArray array, Vector<String> result) {
+    public static boolean getArrayOfStrings(JsonArray array, ArrayList<String> result) {
         boolean status = true;
         for (JsonElement arrayElement : array) {
             if (!arrayElement.isJsonPrimitive() || !arrayElement.getAsJsonPrimitive().isString()) {
@@ -49,7 +49,7 @@ public class EndpointParameterValueDeserializer implements JsonDeserializer<Endp
         }
         else if(jsonElement.isJsonArray())
         {
-            Vector<String> arrayOfStrings = new Vector<>();
+            ArrayList<String> arrayOfStrings = new ArrayList<>();
             if(getArrayOfStrings(jsonElement.getAsJsonArray(), arrayOfStrings))
             {
                 retValue.setType(EndpointParameterValue.ParameterType.STRING_ARRAY);

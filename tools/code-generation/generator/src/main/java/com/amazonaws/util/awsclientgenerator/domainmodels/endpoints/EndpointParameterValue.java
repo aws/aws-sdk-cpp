@@ -1,5 +1,5 @@
 package com.amazonaws.util.awsclientgenerator.domainmodels.endpoints;
-import java.util.Vector;
+import java.util.ArrayList;
 import lombok.Data;
 
 @Data
@@ -14,7 +14,7 @@ public class EndpointParameterValue {
     Boolean boolValue;
     Integer intValue;
     String strValue;
-    Vector<String> strArrayValue;
+    ArrayList<String> strArrayValue;
 
     public String getValue() throws Exception {
         if (ParameterType.BOOLEAN == this.type) {

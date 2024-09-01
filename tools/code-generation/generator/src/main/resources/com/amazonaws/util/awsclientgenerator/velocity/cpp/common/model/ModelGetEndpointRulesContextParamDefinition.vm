@@ -25,7 +25,7 @@ ${typeInfo.className}::EndpointParameters ${typeInfo.className}::GetEndpointCont
 #if($operation.operationContextParamsCode)
     //operation context params go here
 #set($operationContextParam = $operation.operationContextParamsCode.entrySet().iterator().next())
-    parameters.emplace_back(Aws::String{"$operationContextParam.getKey()"}, this->getOperationContextParams(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    parameters.emplace_back(Aws::String{"$operationContextParam.getKey()"}, this->GetOperationContextParams(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
 #end
     return parameters;
 }
@@ -33,7 +33,7 @@ ${typeInfo.className}::EndpointParameters ${typeInfo.className}::GetEndpointCont
 #if($operation.operationContextParamsCode)
 //Accessor for dynamic context endpoint params
 #set($entry = $operation.operationContextParamsCode.entrySet().iterator().next())
-Aws::Vector<Aws::String> ${typeInfo.className}::getOperationContextParams() const{
+Aws::Vector<Aws::String> ${typeInfo.className}::GetOperationContextParams() const{
 #set($indentationPrefix = "  ")
 ${indentationPrefix}Aws::Vector<Aws::String> result;
 #foreach($item in ${entry.getValue()})
