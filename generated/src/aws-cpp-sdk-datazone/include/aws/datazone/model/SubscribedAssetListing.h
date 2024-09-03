@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/AssetScope.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/DetailedGlossaryTerm.h>
@@ -39,6 +40,18 @@ namespace Model
     AWS_DATAZONE_API SubscribedAssetListing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The asset scope of the subscribed asset listing.</p>
+     */
+    inline const AssetScope& GetAssetScope() const{ return m_assetScope; }
+    inline bool AssetScopeHasBeenSet() const { return m_assetScopeHasBeenSet; }
+    inline void SetAssetScope(const AssetScope& value) { m_assetScopeHasBeenSet = true; m_assetScope = value; }
+    inline void SetAssetScope(AssetScope&& value) { m_assetScopeHasBeenSet = true; m_assetScope = std::move(value); }
+    inline SubscribedAssetListing& WithAssetScope(const AssetScope& value) { SetAssetScope(value); return *this;}
+    inline SubscribedAssetListing& WithAssetScope(AssetScope&& value) { SetAssetScope(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -115,6 +128,9 @@ namespace Model
     inline SubscribedAssetListing& AddGlossaryTerms(DetailedGlossaryTerm&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(std::move(value)); return *this; }
     ///@}
   private:
+
+    AssetScope m_assetScope;
+    bool m_assetScopeHasBeenSet = false;
 
     Aws::String m_entityId;
     bool m_entityIdHasBeenSet = false;

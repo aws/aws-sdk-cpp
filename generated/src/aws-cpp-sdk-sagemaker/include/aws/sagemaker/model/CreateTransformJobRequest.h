@@ -153,8 +153,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The environment variables to set in the Docker container. We support up to 16
-     * key and values entries in the map.</p>
+     * <p>The environment variables to set in the Docker container. Don't include any
+     * sensitive data in your environment variables. We support up to 16 key and values
+     * entries in the map.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }

@@ -37,6 +37,7 @@
 #include <aws/elasticloadbalancingv2/model/DeleteTrustStoreRequest.h>
 #include <aws/elasticloadbalancingv2/model/DeregisterTargetsRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeAccountLimitsRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeListenerAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenerCertificatesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenersRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancerAttributesRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreCaCertificatesBundleRequest.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreRevocationContentRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerRequest.h>
+#include <aws/elasticloadbalancingv2/model/ModifyListenerAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyLoadBalancerAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyRuleRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupRequest.h>
@@ -649,6 +651,32 @@ DescribeAccountLimitsOutcome ElasticLoadBalancingv2Client::DescribeAccountLimits
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeListenerAttributesOutcome ElasticLoadBalancingv2Client::DescribeListenerAttributes(const DescribeListenerAttributesRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeListenerAttributes);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeListenerAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeListenerAttributes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeListenerAttributes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeListenerAttributesOutcome>(
+    [&]()-> DescribeListenerAttributesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeListenerAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return DescribeListenerAttributesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeListenerCertificatesOutcome ElasticLoadBalancingv2Client::DescribeListenerCertificates(const DescribeListenerCertificatesRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeListenerCertificates);
@@ -1085,6 +1113,32 @@ ModifyListenerOutcome ElasticLoadBalancingv2Client::ModifyListener(const ModifyL
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return ModifyListenerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ModifyListenerAttributesOutcome ElasticLoadBalancingv2Client::ModifyListenerAttributes(const ModifyListenerAttributesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ModifyListenerAttributes);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyListenerAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ModifyListenerAttributes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ModifyListenerAttributes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ModifyListenerAttributesOutcome>(
+    [&]()-> ModifyListenerAttributesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyListenerAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return ModifyListenerAttributesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

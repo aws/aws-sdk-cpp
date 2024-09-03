@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/DataZoneRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/AcceptedAssetScope.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +33,20 @@ namespace Model
 
     AWS_DATAZONE_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The asset scopes of the accept subscription request.</p>
+     */
+    inline const Aws::Vector<AcceptedAssetScope>& GetAssetScopes() const{ return m_assetScopes; }
+    inline bool AssetScopesHasBeenSet() const { return m_assetScopesHasBeenSet; }
+    inline void SetAssetScopes(const Aws::Vector<AcceptedAssetScope>& value) { m_assetScopesHasBeenSet = true; m_assetScopes = value; }
+    inline void SetAssetScopes(Aws::Vector<AcceptedAssetScope>&& value) { m_assetScopesHasBeenSet = true; m_assetScopes = std::move(value); }
+    inline AcceptSubscriptionRequestRequest& WithAssetScopes(const Aws::Vector<AcceptedAssetScope>& value) { SetAssetScopes(value); return *this;}
+    inline AcceptSubscriptionRequestRequest& WithAssetScopes(Aws::Vector<AcceptedAssetScope>&& value) { SetAssetScopes(std::move(value)); return *this;}
+    inline AcceptSubscriptionRequestRequest& AddAssetScopes(const AcceptedAssetScope& value) { m_assetScopesHasBeenSet = true; m_assetScopes.push_back(value); return *this; }
+    inline AcceptSubscriptionRequestRequest& AddAssetScopes(AcceptedAssetScope&& value) { m_assetScopesHasBeenSet = true; m_assetScopes.push_back(std::move(value)); return *this; }
+    ///@}
 
     ///@{
     /**
@@ -76,6 +92,9 @@ namespace Model
     inline AcceptSubscriptionRequestRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
     ///@}
   private:
+
+    Aws::Vector<AcceptedAssetScope> m_assetScopes;
+    bool m_assetScopesHasBeenSet = false;
 
     Aws::String m_decisionComment;
     bool m_decisionCommentHasBeenSet = false;

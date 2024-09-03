@@ -15,7 +15,11 @@ using namespace Aws::Utils;
 UpdateDbInstanceRequest::UpdateDbInstanceRequest() : 
     m_identifierHasBeenSet(false),
     m_logDeliveryConfigurationHasBeenSet(false),
-    m_dbParameterGroupIdentifierHasBeenSet(false)
+    m_dbParameterGroupIdentifierHasBeenSet(false),
+    m_dbInstanceType(DbInstanceType::NOT_SET),
+    m_dbInstanceTypeHasBeenSet(false),
+    m_deploymentType(DeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false)
 {
 }
 
@@ -39,6 +43,16 @@ Aws::String UpdateDbInstanceRequest::SerializePayload() const
   {
    payload.WithString("dbParameterGroupIdentifier", m_dbParameterGroupIdentifier);
 
+  }
+
+  if(m_dbInstanceTypeHasBeenSet)
+  {
+   payload.WithString("dbInstanceType", DbInstanceTypeMapper::GetNameForDbInstanceType(m_dbInstanceType));
+  }
+
+  if(m_deploymentTypeHasBeenSet)
+  {
+   payload.WithString("deploymentType", DeploymentTypeMapper::GetNameForDeploymentType(m_deploymentType));
   }
 
   return payload.View().WriteReadable();

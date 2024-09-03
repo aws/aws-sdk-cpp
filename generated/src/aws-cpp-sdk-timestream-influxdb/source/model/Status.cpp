@@ -27,6 +27,8 @@ namespace Aws
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int UPDATING_DEPLOYMENT_TYPE_HASH = HashingUtils::HashString("UPDATING_DEPLOYMENT_TYPE");
+        static const int UPDATING_INSTANCE_TYPE_HASH = HashingUtils::HashString("UPDATING_INSTANCE_TYPE");
 
 
         Status GetStatusForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return Status::FAILED;
           }
+          else if (hashCode == UPDATING_DEPLOYMENT_TYPE_HASH)
+          {
+            return Status::UPDATING_DEPLOYMENT_TYPE;
+          }
+          else if (hashCode == UPDATING_INSTANCE_TYPE_HASH)
+          {
+            return Status::UPDATING_INSTANCE_TYPE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +100,10 @@ namespace Aws
             return "DELETED";
           case Status::FAILED:
             return "FAILED";
+          case Status::UPDATING_DEPLOYMENT_TYPE:
+            return "UPDATING_DEPLOYMENT_TYPE";
+          case Status::UPDATING_INSTANCE_TYPE:
+            return "UPDATING_INSTANCE_TYPE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

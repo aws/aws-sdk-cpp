@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attributes.</p>
+     * <p>The target group attributes.</p>
      */
     inline const Aws::Vector<TargetGroupAttribute>& GetAttributes() const{ return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }

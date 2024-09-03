@@ -20,6 +20,7 @@
 #include <aws/sagemaker/model/StudioWebPortal.h>
 #include <aws/sagemaker/model/CustomPosixUserConfig.h>
 #include <aws/sagemaker/model/StudioWebPortalSettings.h>
+#include <aws/sagemaker/model/AutoMountHomeEFS.h>
 #include <aws/sagemaker/model/CustomFileSystemConfig.h>
 #include <utility>
 
@@ -290,6 +291,21 @@ namespace Model
     inline UserSettings& WithStudioWebPortalSettings(const StudioWebPortalSettings& value) { SetStudioWebPortalSettings(value); return *this;}
     inline UserSettings& WithStudioWebPortalSettings(StudioWebPortalSettings&& value) { SetStudioWebPortalSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether auto-mounting of an EFS volume is supported for the user
+     * profile. The <code>DefaultAsDomain</code> value is only supported for user
+     * profiles. Do not use the <code>DefaultAsDomain</code> value when setting this
+     * parameter for a domain.</p>
+     */
+    inline const AutoMountHomeEFS& GetAutoMountHomeEFS() const{ return m_autoMountHomeEFS; }
+    inline bool AutoMountHomeEFSHasBeenSet() const { return m_autoMountHomeEFSHasBeenSet; }
+    inline void SetAutoMountHomeEFS(const AutoMountHomeEFS& value) { m_autoMountHomeEFSHasBeenSet = true; m_autoMountHomeEFS = value; }
+    inline void SetAutoMountHomeEFS(AutoMountHomeEFS&& value) { m_autoMountHomeEFSHasBeenSet = true; m_autoMountHomeEFS = std::move(value); }
+    inline UserSettings& WithAutoMountHomeEFS(const AutoMountHomeEFS& value) { SetAutoMountHomeEFS(value); return *this;}
+    inline UserSettings& WithAutoMountHomeEFS(AutoMountHomeEFS&& value) { SetAutoMountHomeEFS(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_executionRole;
@@ -342,6 +358,9 @@ namespace Model
 
     StudioWebPortalSettings m_studioWebPortalSettings;
     bool m_studioWebPortalSettingsHasBeenSet = false;
+
+    AutoMountHomeEFS m_autoMountHomeEFS;
+    bool m_autoMountHomeEFSHasBeenSet = false;
   };
 
 } // namespace Model

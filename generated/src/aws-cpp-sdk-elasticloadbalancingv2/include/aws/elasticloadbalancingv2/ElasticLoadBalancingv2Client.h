@@ -597,6 +597,32 @@ namespace ElasticLoadBalancingv2
         }
 
         /**
+         * <p>Describes the attributes for the specified listener.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeListenerAttributesOutcome DescribeListenerAttributes(const Model::DescribeListenerAttributesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeListenerAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeListenerAttributesRequestT = Model::DescribeListenerAttributesRequest>
+        Model::DescribeListenerAttributesOutcomeCallable DescribeListenerAttributesCallable(const DescribeListenerAttributesRequestT& request) const
+        {
+            return SubmitCallable(&ElasticLoadBalancingv2Client::DescribeListenerAttributes, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeListenerAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeListenerAttributesRequestT = Model::DescribeListenerAttributesRequest>
+        void DescribeListenerAttributesAsync(const DescribeListenerAttributesRequestT& request, const DescribeListenerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticLoadBalancingv2Client::DescribeListenerAttributes, request, handler, context);
+        }
+
+        /**
          * <p>Describes the default certificate and the certificate list for the specified
          * HTTPS or TLS listener.</p> <p>If the default certificate is also in the
          * certificate list, it appears twice in the results (once with
@@ -1083,6 +1109,32 @@ namespace ElasticLoadBalancingv2
         void ModifyListenerAsync(const ModifyListenerRequestT& request, const ModifyListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ElasticLoadBalancingv2Client::ModifyListener, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the specified attributes of the specified listener.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyListenerAttributesOutcome ModifyListenerAttributes(const Model::ModifyListenerAttributesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyListenerAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyListenerAttributesRequestT = Model::ModifyListenerAttributesRequest>
+        Model::ModifyListenerAttributesOutcomeCallable ModifyListenerAttributesCallable(const ModifyListenerAttributesRequestT& request) const
+        {
+            return SubmitCallable(&ElasticLoadBalancingv2Client::ModifyListenerAttributes, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyListenerAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyListenerAttributesRequestT = Model::ModifyListenerAttributesRequest>
+        void ModifyListenerAttributesAsync(const ModifyListenerAttributesRequestT& request, const ModifyListenerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticLoadBalancingv2Client::ModifyListenerAttributes, request, handler, context);
         }
 
         /**

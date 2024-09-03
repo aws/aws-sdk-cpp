@@ -36,7 +36,9 @@ UserSettings::UserSettings() :
     m_studioWebPortalHasBeenSet(false),
     m_customPosixUserConfigHasBeenSet(false),
     m_customFileSystemConfigsHasBeenSet(false),
-    m_studioWebPortalSettingsHasBeenSet(false)
+    m_studioWebPortalSettingsHasBeenSet(false),
+    m_autoMountHomeEFS(AutoMountHomeEFS::NOT_SET),
+    m_autoMountHomeEFSHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,13 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_studioWebPortalSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoMountHomeEFS"))
+  {
+    m_autoMountHomeEFS = AutoMountHomeEFSMapper::GetAutoMountHomeEFSForName(jsonValue.GetString("AutoMountHomeEFS"));
+
+    m_autoMountHomeEFSHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -289,6 +298,11 @@ JsonValue UserSettings::Jsonize() const
   {
    payload.WithObject("StudioWebPortalSettings", m_studioWebPortalSettings.Jsonize());
 
+  }
+
+  if(m_autoMountHomeEFSHasBeenSet)
+  {
+   payload.WithString("AutoMountHomeEFS", AutoMountHomeEFSMapper::GetNameForAutoMountHomeEFS(m_autoMountHomeEFS));
   }
 
   return payload;

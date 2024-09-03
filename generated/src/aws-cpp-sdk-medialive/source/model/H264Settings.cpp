@@ -99,7 +99,9 @@ H264Settings::H264Settings() :
     m_temporalAqHasBeenSet(false),
     m_timecodeInsertion(H264TimecodeInsertionBehavior::NOT_SET),
     m_timecodeInsertionHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+    m_timecodeBurninSettingsHasBeenSet(false),
+    m_minQp(0),
+    m_minQpHasBeenSet(false)
 {
 }
 
@@ -405,6 +407,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_timecodeBurninSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("minQp"))
+  {
+    m_minQp = jsonValue.GetInteger("minQp");
+
+    m_minQpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -638,6 +647,12 @@ JsonValue H264Settings::Jsonize() const
   if(m_timecodeBurninSettingsHasBeenSet)
   {
    payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
+
+  }
+
+  if(m_minQpHasBeenSet)
+  {
+   payload.WithInteger("minQp", m_minQp);
 
   }
 
