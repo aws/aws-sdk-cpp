@@ -6,12 +6,10 @@
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValue;
-import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointPathExpression;
 import lombok.Data;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 
 @Data

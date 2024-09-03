@@ -14,7 +14,7 @@ public final class OperationContextCppCodeGenerator{
     //tracking reference variable, bool = true means start of a scope
     private final Stack<Pair<String,Boolean> > varName;
 
-    private Integer codeIndetation;
+    private int codeIndetation;
 
     public OperationContextCppCodeGenerator(){
         this.cppCode = new StringBuilder();
@@ -25,7 +25,7 @@ public final class OperationContextCppCodeGenerator{
     {
         StringBuilder sb = new StringBuilder();
 
-        for(Integer i = 0; i < this.codeIndetation; ++i)
+        for(int i = 0; i < this.codeIndetation; ++i)
         {
             sb.append("\t");
         }

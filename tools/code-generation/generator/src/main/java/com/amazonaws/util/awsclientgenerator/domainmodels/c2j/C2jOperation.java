@@ -6,7 +6,6 @@
 package com.amazonaws.util.awsclientgenerator.domainmodels.c2j;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValue;
-import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointPathExpression;
 import lombok.Data;
 
 import java.lang.*;

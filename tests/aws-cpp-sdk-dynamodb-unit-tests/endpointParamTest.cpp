@@ -82,7 +82,6 @@ TEST_F(EndpointTest, testStringArrayParam) {
 
     auto res = endpointProvider_sp->ResolveEndpoint(parameters);
     EXPECT_TRUE(res.IsSuccess());
-    //std::cout<<"url="<<res.GetResult().GetURL()<<std::endl;
     EXPECT_EQ( res.GetResult().GetURL(), "https://example.com/staticValue2");
    
 }
@@ -98,7 +97,5 @@ TEST_F(EndpointTest, testStringArrayParamError) {
 
     auto res = endpointProvider_sp->ResolveEndpoint(parameters);
     EXPECT_FALSE(res.IsSuccess());
-    //std::cout<<"url="<<res.GetResult().GetURL()<<std::endl;
-    //EXPECT_EQ( res.GetResult().GetURL(), "https://example.com/staticValue2");
-   
+
 }
