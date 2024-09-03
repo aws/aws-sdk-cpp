@@ -22,7 +22,9 @@ namespace Model
     MODIFYING,
     UPDATING,
     DELETED,
-    FAILED
+    FAILED,
+    UPDATING_DEPLOYMENT_TYPE,
+    UPDATING_INSTANCE_TYPE
   };
 
 namespace StatusMapper

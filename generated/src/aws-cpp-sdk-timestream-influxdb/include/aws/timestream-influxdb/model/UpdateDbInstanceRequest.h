@@ -8,6 +8,8 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
+#include <aws/timestream-influxdb/model/DbInstanceType.h>
+#include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +79,31 @@ namespace Model
     inline UpdateDbInstanceRequest& WithDbParameterGroupIdentifier(Aws::String&& value) { SetDbParameterGroupIdentifier(std::move(value)); return *this;}
     inline UpdateDbInstanceRequest& WithDbParameterGroupIdentifier(const char* value) { SetDbParameterGroupIdentifier(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+     */
+    inline const DbInstanceType& GetDbInstanceType() const{ return m_dbInstanceType; }
+    inline bool DbInstanceTypeHasBeenSet() const { return m_dbInstanceTypeHasBeenSet; }
+    inline void SetDbInstanceType(const DbInstanceType& value) { m_dbInstanceTypeHasBeenSet = true; m_dbInstanceType = value; }
+    inline void SetDbInstanceType(DbInstanceType&& value) { m_dbInstanceTypeHasBeenSet = true; m_dbInstanceType = std::move(value); }
+    inline UpdateDbInstanceRequest& WithDbInstanceType(const DbInstanceType& value) { SetDbInstanceType(value); return *this;}
+    inline UpdateDbInstanceRequest& WithDbInstanceType(DbInstanceType&& value) { SetDbInstanceType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the DB instance will be deployed as a standalone instance
+     * or with a Multi-AZ standby for high availability.</p>
+     */
+    inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+    inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
+    inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
+    inline UpdateDbInstanceRequest& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
+    inline UpdateDbInstanceRequest& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_identifier;
@@ -87,6 +114,12 @@ namespace Model
 
     Aws::String m_dbParameterGroupIdentifier;
     bool m_dbParameterGroupIdentifierHasBeenSet = false;
+
+    DbInstanceType m_dbInstanceType;
+    bool m_dbInstanceTypeHasBeenSet = false;
+
+    DeploymentType m_deploymentType;
+    bool m_deploymentTypeHasBeenSet = false;
   };
 
 } // namespace Model

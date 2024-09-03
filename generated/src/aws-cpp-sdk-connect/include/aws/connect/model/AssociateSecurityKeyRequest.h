@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid security key in PEM format.</p>
+     * <p>A valid security key in PEM format as a String.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

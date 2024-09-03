@@ -19,6 +19,7 @@ namespace Model
 {
 
 SubscribedAssetListing::SubscribedAssetListing() : 
+    m_assetScopeHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_entityRevisionHasBeenSet(false),
     m_entityTypeHasBeenSet(false),
@@ -35,6 +36,13 @@ SubscribedAssetListing::SubscribedAssetListing(JsonView jsonValue)
 
 SubscribedAssetListing& SubscribedAssetListing::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("assetScope"))
+  {
+    m_assetScope = jsonValue.GetObject("assetScope");
+
+    m_assetScopeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
@@ -79,6 +87,12 @@ SubscribedAssetListing& SubscribedAssetListing::operator =(JsonView jsonValue)
 JsonValue SubscribedAssetListing::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_assetScopeHasBeenSet)
+  {
+   payload.WithObject("assetScope", m_assetScope.Jsonize());
+
+  }
 
   if(m_entityIdHasBeenSet)
   {

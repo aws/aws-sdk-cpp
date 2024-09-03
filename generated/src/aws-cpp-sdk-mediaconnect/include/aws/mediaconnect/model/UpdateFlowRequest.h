@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/UpdateFailoverConfig.h>
 #include <aws/mediaconnect/model/UpdateMaintenance.h>
+#include <aws/mediaconnect/model/MonitoringConfig.h>
 #include <utility>
 
 namespace Aws
@@ -70,6 +71,16 @@ namespace Model
     inline UpdateFlowRequest& WithMaintenance(const UpdateMaintenance& value) { SetMaintenance(value); return *this;}
     inline UpdateFlowRequest& WithMaintenance(UpdateMaintenance&& value) { SetMaintenance(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const MonitoringConfig& GetSourceMonitoringConfig() const{ return m_sourceMonitoringConfig; }
+    inline bool SourceMonitoringConfigHasBeenSet() const { return m_sourceMonitoringConfigHasBeenSet; }
+    inline void SetSourceMonitoringConfig(const MonitoringConfig& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = value; }
+    inline void SetSourceMonitoringConfig(MonitoringConfig&& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = std::move(value); }
+    inline UpdateFlowRequest& WithSourceMonitoringConfig(const MonitoringConfig& value) { SetSourceMonitoringConfig(value); return *this;}
+    inline UpdateFlowRequest& WithSourceMonitoringConfig(MonitoringConfig&& value) { SetSourceMonitoringConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_flowArn;
@@ -80,6 +91,9 @@ namespace Model
 
     UpdateMaintenance m_maintenance;
     bool m_maintenanceHasBeenSet = false;
+
+    MonitoringConfig m_sourceMonitoringConfig;
+    bool m_sourceMonitoringConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/Instance.h>
+#include <aws/connect/model/ReplicationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -45,6 +46,24 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Status information about the replication process. This field is included only
+     * when you are using the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a>
+     * API to replicate an Amazon Connect instance across Amazon Web Services Regions.
+     * For information about replicating Amazon Connect instances, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
+     * a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect
+     * Administrator Guide</i>.</p>
+     */
+    inline const ReplicationConfiguration& GetReplicationConfiguration() const{ return m_replicationConfiguration; }
+    inline void SetReplicationConfiguration(const ReplicationConfiguration& value) { m_replicationConfiguration = value; }
+    inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfiguration = std::move(value); }
+    inline DescribeInstanceResult& WithReplicationConfiguration(const ReplicationConfiguration& value) { SetReplicationConfiguration(value); return *this;}
+    inline DescribeInstanceResult& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -57,6 +76,8 @@ namespace Model
   private:
 
     Instance m_instance;
+
+    ReplicationConfiguration m_replicationConfiguration;
 
     Aws::String m_requestId;
   };

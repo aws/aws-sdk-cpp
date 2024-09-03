@@ -492,6 +492,32 @@ namespace MediaConnect
         }
 
         /**
+         * Displays the thumbnail details of a flow's source stream.<p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceThumbnail">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFlowSourceThumbnailOutcome DescribeFlowSourceThumbnail(const Model::DescribeFlowSourceThumbnailRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFlowSourceThumbnail that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeFlowSourceThumbnailRequestT = Model::DescribeFlowSourceThumbnailRequest>
+        Model::DescribeFlowSourceThumbnailOutcomeCallable DescribeFlowSourceThumbnailCallable(const DescribeFlowSourceThumbnailRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::DescribeFlowSourceThumbnail, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeFlowSourceThumbnail that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeFlowSourceThumbnailRequestT = Model::DescribeFlowSourceThumbnailRequest>
+        void DescribeFlowSourceThumbnailAsync(const DescribeFlowSourceThumbnailRequestT& request, const DescribeFlowSourceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::DescribeFlowSourceThumbnail, request, handler, context);
+        }
+
+        /**
          * Displays the details of a gateway. The response includes the gateway ARN, name,
          * and CIDR blocks, as well as details about the networks.<p><h3>See Also:</h3>  
          * <a

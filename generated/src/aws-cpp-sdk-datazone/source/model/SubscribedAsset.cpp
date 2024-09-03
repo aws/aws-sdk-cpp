@@ -21,6 +21,7 @@ namespace Model
 SubscribedAsset::SubscribedAsset() : 
     m_assetIdHasBeenSet(false),
     m_assetRevisionHasBeenSet(false),
+    m_assetScopeHasBeenSet(false),
     m_failureCauseHasBeenSet(false),
     m_failureTimestampHasBeenSet(false),
     m_grantedTimestampHasBeenSet(false),
@@ -50,6 +51,13 @@ SubscribedAsset& SubscribedAsset::operator =(JsonView jsonValue)
     m_assetRevision = jsonValue.GetString("assetRevision");
 
     m_assetRevisionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("assetScope"))
+  {
+    m_assetScope = jsonValue.GetObject("assetScope");
+
+    m_assetScopeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("failureCause"))
@@ -103,6 +111,12 @@ JsonValue SubscribedAsset::Jsonize() const
   if(m_assetRevisionHasBeenSet)
   {
    payload.WithString("assetRevision", m_assetRevision);
+
+  }
+
+  if(m_assetScopeHasBeenSet)
+  {
+   payload.WithObject("assetScope", m_assetScope.Jsonize());
 
   }
 

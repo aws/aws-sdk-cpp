@@ -680,6 +680,18 @@ This field is optional; when
     inline H264Settings& WithTimecodeBurninSettings(const TimecodeBurninSettings& value) { SetTimecodeBurninSettings(value); return *this;}
     inline H264Settings& WithTimecodeBurninSettings(TimecodeBurninSettings&& value) { SetTimecodeBurninSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Sets the minimum QP. If you aren't familiar with quantization adjustment, leave
+     * the field empty. MediaLive will
+apply an appropriate value.
+     */
+    inline int GetMinQp() const{ return m_minQp; }
+    inline bool MinQpHasBeenSet() const { return m_minQpHasBeenSet; }
+    inline void SetMinQp(int value) { m_minQpHasBeenSet = true; m_minQp = value; }
+    inline H264Settings& WithMinQp(int value) { SetMinQp(value); return *this;}
+    ///@}
   private:
 
     H264AdaptiveQuantization m_adaptiveQuantization;
@@ -807,6 +819,9 @@ This field is optional; when
 
     TimecodeBurninSettings m_timecodeBurninSettings;
     bool m_timecodeBurninSettingsHasBeenSet = false;
+
+    int m_minQp;
+    bool m_minQpHasBeenSet = false;
   };
 
 } // namespace Model

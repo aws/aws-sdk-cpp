@@ -34,6 +34,7 @@
 #include <aws/mediaconnect/model/DescribeBridgeResult.h>
 #include <aws/mediaconnect/model/DescribeFlowResult.h>
 #include <aws/mediaconnect/model/DescribeFlowSourceMetadataResult.h>
+#include <aws/mediaconnect/model/DescribeFlowSourceThumbnailResult.h>
 #include <aws/mediaconnect/model/DescribeGatewayResult.h>
 #include <aws/mediaconnect/model/DescribeGatewayInstanceResult.h>
 #include <aws/mediaconnect/model/DescribeOfferingResult.h>
@@ -131,6 +132,7 @@ namespace Aws
       class DescribeBridgeRequest;
       class DescribeFlowRequest;
       class DescribeFlowSourceMetadataRequest;
+      class DescribeFlowSourceThumbnailRequest;
       class DescribeGatewayRequest;
       class DescribeGatewayInstanceRequest;
       class DescribeOfferingRequest;
@@ -185,6 +187,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeBridgeResult, MediaConnectError> DescribeBridgeOutcome;
       typedef Aws::Utils::Outcome<DescribeFlowResult, MediaConnectError> DescribeFlowOutcome;
       typedef Aws::Utils::Outcome<DescribeFlowSourceMetadataResult, MediaConnectError> DescribeFlowSourceMetadataOutcome;
+      typedef Aws::Utils::Outcome<DescribeFlowSourceThumbnailResult, MediaConnectError> DescribeFlowSourceThumbnailOutcome;
       typedef Aws::Utils::Outcome<DescribeGatewayResult, MediaConnectError> DescribeGatewayOutcome;
       typedef Aws::Utils::Outcome<DescribeGatewayInstanceResult, MediaConnectError> DescribeGatewayInstanceOutcome;
       typedef Aws::Utils::Outcome<DescribeOfferingResult, MediaConnectError> DescribeOfferingOutcome;
@@ -239,6 +242,7 @@ namespace Aws
       typedef std::future<DescribeBridgeOutcome> DescribeBridgeOutcomeCallable;
       typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
       typedef std::future<DescribeFlowSourceMetadataOutcome> DescribeFlowSourceMetadataOutcomeCallable;
+      typedef std::future<DescribeFlowSourceThumbnailOutcome> DescribeFlowSourceThumbnailOutcomeCallable;
       typedef std::future<DescribeGatewayOutcome> DescribeGatewayOutcomeCallable;
       typedef std::future<DescribeGatewayInstanceOutcome> DescribeGatewayInstanceOutcomeCallable;
       typedef std::future<DescribeOfferingOutcome> DescribeOfferingOutcomeCallable;
@@ -296,6 +300,7 @@ namespace Aws
     typedef std::function<void(const MediaConnectClient*, const Model::DescribeBridgeRequest&, const Model::DescribeBridgeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBridgeResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DescribeFlowRequest&, const Model::DescribeFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DescribeFlowSourceMetadataRequest&, const Model::DescribeFlowSourceMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowSourceMetadataResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::DescribeFlowSourceThumbnailRequest&, const Model::DescribeFlowSourceThumbnailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowSourceThumbnailResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DescribeGatewayRequest&, const Model::DescribeGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGatewayResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DescribeGatewayInstanceRequest&, const Model::DescribeGatewayInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGatewayInstanceResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DescribeOfferingRequest&, const Model::DescribeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOfferingResponseReceivedHandler;

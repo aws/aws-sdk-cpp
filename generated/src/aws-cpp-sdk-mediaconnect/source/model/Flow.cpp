@@ -33,7 +33,8 @@ Flow::Flow() :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_vpcInterfacesHasBeenSet(false),
-    m_maintenanceHasBeenSet(false)
+    m_maintenanceHasBeenSet(false),
+    m_sourceMonitoringConfigHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,13 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_maintenanceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceMonitoringConfig"))
+  {
+    m_sourceMonitoringConfig = jsonValue.GetObject("sourceMonitoringConfig");
+
+    m_sourceMonitoringConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -270,6 +278,12 @@ JsonValue Flow::Jsonize() const
   if(m_maintenanceHasBeenSet)
   {
    payload.WithObject("maintenance", m_maintenance.Jsonize());
+
+  }
+
+  if(m_sourceMonitoringConfigHasBeenSet)
+  {
+   payload.WithObject("sourceMonitoringConfig", m_sourceMonitoringConfig.Jsonize());
 
   }
 

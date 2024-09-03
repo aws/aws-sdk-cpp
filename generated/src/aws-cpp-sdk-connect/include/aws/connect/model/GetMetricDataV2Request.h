@@ -652,8 +652,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-agent-api-connecting-time">Agent
      * API connecting time</a> </p>  <p>The <code>Negate</code> key in Metric
      * Level Filters is not applicable for this metric.</p>  </dd>
-     * <dt>SUM_CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Metric filter: </p>
-     * <ul> <li> <p>Valid values: <code>API</code>| <code>Incoming</code> |
+     * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Metric filter: </p> <ul>
+     * <li> <p>Valid values: <code>API</code>| <code>Incoming</code> |
      * <code>Outbound</code> | <code>Transfer</code> | <code>Callback</code> |
      * <code>Queue_Transfer</code>| <code>Disconnect</code> </p> </li> </ul> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,

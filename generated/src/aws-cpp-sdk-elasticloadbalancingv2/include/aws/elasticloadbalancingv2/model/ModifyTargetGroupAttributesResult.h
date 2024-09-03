@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the attributes.</p>
+     * <p>Information about the target group attributes.</p>
      */
     inline const Aws::Vector<TargetGroupAttribute>& GetAttributes() const{ return m_attributes; }
     inline void SetAttributes(const Aws::Vector<TargetGroupAttribute>& value) { m_attributes = value; }

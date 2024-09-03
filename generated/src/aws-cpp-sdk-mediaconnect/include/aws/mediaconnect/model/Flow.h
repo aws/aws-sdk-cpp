@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/Status.h>
 #include <aws/mediaconnect/model/Maintenance.h>
+#include <aws/mediaconnect/model/MonitoringConfig.h>
 #include <aws/mediaconnect/model/Entitlement.h>
 #include <aws/mediaconnect/model/MediaStream.h>
 #include <aws/mediaconnect/model/Output.h>
@@ -229,6 +230,16 @@ namespace Model
     inline Flow& WithMaintenance(const Maintenance& value) { SetMaintenance(value); return *this;}
     inline Flow& WithMaintenance(Maintenance&& value) { SetMaintenance(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const MonitoringConfig& GetSourceMonitoringConfig() const{ return m_sourceMonitoringConfig; }
+    inline bool SourceMonitoringConfigHasBeenSet() const { return m_sourceMonitoringConfigHasBeenSet; }
+    inline void SetSourceMonitoringConfig(const MonitoringConfig& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = value; }
+    inline void SetSourceMonitoringConfig(MonitoringConfig&& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = std::move(value); }
+    inline Flow& WithSourceMonitoringConfig(const MonitoringConfig& value) { SetSourceMonitoringConfig(value); return *this;}
+    inline Flow& WithSourceMonitoringConfig(MonitoringConfig&& value) { SetSourceMonitoringConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_availabilityZone;
@@ -272,6 +283,9 @@ namespace Model
 
     Maintenance m_maintenance;
     bool m_maintenanceHasBeenSet = false;
+
+    MonitoringConfig m_sourceMonitoringConfig;
+    bool m_sourceMonitoringConfigHasBeenSet = false;
   };
 
 } // namespace Model

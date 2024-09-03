@@ -37,6 +37,7 @@
 #include <aws/mediaconnect/model/DescribeBridgeRequest.h>
 #include <aws/mediaconnect/model/DescribeFlowRequest.h>
 #include <aws/mediaconnect/model/DescribeFlowSourceMetadataRequest.h>
+#include <aws/mediaconnect/model/DescribeFlowSourceThumbnailRequest.h>
 #include <aws/mediaconnect/model/DescribeGatewayRequest.h>
 #include <aws/mediaconnect/model/DescribeGatewayInstanceRequest.h>
 #include <aws/mediaconnect/model/DescribeOfferingRequest.h>
@@ -726,6 +727,40 @@ DescribeFlowSourceMetadataOutcome MediaConnectClient::DescribeFlowSourceMetadata
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowArn());
       endpointResolutionOutcome.GetResult().AddPathSegments("/source-metadata");
       return DescribeFlowSourceMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeFlowSourceThumbnailOutcome MediaConnectClient::DescribeFlowSourceThumbnail(const DescribeFlowSourceThumbnailRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeFlowSourceThumbnail);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFlowSourceThumbnail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFlowSourceThumbnail", "Required field: FlowArn, is not set");
+    return DescribeFlowSourceThumbnailOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeFlowSourceThumbnail, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeFlowSourceThumbnail, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeFlowSourceThumbnail",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeFlowSourceThumbnailOutcome>(
+    [&]()-> DescribeFlowSourceThumbnailOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeFlowSourceThumbnail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/flows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/source-thumbnail");
+      return DescribeFlowSourceThumbnailOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

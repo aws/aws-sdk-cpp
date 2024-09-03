@@ -554,6 +554,18 @@ In all other configurations, you
     inline H265Settings& WithTreeblockSize(const H265TreeblockSize& value) { SetTreeblockSize(value); return *this;}
     inline H265Settings& WithTreeblockSize(H265TreeblockSize&& value) { SetTreeblockSize(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Sets the minimum QP. If you aren't familiar with quantization adjustment, leave
+     * the field empty. MediaLive will
+apply an appropriate value.
+     */
+    inline int GetMinQp() const{ return m_minQp; }
+    inline bool MinQpHasBeenSet() const { return m_minQpHasBeenSet; }
+    inline void SetMinQp(int value) { m_minQpHasBeenSet = true; m_minQp = value; }
+    inline H265Settings& WithMinQp(int value) { SetMinQp(value); return *this;}
+    ///@}
   private:
 
     H265AdaptiveQuantization m_adaptiveQuantization;
@@ -663,6 +675,9 @@ In all other configurations, you
 
     H265TreeblockSize m_treeblockSize;
     bool m_treeblockSizeHasBeenSet = false;
+
+    int m_minQp;
+    bool m_minQpHasBeenSet = false;
   };
 
 } // namespace Model

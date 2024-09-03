@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/AssetScope.h>
 #include <aws/datazone/model/FailureCause.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/datazone/model/SubscriptionGrantStatus.h>
@@ -67,6 +68,18 @@ namespace Model
     inline SubscribedAsset& WithAssetRevision(const Aws::String& value) { SetAssetRevision(value); return *this;}
     inline SubscribedAsset& WithAssetRevision(Aws::String&& value) { SetAssetRevision(std::move(value)); return *this;}
     inline SubscribedAsset& WithAssetRevision(const char* value) { SetAssetRevision(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The asset scope of the subscribed asset.</p>
+     */
+    inline const AssetScope& GetAssetScope() const{ return m_assetScope; }
+    inline bool AssetScopeHasBeenSet() const { return m_assetScopeHasBeenSet; }
+    inline void SetAssetScope(const AssetScope& value) { m_assetScopeHasBeenSet = true; m_assetScope = value; }
+    inline void SetAssetScope(AssetScope&& value) { m_assetScopeHasBeenSet = true; m_assetScope = std::move(value); }
+    inline SubscribedAsset& WithAssetScope(const AssetScope& value) { SetAssetScope(value); return *this;}
+    inline SubscribedAsset& WithAssetScope(AssetScope&& value) { SetAssetScope(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,6 +152,9 @@ namespace Model
 
     Aws::String m_assetRevision;
     bool m_assetRevisionHasBeenSet = false;
+
+    AssetScope m_assetScope;
+    bool m_assetScopeHasBeenSet = false;
 
     FailureCause m_failureCause;
     bool m_failureCauseHasBeenSet = false;

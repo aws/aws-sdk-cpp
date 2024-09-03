@@ -87,7 +87,9 @@ H265Settings::H265Settings() :
     m_tileWidth(0),
     m_tileWidthHasBeenSet(false),
     m_treeblockSize(H265TreeblockSize::NOT_SET),
-    m_treeblockSizeHasBeenSet(false)
+    m_treeblockSizeHasBeenSet(false),
+    m_minQp(0),
+    m_minQpHasBeenSet(false)
 {
 }
 
@@ -351,6 +353,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_treeblockSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("minQp"))
+  {
+    m_minQp = jsonValue.GetInteger("minQp");
+
+    m_minQpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -553,6 +562,12 @@ JsonValue H265Settings::Jsonize() const
   if(m_treeblockSizeHasBeenSet)
   {
    payload.WithString("treeblockSize", H265TreeblockSizeMapper::GetNameForH265TreeblockSize(m_treeblockSize));
+  }
+
+  if(m_minQpHasBeenSet)
+  {
+   payload.WithInteger("minQp", m_minQp);
+
   }
 
   return payload;
