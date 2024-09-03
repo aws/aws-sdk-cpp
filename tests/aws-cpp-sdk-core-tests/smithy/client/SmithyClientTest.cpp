@@ -228,3 +228,56 @@ TEST_F(SmithyClientTest, testSigV4a) {
     EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
 
 }
+
+
+TEST_F(SmithyClientTest, bearer) {
+
+    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::SigV4aAuthSchemeResolver<>>(ALLOCATION_TAG);
+
+    Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
+
+    smithy::SigV4aAuthScheme::SigV4aAuthSchemeParameters params;
+    params.serviceName = "MyService";
+    params.region = "us-west2";
+    params.operation = "TestOperation2";
+
+    Aws::String key{"aws.auth#sigv4a"};
+    auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
+
+    SigVariant val{smithy::SigV4aAuthScheme(credentialsResolver, "MyService", "us-west-2")};
+    
+    authSchemesMap.emplace(key, val);
+
+    std::shared_ptr<TestClient> ptr = Aws::MakeShared<TestClient>(
+        ALLOCATION_TAG,
+        clientConfig,
+        "MyAuthaService",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver,
+        authSchemesMap
+        );
+    smithy::client::AwsSmithyClientAsyncRequestContext ctx;
+    ctx.m_pRequest = nullptr;
+
+    auto res = ptr->SelectAuthSchemeOption(ctx);
+
+    EXPECT_EQ(res.IsSuccess(), true);
+
+    std::cout<<"selected scheme id="<<res.GetResult().schemeId<<std::endl;
+    EXPECT_EQ(res.GetResult().schemeId, key);
+
+    Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
+
+    std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+    auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
+
+    EXPECT_EQ(res2.IsSuccess(), true);
+
+    EXPECT_TRUE(res2.GetResult()->GetSigningAccessKey().empty());
+
+    EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
+
+}
