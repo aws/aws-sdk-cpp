@@ -20,6 +20,7 @@ namespace Model
 
 PromptVariant::PromptVariant() : 
     m_inferenceConfigurationHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_modelIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_templateConfigurationHasBeenSet(false),
@@ -41,6 +42,16 @@ PromptVariant& PromptVariant::operator =(JsonView jsonValue)
     m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
 
     m_inferenceConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("metadata"))
+  {
+    Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
+    for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
+    {
+      m_metadata.push_back(metadataJsonList[metadataIndex].AsObject());
+    }
+    m_metadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("modelId"))
@@ -81,6 +92,17 @@ JsonValue PromptVariant::Jsonize() const
   if(m_inferenceConfigurationHasBeenSet)
   {
    payload.WithObject("inferenceConfiguration", m_inferenceConfiguration.Jsonize());
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> metadataJsonList(m_metadata.size());
+   for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
+   {
+     metadataJsonList[metadataIndex].AsObject(m_metadata[metadataIndex].Jsonize());
+   }
+   payload.WithArray("metadata", std::move(metadataJsonList));
 
   }
 

@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Web Services account that is making this request.</p>
+     * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

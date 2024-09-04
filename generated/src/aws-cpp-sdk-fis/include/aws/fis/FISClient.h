@@ -303,6 +303,32 @@ namespace FIS
         }
 
         /**
+         * <p> Gets information about the specified safety lever. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSafetyLeverOutcome GetSafetyLever(const Model::GetSafetyLeverRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSafetyLever that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSafetyLeverRequestT = Model::GetSafetyLeverRequest>
+        Model::GetSafetyLeverOutcomeCallable GetSafetyLeverCallable(const GetSafetyLeverRequestT& request) const
+        {
+            return SubmitCallable(&FISClient::GetSafetyLever, request);
+        }
+
+        /**
+         * An Async wrapper for GetSafetyLever that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSafetyLeverRequestT = Model::GetSafetyLeverRequest>
+        void GetSafetyLeverAsync(const GetSafetyLeverRequestT& request, const GetSafetyLeverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FISClient::GetSafetyLever, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about the specified target account configuration of the
          * experiment template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration">AWS
@@ -683,6 +709,31 @@ namespace FIS
         void UpdateExperimentTemplateAsync(const UpdateExperimentTemplateRequestT& request, const UpdateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FISClient::UpdateExperimentTemplate, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the specified safety lever state. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSafetyLeverStateOutcome UpdateSafetyLeverState(const Model::UpdateSafetyLeverStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSafetyLeverState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSafetyLeverStateRequestT = Model::UpdateSafetyLeverStateRequest>
+        Model::UpdateSafetyLeverStateOutcomeCallable UpdateSafetyLeverStateCallable(const UpdateSafetyLeverStateRequestT& request) const
+        {
+            return SubmitCallable(&FISClient::UpdateSafetyLeverState, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSafetyLeverState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSafetyLeverStateRequestT = Model::UpdateSafetyLeverStateRequest>
+        void UpdateSafetyLeverStateAsync(const UpdateSafetyLeverStateRequestT& request, const UpdateSafetyLeverStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FISClient::UpdateSafetyLeverState, request, handler, context);
         }
 
         /**

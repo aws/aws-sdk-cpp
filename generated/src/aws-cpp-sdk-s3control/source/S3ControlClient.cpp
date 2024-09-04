@@ -87,6 +87,7 @@
 #include <aws/s3control/model/ListAccessGrantsLocationsRequest.h>
 #include <aws/s3control/model/ListAccessPointsRequest.h>
 #include <aws/s3control/model/ListAccessPointsForObjectLambdaRequest.h>
+#include <aws/s3control/model/ListCallerAccessGrantsRequest.h>
 #include <aws/s3control/model/ListJobsRequest.h>
 #include <aws/s3control/model/ListMultiRegionAccessPointsRequest.h>
 #include <aws/s3control/model/ListRegionalBucketsRequest.h>
@@ -2933,6 +2934,45 @@ ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjec
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListAccessPointsForObjectLambdaOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda");
       return ListAccessPointsForObjectLambdaOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListCallerAccessGrantsOutcome S3ControlClient::ListCallerAccessGrants(const ListCallerAccessGrantsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCallerAccessGrants);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCallerAccessGrants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCallerAccessGrants", "Required field: AccountId, is not set");
+    return ListCallerAccessGrantsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCallerAccessGrants, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCallerAccessGrants, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCallerAccessGrantsOutcome>(
+    [&]()-> ListCallerAccessGrantsOutcome {
+      if (request.GetAccountId().size() != 12 || request.GetAccountId().find_first_not_of("0123456789") != Aws::String::npos)
+      {
+          AWS_LOGSTREAM_ERROR("ListCallerAccessGrants", "Required field: AccountId has invalid value");
+          return ListCallerAccessGrantsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "AccountId is invalid", false));
+      }
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCallerAccessGrants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListCallerAccessGrantsOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/caller/grants");
+      return ListCallerAccessGrantsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -24,7 +24,11 @@ namespace Model
 
   /**
    * <p>Specifies encryption-related information for an Amazon S3 bucket that is a
-   * destination for replicated objects.</p>  <p>This is not supported by
+   * destination for replicated objects. If you're specifying a customer managed KMS
+   * key, we recommend using a fully qualified KMS key ARN. If you use a KMS key
+   * alias instead, then KMS resolves the key within the requester’s account. This
+   * behavior can result in data that's encrypted with a KMS key that belongs to the
+   * requester, and not the bucket owner.</p>  <p>This is not supported by
    * Amazon S3 on Outposts buckets.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/EncryptionConfiguration">AWS
    * API Reference</a></p>

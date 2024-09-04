@@ -865,6 +865,35 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Use this operation to return the valid and default values that are used when
+         * creating delivery sources, delivery destinations, and deliveries. For more
+         * information about deliveries, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeConfigurationTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConfigurationTemplatesOutcome DescribeConfigurationTemplates(const Model::DescribeConfigurationTemplatesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeConfigurationTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeConfigurationTemplatesRequestT = Model::DescribeConfigurationTemplatesRequest>
+        Model::DescribeConfigurationTemplatesOutcomeCallable DescribeConfigurationTemplatesCallable(const DescribeConfigurationTemplatesRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DescribeConfigurationTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeConfigurationTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeConfigurationTemplatesRequestT = Model::DescribeConfigurationTemplatesRequest>
+        void DescribeConfigurationTemplatesAsync(const DescribeConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigurationTemplatesRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DescribeConfigurationTemplates, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a list of the deliveries that have been created in the account.</p>
          * <p>A <i>delivery</i> is a connection between a <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">
@@ -2586,6 +2615,35 @@ namespace CloudWatchLogs
         void UpdateAnomalyAsync(const UpdateAnomalyRequestT& request, const UpdateAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::UpdateAnomaly, request, handler, context);
+        }
+
+        /**
+         * <p>Use this operation to update the configuration of a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html">delivery</a>
+         * to change either the S3 path pattern or the format of the delivered logs. You
+         * can't use this operation to change the source or destination of the
+         * delivery.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateDeliveryConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDeliveryConfigurationOutcome UpdateDeliveryConfiguration(const Model::UpdateDeliveryConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDeliveryConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDeliveryConfigurationRequestT = Model::UpdateDeliveryConfigurationRequest>
+        Model::UpdateDeliveryConfigurationOutcomeCallable UpdateDeliveryConfigurationCallable(const UpdateDeliveryConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::UpdateDeliveryConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDeliveryConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDeliveryConfigurationRequestT = Model::UpdateDeliveryConfigurationRequest>
+        void UpdateDeliveryConfigurationAsync(const UpdateDeliveryConfigurationRequestT& request, const UpdateDeliveryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::UpdateDeliveryConfiguration, request, handler, context);
         }
 
         /**
