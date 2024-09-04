@@ -8,7 +8,6 @@
 
 using namespace Aws::DynamoDB;
 namespace EndpointParamTest{
-const size_t RulesBlobStrLen = 497;
 const size_t RulesBlobSize = 498;
 using RulesBlobT = Aws::Array<const char, RulesBlobSize>;
 
