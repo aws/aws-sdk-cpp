@@ -7,12 +7,10 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 using namespace Aws::DynamoDB;
-
+namespace EndpointParamTest{
+using RulesBlobT = Aws::Array<const char, DynamoDBEndpointRules::RulesBlobSize>;
 const size_t DynamoDBEndpointRules::RulesBlobStrLen = 497;
 const size_t DynamoDBEndpointRules::RulesBlobSize = 498;
-
-using RulesBlobT = Aws::Array<const char, DynamoDBEndpointRules::RulesBlobSize>;
-namespace EndpointParamTest{
 static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','s','t','r','i','n','g','A','r','r','a','y','P','a','r','a','m','"',':',
