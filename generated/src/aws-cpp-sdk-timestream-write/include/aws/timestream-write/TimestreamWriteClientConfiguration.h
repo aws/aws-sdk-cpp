@@ -19,6 +19,34 @@ namespace Aws
             static const bool EndpointDiscoverySupported = true;
             static const bool EndpointDiscoveryRequired = true;
 
+            TimestreamWriteClientConfiguration(const TimestreamWriteClientConfiguration& other)
+                : Aws::Client::GenericClientConfiguration(other),
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+            {
+            }
+
+            TimestreamWriteClientConfiguration(TimestreamWriteClientConfiguration&& other) noexcept
+                : Aws::Client::GenericClientConfiguration(std::move(other)),
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+            {
+            }
+
+            TimestreamWriteClientConfiguration& operator=(const TimestreamWriteClientConfiguration& other)
+            {
+                if (this == &other)
+                    return *this;
+                Aws::Client::GenericClientConfiguration::operator =(other);
+                return *this;
+            }
+
+            TimestreamWriteClientConfiguration& operator=(TimestreamWriteClientConfiguration&& other) noexcept
+            {
+                if (this == &other)
+                    return *this;
+                Aws::Client::GenericClientConfiguration::operator =(std::move(other));
+                return *this;
+            }
+
             TimestreamWriteClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
             /**
