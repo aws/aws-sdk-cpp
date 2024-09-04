@@ -1,7 +1,5 @@
 package com.amazonaws.util.awsclientgenerator.transform;
-
 import lombok.Data;
-
 import java.text.MessageFormat;
 import java.util.Stack;
 import java.util.Optional;
@@ -24,7 +22,6 @@ public final class OperationContextCppCodeGenerator{
     public String getIndentationPrefix()
     {
         StringBuilder sb = new StringBuilder();
-
         for(int i = 0; i < this.codeIndetation; ++i)
         {
             sb.append("\t");

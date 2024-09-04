@@ -570,7 +570,6 @@ public class C2jModelToGeneratorModelTransformer {
         if (operation.isRequireEndpointDiscovery()) {
             requireEndpointDiscovery = true;
         }
-        
         // Documentation
         String crossLinkedShapeDocs =
                 addDocCrossLinks(c2jOperation.getDocumentation(), c2jServiceModel.getMetadata().getUid(), c2jOperation.getName());

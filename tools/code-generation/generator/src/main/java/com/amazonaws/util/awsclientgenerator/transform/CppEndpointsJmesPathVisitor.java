@@ -1,6 +1,4 @@
-
 package com.amazonaws.util.awsclientgenerator.transform;
-
 import software.amazon.smithy.utils.Pair;
 import software.amazon.smithy.jmespath.ast.AndExpression;
 import software.amazon.smithy.jmespath.ast.ComparatorExpression;
