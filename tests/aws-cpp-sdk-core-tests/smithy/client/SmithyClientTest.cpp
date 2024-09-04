@@ -7,10 +7,12 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
-
 #include <smithy/identity/auth/built-in/SigV4aAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
 #include <aws/core/client/ClientConfiguration.h>
+
+#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
 
 #include <aws/core/endpoint/EndpointProviderBase.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
@@ -232,7 +234,7 @@ TEST_F(SmithyClientTest, testSigV4a) {
 
 TEST_F(SmithyClientTest, bearer) {
 
-    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::SigV4aAuthSchemeResolver<>>(ALLOCATION_TAG);
+    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::BearerTokenAuthSchemeResolver>(ALLOCATION_TAG);
 
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
 
@@ -244,7 +246,7 @@ TEST_F(SmithyClientTest, bearer) {
     Aws::String key{"aws.auth#sigv4a"};
     auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
 
-    SigVariant val{smithy::SigV4aAuthScheme(credentialsResolver, "MyService", "us-west-2")};
+    SigVariant val{smithy::BearerTokenAuthScheme(credentialsResolver, "MyService", "us-west-2")};
     
     authSchemesMap.emplace(key, val);
 
