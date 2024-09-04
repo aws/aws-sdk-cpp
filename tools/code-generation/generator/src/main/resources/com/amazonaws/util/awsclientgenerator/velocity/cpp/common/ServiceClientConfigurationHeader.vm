@@ -45,6 +45,36 @@ namespace ${rootNamespace}
 #end
 #end
 
+#if($metadata.hasEndpointDiscoveryTrait)
+            ${metadata.classNamePrefix}ClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& other)
+                : Aws::Client::GenericClientConfiguration(other),
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+            {
+            }
+
+            ${metadata.classNamePrefix}ClientConfiguration(${metadata.classNamePrefix}ClientConfiguration&& other) noexcept
+                : Aws::Client::GenericClientConfiguration(std::move(other)),
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+            {
+            }
+
+            ${metadata.classNamePrefix}ClientConfiguration& operator=(const ${metadata.classNamePrefix}ClientConfiguration& other)
+            {
+                if (this == &other)
+                    return *this;
+                Aws::Client::GenericClientConfiguration::operator =(other);
+                return *this;
+            }
+
+            ${metadata.classNamePrefix}ClientConfiguration& operator=(${metadata.classNamePrefix}ClientConfiguration&& other) noexcept
+            {
+                if (this == &other)
+                    return *this;
+                Aws::Client::GenericClientConfiguration::operator =(std::move(other));
+                return *this;
+            }
+
+#end
             ${metadata.classNamePrefix}ClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
             /**

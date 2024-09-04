@@ -19,6 +19,34 @@ namespace Aws
             static const bool EndpointDiscoverySupported = true;
             static const bool EndpointDiscoveryRequired = true;
 
+            TimestreamQueryClientConfiguration(const TimestreamQueryClientConfiguration& other)
+                : Aws::Client::GenericClientConfiguration(other),
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+            {
+            }
+
+            TimestreamQueryClientConfiguration(TimestreamQueryClientConfiguration&& other) noexcept
+                : Aws::Client::GenericClientConfiguration(std::move(other)),
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+            {
+            }
+
+            TimestreamQueryClientConfiguration& operator=(const TimestreamQueryClientConfiguration& other)
+            {
+                if (this == &other)
+                    return *this;
+                Aws::Client::GenericClientConfiguration::operator =(other);
+                return *this;
+            }
+
+            TimestreamQueryClientConfiguration& operator=(TimestreamQueryClientConfiguration&& other) noexcept
+            {
+                if (this == &other)
+                    return *this;
+                Aws::Client::GenericClientConfiguration::operator =(std::move(other));
+                return *this;
+            }
+
             TimestreamQueryClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
             /**
