@@ -23,6 +23,8 @@ namespace Aws
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static const int INFO_HASH = HashingUtils::HashString("INFO");
+        static const int DEBUG__HASH = HashingUtils::HashString("DEBUG");
 
 
         FieldLogLevel GetFieldLogLevelForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == ALL_HASH)
           {
             return FieldLogLevel::ALL;
+          }
+          else if (hashCode == INFO_HASH)
+          {
+            return FieldLogLevel::INFO;
+          }
+          else if (hashCode == DEBUG__HASH)
+          {
+            return FieldLogLevel::DEBUG_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +72,10 @@ namespace Aws
             return "ERROR";
           case FieldLogLevel::ALL:
             return "ALL";
+          case FieldLogLevel::INFO:
+            return "INFO";
+          case FieldLogLevel::DEBUG_:
+            return "DEBUG";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

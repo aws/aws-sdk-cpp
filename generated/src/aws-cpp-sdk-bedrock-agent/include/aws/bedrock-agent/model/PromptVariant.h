@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/PromptInferenceConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/PromptTemplateConfiguration.h>
 #include <aws/bedrock-agent/model/PromptTemplateType.h>
+#include <aws/bedrock-agent/model/PromptMetadataEntry.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +52,23 @@ namespace Model
     inline void SetInferenceConfiguration(PromptInferenceConfiguration&& value) { m_inferenceConfigurationHasBeenSet = true; m_inferenceConfiguration = std::move(value); }
     inline PromptVariant& WithInferenceConfiguration(const PromptInferenceConfiguration& value) { SetInferenceConfiguration(value); return *this;}
     inline PromptVariant& WithInferenceConfiguration(PromptInferenceConfiguration&& value) { SetInferenceConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An array of objects, each containing a key-value pair that defines a metadata
+     * tag and value to attach to a prompt variant. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create
+     * a prompt using Prompt management</a>.</p>
+     */
+    inline const Aws::Vector<PromptMetadataEntry>& GetMetadata() const{ return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    inline void SetMetadata(const Aws::Vector<PromptMetadataEntry>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+    inline void SetMetadata(Aws::Vector<PromptMetadataEntry>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+    inline PromptVariant& WithMetadata(const Aws::Vector<PromptMetadataEntry>& value) { SetMetadata(value); return *this;}
+    inline PromptVariant& WithMetadata(Aws::Vector<PromptMetadataEntry>&& value) { SetMetadata(std::move(value)); return *this;}
+    inline PromptVariant& AddMetadata(const PromptMetadataEntry& value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
+    inline PromptVariant& AddMetadata(PromptMetadataEntry&& value) { m_metadataHasBeenSet = true; m_metadata.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -108,6 +127,9 @@ namespace Model
 
     PromptInferenceConfiguration m_inferenceConfiguration;
     bool m_inferenceConfigurationHasBeenSet = false;
+
+    Aws::Vector<PromptMetadataEntry> m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;

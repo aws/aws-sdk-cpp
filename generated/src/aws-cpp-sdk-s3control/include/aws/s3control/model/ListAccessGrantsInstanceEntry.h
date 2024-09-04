@@ -82,20 +82,40 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center
+     * instance that you are associating with your S3 Access Grants instance. An IAM
+     * Identity Center instance is your corporate identity directory that you added to
+     * the IAM Identity Center. You can use the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a>
+     * API operation to retrieve a list of your Identity Center instances and their
+     * ARNs.</p>
+     */
+    inline const Aws::String& GetIdentityCenterInstanceArn() const{ return m_identityCenterInstanceArn; }
+    inline bool IdentityCenterInstanceArnHasBeenSet() const { return m_identityCenterInstanceArnHasBeenSet; }
+    inline void SetIdentityCenterInstanceArn(const Aws::String& value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn = value; }
+    inline void SetIdentityCenterInstanceArn(Aws::String&& value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn = std::move(value); }
+    inline void SetIdentityCenterInstanceArn(const char* value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn.assign(value); }
+    inline ListAccessGrantsInstanceEntry& WithIdentityCenterInstanceArn(const Aws::String& value) { SetIdentityCenterInstanceArn(value); return *this;}
+    inline ListAccessGrantsInstanceEntry& WithIdentityCenterInstanceArn(Aws::String&& value) { SetIdentityCenterInstanceArn(std::move(value)); return *this;}
+    inline ListAccessGrantsInstanceEntry& WithIdentityCenterInstanceArn(const char* value) { SetIdentityCenterInstanceArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If you associated your S3 Access Grants instance with an Amazon Web Services
      * IAM Identity Center instance, this field returns the Amazon Resource Name (ARN)
      * of the IAM Identity Center instance application; a subresource of the original
      * Identity Center instance. S3 Access Grants creates this Identity Center
      * application for the specific S3 Access Grants instance. </p>
      */
-    inline const Aws::String& GetIdentityCenterArn() const{ return m_identityCenterArn; }
-    inline bool IdentityCenterArnHasBeenSet() const { return m_identityCenterArnHasBeenSet; }
-    inline void SetIdentityCenterArn(const Aws::String& value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn = value; }
-    inline void SetIdentityCenterArn(Aws::String&& value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn = std::move(value); }
-    inline void SetIdentityCenterArn(const char* value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn.assign(value); }
-    inline ListAccessGrantsInstanceEntry& WithIdentityCenterArn(const Aws::String& value) { SetIdentityCenterArn(value); return *this;}
-    inline ListAccessGrantsInstanceEntry& WithIdentityCenterArn(Aws::String&& value) { SetIdentityCenterArn(std::move(value)); return *this;}
-    inline ListAccessGrantsInstanceEntry& WithIdentityCenterArn(const char* value) { SetIdentityCenterArn(value); return *this;}
+    inline const Aws::String& GetIdentityCenterApplicationArn() const{ return m_identityCenterApplicationArn; }
+    inline bool IdentityCenterApplicationArnHasBeenSet() const { return m_identityCenterApplicationArnHasBeenSet; }
+    inline void SetIdentityCenterApplicationArn(const Aws::String& value) { m_identityCenterApplicationArnHasBeenSet = true; m_identityCenterApplicationArn = value; }
+    inline void SetIdentityCenterApplicationArn(Aws::String&& value) { m_identityCenterApplicationArnHasBeenSet = true; m_identityCenterApplicationArn = std::move(value); }
+    inline void SetIdentityCenterApplicationArn(const char* value) { m_identityCenterApplicationArnHasBeenSet = true; m_identityCenterApplicationArn.assign(value); }
+    inline ListAccessGrantsInstanceEntry& WithIdentityCenterApplicationArn(const Aws::String& value) { SetIdentityCenterApplicationArn(value); return *this;}
+    inline ListAccessGrantsInstanceEntry& WithIdentityCenterApplicationArn(Aws::String&& value) { SetIdentityCenterApplicationArn(std::move(value)); return *this;}
+    inline ListAccessGrantsInstanceEntry& WithIdentityCenterApplicationArn(const char* value) { SetIdentityCenterApplicationArn(value); return *this;}
     ///@}
   private:
 
@@ -108,8 +128,11 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
-    Aws::String m_identityCenterArn;
-    bool m_identityCenterArnHasBeenSet = false;
+    Aws::String m_identityCenterInstanceArn;
+    bool m_identityCenterInstanceArnHasBeenSet = false;
+
+    Aws::String m_identityCenterApplicationArn;
+    bool m_identityCenterApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

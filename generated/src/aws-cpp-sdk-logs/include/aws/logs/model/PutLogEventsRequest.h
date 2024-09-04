@@ -101,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Reserved for internal use.</p>
      */
     inline const Entity& GetEntity() const{ return m_entity; }
     inline bool EntityHasBeenSet() const { return m_entityHasBeenSet; }

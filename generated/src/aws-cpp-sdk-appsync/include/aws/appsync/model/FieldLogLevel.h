@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     NONE,
     ERROR_,
-    ALL
+    ALL,
+    INFO,
+    DEBUG_
   };
 
 namespace FieldLogLevelMapper

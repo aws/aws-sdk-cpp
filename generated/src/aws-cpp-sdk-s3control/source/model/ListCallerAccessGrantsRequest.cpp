@@ -1,0 +1,93 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/s3control/model/ListCallerAccessGrantsRequest.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::S3Control::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+using namespace Aws::Http;
+
+ListCallerAccessGrantsRequest::ListCallerAccessGrantsRequest() : 
+    m_accountIdHasBeenSet(false),
+    m_grantScopeHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_allowedByApplication(false),
+    m_allowedByApplicationHasBeenSet(false)
+{
+}
+
+Aws::String ListCallerAccessGrantsRequest::SerializePayload() const
+{
+  return {};
+}
+
+void ListCallerAccessGrantsRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_grantScopeHasBeenSet)
+    {
+      ss << m_grantScope;
+      uri.AddQueryStringParameter("grantscope", ss.str());
+      ss.str("");
+    }
+
+    if(m_nextTokenHasBeenSet)
+    {
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_allowedByApplicationHasBeenSet)
+    {
+      ss << m_allowedByApplication;
+      uri.AddQueryStringParameter("allowedByApplication", ss.str());
+      ss.str("");
+    }
+
+}
+
+Aws::Http::HeaderValueCollection ListCallerAccessGrantsRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_accountIdHasBeenSet)
+  {
+    ss << m_accountId;
+    headers.emplace("x-amz-account-id",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}
+
+ListCallerAccessGrantsRequest::EndpointParameters ListCallerAccessGrantsRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("RequiresAccountId"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (AccountIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}

@@ -42,10 +42,15 @@ GetAccessGrantsInstanceResult& GetAccessGrantsInstanceResult::operator =(const A
     {
       m_accessGrantsInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceIdNode.GetText());
     }
-    XmlNode identityCenterArnNode = resultNode.FirstChild("IdentityCenterArn");
-    if(!identityCenterArnNode.IsNull())
+    XmlNode identityCenterInstanceArnNode = resultNode.FirstChild("IdentityCenterInstanceArn");
+    if(!identityCenterInstanceArnNode.IsNull())
     {
-      m_identityCenterArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterArnNode.GetText());
+      m_identityCenterInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterInstanceArnNode.GetText());
+    }
+    XmlNode identityCenterApplicationArnNode = resultNode.FirstChild("IdentityCenterApplicationArn");
+    if(!identityCenterApplicationArnNode.IsNull())
+    {
+      m_identityCenterApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterApplicationArnNode.GetText());
     }
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())

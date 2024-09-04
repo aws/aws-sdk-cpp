@@ -37,8 +37,10 @@ namespace Model
    * <code>anthropic.claude-3-sonnet-20240229-v1:0</code> </p> </li> <li>
    * <p>Anthropic Claude 3 Haiku -
    * <code>anthropic.claude-3-haiku-20240307-v1:0</code> </p> </li> </ul> <p>You can
-   * get the ARN of a model with the action. Standard model usage charges apply for
-   * the foundation model parsing strategy.</p><p><h3>See Also:</h3>   <a
+   * get the ARN of a model with the <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListFoundationModels.html">ListFoundationModels</a>
+   * action. Standard model usage charges apply for the foundation model parsing
+   * strategy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ParsingConfiguration">AWS
    * API Reference</a></p>
    */

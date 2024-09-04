@@ -64,6 +64,7 @@
 #include <aws/s3control/model/ListAccessGrantsLocationsResult.h>
 #include <aws/s3control/model/ListAccessPointsResult.h>
 #include <aws/s3control/model/ListAccessPointsForObjectLambdaResult.h>
+#include <aws/s3control/model/ListCallerAccessGrantsResult.h>
 #include <aws/s3control/model/ListJobsResult.h>
 #include <aws/s3control/model/ListMultiRegionAccessPointsResult.h>
 #include <aws/s3control/model/ListRegionalBucketsResult.h>
@@ -185,6 +186,7 @@ namespace Aws
       class ListAccessGrantsLocationsRequest;
       class ListAccessPointsRequest;
       class ListAccessPointsForObjectLambdaRequest;
+      class ListCallerAccessGrantsRequest;
       class ListJobsRequest;
       class ListMultiRegionAccessPointsRequest;
       class ListRegionalBucketsRequest;
@@ -280,6 +282,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAccessGrantsLocationsResult, S3ControlError> ListAccessGrantsLocationsOutcome;
       typedef Aws::Utils::Outcome<ListAccessPointsResult, S3ControlError> ListAccessPointsOutcome;
       typedef Aws::Utils::Outcome<ListAccessPointsForObjectLambdaResult, S3ControlError> ListAccessPointsForObjectLambdaOutcome;
+      typedef Aws::Utils::Outcome<ListCallerAccessGrantsResult, S3ControlError> ListCallerAccessGrantsOutcome;
       typedef Aws::Utils::Outcome<ListJobsResult, S3ControlError> ListJobsOutcome;
       typedef Aws::Utils::Outcome<ListMultiRegionAccessPointsResult, S3ControlError> ListMultiRegionAccessPointsOutcome;
       typedef Aws::Utils::Outcome<ListRegionalBucketsResult, S3ControlError> ListRegionalBucketsOutcome;
@@ -375,6 +378,7 @@ namespace Aws
       typedef std::future<ListAccessGrantsLocationsOutcome> ListAccessGrantsLocationsOutcomeCallable;
       typedef std::future<ListAccessPointsOutcome> ListAccessPointsOutcomeCallable;
       typedef std::future<ListAccessPointsForObjectLambdaOutcome> ListAccessPointsForObjectLambdaOutcomeCallable;
+      typedef std::future<ListCallerAccessGrantsOutcome> ListCallerAccessGrantsOutcomeCallable;
       typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
       typedef std::future<ListMultiRegionAccessPointsOutcome> ListMultiRegionAccessPointsOutcomeCallable;
       typedef std::future<ListRegionalBucketsOutcome> ListRegionalBucketsOutcomeCallable;
@@ -473,6 +477,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessGrantsLocationsRequest&, const Model::ListAccessGrantsLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessGrantsLocationsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsRequest&, const Model::ListAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsForObjectLambdaRequest&, const Model::ListAccessPointsForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsForObjectLambdaResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::ListCallerAccessGrantsRequest&, const Model::ListCallerAccessGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCallerAccessGrantsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListMultiRegionAccessPointsRequest&, const Model::ListMultiRegionAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiRegionAccessPointsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListRegionalBucketsRequest&, const Model::ListRegionalBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegionalBucketsResponseReceivedHandler;

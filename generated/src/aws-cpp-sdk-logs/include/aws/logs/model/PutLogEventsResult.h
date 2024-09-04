@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Reserved for internal use.</p>
      */
     inline const RejectedEntityInfo& GetRejectedEntityInfo() const{ return m_rejectedEntityInfo; }
     inline void SetRejectedEntityInfo(const RejectedEntityInfo& value) { m_rejectedEntityInfo = value; }

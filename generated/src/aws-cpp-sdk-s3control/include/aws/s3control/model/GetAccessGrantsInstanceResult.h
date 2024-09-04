@@ -62,20 +62,38 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center
+     * instance that you are associating with your S3 Access Grants instance. An IAM
+     * Identity Center instance is your corporate identity directory that you added to
+     * the IAM Identity Center. You can use the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a>
+     * API operation to retrieve a list of your Identity Center instances and their
+     * ARNs.</p>
+     */
+    inline const Aws::String& GetIdentityCenterInstanceArn() const{ return m_identityCenterInstanceArn; }
+    inline void SetIdentityCenterInstanceArn(const Aws::String& value) { m_identityCenterInstanceArn = value; }
+    inline void SetIdentityCenterInstanceArn(Aws::String&& value) { m_identityCenterInstanceArn = std::move(value); }
+    inline void SetIdentityCenterInstanceArn(const char* value) { m_identityCenterInstanceArn.assign(value); }
+    inline GetAccessGrantsInstanceResult& WithIdentityCenterInstanceArn(const Aws::String& value) { SetIdentityCenterInstanceArn(value); return *this;}
+    inline GetAccessGrantsInstanceResult& WithIdentityCenterInstanceArn(Aws::String&& value) { SetIdentityCenterInstanceArn(std::move(value)); return *this;}
+    inline GetAccessGrantsInstanceResult& WithIdentityCenterInstanceArn(const char* value) { SetIdentityCenterInstanceArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If you associated your S3 Access Grants instance with an Amazon Web Services
      * IAM Identity Center instance, this field returns the Amazon Resource Name (ARN)
-     * of the Amazon Web Services IAM Identity Center instance application; a
-     * subresource of the original Identity Center instance. S3 Access Grants creates
-     * this Identity Center application for the specific S3 Access Grants instance.
-     * </p>
+     * of the IAM Identity Center instance application; a subresource of the original
+     * Identity Center instance. S3 Access Grants creates this Identity Center
+     * application for the specific S3 Access Grants instance. </p>
      */
-    inline const Aws::String& GetIdentityCenterArn() const{ return m_identityCenterArn; }
-    inline void SetIdentityCenterArn(const Aws::String& value) { m_identityCenterArn = value; }
-    inline void SetIdentityCenterArn(Aws::String&& value) { m_identityCenterArn = std::move(value); }
-    inline void SetIdentityCenterArn(const char* value) { m_identityCenterArn.assign(value); }
-    inline GetAccessGrantsInstanceResult& WithIdentityCenterArn(const Aws::String& value) { SetIdentityCenterArn(value); return *this;}
-    inline GetAccessGrantsInstanceResult& WithIdentityCenterArn(Aws::String&& value) { SetIdentityCenterArn(std::move(value)); return *this;}
-    inline GetAccessGrantsInstanceResult& WithIdentityCenterArn(const char* value) { SetIdentityCenterArn(value); return *this;}
+    inline const Aws::String& GetIdentityCenterApplicationArn() const{ return m_identityCenterApplicationArn; }
+    inline void SetIdentityCenterApplicationArn(const Aws::String& value) { m_identityCenterApplicationArn = value; }
+    inline void SetIdentityCenterApplicationArn(Aws::String&& value) { m_identityCenterApplicationArn = std::move(value); }
+    inline void SetIdentityCenterApplicationArn(const char* value) { m_identityCenterApplicationArn.assign(value); }
+    inline GetAccessGrantsInstanceResult& WithIdentityCenterApplicationArn(const Aws::String& value) { SetIdentityCenterApplicationArn(value); return *this;}
+    inline GetAccessGrantsInstanceResult& WithIdentityCenterApplicationArn(Aws::String&& value) { SetIdentityCenterApplicationArn(std::move(value)); return *this;}
+    inline GetAccessGrantsInstanceResult& WithIdentityCenterApplicationArn(const char* value) { SetIdentityCenterApplicationArn(value); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +123,9 @@ namespace Model
 
     Aws::String m_accessGrantsInstanceId;
 
-    Aws::String m_identityCenterArn;
+    Aws::String m_identityCenterInstanceArn;
+
+    Aws::String m_identityCenterApplicationArn;
 
     Aws::Utils::DateTime m_createdAt;
 

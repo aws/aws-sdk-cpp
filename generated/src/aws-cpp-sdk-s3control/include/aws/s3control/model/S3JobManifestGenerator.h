@@ -58,9 +58,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
-     * buckets</b> - Directory buckets aren't supported as the source buckets used by
-     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
+     * <p>The ARN of the source bucket used by the ManifestGenerator.</p>  <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as the source
+     * buckets used by <code>S3JobManifestGenerator</code> to generate the job
+     * manifest.</p> 
      */
     inline const Aws::String& GetSourceBucket() const{ return m_sourceBucket; }
     inline bool SourceBucketHasBeenSet() const { return m_sourceBucketHasBeenSet; }

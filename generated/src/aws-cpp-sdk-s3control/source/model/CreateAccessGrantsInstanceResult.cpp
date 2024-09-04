@@ -47,10 +47,15 @@ CreateAccessGrantsInstanceResult& CreateAccessGrantsInstanceResult::operator =(c
     {
       m_accessGrantsInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceArnNode.GetText());
     }
-    XmlNode identityCenterArnNode = resultNode.FirstChild("IdentityCenterArn");
-    if(!identityCenterArnNode.IsNull())
+    XmlNode identityCenterInstanceArnNode = resultNode.FirstChild("IdentityCenterInstanceArn");
+    if(!identityCenterInstanceArnNode.IsNull())
     {
-      m_identityCenterArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterArnNode.GetText());
+      m_identityCenterInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterInstanceArnNode.GetText());
+    }
+    XmlNode identityCenterApplicationArnNode = resultNode.FirstChild("IdentityCenterApplicationArn");
+    if(!identityCenterApplicationArnNode.IsNull())
+    {
+      m_identityCenterApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterApplicationArnNode.GetText());
     }
   }
 

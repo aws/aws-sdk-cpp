@@ -44,7 +44,8 @@ namespace Model
     ///@{
     /**
      * <p>If provided, the generated manifest includes objects where the specified
-     * string appears at the start of the object key string.</p>
+     * string appears at the start of the object key string. Each KeyNameConstraint
+     * filter accepts an array of strings with a length of 1 string.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchAnyPrefix() const{ return m_matchAnyPrefix; }
     inline bool MatchAnyPrefixHasBeenSet() const { return m_matchAnyPrefixHasBeenSet; }
@@ -60,7 +61,8 @@ namespace Model
     ///@{
     /**
      * <p>If provided, the generated manifest includes objects where the specified
-     * string appears at the end of the object key string.</p>
+     * string appears at the end of the object key string. Each KeyNameConstraint
+     * filter accepts an array of strings with a length of 1 string.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchAnySuffix() const{ return m_matchAnySuffix; }
     inline bool MatchAnySuffixHasBeenSet() const { return m_matchAnySuffixHasBeenSet; }
@@ -76,7 +78,8 @@ namespace Model
     ///@{
     /**
      * <p>If provided, the generated manifest includes objects where the specified
-     * string appears anywhere within the object key string.</p>
+     * string appears anywhere within the object key string. Each KeyNameConstraint
+     * filter accepts an array of strings with a length of 1 string.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchAnySubstring() const{ return m_matchAnySubstring; }
     inline bool MatchAnySubstringHasBeenSet() const { return m_matchAnySubstringHasBeenSet; }
