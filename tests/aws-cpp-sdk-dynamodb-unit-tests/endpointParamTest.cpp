@@ -12,6 +12,7 @@ const size_t DynamoDBEndpointRules::RulesBlobStrLen = 497;
 const size_t DynamoDBEndpointRules::RulesBlobSize = 498;
 
 using RulesBlobT = Aws::Array<const char, DynamoDBEndpointRules::RulesBlobSize>;
+namespace EndpointParamTest{
 static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','s','t','r','i','n','g','A','r','r','a','y','P','a','r','a','m','"',':',
@@ -35,11 +36,12 @@ static constexpr RulesBlobT RulesBlob = {{
 's','e','t','"',',','"','t','y','p','e','"',':','"','e','r','r','o','r','"','}',']','}','\0'
 }};
 
-const char* DynamoDBEndpointRules::GetRulesBlob()
-{
-    return RulesBlob.data();
 }
 
+const char* DynamoDBEndpointRules::GetRulesBlob()
+{
+    return EndpointParamTest::RulesBlob.data();
+}
 
 class  DynamoDBEndpointProviderTest : public Endpoint::DynamoDBDefaultEpProviderBase
 {
@@ -70,8 +72,6 @@ class EndpointTest : public Aws::Testing::AwsCppSdkGTestSuite {
 };
 const char EndpointTest::ALLOCATION_TAG[] = "EndpointTest";
 
-
-
 TEST_F(EndpointTest, testStringArrayParam) {
 
     std::shared_ptr<DynamoDBEndpointProviderTest> endpointProvider_sp = Aws::MakeShared<DynamoDBEndpointProviderTest>(ALLOCATION_TAG);
@@ -86,7 +86,6 @@ TEST_F(EndpointTest, testStringArrayParam) {
    
 }
 
-
 TEST_F(EndpointTest, testStringArrayParamError) {
 
     std::shared_ptr<DynamoDBEndpointProviderTest> endpointProvider_sp = Aws::MakeShared<DynamoDBEndpointProviderTest>(ALLOCATION_TAG);
@@ -96,6 +95,6 @@ TEST_F(EndpointTest, testStringArrayParamError) {
     parameters.emplace_back(Aws::String("stringArrayParam"), Aws::Vector<Aws::String>{}, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
 
     auto res = endpointProvider_sp->ResolveEndpoint(parameters);
-    EXPECT_FALSE(res.IsSuccess());
 
+    EXPECT_FALSE(res.IsSuccess());
 }

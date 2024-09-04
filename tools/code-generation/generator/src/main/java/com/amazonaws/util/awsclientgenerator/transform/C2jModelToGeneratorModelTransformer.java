@@ -19,7 +19,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
-
 import lombok.Data;
 import lombok.Value;
 import org.apache.commons.lang.WordUtils;
@@ -27,7 +26,6 @@ import org.apache.commons.lang.WordUtils;
 import java.util.*;
 import java.util.stream.Collectors;
 import software.amazon.smithy.jmespath.JmespathExpression;
-
 
 public class C2jModelToGeneratorModelTransformer {
 
@@ -166,7 +164,6 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setShapes(shapes);
         serviceModel.setOperations(operations);
         //for overations with context params, extract using jmespath expression and populate in endpoint params
-
         serviceModel.setServiceErrors(allErrors);
         serviceModel.getMetadata().setHasEndpointTrait(hasEndpointTrait);
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
@@ -574,8 +571,6 @@ public class C2jModelToGeneratorModelTransformer {
             requireEndpointDiscovery = true;
         }
         
-
-
         // Documentation
         String crossLinkedShapeDocs =
                 addDocCrossLinks(c2jOperation.getDocumentation(), c2jServiceModel.getMetadata().getUid(), c2jOperation.getName());
@@ -606,7 +601,6 @@ public class C2jModelToGeneratorModelTransformer {
             operation.setSignerName("Aws::Auth::NULL_SIGNER");
         }
         //set operation context params
-
         operation.setStaticContextParams(c2jOperation.getStaticContextParams());
        
 
@@ -660,7 +654,6 @@ public class C2jModelToGeneratorModelTransformer {
             Map<String, Map<String, String>> operationContextParams = c2jOperation.getOperationContextParams();
             if (operationContextParams != null )
             {
-                
                 String path = null;
                 //get path from context param
                 for (Map.Entry<String, Map<String, String>> outerEntry: operationContextParams.entrySet()) {
@@ -669,29 +662,18 @@ public class C2jModelToGeneratorModelTransformer {
                     String pathValue = innerMap.get("path");
                     if(pathValue != null)
                     {
-               
                         OperationContextCppCodeGenerator ctxt = new OperationContextCppCodeGenerator();
-
                         JmespathExpression.parse(pathValue).accept(new CppEndpointsJmesPathVisitor(ctxt, requestShape));
-
                         String[] lines = ctxt.getCppCode().toString().split("\n");
-
                         List<String> lineList = new ArrayList<>();
-
                         for (String line : lines) {
                             lineList.add(line);
                         }
                         Map<String, List<String>> operationContextParamMap = new HashMap<>();
                         operationContextParamMap.put( outerKey,lineList);
-
                         operation.setOperationContextParamsCode(operationContextParamMap);
-
-                
                     }
                 }
-                
-                //add else case if necessary
-                
             }
         }
         // output

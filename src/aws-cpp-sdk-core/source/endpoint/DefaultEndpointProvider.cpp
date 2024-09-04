@@ -140,17 +140,23 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
             }
             else if(EndpointParameter::ParameterType::STRING_ARRAY == parameter.GetStoredType())
             {
-                
                 Aws::Crt::Vector<Aws::Crt::ByteCursor> byteCursorArray;
                 byteCursorArray.reserve(parameter.GetStrArrayValueNoCheck().size());
-                Aws::OStringStream os;
                 for (const auto &e: parameter.GetStrArrayValueNoCheck())
                 {
-                    os<<e<<",";
                     byteCursorArray.emplace_back(Aws::Crt::ByteCursorFromCString(e.c_str()));
                 }
-
-                AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, "Endpoint str array eval parameter: " << parameter.GetName() << " = " << os.str());
+                AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, 
+                "Endpoint str array eval parameter: " << 
+                    parameter.GetName() << " = " << 
+                    []() ->  Aws::OStringStream {
+                        Aws::OStringStream os;
+                        for (const auto &e: parameter.GetStrArrayValueNoCheck())
+                        {
+                            os<<e<<",";
+                        }
+                        return os;
+                    }());
                 crtRequestCtx.AddStringArray(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), byteCursorArray);
             }
             else

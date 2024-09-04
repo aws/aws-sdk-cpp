@@ -232,15 +232,6 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
                     operationEntry.setSupportsChunkedEncoding(true);
                 });
 
-        /*serviceModel.getOperations().values().stream()
-                .filter(operationEntry -> operationEntry.getName().equals("WriteGetObjectResponse"))
-                .forEach(operationEntry -> {
-                    operationEntry.setRequiresServiceNameOverride(true);
-                    operationEntry.setServiceNameOverride("s3-object-lambda");
-                    operationEntry.setSupportsChunkedEncoding(true);
-                });
-        */
-
         if (serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3") ||
                 serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3-CRT")) {
             serviceModel.getOperations().values().stream()

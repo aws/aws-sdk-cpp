@@ -110,7 +110,6 @@ namespace Aws
 
             inline GetSetResult GetStringArray(Aws::Vector<Aws::String>& ioValue) const
             {
-                // disabled RTTI...
                 if(m_storedType != ParameterType::STRING_ARRAY)
                     return GetSetResult::ERROR_WRONG_TYPE;
                 ioValue = m_stringArrayValue;
