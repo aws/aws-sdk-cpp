@@ -8,9 +8,10 @@
 
 using namespace Aws::DynamoDB;
 namespace EndpointParamTest{
-using RulesBlobT = Aws::Array<const char, DynamoDBEndpointRules::RulesBlobSize>;
-const size_t DynamoDBEndpointRules::RulesBlobStrLen = 497;
-const size_t DynamoDBEndpointRules::RulesBlobSize = 498;
+const size_t RulesBlobStrLen = 497;
+const size_t RulesBlobSize = 498;
+using RulesBlobT = Aws::Array<const char, RulesBlobSize>;
+
 static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','s','t','r','i','n','g','A','r','r','a','y','P','a','r','a','m','"',':',
@@ -36,18 +37,13 @@ static constexpr RulesBlobT RulesBlob = {{
 
 }
 
-const char* DynamoDBEndpointRules::GetRulesBlob()
-{
-    return EndpointParamTest::RulesBlob.data();
-}
-
 class  DynamoDBEndpointProviderTest : public Endpoint::DynamoDBDefaultEpProviderBase
 {
 public:
     using DynamoDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DynamoDBEndpointProviderTest()
-      : Endpoint::DynamoDBDefaultEpProviderBase(Aws::DynamoDB::DynamoDBEndpointRules::GetRulesBlob(), Aws::DynamoDB::DynamoDBEndpointRules::RulesBlobSize)
+      : Endpoint::DynamoDBDefaultEpProviderBase(EndpointParamTest::RulesBlob.data(), EndpointParamTest::RulesBlobSize)
     {}
 
     ~DynamoDBEndpointProviderTest()
