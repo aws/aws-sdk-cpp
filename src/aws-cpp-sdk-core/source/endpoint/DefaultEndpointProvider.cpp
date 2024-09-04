@@ -149,13 +149,13 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
                 AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, 
                 "Endpoint str array eval parameter: " << 
                     parameter.GetName() << " = " << 
-                    []() ->  Aws::OStringStream {
+                    [&parameter]() ->  Aws::String {
                         Aws::OStringStream os;
                         for (const auto &e: parameter.GetStrArrayValueNoCheck())
                         {
                             os<<e<<",";
                         }
-                        return os;
+                        return os.str();
                     }());
                 crtRequestCtx.AddStringArray(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), byteCursorArray);
             }

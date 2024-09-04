@@ -34,7 +34,6 @@ public class EndpointParameterValue {
                 String strValueEscaped = (elem.contains("\"") || elem.contains("\\"))
                     ? "R\"(" + elem + ")\""
                     : "\"" + elem + "\"";
-        
                 if (i > 0) {
                     sb.append(", ");
                 }
@@ -43,7 +42,6 @@ public class EndpointParameterValue {
             sb.append("}");
             return sb.toString();
         }
-
         throw new Exception("EndpointParameterValue not set!");
     }
 }

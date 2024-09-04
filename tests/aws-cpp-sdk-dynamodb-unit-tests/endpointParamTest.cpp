@@ -55,7 +55,6 @@ public:
     ~DynamoDBEndpointProviderTest()
     {
     }
-
 };
 
 class EndpointTest : public Aws::Testing::AwsCppSdkGTestSuite {
@@ -83,7 +82,6 @@ TEST_F(EndpointTest, testStringArrayParam) {
     auto res = endpointProvider_sp->ResolveEndpoint(parameters);
     EXPECT_TRUE(res.IsSuccess());
     EXPECT_EQ( res.GetResult().GetURL(), "https://example.com/staticValue2");
-   
 }
 
 TEST_F(EndpointTest, testStringArrayParamError) {

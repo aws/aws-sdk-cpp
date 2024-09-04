@@ -163,7 +163,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         serviceModel.setShapes(shapes);
         serviceModel.setOperations(operations);
-        //for overations with context params, extract using jmespath expression and populate in endpoint params
+        //for operations with context params, extract using jmespath expression and populate in endpoint params
         serviceModel.setServiceErrors(allErrors);
         serviceModel.getMetadata().setHasEndpointTrait(hasEndpointTrait);
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
@@ -602,7 +602,6 @@ public class C2jModelToGeneratorModelTransformer {
         //set operation context params
         operation.setStaticContextParams(c2jOperation.getStaticContextParams());
        
-
         // input
         if (c2jOperation.getInput() != null) {
             Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), c2jOperation.getName(), SHAPE_SDK_REQUEST_SUFFIX);
