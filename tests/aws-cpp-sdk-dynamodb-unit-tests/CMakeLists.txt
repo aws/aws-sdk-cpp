@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-unit-tests 
+add_project(aws-cpp-sdk-dynamodb-unit-tests 
     "Unit Tests for the AWS DynamoDb C++ SDK" 
     aws-cpp-sdk-dynamodb 
     testing-resources 
