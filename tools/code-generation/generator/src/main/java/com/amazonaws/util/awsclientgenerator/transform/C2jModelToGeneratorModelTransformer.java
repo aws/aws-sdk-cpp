@@ -141,8 +141,6 @@ public class C2jModelToGeneratorModelTransformer {
             "Request", "SdkRequest", "CppSdkRequest"
     );
 
-    
-
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
         this.standalone = standalone;

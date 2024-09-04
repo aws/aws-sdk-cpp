@@ -58,16 +58,12 @@ public:
 };
 
 class EndpointTest : public Aws::Testing::AwsCppSdkGTestSuite {
-    
-
     protected:
     static const char ALLOCATION_TAG[];
-    
    
     public:
     void SetUp() override{
     }
-    
 };
 const char EndpointTest::ALLOCATION_TAG[] = "EndpointTest";
 
