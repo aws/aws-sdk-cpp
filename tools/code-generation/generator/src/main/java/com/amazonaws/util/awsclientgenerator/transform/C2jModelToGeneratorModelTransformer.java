@@ -599,7 +599,6 @@ public class C2jModelToGeneratorModelTransformer {
         }
         //set operation context params
         operation.setStaticContextParams(c2jOperation.getStaticContextParams());
-       
         // input
         if (c2jOperation.getInput() != null) {
             Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), c2jOperation.getName(), SHAPE_SDK_REQUEST_SUFFIX);
