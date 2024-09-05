@@ -33,16 +33,16 @@ static constexpr RulesBlobT RulesBlob = {{
 
 }
 
-class  DynamoDBEndpointProviderTest : public Aws::Endpoint::DefaultEndpointProvider<>
+class  TestServiceEndpointProviderTest : public Aws::Endpoint::DefaultEndpointProvider<>
 {
 public:
-    using DynamoDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+    using TestServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    DynamoDBEndpointProviderTest()
+    TestServiceEndpointProviderTest()
       : Aws::Endpoint::DefaultEndpointProvider<>(EndpointParamTest::RulesBlob.data(), EndpointParamTest::RulesBlobSize)
     {}
 
-    ~DynamoDBEndpointProviderTest()
+    ~TestServiceEndpointProviderTest()
     {
     }
 };
@@ -59,7 +59,7 @@ const char EndpointTest::ALLOCATION_TAG[] = "EndpointTest";
 
 TEST_F(EndpointTest, testStringArrayParam) {
 
-    std::shared_ptr<DynamoDBEndpointProviderTest> endpointProvider_sp = Aws::MakeShared<DynamoDBEndpointProviderTest>(ALLOCATION_TAG);
+    std::shared_ptr<TestServiceEndpointProviderTest> endpointProvider_sp = Aws::MakeShared<TestServiceEndpointProviderTest>(ALLOCATION_TAG);
 
     Aws::Endpoint::EndpointParameters parameters;
     // Static context parameters
@@ -72,7 +72,7 @@ TEST_F(EndpointTest, testStringArrayParam) {
 
 TEST_F(EndpointTest, testStringArrayParamError) {
 
-    std::shared_ptr<DynamoDBEndpointProviderTest> endpointProvider_sp = Aws::MakeShared<DynamoDBEndpointProviderTest>(ALLOCATION_TAG);
+    std::shared_ptr<TestServiceEndpointProviderTest> endpointProvider_sp = Aws::MakeShared<TestServiceEndpointProviderTest>(ALLOCATION_TAG);
 
     Aws::Endpoint::EndpointParameters parameters;
     // Static context parameters
