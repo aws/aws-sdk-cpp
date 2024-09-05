@@ -12,8 +12,7 @@ import java.lang.reflect.Type;
 import java.util.Map;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport
+import com.google.common.collect.Streams;
 public class EndpointParameterValueDeserializer implements JsonDeserializer<EndpointParameterValue> {
 
     @Override

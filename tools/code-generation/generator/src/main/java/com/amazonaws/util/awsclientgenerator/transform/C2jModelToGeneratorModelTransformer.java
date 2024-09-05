@@ -650,7 +650,6 @@ public class C2jModelToGeneratorModelTransformer {
             Map<String, Map<String, String>> operationContextParams = c2jOperation.getOperationContextParams();
             if (operationContextParams != null )
             {
-                
                 Map<String, List<String>> operationContextParamMap = new HashMap<>();
                 //find first element in nested map with key "path"
                 operationContextParams.entrySet().stream().filter(entry -> entry.getValue().containsKey("path"))
@@ -663,27 +662,6 @@ public class C2jModelToGeneratorModelTransformer {
                     }
                 });
                 operation.setOperationContextParamsCode(operationContextParamMap);
-
-                //get path from context param
-                /*String path = null;
-                    for (Map.Entry<String, Map<String, String>> outerEntry: operationContextParams.entrySet()) {
-                    String outerKey = outerEntry.getKey();
-                    Map<String, String> innerMap = outerEntry.getValue();
-                    String pathValue = innerMap.get("path");
-                    if(pathValue != null)
-                    {
-                        OperationContextCppCodeGenerator ctxt = new OperationContextCppCodeGenerator();
-                        JmespathExpression.parse(pathValue).accept(new CppEndpointsJmesPathVisitor(ctxt, requestShape));
-                        String[] lines = ctxt.getCppCode().toString().split("\n");
-                        List<String> lineList = new ArrayList<>();
-                        for (String line : lines) {
-                            lineList.add(line);
-                        }
-                        Map<String, List<String>> operationContextParamMap = new HashMap<>();
-                        operationContextParamMap.put( outerKey,lineList);
-                        operation.setOperationContextParamsCode(operationContextParamMap);
-                    }
-                }*/
             }
         }
         // output

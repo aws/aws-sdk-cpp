@@ -1,4 +1,5 @@
 package com.amazonaws.util.awsclientgenerator.transform;
+
 import software.amazon.smithy.utils.Pair;
 import software.amazon.smithy.jmespath.ast.AndExpression;
 import software.amazon.smithy.jmespath.ast.ComparatorExpression;
@@ -26,11 +27,9 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 
-import java.text.MessageFormat;
 import java.util.*;
 
-class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shape>> 
-{
+class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shape>> {
     final OperationContextCppCodeGenerator context;
     final Shape input;
 
@@ -43,49 +42,44 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
     public Pair<String, Shape> visitObjectProjection(ObjectProjectionExpression expression) {
         throw new SmithyBuildException("Unsupported JMESPath expression");
     }
+
     @Override
     public Pair<String, Shape> visitProjection(ProjectionExpression expression) {
         Pair<String, Shape> left = expression.getLeft().accept(this);
         ShapeMember shapeMember = null;
-        String varName =  left.left + "Elem";
-        if (left.right.isList())
-        {   
-            shapeMember = left.right.getListMember();            
+        String varName = left.left + "Elem";
+        if (left.right.isList()) {
+            shapeMember = left.right.getListMember();
         }
-        
-        if (shapeMember != null) 
-        {
+
+        if (shapeMember != null) {
             context.rangeBasedForLoop(varName);
             context.openVariableScope(varName);
-            Pair<String, Shape> right =
-                    expression.getRight().accept(
-                            new CppEndpointsJmesPathVisitor(context, shapeMember.getShape()));
+            Pair<String, Shape> right = expression.getRight().accept(
+                    new CppEndpointsJmesPathVisitor(context, shapeMember.getShape()));
             context.closeVariableScope();
             return Pair.of(
                     left.left,
-                    right.right
-            );
+                    right.right);
 
         } else {
             throw new SmithyBuildException("Projection can only be applied to List Shapes.");
         }
     }
-    
+
     @Override
     public Pair<String, Shape> visitFunction(FunctionExpression expression) {
         if (expression.getName().equals("keys")) {
 
             Pair<String, Shape> left = expression.getArguments().get(0).accept(this);
-            if(!left.right.isMap())
-            {
+            if (!left.right.isMap()) {
                 throw new SmithyBuildException("keys function not associated with Map type");
             }
             ShapeMember shapeMember = left.right.getMapKey();
-            if(!shapeMember.getShape().isString())
-            {
+            if (!shapeMember.getShape().isString()) {
                 throw new SmithyBuildException("map key of type other than string is not supported");
             }
-            String varName =  expression.getName()+"Elem";
+            String varName = expression.getName() + "Elem";
             context.rangeBasedForLoop(varName);
             context.openVariableScope(varName);
             context.addInScopeVariableToResult(Optional.of("first"));
@@ -100,36 +94,30 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitField(FieldExpression expression) {
-        //if shape is list, then fetch list member else struct
-        //currently assume this is always for a struct
+        // if shape is list, then fetch list member else struct
+        // currently assume this is always for a struct
         ShapeMember member = null;
-        if(this.input.isStructure())
-        {
+        if (this.input.isStructure()) {
             member = this.input.getMembers().get(expression.getName());
         }
-        if(member == null)
-        {
+        if (member == null) {
             throw new SmithyBuildException("Failed to get field from expression");
         }
-        
-        //at the start of each code block
+
+        // at the start of each code block
         String varName = expression.getName() + "Elem";
-        //if a new scope started, declare variable accessed
-        if (
-            context.isStartOfNewScope() ||
-            context.getVarName().isEmpty()
-        )
-        {
+        // if a new scope started, declare variable accessed
+        if (context.isStartOfNewScope() ||
+                context.getVarName().isEmpty()) {
             context.addVariableInScope(varName);
         }
-        //chain accessors
-        context.getCppCode().append(MessageFormat.format(".Get{0}()", CppViewHelper.convertToUpperCamel(expression.getName())));
-        if (!member.getShape().isStructure())
-        {
+        // chain accessors
+        context.getCppCode()
+                .append(MessageFormat.format(".Get{0}()", CppViewHelper.convertToUpperCamel(expression.getName())));
+        if (!member.getShape().isStructure()) {
             context.getCppCode().append(";\n");
-            //if leaf element, push to result
-            if(member.getShape().isString())
-            {
+            // if leaf element, push to result
+            if (member.getShape().isString()) {
                 context.addInScopeVariableToResult(Optional.empty());
             }
         }
@@ -141,13 +129,11 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
     @Override
     public Pair<String, Shape> visitSubexpression(Subexpression expression) {
         Pair<String, Shape> left = expression.getLeft().accept(this);
-        Pair<String, Shape> right =
-                expression.getRight().accept(new CppEndpointsJmesPathVisitor(context, left.right));
+        Pair<String, Shape> right = expression.getRight().accept(new CppEndpointsJmesPathVisitor(context, left.right));
 
         return Pair.of(
                 left.left + right.left,
-                right.right
-        );
+                right.right);
     }
 
     @Override

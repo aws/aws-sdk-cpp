@@ -1,7 +1,7 @@
 package com.amazonaws.util.awsclientgenerator.domainmodels.endpoints;
-import java.util.ArrayList;
+import java.util.List;
 import lombok.Data;
-
+import java.util.stream.Collectors;
 @Data
 public class EndpointParameterValue {
     enum ParameterType {
@@ -25,8 +25,8 @@ public class EndpointParameterValue {
             String strValueEscaped = (strValue.contains("\"") || strValue.contains("\\")) ? "R\"(" + strValue + ")\"" : "\"" + strValue + "\"";
             return strValueEscaped;
         } else if (ParameterType.STRING_ARRAY == this.type){
-            public static final String AWS_VECTOR_FORMAT = "Aws::Vector<Aws::String>{%s}";
-            final String values = strArrayValue.stream().Map(elem -> 
+            String AWS_VECTOR_FORMAT = "Aws::Vector<Aws::String>{%s}";
+            final String values = strArrayValue.stream().map(elem -> 
             (elem.contains("\"") || elem.contains("\\"))
                     ? "R\"(" + elem + ")\""
                     : "\"" + elem + "\""
