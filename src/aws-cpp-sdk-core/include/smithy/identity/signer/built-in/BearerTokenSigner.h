@@ -28,13 +28,18 @@ namespace smithy {
     class BearerTokenSigner : public AwsSignerBase<AwsBearerTokenIdentityBase> {
         
     public:
+        static const char LOGGING_TAG[];
+
         //using SigV4aAuthSchemeParameters = smithy::DefaultAuthSchemeResolverParameters;
-        explicit BearerTokenSigner()
+        explicit BearerTokenSigner(const Aws::String& serviceName, const Aws::String& region)
+            :  m_serviceName(serviceName), m_region(region)
         {
         }
 
         SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const smithy::AwsBearerTokenIdentityBase& identity, SigningProperties properties) override
         {
+            AWS_UNREFERENCED_PARAM(properties);
+
             if(Aws::Http::Scheme::HTTPS != httpRequest->GetUri().GetScheme())
             {
                 // Clients MUST always use TLS (https) or equivalent transport security
@@ -52,5 +57,9 @@ namespace smithy {
 
         virtual ~BearerTokenSigner() {};
     protected:
+        Aws::String m_serviceName;
+        Aws::String m_region;
     };
+
+    const char BearerTokenSigner::LOGGING_TAG[] = "BearerTokenSigner";
 }

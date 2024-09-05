@@ -29,7 +29,7 @@ namespace smithy {
                                   const Aws::String& region)
             : AuthScheme(BEARER_SIGNER), 
             m_identityResolver{identityResolver}, 
-            m_signer{Aws::MakeShared<AwsBearerTokenSigner>("BearerTokenAuthScheme", serviceName, region)}
+            m_signer{Aws::MakeShared<smithy::BearerTokenSigner>("BearerTokenAuthScheme", serviceName, region)}
         {
             assert(m_identityResolver);
             assert(m_signer);
