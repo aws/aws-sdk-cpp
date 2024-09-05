@@ -1,12 +1,9 @@
 
 
-#include <aws/dynamodb/DynamoDBEndpointRules.h>
-#include <aws/dynamodb/DynamoDBEndpointProvider.h>
-
+#include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
-using namespace Aws::DynamoDB;
 namespace EndpointParamTest{
 const size_t RulesBlobSize = 498;
 using RulesBlobT = Aws::Array<const char, RulesBlobSize>;
@@ -36,13 +33,13 @@ static constexpr RulesBlobT RulesBlob = {{
 
 }
 
-class  DynamoDBEndpointProviderTest : public Endpoint::DynamoDBDefaultEpProviderBase
+class  DynamoDBEndpointProviderTest : public Aws::Endpoint::DefaultEndpointProvider<>
 {
 public:
     using DynamoDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DynamoDBEndpointProviderTest()
-      : Endpoint::DynamoDBDefaultEpProviderBase(EndpointParamTest::RulesBlob.data(), EndpointParamTest::RulesBlobSize)
+      : Aws::Endpoint::DefaultEndpointProvider<>(EndpointParamTest::RulesBlob.data(), EndpointParamTest::RulesBlobSize)
     {}
 
     ~DynamoDBEndpointProviderTest()

@@ -156,7 +156,6 @@ list(APPEND SDK_TEST_PROJECT_LIST "cloudfront:tests/aws-cpp-sdk-cloudfront-integ
 list(APPEND SDK_TEST_PROJECT_LIST "cognito-identity:tests/aws-cpp-sdk-cognitoidentity-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "core:tests/aws-cpp-sdk-core-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "dynamodb:tests/aws-cpp-sdk-dynamodb-integration-tests")
-list(APPEND SDK_TEST_PROJECT_LIST "dynamodb:tests/aws-cpp-sdk-dynamodb-unit-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "ec2:tests/aws-cpp-sdk-ec2-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "elasticfilesystem:tests/aws-cpp-sdk-elasticfilesystem-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "identity-management:tests/aws-cpp-sdk-identity-management-tests")

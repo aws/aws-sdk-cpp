@@ -38,7 +38,6 @@ def main():
     test_list = [
         "aws-cpp-sdk-transcribestreaming-integ-tests",
         "aws-cpp-sdk-dynamodb-integration-tests",
-        "aws-cpp-sdk-dynamodb-unit-tests",
         "aws-cpp-sdk-sqs-integration-tests",
         "aws-cpp-sdk-s3-integration-tests",
         "aws-cpp-sdk-s3-unit-tests",
