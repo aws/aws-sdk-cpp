@@ -91,7 +91,7 @@ namespace Model
      * <code>EC2.AutoScalingGroup</code> is the name of the Amazon EC2 Auto Scaling
      * group.</p> </li> <li> <p> <code>EC2.InstanceId</code> is the ID of the Amazon
      * EC2 instance.</p> </li> <li> <p> <code>Host</code> is the name of the host, for
-     * all platform types.</p> </li> </ul> <p>Applciation attributes contain
+     * all platform types.</p> </li> </ul> <p>Application attributes contain
      * information about the application.</p> <ul> <li> <p>
      * <code>AWS.Application</code> is the application's name in Amazon Web Services
      * Service Catalog AppRegistry.</p> </li> <li> <p> <code>AWS.Application.ARN</code>

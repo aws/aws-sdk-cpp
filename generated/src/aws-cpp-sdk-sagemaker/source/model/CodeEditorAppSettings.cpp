@@ -21,7 +21,8 @@ namespace Model
 CodeEditorAppSettings::CodeEditorAppSettings() : 
     m_defaultResourceSpecHasBeenSet(false),
     m_customImagesHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false)
+    m_lifecycleConfigArnsHasBeenSet(false),
+    m_appLifecycleManagementHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,13 @@ CodeEditorAppSettings& CodeEditorAppSettings::operator =(JsonView jsonValue)
     m_lifecycleConfigArnsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AppLifecycleManagement"))
+  {
+    m_appLifecycleManagement = jsonValue.GetObject("AppLifecycleManagement");
+
+    m_appLifecycleManagementHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +100,12 @@ JsonValue CodeEditorAppSettings::Jsonize() const
      lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString(m_lifecycleConfigArns[lifecycleConfigArnsIndex]);
    }
    payload.WithArray("LifecycleConfigArns", std::move(lifecycleConfigArnsJsonList));
+
+  }
+
+  if(m_appLifecycleManagementHasBeenSet)
+  {
+   payload.WithObject("AppLifecycleManagement", m_appLifecycleManagement.Jsonize());
 
   }
 

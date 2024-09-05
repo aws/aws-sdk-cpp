@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>This structure contains the information about the metric that is used for the
-   * SLO.</p><p><h3>See Also:</h3>   <a
+   * <p>This structure contains the information about the metric that is used for a
+   * period-based SLO.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceLevelIndicatorMetric">AWS
    * API Reference</a></p>
    */

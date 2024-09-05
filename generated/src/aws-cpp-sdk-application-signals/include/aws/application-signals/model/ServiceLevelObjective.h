@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/application-signals/model/ServiceLevelIndicator.h>
+#include <aws/application-signals/model/RequestBasedServiceLevelIndicator.h>
+#include <aws/application-signals/model/EvaluationType.h>
 #include <aws/application-signals/model/Goal.h>
 #include <utility>
 
@@ -120,7 +122,7 @@ namespace Model
     ///@{
     /**
      * <p>A structure containing information about the performance metric that this SLO
-     * monitors.</p>
+     * monitors, if this is a period-based SLO.</p>
      */
     inline const ServiceLevelIndicator& GetSli() const{ return m_sli; }
     inline bool SliHasBeenSet() const { return m_sliHasBeenSet; }
@@ -128,6 +130,31 @@ namespace Model
     inline void SetSli(ServiceLevelIndicator&& value) { m_sliHasBeenSet = true; m_sli = std::move(value); }
     inline ServiceLevelObjective& WithSli(const ServiceLevelIndicator& value) { SetSli(value); return *this;}
     inline ServiceLevelObjective& WithSli(ServiceLevelIndicator&& value) { SetSli(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A structure containing information about the performance metric that this SLO
+     * monitors, if this is a request-based SLO.</p>
+     */
+    inline const RequestBasedServiceLevelIndicator& GetRequestBasedSli() const{ return m_requestBasedSli; }
+    inline bool RequestBasedSliHasBeenSet() const { return m_requestBasedSliHasBeenSet; }
+    inline void SetRequestBasedSli(const RequestBasedServiceLevelIndicator& value) { m_requestBasedSliHasBeenSet = true; m_requestBasedSli = value; }
+    inline void SetRequestBasedSli(RequestBasedServiceLevelIndicator&& value) { m_requestBasedSliHasBeenSet = true; m_requestBasedSli = std::move(value); }
+    inline ServiceLevelObjective& WithRequestBasedSli(const RequestBasedServiceLevelIndicator& value) { SetRequestBasedSli(value); return *this;}
+    inline ServiceLevelObjective& WithRequestBasedSli(RequestBasedServiceLevelIndicator&& value) { SetRequestBasedSli(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+     */
+    inline const EvaluationType& GetEvaluationType() const{ return m_evaluationType; }
+    inline bool EvaluationTypeHasBeenSet() const { return m_evaluationTypeHasBeenSet; }
+    inline void SetEvaluationType(const EvaluationType& value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = value; }
+    inline void SetEvaluationType(EvaluationType&& value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = std::move(value); }
+    inline ServiceLevelObjective& WithEvaluationType(const EvaluationType& value) { SetEvaluationType(value); return *this;}
+    inline ServiceLevelObjective& WithEvaluationType(EvaluationType&& value) { SetEvaluationType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,6 +185,12 @@ namespace Model
 
     ServiceLevelIndicator m_sli;
     bool m_sliHasBeenSet = false;
+
+    RequestBasedServiceLevelIndicator m_requestBasedSli;
+    bool m_requestBasedSliHasBeenSet = false;
+
+    EvaluationType m_evaluationType;
+    bool m_evaluationTypeHasBeenSet = false;
 
     Goal m_goal;
     bool m_goalHasBeenSet = false;

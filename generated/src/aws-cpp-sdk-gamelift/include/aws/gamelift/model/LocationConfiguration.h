@@ -42,7 +42,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. For a
+     * list of supported Regions and Local Zones, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+     * Amazon GameLift service locations</a> for managed hosting.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }

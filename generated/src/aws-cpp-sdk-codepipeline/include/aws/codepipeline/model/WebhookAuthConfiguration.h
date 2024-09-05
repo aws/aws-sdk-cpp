@@ -57,7 +57,16 @@ namespace Model
     ///@{
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the <code>SecretToken</code> property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>  <p>When
+     * creating CodePipeline webhooks, do not use your own credentials or reuse the
+     * same secret token across multiple webhooks. For optimal security, generate a
+     * unique secret token for each webhook you create. The secret token is an
+     * arbitrary string that you provide, which GitHub uses to compute and sign the
+     * webhook payloads sent to CodePipeline, for protecting the integrity and
+     * authenticity of the webhook payloads. Using your own credentials or reusing the
+     * same token across multiple webhooks can lead to security vulnerabilities.</p>
+     *   <p>If a secret token was provided, it will be redacted in
+     * the response.</p> 
      */
     inline const Aws::String& GetSecretToken() const{ return m_secretToken; }
     inline bool SecretTokenHasBeenSet() const { return m_secretTokenHasBeenSet; }

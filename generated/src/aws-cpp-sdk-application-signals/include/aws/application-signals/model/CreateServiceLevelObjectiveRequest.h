@@ -8,6 +8,7 @@
 #include <aws/application-signals/ApplicationSignalsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-signals/model/ServiceLevelIndicatorConfig.h>
+#include <aws/application-signals/model/RequestBasedServiceLevelIndicatorConfig.h>
 #include <aws/application-signals/model/Goal.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/application-signals/model/Tag.h>
@@ -66,8 +67,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A structure that contains information about what service and what performance
-     * metric that this SLO will monitor.</p>
+     * <p>If this SLO is a period-based SLO, this structure defines the information
+     * about what performance metric this SLO will monitor.</p> <p>You can't specify
+     * both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same
+     * operation.</p>
      */
     inline const ServiceLevelIndicatorConfig& GetSliConfig() const{ return m_sliConfig; }
     inline bool SliConfigHasBeenSet() const { return m_sliConfigHasBeenSet; }
@@ -79,8 +82,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>A structure that contains the attributes that determine the goal of the SLO.
-     * This includes the time period for evaluation and the attainment threshold.</p>
+     * <p>If this SLO is a request-based SLO, this structure defines the information
+     * about what performance metric this SLO will monitor.</p> <p>You can't specify
+     * both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same
+     * operation.</p>
+     */
+    inline const RequestBasedServiceLevelIndicatorConfig& GetRequestBasedSliConfig() const{ return m_requestBasedSliConfig; }
+    inline bool RequestBasedSliConfigHasBeenSet() const { return m_requestBasedSliConfigHasBeenSet; }
+    inline void SetRequestBasedSliConfig(const RequestBasedServiceLevelIndicatorConfig& value) { m_requestBasedSliConfigHasBeenSet = true; m_requestBasedSliConfig = value; }
+    inline void SetRequestBasedSliConfig(RequestBasedServiceLevelIndicatorConfig&& value) { m_requestBasedSliConfigHasBeenSet = true; m_requestBasedSliConfig = std::move(value); }
+    inline CreateServiceLevelObjectiveRequest& WithRequestBasedSliConfig(const RequestBasedServiceLevelIndicatorConfig& value) { SetRequestBasedSliConfig(value); return *this;}
+    inline CreateServiceLevelObjectiveRequest& WithRequestBasedSliConfig(RequestBasedServiceLevelIndicatorConfig&& value) { SetRequestBasedSliConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>This structure contains the attributes that determine the goal of the
+     * SLO.</p>
      */
     inline const Goal& GetGoal() const{ return m_goal; }
     inline bool GoalHasBeenSet() const { return m_goalHasBeenSet; }
@@ -118,6 +136,9 @@ namespace Model
 
     ServiceLevelIndicatorConfig m_sliConfig;
     bool m_sliConfigHasBeenSet = false;
+
+    RequestBasedServiceLevelIndicatorConfig m_requestBasedSliConfig;
+    bool m_requestBasedSliConfigHasBeenSet = false;
 
     Goal m_goal;
     bool m_goalHasBeenSet = false;

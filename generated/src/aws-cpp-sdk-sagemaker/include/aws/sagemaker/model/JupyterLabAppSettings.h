@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AppLifecycleManagement.h>
 #include <aws/sagemaker/model/EmrSettings.h>
 #include <aws/sagemaker/model/CustomImage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -101,6 +102,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether idle shutdown is activated for JupyterLab applications.</p>
+     */
+    inline const AppLifecycleManagement& GetAppLifecycleManagement() const{ return m_appLifecycleManagement; }
+    inline bool AppLifecycleManagementHasBeenSet() const { return m_appLifecycleManagementHasBeenSet; }
+    inline void SetAppLifecycleManagement(const AppLifecycleManagement& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = value; }
+    inline void SetAppLifecycleManagement(AppLifecycleManagement&& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = std::move(value); }
+    inline JupyterLabAppSettings& WithAppLifecycleManagement(const AppLifecycleManagement& value) { SetAppLifecycleManagement(value); return *this;}
+    inline JupyterLabAppSettings& WithAppLifecycleManagement(AppLifecycleManagement&& value) { SetAppLifecycleManagement(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration parameters that specify the IAM roles assumed by the
      * execution role of SageMaker (assumable roles) and the cluster instances or job
      * execution environments (execution roles or runtime roles) to manage and access
@@ -127,6 +140,9 @@ namespace Model
 
     Aws::Vector<CodeRepository> m_codeRepositories;
     bool m_codeRepositoriesHasBeenSet = false;
+
+    AppLifecycleManagement m_appLifecycleManagement;
+    bool m_appLifecycleManagementHasBeenSet = false;
 
     EmrSettings m_emrSettings;
     bool m_emrSettingsHasBeenSet = false;

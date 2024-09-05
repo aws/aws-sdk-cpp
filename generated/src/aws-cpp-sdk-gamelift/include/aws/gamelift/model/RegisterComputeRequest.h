@@ -96,7 +96,8 @@ namespace Model
     ///@{
     /**
      * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
-     * name or IP address.</p>
+     * name or IP address. When registering an Anywhere fleet, an IP address is
+     * required.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
@@ -111,7 +112,8 @@ namespace Model
     ///@{
     /**
      * <p>The name of a custom location to associate with the compute resource being
-     * registered. </p>
+     * registered. This parameter is required when registering a compute for an
+     * Anywhere fleet.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }

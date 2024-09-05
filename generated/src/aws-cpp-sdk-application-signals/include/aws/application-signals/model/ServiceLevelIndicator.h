@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>This structure contains information about the performance metric that an SLO
-   * monitors.</p><p><h3>See Also:</h3>   <a
+   * <p>This structure contains information about the performance metric that a
+   * period-based SLO monitors.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceLevelIndicator">AWS
    * API Reference</a></p>
    */

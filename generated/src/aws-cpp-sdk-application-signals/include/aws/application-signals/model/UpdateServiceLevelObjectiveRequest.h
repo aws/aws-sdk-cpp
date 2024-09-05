@@ -8,6 +8,7 @@
 #include <aws/application-signals/ApplicationSignalsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-signals/model/ServiceLevelIndicatorConfig.h>
+#include <aws/application-signals/model/RequestBasedServiceLevelIndicatorConfig.h>
 #include <aws/application-signals/model/Goal.h>
 #include <utility>
 
@@ -65,8 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A structure that contains information about what performance metric this SLO
-     * will monitor.</p>
+     * <p>If this SLO is a period-based SLO, this structure defines the information
+     * about what performance metric this SLO will monitor.</p>
      */
     inline const ServiceLevelIndicatorConfig& GetSliConfig() const{ return m_sliConfig; }
     inline bool SliConfigHasBeenSet() const { return m_sliConfigHasBeenSet; }
@@ -74,6 +75,21 @@ namespace Model
     inline void SetSliConfig(ServiceLevelIndicatorConfig&& value) { m_sliConfigHasBeenSet = true; m_sliConfig = std::move(value); }
     inline UpdateServiceLevelObjectiveRequest& WithSliConfig(const ServiceLevelIndicatorConfig& value) { SetSliConfig(value); return *this;}
     inline UpdateServiceLevelObjectiveRequest& WithSliConfig(ServiceLevelIndicatorConfig&& value) { SetSliConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If this SLO is a request-based SLO, this structure defines the information
+     * about what performance metric this SLO will monitor.</p> <p>You can't specify
+     * both <code>SliConfig</code> and <code>RequestBasedSliConfig</code> in the same
+     * operation.</p>
+     */
+    inline const RequestBasedServiceLevelIndicatorConfig& GetRequestBasedSliConfig() const{ return m_requestBasedSliConfig; }
+    inline bool RequestBasedSliConfigHasBeenSet() const { return m_requestBasedSliConfigHasBeenSet; }
+    inline void SetRequestBasedSliConfig(const RequestBasedServiceLevelIndicatorConfig& value) { m_requestBasedSliConfigHasBeenSet = true; m_requestBasedSliConfig = value; }
+    inline void SetRequestBasedSliConfig(RequestBasedServiceLevelIndicatorConfig&& value) { m_requestBasedSliConfigHasBeenSet = true; m_requestBasedSliConfig = std::move(value); }
+    inline UpdateServiceLevelObjectiveRequest& WithRequestBasedSliConfig(const RequestBasedServiceLevelIndicatorConfig& value) { SetRequestBasedSliConfig(value); return *this;}
+    inline UpdateServiceLevelObjectiveRequest& WithRequestBasedSliConfig(RequestBasedServiceLevelIndicatorConfig&& value) { SetRequestBasedSliConfig(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,6 +114,9 @@ namespace Model
 
     ServiceLevelIndicatorConfig m_sliConfig;
     bool m_sliConfigHasBeenSet = false;
+
+    RequestBasedServiceLevelIndicatorConfig m_requestBasedSliConfig;
+    bool m_requestBasedSliConfigHasBeenSet = false;
 
     Goal m_goal;
     bool m_goalHasBeenSet = false;

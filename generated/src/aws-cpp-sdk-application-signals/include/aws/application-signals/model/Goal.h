@@ -55,12 +55,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The threshold that determines if the goal is being met. An <i>attainment
-     * goal</i> is the ratio of good periods that meet the threshold requirements to
-     * the total periods within the interval. For example, an attainment goal of 99.9%
-     * means that within your interval, you are targeting 99.9% of the periods to be in
-     * healthy state.</p> <p>If you omit this parameter, 99 is used to represent 99% as
-     * the attainment goal.</p>
+     * <p>The threshold that determines if the goal is being met.</p> <p>If this is a
+     * period-based SLO, the attainment goal is the percentage of good periods that
+     * meet the threshold requirements to the total periods within the interval. For
+     * example, an attainment goal of 99.9% means that within your interval, you are
+     * targeting 99.9% of the periods to be in healthy state.</p> <p>If this is a
+     * request-based SLO, the attainment goal is the percentage of requests that must
+     * be successful to meet the attainment goal.</p> <p>If you omit this parameter, 99
+     * is used to represent 99% as the attainment goal.</p>
      */
     inline double GetAttainmentGoal() const{ return m_attainmentGoal; }
     inline bool AttainmentGoalHasBeenSet() const { return m_attainmentGoalHasBeenSet; }

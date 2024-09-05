@@ -16,6 +16,8 @@ namespace Model
   enum class DurationUnit
   {
     NOT_SET,
+    MINUTE,
+    HOUR,
     DAY,
     MONTH
   };

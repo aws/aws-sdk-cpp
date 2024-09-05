@@ -785,7 +785,9 @@ namespace CodePipeline
         /**
          * <p>Gets a listing of all the webhooks in this Amazon Web Services Region for
          * this account. The output lists all webhooks and includes the webhook URL and ARN
-         * and the configuration for each webhook.</p><p><h3>See Also:</h3>   <a
+         * and the configuration for each webhook.</p>  <p>If a secret token was
+         * provided, it will be redacted in the response.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">AWS
          * API Reference</a></p>
          */
@@ -1060,7 +1062,16 @@ namespace CodePipeline
          * satisfied the authentication and filtering requirements supplied when defining
          * the webhook. RegisterWebhookWithThirdParty and DeregisterWebhookWithThirdParty
          * APIs can be used to automatically configure supported third parties to call the
-         * generated webhook URL.</p><p><h3>See Also:</h3>   <a
+         * generated webhook URL.</p>  <p>When creating CodePipeline webhooks,
+         * do not use your own credentials or reuse the same secret token across multiple
+         * webhooks. For optimal security, generate a unique secret token for each webhook
+         * you create. The secret token is an arbitrary string that you provide, which
+         * GitHub uses to compute and sign the webhook payloads sent to CodePipeline, for
+         * protecting the integrity and authenticity of the webhook payloads. Using your
+         * own credentials or reusing the same token across multiple webhooks can lead to
+         * security vulnerabilities.</p>   <p>If a secret token was
+         * provided, it will be redacted in the response.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook">AWS
          * API Reference</a></p>
          */

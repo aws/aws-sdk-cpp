@@ -16,6 +16,7 @@ CreateServiceLevelObjectiveRequest::CreateServiceLevelObjectiveRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sliConfigHasBeenSet(false),
+    m_requestBasedSliConfigHasBeenSet(false),
     m_goalHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -40,6 +41,12 @@ Aws::String CreateServiceLevelObjectiveRequest::SerializePayload() const
   if(m_sliConfigHasBeenSet)
   {
    payload.WithObject("SliConfig", m_sliConfig.Jsonize());
+
+  }
+
+  if(m_requestBasedSliConfigHasBeenSet)
+  {
+   payload.WithObject("RequestBasedSliConfig", m_requestBasedSliConfig.Jsonize());
 
   }
 
