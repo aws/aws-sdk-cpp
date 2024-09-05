@@ -45,32 +45,25 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitProjection(ProjectionExpression expression) {
-        Pair<String, Shape> left = expression.getLeft().accept(this);
-        ShapeMember shapeMember = null;
-        String varName = left.left + "Elem";
-        if (left.right.isList()) {
-            shapeMember = left.right.getListMember();
-        }
-
-        if (shapeMember != null) {
-            context.rangeBasedForLoop(varName);
-            context.openVariableScope(varName);
-            Pair<String, Shape> right = expression.getRight().accept(
-                    new CppEndpointsJmesPathVisitor(context, shapeMember.getShape()));
-            context.closeVariableScope();
-            return Pair.of(
-                    left.left,
-                    right.right);
-
-        } else {
-            throw new SmithyBuildException("Projection can only be applied to List Shapes.");
-        }
+        return Optional.of(
+            expression.getLeft().accept(this)).filter( elem -> elem.right.isList()).map(
+                elem -> {
+                    String varName = elem.left + "Elem";
+                    context.rangeBasedForLoop(varName);
+                    context.openVariableScope(varName);
+                    Pair<String, Shape> right = expression.getRight().accept(
+                            new CppEndpointsJmesPathVisitor(context, elem.right.getListMember().getShape()));
+                    context.closeVariableScope();
+                    return Pair.of(
+                        elem.left,
+                        right.right);
+                }
+            ).orElseThrow(() -> new SmithyBuildException("Unsupported JMESPath expression"));
     }
 
     @Override
     public Pair<String, Shape> visitFunction(FunctionExpression expression) {
         if (expression.getName().equals("keys")) {
-
             Pair<String, Shape> left = expression.getArguments().get(0).accept(this);
             if (!left.right.isMap()) {
                 throw new SmithyBuildException("keys function not associated with Map type");
