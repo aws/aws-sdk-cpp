@@ -10,21 +10,11 @@ import com.google.gson.JsonPrimitive;
 
 import java.lang.reflect.Type;
 import java.util.Map;
-import java.util.ArrayList;
-
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport
 public class EndpointParameterValueDeserializer implements JsonDeserializer<EndpointParameterValue> {
-
-    public static boolean getArrayOfStrings(JsonArray array, ArrayList<String> result) {
-        boolean status = true;
-        for (JsonElement arrayElement : array) {
-            if (!arrayElement.isJsonPrimitive() || !arrayElement.getAsJsonPrimitive().isString()) {
-                status = false;
-                break;
-            }
-            result.add(arrayElement.getAsJsonPrimitive().getAsString());
-        }
-        return status;
-    }
 
     @Override
     public EndpointParameterValue deserialize(JsonElement jsonElement, Type type,
@@ -49,12 +39,13 @@ public class EndpointParameterValueDeserializer implements JsonDeserializer<Endp
         }
         else if(jsonElement.isJsonArray())
         {
-            ArrayList<String> arrayOfStrings = new ArrayList<>();
-            if(getArrayOfStrings(jsonElement.getAsJsonArray(), arrayOfStrings))
-            {
-                retValue.setType(EndpointParameterValue.ParameterType.STRING_ARRAY);
-                retValue.setStrArrayValue(arrayOfStrings);
-            }
+            List<String> jsonStringList = Streams.stream(jsonElement.getAsJsonArray().iterator())
+                .filter(element -> !element.isJsonPrimitive())
+                .filter(element -> !element.getAsJsonPrimitive().isString())
+                .map(element -> element.getAsJsonPrimitive().getAsString())
+                .collect(Collectors.toList());
+            retValue.setType(EndpointParameterValue.ParameterType.STRING_ARRAY);
+            retValue.setStrArrayValue(jsonStringList);
         }
         else
         {

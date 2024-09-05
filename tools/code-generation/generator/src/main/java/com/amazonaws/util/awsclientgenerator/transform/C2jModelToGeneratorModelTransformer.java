@@ -650,9 +650,23 @@ public class C2jModelToGeneratorModelTransformer {
             Map<String, Map<String, String>> operationContextParams = c2jOperation.getOperationContextParams();
             if (operationContextParams != null )
             {
-                String path = null;
+                
+                Map<String, List<String>> operationContextParamMap = new HashMap<>();
+                //find first element in nested map with key "path"
+                operationContextParams.entrySet().stream().filter(entry -> entry.getValue().containsKey("path"))
+                .forEach(entry -> {
+                    Optional<Map.Entry<String, String>> firstEntry = entry.getValue().entrySet().stream().filter(innerMap -> "path".equals(innerMap.getKey())).findFirst();
+                    if (firstEntry.isPresent()) {
+                        OperationContextCppCodeGenerator ctxt = new OperationContextCppCodeGenerator();
+                        JmespathExpression.parse(firstEntry.get().getValue()).accept(new CppEndpointsJmesPathVisitor(ctxt, requestShape));
+                        operationContextParamMap.put(entry.getKey() ,Arrays.asList(ctxt.getCppCode().toString().split("\n")) );
+                    }
+                });
+                operation.setOperationContextParamsCode(operationContextParamMap);
+
                 //get path from context param
-                for (Map.Entry<String, Map<String, String>> outerEntry: operationContextParams.entrySet()) {
+                /*String path = null;
+                    for (Map.Entry<String, Map<String, String>> outerEntry: operationContextParams.entrySet()) {
                     String outerKey = outerEntry.getKey();
                     Map<String, String> innerMap = outerEntry.getValue();
                     String pathValue = innerMap.get("path");
@@ -669,7 +683,7 @@ public class C2jModelToGeneratorModelTransformer {
                         operationContextParamMap.put( outerKey,lineList);
                         operation.setOperationContextParamsCode(operationContextParamMap);
                     }
-                }
+                }*/
             }
         }
         // output
