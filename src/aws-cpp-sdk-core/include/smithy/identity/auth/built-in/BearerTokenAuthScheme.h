@@ -14,8 +14,7 @@
 
 
 namespace smithy {
-    constexpr char SIGV4A[] = "aws.auth#sigv4a";
-    
+    constexpr char BEARER_SIGNER[] = "Bearer";
 
     class BearerTokenAuthScheme : public AuthScheme<AwsCredentialIdentityBase>
     {
@@ -28,7 +27,7 @@ namespace smithy {
         explicit BearerTokenAuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, 
                                   const Aws::String& serviceName,
                                   const Aws::String& region)
-            : AuthScheme(SIGV4A), 
+            : AuthScheme(BEARER_SIGNER), 
             m_identityResolver{identityResolver}, 
             m_signer{Aws::MakeShared<AwsBearerTokenSigner>("BearerTokenAuthScheme", serviceName, region)}
         {
