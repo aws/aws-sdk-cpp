@@ -138,10 +138,5 @@
             <artifactId>smithy-codegen-core</artifactId>
             <version>1.50.0</version>
         </dependency>
-        <dependency>
-            <groupId>software.amazon.smithy</groupId>
-            <artifactId>smithy-rules-engine</artifactId>
-            <version>1.50.0</version>
-        </dependency>
     </dependencies>
 </project>
