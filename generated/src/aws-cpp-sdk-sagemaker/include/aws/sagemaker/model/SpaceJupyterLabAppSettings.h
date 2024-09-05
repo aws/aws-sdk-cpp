@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/SpaceAppLifecycleManagement.h>
 #include <aws/sagemaker/model/CodeRepository.h>
 #include <utility>
 
@@ -64,6 +65,19 @@ namespace Model
     inline SpaceJupyterLabAppSettings& AddCodeRepositories(const CodeRepository& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(value); return *this; }
     inline SpaceJupyterLabAppSettings& AddCodeRepositories(CodeRepository&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings that are used to configure and manage the lifecycle of JupyterLab
+     * applications in a space.</p>
+     */
+    inline const SpaceAppLifecycleManagement& GetAppLifecycleManagement() const{ return m_appLifecycleManagement; }
+    inline bool AppLifecycleManagementHasBeenSet() const { return m_appLifecycleManagementHasBeenSet; }
+    inline void SetAppLifecycleManagement(const SpaceAppLifecycleManagement& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = value; }
+    inline void SetAppLifecycleManagement(SpaceAppLifecycleManagement&& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = std::move(value); }
+    inline SpaceJupyterLabAppSettings& WithAppLifecycleManagement(const SpaceAppLifecycleManagement& value) { SetAppLifecycleManagement(value); return *this;}
+    inline SpaceJupyterLabAppSettings& WithAppLifecycleManagement(SpaceAppLifecycleManagement&& value) { SetAppLifecycleManagement(std::move(value)); return *this;}
+    ///@}
   private:
 
     ResourceSpec m_defaultResourceSpec;
@@ -71,6 +85,9 @@ namespace Model
 
     Aws::Vector<CodeRepository> m_codeRepositories;
     bool m_codeRepositoriesHasBeenSet = false;
+
+    SpaceAppLifecycleManagement m_appLifecycleManagement;
+    bool m_appLifecycleManagementHasBeenSet = false;
   };
 
 } // namespace Model

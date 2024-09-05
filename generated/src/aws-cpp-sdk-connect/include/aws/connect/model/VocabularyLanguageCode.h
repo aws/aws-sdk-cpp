@@ -38,7 +38,17 @@ namespace Model
     pt_PT,
     zh_CN,
     en_NZ,
-    en_ZA
+    en_ZA,
+    ca_ES,
+    da_DK,
+    fi_FI,
+    id_ID,
+    ms_MY,
+    nl_NL,
+    no_NO,
+    pl_PL,
+    sv_SE,
+    tl_PH
   };
 
 namespace VocabularyLanguageCodeMapper

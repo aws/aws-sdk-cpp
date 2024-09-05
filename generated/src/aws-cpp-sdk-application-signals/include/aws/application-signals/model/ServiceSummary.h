@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>This structure contains information about one of your services that was
-   * discoverd by Application Signals</p><p><h3>See Also:</h3>   <a
+   * discovered by Application Signals</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceSummary">AWS
    * API Reference</a></p>
    */
@@ -92,7 +92,7 @@ namespace Model
      * <code>EC2.AutoScalingGroup</code> is the name of the Amazon EC2 Auto Scaling
      * group.</p> </li> <li> <p> <code>EC2.InstanceId</code> is the ID of the Amazon
      * EC2 instance.</p> </li> <li> <p> <code>Host</code> is the name of the host, for
-     * all platform types.</p> </li> </ul> <p>Applciation attributes contain
+     * all platform types.</p> </li> </ul> <p>Application attributes contain
      * information about the application.</p> <ul> <li> <p>
      * <code>AWS.Application</code> is the application's name in Amazon Web Services
      * Service Catalog AppRegistry.</p> </li> <li> <p> <code>AWS.Application.ARN</code>

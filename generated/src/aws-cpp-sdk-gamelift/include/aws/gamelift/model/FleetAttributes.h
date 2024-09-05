@@ -190,15 +190,18 @@ namespace Model
     ///@{
     /**
      * <p>Current status of the fleet. Possible fleet statuses include the
-     * following:</p> <ul> <li> <p>NEW -- A new fleet has been defined and desired
-     * instances is set to 1. </p> </li> <li>
-     * <p>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up
-     * the new fleet, creating new instances with the game build or Realtime script and
-     * starting server processes.</p> </li> <li> <p>ACTIVE -- Hosts can now accept game
-     * sessions.</p> </li> <li> <p>ERROR -- An error occurred when downloading,
-     * validating, building, or activating the fleet.</p> </li> <li> <p>DELETING --
-     * Hosts are responding to a delete fleet request.</p> </li> <li> <p>TERMINATED --
-     * The fleet no longer exists.</p> </li> </ul>
+     * following:</p> <ul> <li> <p>NEW -- A new fleet resource has been defined and
+     * Amazon GameLift has started creating the fleet. Desired instances is set to 1.
+     * </p> </li> <li> <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift is
+     * download the game server build, running install scripts, and then validating the
+     * build files. When complete, Amazon GameLift launches a fleet instance. </p>
+     * </li> <li> <p>ACTIVATING -- Amazon GameLift is launching a game server process
+     * and testing its connectivity with the Amazon GameLift service.</p> </li> <li>
+     * <p>ACTIVE -- The fleet is now ready to host game sessions.</p> </li> <li>
+     * <p>ERROR -- An error occurred when downloading, validating, building, or
+     * activating the fleet.</p> </li> <li> <p>DELETING -- Hosts are responding to a
+     * delete fleet request.</p> </li> <li> <p>TERMINATED -- The fleet no longer
+     * exists.</p> </li> </ul>
      */
     inline const FleetStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -281,8 +284,8 @@ namespace Model
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
      * using the fleet's <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
-     * . Requests that use this parameter continue to be valid.</p>
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>.
+     * Requests that use this parameter continue to be valid.</p>
      */
     inline const Aws::String& GetServerLaunchPath() const{ return m_serverLaunchPath; }
     inline bool ServerLaunchPathHasBeenSet() const { return m_serverLaunchPathHasBeenSet; }
@@ -297,7 +300,7 @@ namespace Model
     ///@{
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's runtime configuration . Requests that use this
+     * defined using the fleet's runtime configuration. Requests that use this
      * parameter continue to be valid.</p>
      */
     inline const Aws::String& GetServerLaunchParameters() const{ return m_serverLaunchParameters; }
@@ -352,7 +355,14 @@ namespace Model
      * <p>The operating system of the fleet's computing resources. A fleet's operating
      * system is determined by the OS of the build or script that is deployed on this
      * fleet. This attribute is used with fleets where <code>ComputeType</code> is
-     * "EC2" or "Container".</p>
+     * "EC2" or "Container".</p>  <p>Amazon Linux 2 (AL2) will reach end of
+     * support on 6/30/2025. See more details in the <a
+     * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
+     * game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x.,
+     * first update the game server build to server SDK 5.x, and then deploy to AL2023
+     * instances. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
+     * Migrate to Amazon GameLift server SDK version 5.</a> </p> 
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }

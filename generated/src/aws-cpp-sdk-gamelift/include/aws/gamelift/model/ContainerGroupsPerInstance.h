@@ -30,13 +30,12 @@ namespace Model
    * fleet, Amazon GameLift places replica container groups on each fleet instance
    * based on the following:</p> <ul> <li> <p>If no desired value is set, Amazon
    * GameLift places the calculated maximum. </p> </li> <li> <p>If a desired number
-   * is set to a value higher than the calculated maximum, Amazon GameLift places the
-   * calculated maximum.</p> </li> <li> <p>If a desired number is set to a value
-   * lower than the calculated maximum, Amazon GameLift places the desired
-   * number.</p> </li> </ul> <p> <b>Part of:</b> <a>ContainerGroupsConfiguration</a>,
-   * <a>ContainerGroupsAttributes</a> </p> <p> <b>Returned by:</b>
-   * <a>DescribeFleetAttributes</a>, <a>CreateFleet</a> </p><p><h3>See Also:</h3>  
-   * <a
+   * is set to a value higher than the calculated maximum, fleet creation fails..</p>
+   * </li> <li> <p>If a desired number is set to a value lower than the calculated
+   * maximum, Amazon GameLift places the desired number.</p> </li> </ul> <p> <b>Part
+   * of:</b> <a>ContainerGroupsConfiguration</a>, <a>ContainerGroupsAttributes</a>
+   * </p> <p> <b>Returned by:</b> <a>DescribeFleetAttributes</a>, <a>CreateFleet</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerGroupsPerInstance">AWS
    * API Reference</a></p>
    */

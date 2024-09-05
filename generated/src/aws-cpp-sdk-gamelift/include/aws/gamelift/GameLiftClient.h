@@ -477,8 +477,11 @@ namespace GameLift
          * <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up fleets</a> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location
-         * fleets</a> </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-editing.html#fleets-update-locations">Update
+         * fleet locations</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+         * Amazon GameLift service locations</a> for managed hosting.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleetLocations">AWS
          * API Reference</a></p>
          */
@@ -1878,7 +1881,10 @@ namespace GameLift
          * the home Region. To get information on a fleet's home Region, call
          * <code>DescribeFleetAttributes</code>.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-         * up Amazon GameLift fleets</a> </p><p><h3>See Also:</h3>   <a
+         * up Amazon GameLift fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+         * Amazon GameLift service locations</a> for managed hosting</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationAttributes">AWS
          * API Reference</a></p>
          */
@@ -1915,6 +1921,8 @@ namespace GameLift
          * <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up Amazon GameLift fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+         * Amazon GameLift service locations</a> for managed hosting</p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
          * metrics for fleets</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationCapacity">AWS
@@ -1951,6 +1959,8 @@ namespace GameLift
          * location. </p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up Amazon GameLift fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+         * Amazon GameLift service locations</a> for managed hosting</p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
          * metrics for fleets</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationUtilization">AWS
@@ -2701,10 +2711,7 @@ namespace GameLift
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
          * connect to fleet instances</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
-         * fleet issues</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-remote-access.html">
-         * Remotely connect to a container fleet</a> </p> </li> </ul><p><h3>See Also:</h3> 
-         * <a
+         * fleet issues</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAccess">AWS
          * API Reference</a></p>
          */

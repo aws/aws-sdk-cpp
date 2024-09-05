@@ -20,6 +20,8 @@ namespace Aws
       namespace DurationUnitMapper
       {
 
+        static const int MINUTE_HASH = HashingUtils::HashString("MINUTE");
+        static const int HOUR_HASH = HashingUtils::HashString("HOUR");
         static const int DAY_HASH = HashingUtils::HashString("DAY");
         static const int MONTH_HASH = HashingUtils::HashString("MONTH");
 
@@ -27,7 +29,15 @@ namespace Aws
         DurationUnit GetDurationUnitForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DAY_HASH)
+          if (hashCode == MINUTE_HASH)
+          {
+            return DurationUnit::MINUTE;
+          }
+          else if (hashCode == HOUR_HASH)
+          {
+            return DurationUnit::HOUR;
+          }
+          else if (hashCode == DAY_HASH)
           {
             return DurationUnit::DAY;
           }
@@ -51,6 +61,10 @@ namespace Aws
           {
           case DurationUnit::NOT_SET:
             return {};
+          case DurationUnit::MINUTE:
+            return "MINUTE";
+          case DurationUnit::HOUR:
+            return "HOUR";
           case DurationUnit::DAY:
             return "DAY";
           case DurationUnit::MONTH:

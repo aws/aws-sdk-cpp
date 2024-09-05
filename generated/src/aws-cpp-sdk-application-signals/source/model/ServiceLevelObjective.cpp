@@ -25,6 +25,9 @@ ServiceLevelObjective::ServiceLevelObjective() :
     m_createdTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_sliHasBeenSet(false),
+    m_requestBasedSliHasBeenSet(false),
+    m_evaluationType(EvaluationType::NOT_SET),
+    m_evaluationTypeHasBeenSet(false),
     m_goalHasBeenSet(false)
 {
 }
@@ -79,6 +82,20 @@ ServiceLevelObjective& ServiceLevelObjective::operator =(JsonView jsonValue)
     m_sliHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RequestBasedSli"))
+  {
+    m_requestBasedSli = jsonValue.GetObject("RequestBasedSli");
+
+    m_requestBasedSliHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EvaluationType"))
+  {
+    m_evaluationType = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("EvaluationType"));
+
+    m_evaluationTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Goal"))
   {
     m_goal = jsonValue.GetObject("Goal");
@@ -125,6 +142,17 @@ JsonValue ServiceLevelObjective::Jsonize() const
   {
    payload.WithObject("Sli", m_sli.Jsonize());
 
+  }
+
+  if(m_requestBasedSliHasBeenSet)
+  {
+   payload.WithObject("RequestBasedSli", m_requestBasedSli.Jsonize());
+
+  }
+
+  if(m_evaluationTypeHasBeenSet)
+  {
+   payload.WithString("EvaluationType", EvaluationTypeMapper::GetNameForEvaluationType(m_evaluationType));
   }
 
   if(m_goalHasBeenSet)

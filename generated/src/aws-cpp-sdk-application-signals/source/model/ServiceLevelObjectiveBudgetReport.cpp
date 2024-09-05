@@ -21,6 +21,8 @@ namespace Model
 ServiceLevelObjectiveBudgetReport::ServiceLevelObjectiveBudgetReport() : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_evaluationType(EvaluationType::NOT_SET),
+    m_evaluationTypeHasBeenSet(false),
     m_budgetStatus(ServiceLevelObjectiveBudgetStatus::NOT_SET),
     m_budgetStatusHasBeenSet(false),
     m_attainment(0.0),
@@ -29,7 +31,12 @@ ServiceLevelObjectiveBudgetReport::ServiceLevelObjectiveBudgetReport() :
     m_totalBudgetSecondsHasBeenSet(false),
     m_budgetSecondsRemaining(0),
     m_budgetSecondsRemainingHasBeenSet(false),
+    m_totalBudgetRequests(0),
+    m_totalBudgetRequestsHasBeenSet(false),
+    m_budgetRequestsRemaining(0),
+    m_budgetRequestsRemainingHasBeenSet(false),
     m_sliHasBeenSet(false),
+    m_requestBasedSliHasBeenSet(false),
     m_goalHasBeenSet(false)
 {
 }
@@ -54,6 +61,13 @@ ServiceLevelObjectiveBudgetReport& ServiceLevelObjectiveBudgetReport::operator =
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EvaluationType"))
+  {
+    m_evaluationType = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("EvaluationType"));
+
+    m_evaluationTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("BudgetStatus"))
@@ -84,11 +98,32 @@ ServiceLevelObjectiveBudgetReport& ServiceLevelObjectiveBudgetReport::operator =
     m_budgetSecondsRemainingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TotalBudgetRequests"))
+  {
+    m_totalBudgetRequests = jsonValue.GetInteger("TotalBudgetRequests");
+
+    m_totalBudgetRequestsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BudgetRequestsRemaining"))
+  {
+    m_budgetRequestsRemaining = jsonValue.GetInteger("BudgetRequestsRemaining");
+
+    m_budgetRequestsRemainingHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Sli"))
   {
     m_sli = jsonValue.GetObject("Sli");
 
     m_sliHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RequestBasedSli"))
+  {
+    m_requestBasedSli = jsonValue.GetObject("RequestBasedSli");
+
+    m_requestBasedSliHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Goal"))
@@ -117,6 +152,11 @@ JsonValue ServiceLevelObjectiveBudgetReport::Jsonize() const
 
   }
 
+  if(m_evaluationTypeHasBeenSet)
+  {
+   payload.WithString("EvaluationType", EvaluationTypeMapper::GetNameForEvaluationType(m_evaluationType));
+  }
+
   if(m_budgetStatusHasBeenSet)
   {
    payload.WithString("BudgetStatus", ServiceLevelObjectiveBudgetStatusMapper::GetNameForServiceLevelObjectiveBudgetStatus(m_budgetStatus));
@@ -140,9 +180,27 @@ JsonValue ServiceLevelObjectiveBudgetReport::Jsonize() const
 
   }
 
+  if(m_totalBudgetRequestsHasBeenSet)
+  {
+   payload.WithInteger("TotalBudgetRequests", m_totalBudgetRequests);
+
+  }
+
+  if(m_budgetRequestsRemainingHasBeenSet)
+  {
+   payload.WithInteger("BudgetRequestsRemaining", m_budgetRequestsRemaining);
+
+  }
+
   if(m_sliHasBeenSet)
   {
    payload.WithObject("Sli", m_sli.Jsonize());
+
+  }
+
+  if(m_requestBasedSliHasBeenSet)
+  {
+   payload.WithObject("RequestBasedSli", m_requestBasedSli.Jsonize());
 
   }
 

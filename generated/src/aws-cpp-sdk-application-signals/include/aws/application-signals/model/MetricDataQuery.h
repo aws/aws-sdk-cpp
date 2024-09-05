@@ -171,8 +171,8 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the account where this metric is located. If you are performing
-     * this operatiion in a monitoring account, use this to specify which source
-     * account to retrieve this metric from.</p>
+     * this operation in a monitoring account, use this to specify which source account
+     * to retrieve this metric from.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

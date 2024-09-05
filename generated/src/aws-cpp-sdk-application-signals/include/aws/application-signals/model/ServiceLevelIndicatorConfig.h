@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>This structure specifies the information about the service and the
-   * performance metric that an SLO is to monitor.</p><p><h3>See Also:</h3>   <a
+   * performance metric that a period-based SLO is to monitor.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceLevelIndicatorConfig">AWS
    * API Reference</a></p>
    */
@@ -53,7 +54,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value that the SLI metric is compared to.</p>
+     * <p>This parameter is used only when a request-based SLO tracks the
+     * <code>Latency</code> metric. Specify the threshold value that the observed
+     * <code>Latency</code> metric values are to be compared to.</p>
      */
     inline double GetMetricThreshold() const{ return m_metricThreshold; }
     inline bool MetricThresholdHasBeenSet() const { return m_metricThresholdHasBeenSet; }

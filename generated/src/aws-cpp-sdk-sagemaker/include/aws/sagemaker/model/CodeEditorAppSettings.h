@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AppLifecycleManagement.h>
 #include <aws/sagemaker/model/CustomImage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -83,6 +84,19 @@ namespace Model
     inline CodeEditorAppSettings& AddLifecycleConfigArns(Aws::String&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(std::move(value)); return *this; }
     inline CodeEditorAppSettings& AddLifecycleConfigArns(const char* value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings that are used to configure and manage the lifecycle of CodeEditor
+     * applications.</p> <p/>
+     */
+    inline const AppLifecycleManagement& GetAppLifecycleManagement() const{ return m_appLifecycleManagement; }
+    inline bool AppLifecycleManagementHasBeenSet() const { return m_appLifecycleManagementHasBeenSet; }
+    inline void SetAppLifecycleManagement(const AppLifecycleManagement& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = value; }
+    inline void SetAppLifecycleManagement(AppLifecycleManagement&& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = std::move(value); }
+    inline CodeEditorAppSettings& WithAppLifecycleManagement(const AppLifecycleManagement& value) { SetAppLifecycleManagement(value); return *this;}
+    inline CodeEditorAppSettings& WithAppLifecycleManagement(AppLifecycleManagement&& value) { SetAppLifecycleManagement(std::move(value)); return *this;}
+    ///@}
   private:
 
     ResourceSpec m_defaultResourceSpec;
@@ -93,6 +107,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_lifecycleConfigArns;
     bool m_lifecycleConfigArnsHasBeenSet = false;
+
+    AppLifecycleManagement m_appLifecycleManagement;
+    bool m_appLifecycleManagementHasBeenSet = false;
   };
 
 } // namespace Model

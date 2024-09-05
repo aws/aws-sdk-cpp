@@ -43,9 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>A category defines what kind of rule can be run in the stage, and constrains
-     * the provider type for the rule. Valid categories are limited to one of the
-     * following values. </p> <ul> <li> <p>INVOKE</p> </li> <li> <p>Approval</p> </li>
-     * <li> <p>Rule</p> </li> </ul>
+     * the provider type for the rule. The valid category is <code>Rule</code>. </p>
      */
     inline const RuleCategory& GetCategory() const{ return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
@@ -70,9 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The provider of the service being called by the rule. Valid providers are
-     * determined by the rulecategory. For example, a managed rule in the Rule category
-     * type has an owner of AWS, which would be specified as <code>AWS</code>.</p>
+     * <p>The rule provider, such as the <code>DeploymentWindow</code> rule.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }

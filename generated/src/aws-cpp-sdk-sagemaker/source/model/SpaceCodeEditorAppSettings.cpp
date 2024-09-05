@@ -19,7 +19,8 @@ namespace Model
 {
 
 SpaceCodeEditorAppSettings::SpaceCodeEditorAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_appLifecycleManagementHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ SpaceCodeEditorAppSettings& SpaceCodeEditorAppSettings::operator =(JsonView json
     m_defaultResourceSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AppLifecycleManagement"))
+  {
+    m_appLifecycleManagement = jsonValue.GetObject("AppLifecycleManagement");
+
+    m_appLifecycleManagementHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue SpaceCodeEditorAppSettings::Jsonize() const
   if(m_defaultResourceSpecHasBeenSet)
   {
    payload.WithObject("DefaultResourceSpec", m_defaultResourceSpec.Jsonize());
+
+  }
+
+  if(m_appLifecycleManagementHasBeenSet)
+  {
+   payload.WithObject("AppLifecycleManagement", m_appLifecycleManagement.Jsonize());
 
   }
 

@@ -43,6 +43,16 @@ namespace Aws
         static const int zh_CN_HASH = HashingUtils::HashString("zh-CN");
         static const int en_NZ_HASH = HashingUtils::HashString("en-NZ");
         static const int en_ZA_HASH = HashingUtils::HashString("en-ZA");
+        static const int ca_ES_HASH = HashingUtils::HashString("ca-ES");
+        static const int da_DK_HASH = HashingUtils::HashString("da-DK");
+        static const int fi_FI_HASH = HashingUtils::HashString("fi-FI");
+        static const int id_ID_HASH = HashingUtils::HashString("id-ID");
+        static const int ms_MY_HASH = HashingUtils::HashString("ms-MY");
+        static const int nl_NL_HASH = HashingUtils::HashString("nl-NL");
+        static const int no_NO_HASH = HashingUtils::HashString("no-NO");
+        static const int pl_PL_HASH = HashingUtils::HashString("pl-PL");
+        static const int sv_SE_HASH = HashingUtils::HashString("sv-SE");
+        static const int tl_PH_HASH = HashingUtils::HashString("tl-PH");
 
 
         VocabularyLanguageCode GetVocabularyLanguageCodeForName(const Aws::String& name)
@@ -140,6 +150,46 @@ namespace Aws
           {
             return VocabularyLanguageCode::en_ZA;
           }
+          else if (hashCode == ca_ES_HASH)
+          {
+            return VocabularyLanguageCode::ca_ES;
+          }
+          else if (hashCode == da_DK_HASH)
+          {
+            return VocabularyLanguageCode::da_DK;
+          }
+          else if (hashCode == fi_FI_HASH)
+          {
+            return VocabularyLanguageCode::fi_FI;
+          }
+          else if (hashCode == id_ID_HASH)
+          {
+            return VocabularyLanguageCode::id_ID;
+          }
+          else if (hashCode == ms_MY_HASH)
+          {
+            return VocabularyLanguageCode::ms_MY;
+          }
+          else if (hashCode == nl_NL_HASH)
+          {
+            return VocabularyLanguageCode::nl_NL;
+          }
+          else if (hashCode == no_NO_HASH)
+          {
+            return VocabularyLanguageCode::no_NO;
+          }
+          else if (hashCode == pl_PL_HASH)
+          {
+            return VocabularyLanguageCode::pl_PL;
+          }
+          else if (hashCode == sv_SE_HASH)
+          {
+            return VocabularyLanguageCode::sv_SE;
+          }
+          else if (hashCode == tl_PH_HASH)
+          {
+            return VocabularyLanguageCode::tl_PH;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -202,6 +252,26 @@ namespace Aws
             return "en-NZ";
           case VocabularyLanguageCode::en_ZA:
             return "en-ZA";
+          case VocabularyLanguageCode::ca_ES:
+            return "ca-ES";
+          case VocabularyLanguageCode::da_DK:
+            return "da-DK";
+          case VocabularyLanguageCode::fi_FI:
+            return "fi-FI";
+          case VocabularyLanguageCode::id_ID:
+            return "id-ID";
+          case VocabularyLanguageCode::ms_MY:
+            return "ms-MY";
+          case VocabularyLanguageCode::nl_NL:
+            return "nl-NL";
+          case VocabularyLanguageCode::no_NO:
+            return "no-NO";
+          case VocabularyLanguageCode::pl_PL:
+            return "pl-PL";
+          case VocabularyLanguageCode::sv_SE:
+            return "sv-SE";
+          case VocabularyLanguageCode::tl_PH:
+            return "tl-PH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
