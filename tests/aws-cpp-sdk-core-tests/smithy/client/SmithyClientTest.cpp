@@ -13,6 +13,7 @@
 
 #include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
+#include <smithy/identity/resolver/AwsBearerTokenIdentityResolver.h>
 
 #include <aws/core/endpoint/EndpointProviderBase.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
@@ -22,6 +23,12 @@
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/identity/auth/AuthSchemeOption.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
+
+#include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderBase.h>
+#include <aws/core/auth/AWSBearerToken.h>
+
+
+static const char ALLOC_TAG[] = "SmithyClientTest";
 
 class TestEndPointProvider : public Aws::Endpoint::EndpointProviderBase<>
 {
@@ -77,14 +84,32 @@ class SmithyClientTest : public Aws::Testing::AwsCppSdkGTestSuite {
     
 };
 
-const char SmithyClientTest::ALLOCATION_TAG[] = "SmithyClientTest";
 
+
+class TestSSOBearerTokenProvider : public Aws::Auth::AWSBearerTokenProviderBase
+{
+    public:
+    Aws::Auth::AWSBearerToken GetAWSBearerToken() override
+    {
+        return Aws::Auth::AWSBearerToken{"testToken", Aws::Utils::DateTime::Now() + std::chrono::milliseconds{100000} };
+    }
+};
+
+class TestAwsBearerTokenIdentityResolver : smithy::DefaultAwsBearerTokenIdentityResolver
+{
+    public:
+    TestAwsBearerTokenIdentityResolver():DefaultAwsBearerTokenIdentityResolver(){
+        AddBearerTokenProvider(Aws::MakeShared<TestSSOBearerTokenProvider>(ALLOC_TAG));
+    }
+};
+
+const char SmithyClientTest::ALLOCATION_TAG[] = "SmithyClientTest";
 
 
 using MySmithyClientConfig = Aws::Client::ClientConfiguration;
 using MyServiceAuthSchemeResolver = smithy::AuthSchemeResolverBase<smithy::DefaultAuthSchemeResolverParameters>; //smithy::SigV4AuthSchemeResolver<>; 
 static constexpr char MyServiceName[] = "MySuperService";
-using SigVariant = Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::SigV4aAuthScheme>;
+using SigVariant = Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::SigV4aAuthScheme, smithy::BearerTokenAuthScheme>;
 using MySmithyClient = smithy::client::AwsSmithyClientT<MyServiceName,
                                                         MySmithyClientConfig,
                                                         MyServiceAuthSchemeResolver,
@@ -235,12 +260,12 @@ TEST_F(SmithyClientTest, testSigV4a) {
 
 TEST_F(SmithyClientTest, bearer) {
 
-    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::BearerTokenAuthSchemeResolver>(ALLOCATION_TAG);
+    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::BearerTokenAuthSchemeResolver<> >(ALLOCATION_TAG);
 
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
 
     Aws::String key{"Bearer"};
-    auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsBearerTokenIdentityResolver>(ALLOCATION_TAG);
+    auto credentialsResolver = Aws::MakeShared<TestAwsBearerTokenIdentityResolver>(ALLOCATION_TAG);
 
     SigVariant val{smithy::BearerTokenAuthScheme(credentialsResolver, "MyService", "us-west-2")};
     
@@ -273,6 +298,7 @@ TEST_F(SmithyClientTest, bearer) {
     auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
 
     EXPECT_EQ(res2.IsSuccess(), true);
+    
 
     //EXPECT_TRUE(res2.GetResult()->GetSigningAccessKey().empty());
 

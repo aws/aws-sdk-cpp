@@ -25,12 +25,13 @@ namespace smithy {
      * A smithy SigV4 signer wrapper on top of legacy SDK SigV4 signer
      * TODO: refactor into own signer using smithy design
      */
+    
     class BearerTokenSigner : public AwsSignerBase<AwsBearerTokenIdentityBase> {
         
     public:
         static const char LOGGING_TAG[];
 
-        //using SigV4aAuthSchemeParameters = smithy::DefaultAuthSchemeResolverParameters;
+        using BearerTokenAuthSchemeParameters = smithy::DefaultAuthSchemeResolverParameters;
         explicit BearerTokenSigner(const Aws::String& serviceName, const Aws::String& region)
             :  m_serviceName(serviceName), m_region(region)
         {

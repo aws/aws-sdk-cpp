@@ -6,17 +6,14 @@
 
 #include <smithy/identity/auth/AuthScheme.h>
 #include <smithy/identity/auth/built-in/BearerTokenAuthSchemeOption.h>
-
-#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
-
-#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
+#include <smithy/identity/identity/AwsBearerTokenIdentityBase.h>
 #include <smithy/identity/signer/built-in/BearerTokenSigner.h>
-
+#include <smithy/identity/resolver/AwsBearerTokenIdentityResolver.h>
 
 namespace smithy {
     constexpr char BEARER_SIGNER[] = "Bearer";
 
-    class BearerTokenAuthScheme : public AuthScheme<AwsCredentialIdentityBase>
+    class BearerTokenAuthScheme : public AuthScheme<AwsBearerTokenIdentityBase>
     {
     public:
         using AwsCredentialIdentityResolverT = IdentityResolverBase<IdentityT>;
@@ -37,7 +34,7 @@ namespace smithy {
 
         explicit BearerTokenAuthScheme(const Aws::String& serviceName,
                                   const Aws::String& region)
-            : BearerTokenAuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("BearerTokenAuthScheme"), serviceName, region)
+            : BearerTokenAuthScheme(Aws::MakeShared<DefaultAwsBearerTokenIdentityResolver>("BearerTokenAuthScheme"), serviceName, region)
         {
             assert(m_identityResolver);
 
