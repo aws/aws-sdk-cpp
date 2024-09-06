@@ -39,6 +39,13 @@ SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile) : m_p
     AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " <<  m_profileToUse);
 }
 
+SSOCredentialsProvider::SSOCredentialsProvider(const Aws::Client::ClientConfiguration& clientConfig)
+    : m_profileToUse(GetConfigProfileName()), m_clientConfig(clientConfig)
+{
+    AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " << m_profileToUse);
+}
+
+
 AWSCredentials SSOCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
@@ -80,7 +87,7 @@ void SSOCredentialsProvider::Reload()
     request.m_ssoRoleName = profile.GetSsoRoleName();
     request.m_accessToken = accessToken;
 
-    Aws::Client::ClientConfiguration config;
+    Aws::Client::ClientConfiguration config = m_clientConfig;
     config.scheme = Aws::Http::Scheme::HTTPS;
     config.region = m_ssoRegion;
     AWS_LOGSTREAM_DEBUG(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Passing config to client for region: " << m_ssoRegion);
