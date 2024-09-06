@@ -20,6 +20,8 @@ namespace smithy {
         using IdentityT = AwsBearerTokenIdentity;
         virtual ~AwsBearerTokenIdentityResolver() = default;
 
+        AwsBearerTokenIdentityResolver() = default;
+
         AwsBearerTokenIdentityResolver(const Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase> >& providerChain) : m_providerChainLegacy{providerChain}
         {
 

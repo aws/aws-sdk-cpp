@@ -8,7 +8,7 @@
 #include <smithy/identity/identity/AwsBearerTokenIdentity.h>
 
 namespace smithy {
-    Aws::String AwsBearerTokenIdentity::token() const {
+    const Aws::String& AwsBearerTokenIdentity::token() const {
         return m_token;
     }
 

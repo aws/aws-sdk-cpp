@@ -85,7 +85,7 @@ class SmithyClientTest : public Aws::Testing::AwsCppSdkGTestSuite {
 };
 
 
-
+//====================bearer token ===============================
 class TestSSOBearerTokenProvider : public Aws::Auth::AWSBearerTokenProviderBase
 {
     public:
@@ -95,14 +95,14 @@ class TestSSOBearerTokenProvider : public Aws::Auth::AWSBearerTokenProviderBase
     }
 };
 
-class TestAwsBearerTokenIdentityResolver : smithy::DefaultAwsBearerTokenIdentityResolver
+class TestAwsBearerTokenIdentityResolver : public smithy::DefaultAwsBearerTokenIdentityResolver
 {
     public:
-    TestAwsBearerTokenIdentityResolver():DefaultAwsBearerTokenIdentityResolver(){
+    TestAwsBearerTokenIdentityResolver(): smithy::DefaultAwsBearerTokenIdentityResolver(){
         AddBearerTokenProvider(Aws::MakeShared<TestSSOBearerTokenProvider>(ALLOC_TAG));
     }
 };
-
+//===============================================================
 const char SmithyClientTest::ALLOCATION_TAG[] = "SmithyClientTest";
 
 
@@ -255,8 +255,6 @@ TEST_F(SmithyClientTest, testSigV4a) {
     EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
 
 }
-//      using AwsCredentialIdentityResolverT = IdentityResolverBase<IdentityT>;
-//      using AwsCredentialSignerT = AwsSignerBase<IdentityT>;
 
 TEST_F(SmithyClientTest, bearer) {
 
@@ -265,9 +263,10 @@ TEST_F(SmithyClientTest, bearer) {
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
 
     Aws::String key{"Bearer"};
-    auto credentialsResolver = Aws::MakeShared<TestAwsBearerTokenIdentityResolver>(ALLOCATION_TAG);
 
-    SigVariant val{smithy::BearerTokenAuthScheme(credentialsResolver, "MyService", "us-west-2")};
+    std::shared_ptr<smithy::AwsBearerTokenIdentityResolver> resolver = Aws::MakeShared<TestAwsBearerTokenIdentityResolver>(ALLOCATION_TAG);
+
+    SigVariant val{smithy::BearerTokenAuthScheme(resolver, "MyService", "us-west-2")};
     
     authSchemesMap.emplace(key, val);
 
@@ -298,7 +297,10 @@ TEST_F(SmithyClientTest, bearer) {
     auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
 
     EXPECT_EQ(res2.IsSuccess(), true);
-    
+
+    EXPECT_TRUE(!res2.GetResult()->GetHeaderValue("authorization").empty());
+
+    std::cout<<"header="<<res2.GetResult()->GetHeaderValue("authorization")<<std::endl;
 
     //EXPECT_TRUE(res2.GetResult()->GetSigningAccessKey().empty());
 
