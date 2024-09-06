@@ -31,6 +31,9 @@ public class Operation {
     // Endpoint Rule static context parameters
     private Map<String, Map<String, EndpointParameterValue>> staticContextParams;
 
+    //operation context params
+    private Map<String, List<String>> operationContextParamsCode;
+
     // ARN supports.
     private boolean arnEndpointAllowed;
     private String arnLocation; // uri | querystring | body

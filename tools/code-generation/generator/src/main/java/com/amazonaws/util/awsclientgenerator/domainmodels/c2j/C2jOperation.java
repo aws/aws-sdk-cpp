@@ -23,6 +23,8 @@ public class C2jOperation {
     private List<C2jError> errors;
     private String documentation;
     private Map<String, Map<String, EndpointParameterValue>> staticContextParams;
+    //operation context params
+    private Map<String, Map<String, String>> operationContextParams;
     private boolean deprecated;
     private boolean httpChecksumRequired;
     private C2jHttpChecksum httpChecksum;

@@ -122,6 +122,11 @@ namespace Endpoint
         return SetParameter(EndpointParameter(std::move(name), value, EndpointParameter::ParameterOrigin::BUILT_IN));
     }
 
+    void BuiltInParameters::SetStringArrayParameter(Aws::String name, const Aws::Vector<Aws::String>&& value)
+    {
+        return SetParameter(EndpointParameter(std::move(name), value, EndpointParameter::ParameterOrigin::BUILT_IN));
+    }
+
     const Aws::Vector<BuiltInParameters::EndpointParameter>& BuiltInParameters::GetAllParameters() const
     {
         return m_params;
