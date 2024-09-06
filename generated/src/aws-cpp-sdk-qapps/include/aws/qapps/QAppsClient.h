@@ -18,13 +18,20 @@ namespace QApps
   /**
    * <p>The Amazon Q Apps feature capability within Amazon Q Business allows web
    * experience users to create lightweight, purpose-built AI apps to fulfill
-   * specific tasks from within their web experience. For example, users can create
-   * an Q Appthat exclusively generates marketing-related content to improve your
-   * marketing team's productivity or a Q App for marketing content-generation like
-   * writing customer emails and creating promotional content using a certain style
-   * of voice, tone, and branding. For more information, see <a
-   * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html">Amazon
-   * Q App</a> in the <i>Amazon Q Business User Guide</i>. </p>
+   * specific tasks from within their web experience. For example, users can create a
+   * Q App that exclusively generates marketing-related content to improve your
+   * marketing team's productivity or a Q App for writing customer emails and
+   * creating promotional content using a certain style of voice, tone, and branding.
+   * For more information on the capabilities, see <a
+   * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/deploy-experience-iam-role.html#q-apps-actions">Amazon
+   * Q Apps capabilities</a> in the <i>Amazon Q Business User Guide</i>. </p> <p>For
+   * an overview of the Amazon Q App APIs, see <a
+   * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_Operations_QApps.html">Overview
+   * of Amazon Q Apps API operations</a>.</p> <p>For information about the IAM access
+   * control permissions you need to use the Amazon Q Apps API, see <a
+   * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/deploy-experience-iam-role.html">
+   * IAM role for the Amazon Q Business web experience including Amazon Q Apps</a> in
+   * the <i>Amazon Q Business User Guide</i>.</p>
    */
   class AWS_QAPPS_API QAppsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient>
   {
@@ -622,8 +629,7 @@ namespace QApps
         }
 
         /**
-         * <p>Updates the metadata and status of a library item for an Amazon Q
-         * App.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the library item for an Amazon Q App.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItem">AWS
          * API Reference</a></p>
          */
@@ -645,6 +651,32 @@ namespace QApps
         void UpdateLibraryItemAsync(const UpdateLibraryItemRequestT& request, const UpdateLibraryItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QAppsClient::UpdateLibraryItem, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the verification status of a library item for an Amazon Q
+         * App.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItemMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLibraryItemMetadataOutcome UpdateLibraryItemMetadata(const Model::UpdateLibraryItemMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLibraryItemMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLibraryItemMetadataRequestT = Model::UpdateLibraryItemMetadataRequest>
+        Model::UpdateLibraryItemMetadataOutcomeCallable UpdateLibraryItemMetadataCallable(const UpdateLibraryItemMetadataRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::UpdateLibraryItemMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLibraryItemMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLibraryItemMetadataRequestT = Model::UpdateLibraryItemMetadataRequest>
+        void UpdateLibraryItemMetadataAsync(const UpdateLibraryItemMetadataRequestT& request, const UpdateLibraryItemMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::UpdateLibraryItemMetadata, request, handler, context);
         }
 
         /**
