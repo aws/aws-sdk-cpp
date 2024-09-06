@@ -96,6 +96,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateLibraryItemRequest;
+      class UpdateLibraryItemMetadataRequest;
       class UpdateQAppRequest;
       class UpdateQAppSessionRequest;
       /* End of service model forward declarations required in QAppsClient header */
@@ -122,6 +123,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, QAppsError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, QAppsError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateLibraryItemResult, QAppsError> UpdateLibraryItemOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, QAppsError> UpdateLibraryItemMetadataOutcome;
       typedef Aws::Utils::Outcome<UpdateQAppResult, QAppsError> UpdateQAppOutcome;
       typedef Aws::Utils::Outcome<UpdateQAppSessionResult, QAppsError> UpdateQAppSessionOutcome;
       /* End of service model Outcome class definitions */
@@ -148,6 +150,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateLibraryItemOutcome> UpdateLibraryItemOutcomeCallable;
+      typedef std::future<UpdateLibraryItemMetadataOutcome> UpdateLibraryItemMetadataOutcomeCallable;
       typedef std::future<UpdateQAppOutcome> UpdateQAppOutcomeCallable;
       typedef std::future<UpdateQAppSessionOutcome> UpdateQAppSessionOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -177,6 +180,7 @@ namespace Aws
     typedef std::function<void(const QAppsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::UpdateLibraryItemRequest&, const Model::UpdateLibraryItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLibraryItemResponseReceivedHandler;
+    typedef std::function<void(const QAppsClient*, const Model::UpdateLibraryItemMetadataRequest&, const Model::UpdateLibraryItemMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLibraryItemMetadataResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::UpdateQAppRequest&, const Model::UpdateQAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQAppResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::UpdateQAppSessionRequest&, const Model::UpdateQAppSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQAppSessionResponseReceivedHandler;
     /* End of service model async handlers definitions */

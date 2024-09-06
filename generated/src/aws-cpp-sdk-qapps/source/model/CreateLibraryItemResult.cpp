@@ -18,7 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateLibraryItemResult::CreateLibraryItemResult() : 
-    m_ratingCount(0)
+    m_ratingCount(0),
+    m_isVerified(false)
 {
 }
 
@@ -70,6 +71,12 @@ CreateLibraryItemResult& CreateLibraryItemResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ratingCount"))
   {
     m_ratingCount = jsonValue.GetInteger("ratingCount");
+
+  }
+
+  if(jsonValue.ValueExists("isVerified"))
+  {
+    m_isVerified = jsonValue.GetBool("isVerified");
 
   }
 

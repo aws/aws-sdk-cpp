@@ -21,7 +21,8 @@ GetLibraryItemResult::GetLibraryItemResult() :
     m_appVersion(0),
     m_ratingCount(0),
     m_isRatedByUser(false),
-    m_userCount(0)
+    m_userCount(0),
+    m_isVerified(false)
 {
 }
 
@@ -106,6 +107,12 @@ GetLibraryItemResult& GetLibraryItemResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("userCount"))
   {
     m_userCount = jsonValue.GetInteger("userCount");
+
+  }
+
+  if(jsonValue.ValueExists("isVerified"))
+  {
+    m_isVerified = jsonValue.GetBool("isVerified");
 
   }
 

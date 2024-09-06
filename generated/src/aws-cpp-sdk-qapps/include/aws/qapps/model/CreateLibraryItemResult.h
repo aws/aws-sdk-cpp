@@ -117,6 +117,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates whether the library item has been verified.</p>
+     */
+    inline bool GetIsVerified() const{ return m_isVerified; }
+    inline void SetIsVerified(bool value) { m_isVerified = value; }
+    inline CreateLibraryItemResult& WithIsVerified(bool value) { SetIsVerified(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -141,6 +150,8 @@ namespace Model
     Aws::String m_updatedBy;
 
     int m_ratingCount;
+
+    bool m_isVerified;
 
     Aws::String m_requestId;
   };

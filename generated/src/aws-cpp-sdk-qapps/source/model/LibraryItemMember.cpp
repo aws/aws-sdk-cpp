@@ -34,7 +34,9 @@ LibraryItemMember::LibraryItemMember() :
     m_isRatedByUser(false),
     m_isRatedByUserHasBeenSet(false),
     m_userCount(0),
-    m_userCountHasBeenSet(false)
+    m_userCountHasBeenSet(false),
+    m_isVerified(false),
+    m_isVerifiedHasBeenSet(false)
 {
 }
 
@@ -133,6 +135,13 @@ LibraryItemMember& LibraryItemMember::operator =(JsonView jsonValue)
     m_userCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isVerified"))
+  {
+    m_isVerified = jsonValue.GetBool("isVerified");
+
+    m_isVerifiedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -212,6 +221,12 @@ JsonValue LibraryItemMember::Jsonize() const
   if(m_userCountHasBeenSet)
   {
    payload.WithInteger("userCount", m_userCount);
+
+  }
+
+  if(m_isVerifiedHasBeenSet)
+  {
+   payload.WithBool("isVerified", m_isVerified);
 
   }
 

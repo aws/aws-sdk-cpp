@@ -26,7 +26,9 @@ UserAppItem::UserAppItem() :
     m_createdAtHasBeenSet(false),
     m_canEdit(false),
     m_canEditHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_isVerified(false),
+    m_isVerifiedHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,13 @@ UserAppItem& UserAppItem::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isVerified"))
+  {
+    m_isVerified = jsonValue.GetBool("isVerified");
+
+    m_isVerifiedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +141,12 @@ JsonValue UserAppItem::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", m_status);
+
+  }
+
+  if(m_isVerifiedHasBeenSet)
+  {
+   payload.WithBool("isVerified", m_isVerified);
 
   }
 

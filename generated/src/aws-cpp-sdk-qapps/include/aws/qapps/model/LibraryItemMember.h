@@ -189,6 +189,16 @@ namespace Model
     inline void SetUserCount(int value) { m_userCountHasBeenSet = true; m_userCount = value; }
     inline LibraryItemMember& WithUserCount(int value) { SetUserCount(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the library item has been verified.</p>
+     */
+    inline bool GetIsVerified() const{ return m_isVerified; }
+    inline bool IsVerifiedHasBeenSet() const { return m_isVerifiedHasBeenSet; }
+    inline void SetIsVerified(bool value) { m_isVerifiedHasBeenSet = true; m_isVerified = value; }
+    inline LibraryItemMember& WithIsVerified(bool value) { SetIsVerified(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_libraryItemId;
@@ -226,6 +236,9 @@ namespace Model
 
     int m_userCount;
     bool m_userCountHasBeenSet = false;
+
+    bool m_isVerified;
+    bool m_isVerifiedHasBeenSet = false;
   };
 
 } // namespace Model

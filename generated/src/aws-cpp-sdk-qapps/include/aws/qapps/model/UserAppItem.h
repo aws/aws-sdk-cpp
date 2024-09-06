@@ -130,6 +130,16 @@ namespace Model
     inline UserAppItem& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
     inline UserAppItem& WithStatus(const char* value) { SetStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the Q App has been verified.</p>
+     */
+    inline bool GetIsVerified() const{ return m_isVerified; }
+    inline bool IsVerifiedHasBeenSet() const { return m_isVerifiedHasBeenSet; }
+    inline void SetIsVerified(bool value) { m_isVerifiedHasBeenSet = true; m_isVerified = value; }
+    inline UserAppItem& WithIsVerified(bool value) { SetIsVerified(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_appId;
@@ -152,6 +162,9 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
+
+    bool m_isVerified;
+    bool m_isVerifiedHasBeenSet = false;
   };
 
 } // namespace Model
