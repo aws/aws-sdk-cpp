@@ -1,7 +1,10 @@
 ##This is a template generating property bag for from Shape's contextParam for CRT Endpoint Rules engine in Request's header
-#if($operation.request.shape.hasContextParam() || $operation.staticContextParams)
+#if($operation.request.shape.hasContextParam() || $operation.staticContextParams || $operation.operationContextParamsCode)
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
     ${exportMacro} EndpointParameters GetEndpointContextParams() const override;
+#if($operation.operationContextParamsCode)
+    ${exportMacro} Aws::Vector<Aws::String> GetOperationContextParams() const;
+#end
 #end

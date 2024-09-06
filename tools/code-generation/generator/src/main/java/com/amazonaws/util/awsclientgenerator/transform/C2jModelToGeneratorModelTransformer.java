@@ -16,11 +16,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import lombok.Data;
 import lombok.Value;
 import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import software.amazon.smithy.jmespath.JmespathExpression;
 
 public class C2jModelToGeneratorModelTransformer {
 
@@ -156,6 +161,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         serviceModel.setShapes(shapes);
         serviceModel.setOperations(operations);
+        //for operations with context params, extract using jmespath expression and populate in endpoint params
         serviceModel.setServiceErrors(allErrors);
         serviceModel.getMetadata().setHasEndpointTrait(hasEndpointTrait);
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
@@ -562,7 +568,6 @@ public class C2jModelToGeneratorModelTransformer {
         if (operation.isRequireEndpointDiscovery()) {
             requireEndpointDiscovery = true;
         }
-
         // Documentation
         String crossLinkedShapeDocs =
                 addDocCrossLinks(c2jOperation.getDocumentation(), c2jServiceModel.getMetadata().getUid(), c2jOperation.getName());
@@ -592,10 +597,8 @@ public class C2jModelToGeneratorModelTransformer {
         } else {
             operation.setSignerName("Aws::Auth::NULL_SIGNER");
         }
-
-
+        //set operation context params
         operation.setStaticContextParams(c2jOperation.getStaticContextParams());
-
         // input
         if (c2jOperation.getInput() != null) {
             Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), c2jOperation.getName(), SHAPE_SDK_REQUEST_SUFFIX);
@@ -643,12 +646,26 @@ public class C2jModelToGeneratorModelTransformer {
                     }
                 }
             }
+            Map<String, Map<String, String>> operationContextParams = c2jOperation.getOperationContextParams();
+            if (operationContextParams != null )
+            {
+                Map<String, List<String>> operationContextParamMap = new HashMap<>();
+                //find first element in nested map with key "path"
+                operationContextParams.entrySet().stream().filter(entry -> entry.getValue().containsKey("path"))
+                .forEach(entry -> {
+                    Optional<Map.Entry<String, String>> firstEntry = entry.getValue().entrySet().stream().filter(innerMap -> "path".equals(innerMap.getKey())).findFirst();
+                    if (firstEntry.isPresent()) {
+                        OperationContextCppCodeGenerator ctxt = new OperationContextCppCodeGenerator();
+                        JmespathExpression.parse(firstEntry.get().getValue()).accept(new CppEndpointsJmesPathVisitor(ctxt, requestShape));
+                        operationContextParamMap.put(entry.getKey() ,Arrays.asList(ctxt.getCppCode().toString().split("\n")) );
+                    }
+                });
+                operation.setOperationContextParamsCode(operationContextParamMap);
+            }
         }
-
         // output
         if (c2jOperation.getOutput() != null) {
             Shape resultShape = renameShape(shapes.get(c2jOperation.getOutput().getShape()), c2jOperation.getName(), SHAPE_SDK_RESULT_SUFFIX);
-
             resultShape.setResult(true);
             resultShape.setReferenced(true);
             resultShape.getReferencedBy().add(c2jOperation.getName());
