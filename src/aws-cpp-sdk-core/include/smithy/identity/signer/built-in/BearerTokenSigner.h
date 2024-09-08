@@ -20,11 +20,6 @@
 namespace smithy {
     static const char AUTHORIZATION_HEADER[] = "authorization";
 
-
-    /**
-     * A smithy SigV4 signer wrapper on top of legacy SDK SigV4 signer
-     * TODO: refactor into own signer using smithy design
-     */
     
     class BearerTokenSigner : public AwsSignerBase<AwsBearerTokenIdentityBase> {
         
