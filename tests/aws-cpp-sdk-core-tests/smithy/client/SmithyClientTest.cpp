@@ -91,7 +91,7 @@ class TestSSOBearerTokenProvider : public Aws::Auth::AWSBearerTokenProviderBase
     public:
     Aws::Auth::AWSBearerToken GetAWSBearerToken() override
     {
-        return Aws::Auth::AWSBearerToken{"testToken", Aws::Utils::DateTime::Now() + std::chrono::milliseconds{100000} };
+        return Aws::Auth::AWSBearerToken{"testBearerToken", Aws::Utils::DateTime::Now() + std::chrono::milliseconds{100000} };
     }
 };
 
@@ -99,7 +99,7 @@ class TestAwsBearerTokenIdentityResolver : public smithy::DefaultAwsBearerTokenI
 {
     public:
     TestAwsBearerTokenIdentityResolver(): smithy::DefaultAwsBearerTokenIdentityResolver(){
-        AddBearerTokenProvider(Aws::MakeShared<TestSSOBearerTokenProvider>(ALLOC_TAG));
+        m_providerChainLegacy.insert(m_providerChainLegacy.begin(), Aws::MakeShared<TestSSOBearerTokenProvider>(ALLOC_TAG));
     }
 };
 //===============================================================
@@ -302,8 +302,5 @@ TEST_F(SmithyClientTest, bearer) {
 
     std::cout<<"header="<<res2.GetResult()->GetHeaderValue("authorization")<<std::endl;
 
-    //EXPECT_TRUE(res2.GetResult()->GetSigningAccessKey().empty());
-
-    //EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
-
+    EXPECT_EQ(res2.GetResult()->GetHeaderValue("authorization"), "Bearer testBearerToken");
 }
