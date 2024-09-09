@@ -5,8 +5,6 @@
 
 #pragma once
 
-#include <aws/core/auth/AWSCredentials.h>
-#include <aws/crt/auth/Credentials.h>
 #include <smithy/identity/identity/AwsBearerTokenIdentityBase.h>
 #include <smithy/identity/signer/AwsSignerBase.h>
 
@@ -14,8 +12,6 @@
 #include <aws/core/http/HttpRequest.h>
 #include <aws/crt/http/HttpConnection.h>
 #include <aws/crt/http/HttpRequestResponse.h>
-#include <condition_variable>
-#include <mutex>
 
 namespace smithy
 {
