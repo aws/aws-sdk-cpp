@@ -5,7 +5,7 @@
 #pragma once
 
 #include <smithy/identity/auth/AuthSchemeOption.h>
-
+#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
 namespace smithy
 {
 struct BearerTokenAuthSchemeOption
@@ -14,5 +14,5 @@ struct BearerTokenAuthSchemeOption
 };
 
 AuthSchemeOption BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption =
-    AuthSchemeOption("Bearer");
+    AuthSchemeOption(BEARER_SCHEME);
 } // namespace smithy

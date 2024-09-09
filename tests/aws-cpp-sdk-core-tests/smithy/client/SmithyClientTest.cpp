@@ -271,7 +271,7 @@ TEST_F(SmithyClientTest, bearer)
 
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
 
-    Aws::String key{"Bearer"};
+    Aws::String key{"smithy.api#HTTPBearerAuth"};
 
     std::shared_ptr<smithy::AwsBearerTokenIdentityResolver> resolver =
         Aws::MakeShared<TestAwsBearerTokenIdentityResolver>(ALLOCATION_TAG);
