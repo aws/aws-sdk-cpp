@@ -9,8 +9,9 @@
 namespace smithy {
     class AwsBearerTokenIdentityBase : public AwsIdentity {
     public:
-        virtual const Aws::String& token() const = 0;
+      virtual const Aws::String &token() const = 0;
 
-        virtual Aws::Crt::Optional<AwsIdentity::DateTime> expiration() const override = 0 ;
+      virtual Aws::Crt::Optional<AwsIdentity::DateTime>
+      expiration() const override = 0;
     };
 }

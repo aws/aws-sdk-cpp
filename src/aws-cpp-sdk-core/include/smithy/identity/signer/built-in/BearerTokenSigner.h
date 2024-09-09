@@ -5,57 +5,68 @@
 
 #pragma once
 
-#include <smithy/identity/signer/AwsSignerBase.h>
-#include <smithy/identity/identity/AwsBearerTokenIdentityBase.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/crt/auth/Credentials.h>
+#include <smithy/identity/identity/AwsBearerTokenIdentityBase.h>
+#include <smithy/identity/signer/AwsSignerBase.h>
 
-#include <aws/core/http/HttpRequest.h>
 #include <aws/core/auth/signer/AWSAuthSignerHelper.h>
+#include <aws/core/http/HttpRequest.h>
 #include <aws/crt/http/HttpConnection.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 #include <condition_variable>
 #include <mutex>
 
-namespace smithy {
-    static const char AUTHORIZATION_HEADER[] = "authorization";
+namespace smithy
+{
+static const char AUTHORIZATION_HEADER[] = "authorization";
 
-    
-    class BearerTokenSigner : public AwsSignerBase<AwsBearerTokenIdentityBase> {
-        
-    public:
-        static const char LOGGING_TAG[];
+class BearerTokenSigner : public AwsSignerBase<AwsBearerTokenIdentityBase>
+{
 
-        using BearerTokenAuthSchemeParameters = smithy::DefaultAuthSchemeResolverParameters;
-        explicit BearerTokenSigner(const Aws::String& serviceName, const Aws::String& region)
-            :  m_serviceName(serviceName), m_region(region)
+  public:
+    static const char LOGGING_TAG[];
+
+    using BearerTokenAuthSchemeParameters =
+        smithy::DefaultAuthSchemeResolverParameters;
+    explicit BearerTokenSigner(const Aws::String &serviceName,
+                               const Aws::String &region)
+        : m_serviceName(serviceName), m_region(region)
+    {
+    }
+
+    SigningFutureOutcome
+    sign(std::shared_ptr<HttpRequest> httpRequest,
+         const smithy::AwsBearerTokenIdentityBase &identity,
+         SigningProperties properties) override
+    {
+        AWS_UNREFERENCED_PARAM(properties);
+
+        if (Aws::Http::Scheme::HTTPS != httpRequest->GetUri().GetScheme())
         {
+            // Clients MUST always use TLS (https) or equivalent transport
+            // security when making requests with bearer tokens.
+            // https://datatracker.ietf.org/doc/html/rfc6750
+            AWS_LOGSTREAM_ERROR(
+                LOGGING_TAG,
+                "HTTPS scheme must be used with a bearer token authorization");
+            return SigningError(
+                Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE, "",
+                "Failed to sign the request with bearer", false);
         }
 
-        SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const smithy::AwsBearerTokenIdentityBase& identity, SigningProperties properties) override
-        {
-            AWS_UNREFERENCED_PARAM(properties);
+        httpRequest->SetHeaderValue(AUTHORIZATION_HEADER,
+                                    "Bearer " + identity.token());
 
-            if(Aws::Http::Scheme::HTTPS != httpRequest->GetUri().GetScheme())
-            {
-                // Clients MUST always use TLS (https) or equivalent transport security
-                // when making requests with bearer tokens.
-                // https://datatracker.ietf.org/doc/html/rfc6750
-                AWS_LOGSTREAM_ERROR(LOGGING_TAG, "HTTPS scheme must be used with a bearer token authorization");
-                return SigningError(Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE, "", "Failed to sign the request with bearer", false);
-            }
+        return SigningFutureOutcome(std::move(httpRequest));
+    }
 
-            httpRequest->SetHeaderValue(AUTHORIZATION_HEADER, "Bearer " + identity.token());
-            
-            
-            return SigningFutureOutcome(std::move(httpRequest));
-        }
+    virtual ~BearerTokenSigner(){};
 
-        virtual ~BearerTokenSigner() {};
-    protected:
-        Aws::String m_serviceName;
-        Aws::String m_region;
-    };
+  protected:
+    Aws::String m_serviceName;
+    Aws::String m_region;
+};
 
-    const char BearerTokenSigner::LOGGING_TAG[] = "BearerTokenSigner";
-}
+const char BearerTokenSigner::LOGGING_TAG[] = "BearerTokenSigner";
+} // namespace smithy

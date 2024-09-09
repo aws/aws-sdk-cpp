@@ -9,19 +9,17 @@
 namespace smithy {
     class AwsBearerTokenIdentity : public AwsBearerTokenIdentityBase {
     public:
-    
-        virtual const Aws::String& token() const override;
+      virtual const Aws::String &token() const override;
 
-        virtual Aws::Crt::Optional<AwsIdentity::DateTime> expiration() const override;
+      virtual Aws::Crt::Optional<AwsIdentity::DateTime>
+      expiration() const override;
 
-        Aws::String& token(){
-            return m_token;
-        }
+      Aws::String &token() { return m_token; }
 
-        Aws::Crt::Optional<AwsIdentity::DateTime>& expiration(){
-            return m_expiration;
-        }
-
+      Aws::Crt::Optional<AwsIdentity::DateTime> &expiration()
+      {
+          return m_expiration;
+      }
 
     protected:
         Aws::String m_token;

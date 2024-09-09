@@ -11,8 +11,8 @@
 #include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
 #include <aws/core/client/ClientConfiguration.h>
 
-#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
+#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
 #include <smithy/identity/resolver/AwsBearerTokenIdentityResolver.h>
 
 #include <aws/core/endpoint/EndpointProviderBase.h>
@@ -24,9 +24,8 @@
 #include <smithy/identity/auth/AuthSchemeOption.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
-#include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderBase.h>
 #include <aws/core/auth/AWSBearerToken.h>
-
+#include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderBase.h>
 
 static const char ALLOC_TAG[] = "SmithyClientTest";
 
@@ -84,32 +83,39 @@ class SmithyClientTest : public Aws::Testing::AwsCppSdkGTestSuite {
     
 };
 
-
 //====================bearer token ===============================
 class TestSSOBearerTokenProvider : public Aws::Auth::AWSBearerTokenProviderBase
 {
-    public:
+  public:
     Aws::Auth::AWSBearerToken GetAWSBearerToken() override
     {
-        return Aws::Auth::AWSBearerToken{"testBearerToken", Aws::Utils::DateTime::Now() + std::chrono::milliseconds{100000} };
+        return Aws::Auth::AWSBearerToken{"testBearerToken",
+                                         Aws::Utils::DateTime::Now() +
+                                             std::chrono::milliseconds{100000}};
     }
 };
 
-class TestAwsBearerTokenIdentityResolver : public smithy::DefaultAwsBearerTokenIdentityResolver
+class TestAwsBearerTokenIdentityResolver
+    : public smithy::DefaultAwsBearerTokenIdentityResolver
 {
-    public:
-    TestAwsBearerTokenIdentityResolver(): smithy::DefaultAwsBearerTokenIdentityResolver(){
-        m_providerChainLegacy.insert(m_providerChainLegacy.begin(), Aws::MakeShared<TestSSOBearerTokenProvider>(ALLOC_TAG));
+  public:
+    TestAwsBearerTokenIdentityResolver()
+        : smithy::DefaultAwsBearerTokenIdentityResolver()
+    {
+        m_providerChainLegacy.insert(
+            m_providerChainLegacy.begin(),
+            Aws::MakeShared<TestSSOBearerTokenProvider>(ALLOC_TAG));
     }
 };
 //===============================================================
 const char SmithyClientTest::ALLOCATION_TAG[] = "SmithyClientTest";
 
-
 using MySmithyClientConfig = Aws::Client::ClientConfiguration;
 using MyServiceAuthSchemeResolver = smithy::AuthSchemeResolverBase<smithy::DefaultAuthSchemeResolverParameters>; //smithy::SigV4AuthSchemeResolver<>; 
 static constexpr char MyServiceName[] = "MySuperService";
-using SigVariant = Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::SigV4aAuthScheme, smithy::BearerTokenAuthScheme>;
+using SigVariant =
+    Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::SigV4aAuthScheme,
+                      smithy::BearerTokenAuthScheme>;
 using MySmithyClient = smithy::client::AwsSmithyClientT<MyServiceName,
                                                         MySmithyClientConfig,
                                                         MyServiceAuthSchemeResolver,
@@ -256,30 +262,28 @@ TEST_F(SmithyClientTest, testSigV4a) {
 
 }
 
-TEST_F(SmithyClientTest, bearer) {
+TEST_F(SmithyClientTest, bearer)
+{
 
-    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::BearerTokenAuthSchemeResolver<> >(ALLOCATION_TAG);
+    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver =
+        Aws::MakeShared<smithy::BearerTokenAuthSchemeResolver<>>(
+            ALLOCATION_TAG);
 
     Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
 
     Aws::String key{"Bearer"};
 
-    std::shared_ptr<smithy::AwsBearerTokenIdentityResolver> resolver = Aws::MakeShared<TestAwsBearerTokenIdentityResolver>(ALLOCATION_TAG);
+    std::shared_ptr<smithy::AwsBearerTokenIdentityResolver> resolver =
+        Aws::MakeShared<TestAwsBearerTokenIdentityResolver>(ALLOCATION_TAG);
 
-    SigVariant val{smithy::BearerTokenAuthScheme(resolver, "MyService", "us-west-2")};
-    
+    SigVariant val{
+        smithy::BearerTokenAuthScheme(resolver, "MyService", "us-west-2")};
+
     authSchemesMap.emplace(key, val);
 
     std::shared_ptr<TestClient> ptr = Aws::MakeShared<TestClient>(
-        ALLOCATION_TAG,
-        clientConfig,
-        "MyAuthaService",
-        httpClient,
-        errorMarshaller,
-        endPointProvider,
-        authSchemeResolver,
-        authSchemesMap
-        );
+        ALLOCATION_TAG, clientConfig, "MyAuthaService", httpClient,
+        errorMarshaller, endPointProvider, authSchemeResolver, authSchemesMap);
     smithy::client::AwsSmithyClientAsyncRequestContext ctx;
     ctx.m_pRequest = nullptr;
 
@@ -287,12 +291,17 @@ TEST_F(SmithyClientTest, bearer) {
 
     EXPECT_EQ(res.IsSuccess(), true);
 
-    std::cout<<"selected scheme id="<<res.GetResult().schemeId<<std::endl;
+    std::cout << "selected scheme id=" << res.GetResult().schemeId << std::endl;
     EXPECT_EQ(res.GetResult().schemeId, key);
 
-    Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
+    Aws::String uri{
+        "https://"
+        "treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
 
-    std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    std::shared_ptr<Aws::Http::HttpRequest> httpRequest(
+        Aws::Http::CreateHttpRequest(
+            uri, Aws::Http::HttpMethod::HTTP_GET,
+            Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
     auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
 
@@ -300,7 +309,9 @@ TEST_F(SmithyClientTest, bearer) {
 
     EXPECT_TRUE(!res2.GetResult()->GetHeaderValue("authorization").empty());
 
-    std::cout<<"header="<<res2.GetResult()->GetHeaderValue("authorization")<<std::endl;
+    std::cout << "header=" << res2.GetResult()->GetHeaderValue("authorization")
+              << std::endl;
 
-    EXPECT_EQ(res2.GetResult()->GetHeaderValue("authorization"), "Bearer testBearerToken");
+    EXPECT_EQ(res2.GetResult()->GetHeaderValue("authorization"),
+              "Bearer testBearerToken");
 }
