@@ -10,11 +10,8 @@ namespace smithy
 struct BearerTokenAuthSchemeOption
 {
     static AuthSchemeOption bearerTokenAuthSchemeOption;
-    static char BEARER_SCHEME[];
 };
 
-char BearerTokenAuthSchemeOption::BEARER_SCHEME[] = "smithy.api#HTTPBearerAuth";
-
 AuthSchemeOption BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption =
-    AuthSchemeOption(BEARER_SCHEME);
+    AuthSchemeOption("smithy.api#HTTPBearerAuth");
 } // namespace smithy

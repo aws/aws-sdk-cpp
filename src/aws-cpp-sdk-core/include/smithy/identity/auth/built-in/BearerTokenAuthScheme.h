@@ -22,7 +22,7 @@ class BearerTokenAuthScheme : public AuthScheme<AwsBearerTokenIdentityBase>
     explicit BearerTokenAuthScheme(
         std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver,
         const Aws::String &serviceName, const Aws::String &region)
-        : AuthScheme(smithy::BearerTokenAuthSchemeOption::BEARER_SCHEME),
+        : AuthScheme("smithy.api#HTTPBearerAuth"),
           m_identityResolver{identityResolver},
           m_signer{Aws::MakeShared<smithy::BearerTokenSigner>(
               "BearerTokenAuthScheme", serviceName, region)}
