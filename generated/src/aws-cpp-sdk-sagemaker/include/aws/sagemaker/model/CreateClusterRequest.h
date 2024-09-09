@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/VpcConfig.h>
+#include <aws/sagemaker/model/ClusterOrchestrator.h>
+#include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -94,6 +96,35 @@ namespace Model
     inline CreateClusterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline CreateClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of orchestrator to use for the SageMaker HyperPod cluster.
+     * Currently, the only supported value is <code>"eks"</code>, which is to use an
+     * Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+     */
+    inline const ClusterOrchestrator& GetOrchestrator() const{ return m_orchestrator; }
+    inline bool OrchestratorHasBeenSet() const { return m_orchestratorHasBeenSet; }
+    inline void SetOrchestrator(const ClusterOrchestrator& value) { m_orchestratorHasBeenSet = true; m_orchestrator = value; }
+    inline void SetOrchestrator(ClusterOrchestrator&& value) { m_orchestratorHasBeenSet = true; m_orchestrator = std::move(value); }
+    inline CreateClusterRequest& WithOrchestrator(const ClusterOrchestrator& value) { SetOrchestrator(value); return *this;}
+    inline CreateClusterRequest& WithOrchestrator(ClusterOrchestrator&& value) { SetOrchestrator(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The node recovery mode for the SageMaker HyperPod cluster. When set to
+     * <code>Automatic</code>, SageMaker HyperPod will automatically reboot or replace
+     * faulty nodes when issues are detected. When set to <code>None</code>, cluster
+     * administrators will need to manually manage any faulty cluster instances.</p>
+     */
+    inline const ClusterNodeRecovery& GetNodeRecovery() const{ return m_nodeRecovery; }
+    inline bool NodeRecoveryHasBeenSet() const { return m_nodeRecoveryHasBeenSet; }
+    inline void SetNodeRecovery(const ClusterNodeRecovery& value) { m_nodeRecoveryHasBeenSet = true; m_nodeRecovery = value; }
+    inline void SetNodeRecovery(ClusterNodeRecovery&& value) { m_nodeRecoveryHasBeenSet = true; m_nodeRecovery = std::move(value); }
+    inline CreateClusterRequest& WithNodeRecovery(const ClusterNodeRecovery& value) { SetNodeRecovery(value); return *this;}
+    inline CreateClusterRequest& WithNodeRecovery(ClusterNodeRecovery&& value) { SetNodeRecovery(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -107,6 +138,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ClusterOrchestrator m_orchestrator;
+    bool m_orchestratorHasBeenSet = false;
+
+    ClusterNodeRecovery m_nodeRecovery;
+    bool m_nodeRecoveryHasBeenSet = false;
   };
 
 } // namespace Model

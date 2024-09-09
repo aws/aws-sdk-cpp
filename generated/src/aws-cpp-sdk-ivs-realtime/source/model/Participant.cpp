@@ -36,7 +36,9 @@ Participant::Participant() :
     m_recordingS3BucketNameHasBeenSet(false),
     m_recordingS3PrefixHasBeenSet(false),
     m_recordingState(ParticipantRecordingState::NOT_SET),
-    m_recordingStateHasBeenSet(false)
+    m_recordingStateHasBeenSet(false),
+    m_protocol(ParticipantProtocol::NOT_SET),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -156,6 +158,13 @@ Participant& Participant::operator =(JsonView jsonValue)
     m_recordingStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("protocol"))
+  {
+    m_protocol = ParticipantProtocolMapper::GetParticipantProtocolForName(jsonValue.GetString("protocol"));
+
+    m_protocolHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -253,6 +262,11 @@ JsonValue Participant::Jsonize() const
   if(m_recordingStateHasBeenSet)
   {
    payload.WithString("recordingState", ParticipantRecordingStateMapper::GetNameForParticipantRecordingState(m_recordingState));
+  }
+
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("protocol", ParticipantProtocolMapper::GetNameForParticipantProtocol(m_protocol));
   }
 
   return payload;

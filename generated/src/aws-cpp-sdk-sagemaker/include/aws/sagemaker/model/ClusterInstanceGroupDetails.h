@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
+#include <aws/sagemaker/model/DeepHealthCheckType.h>
 #include <utility>
 
 namespace Aws
@@ -147,6 +148,21 @@ namespace Model
     inline ClusterInstanceGroupDetails& AddInstanceStorageConfigs(const ClusterInstanceStorageConfig& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.push_back(value); return *this; }
     inline ClusterInstanceGroupDetails& AddInstanceStorageConfigs(ClusterInstanceStorageConfig&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A flag indicating whether deep health checks should be performed when the
+     * cluster instance group is created or updated.</p>
+     */
+    inline const Aws::Vector<DeepHealthCheckType>& GetOnStartDeepHealthChecks() const{ return m_onStartDeepHealthChecks; }
+    inline bool OnStartDeepHealthChecksHasBeenSet() const { return m_onStartDeepHealthChecksHasBeenSet; }
+    inline void SetOnStartDeepHealthChecks(const Aws::Vector<DeepHealthCheckType>& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks = value; }
+    inline void SetOnStartDeepHealthChecks(Aws::Vector<DeepHealthCheckType>&& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks = std::move(value); }
+    inline ClusterInstanceGroupDetails& WithOnStartDeepHealthChecks(const Aws::Vector<DeepHealthCheckType>& value) { SetOnStartDeepHealthChecks(value); return *this;}
+    inline ClusterInstanceGroupDetails& WithOnStartDeepHealthChecks(Aws::Vector<DeepHealthCheckType>&& value) { SetOnStartDeepHealthChecks(std::move(value)); return *this;}
+    inline ClusterInstanceGroupDetails& AddOnStartDeepHealthChecks(const DeepHealthCheckType& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks.push_back(value); return *this; }
+    inline ClusterInstanceGroupDetails& AddOnStartDeepHealthChecks(DeepHealthCheckType&& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     int m_currentCount;
@@ -172,6 +188,9 @@ namespace Model
 
     Aws::Vector<ClusterInstanceStorageConfig> m_instanceStorageConfigs;
     bool m_instanceStorageConfigsHasBeenSet = false;
+
+    Aws::Vector<DeepHealthCheckType> m_onStartDeepHealthChecks;
+    bool m_onStartDeepHealthChecksHasBeenSet = false;
   };
 
 } // namespace Model

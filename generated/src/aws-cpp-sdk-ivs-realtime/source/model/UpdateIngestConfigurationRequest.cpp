@@ -1,0 +1,42 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/ivs-realtime/model/UpdateIngestConfigurationRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::ivsrealtime::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+UpdateIngestConfigurationRequest::UpdateIngestConfigurationRequest() : 
+    m_arnHasBeenSet(false),
+    m_stageArnHasBeenSet(false)
+{
+}
+
+Aws::String UpdateIngestConfigurationRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_stageArnHasBeenSet)
+  {
+   payload.WithString("stageArn", m_stageArn);
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+
+
+

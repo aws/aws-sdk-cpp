@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/ReplicationStartingPosition.h>
+#include <aws/kafka/model/ReplicationTopicNameConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -86,6 +87,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Configuration for specifying replicated topic names should be the same as
+     * their corresponding upstream topics or prefixed with source cluster alias.</p>
+     */
+    inline const ReplicationTopicNameConfiguration& GetTopicNameConfiguration() const{ return m_topicNameConfiguration; }
+    inline bool TopicNameConfigurationHasBeenSet() const { return m_topicNameConfigurationHasBeenSet; }
+    inline void SetTopicNameConfiguration(const ReplicationTopicNameConfiguration& value) { m_topicNameConfigurationHasBeenSet = true; m_topicNameConfiguration = value; }
+    inline void SetTopicNameConfiguration(ReplicationTopicNameConfiguration&& value) { m_topicNameConfigurationHasBeenSet = true; m_topicNameConfiguration = std::move(value); }
+    inline TopicReplication& WithTopicNameConfiguration(const ReplicationTopicNameConfiguration& value) { SetTopicNameConfiguration(value); return *this;}
+    inline TopicReplication& WithTopicNameConfiguration(ReplicationTopicNameConfiguration&& value) { SetTopicNameConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of regular expression patterns indicating the topics that should not be
      * replicated.</p>
      */
@@ -127,6 +141,9 @@ namespace Model
 
     ReplicationStartingPosition m_startingPosition;
     bool m_startingPositionHasBeenSet = false;
+
+    ReplicationTopicNameConfiguration m_topicNameConfiguration;
+    bool m_topicNameConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_topicsToExclude;
     bool m_topicsToExcludeHasBeenSet = false;

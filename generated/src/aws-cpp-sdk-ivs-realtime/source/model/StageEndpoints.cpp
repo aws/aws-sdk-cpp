@@ -20,7 +20,9 @@ namespace Model
 
 StageEndpoints::StageEndpoints() : 
     m_eventsHasBeenSet(false),
-    m_whipHasBeenSet(false)
+    m_whipHasBeenSet(false),
+    m_rtmpHasBeenSet(false),
+    m_rtmpsHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,20 @@ StageEndpoints& StageEndpoints::operator =(JsonView jsonValue)
     m_whipHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rtmp"))
+  {
+    m_rtmp = jsonValue.GetString("rtmp");
+
+    m_rtmpHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rtmps"))
+  {
+    m_rtmps = jsonValue.GetString("rtmps");
+
+    m_rtmpsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +78,18 @@ JsonValue StageEndpoints::Jsonize() const
   if(m_whipHasBeenSet)
   {
    payload.WithString("whip", m_whip);
+
+  }
+
+  if(m_rtmpHasBeenSet)
+  {
+   payload.WithString("rtmp", m_rtmp);
+
+  }
+
+  if(m_rtmpsHasBeenSet)
+  {
+   payload.WithString("rtmps", m_rtmps);
 
   }
 

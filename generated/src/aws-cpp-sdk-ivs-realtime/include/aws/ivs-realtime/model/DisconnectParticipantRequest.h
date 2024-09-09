@@ -48,8 +48,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. IVS assigns this; it is
+     * returned by <a>CreateParticipantToken</a> (for streams using WebRTC ingest) or
+     * <a>CreateIngestConfiguration</a> (for streams using RTMP ingest).</p>
      */
     inline const Aws::String& GetParticipantId() const{ return m_participantId; }
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }

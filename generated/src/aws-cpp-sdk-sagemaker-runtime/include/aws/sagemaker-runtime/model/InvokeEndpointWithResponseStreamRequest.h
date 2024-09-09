@@ -179,6 +179,25 @@ namespace Model
     inline InvokeEndpointWithResponseStreamRequest& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
     inline InvokeEndpointWithResponseStreamRequest& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of a stateful session to handle your request.</p> <p>You can't create
+     * a stateful session by using the <code>InvokeEndpointWithResponseStream</code>
+     * action. Instead, you can create one by using the <code> <a>InvokeEndpoint</a>
+     * </code> action. In your request, you specify <code>NEW_SESSION</code> for the
+     * <code>SessionId</code> request parameter. The response to that request provides
+     * the session ID for the <code>NewSessionId</code> response parameter.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline InvokeEndpointWithResponseStreamRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline InvokeEndpointWithResponseStreamRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline InvokeEndpointWithResponseStreamRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_endpointName;
@@ -202,6 +221,9 @@ namespace Model
 
     Aws::String m_inferenceComponentName;
     bool m_inferenceComponentNameHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
     InvokeEndpointWithResponseStreamHandler m_handler;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
 

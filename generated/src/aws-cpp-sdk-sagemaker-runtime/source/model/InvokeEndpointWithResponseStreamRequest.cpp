@@ -23,6 +23,7 @@ InvokeEndpointWithResponseStreamRequest::InvokeEndpointWithResponseStreamRequest
     m_targetContainerHostnameHasBeenSet(false),
     m_inferenceIdHasBeenSet(false),
     m_inferenceComponentNameHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
     AmazonWebServiceRequest::SetHeadersReceivedEventHandler([this](const Http::HttpRequest*, Http::HttpResponse* response)
@@ -79,6 +80,13 @@ Aws::Http::HeaderValueCollection InvokeEndpointWithResponseStreamRequest::GetReq
   {
     ss << m_inferenceComponentName;
     headers.emplace("x-amzn-sagemaker-inference-component",  ss.str());
+    ss.str("");
+  }
+
+  if(m_sessionIdHasBeenSet)
+  {
+    ss << m_sessionId;
+    headers.emplace("x-amzn-sagemaker-session-id",  ss.str());
     ss.str("");
   }
 

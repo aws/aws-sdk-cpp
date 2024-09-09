@@ -25,6 +25,8 @@ InvokeEndpointResult::InvokeEndpointResult(InvokeEndpointResult&& toMove) :
     m_contentType(std::move(toMove.m_contentType)),
     m_invokedProductionVariant(std::move(toMove.m_invokedProductionVariant)),
     m_customAttributes(std::move(toMove.m_customAttributes)),
+    m_newSessionId(std::move(toMove.m_newSessionId)),
+    m_closedSessionId(std::move(toMove.m_closedSessionId)),
     m_requestId(std::move(toMove.m_requestId))
 {
 }
@@ -40,6 +42,8 @@ InvokeEndpointResult& InvokeEndpointResult::operator=(InvokeEndpointResult&& toM
    m_contentType = std::move(toMove.m_contentType);
    m_invokedProductionVariant = std::move(toMove.m_invokedProductionVariant);
    m_customAttributes = std::move(toMove.m_customAttributes);
+   m_newSessionId = std::move(toMove.m_newSessionId);
+   m_closedSessionId = std::move(toMove.m_closedSessionId);
    m_requestId = std::move(toMove.m_requestId);
 
    return *this;
@@ -71,6 +75,18 @@ InvokeEndpointResult& InvokeEndpointResult::operator =(Aws::AmazonWebServiceResu
   if(customAttributesIter != headers.end())
   {
     m_customAttributes = customAttributesIter->second;
+  }
+
+  const auto& newSessionIdIter = headers.find("x-amzn-sagemaker-new-session-id");
+  if(newSessionIdIter != headers.end())
+  {
+    m_newSessionId = newSessionIdIter->second;
+  }
+
+  const auto& closedSessionIdIter = headers.find("x-amzn-sagemaker-closed-session-id");
+  if(closedSessionIdIter != headers.end())
+  {
+    m_closedSessionId = closedSessionIdIter->second;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");

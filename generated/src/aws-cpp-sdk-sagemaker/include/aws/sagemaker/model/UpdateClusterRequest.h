@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
 #include <utility>
 
@@ -63,6 +64,18 @@ namespace Model
     inline UpdateClusterRequest& AddInstanceGroups(const ClusterInstanceGroupSpecification& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
     inline UpdateClusterRequest& AddInstanceGroups(ClusterInstanceGroupSpecification&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
+     */
+    inline const ClusterNodeRecovery& GetNodeRecovery() const{ return m_nodeRecovery; }
+    inline bool NodeRecoveryHasBeenSet() const { return m_nodeRecoveryHasBeenSet; }
+    inline void SetNodeRecovery(const ClusterNodeRecovery& value) { m_nodeRecoveryHasBeenSet = true; m_nodeRecovery = value; }
+    inline void SetNodeRecovery(ClusterNodeRecovery&& value) { m_nodeRecoveryHasBeenSet = true; m_nodeRecovery = std::move(value); }
+    inline UpdateClusterRequest& WithNodeRecovery(const ClusterNodeRecovery& value) { SetNodeRecovery(value); return *this;}
+    inline UpdateClusterRequest& WithNodeRecovery(ClusterNodeRecovery&& value) { SetNodeRecovery(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -70,6 +83,9 @@ namespace Model
 
     Aws::Vector<ClusterInstanceGroupSpecification> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet = false;
+
+    ClusterNodeRecovery m_nodeRecovery;
+    bool m_nodeRecoveryHasBeenSet = false;
   };
 
 } // namespace Model
