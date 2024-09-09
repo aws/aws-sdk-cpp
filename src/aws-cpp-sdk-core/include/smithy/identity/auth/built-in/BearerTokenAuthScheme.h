@@ -5,14 +5,12 @@
 #pragma once
 
 #include <smithy/identity/auth/AuthScheme.h>
+#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeOption.h>
 #include <smithy/identity/identity/AwsBearerTokenIdentityBase.h>
 #include <smithy/identity/resolver/AwsBearerTokenIdentityResolver.h>
 #include <smithy/identity/signer/built-in/BearerTokenSigner.h>
-
 namespace smithy
 {
-constexpr char BEARER_SCHEME[] = "smithy.api#HTTPBearerAuth";
-
 class BearerTokenAuthScheme : public AuthScheme<AwsBearerTokenIdentityBase>
 {
   public:
@@ -24,7 +22,8 @@ class BearerTokenAuthScheme : public AuthScheme<AwsBearerTokenIdentityBase>
     explicit BearerTokenAuthScheme(
         std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver,
         const Aws::String &serviceName, const Aws::String &region)
-        : AuthScheme(BEARER_SCHEME), m_identityResolver{identityResolver},
+        : AuthScheme(smithy::BearerTokenAuthSchemeOption::BEARER_SCHEME),
+          m_identityResolver{identityResolver},
           m_signer{Aws::MakeShared<smithy::BearerTokenSigner>(
               "BearerTokenAuthScheme", serviceName, region)}
     {

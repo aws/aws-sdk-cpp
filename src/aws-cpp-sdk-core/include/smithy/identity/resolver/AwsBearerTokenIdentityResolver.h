@@ -12,14 +12,12 @@
 namespace smithy
 {
 
-static const char SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[] =
-    "SSOBearerTokenProvider";
-static const char BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[] = "BearerTokenProvider";
-
 class AwsBearerTokenIdentityResolver
     : public IdentityResolverBase<AwsBearerTokenIdentityBase>
 {
   public:
+    static const char BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[];
+
     using IdentityT = AwsBearerTokenIdentity;
     virtual ~AwsBearerTokenIdentityResolver() = default;
 
@@ -90,6 +88,10 @@ class DefaultAwsBearerTokenIdentityResolver
     DefaultAwsBearerTokenIdentityResolver()
         : AwsBearerTokenIdentityResolver(
               {Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>(
-                  SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG)}){};
+                  "SSOBearerTokenProvider")}){};
 };
+const char
+    AwsBearerTokenIdentityResolver::BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[] =
+        "BearerTokenProvider";
+
 } // namespace smithy

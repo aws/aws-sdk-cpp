@@ -5,13 +5,15 @@
 #pragma once
 
 #include <smithy/identity/auth/AuthSchemeOption.h>
-#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
 namespace smithy
 {
 struct BearerTokenAuthSchemeOption
 {
     static AuthSchemeOption bearerTokenAuthSchemeOption;
+    static char BEARER_SCHEME[];
 };
+
+char BearerTokenAuthSchemeOption::BEARER_SCHEME[] = "smithy.api#HTTPBearerAuth";
 
 AuthSchemeOption BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption =
     AuthSchemeOption(BEARER_SCHEME);
