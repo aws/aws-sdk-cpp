@@ -88,7 +88,7 @@ namespace Model
     ///@{
     /**
      * <p>Settings that are used to configure and manage the lifecycle of CodeEditor
-     * applications.</p> <p/>
+     * applications.</p>
      */
     inline const AppLifecycleManagement& GetAppLifecycleManagement() const{ return m_appLifecycleManagement; }
     inline bool AppLifecycleManagementHasBeenSet() const { return m_appLifecycleManagementHasBeenSet; }

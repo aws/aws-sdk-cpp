@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ivs-realtime/model/ParticipantRecordingState.h>
+#include <aws/ivs-realtime/model/ParticipantProtocol.h>
 #include <utility>
 
 namespace Aws
@@ -259,6 +260,18 @@ namespace Model
     inline Participant& WithRecordingState(const ParticipantRecordingState& value) { SetRecordingState(value); return *this;}
     inline Participant& WithRecordingState(ParticipantRecordingState&& value) { SetRecordingState(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Type of ingest protocol that the participant employs for broadcasting.</p>
+     */
+    inline const ParticipantProtocol& GetProtocol() const{ return m_protocol; }
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+    inline void SetProtocol(const ParticipantProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(ParticipantProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
+    inline Participant& WithProtocol(const ParticipantProtocol& value) { SetProtocol(value); return *this;}
+    inline Participant& WithProtocol(ParticipantProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_participantId;
@@ -305,6 +318,9 @@ namespace Model
 
     ParticipantRecordingState m_recordingState;
     bool m_recordingStateHasBeenSet = false;
+
+    ParticipantProtocol m_protocol;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

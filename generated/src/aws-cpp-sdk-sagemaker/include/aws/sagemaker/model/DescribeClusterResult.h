@@ -10,6 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/VpcConfig.h>
+#include <aws/sagemaker/model/ClusterOrchestrator.h>
+#include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupDetails.h>
 #include <utility>
 
@@ -121,6 +123,28 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The type of orchestrator used for the SageMaker HyperPod cluster. </p>
+     */
+    inline const ClusterOrchestrator& GetOrchestrator() const{ return m_orchestrator; }
+    inline void SetOrchestrator(const ClusterOrchestrator& value) { m_orchestrator = value; }
+    inline void SetOrchestrator(ClusterOrchestrator&& value) { m_orchestrator = std::move(value); }
+    inline DescribeClusterResult& WithOrchestrator(const ClusterOrchestrator& value) { SetOrchestrator(value); return *this;}
+    inline DescribeClusterResult& WithOrchestrator(ClusterOrchestrator&& value) { SetOrchestrator(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
+     */
+    inline const ClusterNodeRecovery& GetNodeRecovery() const{ return m_nodeRecovery; }
+    inline void SetNodeRecovery(const ClusterNodeRecovery& value) { m_nodeRecovery = value; }
+    inline void SetNodeRecovery(ClusterNodeRecovery&& value) { m_nodeRecovery = std::move(value); }
+    inline DescribeClusterResult& WithNodeRecovery(const ClusterNodeRecovery& value) { SetNodeRecovery(value); return *this;}
+    inline DescribeClusterResult& WithNodeRecovery(ClusterNodeRecovery&& value) { SetNodeRecovery(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -145,6 +169,10 @@ namespace Model
     Aws::Vector<ClusterInstanceGroupDetails> m_instanceGroups;
 
     VpcConfig m_vpcConfig;
+
+    ClusterOrchestrator m_orchestrator;
+
+    ClusterNodeRecovery m_nodeRecovery;
 
     Aws::String m_requestId;
   };

@@ -108,6 +108,34 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>If you created a stateful session with your request, the ID and expiration
+     * time that the model assigns to that session.</p>
+     */
+    inline const Aws::String& GetNewSessionId() const{ return m_newSessionId; }
+    inline void SetNewSessionId(const Aws::String& value) { m_newSessionId = value; }
+    inline void SetNewSessionId(Aws::String&& value) { m_newSessionId = std::move(value); }
+    inline void SetNewSessionId(const char* value) { m_newSessionId.assign(value); }
+    inline InvokeEndpointResult& WithNewSessionId(const Aws::String& value) { SetNewSessionId(value); return *this;}
+    inline InvokeEndpointResult& WithNewSessionId(Aws::String&& value) { SetNewSessionId(std::move(value)); return *this;}
+    inline InvokeEndpointResult& WithNewSessionId(const char* value) { SetNewSessionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If you closed a stateful session with your request, the ID of that
+     * session.</p>
+     */
+    inline const Aws::String& GetClosedSessionId() const{ return m_closedSessionId; }
+    inline void SetClosedSessionId(const Aws::String& value) { m_closedSessionId = value; }
+    inline void SetClosedSessionId(Aws::String&& value) { m_closedSessionId = std::move(value); }
+    inline void SetClosedSessionId(const char* value) { m_closedSessionId.assign(value); }
+    inline InvokeEndpointResult& WithClosedSessionId(const Aws::String& value) { SetClosedSessionId(value); return *this;}
+    inline InvokeEndpointResult& WithClosedSessionId(Aws::String&& value) { SetClosedSessionId(std::move(value)); return *this;}
+    inline InvokeEndpointResult& WithClosedSessionId(const char* value) { SetClosedSessionId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -126,6 +154,10 @@ namespace Model
     Aws::String m_invokedProductionVariant;
 
     Aws::String m_customAttributes;
+
+    Aws::String m_newSessionId;
+
+    Aws::String m_closedSessionId;
 
     Aws::String m_requestId;
   };

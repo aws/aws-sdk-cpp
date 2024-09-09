@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 UpdateClusterRequest::UpdateClusterRequest() : 
     m_clusterNameHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false)
+    m_instanceGroupsHasBeenSet(false),
+    m_nodeRecovery(ClusterNodeRecovery::NOT_SET),
+    m_nodeRecoveryHasBeenSet(false)
 {
 }
 
@@ -37,6 +39,11 @@ Aws::String UpdateClusterRequest::SerializePayload() const
    }
    payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
 
+  }
+
+  if(m_nodeRecoveryHasBeenSet)
+  {
+   payload.WithString("NodeRecovery", ClusterNodeRecoveryMapper::GetNameForClusterNodeRecovery(m_nodeRecovery));
   }
 
   return payload.View().WriteReadable();

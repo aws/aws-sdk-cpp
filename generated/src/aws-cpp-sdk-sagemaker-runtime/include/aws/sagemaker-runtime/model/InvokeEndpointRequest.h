@@ -191,6 +191,30 @@ namespace Model
     inline InvokeEndpointRequest& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
     inline InvokeEndpointRequest& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Creates a stateful session or identifies an existing one. You can do one of
+     * the following:</p> <ul> <li> <p>Create a stateful session by specifying the
+     * value <code>NEW_SESSION</code>.</p> </li> <li> <p>Send your request to an
+     * existing stateful session by specifying the ID of that session.</p> </li> </ul>
+     * <p>With a stateful session, you can send multiple requests to a stateful model.
+     * When you create a session with a stateful model, the model must create the
+     * session ID and set the expiration time. The model must also provide that
+     * information in the response to your request. You can get the ID and timestamp
+     * from the <code>NewSessionId</code> response parameter. For any subsequent
+     * request where you specify that session ID, SageMaker routes the request to the
+     * same instance that supports the session.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline InvokeEndpointRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline InvokeEndpointRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline InvokeEndpointRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_endpointName;
@@ -220,6 +244,9 @@ namespace Model
 
     Aws::String m_inferenceComponentName;
     bool m_inferenceComponentNameHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

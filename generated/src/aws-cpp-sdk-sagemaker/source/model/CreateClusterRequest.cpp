@@ -16,7 +16,10 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clusterNameHasBeenSet(false),
     m_instanceGroupsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_orchestratorHasBeenSet(false),
+    m_nodeRecovery(ClusterNodeRecovery::NOT_SET),
+    m_nodeRecoveryHasBeenSet(false)
 {
 }
 
@@ -56,6 +59,17 @@ Aws::String CreateClusterRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_orchestratorHasBeenSet)
+  {
+   payload.WithObject("Orchestrator", m_orchestrator.Jsonize());
+
+  }
+
+  if(m_nodeRecoveryHasBeenSet)
+  {
+   payload.WithString("NodeRecovery", ClusterNodeRecoveryMapper::GetNameForClusterNodeRecovery(m_nodeRecovery));
   }
 
   return payload.View().WriteReadable();

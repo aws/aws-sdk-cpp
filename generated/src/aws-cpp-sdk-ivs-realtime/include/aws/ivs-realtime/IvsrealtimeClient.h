@@ -29,8 +29,8 @@ namespace ivsrealtime
    * between participant tokens and participants.</p> </li> </ul> <p>For server-side
    * composition:</p> <ul> <li> <p> <b>Composition process</b> — Composites
    * participants of a stage into a single video and forwards it to a set of outputs
-   * (e.g., IVS channels). Composition endpoints support this process.</p> </li> <li>
-   * <p> <b>Composition</b> — Controls the look of the outputs, including how
+   * (e.g., IVS channels). Composition operations support this process.</p> </li>
+   * <li> <p> <b>Composition</b> — Controls the look of the outputs, including how
    * participants are positioned in the video.</p> </li> </ul> <p>For more
    * information about your IVS live stream, also see <a
    * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
@@ -39,15 +39,15 @@ namespace ivsrealtime
    * comprises a <i>key</i> and a <i>value</i>, both set by you. For example, you
    * might set a tag as <code>topic:nature</code> to label a particular video
    * category. See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-   * AWS Resources</a> for more information, including restrictions that apply to
-   * tags and "Tag naming limits and requirements"; Amazon IVS stages has no
-   * service-specific constraints beyond what is documented there.</p> <p>Tags can
-   * help you identify and organize your AWS resources. For example, you can use the
-   * same tag for different resources to indicate that they are related. You can also
-   * use tags to manage access (see <a
+   * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
+   * practices and strategies</a> in <i>Tagging AWS Resources and Tag Editor</i> for
+   * details, including restrictions that apply to tags and "Tag naming limits and
+   * requirements"; Amazon IVS stages has no service-specific constraints beyond what
+   * is documented there.</p> <p>Tags can help you identify and organize your AWS
+   * resources. For example, you can use the same tag for different resources to
+   * indicate that they are related. You can also use tags to manage access (see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Access
-   * Tags</a>).</p> <p>The Amazon IVS real-time API has these tag-related endpoints:
+   * Tags</a>).</p> <p>The Amazon IVS real-time API has these tag-related operations:
    * <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>. The
    * following resource supports tagging: Stage.</p> <p>At most 50 tags can be
    * applied to a resource.</p>
@@ -133,6 +133,32 @@ namespace ivsrealtime
         void CreateEncoderConfigurationAsync(const CreateEncoderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateEncoderConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IvsrealtimeClient::CreateEncoderConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new IngestConfiguration resource, used to specify the ingest
+         * protocol for a stage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateIngestConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIngestConfigurationOutcome CreateIngestConfiguration(const Model::CreateIngestConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIngestConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIngestConfigurationRequestT = Model::CreateIngestConfigurationRequest>
+        Model::CreateIngestConfigurationOutcomeCallable CreateIngestConfigurationCallable(const CreateIngestConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::CreateIngestConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIngestConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIngestConfigurationRequestT = Model::CreateIngestConfigurationRequest>
+        void CreateIngestConfigurationAsync(const CreateIngestConfigurationRequestT& request, const CreateIngestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::CreateIngestConfiguration, request, handler, context);
         }
 
         /**
@@ -244,6 +270,34 @@ namespace ivsrealtime
         }
 
         /**
+         * <p>Deletes a specified IngestConfiguration, so it can no longer be used to
+         * broadcast. An IngestConfiguration cannot be deleted if the publisher is actively
+         * streaming to a stage, unless <code>force</code> is set to
+         * <code>true</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteIngestConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIngestConfigurationOutcome DeleteIngestConfiguration(const Model::DeleteIngestConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIngestConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIngestConfigurationRequestT = Model::DeleteIngestConfigurationRequest>
+        Model::DeleteIngestConfigurationOutcomeCallable DeleteIngestConfigurationCallable(const DeleteIngestConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::DeleteIngestConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIngestConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIngestConfigurationRequestT = Model::DeleteIngestConfigurationRequest>
+        void DeleteIngestConfigurationAsync(const DeleteIngestConfigurationRequestT& request, const DeleteIngestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::DeleteIngestConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified public key used to sign stage participant tokens. This
          * invalidates future participant tokens generated using the key pair’s private
          * key. </p><p><h3>See Also:</h3>   <a
@@ -271,8 +325,10 @@ namespace ivsrealtime
         }
 
         /**
-         * <p>Shuts down and deletes the specified stage (disconnecting all
-         * participants).</p><p><h3>See Also:</h3>   <a
+         * <p>Shuts down and deletes the specified stage (disconnecting all participants).
+         * This operation also removes the <code>stageArn</code> from the associated
+         * <a>IngestConfiguration</a>, if there are participants using the
+         * IngestConfiguration to publish to the stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStage">AWS
          * API Reference</a></p>
          */
@@ -327,8 +383,10 @@ namespace ivsrealtime
         }
 
         /**
-         * <p>Disconnects a specified participant and revokes the participant permanently
-         * from a specified stage.</p><p><h3>See Also:</h3>   <a
+         * <p>Disconnects a specified participant from a specified stage. If the
+         * participant is publishing using an <a>IngestConfiguration</a>,
+         * DisconnectParticipant also updates the <code>stageArn</code> in the
+         * IngestConfiguration to be an empty string.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DisconnectParticipant">AWS
          * API Reference</a></p>
          */
@@ -402,6 +460,32 @@ namespace ivsrealtime
         void GetEncoderConfigurationAsync(const GetEncoderConfigurationRequestT& request, const GetEncoderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IvsrealtimeClient::GetEncoderConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about the specified IngestConfiguration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetIngestConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIngestConfigurationOutcome GetIngestConfiguration(const Model::GetIngestConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIngestConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIngestConfigurationRequestT = Model::GetIngestConfigurationRequest>
+        Model::GetIngestConfigurationOutcomeCallable GetIngestConfigurationCallable(const GetIngestConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::GetIngestConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetIngestConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIngestConfigurationRequestT = Model::GetIngestConfigurationRequest>
+        void GetIngestConfigurationAsync(const GetIngestConfigurationRequestT& request, const GetIngestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::GetIngestConfiguration, request, handler, context);
         }
 
         /**
@@ -611,6 +695,32 @@ namespace ivsrealtime
         }
 
         /**
+         * <p>Lists all IngestConfigurations in your account, in the AWS region where the
+         * API request is processed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListIngestConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIngestConfigurationsOutcome ListIngestConfigurations(const Model::ListIngestConfigurationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListIngestConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIngestConfigurationsRequestT = Model::ListIngestConfigurationsRequest>
+        Model::ListIngestConfigurationsOutcomeCallable ListIngestConfigurationsCallable(const ListIngestConfigurationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::ListIngestConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListIngestConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIngestConfigurationsRequestT = Model::ListIngestConfigurationsRequest>
+        void ListIngestConfigurationsAsync(const ListIngestConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIngestConfigurationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::ListIngestConfigurations, request, handler, context);
+        }
+
+        /**
          * <p>Lists events for a specified participant that occurred during a specified
          * stage session.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">AWS
@@ -794,7 +904,7 @@ namespace ivsrealtime
         /**
          * <p>Starts a Composition from a stage based on the configuration provided in the
          * request.</p> <p>A Composition is an ephemeral resource that exists after this
-         * endpoint returns successfully. Composition stops and the resource is
+         * operation returns successfully. Composition stops and the resource is
          * deleted:</p> <ul> <li> <p>When <a>StopComposition</a> is called.</p> </li> <li>
          * <p>After a 1-minute timeout, when all participants are disconnected from the
          * stage.</p> </li> <li> <p>After a 1-minute timeout, if there are no participants
@@ -901,6 +1011,33 @@ namespace ivsrealtime
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IvsrealtimeClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a specified IngestConfiguration. Only the stage ARN attached to the
+         * IngestConfiguration can be updated. An IngestConfiguration that is active cannot
+         * be updated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateIngestConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIngestConfigurationOutcome UpdateIngestConfiguration(const Model::UpdateIngestConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIngestConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateIngestConfigurationRequestT = Model::UpdateIngestConfigurationRequest>
+        Model::UpdateIngestConfigurationOutcomeCallable UpdateIngestConfigurationCallable(const UpdateIngestConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::UpdateIngestConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateIngestConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateIngestConfigurationRequestT = Model::UpdateIngestConfigurationRequest>
+        void UpdateIngestConfigurationAsync(const UpdateIngestConfigurationRequestT& request, const UpdateIngestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::UpdateIngestConfiguration, request, handler, context);
         }
 
         /**
