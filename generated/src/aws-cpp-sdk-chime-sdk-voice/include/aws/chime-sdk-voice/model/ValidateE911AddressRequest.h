@@ -104,7 +104,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The country in the address being validated.</p>
+     * <p>The country in the address being validated as two-letter country code in ISO
+     * 3166-1 alpha-2 format, such as <code>US</code>. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
+     * in Wikipedia.</p>
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }

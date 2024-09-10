@@ -37,10 +37,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Number indicating the result of address validation. <code>0</code> means the
-     * address was perfect as-is and successfully validated. <code>1</code> means the
-     * address was corrected. <code>2</code> means the address sent was not close
-     * enough and was not validated.</p>
+     * <p>Number indicating the result of address validation.</p> <p>Each possible
+     * result is defined as follows:</p> <ul> <li> <p> <code>0</code> - Address
+     * validation succeeded.</p> </li> <li> <p> <code>1</code> - Address validation
+     * succeeded. The address was a close enough match and has been corrected as part
+     * of the address object.</p> </li> <li> <p> <code>2</code> - Address validation
+     * failed. You should re-submit the validation request with candidates from the
+     * <code>CandidateAddressList</code> result, if it's a close match.</p> </li> </ul>
      */
     inline int GetValidationResult() const{ return m_validationResult; }
     inline void SetValidationResult(int value) { m_validationResult = value; }

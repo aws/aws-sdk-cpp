@@ -88,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides
+     * <p>Provided if <code>CallerType</code> is <code>remoteip</code>. Provides
      * information about the remote IP address that the API call originated from.</p>
      */
     inline const ActionRemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }

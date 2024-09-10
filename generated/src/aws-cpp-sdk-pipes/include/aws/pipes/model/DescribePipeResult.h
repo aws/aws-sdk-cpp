@@ -257,6 +257,23 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The identifier of the KMS customer managed key for EventBridge to use to
+     * encrypt pipe data, if one has been specified.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
+     * encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
+    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
+    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
+    inline DescribePipeResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
+    inline DescribePipeResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
+    inline DescribePipeResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -301,6 +318,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
 
     PipeLogConfiguration m_logConfiguration;
+
+    Aws::String m_kmsKeyIdentifier;
 
     Aws::String m_requestId;
   };

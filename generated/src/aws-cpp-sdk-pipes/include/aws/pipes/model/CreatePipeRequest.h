@@ -204,6 +204,27 @@ namespace Model
     inline CreatePipeRequest& WithLogConfiguration(const PipeLogConfigurationParameters& value) { SetLogConfiguration(value); return *this;}
     inline CreatePipeRequest& WithLogConfiguration(PipeLogConfigurationParameters&& value) { SetLogConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the KMS customer managed key for EventBridge to use, if you
+     * choose to use a customer managed key to encrypt pipe data. The identifier can be
+     * the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+     * <p>If you do not specify a customer managed key identifier, EventBridge uses an
+     * Amazon Web Services owned key to encrypt pipe data.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing
+     * keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+    inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
+    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = value; }
+    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::move(value); }
+    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier.assign(value); }
+    inline CreatePipeRequest& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
+    inline CreatePipeRequest& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
+    inline CreatePipeRequest& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -241,6 +262,9 @@ namespace Model
 
     PipeLogConfigurationParameters m_logConfiguration;
     bool m_logConfigurationHasBeenSet = false;
+
+    Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
   };
 
 } // namespace Model
