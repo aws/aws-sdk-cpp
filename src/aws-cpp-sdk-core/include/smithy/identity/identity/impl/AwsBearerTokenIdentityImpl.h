@@ -8,11 +8,11 @@
 #include <smithy/identity/identity/AwsBearerTokenIdentity.h>
 
 namespace smithy {
-    Aws::String AwsBearerTokenIdentity::token() {
-        return m_token;
-    }
+const Aws::String &AwsBearerTokenIdentity::token() const { return m_token; }
 
-    Aws::Crt::Optional<AwsIdentity::DateTime> AwsBearerTokenIdentity::expiration() {
-        return m_expiration;
-    }
+Aws::Crt::Optional<AwsIdentity::DateTime>
+AwsBearerTokenIdentity::expiration() const
+{
+    return m_expiration;
+}
 }
