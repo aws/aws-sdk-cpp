@@ -29,8 +29,11 @@ namespace Model
 {
 
   /**
-   * <p>Contains finding details that are specific to control-based findings. Only
-   * returned for findings generated from controls.</p><p><h3>See Also:</h3>   <a
+   * <p>This object typically provides details about a control finding, such as
+   * applicable standards and the status of control checks. While finding providers
+   * can add custom content in <code>Compliance</code> object fields, they are
+   * typically used to review details of Security Hub control findings.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Compliance">AWS
    * API Reference</a></p>
    */
@@ -45,16 +48,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The result of a standards check.</p> <p>The valid values for
-     * <code>Status</code> are as follows.</p> <ul> <li> <ul> <li> <p>
-     * <code>PASSED</code> - Standards check passed for all evaluated resources.</p>
-     * </li> <li> <p> <code>WARNING</code> - Some information is missing or this check
-     * is not supported for your configuration.</p> </li> <li> <p> <code>FAILED</code>
-     * - Standards check failed for at least one evaluated resource.</p> </li> <li> <p>
-     * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-     * outage, API error, or because the result of the Config evaluation was
-     * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
+     * <p>Typically summarizes the result of a control check.</p> <p>For Security Hub
+     * controls, valid values for <code>Status</code> are as follows.</p> <ul> <li>
+     * <ul> <li> <p> <code>PASSED</code> - Standards check passed for all evaluated
+     * resources.</p> </li> <li> <p> <code>WARNING</code> - Some information is missing
+     * or this check is not supported for your configuration.</p> </li> <li> <p>
+     * <code>FAILED</code> - Standards check failed for at least one evaluated
+     * resource.</p> </li> <li> <p> <code>NOT_AVAILABLE</code> - Check could not be
+     * performed due to a service outage, API error, or because the result of the
+     * Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation
+     * result was <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
      * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
      */
     inline const ComplianceStatus& GetStatus() const{ return m_status; }
@@ -67,8 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>For a control, the industry or regulatory framework requirements that are
-     * related to the control. The check for that control is aligned with these
+     * <p>Typically provides the industry or regulatory framework requirements that are
+     * related to a control. The check for that control is aligned with these
      * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRelatedRequirements() const{ return m_relatedRequirements; }
@@ -84,11 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>For findings generated from controls, a list of reasons behind the value of
-     * <code>Status</code>. For the list of status reason codes and their meanings, see
-     * <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+     * <p>Typically used to provide a list of reasons for the value of
+     * <code>Status</code>.</p>
      */
     inline const Aws::Vector<StatusReason>& GetStatusReasons() const{ return m_statusReasons; }
     inline bool StatusReasonsHasBeenSet() const { return m_statusReasonsHasBeenSet; }
@@ -102,9 +102,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier of a control across standards. Values for this field
-     * typically consist of an Amazon Web Servicesservice and a number, such as
-     * APIGateway.5. </p>
+     * <p> Typically provides the unique identifier of a control across standards. For
+     * Security Hub controls, this field consists of an Amazon Web Servicesservice and
+     * a unique number, such as <code>APIGateway.5</code>. </p>
      */
     inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
@@ -118,8 +118,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The enabled security standards in which a security control is currently
-     * enabled. </p>
+     * <p>Typically provides an array of enabled security standards in which a security
+     * control is currently enabled. </p>
      */
     inline const Aws::Vector<AssociatedStandard>& GetAssociatedStandards() const{ return m_associatedStandards; }
     inline bool AssociatedStandardsHasBeenSet() const { return m_associatedStandardsHasBeenSet; }
@@ -133,7 +133,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> An object that includes security control parameter names and values. </p>
+     * <p> Typically an object that includes security control parameter names and
+     * values. </p>
      */
     inline const Aws::Vector<SecurityControlParameter>& GetSecurityControlParameters() const{ return m_securityControlParameters; }
     inline bool SecurityControlParametersHasBeenSet() const { return m_securityControlParametersHasBeenSet; }

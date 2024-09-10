@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline const Aws::String& GetVoiceToneAnalysisTaskId() const{ return m_voiceToneAnalysisTaskId; }
     inline bool VoiceToneAnalysisTaskIdHasBeenSet() const { return m_voiceToneAnalysisTaskIdHasBeenSet; }

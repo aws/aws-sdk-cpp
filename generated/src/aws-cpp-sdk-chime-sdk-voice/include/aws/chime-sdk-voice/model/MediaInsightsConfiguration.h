@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Denotes the configration as enabled or disabled.</p>
+     * <p>Denotes the configuration as enabled or disabled.</p>
      */
     inline bool GetDisabled() const{ return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }

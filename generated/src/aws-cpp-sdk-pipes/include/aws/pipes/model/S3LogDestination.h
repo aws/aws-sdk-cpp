@@ -89,10 +89,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The format EventBridge uses for the log records.</p> <ul> <li> <p>
-     * <code>json</code>: JSON </p> </li> <li> <p> <code>plain</code>: Plain text</p>
-     * </li> <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C
-     * extended logging file format</a> </p> </li> </ul>
+     * <p>The format EventBridge uses for the log records.</p> <p>EventBridge currently
+     * only supports <code>json</code> formatting.</p>
      */
     inline const S3OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }

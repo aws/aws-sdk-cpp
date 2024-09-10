@@ -59,8 +59,7 @@ namespace Model
     /**
      * <p>Specifies the security groups associated with the stream. These security
      * groups must all be in the same VPC. You can specify as many as five security
-     * groups. If you do not specify a security group, the default security group for
-     * the VPC is used.</p>
+     * groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroup() const{ return m_securityGroup; }
     inline bool SecurityGroupHasBeenSet() const { return m_securityGroupHasBeenSet; }

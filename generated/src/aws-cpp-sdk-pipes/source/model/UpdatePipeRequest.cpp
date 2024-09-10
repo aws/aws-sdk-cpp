@@ -23,7 +23,8 @@ UpdatePipeRequest::UpdatePipeRequest() :
     m_targetHasBeenSet(false),
     m_targetParametersHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_kmsKeyIdentifierHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,12 @@ Aws::String UpdatePipeRequest::SerializePayload() const
   if(m_logConfigurationHasBeenSet)
   {
    payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_kmsKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
 
   }
 
