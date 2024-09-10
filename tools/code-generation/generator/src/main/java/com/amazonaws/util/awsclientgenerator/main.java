@@ -41,6 +41,7 @@ public class main {
     static final String LICENSE_TEXT = "license-text";
     static final String STANDALONE_OPTION = "standalone";
     static final String ENABLE_VIRTUAL_OPERATIONS = "enable-virtual-operations";
+    static final String USE_SMITHY_CLIENT = "use-smithy-client";
 
     public static void main(String[] args) throws IOException {
 
@@ -99,6 +100,8 @@ public class main {
             if (argPairs.containsKey(OUTPUT_FILE_NAME) && !argPairs.get(OUTPUT_FILE_NAME).isEmpty()) {
                 outputFileName = argPairs.get(OUTPUT_FILE_NAME);
             }
+
+            boolean useSmithyClient = argPairs.containsKey(USE_SMITHY_CLIENT);
 
             if (arbitraryJson != null && arbitraryJson.length() > 0) {
                 try {

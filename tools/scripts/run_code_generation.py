@@ -368,6 +368,9 @@ def parse_arguments() -> dict:
                         help="Code generator raw argument to be passed through to "
                              "mark operation functions in service client as virtual functions. Always on by default",
                         action="store_true")
+    parser.add_argument("--use-smithy-client",
+                        help="generate clients using smithy base client if supported",
+                        action="store_true")
 
     args = vars(parser.parse_args())
     arg_map = {}
@@ -432,9 +435,12 @@ def parse_arguments() -> dict:
     arg_map["list_all"] = args["list_all"] or False
 
     raw_generator_arguments = dict()
-    for raw_argument in ["license-text", "namespace", "standalone"]:
+    for raw_argument in ["license-text", "namespace", "standalone", "use_smithy_client"]:
         if args.get(raw_argument):
             raw_generator_arguments[raw_argument] = args[raw_argument]
+    if raw_generator_arguments.get("use_smithy_client"):
+        del raw_generator_arguments["use_smithy_client"]
+        raw_generator_arguments["use-smithy-client"] = ""
     arg_map["raw_generator_arguments"] = raw_generator_arguments
 
     return arg_map
