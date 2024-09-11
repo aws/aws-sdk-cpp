@@ -336,9 +336,9 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Creates a publishing destination to export findings to. The resource to
-         * export findings to must exist before you use this operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a publishing destination where you can export your GuardDuty
+         * findings. Before you start exporting the findings, the destination resource must
+         * exist.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">AWS
          * API Reference</a></p>
          */
@@ -945,10 +945,10 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p>
-         * <p>There might be regional differences because some data sources might not be
-         * available in all the Amazon Web Services Regions where GuardDuty is presently
-         * supported. For more information, see <a
+         * <p>Retrieves a GuardDuty detector specified by the detectorId.</p> <p>There
+         * might be regional differences because some data sources might not be available
+         * in all the Amazon Web Services Regions where GuardDuty is presently supported.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
          * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetDetector">AWS
@@ -1027,7 +1027,10 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Lists Amazon GuardDuty findings statistics for the specified detector ID.</p>
+         * <p>Lists GuardDuty findings statistics for the specified detector ID.</p> <p>You
+         * must provide either <code>findingStatisticTypes</code> or <code>groupBy</code>
+         * parameter, and not both. You can use the <code>maxResults</code> and
+         * <code>orderBy</code> parameters only when using <code>groupBy</code>.</p>
          * <p>There might be regional differences because some flags might not be available
          * in all the Regions where GuardDuty is currently supported. For more information,
          * see <a

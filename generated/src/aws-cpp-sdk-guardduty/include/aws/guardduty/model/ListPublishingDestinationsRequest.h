@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the detector to retrieve publishing destinations for.</p>
+     * <p>The detector ID for which you want to retrieve the publishing
+     * destination.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }

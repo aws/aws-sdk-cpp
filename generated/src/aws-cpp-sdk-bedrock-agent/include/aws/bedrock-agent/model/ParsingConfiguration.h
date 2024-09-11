@@ -31,7 +31,9 @@ namespace Model
    * source to convert the pages of text into images and use a model to describe the
    * contents of each page.</p> <p>To use a model to parse PDF documents, set the
    * parsing strategy to <code>BEDROCK_FOUNDATION_MODEL</code> and specify the model
-   * to use by ARN. You can also override the default parsing prompt with
+   * or <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+   * profile</a> to use by ARN. You can also override the default parsing prompt with
    * instructions for how to interpret images and tables in your documents. The
    * following models are supported.</p> <ul> <li> <p>Anthropic Claude 3 Sonnet -
    * <code>anthropic.claude-3-sonnet-20240229-v1:0</code> </p> </li> <li>

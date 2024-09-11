@@ -281,6 +281,37 @@ namespace MediaLive
         }
 
         /**
+         * Create a ChannelPlacementGroup in the specified Cluster. As part of the create
+         * operation, you specify the Nodes to attach the group to.After you create a
+         * ChannelPlacementGroup, you add Channels to the group (you do this by modifying
+         * the Channels to add them to a specific group). You now have an association of
+         * Channels to ChannelPlacementGroup, and ChannelPlacementGroup to Nodes. This
+         * association means that all the Channels in the group are able to run on any of
+         * the Nodes associated with the group.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannelPlacementGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChannelPlacementGroupOutcome CreateChannelPlacementGroup(const Model::CreateChannelPlacementGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateChannelPlacementGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateChannelPlacementGroupRequestT = Model::CreateChannelPlacementGroupRequest>
+        Model::CreateChannelPlacementGroupOutcomeCallable CreateChannelPlacementGroupCallable(const CreateChannelPlacementGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateChannelPlacementGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateChannelPlacementGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateChannelPlacementGroupRequestT = Model::CreateChannelPlacementGroupRequest>
+        void CreateChannelPlacementGroupAsync(const CreateChannelPlacementGroupRequestT& request, const CreateChannelPlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateChannelPlacementGroup, request, handler, context);
+        }
+
+        /**
          * Creates a cloudwatch alarm template to dynamically generate cloudwatch metric
          * alarms on targeted resource types.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate">AWS
@@ -331,6 +362,31 @@ namespace MediaLive
         void CreateCloudWatchAlarmTemplateGroupAsync(const CreateCloudWatchAlarmTemplateGroupRequestT& request, const CreateCloudWatchAlarmTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::CreateCloudWatchAlarmTemplateGroup, request, handler, context);
+        }
+
+        /**
+         * Create a new Cluster.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for CreateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateClusterRequestT = Model::CreateClusterRequest>
+        Model::CreateClusterOutcomeCallable CreateClusterCallable(const CreateClusterRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateCluster, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateClusterRequestT = Model::CreateClusterRequest>
+        void CreateClusterAsync(const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateClusterRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateCluster, request, handler, context);
         }
 
         /**
@@ -487,6 +543,90 @@ namespace MediaLive
         }
 
         /**
+         * Create as many Networks as you need. You will associate one or more Clusters
+         * with each Network.Each Network provides MediaLive Anywhere with required
+         * information about the network in your organization that you are using for video
+         * encoding using MediaLive.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateNetwork">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNetworkOutcome CreateNetwork(const Model::CreateNetworkRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for CreateNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateNetworkRequestT = Model::CreateNetworkRequest>
+        Model::CreateNetworkOutcomeCallable CreateNetworkCallable(const CreateNetworkRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateNetwork, request);
+        }
+
+        /**
+         * An Async wrapper for CreateNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateNetworkRequestT = Model::CreateNetworkRequest>
+        void CreateNetworkAsync(const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateNetworkRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateNetwork, request, handler, context);
+        }
+
+        /**
+         * Create a Node in the specified Cluster. You can also create Nodes using the
+         * CreateNodeRegistrationScript. Note that you can't move a Node to another
+         * Cluster.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateNode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNodeOutcome CreateNode(const Model::CreateNodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateNode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateNodeRequestT = Model::CreateNodeRequest>
+        Model::CreateNodeOutcomeCallable CreateNodeCallable(const CreateNodeRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateNode, request);
+        }
+
+        /**
+         * An Async wrapper for CreateNode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateNodeRequestT = Model::CreateNodeRequest>
+        void CreateNodeAsync(const CreateNodeRequestT& request, const CreateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateNode, request, handler, context);
+        }
+
+        /**
+         * Create the Register Node script for all the nodes intended for a specific
+         * Cluster. You will then run the script on each hardware unit that is intended for
+         * that Cluster. The script creates a Node in the specified Cluster. It then binds
+         * the Node to this hardware unit, and activates the node hardware for use with
+         * MediaLive Anywhere.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateNodeRegistrationScript">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNodeRegistrationScriptOutcome CreateNodeRegistrationScript(const Model::CreateNodeRegistrationScriptRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateNodeRegistrationScript that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateNodeRegistrationScriptRequestT = Model::CreateNodeRegistrationScriptRequest>
+        Model::CreateNodeRegistrationScriptOutcomeCallable CreateNodeRegistrationScriptCallable(const CreateNodeRegistrationScriptRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateNodeRegistrationScript, request);
+        }
+
+        /**
+         * An Async wrapper for CreateNodeRegistrationScript that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateNodeRegistrationScriptRequestT = Model::CreateNodeRegistrationScriptRequest>
+        void CreateNodeRegistrationScriptAsync(const CreateNodeRegistrationScriptRequestT& request, const CreateNodeRegistrationScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateNodeRegistrationScript, request, handler, context);
+        }
+
+        /**
          * Create a partner input<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput">AWS
          * API Reference</a></p>
@@ -589,6 +729,32 @@ namespace MediaLive
         }
 
         /**
+         * Delete the specified ChannelPlacementGroup that exists in the specified
+         * Cluster.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteChannelPlacementGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChannelPlacementGroupOutcome DeleteChannelPlacementGroup(const Model::DeleteChannelPlacementGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteChannelPlacementGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteChannelPlacementGroupRequestT = Model::DeleteChannelPlacementGroupRequest>
+        Model::DeleteChannelPlacementGroupOutcomeCallable DeleteChannelPlacementGroupCallable(const DeleteChannelPlacementGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteChannelPlacementGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteChannelPlacementGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteChannelPlacementGroupRequestT = Model::DeleteChannelPlacementGroupRequest>
+        void DeleteChannelPlacementGroupAsync(const DeleteChannelPlacementGroupRequestT& request, const DeleteChannelPlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteChannelPlacementGroup, request, handler, context);
+        }
+
+        /**
          * Deletes a cloudwatch alarm template.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate">AWS
          * API Reference</a></p>
@@ -638,6 +804,31 @@ namespace MediaLive
         void DeleteCloudWatchAlarmTemplateGroupAsync(const DeleteCloudWatchAlarmTemplateGroupRequestT& request, const DeleteCloudWatchAlarmTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::DeleteCloudWatchAlarmTemplateGroup, request, handler, context);
+        }
+
+        /**
+         * Delete a Cluster. The Cluster must be idle.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteClusterRequestT = Model::DeleteClusterRequest>
+        Model::DeleteClusterOutcomeCallable DeleteClusterCallable(const DeleteClusterRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteCluster, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteClusterRequestT = Model::DeleteClusterRequest>
+        void DeleteClusterAsync(const DeleteClusterRequestT& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteCluster, request, handler, context);
         }
 
         /**
@@ -793,6 +984,57 @@ namespace MediaLive
         }
 
         /**
+         * Delete a Network. The Network must have no resources associated with
+         * it.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteNetwork">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNetworkOutcome DeleteNetwork(const Model::DeleteNetworkRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteNetworkRequestT = Model::DeleteNetworkRequest>
+        Model::DeleteNetworkOutcomeCallable DeleteNetworkCallable(const DeleteNetworkRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteNetwork, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteNetworkRequestT = Model::DeleteNetworkRequest>
+        void DeleteNetworkAsync(const DeleteNetworkRequestT& request, const DeleteNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteNetwork, request, handler, context);
+        }
+
+        /**
+         * Delete a Node. The Node must be IDLE.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteNode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNodeOutcome DeleteNode(const Model::DeleteNodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteNode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteNodeRequestT = Model::DeleteNodeRequest>
+        Model::DeleteNodeOutcomeCallable DeleteNodeCallable(const DeleteNodeRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteNode, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteNode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteNodeRequestT = Model::DeleteNodeRequest>
+        void DeleteNodeAsync(const DeleteNodeRequestT& request, const DeleteNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteNode, request, handler, context);
+        }
+
+        /**
          * Delete an expired reservation.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation">AWS
          * API Reference</a></p>
@@ -943,6 +1185,56 @@ namespace MediaLive
         }
 
         /**
+         * Get details about a ChannelPlacementGroup.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannelPlacementGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeChannelPlacementGroupOutcome DescribeChannelPlacementGroup(const Model::DescribeChannelPlacementGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeChannelPlacementGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeChannelPlacementGroupRequestT = Model::DescribeChannelPlacementGroupRequest>
+        Model::DescribeChannelPlacementGroupOutcomeCallable DescribeChannelPlacementGroupCallable(const DescribeChannelPlacementGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DescribeChannelPlacementGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeChannelPlacementGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeChannelPlacementGroupRequestT = Model::DescribeChannelPlacementGroupRequest>
+        void DescribeChannelPlacementGroupAsync(const DescribeChannelPlacementGroupRequestT& request, const DescribeChannelPlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DescribeChannelPlacementGroup, request, handler, context);
+        }
+
+        /**
+         * Get details about a Cluster.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterOutcome DescribeCluster(const Model::DescribeClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeClusterRequestT = Model::DescribeClusterRequest>
+        Model::DescribeClusterOutcomeCallable DescribeClusterCallable(const DescribeClusterRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DescribeCluster, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeClusterRequestT = Model::DescribeClusterRequest>
+        void DescribeClusterAsync(const DescribeClusterRequestT& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DescribeCluster, request, handler, context);
+        }
+
+        /**
          * Produces details about an input<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInput">AWS
          * API Reference</a></p>
@@ -1090,6 +1382,56 @@ namespace MediaLive
         void DescribeMultiplexProgramAsync(const DescribeMultiplexProgramRequestT& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::DescribeMultiplexProgram, request, handler, context);
+        }
+
+        /**
+         * Get details about a Network.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeNetwork">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNetworkOutcome DescribeNetwork(const Model::DescribeNetworkRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeNetworkRequestT = Model::DescribeNetworkRequest>
+        Model::DescribeNetworkOutcomeCallable DescribeNetworkCallable(const DescribeNetworkRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DescribeNetwork, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeNetworkRequestT = Model::DescribeNetworkRequest>
+        void DescribeNetworkAsync(const DescribeNetworkRequestT& request, const DescribeNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DescribeNetwork, request, handler, context);
+        }
+
+        /**
+         * Get details about a Node in the specified Cluster.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeNode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNodeOutcome DescribeNode(const Model::DescribeNodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeNode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeNodeRequestT = Model::DescribeNodeRequest>
+        Model::DescribeNodeOutcomeCallable DescribeNodeCallable(const DescribeNodeRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DescribeNode, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeNode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeNodeRequestT = Model::DescribeNodeRequest>
+        void DescribeNodeAsync(const DescribeNodeRequestT& request, const DescribeNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DescribeNode, request, handler, context);
         }
 
         /**
@@ -1320,6 +1662,32 @@ namespace MediaLive
         }
 
         /**
+         * Retrieve the list of ChannelPlacementGroups in the specified Cluster.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannelPlacementGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelPlacementGroupsOutcome ListChannelPlacementGroups(const Model::ListChannelPlacementGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListChannelPlacementGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListChannelPlacementGroupsRequestT = Model::ListChannelPlacementGroupsRequest>
+        Model::ListChannelPlacementGroupsOutcomeCallable ListChannelPlacementGroupsCallable(const ListChannelPlacementGroupsRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListChannelPlacementGroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListChannelPlacementGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListChannelPlacementGroupsRequestT = Model::ListChannelPlacementGroupsRequest>
+        void ListChannelPlacementGroupsAsync(const ListChannelPlacementGroupsRequestT& request, const ListChannelPlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListChannelPlacementGroups, request, handler, context);
+        }
+
+        /**
          * Produces list of channels that have been created<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">AWS
          * API Reference</a></p>
@@ -1392,6 +1760,31 @@ namespace MediaLive
         void ListCloudWatchAlarmTemplatesAsync(const ListCloudWatchAlarmTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCloudWatchAlarmTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&MediaLiveClient::ListCloudWatchAlarmTemplates, request, handler, context);
+        }
+
+        /**
+         * Retrieve the list of Clusters.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListClusters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListClustersRequestT = Model::ListClustersRequest>
+        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListClusters, request);
+        }
+
+        /**
+         * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListClustersRequestT = Model::ListClustersRequest>
+        void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListClusters, request, handler, context);
         }
 
         /**
@@ -1596,6 +1989,56 @@ namespace MediaLive
         void ListMultiplexesAsync(const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMultiplexesRequestT& request = {}) const
         {
             return SubmitAsync(&MediaLiveClient::ListMultiplexes, request, handler, context);
+        }
+
+        /**
+         * Retrieve the list of Networks.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListNetworks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListNetworksOutcome ListNetworks(const Model::ListNetworksRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListNetworksRequestT = Model::ListNetworksRequest>
+        Model::ListNetworksOutcomeCallable ListNetworksCallable(const ListNetworksRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListNetworks, request);
+        }
+
+        /**
+         * An Async wrapper for ListNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListNetworksRequestT = Model::ListNetworksRequest>
+        void ListNetworksAsync(const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNetworksRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListNetworks, request, handler, context);
+        }
+
+        /**
+         * Retrieve the list of Nodes.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListNodes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListNodesOutcome ListNodes(const Model::ListNodesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListNodes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListNodesRequestT = Model::ListNodesRequest>
+        Model::ListNodesOutcomeCallable ListNodesCallable(const ListNodesRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListNodes, request);
+        }
+
+        /**
+         * An Async wrapper for ListNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListNodesRequestT = Model::ListNodesRequest>
+        void ListNodesAsync(const ListNodesRequestT& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListNodes, request, handler, context);
         }
 
         /**
@@ -2173,6 +2616,31 @@ namespace MediaLive
         }
 
         /**
+         * Change the settings for a ChannelPlacementGroup.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannelPlacementGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChannelPlacementGroupOutcome UpdateChannelPlacementGroup(const Model::UpdateChannelPlacementGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateChannelPlacementGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateChannelPlacementGroupRequestT = Model::UpdateChannelPlacementGroupRequest>
+        Model::UpdateChannelPlacementGroupOutcomeCallable UpdateChannelPlacementGroupCallable(const UpdateChannelPlacementGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateChannelPlacementGroup, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateChannelPlacementGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateChannelPlacementGroupRequestT = Model::UpdateChannelPlacementGroupRequest>
+        void UpdateChannelPlacementGroupAsync(const UpdateChannelPlacementGroupRequestT& request, const UpdateChannelPlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateChannelPlacementGroup, request, handler, context);
+        }
+
+        /**
          * Updates the specified cloudwatch alarm template.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate">AWS
          * API Reference</a></p>
@@ -2220,6 +2688,31 @@ namespace MediaLive
         void UpdateCloudWatchAlarmTemplateGroupAsync(const UpdateCloudWatchAlarmTemplateGroupRequestT& request, const UpdateCloudWatchAlarmTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::UpdateCloudWatchAlarmTemplateGroup, request, handler, context);
+        }
+
+        /**
+         * Change the settings for a Cluster.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClusterOutcome UpdateCluster(const Model::UpdateClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateClusterRequestT = Model::UpdateClusterRequest>
+        Model::UpdateClusterOutcomeCallable UpdateClusterCallable(const UpdateClusterRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateCluster, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateClusterRequestT = Model::UpdateClusterRequest>
+        void UpdateClusterAsync(const UpdateClusterRequestT& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateCluster, request, handler, context);
         }
 
         /**
@@ -2395,6 +2888,81 @@ namespace MediaLive
         void UpdateMultiplexProgramAsync(const UpdateMultiplexProgramRequestT& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::UpdateMultiplexProgram, request, handler, context);
+        }
+
+        /**
+         * Change the settings for a Network.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateNetwork">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNetworkOutcome UpdateNetwork(const Model::UpdateNetworkRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateNetworkRequestT = Model::UpdateNetworkRequest>
+        Model::UpdateNetworkOutcomeCallable UpdateNetworkCallable(const UpdateNetworkRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateNetwork, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateNetworkRequestT = Model::UpdateNetworkRequest>
+        void UpdateNetworkAsync(const UpdateNetworkRequestT& request, const UpdateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateNetwork, request, handler, context);
+        }
+
+        /**
+         * Change the settings for a Node.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateNode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNodeOutcome UpdateNode(const Model::UpdateNodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateNode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateNodeRequestT = Model::UpdateNodeRequest>
+        Model::UpdateNodeOutcomeCallable UpdateNodeCallable(const UpdateNodeRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateNode, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateNode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateNodeRequestT = Model::UpdateNodeRequest>
+        void UpdateNodeAsync(const UpdateNodeRequestT& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateNode, request, handler, context);
+        }
+
+        /**
+         * Update the state of a node.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateNodeState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNodeStateOutcome UpdateNodeState(const Model::UpdateNodeStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateNodeState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateNodeStateRequestT = Model::UpdateNodeStateRequest>
+        Model::UpdateNodeStateOutcomeCallable UpdateNodeStateCallable(const UpdateNodeStateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateNodeState, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateNodeState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateNodeStateRequestT = Model::UpdateNodeStateRequest>
+        void UpdateNodeStateAsync(const UpdateNodeStateRequestT& request, const UpdateNodeStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateNodeState, request, handler, context);
         }
 
         /**

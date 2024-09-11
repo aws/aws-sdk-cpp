@@ -9,6 +9,7 @@
 #include <aws/medialive/model/H264Settings.h>
 #include <aws/medialive/model/H265Settings.h>
 #include <aws/medialive/model/Mpeg2Settings.h>
+#include <aws/medialive/model/Av1Settings.h>
 #include <utility>
 
 namespace Aws
@@ -79,6 +80,16 @@ namespace Model
     inline VideoCodecSettings& WithMpeg2Settings(const Mpeg2Settings& value) { SetMpeg2Settings(value); return *this;}
     inline VideoCodecSettings& WithMpeg2Settings(Mpeg2Settings&& value) { SetMpeg2Settings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Av1Settings& GetAv1Settings() const{ return m_av1Settings; }
+    inline bool Av1SettingsHasBeenSet() const { return m_av1SettingsHasBeenSet; }
+    inline void SetAv1Settings(const Av1Settings& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = value; }
+    inline void SetAv1Settings(Av1Settings&& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = std::move(value); }
+    inline VideoCodecSettings& WithAv1Settings(const Av1Settings& value) { SetAv1Settings(value); return *this;}
+    inline VideoCodecSettings& WithAv1Settings(Av1Settings&& value) { SetAv1Settings(std::move(value)); return *this;}
+    ///@}
   private:
 
     FrameCaptureSettings m_frameCaptureSettings;
@@ -92,6 +103,9 @@ namespace Model
 
     Mpeg2Settings m_mpeg2Settings;
     bool m_mpeg2SettingsHasBeenSet = false;
+
+    Av1Settings m_av1Settings;
+    bool m_av1SettingsHasBeenSet = false;
   };
 
 } // namespace Model

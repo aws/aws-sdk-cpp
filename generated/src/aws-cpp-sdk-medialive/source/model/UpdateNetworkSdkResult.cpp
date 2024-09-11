@@ -1,0 +1,95 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/medialive/model/UpdateNetworkSdkResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::MediaLive::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+UpdateNetworkSdkResult::UpdateNetworkSdkResult() : 
+    m_state(NetworkState::NOT_SET)
+{
+}
+
+UpdateNetworkSdkResult::UpdateNetworkSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateNetworkSdkResult()
+{
+  *this = result;
+}
+
+UpdateNetworkSdkResult& UpdateNetworkSdkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+  }
+
+  if(jsonValue.ValueExists("associatedClusterIds"))
+  {
+    Aws::Utils::Array<JsonView> associatedClusterIdsJsonList = jsonValue.GetArray("associatedClusterIds");
+    for(unsigned associatedClusterIdsIndex = 0; associatedClusterIdsIndex < associatedClusterIdsJsonList.GetLength(); ++associatedClusterIdsIndex)
+    {
+      m_associatedClusterIds.push_back(associatedClusterIdsJsonList[associatedClusterIdsIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("ipPools"))
+  {
+    Aws::Utils::Array<JsonView> ipPoolsJsonList = jsonValue.GetArray("ipPools");
+    for(unsigned ipPoolsIndex = 0; ipPoolsIndex < ipPoolsJsonList.GetLength(); ++ipPoolsIndex)
+    {
+      m_ipPools.push_back(ipPoolsJsonList[ipPoolsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("routes"))
+  {
+    Aws::Utils::Array<JsonView> routesJsonList = jsonValue.GetArray("routes");
+    for(unsigned routesIndex = 0; routesIndex < routesJsonList.GetLength(); ++routesIndex)
+    {
+      m_routes.push_back(routesJsonList[routesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = NetworkStateMapper::GetNetworkStateForName(jsonValue.GetString("state"));
+
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+
+  return *this;
+}

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the detector to create sample findings for.</p>
+     * <p>The ID of the detector for which you need to create sample findings.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }

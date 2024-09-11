@@ -13,6 +13,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
 #include <aws/medialive/model/SrtSettings.h>
+#include <aws/medialive/model/InputNetworkLocation.h>
+#include <aws/medialive/model/MulticastSettings.h>
 #include <aws/medialive/model/InputDestination.h>
 #include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
@@ -109,7 +111,7 @@ namespace Model
      * SINGLE_PIPELINE, only the first source will be ingested; the second source will
      * always be ignored, even if the first source fails.
 SINGLE_PIPELINE - You can
-     * connect only one source to this input. If the ChannelClass is also 
+     * connect only one source to this input. If the ChannelClass is also
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
      */
@@ -276,6 +278,30 @@ during input switch actions. Presently, this
     ///@}
 
     ///@{
+    /**
+     * The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem
+     * for
+an input in a customer network.
+     */
+    inline const InputNetworkLocation& GetInputNetworkLocation() const{ return m_inputNetworkLocation; }
+    inline void SetInputNetworkLocation(const InputNetworkLocation& value) { m_inputNetworkLocation = value; }
+    inline void SetInputNetworkLocation(InputNetworkLocation&& value) { m_inputNetworkLocation = std::move(value); }
+    inline DescribeInputResult& WithInputNetworkLocation(const InputNetworkLocation& value) { SetInputNetworkLocation(value); return *this;}
+    inline DescribeInputResult& WithInputNetworkLocation(InputNetworkLocation&& value) { SetInputNetworkLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Multicast Input settings.
+     */
+    inline const MulticastSettings& GetMulticastSettings() const{ return m_multicastSettings; }
+    inline void SetMulticastSettings(const MulticastSettings& value) { m_multicastSettings = value; }
+    inline void SetMulticastSettings(MulticastSettings&& value) { m_multicastSettings = std::move(value); }
+    inline DescribeInputResult& WithMulticastSettings(const MulticastSettings& value) { SetMulticastSettings(value); return *this;}
+    inline DescribeInputResult& WithMulticastSettings(MulticastSettings&& value) { SetMulticastSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -320,6 +346,10 @@ during input switch actions. Presently, this
     InputType m_type;
 
     SrtSettings m_srtSettings;
+
+    InputNetworkLocation m_inputNetworkLocation;
+
+    MulticastSettings m_multicastSettings;
 
     Aws::String m_requestId;
   };

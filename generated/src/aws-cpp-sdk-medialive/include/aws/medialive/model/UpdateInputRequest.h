@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/SrtSettingsRequest.h>
+#include <aws/medialive/model/MulticastSettingsUpdateRequest.h>
 #include <aws/medialive/model/InputDestinationRequest.h>
 #include <aws/medialive/model/InputDeviceRequest.h>
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
@@ -176,6 +177,18 @@ Only specify sources for PULL type Inputs. Leave
     inline UpdateInputRequest& WithSrtSettings(const SrtSettingsRequest& value) { SetSrtSettings(value); return *this;}
     inline UpdateInputRequest& WithSrtSettings(SrtSettingsRequest&& value) { SetSrtSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Multicast Input settings.
+     */
+    inline const MulticastSettingsUpdateRequest& GetMulticastSettings() const{ return m_multicastSettings; }
+    inline bool MulticastSettingsHasBeenSet() const { return m_multicastSettingsHasBeenSet; }
+    inline void SetMulticastSettings(const MulticastSettingsUpdateRequest& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = value; }
+    inline void SetMulticastSettings(MulticastSettingsUpdateRequest&& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = std::move(value); }
+    inline UpdateInputRequest& WithMulticastSettings(const MulticastSettingsUpdateRequest& value) { SetMulticastSettings(value); return *this;}
+    inline UpdateInputRequest& WithMulticastSettings(MulticastSettingsUpdateRequest&& value) { SetMulticastSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<InputDestinationRequest> m_destinations;
@@ -204,6 +217,9 @@ Only specify sources for PULL type Inputs. Leave
 
     SrtSettingsRequest m_srtSettings;
     bool m_srtSettingsHasBeenSet = false;
+
+    MulticastSettingsUpdateRequest m_multicastSettings;
+    bool m_multicastSettingsHasBeenSet = false;
   };
 
 } // namespace Model

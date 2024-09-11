@@ -38,7 +38,8 @@ ChannelSummary::ChannelSummary() :
     m_state(ChannelState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_anywhereSettingsHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_vpcHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("anywhereSettings"))
+  {
+    m_anywhereSettings = jsonValue.GetObject("anywhereSettings");
+
+    m_anywhereSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -291,6 +299,12 @@ JsonValue ChannelSummary::Jsonize() const
   if(m_vpcHasBeenSet)
   {
    payload.WithObject("vpc", m_vpc.Jsonize());
+
+  }
+
+  if(m_anywhereSettingsHasBeenSet)
+  {
+   payload.WithObject("anywhereSettings", m_anywhereSettings.Jsonize());
 
   }
 

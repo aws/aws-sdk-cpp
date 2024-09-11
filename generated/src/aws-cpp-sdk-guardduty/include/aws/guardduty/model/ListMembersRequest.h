@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of the detector the member is associated with.</p>
+     * <p>The unique ID of the detector that is associated with the member.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }

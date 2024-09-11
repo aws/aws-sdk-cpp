@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the detector belonging to the GuardDuty account that you want to
-     * create a filter for.</p>
+     * <p>The detector ID associated with the GuardDuty account for which you want to
+     * create a filter.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }

@@ -39,7 +39,10 @@ Input::Input() :
     m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_srtSettingsHasBeenSet(false)
+    m_srtSettingsHasBeenSet(false),
+    m_inputNetworkLocation(InputNetworkLocation::NOT_SET),
+    m_inputNetworkLocationHasBeenSet(false),
+    m_multicastSettingsHasBeenSet(false)
 {
 }
 
@@ -194,6 +197,20 @@ Input& Input::operator =(JsonView jsonValue)
     m_srtSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inputNetworkLocation"))
+  {
+    m_inputNetworkLocation = InputNetworkLocationMapper::GetInputNetworkLocationForName(jsonValue.GetString("inputNetworkLocation"));
+
+    m_inputNetworkLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("multicastSettings"))
+  {
+    m_multicastSettings = jsonValue.GetObject("multicastSettings");
+
+    m_multicastSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -336,6 +353,17 @@ JsonValue Input::Jsonize() const
   if(m_srtSettingsHasBeenSet)
   {
    payload.WithObject("srtSettings", m_srtSettings.Jsonize());
+
+  }
+
+  if(m_inputNetworkLocationHasBeenSet)
+  {
+   payload.WithString("inputNetworkLocation", InputNetworkLocationMapper::GetNameForInputNetworkLocation(m_inputNetworkLocation));
+  }
+
+  if(m_multicastSettingsHasBeenSet)
+  {
+   payload.WithObject("multicastSettings", m_multicastSettings.Jsonize());
 
   }
 

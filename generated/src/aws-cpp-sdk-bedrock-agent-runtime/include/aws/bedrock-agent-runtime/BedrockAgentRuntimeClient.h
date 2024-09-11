@@ -236,7 +236,9 @@ namespace BedrockAgentRuntime
 
         /**
          * <p>Queries a knowledge base and generates responses based on the retrieved
-         * results. The response only cites sources that are relevant to the
+         * results and using the specified foundation model or <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+         * profile</a>. The response only cites sources that are relevant to the
          * query.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerate">AWS
          * API Reference</a></p>

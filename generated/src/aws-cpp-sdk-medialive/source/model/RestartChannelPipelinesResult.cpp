@@ -163,6 +163,12 @@ RestartChannelPipelinesResult& RestartChannelPipelinesResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("anywhereSettings"))
+  {
+    m_anywhereSettings = jsonValue.GetObject("anywhereSettings");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

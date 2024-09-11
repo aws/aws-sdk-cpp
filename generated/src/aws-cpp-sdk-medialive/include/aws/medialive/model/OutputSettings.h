@@ -14,6 +14,7 @@
 #include <aws/medialive/model/RtmpOutputSettings.h>
 #include <aws/medialive/model/UdpOutputSettings.h>
 #include <aws/medialive/model/CmafIngestOutputSettings.h>
+#include <aws/medialive/model/SrtOutputSettings.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +135,16 @@ namespace Model
     inline OutputSettings& WithCmafIngestOutputSettings(const CmafIngestOutputSettings& value) { SetCmafIngestOutputSettings(value); return *this;}
     inline OutputSettings& WithCmafIngestOutputSettings(CmafIngestOutputSettings&& value) { SetCmafIngestOutputSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const SrtOutputSettings& GetSrtOutputSettings() const{ return m_srtOutputSettings; }
+    inline bool SrtOutputSettingsHasBeenSet() const { return m_srtOutputSettingsHasBeenSet; }
+    inline void SetSrtOutputSettings(const SrtOutputSettings& value) { m_srtOutputSettingsHasBeenSet = true; m_srtOutputSettings = value; }
+    inline void SetSrtOutputSettings(SrtOutputSettings&& value) { m_srtOutputSettingsHasBeenSet = true; m_srtOutputSettings = std::move(value); }
+    inline OutputSettings& WithSrtOutputSettings(const SrtOutputSettings& value) { SetSrtOutputSettings(value); return *this;}
+    inline OutputSettings& WithSrtOutputSettings(SrtOutputSettings&& value) { SetSrtOutputSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     ArchiveOutputSettings m_archiveOutputSettings;
@@ -162,6 +173,9 @@ namespace Model
 
     CmafIngestOutputSettings m_cmafIngestOutputSettings;
     bool m_cmafIngestOutputSettingsHasBeenSet = false;
+
+    SrtOutputSettings m_srtOutputSettings;
+    bool m_srtOutputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

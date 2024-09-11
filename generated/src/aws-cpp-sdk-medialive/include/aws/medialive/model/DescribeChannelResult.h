@@ -16,6 +16,7 @@
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettingsDescription.h>
+#include <aws/medialive/model/DescribeAnywhereSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -272,6 +273,17 @@ one destination per
     ///@}
 
     ///@{
+    /**
+     * Anywhere settings for this channel.
+     */
+    inline const DescribeAnywhereSettings& GetAnywhereSettings() const{ return m_anywhereSettings; }
+    inline void SetAnywhereSettings(const DescribeAnywhereSettings& value) { m_anywhereSettings = value; }
+    inline void SetAnywhereSettings(DescribeAnywhereSettings&& value) { m_anywhereSettings = std::move(value); }
+    inline DescribeChannelResult& WithAnywhereSettings(const DescribeAnywhereSettings& value) { SetAnywhereSettings(value); return *this;}
+    inline DescribeChannelResult& WithAnywhereSettings(DescribeAnywhereSettings&& value) { SetAnywhereSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -318,6 +330,8 @@ one destination per
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     VpcOutputSettingsDescription m_vpc;
+
+    DescribeAnywhereSettings m_anywhereSettings;
 
     Aws::String m_requestId;
   };

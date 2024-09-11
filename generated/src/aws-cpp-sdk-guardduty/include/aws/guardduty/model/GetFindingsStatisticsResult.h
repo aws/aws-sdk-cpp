@@ -45,6 +45,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p> <p>This parameter is currently not supported.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+    inline GetFindingsStatisticsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline GetFindingsStatisticsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline GetFindingsStatisticsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -57,6 +71,8 @@ namespace Model
   private:
 
     FindingStatistics m_findingStatistics;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

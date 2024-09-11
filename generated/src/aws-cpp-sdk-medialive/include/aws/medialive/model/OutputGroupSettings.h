@@ -14,6 +14,7 @@
 #include <aws/medialive/model/RtmpGroupSettings.h>
 #include <aws/medialive/model/UdpGroupSettings.h>
 #include <aws/medialive/model/CmafIngestGroupSettings.h>
+#include <aws/medialive/model/SrtGroupSettings.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +135,16 @@ namespace Model
     inline OutputGroupSettings& WithCmafIngestGroupSettings(const CmafIngestGroupSettings& value) { SetCmafIngestGroupSettings(value); return *this;}
     inline OutputGroupSettings& WithCmafIngestGroupSettings(CmafIngestGroupSettings&& value) { SetCmafIngestGroupSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const SrtGroupSettings& GetSrtGroupSettings() const{ return m_srtGroupSettings; }
+    inline bool SrtGroupSettingsHasBeenSet() const { return m_srtGroupSettingsHasBeenSet; }
+    inline void SetSrtGroupSettings(const SrtGroupSettings& value) { m_srtGroupSettingsHasBeenSet = true; m_srtGroupSettings = value; }
+    inline void SetSrtGroupSettings(SrtGroupSettings&& value) { m_srtGroupSettingsHasBeenSet = true; m_srtGroupSettings = std::move(value); }
+    inline OutputGroupSettings& WithSrtGroupSettings(const SrtGroupSettings& value) { SetSrtGroupSettings(value); return *this;}
+    inline OutputGroupSettings& WithSrtGroupSettings(SrtGroupSettings&& value) { SetSrtGroupSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     ArchiveGroupSettings m_archiveGroupSettings;
@@ -162,6 +173,9 @@ namespace Model
 
     CmafIngestGroupSettings m_cmafIngestGroupSettings;
     bool m_cmafIngestGroupSettingsHasBeenSet = false;
+
+    SrtGroupSettings m_srtGroupSettings;
+    bool m_srtGroupSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AES256_HASH = HashingUtils::HashString("AES256");
         static const int KMS_HASH = HashingUtils::HashString("KMS");
+        static const int KMS_DSSE_HASH = HashingUtils::HashString("KMS_DSSE");
 
 
         EncryptionType GetEncryptionTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == KMS_HASH)
           {
             return EncryptionType::KMS;
+          }
+          else if (hashCode == KMS_DSSE_HASH)
+          {
+            return EncryptionType::KMS_DSSE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "AES256";
           case EncryptionType::KMS:
             return "KMS";
+          case EncryptionType::KMS_DSSE:
+            return "KMS_DSSE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

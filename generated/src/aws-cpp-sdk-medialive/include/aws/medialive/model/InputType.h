@@ -26,7 +26,8 @@ namespace Model
     INPUT_DEVICE,
     AWS_CDI,
     TS_FILE,
-    SRT_CALLER
+    SRT_CALLER,
+    MULTICAST
   };
 
 namespace InputTypeMapper

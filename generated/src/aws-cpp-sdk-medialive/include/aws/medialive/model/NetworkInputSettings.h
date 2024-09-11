@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/HlsInputSettings.h>
 #include <aws/medialive/model/NetworkInputServerValidation.h>
+#include <aws/medialive/model/MulticastInputSettings.h>
 #include <utility>
 
 namespace Aws
@@ -67,6 +68,18 @@ namespace Model
     inline NetworkInputSettings& WithServerValidation(const NetworkInputServerValidation& value) { SetServerValidation(value); return *this;}
     inline NetworkInputSettings& WithServerValidation(NetworkInputServerValidation&& value) { SetServerValidation(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Specifies multicast input settings when the uri is for a multicast event.
+     */
+    inline const MulticastInputSettings& GetMulticastInputSettings() const{ return m_multicastInputSettings; }
+    inline bool MulticastInputSettingsHasBeenSet() const { return m_multicastInputSettingsHasBeenSet; }
+    inline void SetMulticastInputSettings(const MulticastInputSettings& value) { m_multicastInputSettingsHasBeenSet = true; m_multicastInputSettings = value; }
+    inline void SetMulticastInputSettings(MulticastInputSettings&& value) { m_multicastInputSettingsHasBeenSet = true; m_multicastInputSettings = std::move(value); }
+    inline NetworkInputSettings& WithMulticastInputSettings(const MulticastInputSettings& value) { SetMulticastInputSettings(value); return *this;}
+    inline NetworkInputSettings& WithMulticastInputSettings(MulticastInputSettings&& value) { SetMulticastInputSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     HlsInputSettings m_hlsInputSettings;
@@ -74,6 +87,9 @@ namespace Model
 
     NetworkInputServerValidation m_serverValidation;
     bool m_serverValidationHasBeenSet = false;
+
+    MulticastInputSettings m_multicastInputSettings;
+    bool m_multicastInputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

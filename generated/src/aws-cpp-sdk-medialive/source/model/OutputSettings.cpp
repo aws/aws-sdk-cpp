@@ -27,7 +27,8 @@ OutputSettings::OutputSettings() :
     m_multiplexOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
     m_udpOutputSettingsHasBeenSet(false),
-    m_cmafIngestOutputSettingsHasBeenSet(false)
+    m_cmafIngestOutputSettingsHasBeenSet(false),
+    m_srtOutputSettingsHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,13 @@ OutputSettings& OutputSettings::operator =(JsonView jsonValue)
     m_cmafIngestOutputSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("srtOutputSettings"))
+  {
+    m_srtOutputSettings = jsonValue.GetObject("srtOutputSettings");
+
+    m_srtOutputSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +168,12 @@ JsonValue OutputSettings::Jsonize() const
   if(m_cmafIngestOutputSettingsHasBeenSet)
   {
    payload.WithObject("cmafIngestOutputSettings", m_cmafIngestOutputSettings.Jsonize());
+
+  }
+
+  if(m_srtOutputSettingsHasBeenSet)
+  {
+   payload.WithObject("srtOutputSettings", m_srtOutputSettings.Jsonize());
 
   }
 

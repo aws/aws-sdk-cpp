@@ -13,6 +13,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
 #include <aws/medialive/model/SrtSettings.h>
+#include <aws/medialive/model/InputNetworkLocation.h>
+#include <aws/medialive/model/MulticastSettings.h>
 #include <aws/medialive/model/InputDestination.h>
 #include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
@@ -113,7 +115,7 @@ namespace Model
      * SINGLE_PIPELINE, only the first source will be ingested; the second source will
      * always be ignored, even if the first source fails.
 SINGLE_PIPELINE - You can
-     * connect only one source to this input. If the ChannelClass is also 
+     * connect only one source to this input. If the ChannelClass is also
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
      */
@@ -291,6 +293,32 @@ during input switch actions. Presently, this
     inline Input& WithSrtSettings(const SrtSettings& value) { SetSrtSettings(value); return *this;}
     inline Input& WithSrtSettings(SrtSettings&& value) { SetSrtSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem
+     * for
+an input in a customer network.
+     */
+    inline const InputNetworkLocation& GetInputNetworkLocation() const{ return m_inputNetworkLocation; }
+    inline bool InputNetworkLocationHasBeenSet() const { return m_inputNetworkLocationHasBeenSet; }
+    inline void SetInputNetworkLocation(const InputNetworkLocation& value) { m_inputNetworkLocationHasBeenSet = true; m_inputNetworkLocation = value; }
+    inline void SetInputNetworkLocation(InputNetworkLocation&& value) { m_inputNetworkLocationHasBeenSet = true; m_inputNetworkLocation = std::move(value); }
+    inline Input& WithInputNetworkLocation(const InputNetworkLocation& value) { SetInputNetworkLocation(value); return *this;}
+    inline Input& WithInputNetworkLocation(InputNetworkLocation&& value) { SetInputNetworkLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Multicast Input settings.
+     */
+    inline const MulticastSettings& GetMulticastSettings() const{ return m_multicastSettings; }
+    inline bool MulticastSettingsHasBeenSet() const { return m_multicastSettingsHasBeenSet; }
+    inline void SetMulticastSettings(const MulticastSettings& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = value; }
+    inline void SetMulticastSettings(MulticastSettings&& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = std::move(value); }
+    inline Input& WithMulticastSettings(const MulticastSettings& value) { SetMulticastSettings(value); return *this;}
+    inline Input& WithMulticastSettings(MulticastSettings&& value) { SetMulticastSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -343,6 +371,12 @@ during input switch actions. Presently, this
 
     SrtSettings m_srtSettings;
     bool m_srtSettingsHasBeenSet = false;
+
+    InputNetworkLocation m_inputNetworkLocation;
+    bool m_inputNetworkLocationHasBeenSet = false;
+
+    MulticastSettings m_multicastSettings;
+    bool m_multicastSettingsHasBeenSet = false;
   };
 
 } // namespace Model

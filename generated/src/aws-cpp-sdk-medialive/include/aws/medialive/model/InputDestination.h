@@ -7,6 +7,8 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/InputDestinationVpc.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/InputDestinationRoute.h>
 #include <utility>
 
 namespace Aws
@@ -92,6 +94,36 @@ pushed to.
     inline InputDestination& WithVpc(const InputDestinationVpc& value) { SetVpc(value); return *this;}
     inline InputDestination& WithVpc(InputDestinationVpc&& value) { SetVpc(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The ID of the attached network.
+     */
+    inline const Aws::String& GetNetwork() const{ return m_network; }
+    inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
+    inline void SetNetwork(const Aws::String& value) { m_networkHasBeenSet = true; m_network = value; }
+    inline void SetNetwork(Aws::String&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
+    inline void SetNetwork(const char* value) { m_networkHasBeenSet = true; m_network.assign(value); }
+    inline InputDestination& WithNetwork(const Aws::String& value) { SetNetwork(value); return *this;}
+    inline InputDestination& WithNetwork(Aws::String&& value) { SetNetwork(std::move(value)); return *this;}
+    inline InputDestination& WithNetwork(const char* value) { SetNetwork(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * If the push input has an input location of ON-PREM it's a requirement to specify
+     * what the route of the input
+is going to be on the customer local network.
+     */
+    inline const Aws::Vector<InputDestinationRoute>& GetNetworkRoutes() const{ return m_networkRoutes; }
+    inline bool NetworkRoutesHasBeenSet() const { return m_networkRoutesHasBeenSet; }
+    inline void SetNetworkRoutes(const Aws::Vector<InputDestinationRoute>& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes = value; }
+    inline void SetNetworkRoutes(Aws::Vector<InputDestinationRoute>&& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes = std::move(value); }
+    inline InputDestination& WithNetworkRoutes(const Aws::Vector<InputDestinationRoute>& value) { SetNetworkRoutes(value); return *this;}
+    inline InputDestination& WithNetworkRoutes(Aws::Vector<InputDestinationRoute>&& value) { SetNetworkRoutes(std::move(value)); return *this;}
+    inline InputDestination& AddNetworkRoutes(const InputDestinationRoute& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes.push_back(value); return *this; }
+    inline InputDestination& AddNetworkRoutes(InputDestinationRoute&& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_ip;
@@ -105,6 +137,12 @@ pushed to.
 
     InputDestinationVpc m_vpc;
     bool m_vpcHasBeenSet = false;
+
+    Aws::String m_network;
+    bool m_networkHasBeenSet = false;
+
+    Aws::Vector<InputDestinationRoute> m_networkRoutes;
+    bool m_networkRoutesHasBeenSet = false;
   };
 
 } // namespace Model

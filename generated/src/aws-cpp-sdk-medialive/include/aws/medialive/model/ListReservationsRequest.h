@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', 'LINK', or 'AV1'
      */
     inline const Aws::String& GetCodec() const{ return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }

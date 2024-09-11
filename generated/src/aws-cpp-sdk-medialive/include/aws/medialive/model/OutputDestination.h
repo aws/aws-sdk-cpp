@@ -10,6 +10,7 @@
 #include <aws/medialive/model/MultiplexProgramChannelDestinationSettings.h>
 #include <aws/medialive/model/MediaPackageOutputDestinationSettings.h>
 #include <aws/medialive/model/OutputDestinationSettings.h>
+#include <aws/medialive/model/SrtOutputDestinationSettings.h>
 #include <utility>
 
 namespace Aws
@@ -96,6 +97,20 @@ namespace Model
     inline OutputDestination& AddSettings(const OutputDestinationSettings& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
     inline OutputDestination& AddSettings(OutputDestinationSettings&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * SRT settings for an SRT output; one destination for each redundant encoder.
+     */
+    inline const Aws::Vector<SrtOutputDestinationSettings>& GetSrtSettings() const{ return m_srtSettings; }
+    inline bool SrtSettingsHasBeenSet() const { return m_srtSettingsHasBeenSet; }
+    inline void SetSrtSettings(const Aws::Vector<SrtOutputDestinationSettings>& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = value; }
+    inline void SetSrtSettings(Aws::Vector<SrtOutputDestinationSettings>&& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = std::move(value); }
+    inline OutputDestination& WithSrtSettings(const Aws::Vector<SrtOutputDestinationSettings>& value) { SetSrtSettings(value); return *this;}
+    inline OutputDestination& WithSrtSettings(Aws::Vector<SrtOutputDestinationSettings>&& value) { SetSrtSettings(std::move(value)); return *this;}
+    inline OutputDestination& AddSrtSettings(const SrtOutputDestinationSettings& value) { m_srtSettingsHasBeenSet = true; m_srtSettings.push_back(value); return *this; }
+    inline OutputDestination& AddSrtSettings(SrtOutputDestinationSettings&& value) { m_srtSettingsHasBeenSet = true; m_srtSettings.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -109,6 +124,9 @@ namespace Model
 
     Aws::Vector<OutputDestinationSettings> m_settings;
     bool m_settingsHasBeenSet = false;
+
+    Aws::Vector<SrtOutputDestinationSettings> m_srtSettings;
+    bool m_srtSettingsHasBeenSet = false;
   };
 
 } // namespace Model

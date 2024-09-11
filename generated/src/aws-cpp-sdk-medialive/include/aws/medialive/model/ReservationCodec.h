@@ -20,7 +20,8 @@ namespace Model
     AVC,
     HEVC,
     AUDIO,
-    LINK
+    LINK,
+    AV1
   };
 
 namespace ReservationCodecMapper

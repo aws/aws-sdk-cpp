@@ -31,6 +31,7 @@ namespace Aws
         static const int AWS_CDI_HASH = HashingUtils::HashString("AWS_CDI");
         static const int TS_FILE_HASH = HashingUtils::HashString("TS_FILE");
         static const int SRT_CALLER_HASH = HashingUtils::HashString("SRT_CALLER");
+        static const int MULTICAST_HASH = HashingUtils::HashString("MULTICAST");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return InputType::SRT_CALLER;
           }
+          else if (hashCode == MULTICAST_HASH)
+          {
+            return InputType::MULTICAST;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "TS_FILE";
           case InputType::SRT_CALLER:
             return "SRT_CALLER";
+          case InputType::MULTICAST:
+            return "MULTICAST";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

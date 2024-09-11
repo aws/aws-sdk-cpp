@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
-     * associate member accounts with.</p>
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * associate member accounts.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
