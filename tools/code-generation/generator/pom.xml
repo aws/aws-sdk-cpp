@@ -131,12 +131,38 @@
         <dependency>
             <groupId>software.amazon.smithy</groupId>
             <artifactId>smithy-jmespath</artifactId>
-            <version>1.24.0</version>
+            <version>1.51.0</version>
         </dependency>
         <dependency>
             <groupId>software.amazon.smithy</groupId>
             <artifactId>smithy-codegen-core</artifactId>
-            <version>1.50.0</version>
+            <version>1.51.0</version>
         </dependency>
+        <dependency>
+            <groupId>software.amazon.smithy</groupId>
+            <artifactId>smithy-model</artifactId>
+            <version>1.51.0</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.smithy</groupId>
+            <artifactId>smithy-smoke-test-traits</artifactId>
+            <version>1.51.0</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.smithy</groupId>
+            <artifactId>smithy-aws-traits</artifactId>
+            <version>1.51.0</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.smithy</groupId>
+            <artifactId>smithy-rules-engine</artifactId>
+            <version>1.51.0</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.smithy</groupId>
+            <artifactId>smithy-waiters</artifactId>
+            <version>1.51.0</version>
+        </dependency>
+        
     </dependencies>
 </project>

@@ -8,6 +8,7 @@ package com.amazonaws.util.awsclientgenerator;
 import com.amazonaws.util.awsclientgenerator.config.exceptions.GeneratorNotImplementedException;
 import com.amazonaws.util.awsclientgenerator.generators.DirectFromC2jGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.MainGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.SmithyParser;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -24,6 +25,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
+
 
 public class main {
 
@@ -99,6 +103,21 @@ public class main {
             if (argPairs.containsKey(OUTPUT_FILE_NAME) && !argPairs.get(OUTPUT_FILE_NAME).isEmpty()) {
                 outputFileName = argPairs.get(OUTPUT_FILE_NAME);
             }
+
+            //add smithy test parser
+            try {
+                String directoryPath = "./generator/smithySmokeTests";
+                // Call the parse method of SmithyParser
+                SmithyParser parser = new SmithyParser();
+                List<SmithyParser.TestcaseParams> tests = parser.parse(directoryPath);
+
+                SdkFileEntry file = parser.generateTestSourceFile( tests);
+
+            } catch (Exception e) {
+                // Print any exception that occurs during parsing
+                e.printStackTrace();
+            }
+            
 
             if (arbitraryJson != null && arbitraryJson.length() > 0) {
                 try {
