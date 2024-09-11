@@ -62,8 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the knowledge base that is queried and the
-     * foundation model used for generation.</p>
+     * <p>The unique identifier of the knowledge base that is queried.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
@@ -77,7 +76,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the foundation model used to generate a response.</p>
+     * <p>The ARN of the foundation model or <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+     * profile</a> used to generate a response.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }

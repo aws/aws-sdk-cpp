@@ -16,6 +16,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettings.h>
+#include <aws/medialive/model/AnywhereSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -219,6 +220,18 @@ creating multiple resources.
     inline CreateChannelRequest& WithVpc(const VpcOutputSettings& value) { SetVpc(value); return *this;}
     inline CreateChannelRequest& WithVpc(VpcOutputSettings&& value) { SetVpc(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The Elemental Anywhere settings for this channel.
+     */
+    inline const AnywhereSettings& GetAnywhereSettings() const{ return m_anywhereSettings; }
+    inline bool AnywhereSettingsHasBeenSet() const { return m_anywhereSettingsHasBeenSet; }
+    inline void SetAnywhereSettings(const AnywhereSettings& value) { m_anywhereSettingsHasBeenSet = true; m_anywhereSettings = value; }
+    inline void SetAnywhereSettings(AnywhereSettings&& value) { m_anywhereSettingsHasBeenSet = true; m_anywhereSettings = std::move(value); }
+    inline CreateChannelRequest& WithAnywhereSettings(const AnywhereSettings& value) { SetAnywhereSettings(value); return *this;}
+    inline CreateChannelRequest& WithAnywhereSettings(AnywhereSettings&& value) { SetAnywhereSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     CdiInputSpecification m_cdiInputSpecification;
@@ -259,6 +272,9 @@ creating multiple resources.
 
     VpcOutputSettings m_vpc;
     bool m_vpcHasBeenSet = false;
+
+    AnywhereSettings m_anywhereSettings;
+    bool m_anywhereSettingsHasBeenSet = false;
   };
 
 } // namespace Model

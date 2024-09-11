@@ -99,9 +99,10 @@ namespace Model
      * <p>service.archived</p> <p>When this attribute is set to 'true', only archived
      * findings are listed. When it's set to 'false', only unarchived findings are
      * listed. When this attribute is not set, all existing findings are listed.</p>
-     * </li> <li> <p>service.resourceRole</p> </li> <li> <p>severity</p> </li> <li>
-     * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch
-     * millisecond format: 1486685375000</p> </li> </ul>
+     * </li> <li> <p>service.ebsVolumeScanDetails.scanId</p> </li> <li>
+     * <p>service.resourceRole</p> </li> <li> <p>severity</p> </li> <li> <p>type</p>
+     * </li> <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format:
+     * 1486685375000</p> </li> </ul>
      */
     inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
     inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }

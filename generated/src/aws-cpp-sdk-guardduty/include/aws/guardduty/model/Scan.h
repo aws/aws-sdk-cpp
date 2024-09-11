@@ -62,8 +62,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique detector ID of the administrator account that the request is
-     * associated with. Note that this value will be the same as the one used for
-     * <code>DetectorId</code> if the account is an administrator.</p>
+     * associated with. If the account is an administrator, the
+     * <code>AdminDetectorId</code> will be the same as the one used for
+     * <code>DetectorId</code>.</p>
      */
     inline const Aws::String& GetAdminDetectorId() const{ return m_adminDetectorId; }
     inline bool AdminDetectorIdHasBeenSet() const { return m_adminDetectorIdHasBeenSet; }

@@ -37,8 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of the GuardDuty detector associated to the coverage
-     * statistics.</p>
+     * <p>The unique ID of the GuardDuty detector.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
@@ -52,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Represents the criteria used to filter the coverage statistics</p>
+     * <p>Represents the criteria used to filter the coverage statistics.</p>
      */
     inline const CoverageFilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }

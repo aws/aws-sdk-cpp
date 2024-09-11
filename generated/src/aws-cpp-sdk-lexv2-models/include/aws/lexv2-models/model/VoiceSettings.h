@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Defines settings for using an Amazon Polly voice to communicate with a
-   * user.</p><p><h3>See Also:</h3>   <a
+   * user.</p> <p>Valid values include:</p> <ul> <li> <p> <code>standard</code> </p>
+   * </li> <li> <p> <code>neural</code> </p> </li> <li> <p> <code>long-form</code>
+   * </p> </li> <li> <p> <code>generative</code> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/VoiceSettings">AWS
    * API Reference</a></p>
    */

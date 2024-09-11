@@ -21,7 +21,8 @@ DescribeInputResult::DescribeInputResult() :
     m_inputClass(InputClass::NOT_SET),
     m_inputSourceType(InputSourceType::NOT_SET),
     m_state(InputState::NOT_SET),
-    m_type(InputType::NOT_SET)
+    m_type(InputType::NOT_SET),
+    m_inputNetworkLocation(InputNetworkLocation::NOT_SET)
 {
 }
 
@@ -157,6 +158,18 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("srtSettings"))
   {
     m_srtSettings = jsonValue.GetObject("srtSettings");
+
+  }
+
+  if(jsonValue.ValueExists("inputNetworkLocation"))
+  {
+    m_inputNetworkLocation = InputNetworkLocationMapper::GetInputNetworkLocationForName(jsonValue.GetString("inputNetworkLocation"));
+
+  }
+
+  if(jsonValue.ValueExists("multicastSettings"))
+  {
+    m_multicastSettings = jsonValue.GetObject("multicastSettings");
 
   }
 

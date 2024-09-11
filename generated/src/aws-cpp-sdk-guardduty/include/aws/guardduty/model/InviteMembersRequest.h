@@ -35,8 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
-     * invite members with.</p>
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }

@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account ID of the member account.</p>
+     * <p>A list of member account IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }

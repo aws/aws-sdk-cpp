@@ -16,6 +16,7 @@
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettingsDescription.h>
+#include <aws/medialive/model/DescribeAnywhereSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -288,6 +289,18 @@ one destination per
     inline Channel& WithVpc(const VpcOutputSettingsDescription& value) { SetVpc(value); return *this;}
     inline Channel& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Anywhere settings for this channel.
+     */
+    inline const DescribeAnywhereSettings& GetAnywhereSettings() const{ return m_anywhereSettings; }
+    inline bool AnywhereSettingsHasBeenSet() const { return m_anywhereSettingsHasBeenSet; }
+    inline void SetAnywhereSettings(const DescribeAnywhereSettings& value) { m_anywhereSettingsHasBeenSet = true; m_anywhereSettings = value; }
+    inline void SetAnywhereSettings(DescribeAnywhereSettings&& value) { m_anywhereSettingsHasBeenSet = true; m_anywhereSettings = std::move(value); }
+    inline Channel& WithAnywhereSettings(const DescribeAnywhereSettings& value) { SetAnywhereSettings(value); return *this;}
+    inline Channel& WithAnywhereSettings(DescribeAnywhereSettings&& value) { SetAnywhereSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -343,6 +356,9 @@ one destination per
 
     VpcOutputSettingsDescription m_vpc;
     bool m_vpcHasBeenSet = false;
+
+    DescribeAnywhereSettings m_anywhereSettings;
+    bool m_anywhereSettingsHasBeenSet = false;
   };
 
 } // namespace Model

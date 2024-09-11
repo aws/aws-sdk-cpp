@@ -59,8 +59,8 @@ namespace Model
     /**
      * The purpose of the priority is to use a combination of the\nmultiplex rate
      * control algorithm and the QVBR capability of the\nencoder to prioritize the
-     * video quality of some channels in a\nmultiplex over others.  Channels that have
-     * a higher priority will\nget higher video quality at the expense of the video
+     * video quality of some channels in a\nmultiplex over others. Channels that have a
+     * higher priority will\nget higher video quality at the expense of the video
      * quality of\nother channels in the multiplex with lower priority.
      */
     inline int GetPriority() const{ return m_priority; }

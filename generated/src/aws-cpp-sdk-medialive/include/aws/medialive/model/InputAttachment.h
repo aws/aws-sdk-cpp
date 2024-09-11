@@ -8,6 +8,7 @@
 #include <aws/medialive/model/AutomaticInputFailoverSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/InputSettings.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -92,6 +93,22 @@ namespace Model
     inline InputAttachment& WithInputSettings(const InputSettings& value) { SetInputSettings(value); return *this;}
     inline InputAttachment& WithInputSettings(InputSettings&& value) { SetInputSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Optional assignment of an input to a logical interface on the Node. Only applies
+     * to on premises channels.
+     */
+    inline const Aws::Vector<Aws::String>& GetLogicalInterfaceNames() const{ return m_logicalInterfaceNames; }
+    inline bool LogicalInterfaceNamesHasBeenSet() const { return m_logicalInterfaceNamesHasBeenSet; }
+    inline void SetLogicalInterfaceNames(const Aws::Vector<Aws::String>& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames = value; }
+    inline void SetLogicalInterfaceNames(Aws::Vector<Aws::String>&& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames = std::move(value); }
+    inline InputAttachment& WithLogicalInterfaceNames(const Aws::Vector<Aws::String>& value) { SetLogicalInterfaceNames(value); return *this;}
+    inline InputAttachment& WithLogicalInterfaceNames(Aws::Vector<Aws::String>&& value) { SetLogicalInterfaceNames(std::move(value)); return *this;}
+    inline InputAttachment& AddLogicalInterfaceNames(const Aws::String& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames.push_back(value); return *this; }
+    inline InputAttachment& AddLogicalInterfaceNames(Aws::String&& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames.push_back(std::move(value)); return *this; }
+    inline InputAttachment& AddLogicalInterfaceNames(const char* value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames.push_back(value); return *this; }
+    ///@}
   private:
 
     AutomaticInputFailoverSettings m_automaticInputFailoverSettings;
@@ -105,6 +122,9 @@ namespace Model
 
     InputSettings m_inputSettings;
     bool m_inputSettingsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_logicalInterfaceNames;
+    bool m_logicalInterfaceNamesHasBeenSet = false;
   };
 
 } // namespace Model

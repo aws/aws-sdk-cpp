@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the detector to retrieve information about the delegated
-     * administrator from.</p>
+     * <p>The detector ID of the delegated administrator for which you need to retrieve
+     * the information.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }

@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the detector associated with the findings to update feedback
-     * for.</p>
+     * <p>The ID of the detector that is associated with the findings for which you
+     * want to update the feedback.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }

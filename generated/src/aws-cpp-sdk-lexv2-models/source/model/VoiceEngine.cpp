@@ -22,6 +22,8 @@ namespace Aws
 
         static const int standard_HASH = HashingUtils::HashString("standard");
         static const int neural_HASH = HashingUtils::HashString("neural");
+        static const int long_form_HASH = HashingUtils::HashString("long-form");
+        static const int generative_HASH = HashingUtils::HashString("generative");
 
 
         VoiceEngine GetVoiceEngineForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == neural_HASH)
           {
             return VoiceEngine::neural;
+          }
+          else if (hashCode == long_form_HASH)
+          {
+            return VoiceEngine::long_form;
+          }
+          else if (hashCode == generative_HASH)
+          {
+            return VoiceEngine::generative;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "standard";
           case VoiceEngine::neural:
             return "neural";
+          case VoiceEngine::long_form:
+            return "long-form";
+          case VoiceEngine::generative:
+            return "generative";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

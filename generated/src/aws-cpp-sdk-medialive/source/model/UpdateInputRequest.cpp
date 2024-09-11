@@ -21,7 +21,8 @@ UpdateInputRequest::UpdateInputRequest() :
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_sourcesHasBeenSet(false),
-    m_srtSettingsHasBeenSet(false)
+    m_srtSettingsHasBeenSet(false),
+    m_multicastSettingsHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,12 @@ Aws::String UpdateInputRequest::SerializePayload() const
   if(m_srtSettingsHasBeenSet)
   {
    payload.WithObject("srtSettings", m_srtSettings.Jsonize());
+
+  }
+
+  if(m_multicastSettingsHasBeenSet)
+  {
+   payload.WithObject("multicastSettings", m_multicastSettings.Jsonize());
 
   }
 

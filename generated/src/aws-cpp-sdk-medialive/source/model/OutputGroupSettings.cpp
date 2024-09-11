@@ -27,7 +27,8 @@ OutputGroupSettings::OutputGroupSettings() :
     m_multiplexGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
     m_udpGroupSettingsHasBeenSet(false),
-    m_cmafIngestGroupSettingsHasBeenSet(false)
+    m_cmafIngestGroupSettingsHasBeenSet(false),
+    m_srtGroupSettingsHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,13 @@ OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
     m_cmafIngestGroupSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("srtGroupSettings"))
+  {
+    m_srtGroupSettings = jsonValue.GetObject("srtGroupSettings");
+
+    m_srtGroupSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +168,12 @@ JsonValue OutputGroupSettings::Jsonize() const
   if(m_cmafIngestGroupSettingsHasBeenSet)
   {
    payload.WithObject("cmafIngestGroupSettings", m_cmafIngestGroupSettings.Jsonize());
+
+  }
+
+  if(m_srtGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("srtGroupSettings", m_srtGroupSettings.Jsonize());
 
   }
 

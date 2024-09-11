@@ -12,6 +12,8 @@
 #include <aws/medialive/model/InputType.h>
 #include <aws/medialive/model/InputVpcRequest.h>
 #include <aws/medialive/model/SrtSettingsRequest.h>
+#include <aws/medialive/model/InputNetworkLocation.h>
+#include <aws/medialive/model/MulticastSettingsCreateRequest.h>
 #include <aws/medialive/model/InputDestinationRequest.h>
 #include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
@@ -220,6 +222,32 @@ Only specify sources for PULL type Inputs. Leave
     inline CreateInputRequest& WithSrtSettings(const SrtSettingsRequest& value) { SetSrtSettings(value); return *this;}
     inline CreateInputRequest& WithSrtSettings(SrtSettingsRequest&& value) { SetSrtSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem
+     * for
+an input in a customer network.
+     */
+    inline const InputNetworkLocation& GetInputNetworkLocation() const{ return m_inputNetworkLocation; }
+    inline bool InputNetworkLocationHasBeenSet() const { return m_inputNetworkLocationHasBeenSet; }
+    inline void SetInputNetworkLocation(const InputNetworkLocation& value) { m_inputNetworkLocationHasBeenSet = true; m_inputNetworkLocation = value; }
+    inline void SetInputNetworkLocation(InputNetworkLocation&& value) { m_inputNetworkLocationHasBeenSet = true; m_inputNetworkLocation = std::move(value); }
+    inline CreateInputRequest& WithInputNetworkLocation(const InputNetworkLocation& value) { SetInputNetworkLocation(value); return *this;}
+    inline CreateInputRequest& WithInputNetworkLocation(InputNetworkLocation&& value) { SetInputNetworkLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Multicast Input settings.
+     */
+    inline const MulticastSettingsCreateRequest& GetMulticastSettings() const{ return m_multicastSettings; }
+    inline bool MulticastSettingsHasBeenSet() const { return m_multicastSettingsHasBeenSet; }
+    inline void SetMulticastSettings(const MulticastSettingsCreateRequest& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = value; }
+    inline void SetMulticastSettings(MulticastSettingsCreateRequest&& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = std::move(value); }
+    inline CreateInputRequest& WithMulticastSettings(const MulticastSettingsCreateRequest& value) { SetMulticastSettings(value); return *this;}
+    inline CreateInputRequest& WithMulticastSettings(MulticastSettingsCreateRequest&& value) { SetMulticastSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<InputDestinationRequest> m_destinations;
@@ -257,6 +285,12 @@ Only specify sources for PULL type Inputs. Leave
 
     SrtSettingsRequest m_srtSettings;
     bool m_srtSettingsHasBeenSet = false;
+
+    InputNetworkLocation m_inputNetworkLocation;
+    bool m_inputNetworkLocationHasBeenSet = false;
+
+    MulticastSettingsCreateRequest m_multicastSettings;
+    bool m_multicastSettingsHasBeenSet = false;
   };
 
 } // namespace Model
