@@ -104,7 +104,7 @@ public class MainGenerator {
         return compressFilesToZip(apiFiles, componentOutputName);
     }
 
-    private static ByteArrayOutputStream compressFilesToZip(final SdkFileEntry[] apiFiles, final String componentOutputName) throws IOException {
+    public static ByteArrayOutputStream compressFilesToZip(final SdkFileEntry[] apiFiles, final String componentOutputName) throws IOException {
         //we need to add a BOM to accommodate MSFT compilers.
         //as specified here https://blogs.msdn.microsoft.com/vcblog/2016/02/22/new-options-for-managing-character-sets-in-the-microsoft-cc-compiler/
         byte[] bom = {(byte)0xEF,(byte)0xBB,(byte)0xBF};

@@ -111,7 +111,14 @@ public class main {
                 SmithyParser parser = new SmithyParser();
                 List<SmithyParser.TestcaseParams> tests = parser.parse(directoryPath);
 
-                SdkFileEntry file = parser.generateTestSourceFile( tests);
+                SdkFileEntry files[] = new SdkFileEntry[1];
+
+                files[0] =  parser.generateTestSourceFile( tests);
+
+                System.out.println(files[0].sdkFile);
+
+                String componentOutputName = String.format("aws-cpp-sdk-smoke-tests");
+                MainGenerator.compressFilesToZip(files,componentOutputName);
 
             } catch (Exception e) {
                 // Print any exception that occurs during parsing

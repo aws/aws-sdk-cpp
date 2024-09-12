@@ -27,6 +27,9 @@ import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerat
 
 import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
 import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.aws.traits.auth.SigV4Trait;
+import software.amazon.smithy.aws.traits.auth.SigV4ATrait;
+import software.amazon.smithy.model.traits.HttpBearerAuthTrait;
 
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import java.util.stream.Collectors;
@@ -52,9 +55,9 @@ import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.slf4j.helpers.NOPLoggerFactory;
 
 
+
 public class SmithyParser {
     protected final VelocityEngine velocityEngine;
-    protected ModelAssembler assembler;
     public SmithyParser()throws Exception {
         velocityEngine = new VelocityEngine();
         velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
@@ -66,7 +69,6 @@ public class SmithyParser {
         velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
         velocityEngine.init();
 
-        assembler = Model.assembler();
     }
 
 
@@ -89,6 +91,8 @@ public class SmithyParser {
         Map<String, Node> paramsMap;
         boolean expectSuccess;
         Optional<String> errorShapeId;
+        //capture auth scheme as that decides the client constructor 
+        String auth;
     };
 
     @Data
@@ -143,9 +147,10 @@ public class SmithyParser {
         String currentDirectory = System.getProperty("user.dir");
         System.out.println("Current working directory: " + currentDirectory);
 
+        ModelAssembler assembler = Model.assembler();
+
         Path directoryPath = Paths.get(location);
         // Load a Smithy model from a file
-        //ModelAssembler assembler = Model.assembler();
         
         // Stream all files in the directory
         try (Stream<Path> fileStream = Files.list(directoryPath)) {
@@ -156,7 +161,7 @@ public class SmithyParser {
             // Assemble the model
             if(assembler.discoverModels().assemble().getResult().isPresent())
             {
-                Model model = assembler.discoverModels().assemble().getResult().get(); //validate().get();
+                Model model = assembler.discoverModels().assemble().getResult().get(); 
 
                 Optional<ServiceShape> service = model.getServiceShapes().stream().filter( serviceShape -> serviceShape.getTrait(ServiceTrait.class).isPresent() ).findFirst();
 
@@ -172,7 +177,7 @@ public class SmithyParser {
 
                     
 
-                    //for each key value, generate code for all the traits
+                    //for each operation with smoketest, extract trait info and parse into java classes
                     operationShapestoSmokeTestsTraitsMap.entrySet().stream()
                         .forEach(entry -> {
                             OperationShape operationShape = entry.getKey();
@@ -263,6 +268,20 @@ public class SmithyParser {
                                 }
 
                                 test.setTestcaseName(testcase.getId());
+
+                                //check which auth trait is present
+                                if (service.get().getTrait(SigV4Trait.class).isPresent())
+                                {
+                                    test.setAuth("sigv4");
+                                }
+                                else if(service.get().getTrait(SigV4ATrait.class).isPresent())
+                                {
+                                    test.setAuth("sigv4a");
+                                }
+                                else if(service.get().getTrait(HttpBearerAuthTrait.class).isPresent())
+                                {
+                                    test.setAuth("bearer");
+                                }
 
                                 testcaseList.add(test);
                             });

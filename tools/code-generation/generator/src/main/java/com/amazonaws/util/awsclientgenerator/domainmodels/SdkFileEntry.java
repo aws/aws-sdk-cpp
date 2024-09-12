@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 public class SdkFileEntry {
-    private StringBuffer sdkFile;
+    public StringBuffer sdkFile;
     private String pathRelativeToRoot;
     private boolean needsByteOrderMark;
 }
