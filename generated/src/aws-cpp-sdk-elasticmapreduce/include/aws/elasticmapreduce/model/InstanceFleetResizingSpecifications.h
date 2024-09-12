@@ -42,7 +42,7 @@ namespace Model
     ///@{
     /**
      * <p>The resize specification for Spot Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
+     * contains the allocation strategy and the resize timeout period. </p>
      */
     inline const SpotResizingSpecification& GetSpotResizeSpecification() const{ return m_spotResizeSpecification; }
     inline bool SpotResizeSpecificationHasBeenSet() const { return m_spotResizeSpecificationHasBeenSet; }
@@ -55,7 +55,8 @@ namespace Model
     ///@{
     /**
      * <p>The resize specification for On-Demand Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
+     * contains the allocation strategy, capacity reservation options, and the resize
+     * timeout period. </p>
      */
     inline const OnDemandResizingSpecification& GetOnDemandResizeSpecification() const{ return m_onDemandResizeSpecification; }
     inline bool OnDemandResizeSpecificationHasBeenSet() const { return m_onDemandResizeSpecificationHasBeenSet; }

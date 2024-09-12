@@ -102,7 +102,8 @@ namespace Model
     ///@{
     /**
      * <p>The MFA options that are activated for the user. The possible values in this
-     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+     * list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and
+     * <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
     inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }

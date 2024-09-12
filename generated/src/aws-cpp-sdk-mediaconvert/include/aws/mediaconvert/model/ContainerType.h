@@ -25,6 +25,7 @@ namespace Model
     MP4,
     MPD,
     MXF,
+    OGG,
     WEBM,
     RAW,
     Y4M

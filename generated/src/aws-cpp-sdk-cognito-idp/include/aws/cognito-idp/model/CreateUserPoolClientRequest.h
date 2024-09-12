@@ -162,20 +162,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of user attributes that you want your app client to have read-only
-     * access to. After your user authenticates in your app, their access token
-     * authorizes them to read their own attribute value for any attribute in this
-     * list. An example of this kind of activity is when your user selects a link to
-     * view their profile information. Your app makes a <a
+     * <p>The list of user attributes that you want your app client to have read access
+     * to. After your user authenticates in your app, their access token authorizes
+     * them to read their own attribute value for any attribute in this list. An
+     * example of this kind of activity is when your user selects a link to view their
+     * profile information. Your app makes a <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
      * API request to retrieve and display your user's profile data.</p> <p>When you
      * don't specify the <code>ReadAttributes</code> for your app client, your app can
      * read the values of <code>email_verified</code>,
      * <code>phone_number_verified</code>, and the Standard attributes of your user
-     * pool. When your user pool has read access to these default attributes,
-     * <code>ReadAttributes</code> doesn't return any information. Amazon Cognito only
-     * populates <code>ReadAttributes</code> in the API response if you have specified
-     * your own custom set of read attributes.</p>
+     * pool. When your user pool app client has read access to these default
+     * attributes, <code>ReadAttributes</code> doesn't return any information. Amazon
+     * Cognito only populates <code>ReadAttributes</code> in the API response if you
+     * have specified your own custom set of read attributes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadAttributes() const{ return m_readAttributes; }
     inline bool ReadAttributesHasBeenSet() const { return m_readAttributesHasBeenSet; }

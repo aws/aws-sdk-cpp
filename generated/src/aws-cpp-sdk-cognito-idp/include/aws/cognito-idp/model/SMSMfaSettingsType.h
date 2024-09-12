@@ -43,10 +43,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
-     * activated for a user, the user will be prompted for MFA during all sign-in
-     * attempts, unless device tracking is turned on and the device has been
-     * trusted.</p>
+     * <p>Specifies whether SMS message MFA is activated. If an MFA type is activated
+     * for a user, the user will be prompted for MFA during all sign-in attempts,
+     * unless device tracking is turned on and the device has been trusted.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

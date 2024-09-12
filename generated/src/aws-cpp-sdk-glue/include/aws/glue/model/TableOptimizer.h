@@ -42,8 +42,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of table optimizer. Currently, the only valid value is
-     * <code>compaction</code>.</p>
+     * <p>The type of table optimizer. The valid values are:</p> <ul> <li> <p>
+     * <code>compaction</code>: for managing compaction with a table optimizer.</p>
+     * </li> <li> <p> <code>retention</code>: for managing the retention of snapshot
+     * with a table optimizer.</p> </li> <li> <p> <code>orphan_file_deletion</code>:
+     * for managing the deletion of orphan files with a table optimizer.</p> </li>
+     * </ul>
      */
     inline const TableOptimizerType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

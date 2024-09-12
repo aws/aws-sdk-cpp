@@ -19,7 +19,8 @@ namespace Model
     DISABLED,
     AUTO,
     TRACK,
-    FRAME
+    FRAME,
+    FORCE
   };
 
 namespace AudioDurationCorrectionMapper

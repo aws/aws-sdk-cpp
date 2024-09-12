@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>Specify this parameter to limit how many canaries are returned each time you
      * use the <code>DescribeCanaries</code> operation. If you omit this parameter, the
-     * default of 100 is used.</p>
+     * default of 20 is used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

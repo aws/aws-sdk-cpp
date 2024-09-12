@@ -11,8 +11,10 @@
 #include <aws/synthetics/model/CanaryScheduleInput.h>
 #include <aws/synthetics/model/CanaryRunConfigInput.h>
 #include <aws/synthetics/model/VpcConfigInput.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
+#include <aws/synthetics/model/ResourceToTag.h>
 #include <utility>
 
 namespace Aws
@@ -198,11 +200,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>To have the tags that you apply to this canary also be applied to the Lambda
+     * function that the canary uses, specify this parameter with the value
+     * <code>lambda-function</code>.</p> <p>If you specify this parameter and don't
+     * specify any tags in the <code>Tags</code> parameter, the canary creation
+     * fails.</p>
+     */
+    inline const Aws::Vector<ResourceToTag>& GetResourcesToReplicateTags() const{ return m_resourcesToReplicateTags; }
+    inline bool ResourcesToReplicateTagsHasBeenSet() const { return m_resourcesToReplicateTagsHasBeenSet; }
+    inline void SetResourcesToReplicateTags(const Aws::Vector<ResourceToTag>& value) { m_resourcesToReplicateTagsHasBeenSet = true; m_resourcesToReplicateTags = value; }
+    inline void SetResourcesToReplicateTags(Aws::Vector<ResourceToTag>&& value) { m_resourcesToReplicateTagsHasBeenSet = true; m_resourcesToReplicateTags = std::move(value); }
+    inline CreateCanaryRequest& WithResourcesToReplicateTags(const Aws::Vector<ResourceToTag>& value) { SetResourcesToReplicateTags(value); return *this;}
+    inline CreateCanaryRequest& WithResourcesToReplicateTags(Aws::Vector<ResourceToTag>&& value) { SetResourcesToReplicateTags(std::move(value)); return *this;}
+    inline CreateCanaryRequest& AddResourcesToReplicateTags(const ResourceToTag& value) { m_resourcesToReplicateTagsHasBeenSet = true; m_resourcesToReplicateTags.push_back(value); return *this; }
+    inline CreateCanaryRequest& AddResourcesToReplicateTags(ResourceToTag&& value) { m_resourcesToReplicateTagsHasBeenSet = true; m_resourcesToReplicateTags.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of key-value pairs to associate with the canary. You can associate as
      * many as 50 tags with a canary.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions, by granting a
      * user permission to access or change only the resources that have certain tag
-     * values.</p>
+     * values.</p> <p>To have the tags that you apply to this canary also be applied to
+     * the Lambda function that the canary uses, specify this parameter with the value
+     * <code>lambda-function</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -263,6 +285,9 @@ namespace Model
 
     VpcConfigInput m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
+
+    Aws::Vector<ResourceToTag> m_resourcesToReplicateTags;
+    bool m_resourcesToReplicateTagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

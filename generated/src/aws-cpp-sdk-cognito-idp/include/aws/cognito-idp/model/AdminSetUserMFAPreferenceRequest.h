@@ -8,6 +8,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/SMSMfaSettingsType.h>
 #include <aws/cognito-idp/model/SoftwareTokenMfaSettingsType.h>
+#include <aws/cognito-idp/model/EmailMfaSettingsType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -38,7 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS text message MFA settings.</p>
+     * <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and
+     * sets it as the preferred MFA method when multiple methods are available.</p>
      */
     inline const SMSMfaSettingsType& GetSMSMfaSettings() const{ return m_sMSMfaSettings; }
     inline bool SMSMfaSettingsHasBeenSet() const { return m_sMSMfaSettingsHasBeenSet; }
@@ -50,7 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>User preferences for time-based one-time password (TOTP) MFA. Activates or
+     * deactivates TOTP MFA and sets it as the preferred MFA method when multiple
+     * methods are available.</p>
      */
     inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const{ return m_softwareTokenMfaSettings; }
     inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }
@@ -58,6 +62,22 @@ namespace Model
     inline void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::move(value); }
     inline AdminSetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { SetSoftwareTokenMfaSettings(value); return *this;}
     inline AdminSetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { SetSoftwareTokenMfaSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>User preferences for email message MFA. Activates or deactivates email MFA
+     * and sets it as the preferred MFA method when multiple methods are available. To
+     * activate this setting, <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * advanced security features</a> must be active in your user pool.</p>
+     */
+    inline const EmailMfaSettingsType& GetEmailMfaSettings() const{ return m_emailMfaSettings; }
+    inline bool EmailMfaSettingsHasBeenSet() const { return m_emailMfaSettingsHasBeenSet; }
+    inline void SetEmailMfaSettings(const EmailMfaSettingsType& value) { m_emailMfaSettingsHasBeenSet = true; m_emailMfaSettings = value; }
+    inline void SetEmailMfaSettings(EmailMfaSettingsType&& value) { m_emailMfaSettingsHasBeenSet = true; m_emailMfaSettings = std::move(value); }
+    inline AdminSetUserMFAPreferenceRequest& WithEmailMfaSettings(const EmailMfaSettingsType& value) { SetEmailMfaSettings(value); return *this;}
+    inline AdminSetUserMFAPreferenceRequest& WithEmailMfaSettings(EmailMfaSettingsType&& value) { SetEmailMfaSettings(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool where you want to set a user's MFA preferences.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -98,6 +118,9 @@ namespace Model
 
     SoftwareTokenMfaSettingsType m_softwareTokenMfaSettings;
     bool m_softwareTokenMfaSettingsHasBeenSet = false;
+
+    EmailMfaSettingsType m_emailMfaSettings;
+    bool m_emailMfaSettingsHasBeenSet = false;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;

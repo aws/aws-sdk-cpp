@@ -34,6 +34,8 @@ Job::Job() :
     m_errorMessageHasBeenSet(false),
     m_hopDestinationsHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_jobEngineVersionRequestedHasBeenSet(false),
+    m_jobEngineVersionUsedHasBeenSet(false),
     m_jobPercentComplete(0),
     m_jobPercentCompleteHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
@@ -145,6 +147,20 @@ Job& Job::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobEngineVersionRequested"))
+  {
+    m_jobEngineVersionRequested = jsonValue.GetString("jobEngineVersionRequested");
+
+    m_jobEngineVersionRequestedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobEngineVersionUsed"))
+  {
+    m_jobEngineVersionUsed = jsonValue.GetString("jobEngineVersionUsed");
+
+    m_jobEngineVersionUsedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobPercentComplete"))
@@ -342,6 +358,18 @@ JsonValue Job::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_jobEngineVersionRequestedHasBeenSet)
+  {
+   payload.WithString("jobEngineVersionRequested", m_jobEngineVersionRequested);
+
+  }
+
+  if(m_jobEngineVersionUsedHasBeenSet)
+  {
+   payload.WithString("jobEngineVersionUsed", m_jobEngineVersionUsed);
 
   }
 

@@ -23,8 +23,8 @@ SMBFileShareInfo::SMBFileShareInfo() :
     m_fileShareIdHasBeenSet(false),
     m_fileShareStatusHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
-    m_kMSEncrypted(false),
-    m_kMSEncryptedHasBeenSet(false),
+    m_encryptionType(EncryptionType::NOT_SET),
+    m_encryptionTypeHasBeenSet(false),
     m_kMSKeyHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -96,11 +96,11 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     m_gatewayARNHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KMSEncrypted"))
+  if(jsonValue.ValueExists("EncryptionType"))
   {
-    m_kMSEncrypted = jsonValue.GetBool("KMSEncrypted");
+    m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
 
-    m_kMSEncryptedHasBeenSet = true;
+    m_encryptionTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KMSKey"))
@@ -314,10 +314,9 @@ JsonValue SMBFileShareInfo::Jsonize() const
 
   }
 
-  if(m_kMSEncryptedHasBeenSet)
+  if(m_encryptionTypeHasBeenSet)
   {
-   payload.WithBool("KMSEncrypted", m_kMSEncrypted);
-
+   payload.WithString("EncryptionType", EncryptionTypeMapper::GetNameForEncryptionType(m_encryptionType));
   }
 
   if(m_kMSKeyHasBeenSet)

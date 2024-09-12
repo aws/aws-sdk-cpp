@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/elasticmapreduce/model/OnDemandProvisioningAllocationStrategy.h>
+#include <aws/elasticmapreduce/model/OnDemandCapacityReservationOptions.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,10 +54,39 @@ namespace Model
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
     inline OnDemandResizingSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the allocation strategy to use to launch On-Demand instances during
+     * a resize. The default is <code>lowest-price</code>.</p>
+     */
+    inline const OnDemandProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
+    inline void SetAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline void SetAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
+    inline OnDemandResizingSpecification& WithAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
+    inline OnDemandResizingSpecification& WithAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const OnDemandCapacityReservationOptions& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
+    inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
+    inline void SetCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
+    inline void SetCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
+    inline OnDemandResizingSpecification& WithCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { SetCapacityReservationOptions(value); return *this;}
+    inline OnDemandResizingSpecification& WithCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_timeoutDurationMinutes;
     bool m_timeoutDurationMinutesHasBeenSet = false;
+
+    OnDemandProvisioningAllocationStrategy m_allocationStrategy;
+    bool m_allocationStrategyHasBeenSet = false;
+
+    OnDemandCapacityReservationOptions m_capacityReservationOptions;
+    bool m_capacityReservationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

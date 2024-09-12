@@ -30,7 +30,18 @@ namespace Model
    * running the script. If the script is stored in an S3 bucket, the bucket name,
    * key, and version are also included. If the script was passed into the canary
    * directly, the script code is contained in the value of <code>Zipfile</code>.
-   * </p><p><h3>See Also:</h3>   <a
+   * </p> <p>If you are uploading your canary scripts with an Amazon S3 bucket, your
+   * zip file should include your script in a certain folder structure.</p> <ul> <li>
+   * <p>For Node.js canaries, the folder structure must be
+   * <code>nodejs/node_modules/<i>myCanaryFilename.js</i> </code> For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Nodejs.html#CloudWatch_Synthetics_Canaries_package">Packaging
+   * your Node.js canary files</a> </p> </li> <li> <p>For Python canaries, the folder
+   * structure must be <code>python/<i>myCanaryFilename.p</i> </code> or
+   * <code>python/<i>myFolder/myCanaryFilename.py</i> </code> For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Python.html#CloudWatch_Synthetics_Canaries_WritingCanary_Python_package">Packaging
+   * your Python canary files</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryCodeInput">AWS
    * API Reference</a></p>
    */

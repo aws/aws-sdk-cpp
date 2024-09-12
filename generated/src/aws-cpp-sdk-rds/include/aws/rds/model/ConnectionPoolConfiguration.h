@@ -88,9 +88,8 @@ namespace Model
      * <p>The number of seconds for a proxy to wait for a connection to become
      * available in the connection pool. This setting only applies when the proxy has
      * opened its maximum number of connections and all connections are busy with
-     * client sessions. For an unlimited wait time, specify <code>0</code>.</p>
-     * <p>Default: <code>120</code> </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * between 0 and 3600.</p> </li> </ul>
+     * client sessions.</p> <p>Default: <code>120</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be between 0 and 3600.</p> </li> </ul>
      */
     inline int GetConnectionBorrowTimeout() const{ return m_connectionBorrowTimeout; }
     inline bool ConnectionBorrowTimeoutHasBeenSet() const { return m_connectionBorrowTimeoutHasBeenSet; }
