@@ -110,6 +110,23 @@ namespace Model
 
     ///@{
     /**
+     * Use Job engine versions to run jobs for your production workflow on one version,
+     * while you test and validate the latest version. To specify a Job engine version:
+     * Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions,
+     * submit a ListVersions request. To not specify a Job engine version: Leave blank.
+     */
+    inline const Aws::String& GetJobEngineVersion() const{ return m_jobEngineVersion; }
+    inline bool JobEngineVersionHasBeenSet() const { return m_jobEngineVersionHasBeenSet; }
+    inline void SetJobEngineVersion(const Aws::String& value) { m_jobEngineVersionHasBeenSet = true; m_jobEngineVersion = value; }
+    inline void SetJobEngineVersion(Aws::String&& value) { m_jobEngineVersionHasBeenSet = true; m_jobEngineVersion = std::move(value); }
+    inline void SetJobEngineVersion(const char* value) { m_jobEngineVersionHasBeenSet = true; m_jobEngineVersion.assign(value); }
+    inline CreateJobRequest& WithJobEngineVersion(const Aws::String& value) { SetJobEngineVersion(value); return *this;}
+    inline CreateJobRequest& WithJobEngineVersion(Aws::String&& value) { SetJobEngineVersion(std::move(value)); return *this;}
+    inline CreateJobRequest& WithJobEngineVersion(const char* value) { SetJobEngineVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Optional. When you create a job, you can either specify a job template or
      * specify the transcoding settings individually.
      */
@@ -269,6 +286,9 @@ namespace Model
 
     Aws::Vector<HopDestination> m_hopDestinations;
     bool m_hopDestinationsHasBeenSet = false;
+
+    Aws::String m_jobEngineVersion;
+    bool m_jobEngineVersionHasBeenSet = false;
 
     Aws::String m_jobTemplate;
     bool m_jobTemplateHasBeenSet = false;

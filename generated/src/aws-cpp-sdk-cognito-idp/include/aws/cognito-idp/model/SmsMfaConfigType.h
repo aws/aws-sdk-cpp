@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The SMS text message multi-factor authentication (MFA) configuration
-   * type.</p><p><h3>See Also:</h3>   <a
+   * <p>Configures user pool SMS messages for multi-factor authentication (MFA). Sets
+   * the message template and the SMS message sending configuration for Amazon
+   * SNS.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsMfaConfigType">AWS
    * API Reference</a></p>
    */
@@ -41,10 +42,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS authentication message that will be sent to users with the code they
-     * must sign in. The message must contain the ‘{####}’ placeholder, which is
-     * replaced with the code. If the message isn't included, and default message will
-     * be used.</p>
+     * <p>The SMS message that your user pool sends to users with an MFA code. The
+     * message must contain the <code>{####}</code> placeholder. In the message, Amazon
+     * Cognito replaces this placeholder with the code. If you don't provide this
+     * parameter, Amazon Cognito sends messages in the default format.</p>
      */
     inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
     inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }

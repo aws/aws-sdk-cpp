@@ -47,9 +47,12 @@ namespace Model
      * challenge.</p> <p>Valid values include the following:</p>  <p>All of the
      * following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code>
      * (if applicable) in the parameters.</p>  <ul> <li> <p>
-     * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>,
-     * delivered via SMS.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next
-     * challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>SMS_MFA</code>: Next challenge is to supply an
+     * <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p>
+     * </li> <li> <p> <code>EMAIL_OTP</code>: Next challenge is to supply an
+     * <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email
+     * message.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to
+     * supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
      * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the
      * client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>:
      * This is returned if your custom authentication flow determines that the user

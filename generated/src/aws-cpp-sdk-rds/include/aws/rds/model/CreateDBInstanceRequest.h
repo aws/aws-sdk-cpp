@@ -220,15 +220,16 @@ namespace Model
      * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
      * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
      * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
-     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
-     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
-     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-dev</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
+     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -351,9 +352,8 @@ namespace Model
     ///@{
     /**
      * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match the name of an existing DB subnet group.</p> </li> <li>
-     * <p>Must not be <code>default</code>.</p> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <ul> <li> <p>Must match the name of an existing DB subnet group.</p> </li> </ul>
+     * <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }

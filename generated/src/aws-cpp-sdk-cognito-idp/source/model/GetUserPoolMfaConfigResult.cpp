@@ -43,6 +43,12 @@ GetUserPoolMfaConfigResult& GetUserPoolMfaConfigResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("EmailMfaConfiguration"))
+  {
+    m_emailMfaConfiguration = jsonValue.GetObject("EmailMfaConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("MfaConfiguration"))
   {
     m_mfaConfiguration = UserPoolMfaTypeMapper::GetUserPoolMfaTypeForName(jsonValue.GetString("MfaConfiguration"));

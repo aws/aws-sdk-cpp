@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/elasticmapreduce/model/SpotProvisioningAllocationStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,10 +54,28 @@ namespace Model
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
     inline SpotResizingSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the allocation strategy to use to launch Spot instances during a
+     * resize. If you run Amazon EMR releases 6.9.0 or higher, the default is
+     * <code>price-capacity-optimized</code>. If you run Amazon EMR releases 6.8.0 or
+     * lower, the default is <code>capacity-optimized</code>.</p>
+     */
+    inline const SpotProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
+    inline void SetAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline void SetAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
+    inline SpotResizingSpecification& WithAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
+    inline SpotResizingSpecification& WithAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_timeoutDurationMinutes;
     bool m_timeoutDurationMinutesHasBeenSet = false;
+
+    SpotProvisioningAllocationStrategy m_allocationStrategy;
+    bool m_allocationStrategyHasBeenSet = false;
   };
 
 } // namespace Model

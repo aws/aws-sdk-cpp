@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/SmsMfaConfigType.h>
 #include <aws/cognito-idp/model/SoftwareTokenMfaConfigType.h>
+#include <aws/cognito-idp/model/EmailMfaConfigType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <utility>
 
@@ -53,7 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS text message MFA configuration.</p>
+     * <p>Configures user pool SMS messages for MFA. Sets the message template and the
+     * SMS message sending configuration for Amazon SNS.</p>
      */
     inline const SmsMfaConfigType& GetSmsMfaConfiguration() const{ return m_smsMfaConfiguration; }
     inline bool SmsMfaConfigurationHasBeenSet() const { return m_smsMfaConfigurationHasBeenSet; }
@@ -65,7 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The software token MFA configuration.</p>
+     * <p>Configures a user pool for time-based one-time password (TOTP) MFA. Enables
+     * or disables TOTP.</p>
      */
     inline const SoftwareTokenMfaConfigType& GetSoftwareTokenMfaConfiguration() const{ return m_softwareTokenMfaConfiguration; }
     inline bool SoftwareTokenMfaConfigurationHasBeenSet() const { return m_softwareTokenMfaConfigurationHasBeenSet; }
@@ -73,6 +76,21 @@ namespace Model
     inline void SetSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType&& value) { m_softwareTokenMfaConfigurationHasBeenSet = true; m_softwareTokenMfaConfiguration = std::move(value); }
     inline SetUserPoolMfaConfigRequest& WithSoftwareTokenMfaConfiguration(const SoftwareTokenMfaConfigType& value) { SetSoftwareTokenMfaConfiguration(value); return *this;}
     inline SetUserPoolMfaConfigRequest& WithSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType&& value) { SetSoftwareTokenMfaConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configures user pool email messages for MFA. Sets the subject and body of the
+     * email message template for MFA messages. To activate this setting, <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * advanced security features</a> must be active in your user pool.</p>
+     */
+    inline const EmailMfaConfigType& GetEmailMfaConfiguration() const{ return m_emailMfaConfiguration; }
+    inline bool EmailMfaConfigurationHasBeenSet() const { return m_emailMfaConfigurationHasBeenSet; }
+    inline void SetEmailMfaConfiguration(const EmailMfaConfigType& value) { m_emailMfaConfigurationHasBeenSet = true; m_emailMfaConfiguration = value; }
+    inline void SetEmailMfaConfiguration(EmailMfaConfigType&& value) { m_emailMfaConfigurationHasBeenSet = true; m_emailMfaConfiguration = std::move(value); }
+    inline SetUserPoolMfaConfigRequest& WithEmailMfaConfiguration(const EmailMfaConfigType& value) { SetEmailMfaConfiguration(value); return *this;}
+    inline SetUserPoolMfaConfigRequest& WithEmailMfaConfiguration(EmailMfaConfigType&& value) { SetEmailMfaConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,6 +121,9 @@ namespace Model
 
     SoftwareTokenMfaConfigType m_softwareTokenMfaConfiguration;
     bool m_softwareTokenMfaConfigurationHasBeenSet = false;
+
+    EmailMfaConfigType m_emailMfaConfiguration;
+    bool m_emailMfaConfigurationHasBeenSet = false;
 
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet = false;

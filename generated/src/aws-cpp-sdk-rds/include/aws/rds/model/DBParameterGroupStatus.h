@@ -62,7 +62,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of parameter updates.</p>
+     * <p>The status of parameter updates. Valid values are:</p> <ul> <li> <p>
+     * <code>applying</code>: The parameter group change is being applied to the
+     * database.</p> </li> <li> <p> <code>failed-to-apply</code>: The parameter group
+     * is in an invalid state.</p> </li> <li> <p> <code>in-sync</code>: The parameter
+     * group change is synchronized with the database.</p> </li> <li> <p>
+     * <code>pending-database-upgrade</code>: The parameter group change will be
+     * applied after the DB instance is upgraded.</p> </li> <li> <p>
+     * <code>pending-reboot</code>: The parameter group change will be applied after
+     * the DB instance reboots.</p> </li> </ul>
      */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
     inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }

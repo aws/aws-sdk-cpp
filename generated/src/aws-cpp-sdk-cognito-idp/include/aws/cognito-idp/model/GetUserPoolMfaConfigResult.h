@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/SmsMfaConfigType.h>
 #include <aws/cognito-idp/model/SoftwareTokenMfaConfigType.h>
+#include <aws/cognito-idp/model/EmailMfaConfigType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -37,7 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
+     * <p>Shows user pool SMS message configuration for MFA. Includes the message
+     * template and the SMS message sending configuration for Amazon SNS.</p>
      */
     inline const SmsMfaConfigType& GetSmsMfaConfiguration() const{ return m_smsMfaConfiguration; }
     inline void SetSmsMfaConfiguration(const SmsMfaConfigType& value) { m_smsMfaConfiguration = value; }
@@ -48,13 +50,29 @@ namespace Model
 
     ///@{
     /**
-     * <p>The software token multi-factor authentication (MFA) configuration.</p>
+     * <p>Shows user pool configuration for time-based one-time password (TOTP) MFA.
+     * Includes TOTP enabled or disabled state.</p>
      */
     inline const SoftwareTokenMfaConfigType& GetSoftwareTokenMfaConfiguration() const{ return m_softwareTokenMfaConfiguration; }
     inline void SetSoftwareTokenMfaConfiguration(const SoftwareTokenMfaConfigType& value) { m_softwareTokenMfaConfiguration = value; }
     inline void SetSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType&& value) { m_softwareTokenMfaConfiguration = std::move(value); }
     inline GetUserPoolMfaConfigResult& WithSoftwareTokenMfaConfiguration(const SoftwareTokenMfaConfigType& value) { SetSoftwareTokenMfaConfiguration(value); return *this;}
     inline GetUserPoolMfaConfigResult& WithSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType&& value) { SetSoftwareTokenMfaConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Shows user pool email message configuration for MFA. Includes the subject and
+     * body of the email message template for MFA messages. To activate this setting,
+     * <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * advanced security features</a> must be active in your user pool.</p>
+     */
+    inline const EmailMfaConfigType& GetEmailMfaConfiguration() const{ return m_emailMfaConfiguration; }
+    inline void SetEmailMfaConfiguration(const EmailMfaConfigType& value) { m_emailMfaConfiguration = value; }
+    inline void SetEmailMfaConfiguration(EmailMfaConfigType&& value) { m_emailMfaConfiguration = std::move(value); }
+    inline GetUserPoolMfaConfigResult& WithEmailMfaConfiguration(const EmailMfaConfigType& value) { SetEmailMfaConfiguration(value); return *this;}
+    inline GetUserPoolMfaConfigResult& WithEmailMfaConfiguration(EmailMfaConfigType&& value) { SetEmailMfaConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,6 +105,8 @@ namespace Model
     SmsMfaConfigType m_smsMfaConfiguration;
 
     SoftwareTokenMfaConfigType m_softwareTokenMfaConfiguration;
+
+    EmailMfaConfigType m_emailMfaConfiguration;
 
     UserPoolMfaType m_mfaConfiguration;
 

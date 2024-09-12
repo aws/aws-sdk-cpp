@@ -217,6 +217,41 @@ namespace Model
 
     ///@{
     /**
+     * The Job engine version that you requested for your job. Valid versions are in a
+     * YYYY-MM-DD format.
+     */
+    inline const Aws::String& GetJobEngineVersionRequested() const{ return m_jobEngineVersionRequested; }
+    inline bool JobEngineVersionRequestedHasBeenSet() const { return m_jobEngineVersionRequestedHasBeenSet; }
+    inline void SetJobEngineVersionRequested(const Aws::String& value) { m_jobEngineVersionRequestedHasBeenSet = true; m_jobEngineVersionRequested = value; }
+    inline void SetJobEngineVersionRequested(Aws::String&& value) { m_jobEngineVersionRequestedHasBeenSet = true; m_jobEngineVersionRequested = std::move(value); }
+    inline void SetJobEngineVersionRequested(const char* value) { m_jobEngineVersionRequestedHasBeenSet = true; m_jobEngineVersionRequested.assign(value); }
+    inline Job& WithJobEngineVersionRequested(const Aws::String& value) { SetJobEngineVersionRequested(value); return *this;}
+    inline Job& WithJobEngineVersionRequested(Aws::String&& value) { SetJobEngineVersionRequested(std::move(value)); return *this;}
+    inline Job& WithJobEngineVersionRequested(const char* value) { SetJobEngineVersionRequested(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * The Job engine version that your job used. Job engine versions are in a
+     * YYYY-MM-DD format. When you request an expired version, the response for this
+     * property will be empty. Requests to create jobs with an expired version result
+     * in a regular job, as if no specific Job engine version was requested. When you
+     * request an invalid version, the response for this property will be empty.
+     * Requests to create jobs with an invalid version result in a 400 error message,
+     * and no job is created.
+     */
+    inline const Aws::String& GetJobEngineVersionUsed() const{ return m_jobEngineVersionUsed; }
+    inline bool JobEngineVersionUsedHasBeenSet() const { return m_jobEngineVersionUsedHasBeenSet; }
+    inline void SetJobEngineVersionUsed(const Aws::String& value) { m_jobEngineVersionUsedHasBeenSet = true; m_jobEngineVersionUsed = value; }
+    inline void SetJobEngineVersionUsed(Aws::String&& value) { m_jobEngineVersionUsedHasBeenSet = true; m_jobEngineVersionUsed = std::move(value); }
+    inline void SetJobEngineVersionUsed(const char* value) { m_jobEngineVersionUsedHasBeenSet = true; m_jobEngineVersionUsed.assign(value); }
+    inline Job& WithJobEngineVersionUsed(const Aws::String& value) { SetJobEngineVersionUsed(value); return *this;}
+    inline Job& WithJobEngineVersionUsed(Aws::String&& value) { SetJobEngineVersionUsed(std::move(value)); return *this;}
+    inline Job& WithJobEngineVersionUsed(const char* value) { SetJobEngineVersionUsed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * An estimate of how far your job has progressed. This estimate is shown as a
      * percentage of the total time from when your job leaves its queue to when your
      * output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert
@@ -478,6 +513,12 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_jobEngineVersionRequested;
+    bool m_jobEngineVersionRequestedHasBeenSet = false;
+
+    Aws::String m_jobEngineVersionUsed;
+    bool m_jobEngineVersionUsedHasBeenSet = false;
 
     int m_jobPercentComplete;
     bool m_jobPercentCompleteHasBeenSet = false;

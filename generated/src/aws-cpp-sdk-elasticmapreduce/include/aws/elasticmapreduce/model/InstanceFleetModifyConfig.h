@@ -7,6 +7,8 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/InstanceFleetResizingSpecifications.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/InstanceTypeConfig.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +90,23 @@ namespace Model
     inline InstanceFleetModifyConfig& WithResizeSpecifications(const InstanceFleetResizingSpecifications& value) { SetResizeSpecifications(value); return *this;}
     inline InstanceFleetModifyConfig& WithResizeSpecifications(InstanceFleetResizingSpecifications&& value) { SetResizeSpecifications(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An array of InstanceTypeConfig objects that specify how Amazon EMR provisions
+     * Amazon EC2 instances when it fulfills On-Demand and Spot capacities. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/APIReference/API_InstanceTypeConfig.html">InstanceTypeConfig</a>.</p>
+     */
+    inline const Aws::Vector<InstanceTypeConfig>& GetInstanceTypeConfigs() const{ return m_instanceTypeConfigs; }
+    inline bool InstanceTypeConfigsHasBeenSet() const { return m_instanceTypeConfigsHasBeenSet; }
+    inline void SetInstanceTypeConfigs(const Aws::Vector<InstanceTypeConfig>& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = value; }
+    inline void SetInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = std::move(value); }
+    inline InstanceFleetModifyConfig& WithInstanceTypeConfigs(const Aws::Vector<InstanceTypeConfig>& value) { SetInstanceTypeConfigs(value); return *this;}
+    inline InstanceFleetModifyConfig& WithInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { SetInstanceTypeConfigs(std::move(value)); return *this;}
+    inline InstanceFleetModifyConfig& AddInstanceTypeConfigs(const InstanceTypeConfig& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(value); return *this; }
+    inline InstanceFleetModifyConfig& AddInstanceTypeConfigs(InstanceTypeConfig&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_instanceFleetId;
@@ -101,6 +120,9 @@ namespace Model
 
     InstanceFleetResizingSpecifications m_resizeSpecifications;
     bool m_resizeSpecificationsHasBeenSet = false;
+
+    Aws::Vector<InstanceTypeConfig> m_instanceTypeConfigs;
+    bool m_instanceTypeConfigsHasBeenSet = false;
   };
 
 } // namespace Model

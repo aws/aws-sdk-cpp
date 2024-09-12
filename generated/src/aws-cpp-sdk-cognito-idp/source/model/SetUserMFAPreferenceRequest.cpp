@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 SetUserMFAPreferenceRequest::SetUserMFAPreferenceRequest() : 
     m_sMSMfaSettingsHasBeenSet(false),
     m_softwareTokenMfaSettingsHasBeenSet(false),
+    m_emailMfaSettingsHasBeenSet(false),
     m_accessTokenHasBeenSet(false)
 {
 }
@@ -32,6 +33,12 @@ Aws::String SetUserMFAPreferenceRequest::SerializePayload() const
   if(m_softwareTokenMfaSettingsHasBeenSet)
   {
    payload.WithObject("SoftwareTokenMfaSettings", m_softwareTokenMfaSettings.Jsonize());
+
+  }
+
+  if(m_emailMfaSettingsHasBeenSet)
+  {
+   payload.WithObject("EmailMfaSettings", m_emailMfaSettings.Jsonize());
 
   }
 

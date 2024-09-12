@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/CaptionSourceByteRateLimit.h>
 #include <aws/mediaconvert/model/FileSourceConvert608To708.h>
 #include <aws/mediaconvert/model/CaptionSourceConvertPaintOnToPopOn.h>
 #include <aws/mediaconvert/model/CaptionSourceFramerate.h>
@@ -43,6 +44,25 @@ namespace Model
     AWS_MEDIACONVERT_API FileSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * Choose whether to limit the byte rate at which your SCC input captions are
+     * inserted into your output. To not limit the caption rate: We recommend that you
+     * keep the default value, Disabled. MediaConvert inserts captions in your output
+     * according to the byte rates listed in the EIA-608 specification, typically 2 or
+     * 3 caption bytes per frame depending on your output frame rate. To limit your
+     * output caption rate: Choose Enabled. Choose this option if your downstream
+     * systems require a maximum of 2 caption bytes per frame. Note that this setting
+     * has no effect when your output frame rate is 30 or 60.
+     */
+    inline const CaptionSourceByteRateLimit& GetByteRateLimit() const{ return m_byteRateLimit; }
+    inline bool ByteRateLimitHasBeenSet() const { return m_byteRateLimitHasBeenSet; }
+    inline void SetByteRateLimit(const CaptionSourceByteRateLimit& value) { m_byteRateLimitHasBeenSet = true; m_byteRateLimit = value; }
+    inline void SetByteRateLimit(CaptionSourceByteRateLimit&& value) { m_byteRateLimitHasBeenSet = true; m_byteRateLimit = std::move(value); }
+    inline FileSourceSettings& WithByteRateLimit(const CaptionSourceByteRateLimit& value) { SetByteRateLimit(value); return *this;}
+    inline FileSourceSettings& WithByteRateLimit(CaptionSourceByteRateLimit&& value) { SetByteRateLimit(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -142,6 +162,9 @@ namespace Model
     inline FileSourceSettings& WithTimeDeltaUnits(FileSourceTimeDeltaUnits&& value) { SetTimeDeltaUnits(std::move(value)); return *this;}
     ///@}
   private:
+
+    CaptionSourceByteRateLimit m_byteRateLimit;
+    bool m_byteRateLimitHasBeenSet = false;
 
     FileSourceConvert608To708 m_convert608To708;
     bool m_convert608To708HasBeenSet = false;

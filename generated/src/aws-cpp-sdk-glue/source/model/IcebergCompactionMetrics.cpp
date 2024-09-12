@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/RunMetrics.h>
+#include <aws/glue/model/IcebergCompactionMetrics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,46 +18,50 @@ namespace Glue
 namespace Model
 {
 
-RunMetrics::RunMetrics() : 
+IcebergCompactionMetrics::IcebergCompactionMetrics() : 
+    m_numberOfBytesCompacted(0),
     m_numberOfBytesCompactedHasBeenSet(false),
+    m_numberOfFilesCompacted(0),
     m_numberOfFilesCompactedHasBeenSet(false),
+    m_numberOfDpus(0),
     m_numberOfDpusHasBeenSet(false),
+    m_jobDurationInHour(0.0),
     m_jobDurationInHourHasBeenSet(false)
 {
 }
 
-RunMetrics::RunMetrics(JsonView jsonValue)
-  : RunMetrics()
+IcebergCompactionMetrics::IcebergCompactionMetrics(JsonView jsonValue)
+  : IcebergCompactionMetrics()
 {
   *this = jsonValue;
 }
 
-RunMetrics& RunMetrics::operator =(JsonView jsonValue)
+IcebergCompactionMetrics& IcebergCompactionMetrics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NumberOfBytesCompacted"))
   {
-    m_numberOfBytesCompacted = jsonValue.GetString("NumberOfBytesCompacted");
+    m_numberOfBytesCompacted = jsonValue.GetInt64("NumberOfBytesCompacted");
 
     m_numberOfBytesCompactedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NumberOfFilesCompacted"))
   {
-    m_numberOfFilesCompacted = jsonValue.GetString("NumberOfFilesCompacted");
+    m_numberOfFilesCompacted = jsonValue.GetInt64("NumberOfFilesCompacted");
 
     m_numberOfFilesCompactedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NumberOfDpus"))
   {
-    m_numberOfDpus = jsonValue.GetString("NumberOfDpus");
+    m_numberOfDpus = jsonValue.GetInteger("NumberOfDpus");
 
     m_numberOfDpusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("JobDurationInHour"))
   {
-    m_jobDurationInHour = jsonValue.GetString("JobDurationInHour");
+    m_jobDurationInHour = jsonValue.GetDouble("JobDurationInHour");
 
     m_jobDurationInHourHasBeenSet = true;
   }
@@ -65,31 +69,31 @@ RunMetrics& RunMetrics::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RunMetrics::Jsonize() const
+JsonValue IcebergCompactionMetrics::Jsonize() const
 {
   JsonValue payload;
 
   if(m_numberOfBytesCompactedHasBeenSet)
   {
-   payload.WithString("NumberOfBytesCompacted", m_numberOfBytesCompacted);
+   payload.WithInt64("NumberOfBytesCompacted", m_numberOfBytesCompacted);
 
   }
 
   if(m_numberOfFilesCompactedHasBeenSet)
   {
-   payload.WithString("NumberOfFilesCompacted", m_numberOfFilesCompacted);
+   payload.WithInt64("NumberOfFilesCompacted", m_numberOfFilesCompacted);
 
   }
 
   if(m_numberOfDpusHasBeenSet)
   {
-   payload.WithString("NumberOfDpus", m_numberOfDpus);
+   payload.WithInteger("NumberOfDpus", m_numberOfDpus);
 
   }
 
   if(m_jobDurationInHourHasBeenSet)
   {
-   payload.WithString("JobDurationInHour", m_jobDurationInHour);
+   payload.WithDouble("JobDurationInHour", m_jobDurationInHour);
 
   }
 

@@ -43,7 +43,10 @@ namespace Model
      * <p>Indicates the automatic update policy for a gateway.</p> <p>
      * <code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p> <p>
      * <code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance
-     * updates.</p>
+     * updates. The gateway will still receive emergency version updates on rare
+     * occasions if necessary to remedy highly critical security or durability issues.
+     * You will be notified before an emergency version update is applied. These
+     * updates are applied during your gateway's scheduled maintenance window.</p>
      */
     inline const AutomaticUpdatePolicy& GetAutomaticUpdatePolicy() const{ return m_automaticUpdatePolicy; }
     inline bool AutomaticUpdatePolicyHasBeenSet() const { return m_automaticUpdatePolicyHasBeenSet; }

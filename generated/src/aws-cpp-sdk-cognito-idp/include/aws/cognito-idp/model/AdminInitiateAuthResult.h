@@ -49,20 +49,24 @@ namespace Model
      * who don't have at least one of the MFA methods set up are presented with an
      * <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
      * continue to authenticate.</p> </li> <li> <p> <code>SELECT_MFA_TYPE</code>:
-     * Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS
-     * MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP)
-     * software token MFA.</p> </li> <li> <p> <code>SMS_MFA</code>: Next challenge is
-     * to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
-     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
-     * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
-     * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
-     * authentication flow determines that the user should pass another challenge
-     * before tokens are issued.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: If
-     * device tracking was activated in your user pool and the previous challenges were
-     * passed, this challenge is returned so that Amazon Cognito can start tracking
-     * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
-     * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
+     * Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for SMS message
+     * MFA, <code>EMAIL_OTP</code> for email message MFA, and
+     * <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software
+     * token MFA.</p> </li> <li> <p> <code>SMS_MFA</code>: Next challenge is to supply
+     * an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p>
+     * </li> <li> <p> <code>EMAIL_OTP</code>: Next challenge is to supply an
+     * <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email
+     * message.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to
+     * supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the
+     * client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>:
+     * This is returned if your custom authentication flow determines that the user
+     * should pass another challenge before tokens are issued.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool
+     * and the previous challenges were passed, this challenge is returned so that
+     * Amazon Cognito can start tracking this device.</p> </li> <li> <p>
+     * <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+     * <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with
      * <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be
      * enabled to use this flow.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/model/EncryptionType.h>
 #include <aws/storagegateway/model/ObjectACL.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/CaseSensitivity.h>
@@ -94,14 +95,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
-     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * <p>A value that specifies the type of server-side encryption that the file share
+     * will use for the data that it stores in Amazon S3.</p>  <p>We recommend
+     * using <code>EncryptionType</code> instead of <code>KMSEncrypted</code> to set
+     * the file share encryption method. You do not need to provide values for both
+     * parameters.</p> <p>If values for both parameters exist in the same request, then
+     * the specified encryption methods must not conflict. For example, if
+     * <code>EncryptionType</code> is <code>SseS3</code>, then
+     * <code>KMSEncrypted</code> must be <code>false</code>. If
+     * <code>EncryptionType</code> is <code>SseKms</code> or <code>DsseKms</code>, then
+     * <code>KMSEncrypted</code> must be <code>true</code>.</p> 
      */
-    inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
-    inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
-    inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
-    inline SMBFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
+    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+    inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
+    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
+    inline SMBFileShareInfo& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
+    inline SMBFileShareInfo& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -231,9 +241,9 @@ namespace Model
      * list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>,
      * it indicates that file and directory permissions are mapped to the POSIX
      * permission.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-     * Microsoft Windows ACLs to control access to an SMB file share</a> in the
-     * <i>Storage Gateway User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/smb-acl.html">Using
+     * Windows ACLs to limit SMB file share access</a> in the <i>Amazon S3 File Gateway
+     * User Guide</i>.</p>
      */
     inline bool GetSMBACLEnabled() const{ return m_sMBACLEnabled; }
     inline bool SMBACLEnabledHasBeenSet() const { return m_sMBACLEnabledHasBeenSet; }
@@ -404,11 +414,14 @@ namespace Model
      * parameter for as long as possible to avoid generating multiple notifications for
      * the same file in a small time period.</p>  <p>
      * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
-     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
-     * following example sets <code>NotificationPolicy</code> on with
-     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
-     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
-     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     * uploading to Amazon S3, only the timing of the notification.</p> <p>This setting
+     * is not meant to specify an exact time at which the notification will be sent. In
+     * some cases, the gateway might require more than the specified delay time to
+     * generate and send notifications.</p>  <p>The following example sets
+     * <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set
+     * to 60.</p> <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
+     * <p>The following example sets <code>NotificationPolicy</code> off.</p> <p>
+     * <code>{}</code> </p>
      */
     inline const Aws::String& GetNotificationPolicy() const{ return m_notificationPolicy; }
     inline bool NotificationPolicyHasBeenSet() const { return m_notificationPolicyHasBeenSet; }
@@ -481,8 +494,8 @@ namespace Model
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet = false;
 
-    bool m_kMSEncrypted;
-    bool m_kMSEncryptedHasBeenSet = false;
+    EncryptionType m_encryptionType;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kMSKey;
     bool m_kMSKeyHasBeenSet = false;

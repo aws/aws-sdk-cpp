@@ -23,8 +23,10 @@ TableOptimizerRun::TableOptimizerRun() :
     m_eventTypeHasBeenSet(false),
     m_startTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_compactionMetricsHasBeenSet(false),
+    m_retentionMetricsHasBeenSet(false),
+    m_orphanFileDeletionMetricsHasBeenSet(false)
 {
 }
 
@@ -57,18 +59,32 @@ TableOptimizerRun& TableOptimizerRun::operator =(JsonView jsonValue)
     m_endTimestampHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("metrics"))
-  {
-    m_metrics = jsonValue.GetObject("metrics");
-
-    m_metricsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
 
     m_errorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("compactionMetrics"))
+  {
+    m_compactionMetrics = jsonValue.GetObject("compactionMetrics");
+
+    m_compactionMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("retentionMetrics"))
+  {
+    m_retentionMetrics = jsonValue.GetObject("retentionMetrics");
+
+    m_retentionMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("orphanFileDeletionMetrics"))
+  {
+    m_orphanFileDeletionMetrics = jsonValue.GetObject("orphanFileDeletionMetrics");
+
+    m_orphanFileDeletionMetricsHasBeenSet = true;
   }
 
   return *this;
@@ -93,15 +109,27 @@ JsonValue TableOptimizerRun::Jsonize() const
    payload.WithDouble("endTimestamp", m_endTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_metricsHasBeenSet)
-  {
-   payload.WithObject("metrics", m_metrics.Jsonize());
-
-  }
-
   if(m_errorHasBeenSet)
   {
    payload.WithString("error", m_error);
+
+  }
+
+  if(m_compactionMetricsHasBeenSet)
+  {
+   payload.WithObject("compactionMetrics", m_compactionMetrics.Jsonize());
+
+  }
+
+  if(m_retentionMetricsHasBeenSet)
+  {
+   payload.WithObject("retentionMetrics", m_retentionMetrics.Jsonize());
+
+  }
+
+  if(m_orphanFileDeletionMetricsHasBeenSet)
+  {
+   payload.WithObject("orphanFileDeletionMetrics", m_orphanFileDeletionMetrics.Jsonize());
 
   }
 

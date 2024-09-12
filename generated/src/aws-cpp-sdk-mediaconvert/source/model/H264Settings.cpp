@@ -83,6 +83,8 @@ H264Settings::H264Settings() :
     m_rateControlModeHasBeenSet(false),
     m_repeatPps(H264RepeatPps::NOT_SET),
     m_repeatPpsHasBeenSet(false),
+    m_saliencyAwareEncoding(H264SaliencyAwareEncoding::NOT_SET),
+    m_saliencyAwareEncodingHasBeenSet(false),
     m_scanTypeConversionMode(H264ScanTypeConversionMode::NOT_SET),
     m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H264SceneChangeDetect::NOT_SET),
@@ -345,6 +347,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_repeatPpsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("saliencyAwareEncoding"))
+  {
+    m_saliencyAwareEncoding = H264SaliencyAwareEncodingMapper::GetH264SaliencyAwareEncodingForName(jsonValue.GetString("saliencyAwareEncoding"));
+
+    m_saliencyAwareEncodingHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scanTypeConversionMode"))
   {
     m_scanTypeConversionMode = H264ScanTypeConversionModeMapper::GetH264ScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
@@ -601,6 +610,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_repeatPpsHasBeenSet)
   {
    payload.WithString("repeatPps", H264RepeatPpsMapper::GetNameForH264RepeatPps(m_repeatPps));
+  }
+
+  if(m_saliencyAwareEncodingHasBeenSet)
+  {
+   payload.WithString("saliencyAwareEncoding", H264SaliencyAwareEncodingMapper::GetNameForH264SaliencyAwareEncoding(m_saliencyAwareEncoding));
   }
 
   if(m_scanTypeConversionModeHasBeenSet)

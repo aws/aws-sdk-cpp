@@ -24,6 +24,7 @@
 #include <aws/mediaconvert/model/H264QvbrSettings.h>
 #include <aws/mediaconvert/model/H264RateControlMode.h>
 #include <aws/mediaconvert/model/H264RepeatPps.h>
+#include <aws/mediaconvert/model/H264SaliencyAwareEncoding.h>
 #include <aws/mediaconvert/model/H264ScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/H264SceneChangeDetect.h>
 #include <aws/mediaconvert/model/H264SlowPal.h>
@@ -430,20 +431,23 @@ namespace Model
 
     ///@{
     /**
-     * Use this setting only when you also enable Scene change detection. This setting
-     * determines how the encoder manages the spacing between I-frames that it inserts
-     * as part of the I-frame cadence and the I-frames that it inserts for Scene change
-     * detection. We recommend that you have the transcoder automatically choose this
-     * value for you based on characteristics of your input video. To enable this
-     * automatic behavior, do this by keeping the default empty value. When you
-     * explicitly specify a value for this setting, the encoder determines whether to
-     * skip a cadence-driven I-frame by the value you set. For example, if you set Min
-     * I interval to 5 and a cadence-driven I-frame would fall within 5 frames of a
-     * scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this
-     * way, one GOP is shrunk slightly and one GOP is stretched slightly. When the
-     * cadence-driven I-frames are farther from the scene-change I-frame than the value
-     * you set, then the encoder leaves all I-frames in place and the GOPs surrounding
-     * the scene change are smaller than the usual cadence GOPs.
+     * Specify the minimum number of frames allowed between two IDR-frames in your
+     * output. This includes frames created at the start of a GOP or a scene change.
+     * Use Min I-Interval to improve video compression by varying GOP size when two
+     * IDR-frames would be created near each other. For example, if a regular
+     * cadence-driven IDR-frame would fall within 5 frames of a scene-change IDR-frame,
+     * and you set Min I-interval to 5, then the encoder would only write an IDR-frame
+     * for the scene-change. In this way, one GOP is shortened or extended. If a
+     * cadence-driven IDR-frame would be further than 5 frames from a scene-change
+     * IDR-frame, then the encoder leaves all IDR-frames in place. To use an
+     * automatically determined interval: We recommend that you keep this value blank.
+     * This allows for MediaConvert to use an optimal setting according to the
+     * characteristics of your input video, and results in better video compression. To
+     * manually specify an interval: Enter a value from 1 to 30. Use when your
+     * downstream systems have specific GOP size requirements. To disable GOP size
+     * variance: Enter 0. MediaConvert will only create IDR-frames at the start of your
+     * output's cadence-driven GOP. Use when your downstream systems require a regular
+     * GOP size.
      */
     inline int GetMinIInterval() const{ return m_minIInterval; }
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
@@ -574,6 +578,25 @@ namespace Model
     inline void SetRepeatPps(H264RepeatPps&& value) { m_repeatPpsHasBeenSet = true; m_repeatPps = std::move(value); }
     inline H264Settings& WithRepeatPps(const H264RepeatPps& value) { SetRepeatPps(value); return *this;}
     inline H264Settings& WithRepeatPps(H264RepeatPps&& value) { SetRepeatPps(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Specify whether to apply Saliency aware encoding to your output. Use to improve
+     * the perceptual video quality of your output by allocating more encoding bits to
+     * the prominent or noticeable parts of your content. To apply saliency aware
+     * encoding, when possible: We recommend that you choose Preferred. The effects of
+     * Saliency aware encoding are best seen in lower bitrate outputs. When you choose
+     * Preferred, note that Saliency aware encoding will only apply to outputs that are
+     * 720p or higher in resolution. To not apply saliency aware encoding, prioritizing
+     * encoding speed over perceptual video quality: Choose Disabled.
+     */
+    inline const H264SaliencyAwareEncoding& GetSaliencyAwareEncoding() const{ return m_saliencyAwareEncoding; }
+    inline bool SaliencyAwareEncodingHasBeenSet() const { return m_saliencyAwareEncodingHasBeenSet; }
+    inline void SetSaliencyAwareEncoding(const H264SaliencyAwareEncoding& value) { m_saliencyAwareEncodingHasBeenSet = true; m_saliencyAwareEncoding = value; }
+    inline void SetSaliencyAwareEncoding(H264SaliencyAwareEncoding&& value) { m_saliencyAwareEncodingHasBeenSet = true; m_saliencyAwareEncoding = std::move(value); }
+    inline H264Settings& WithSaliencyAwareEncoding(const H264SaliencyAwareEncoding& value) { SetSaliencyAwareEncoding(value); return *this;}
+    inline H264Settings& WithSaliencyAwareEncoding(H264SaliencyAwareEncoding&& value) { SetSaliencyAwareEncoding(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -869,6 +892,9 @@ namespace Model
 
     H264RepeatPps m_repeatPps;
     bool m_repeatPpsHasBeenSet = false;
+
+    H264SaliencyAwareEncoding m_saliencyAwareEncoding;
+    bool m_saliencyAwareEncodingHasBeenSet = false;
 
     H264ScanTypeConversionMode m_scanTypeConversionMode;
     bool m_scanTypeConversionModeHasBeenSet = false;

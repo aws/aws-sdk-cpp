@@ -313,18 +313,19 @@ namespace Model
 
     ///@{
     /**
-     * Use this setting only when you also enable Scene change detection. This setting
-     * determines how the encoder manages the spacing between I-frames that it inserts
-     * as part of the I-frame cadence and the I-frames that it inserts for Scene change
-     * detection. When you specify a value for this setting, the encoder determines
-     * whether to skip a cadence-driven I-frame by the value you set. For example, if
-     * you set Min I interval to 5 and a cadence-driven I-frame would fall within 5
-     * frames of a scene-change I-frame, then the encoder skips the cadence-driven
-     * I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched
-     * slightly. When the cadence-driven I-frames are farther from the scene-change
-     * I-frame than the value you set, then the encoder leaves all I-frames in place
-     * and the GOPs surrounding the scene change are smaller than the usual cadence
-     * GOPs.
+     * Specify the minimum number of frames allowed between two IDR-frames in your
+     * output. This includes frames created at the start of a GOP or a scene change.
+     * Use Min I-Interval to improve video compression by varying GOP size when two
+     * IDR-frames would be created near each other. For example, if a regular
+     * cadence-driven IDR-frame would fall within 5 frames of a scene-change IDR-frame,
+     * and you set Min I-interval to 5, then the encoder would only write an IDR-frame
+     * for the scene-change. In this way, one GOP is shortened or extended. If a
+     * cadence-driven IDR-frame would be further than 5 frames from a scene-change
+     * IDR-frame, then the encoder leaves all IDR-frames in place. To manually specify
+     * an interval: Enter a value from 1 to 30. Use when your downstream systems have
+     * specific GOP size requirements. To disable GOP size variance: Enter 0.
+     * MediaConvert will only create IDR-frames at the start of your output's
+     * cadence-driven GOP. Use when your downstream systems require a regular GOP size.
      */
     inline int GetMinIInterval() const{ return m_minIInterval; }
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }

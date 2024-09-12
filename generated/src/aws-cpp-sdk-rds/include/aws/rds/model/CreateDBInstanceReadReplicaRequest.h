@@ -442,10 +442,8 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
-     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
-     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom DB instances.</p>
+     * run in the source Amazon Web Services Region.</p>  <p>This setting
+     * doesn't apply to RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }

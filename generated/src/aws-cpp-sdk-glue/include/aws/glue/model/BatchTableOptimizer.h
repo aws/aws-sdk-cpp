@@ -84,7 +84,7 @@ namespace Model
     ///@{
     /**
      * <p>A <code>TableOptimizer</code> object that contains details on the
-     * configuration and last run of a table optimzer.</p>
+     * configuration and last run of a table optimizer.</p>
      */
     inline const TableOptimizer& GetTableOptimizer() const{ return m_tableOptimizer; }
     inline bool TableOptimizerHasBeenSet() const { return m_tableOptimizerHasBeenSet; }

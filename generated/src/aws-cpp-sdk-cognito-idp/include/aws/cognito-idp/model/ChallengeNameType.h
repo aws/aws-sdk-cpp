@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     SMS_MFA,
+    EMAIL_OTP,
     SOFTWARE_TOKEN_MFA,
     SELECT_MFA_TYPE,
     MFA_SETUP,

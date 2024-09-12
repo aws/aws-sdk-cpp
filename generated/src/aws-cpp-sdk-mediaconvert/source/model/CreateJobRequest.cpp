@@ -19,6 +19,7 @@ CreateJobRequest::CreateJobRequest() :
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_hopDestinationsHasBeenSet(false),
+    m_jobEngineVersionHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
@@ -63,6 +64,12 @@ Aws::String CreateJobRequest::SerializePayload() const
      hopDestinationsJsonList[hopDestinationsIndex].AsObject(m_hopDestinations[hopDestinationsIndex].Jsonize());
    }
    payload.WithArray("hopDestinations", std::move(hopDestinationsJsonList));
+
+  }
+
+  if(m_jobEngineVersionHasBeenSet)
+  {
+   payload.WithString("jobEngineVersion", m_jobEngineVersion);
 
   }
 

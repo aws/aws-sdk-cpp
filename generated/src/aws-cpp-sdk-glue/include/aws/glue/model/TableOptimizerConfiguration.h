@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/RetentionConfiguration.h>
+#include <aws/glue/model/OrphanFileDeletionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -56,12 +58,36 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether table optimization is enabled. </p>
+     * <p>Whether table optimization is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline TableOptimizerConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for a snapshot retention optimizer.</p>
+     */
+    inline const RetentionConfiguration& GetRetentionConfiguration() const{ return m_retentionConfiguration; }
+    inline bool RetentionConfigurationHasBeenSet() const { return m_retentionConfigurationHasBeenSet; }
+    inline void SetRetentionConfiguration(const RetentionConfiguration& value) { m_retentionConfigurationHasBeenSet = true; m_retentionConfiguration = value; }
+    inline void SetRetentionConfiguration(RetentionConfiguration&& value) { m_retentionConfigurationHasBeenSet = true; m_retentionConfiguration = std::move(value); }
+    inline TableOptimizerConfiguration& WithRetentionConfiguration(const RetentionConfiguration& value) { SetRetentionConfiguration(value); return *this;}
+    inline TableOptimizerConfiguration& WithRetentionConfiguration(RetentionConfiguration&& value) { SetRetentionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for an orphan file deletion optimizer.</p>
+     */
+    inline const OrphanFileDeletionConfiguration& GetOrphanFileDeletionConfiguration() const{ return m_orphanFileDeletionConfiguration; }
+    inline bool OrphanFileDeletionConfigurationHasBeenSet() const { return m_orphanFileDeletionConfigurationHasBeenSet; }
+    inline void SetOrphanFileDeletionConfiguration(const OrphanFileDeletionConfiguration& value) { m_orphanFileDeletionConfigurationHasBeenSet = true; m_orphanFileDeletionConfiguration = value; }
+    inline void SetOrphanFileDeletionConfiguration(OrphanFileDeletionConfiguration&& value) { m_orphanFileDeletionConfigurationHasBeenSet = true; m_orphanFileDeletionConfiguration = std::move(value); }
+    inline TableOptimizerConfiguration& WithOrphanFileDeletionConfiguration(const OrphanFileDeletionConfiguration& value) { SetOrphanFileDeletionConfiguration(value); return *this;}
+    inline TableOptimizerConfiguration& WithOrphanFileDeletionConfiguration(OrphanFileDeletionConfiguration&& value) { SetOrphanFileDeletionConfiguration(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -70,6 +96,12 @@ namespace Model
 
     bool m_enabled;
     bool m_enabledHasBeenSet = false;
+
+    RetentionConfiguration m_retentionConfiguration;
+    bool m_retentionConfigurationHasBeenSet = false;
+
+    OrphanFileDeletionConfiguration m_orphanFileDeletionConfiguration;
+    bool m_orphanFileDeletionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
