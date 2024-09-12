@@ -30,11 +30,12 @@ namespace ${rootNamespace} {
 
             ResolveIdentityFutureOutcome
             getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) override;
+            S3ExpressIdentity
+            getIdentity(const Aws::String &bucketName);
 
             virtual ~S3ExpressIdentityProvider() {}
 
         protected:
-            S3ExpressIdentity getIdentity(const Aws::String &bucketName);
             std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
 
         private:
