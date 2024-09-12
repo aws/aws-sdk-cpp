@@ -348,6 +348,10 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
   s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
 
+  using CrtRetryStrategyUniquePtr = std::unique_ptr<aws_retry_strategy, decltype(&aws_retry_strategy_release)>;
+  auto retry_strategy = CrtRetryStrategyUniquePtr(config.crtConfigFactories.retryStrategyCreateFn(config), aws_retry_strategy_release);
+  s3CrtConfig.retry_strategy = retry_strategy.get();
+
   m_crtCredProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderDelegate({
      std::bind([](const std::shared_ptr<AWSCredentialsProvider>& provider) {
          if (provider == nullptr) {
