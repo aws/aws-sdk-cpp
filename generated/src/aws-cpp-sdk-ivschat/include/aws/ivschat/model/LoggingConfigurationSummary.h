@@ -141,9 +141,10 @@ namespace Model
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
      * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> for details, including restrictions that apply to tags and
-     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
+     * practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag
+     * Editor</i> for details, including restrictions that apply to tags and "Tag
+     * naming limits and requirements"; Amazon IVS Chat has no constraints on tags
      * beyond what is documented there.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
