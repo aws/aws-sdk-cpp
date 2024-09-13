@@ -18,6 +18,11 @@
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
 \#include <aws/core/auth/signer/AWSAuthV4Signer.h>
 #end
+#if($serviceNamespace == "S3Crt")
+\#include <aws/crt/io/Bootstrap.h>
+\#include <aws/crt/io/TlsOptions.h>
+\#include <aws/io/retry_strategy.h>
+#end
 
 
 namespace ${rootNamespace}
@@ -157,6 +162,9 @@ namespace ${rootNamespace}
              * $serviceModel.endpointRuleSetModel.parameters["AccountIdEndpointMode"].documentation
              */
             Aws::String accountIdEndpointMode = "preferred";
+#end
+#if($serviceNamespace == "S3Crt")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfigHeader.vm")
 #end
         private:
             void Load${serviceNamespace}SpecificConfig(const Aws::String& profileName);
