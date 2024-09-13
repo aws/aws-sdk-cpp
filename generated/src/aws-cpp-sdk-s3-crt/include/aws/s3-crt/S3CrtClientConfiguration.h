@@ -90,9 +90,9 @@ namespace Aws
             std::shared_ptr<Aws::Crt::Io::ClientBootstrap> clientBootstrap;
 
             /** Size of parts the files will be downloaded or uploaded in. Useful for Put/GetObject APIs
-             *  defaults to 5MB, if user set it to be less than 5MB, SDK will set it to 5MB.
+             *  defaults to 8MB, if user set it to be less than 5MB, CRT will set it to 5MB.
              */
-            size_t partSize = 5 * 1024 * 1024;
+            size_t partSize = 8 * 1024 * 1024;
 
             /** TLS Options to be used for each connection.
              *  If scheme is Https and tlsConnectionOptions is null, SDK will create a default one for you.
@@ -100,13 +100,18 @@ namespace Aws
             std::shared_ptr<Aws::Crt::Io::TlsConnectionOptions> tlsConnectionOptions;
 
             /* Throughput target in Gbps that we are trying to reach. Normally it's the NIC's throughput */
-            double throughputTargetGbps = 2.0;
+            double throughputTargetGbps = 10.0;
 
             /** Control the maximum memory used by downloads.
              *  When set to a value > 0, the SDK uses flow control to bring the memory usage very close
              *  to the specified window. Without this cap, memory usage grows proportional to file size.
              */
             size_t downloadMemoryUsageWindow = 0;
+
+            /**
+             * How much memory S3 CRT implementation will use. This will be capped to SIZE_MAX (max platform value of size_t)
+             */
+            uint64_t memoryLimitBytes = 0;
 
             /* Callback and associated user data for when the client has completed its shutdown process. */
             std::function<void(void*)> clientShutdownCallback;
