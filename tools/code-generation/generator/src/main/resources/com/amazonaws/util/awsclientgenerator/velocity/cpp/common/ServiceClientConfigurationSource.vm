@@ -6,6 +6,10 @@
 #set($endpointPrefix = $metadata.endpointPrefix)
 #set($serviceNameCaps = $metadata.serviceId.replaceAll("[^a-zA-Z\d]+", "_").toUpperCase())
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+#if($serviceNamespace == "S3Crt")
+\#include <aws/core/Globals.h>
+\#include <aws/core/client/RetryStrategy.h>
+#end
 
 namespace ${rootNamespace}
 {
@@ -171,6 +175,9 @@ ${clsPrefixWSpace}                     ${clsPrefixWSpace}US_EAST_1_REGIONAL_ENDP
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
+#if($serviceNamespace == "S3Crt")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfigSource.vm")
+#end
 
 } // namespace ${serviceNamespace}
 } // namespace ${rootNamespace}
