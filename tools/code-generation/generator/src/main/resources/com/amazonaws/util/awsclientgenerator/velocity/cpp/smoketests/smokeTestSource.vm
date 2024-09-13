@@ -11,7 +11,6 @@
 \#include <aws/core/utils/Outcome.h>
 \#include <aws/core/utils/memory/stl/AWSSet.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
-
 //client header
 #set($client = "")
 #foreach($test in $tests)     
@@ -19,18 +18,13 @@
         #set($client = ${test.clientName})
     #end
 #end
-
-\#include <aws/$client.toLowerCase()/$clientClient.h>
-
+\#include <aws/$client.toLowerCase()/${client}Client.h>
 #* add header for input and output *#
 #foreach($test in $tests)     
 \#include <aws/$test.clientName.toLowerCase()/model/${test.operationName}Request.h>
 #end
-
-
 \#include <utility>
 \#include <algorithm>
-
 using namespace Aws::Auth;
 using namespace Aws::Http;
 using namespace Aws::Client;
@@ -41,21 +35,16 @@ namespace ${client}SmokeTest{
 static const char ALLOCATION_TAG[] = "${client}SmokeTest";
 
 class ${client}SmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
-    protected:
-    
-    public:
-
 };
 
 #foreach($test in $tests)     
-
 TEST_F(${client}SmokeTestSuite, $test.testcaseName )
 {
     Aws::${client}::${client}ClientConfiguration& clientConfiguration;
 #if (!$test.config.region.isEmpty())
     clientConfiguration.region = $test.config.region;
 #end
-    clientConfiguration.useFips = $test.config.useFips;
+    clientConfiguration.useFIPS = $test.config.useFips;
     clientConfiguration.useDualstack = $test.config.useDualstack;
 #if (($test.auth == "sigv4") || ($test.auth == "sigv4a"))
     auto clientSp = Aws::MakeShared<${client}Client>(ALLOCATION_TAG, clientConfiguration);
@@ -71,15 +60,12 @@ TEST_F(${client}SmokeTestSuite, $test.testcaseName )
     input.Set${param.getKey()}($param.getValue().asBooleanNode().get().getValue() );
 #end
 #end
-
-    auto outcome = clientSp->$test.operationName(input);
-
+    auto outcome = clientSp->${test.operationName}(input);
 #if ($test.expectSuccess)
     EXPECT_TRUE( outcome.IsSuccess());
 #else
     EXPECT_FALSE( outcome.IsSuccess());
 #end
-
 }
 
 #end

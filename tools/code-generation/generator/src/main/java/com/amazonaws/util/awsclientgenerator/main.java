@@ -19,12 +19,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 
@@ -45,6 +50,7 @@ public class main {
     static final String LICENSE_TEXT = "license-text";
     static final String STANDALONE_OPTION = "standalone";
     static final String ENABLE_VIRTUAL_OPERATIONS = "enable-virtual-operations";
+    static final String GENERATE_SMOKE_TESTS_OPTION = "generate-smoke-tests";
 
     public static void main(String[] args) throws IOException {
 
@@ -88,6 +94,7 @@ public class main {
             String languageBinding = argPairs.get(LANGUAGE_BINDING_OPTION);
             String serviceName = argPairs.get(SERVICE_OPTION);
             boolean enableVirtualOperations = argPairs.containsKey(ENABLE_VIRTUAL_OPERATIONS);
+            boolean generateSmokeTests = argPairs.containsKey(GENERATE_SMOKE_TESTS_OPTION);
 
             String arbitraryJson = readFile(argPairs.getOrDefault(INPUT_FILE_NAME, ""));
             String endpointRules = null;
@@ -103,7 +110,8 @@ public class main {
             if (argPairs.containsKey(OUTPUT_FILE_NAME) && !argPairs.get(OUTPUT_FILE_NAME).isEmpty()) {
                 outputFileName = argPairs.get(OUTPUT_FILE_NAME);
             }
-
+            
+            //use generateSmokeTests
             //add smithy test parser
             try {
                 String directoryPath = "./generator/smithySmokeTests";
@@ -113,13 +121,32 @@ public class main {
 
                 SdkFileEntry files[] = new SdkFileEntry[1];
 
-                files[0] =  parser.generateTestSourceFile( tests);
+                //String clientName = tests.stream().findFirst().get().getClientName();
+
+                //validate if same service name is same as client
+                //this is the relative location from the folder of extraction
+                String fileName = String.format("%sSmokeTests.cpp", serviceName);
+
+                files[0] =  parser.generateTestSourceFile( tests, fileName);
 
                 System.out.println(files[0].sdkFile);
+                String componentOutputName = String.format("%s-smoke-tests",serviceName);
+                Path zipfilePath = Paths.get("/tmp/smithySmokeTests", componentOutputName + ".zip");
+                // Ensure the parent directory (tmp) exists
+                Files.createDirectories(zipfilePath.getParent());
 
-                String componentOutputName = String.format("aws-cpp-sdk-smoke-tests");
-                MainGenerator.compressFilesToZip(files,componentOutputName);
-
+                ByteArrayOutputStream generated = MainGenerator.compressFilesToZip(files,componentOutputName);
+                // Check if file exists before creating
+                if (Files.exists(zipfilePath)) {
+                    System.out.println("File already exists: " + zipfilePath);
+                } else {
+                    System.out.println("File does not exist, creating new file...");
+                    Files.createFile(zipfilePath);
+                }
+                
+                FileOutputStream fileOutputStream = new FileOutputStream(zipfilePath.toFile());
+                generated.writeTo(fileOutputStream);
+                System.out.println("ZIP file for smoke tests created at: " + zipfilePath.toAbsolutePath());
             } catch (Exception e) {
                 // Print any exception that occurs during parsing
                 e.printStackTrace();

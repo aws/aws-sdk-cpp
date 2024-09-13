@@ -327,6 +327,12 @@ def generate_single_client(service_name: str,
             os.makedirs(f"{output_dir}/tests")
         dir_to_delete_before_extract = f"{output_dir}/tests/{service_name}-gen-tests"
         extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/tests", dir_to_delete_before_extract)
+    #add for smoke tests
+    #add check if such a file exists 
+    dir_to_delete_before_extract = f"{output_dir}/smoke-tests/{service_name}-smoke-tests"
+    smoketest_zip_file = f"/tmp/smithySmokeTests/{service_name}-smoke-tests.zip"
+    print("smoketest_zip_file=",smoketest_zip_file," output dir=",f"{output_dir}/smoke-tests")
+    extract_zip(smoketest_zip_file, f"{service_name}-smoke-tests", f"{output_dir}/smoke-tests", dir_to_delete_before_extract)
 
     return service_name, status
 

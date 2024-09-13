@@ -127,17 +127,13 @@ public class SmithyParser {
         return file;
     }
 
-    public SdkFileEntry generateTestSourceFile( List<TestcaseParams> tests){
+    public SdkFileEntry generateTestSourceFile( List<TestcaseParams> tests, String fileName){
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createSmokeTestContext(tests);
         //ErrorFormatter errorFormatter = new ErrorFormatter();
         //context.put("errorConstNames", errorFormatter.formatErrorConstNames(serviceModel.getNonCoreServiceErrors()));
         //context.put("CppViewHelper", CppViewHelper.class);
-
-        String clientName = tests.stream().findFirst().get().getClientName();
-
-        String fileName = String.format("generated/tests/smoke-tests/%s/%sSmokeTests.cpp", clientName, clientName);
 
         return makeFile(template, context, fileName, true);
     }
@@ -174,8 +170,6 @@ public class SmithyParser {
                         operationShape -> operationShape,
                         operationShape -> operationShape.getTrait(SmokeTestsTrait.class).get()
                     ));
-
-                    
 
                     //for each operation with smoketest, extract trait info and parse into java classes
                     operationShapestoSmokeTestsTraitsMap.entrySet().stream()
