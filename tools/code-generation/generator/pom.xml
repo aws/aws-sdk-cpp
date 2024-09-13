@@ -153,11 +153,7 @@
             <artifactId>smithy-aws-traits</artifactId>
             <version>1.51.0</version>
         </dependency>
-        <dependency>
-            <groupId>software.amazon.smithy</groupId>
-            <artifactId>smithy-rules-engine</artifactId>
-            <version>1.51.0</version>
-        </dependency>
+
         <dependency>
             <groupId>software.amazon.smithy</groupId>
             <artifactId>smithy-waiters</artifactId>

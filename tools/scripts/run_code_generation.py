@@ -315,7 +315,7 @@ def generate_single_client(service_name: str,
     dir_to_extract = f"{output_dir}/src/"
     service_name, status = extract_zip(output_zip_file, service_name, dir_to_extract, dir_to_delete_before_extract)
 
-    if model_files.endpoint_rule_set and model_files.endpoint_tests:
+    '''if model_files.endpoint_rule_set and model_files.endpoint_tests:
         run_command.append("--generate-tests")
 
         if tmp_dir:
@@ -326,7 +326,7 @@ def generate_single_client(service_name: str,
         if not os.path.exists(f"{output_dir}/tests"):
             os.makedirs(f"{output_dir}/tests")
         dir_to_delete_before_extract = f"{output_dir}/tests/{service_name}-gen-tests"
-        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/tests", dir_to_delete_before_extract)
+        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/tests", dir_to_delete_before_extract)'''
     #add for smoke tests
     #add check if such a file exists 
     dir_to_delete_before_extract = f"{output_dir}/smoke-tests/{service_name}-smoke-tests"
@@ -511,7 +511,7 @@ def main():
             while len(pending) >= max_workers:
                 new_done, pending = wait(pending, return_when=FIRST_COMPLETED)
                 done.update(new_done)
-
+            print("generate for client=",service)
             task = executor.submit(generate_single_client,
                                    service,
                                    model_files,

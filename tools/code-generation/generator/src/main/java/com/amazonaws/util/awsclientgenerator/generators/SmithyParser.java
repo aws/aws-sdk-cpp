@@ -9,6 +9,7 @@ import software.amazon.smithy.model.node.StringNode;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -128,6 +129,12 @@ public class SmithyParser {
     }
 
     public SdkFileEntry generateTestSourceFile( List<TestcaseParams> tests, String fileName){
+
+        if(tests.size() == 0)
+        {
+            throw new RuntimeException("No tests found");
+        }
+
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createSmokeTestContext(tests);
@@ -138,156 +145,185 @@ public class SmithyParser {
         return makeFile(template, context, fileName, true);
     }
 
+    public SdkFileEntry generateTestCmakeFile( String projectName, String fileName){
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestCmake.vm", StandardCharsets.UTF_8.name());
+        VelocityContext context = new VelocityContext();
+        context.put("projectName", projectName);
+        //ErrorFormatter errorFormatter = new ErrorFormatter();
+        //context.put("errorConstNames", errorFormatter.formatErrorConstNames(serviceModel.getNonCoreServiceErrors()));
+        //context.put("CppViewHelper", CppViewHelper.class);
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    private void extractTests(List<TestcaseParams> testcaseList , ModelAssembler assembler)
+    {
+        // Assemble the model
+        if(assembler.discoverModels().assemble().getResult().isPresent())
+        {
+            Model model = assembler.discoverModels().assemble().getResult().get(); 
+
+            Optional<ServiceShape> service = model.getServiceShapes().stream().filter( serviceShape -> serviceShape.getTrait(ServiceTrait.class).isPresent() ).findFirst();
+
+            if (service.isPresent())
+            {
+                //only filter operations with smoke test trait
+                Map<OperationShape, SmokeTestsTrait> operationShapestoSmokeTestsTraitsMap = model.getOperationShapes().stream().filter(operationShape -> 
+                operationShape.getTrait(SmokeTestsTrait.class).isPresent() ).
+                collect(Collectors.toMap(
+                    operationShape -> operationShape,
+                    operationShape -> operationShape.getTrait(SmokeTestsTrait.class).get()
+                ));
+
+                //for each operation with smoketest, extract trait info and parse into java classes
+                operationShapestoSmokeTestsTraitsMap.entrySet().stream()
+                    .forEach(entry -> {
+                        OperationShape operationShape = entry.getKey();
+                        SmokeTestsTrait smokeTestsTrait = entry.getValue();
+                        // Perform your logic with operationShape and smokeTestsTrait
+                        System.out.println("OperationShape: " + operationShape);
+                        System.out.println("SmokeTestsTrait: " + smokeTestsTrait);
+
+                        smokeTestsTrait.getTestCases().stream().forEach(testcase -> {
+                            //parse each test case
+                            //operation name
+                            TestcaseParams test = new TestcaseParams();
+                            String clientName = service.get().getId().getName();
+                            test.setClientName(clientName.substring(0, clientName.indexOf('_')));
+                            test.setOperationName(operationShape.getId().getName());
+
+                            String inputShapeName = operationShape.getInput()
+                                    .map(inputShape -> inputShape.getName().replaceAll("Input","Request") )
+                                    .orElse(operationShape.getId().getName()+ "Request");
+
+                            test.setInputShapeName(inputShapeName);
+
+                            String outputShapeName = operationShape.getOutput()
+                                    .map(outputShape -> outputShape.getName().replaceAll("Output","Result"))
+                                    .orElse(operationShape.getId().getName()+ "Result");
+                            
+                            test.setOutputShapeName(outputShapeName);
+
+                            //get params
+                            if(testcase.getParams().isPresent())
+                            {
+                                test.setParamsMap(testcase.getParams().get().getStringMap());
+                            }
+                            
+                            //get expectations
+                            if(testcase.getExpectation().isSuccess())
+                            {
+                                test.setExpectSuccess(true);
+                            }
+                            else
+                            {
+                                
+                                test.setExpectSuccess(false);
+                                if(testcase.getExpectation().getFailure().isPresent() &&
+                                    testcase.getExpectation().getFailure().get().getErrorId().isPresent())
+                                {
+                                    test.setErrorShapeId(Optional.of(testcase.getExpectation().getFailure().get().getErrorId().get().getName()) );
+                                }
+                            }
+
+                            //get configuration properties
+                            if (testcase.getVendorParams().isPresent())
+                            {
+                                ClientConfiguration config = new ClientConfiguration();
+                                if(testcase.getVendorParams().get().getStringMap().containsKey("region"))
+                                {
+                                    config.setRegion(testcase.getVendorParams().get().getStringMap().get("region").asStringNode().get().getValue());
+                                }
+                                
+                                if(testcase.getVendorParams().get().getStringMap().containsKey("sigv4aRegionSet"))
+                                {
+                                    Iterator<Node> paramIter = testcase.getVendorParams().get().getStringMap().get("sigv4aRegionSet").asArrayNode().get().iterator();
+                                    List<String> params = new ArrayList<String>();
+                                    while (paramIter.hasNext()) {
+                                        params.add(paramIter.next().asStringNode().get().getValue());
+                                    }
+                                    config.setSigv4aRegionSet(params );
+                                }
+                                
+                                if(testcase.getVendorParams().get().getStringMap().containsKey("useFips"))
+                                {
+                                    config.setUseFips(testcase.getVendorParams().get().getStringMap().get("useFips").asBooleanNode().get().getValue());
+                                }
+                                else
+                                {
+                                    config.setUseFips(false);
+                                }
+
+                                if(testcase.getVendorParams().get().getStringMap().containsKey("useDualstack"))
+                                {
+                                    config.setUseFips(testcase.getVendorParams().get().getStringMap().get("useDualstack").asBooleanNode().get().getValue());
+                                }
+                                else
+                                {
+                                    config.setUseDualstack(false);
+                                }
+                                test.setConfig(config);                                    
+                            }
+
+                            test.setTestcaseName(testcase.getId());
+
+                            //check which auth trait is present
+                            if (service.get().getTrait(SigV4Trait.class).isPresent())
+                            {
+                                test.setAuth("sigv4");
+                            }
+                            else if(service.get().getTrait(SigV4ATrait.class).isPresent())
+                            {
+                                test.setAuth("sigv4a");
+                            }
+                            else if(service.get().getTrait(HttpBearerAuthTrait.class).isPresent())
+                            {
+                                test.setAuth("bearer");
+                            }
+
+                            testcaseList.add(test);
+                        });
+                });
+
+                // Print the model (or process it further)
+                System.out.println(model);
+            }
+        }
+    }
+
     public List<TestcaseParams> parse(String location) {
         List<TestcaseParams> testcaseList = new ArrayList<TestcaseParams>();
-        String currentDirectory = System.getProperty("user.dir");
-        System.out.println("Current working directory: " + currentDirectory);
-
         ModelAssembler assembler = Model.assembler();
-
         Path directoryPath = Paths.get(location);
+
+        /*try{
+            try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(directoryPath)) {
+                for (Path path : directoryStream) {
+                    if (Files.isRegularFile(path) && path.toString().endsWith(".json")) {
+                        System.out.println(path);
+                        assembler.addImport(path);
+                    }
+                }
+
+                extractTests(testcaseList, assembler);
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }*/
+
         // Load a Smithy model from a file
-        
         // Stream all files in the directory
         try (Stream<Path> fileStream = Files.list(directoryPath)) {
             // Filter for .smithy files and add each to the assembler
             fileStream.filter(path -> path.toString().endsWith(".json"))
             .forEach(assembler::addImport);
+            extractTests(testcaseList, assembler);
             
-            // Assemble the model
-            if(assembler.discoverModels().assemble().getResult().isPresent())
-            {
-                Model model = assembler.discoverModels().assemble().getResult().get(); 
-
-                Optional<ServiceShape> service = model.getServiceShapes().stream().filter( serviceShape -> serviceShape.getTrait(ServiceTrait.class).isPresent() ).findFirst();
-
-                if (service.isPresent())
-                {
-                    //only filter operations with smoke test trait
-                    Map<OperationShape, SmokeTestsTrait> operationShapestoSmokeTestsTraitsMap = model.getOperationShapes().stream().filter(operationShape -> 
-                    operationShape.getTrait(SmokeTestsTrait.class).isPresent() ).
-                    collect(Collectors.toMap(
-                        operationShape -> operationShape,
-                        operationShape -> operationShape.getTrait(SmokeTestsTrait.class).get()
-                    ));
-
-                    //for each operation with smoketest, extract trait info and parse into java classes
-                    operationShapestoSmokeTestsTraitsMap.entrySet().stream()
-                        .forEach(entry -> {
-                            OperationShape operationShape = entry.getKey();
-                            SmokeTestsTrait smokeTestsTrait = entry.getValue();
-                            // Perform your logic with operationShape and smokeTestsTrait
-                            System.out.println("OperationShape: " + operationShape);
-                            System.out.println("SmokeTestsTrait: " + smokeTestsTrait);
-
-                            smokeTestsTrait.getTestCases().stream().forEach(testcase -> {
-                                //parse each test case
-                                //operation name
-                                TestcaseParams test = new TestcaseParams();
-                                String clientName = service.get().getId().getName();
-                                test.setClientName(clientName.substring(0, clientName.indexOf('_')));
-                                test.setOperationName(operationShape.getId().getName());
-
-                                String inputShapeName = operationShape.getInput()
-                                        .map(inputShape -> inputShape.getName().replaceAll("Input","Request") )
-                                        .orElse(operationShape.getId().getName()+ "Request");
-
-                                test.setInputShapeName(inputShapeName);
-
-                                String outputShapeName = operationShape.getOutput()
-                                        .map(outputShape -> outputShape.getName().replaceAll("Output","Result"))
-                                        .orElse(operationShape.getId().getName()+ "Result");
-                                
-                                test.setOutputShapeName(outputShapeName);
-
-                                //get params
-                                if(testcase.getParams().isPresent())
-                                {
-                                    test.setParamsMap(testcase.getParams().get().getStringMap());
-                                }
-                                
-                                //get expectations
-                                if(testcase.getExpectation().isSuccess())
-                                {
-                                    test.setExpectSuccess(true);
-                                }
-                                else
-                                {
-                                    
-                                    test.setExpectSuccess(false);
-                                    if(testcase.getExpectation().getFailure().isPresent() &&
-                                        testcase.getExpectation().getFailure().get().getErrorId().isPresent())
-                                    {
-                                        test.setErrorShapeId(Optional.of(testcase.getExpectation().getFailure().get().getErrorId().get().getName()) );
-                                    }
-                                }
-
-                                //get configuration properties
-                                if (testcase.getVendorParams().isPresent())
-                                {
-                                    ClientConfiguration config = new ClientConfiguration();
-                                    if(testcase.getVendorParams().get().getStringMap().containsKey("region"))
-                                    {
-                                        config.setRegion(testcase.getVendorParams().get().getStringMap().get("region").asStringNode().get().getValue());
-                                    }
-                                    
-                                    if(testcase.getVendorParams().get().getStringMap().containsKey("sigv4aRegionSet"))
-                                    {
-                                        Iterator<Node> paramIter = testcase.getVendorParams().get().getStringMap().get("sigv4aRegionSet").asArrayNode().get().iterator();
-                                        List<String> params = new ArrayList<String>();
-                                        while (paramIter.hasNext()) {
-                                            params.add(paramIter.next().asStringNode().get().getValue());
-                                        }
-                                        config.setSigv4aRegionSet(params );
-                                    }
-                                    
-                                    if(testcase.getVendorParams().get().getStringMap().containsKey("useFips"))
-                                    {
-                                        config.setUseFips(testcase.getVendorParams().get().getStringMap().get("useFips").asBooleanNode().get().getValue());
-                                    }
-                                    else
-                                    {
-                                        config.setUseFips(false);
-                                    }
-
-                                    if(testcase.getVendorParams().get().getStringMap().containsKey("useDualstack"))
-                                    {
-                                        config.setUseFips(testcase.getVendorParams().get().getStringMap().get("useDualstack").asBooleanNode().get().getValue());
-                                    }
-                                    else
-                                    {
-                                        config.setUseDualstack(false);
-                                    }
-                                    test.setConfig(config);                                    
-                                }
-
-                                test.setTestcaseName(testcase.getId());
-
-                                //check which auth trait is present
-                                if (service.get().getTrait(SigV4Trait.class).isPresent())
-                                {
-                                    test.setAuth("sigv4");
-                                }
-                                else if(service.get().getTrait(SigV4ATrait.class).isPresent())
-                                {
-                                    test.setAuth("sigv4a");
-                                }
-                                else if(service.get().getTrait(HttpBearerAuthTrait.class).isPresent())
-                                {
-                                    test.setAuth("bearer");
-                                }
-
-                                testcaseList.add(test);
-                            });
-                    });
-
-                    // Print the model (or process it further)
-                    System.out.println(model);
-                }
-            }
         } catch (IOException e) {
             e.printStackTrace();  // Handle the exception
         }
+        
         assembler.reset();
 
         return testcaseList;

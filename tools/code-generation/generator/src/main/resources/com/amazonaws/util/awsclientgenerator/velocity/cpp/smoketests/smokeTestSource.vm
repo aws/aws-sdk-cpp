@@ -11,15 +11,15 @@
 \#include <aws/core/utils/Outcome.h>
 \#include <aws/core/utils/memory/stl/AWSSet.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
-//client header
 #set($client = "")
-#foreach($test in $tests)     
-    #if($foreach.index == 0)
-        #set($client = ${test.clientName})
-    #end
+#foreach($test in $tests)
+#if($foreach.index == 0)
+#set($client = ${test.clientName})
 #end
+#end
+//client header
 \#include <aws/$client.toLowerCase()/${client}Client.h>
-#* add header for input and output *#
+\#* add header for input and output *#
 #foreach($test in $tests)     
 \#include <aws/$test.clientName.toLowerCase()/model/${test.operationName}Request.h>
 #end

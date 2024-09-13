@@ -52,6 +52,122 @@ public class main {
     static final String ENABLE_VIRTUAL_OPERATIONS = "enable-virtual-operations";
     static final String GENERATE_SMOKE_TESTS_OPTION = "generate-smoke-tests";
 
+    public static File findPomXml(File startDir) {
+        // Search upwards first
+        File pomFile = searchUpwards(startDir);
+        if (pomFile != null) {
+            return pomFile;
+        }
+
+        // If not found, search downwards in the initial directory
+        return searchDownwards(startDir);
+    }
+    private static File searchUpwards(File dir) {
+        while (dir != null) {
+            File pomFile = new File(dir, "pom.xml");
+            if (pomFile.exists()) {
+                return pomFile;
+            }
+            dir = dir.getParentFile();
+        }
+        return null;
+    }
+    private static File searchDownwards(File startDir) {
+        if (startDir == null || !startDir.isDirectory()) {
+            return null;
+        }
+
+        // Check the current directory for pom.xml
+        File pomFile = new File(startDir, "pom.xml");
+        if (pomFile.exists()) {
+            return pomFile;
+        }
+
+        // Recursively search in all subdirectories
+        File[] subDirs = startDir.listFiles(File::isDirectory);
+        if (subDirs != null) {
+            for (File subDir : subDirs) {
+                try {
+                    File foundFile = searchDownwards(subDir);
+                    if (foundFile != null) {
+                        return foundFile;
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error accessing directory " + subDir.getAbsolutePath() + ": " + e.getMessage());
+                }
+            }
+        }
+
+        return null;
+    }
+    protected static void generateSmokeTests(String serviceName){
+        //use generateSmokeTests
+        //add smithy test parser
+        try {
+
+            //get project root and find model folder
+            File pomFilePath = findPomXml(new File("").getAbsoluteFile());
+            String directoryPath = pomFilePath.getParentFile().getAbsolutePath() + "/smithySmokeTests";
+            Path path = Paths.get(directoryPath).toAbsolutePath();
+
+            // Check if the directory exists
+            if (!Files.exists(path) || !Files.isDirectory(path)) {
+                //throw new RuntimeException("Directory does not exist: " + directoryPath);
+                String currentDirectory = System.getProperty("user.dir");
+                System.err.println("directoryPath: " + directoryPath + " currentDirectory:" + currentDirectory );
+                System.exit(1);
+            }
+
+            // Call the parse method of SmithyParser
+            SmithyParser parser = new SmithyParser();
+            List<SmithyParser.TestcaseParams> tests = parser.parse(directoryPath);
+
+            if (tests.size() == 0) {
+                //throw new RuntimeException("Directory does not exist: " + directoryPath);
+                String currentDirectory = System.getProperty("user.dir");
+                System.err.println("no tests parsed directoryPath: " + directoryPath + " currentDirectory:" + currentDirectory );
+                System.exit(1);
+            }
+
+            SdkFileEntry files[] = new SdkFileEntry[2];
+
+            //String clientName = tests.stream().findFirst().get().getClientName();
+
+            //validate if same service name is same as client
+            //this is the relative location from the folder of extraction
+            String fileName = String.format("%sSmokeTests.cpp", serviceName);
+            files[0] =  parser.generateTestSourceFile( tests, fileName);
+            
+            fileName = "CMakeLists.txt";
+            files[1] =  parser.generateTestCmakeFile(serviceName, fileName);
+
+            //System.out.println(files[0].sdkFile);
+            
+            String componentOutputName = String.format("%s-smoke-tests",serviceName);
+            Path zipfilePath = Paths.get("/tmp/smithySmokeTests", componentOutputName + ".zip");
+            // Ensure the parent directory (tmp) exists
+            Files.createDirectories(zipfilePath.getParent());
+
+            ByteArrayOutputStream generated = MainGenerator.compressFilesToZip(files,componentOutputName);
+            // Check if file exists before creating
+            if (Files.exists(zipfilePath)) {
+                System.out.println("File already exists: " + zipfilePath);
+            } else {
+                System.out.println("File does not exist, creating new file...");
+                Files.createFile(zipfilePath);
+            }
+            
+            FileOutputStream fileOutputStream = new FileOutputStream(zipfilePath.toFile());
+            generated.writeTo(fileOutputStream);
+            System.out.println("ZIP file for smoke tests created at: " + zipfilePath.toAbsolutePath());
+            
+        } catch (Exception e) {
+            // Print any exception that occurs during parsing
+            e.printStackTrace();
+        }
+    }
+
+
     public static void main(String[] args) throws IOException {
 
         if (args.length == 0 || getOptionName(args[0]).equals("help")) {
@@ -111,46 +227,7 @@ public class main {
                 outputFileName = argPairs.get(OUTPUT_FILE_NAME);
             }
             
-            //use generateSmokeTests
-            //add smithy test parser
-            try {
-                String directoryPath = "./generator/smithySmokeTests";
-                // Call the parse method of SmithyParser
-                SmithyParser parser = new SmithyParser();
-                List<SmithyParser.TestcaseParams> tests = parser.parse(directoryPath);
-
-                SdkFileEntry files[] = new SdkFileEntry[1];
-
-                //String clientName = tests.stream().findFirst().get().getClientName();
-
-                //validate if same service name is same as client
-                //this is the relative location from the folder of extraction
-                String fileName = String.format("%sSmokeTests.cpp", serviceName);
-
-                files[0] =  parser.generateTestSourceFile( tests, fileName);
-
-                System.out.println(files[0].sdkFile);
-                String componentOutputName = String.format("%s-smoke-tests",serviceName);
-                Path zipfilePath = Paths.get("/tmp/smithySmokeTests", componentOutputName + ".zip");
-                // Ensure the parent directory (tmp) exists
-                Files.createDirectories(zipfilePath.getParent());
-
-                ByteArrayOutputStream generated = MainGenerator.compressFilesToZip(files,componentOutputName);
-                // Check if file exists before creating
-                if (Files.exists(zipfilePath)) {
-                    System.out.println("File already exists: " + zipfilePath);
-                } else {
-                    System.out.println("File does not exist, creating new file...");
-                    Files.createFile(zipfilePath);
-                }
-                
-                FileOutputStream fileOutputStream = new FileOutputStream(zipfilePath.toFile());
-                generated.writeTo(fileOutputStream);
-                System.out.println("ZIP file for smoke tests created at: " + zipfilePath.toAbsolutePath());
-            } catch (Exception e) {
-                // Print any exception that occurs during parsing
-                e.printStackTrace();
-            }
+            
             
 
             if (arbitraryJson != null && arbitraryJson.length() > 0) {
@@ -164,6 +241,8 @@ public class main {
                                     licenseText, generateStandalonePackage, enableVirtualOperations);
 
                             componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
+
+                            generateSmokeTests(serviceName);
                         } else {
                             generated = generateServiceTest(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
                                     licenseText);
