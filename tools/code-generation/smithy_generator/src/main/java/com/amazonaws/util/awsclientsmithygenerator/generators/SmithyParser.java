@@ -1,84 +1,63 @@
 
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
-import software.amazon.smithy.model.Model;
-import software.amazon.smithy.model.loader.ModelAssembler;
-//import software.amazon.smithy.model.node.Node;
-//import software.amazon.smithy.model.node.StringNode;
-
-import java.io.IOException;
-import java.io.StringWriter;
-import java.nio.charset.StandardCharsets;
-//import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.stream.Stream;
-
-import org.apache.velocity.Template;
-import org.apache.velocity.VelocityContext;
-
-import com.amazonaws.util.awsclientsmithygenerator.generators.SdkFileEntry;
-
-import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
-import software.amazon.smithy.model.shapes.ServiceShape;
-import software.amazon.smithy.aws.traits.auth.SigV4Trait;
-import software.amazon.smithy.aws.traits.auth.SigV4ATrait;
-import software.amazon.smithy.model.traits.HttpBearerAuthTrait;
-
-import software.amazon.smithy.aws.traits.ServiceTrait;
-import java.util.stream.Collectors;
-import java.util.Map;
-import java.util.ArrayList;
-//import java.util.HashSet;
-import java.util.Optional;
-//import java.util.Set;
-import java.util.Iterator;
-
-//import java.util.Set;
-import java.util.List;
-import software.amazon.smithy.model.shapes.OperationShape;
-import software.amazon.smithy.model.node.Node;
 import lombok.Data;
-
-
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.slf4j.helpers.NOPLoggerFactory;
+import software.amazon.smithy.aws.traits.ServiceTrait;
+import software.amazon.smithy.aws.traits.auth.SigV4ATrait;
+import software.amazon.smithy.aws.traits.auth.SigV4Trait;
+import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.loader.ModelAssembler;
+import software.amazon.smithy.model.node.Node;
+import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.traits.HttpBearerAuthTrait;
+import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
 
-import com.amazonaws.util.awsclientsmithygenerator.generators.exceptions.SourceGenerationFailedException;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class SmithyParser {
-    protected final VelocityEngine velocityEngine;
-    protected final String serviceName;
-    public SmithyParser(String service)throws Exception {
-        velocityEngine = new VelocityEngine();
-        velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
-        velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
-        velocityEngine.addProperty(RuntimeConstants.RUNTIME_LOG_INSTANCE, new NOPLoggerFactory().getLogger(""));
-        velocityEngine.setProperty("context.scope_control.template", true);
-        // Migration from 1.7 to 2.3:: https://velocity.apache.org/engine/2.3/upgrading.html
-        // # Use backward compatible space gobbling
-        velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
-        velocityEngine.init();
-        serviceName = service;
-    }
 
+    public static final String SMOKE_TEST_SOURCE_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestSource.vm";
+    public static final String CMAKE_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestCmake.vm";
+    private static final String RESOURCE_SMITHY_DIR = "smithy-models";
+    private static final String CMAKE_LISTS_TXT = "CMakeLists.txt";
+    private static final String SMOKE_TESTS_CPP_FORMAT = "%sSmokeTests.cpp";
+    private static final String OUTPUT_LOCATION_FORMAT = "output/%s";
 
     @Data
-    public static final class ClientConfiguration{
-
+    public static final class ClientConfiguration {
         public String region;
         public List<String> sigv4aRegionSet;
         public boolean useFips;
         public boolean useDualstack;
     };
+
     @Data
-    public static final class TestcaseParams{
+    public static final class TestcaseParams {
         public String testcaseName;
         public String clientName;
         public ClientConfiguration config;
@@ -88,72 +67,88 @@ public class SmithyParser {
         Map<String, Node> paramsMap;
         boolean expectSuccess;
         Optional<String> errorShapeId;
-        //capture auth scheme as that decides the client constructor 
+        //capture auth scheme as that decides the client constructor
         String auth;
     };
 
     @Data
-    public static final class Failure{
+    public static final class Failure {
         public String error;
     };
 
-    protected static VelocityContext createSmokeTestContext(List<TestcaseParams> test)
-    {
+    private final VelocityEngine velocityEngine;
+    private final File smithyFile;
+    private final String serviceName;
+
+    public static SmithyParser BuildFromServiceName(final String serviceName) throws URISyntaxException {
+        URL resource = Thread.currentThread().getContextClassLoader().getResource(RESOURCE_SMITHY_DIR);
+        final Path path = Paths.get(Objects.requireNonNull(resource).toURI());
+        try (final Stream<Path> paths = Files.walk(path)) {
+            final File smithyFile = paths.filter(file -> file.toString().contains(serviceName))
+                    .findFirst()
+                    .orElseThrow(() -> new RuntimeException("Could not find service " + serviceName))
+                    .toFile();
+            return new SmithyParser(serviceName, smithyFile);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public SmithyParser(final String serviceName, final File smithyModelFile)  {
+        this.serviceName = serviceName;
+        this.smithyFile = smithyModelFile;
+        this.velocityEngine = new VelocityEngine();
+        this.velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
+        this.velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
+        this.velocityEngine.addProperty(RuntimeConstants.RUNTIME_LOG_INSTANCE, new NOPLoggerFactory().getLogger(""));
+        this.velocityEngine.setProperty("context.scope_control.template", true);
+        // Migration from 1.7 to 2.3:: https://velocity.apache.org/engine/2.3/upgrading.html
+        // # Use backward compatible space gobbling
+        this.velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
+        this.velocityEngine.init();
+    }
+
+    public void GenerateTests() throws IOException {
+        ModelAssembler assembler = Model.assembler();
+        assembler.addImport(this.smithyFile.toPath());
+        List<TestcaseParams> testcaseParams = extractTests(assembler);
+        generateTestSourceFile(testcaseParams, String.format(SMOKE_TESTS_CPP_FORMAT, serviceName));
+        generateTestCmakeFile(CMAKE_LISTS_TXT);
+        assembler.reset();
+    }
+
+    private void makeFile(Template template, VelocityContext context, final String fileName) throws IOException {
+        final File outputFile = new File(fileName);
+        outputFile.getParentFile().mkdirs();
+        outputFile.createNewFile();
+        try (FileWriter fileWriter = new FileWriter(outputFile)){
+            template.merge(context, fileWriter);
+        } catch (IOException e) {
+            throw new RuntimeException(String.format("Generation of template failed for template %s", template.getName()), e);
+        }
+    }
+
+    public void generateTestSourceFile( List<TestcaseParams> tests, String fileName) throws IOException {
+        Template template = velocityEngine.getTemplate(SMOKE_TEST_SOURCE_TEMPLATE, StandardCharsets.UTF_8.name());
+        VelocityContext context = createSmokeTestContext(tests);
+        makeFile(template, context, String.format(OUTPUT_LOCATION_FORMAT, fileName));
+    }
+
+    public void generateTestCmakeFile(String fileName) throws IOException {
+        Template template = velocityEngine.getTemplate(CMAKE_TEMPLATE, StandardCharsets.UTF_8.name());
+        VelocityContext context = new VelocityContext();
+        context.put("projectName", serviceName);
+        makeFile(template, context, String.format(OUTPUT_LOCATION_FORMAT, fileName));
+    }
+
+    private VelocityContext createSmokeTestContext(List<TestcaseParams> test)  {
         VelocityContext context = new VelocityContext();
         context.put("tests", test);
         return context;
     }
 
-    protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path, boolean needsBOM) {
-        StringWriter sw = new StringWriter();
-        template.merge(context, sw);
-
-        try {
-            sw.close();
-        } catch (IOException e) {
-            throw new SourceGenerationFailedException(String.format("Generation of template failed for template %s", template.getName()), e);
-        }
-        sw.flush();
-        StringBuffer sb = new StringBuffer();
-        sb.append(sw.toString());
-
-        SdkFileEntry file = new SdkFileEntry();
-        file.setPathRelativeToRoot(path);
-        file.setSdkFile(sb);
-        file.setNeedsByteOrderMark(needsBOM);
-        return file;
-    }
-
-    public SdkFileEntry generateTestSourceFile( List<TestcaseParams> tests, String fileName){
-
-        if(tests.size() == 0)
-        {
-            throw new RuntimeException("No tests found");
-        }
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestSource.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createSmokeTestContext(tests);
-        //ErrorFormatter errorFormatter = new ErrorFormatter();
-        //context.put("errorConstNames", errorFormatter.formatErrorConstNames(serviceModel.getNonCoreServiceErrors()));
-        //context.put("CppViewHelper", CppViewHelper.class);
-
-        return makeFile(template, context, fileName, true);
-    }
-
-    public SdkFileEntry generateTestCmakeFile( String projectName, String fileName){
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestCmake.vm", StandardCharsets.UTF_8.name());
-        VelocityContext context = new VelocityContext();
-        context.put("projectName", projectName);
-        //ErrorFormatter errorFormatter = new ErrorFormatter();
-        //context.put("errorConstNames", errorFormatter.formatErrorConstNames(serviceModel.getNonCoreServiceErrors()));
-        //context.put("CppViewHelper", CppViewHelper.class);
-
-        return makeFile(template, context, fileName, true);
-    }
-
-    private void extractTests(List<TestcaseParams> testcaseList , ModelAssembler assembler)
-    {
+    private List<TestcaseParams> extractTests(ModelAssembler assembler) {
+        final List<TestcaseParams> testcases = new ArrayList<>();
         // Assemble the model
         if(assembler.discoverModels().assemble().getResult().isPresent())
         {
@@ -277,34 +272,11 @@ public class SmithyParser {
                                 test.setAuth("bearer");
                             }
 
-                            testcaseList.add(test);
+                            testcases.add(test);
                         });
                 });
-
-                // Print the model (or process it further)
-                System.out.println(model);
             }
         }
-    }
-
-    public List<TestcaseParams> parse(String location) {
-        List<TestcaseParams> testcaseList = new ArrayList<TestcaseParams>();
-        ModelAssembler assembler = Model.assembler();
-        Path directoryPath = Paths.get(location);
-        // Load a Smithy model from a file
-        // Stream all files in the directory
-        try (Stream<Path> fileStream = Files.list(directoryPath)) {
-            // Filter for .smithy files and add each to the assembler
-            fileStream.filter(path -> path.toString().endsWith(".json"))
-            .forEach(assembler::addImport);
-            extractTests(testcaseList, assembler);
-            
-        } catch (IOException e) {
-            e.printStackTrace();  // Handle the exception
-        }
-        
-        assembler.reset();
-
-        return testcaseList;
+        return testcases;
     }
 }
