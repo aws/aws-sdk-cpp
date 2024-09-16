@@ -20,7 +20,8 @@ CreateGlobalClusterRequest::CreateGlobalClusterRequest() :
     m_deletionProtectionHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false)
+    m_storageEncryptedHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,23 @@ Aws::String CreateGlobalClusterRequest::SerializePayload() const
   if(m_storageEncryptedHasBeenSet)
   {
     ss << "StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    if (m_tags.empty())
+    {
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
+    }
   }
 
   ss << "Version=2014-10-31";

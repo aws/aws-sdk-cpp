@@ -262,11 +262,11 @@ namespace Organizations
          * </li> </ul>  <ul> <li> <p>You can close only 10% of member accounts,
          * between 10 and 1000, within a rolling 30 day period. This quota is not bound by
          * a calendar month, but starts when you close an account. After you reach this
-         * limit, you can close additional accounts. For more information, see <a
+         * limit, you can't close additional accounts. For more information, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
          * a member account in your organization</a> and <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
-         * for Organizations</a>in the <i>Organizations User Guide</i>. </p> </li> <li>
+         * for Organizations</a> in the <i>Organizations User Guide</i>. </p> </li> <li>
          * <p>To reinstate a closed account, contact Amazon Web Services Support within the
          * 90-day grace period while the account is in SUSPENDED status. </p> </li> <li>
          * <p>If the Amazon Web Services account you attempt to close is linked to an
@@ -347,11 +347,11 @@ namespace Organizations
          * operation failed because your organization is still initializing, wait one hour
          * and then try again. If the error persists, contact <a
          * href="https://console.aws.amazon.com/support/home#/">Amazon Web Services
-         * Support</a>.</p> </li> <li> <p>Using <code>CreateAccount</code> to create
-         * multiple temporary accounts isn't recommended. You can only close an account
-         * from the Billing and Cost Management console, and you must be signed in as the
-         * root user. For information on the requirements and process for closing an
-         * account, see <a
+         * Support</a>.</p> </li> <li> <p>It isn't recommended to use
+         * <code>CreateAccount</code> to create multiple temporary accounts, and using the
+         * <code>CreateAccount</code> API to close accounts is subject to a 30-day usage
+         * quota. For information on the requirements and process for closing an account,
+         * see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
          * a member account in your organization</a> in the <i>Organizations User
          * Guide</i>.</p> </li> </ul>   <p>When you create a member
@@ -1186,20 +1186,22 @@ namespace Organizations
         }
 
         /**
-         * <p>Enables the integration of an Amazon Web Services service (the service that
-         * is specified by <code>ServicePrincipal</code>) with Organizations. When you
-         * enable integration, you allow the specified service to create a <a
+         * <p>Provides an Amazon Web Services service (the service that is specified by
+         * <code>ServicePrincipal</code>) with permissions to view the structure of an
+         * organization, create a <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
-         * role</a> in all the accounts in your organization. This allows the service to
-         * perform operations on your behalf in your organization and its accounts.</p>
-         *  <p>We recommend that you enable integration between Organizations
-         * and the specified Amazon Web Services service by using the console or commands
-         * that are provided by the specified service. Doing so ensures that the service is
-         * aware that it can create the resources that are required for the integration.
-         * How the service creates those resources in the organization's accounts depends
-         * on that service. For more information, see the documentation for the other
-         * Amazon Web Services service.</p>  <p>For more information about
-         * enabling services to integrate with Organizations, see <a
+         * role</a> in all the accounts in the organization, and allow the service to
+         * perform operations on behalf of the organization and its accounts. Establishing
+         * these permissions can be a first step in enabling the integration of an Amazon
+         * Web Services service with Organizations.</p>  <p>We recommend that
+         * you enable integration between Organizations and the specified Amazon Web
+         * Services service by using the console or commands that are provided by the
+         * specified service. Doing so ensures that the service is aware that it can create
+         * the resources that are required for the integration. How the service creates
+         * those resources in the organization's accounts depends on that service. For more
+         * information, see the documentation for the other Amazon Web Services
+         * service.</p>  <p>For more information about enabling services to
+         * integrate with Organizations, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
          * Organizations with other Amazon Web Services services</a> in the
          * <i>Organizations User Guide</i>.</p> <p>You can only call this operation from
@@ -1395,12 +1397,12 @@ namespace Organizations
          * account leaves the organization, all tags that were attached to the account
          * object in the organization are deleted. Amazon Web Services accounts outside of
          * an organization do not support tags.</p> </li> <li> <p>A newly created account
-         * has a waiting period before it can be removed from its organization. If you get
-         * an error that indicates that a wait period is required, then try again in a few
-         * days.</p> </li> <li> <p>If you are using an organization principal to call
-         * <code>LeaveOrganization</code> across multiple accounts, you can only do this up
-         * to 5 accounts per second in a single organization.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * has a waiting period before it can be removed from its organization. You must
+         * wait until at least seven days after the account was created. Invited accounts
+         * aren't subject to this waiting period.</p> </li> <li> <p>If you are using an
+         * organization principal to call <code>LeaveOrganization</code> across multiple
+         * accounts, you can only do this up to 5 accounts per second in a single
+         * organization.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">AWS
          * API Reference</a></p>
          */

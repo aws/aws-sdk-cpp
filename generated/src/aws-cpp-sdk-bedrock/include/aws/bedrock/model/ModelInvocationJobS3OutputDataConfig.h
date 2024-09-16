@@ -66,6 +66,21 @@ namespace Model
     inline ModelInvocationJobS3OutputDataConfig& WithS3EncryptionKeyId(Aws::String&& value) { SetS3EncryptionKeyId(std::move(value)); return *this;}
     inline ModelInvocationJobS3OutputDataConfig& WithS3EncryptionKeyId(const char* value) { SetS3EncryptionKeyId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the S3 bucket containing
+     * the output data.</p>
+     */
+    inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
+    inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
+    inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
+    inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
+    inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
+    inline ModelInvocationJobS3OutputDataConfig& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
+    inline ModelInvocationJobS3OutputDataConfig& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
+    inline ModelInvocationJobS3OutputDataConfig& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_s3Uri;
@@ -73,6 +88,9 @@ namespace Model
 
     Aws::String m_s3EncryptionKeyId;
     bool m_s3EncryptionKeyIdHasBeenSet = false;
+
+    Aws::String m_s3BucketOwner;
+    bool m_s3BucketOwnerHasBeenSet = false;
   };
 
 } // namespace Model

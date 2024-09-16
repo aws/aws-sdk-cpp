@@ -180,6 +180,34 @@ namespace IoT
         }
 
         /**
+         * <p>Associates a software bill of materials (SBOM) with a specific software
+         * package version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateSbomWithPackageVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateSbomWithPackageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSbomWithPackageVersionOutcome AssociateSbomWithPackageVersion(const Model::AssociateSbomWithPackageVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateSbomWithPackageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateSbomWithPackageVersionRequestT = Model::AssociateSbomWithPackageVersionRequest>
+        Model::AssociateSbomWithPackageVersionOutcomeCallable AssociateSbomWithPackageVersionCallable(const AssociateSbomWithPackageVersionRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::AssociateSbomWithPackageVersion, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateSbomWithPackageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateSbomWithPackageVersionRequestT = Model::AssociateSbomWithPackageVersionRequest>
+        void AssociateSbomWithPackageVersionAsync(const AssociateSbomWithPackageVersionRequestT& request, const AssociateSbomWithPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::AssociateSbomWithPackageVersion, request, handler, context);
+        }
+
+        /**
          * <p>Associates a group with a continuous job. The following criteria must be met:
          * </p> <ul> <li> <p>The job must have been created with the
          * <code>targetSelection</code> field set to "CONTINUOUS".</p> </li> <li> <p>The
@@ -3517,6 +3545,34 @@ namespace IoT
         }
 
         /**
+         * <p>Disassociates a software bill of materials (SBOM) from a specific software
+         * package version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisassociateSbomWithPackageVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisassociateSbomFromPackageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateSbomFromPackageVersionOutcome DisassociateSbomFromPackageVersion(const Model::DisassociateSbomFromPackageVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateSbomFromPackageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateSbomFromPackageVersionRequestT = Model::DisassociateSbomFromPackageVersionRequest>
+        Model::DisassociateSbomFromPackageVersionOutcomeCallable DisassociateSbomFromPackageVersionCallable(const DisassociateSbomFromPackageVersionRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::DisassociateSbomFromPackageVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateSbomFromPackageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateSbomFromPackageVersionRequestT = Model::DisassociateSbomFromPackageVersionRequest>
+        void DisassociateSbomFromPackageVersionAsync(const DisassociateSbomFromPackageVersionRequestT& request, const DisassociateSbomFromPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::DisassociateSbomFromPackageVersion, request, handler, context);
+        }
+
+        /**
          * <p>Enables the rule.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">EnableTopicRule</a>
          * action.</p><p><h3>See Also:</h3>   <a
@@ -5155,6 +5211,34 @@ namespace IoT
         void ListRoleAliasesAsync(const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRoleAliasesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListRoleAliases, request, handler, context);
+        }
+
+        /**
+         * <p>The validation results for all software bill of materials (SBOM) attached to
+         * a specific software package version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSbomValidationResults</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSbomValidationResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSbomValidationResultsOutcome ListSbomValidationResults(const Model::ListSbomValidationResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSbomValidationResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSbomValidationResultsRequestT = Model::ListSbomValidationResultsRequest>
+        Model::ListSbomValidationResultsOutcomeCallable ListSbomValidationResultsCallable(const ListSbomValidationResultsRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::ListSbomValidationResults, request);
+        }
+
+        /**
+         * An Async wrapper for ListSbomValidationResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSbomValidationResultsRequestT = Model::ListSbomValidationResultsRequest>
+        void ListSbomValidationResultsAsync(const ListSbomValidationResultsRequestT& request, const ListSbomValidationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::ListSbomValidationResults, request, handler, context);
         }
 
         /**

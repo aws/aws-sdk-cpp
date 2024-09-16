@@ -8,6 +8,7 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/PackageVersionArtifact.h>
 #include <aws/iot/model/PackageVersionAction.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -108,6 +109,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The various components that make up a software package version.</p>
+     */
+    inline const PackageVersionArtifact& GetArtifact() const{ return m_artifact; }
+    inline bool ArtifactHasBeenSet() const { return m_artifactHasBeenSet; }
+    inline void SetArtifact(const PackageVersionArtifact& value) { m_artifactHasBeenSet = true; m_artifact = value; }
+    inline void SetArtifact(PackageVersionArtifact&& value) { m_artifactHasBeenSet = true; m_artifact = std::move(value); }
+    inline UpdatePackageVersionRequest& WithArtifact(const PackageVersionArtifact& value) { SetArtifact(value); return *this;}
+    inline UpdatePackageVersionRequest& WithArtifact(PackageVersionArtifact&& value) { SetArtifact(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status that the package version should be assigned. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
@@ -119,6 +132,21 @@ namespace Model
     inline void SetAction(PackageVersionAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
     inline UpdatePackageVersionRequest& WithAction(const PackageVersionAction& value) { SetAction(value); return *this;}
     inline UpdatePackageVersionRequest& WithAction(PackageVersionAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The inline job document associated with a software package version used for a
+     * quick job deployment via IoT Jobs.</p>
+     */
+    inline const Aws::String& GetRecipe() const{ return m_recipe; }
+    inline bool RecipeHasBeenSet() const { return m_recipeHasBeenSet; }
+    inline void SetRecipe(const Aws::String& value) { m_recipeHasBeenSet = true; m_recipe = value; }
+    inline void SetRecipe(Aws::String&& value) { m_recipeHasBeenSet = true; m_recipe = std::move(value); }
+    inline void SetRecipe(const char* value) { m_recipeHasBeenSet = true; m_recipe.assign(value); }
+    inline UpdatePackageVersionRequest& WithRecipe(const Aws::String& value) { SetRecipe(value); return *this;}
+    inline UpdatePackageVersionRequest& WithRecipe(Aws::String&& value) { SetRecipe(std::move(value)); return *this;}
+    inline UpdatePackageVersionRequest& WithRecipe(const char* value) { SetRecipe(value); return *this;}
     ///@}
 
     ///@{
@@ -150,8 +178,14 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
 
+    PackageVersionArtifact m_artifact;
+    bool m_artifactHasBeenSet = false;
+
     PackageVersionAction m_action;
     bool m_actionHasBeenSet = false;
+
+    Aws::String m_recipe;
+    bool m_recipeHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

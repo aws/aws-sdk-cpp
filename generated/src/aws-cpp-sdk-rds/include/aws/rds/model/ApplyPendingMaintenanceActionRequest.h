@@ -59,15 +59,8 @@ namespace Model
     ///@{
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>ca-certificate-rotation</code> </p> </li> <li>
-     * <p> <code>db-upgrade</code> </p> </li> <li> <p>
-     * <code>hardware-maintenance</code> </p> </li> <li> <p> <code>os-upgrade</code>
-     * </p> </li> <li> <p> <code>system-update</code> </p> </li> </ul> <p>For more
-     * information about these actions, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance
-     * actions for Amazon Aurora</a> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance
-     * actions for Amazon RDS</a>.</p>
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
+     * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
     inline bool ApplyActionHasBeenSet() const { return m_applyActionHasBeenSet; }

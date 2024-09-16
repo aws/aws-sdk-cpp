@@ -8,6 +8,7 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/PackageVersionArtifact.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -107,6 +108,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The various build components created during the build process such as
+     * libraries and configuration files that make up a software package version.</p>
+     */
+    inline const PackageVersionArtifact& GetArtifact() const{ return m_artifact; }
+    inline bool ArtifactHasBeenSet() const { return m_artifactHasBeenSet; }
+    inline void SetArtifact(const PackageVersionArtifact& value) { m_artifactHasBeenSet = true; m_artifact = value; }
+    inline void SetArtifact(PackageVersionArtifact&& value) { m_artifactHasBeenSet = true; m_artifact = std::move(value); }
+    inline CreatePackageVersionRequest& WithArtifact(const PackageVersionArtifact& value) { SetArtifact(value); return *this;}
+    inline CreatePackageVersionRequest& WithArtifact(PackageVersionArtifact&& value) { SetArtifact(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The inline job document associated with a software package version used for a
+     * quick job deployment via IoT Jobs.</p>
+     */
+    inline const Aws::String& GetRecipe() const{ return m_recipe; }
+    inline bool RecipeHasBeenSet() const { return m_recipeHasBeenSet; }
+    inline void SetRecipe(const Aws::String& value) { m_recipeHasBeenSet = true; m_recipe = value; }
+    inline void SetRecipe(Aws::String&& value) { m_recipeHasBeenSet = true; m_recipe = std::move(value); }
+    inline void SetRecipe(const char* value) { m_recipeHasBeenSet = true; m_recipe.assign(value); }
+    inline CreatePackageVersionRequest& WithRecipe(const Aws::String& value) { SetRecipe(value); return *this;}
+    inline CreatePackageVersionRequest& WithRecipe(Aws::String&& value) { SetRecipe(std::move(value)); return *this;}
+    inline CreatePackageVersionRequest& WithRecipe(const char* value) { SetRecipe(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Metadata that can be used to manage the package version.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -152,6 +181,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
+
+    PackageVersionArtifact m_artifact;
+    bool m_artifactHasBeenSet = false;
+
+    Aws::String m_recipe;
+    bool m_recipeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

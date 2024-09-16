@@ -20,6 +20,7 @@
 /* Service model headers required in IoTClient header */
 #include <aws/iot/model/AddThingToBillingGroupResult.h>
 #include <aws/iot/model/AddThingToThingGroupResult.h>
+#include <aws/iot/model/AssociateSbomWithPackageVersionResult.h>
 #include <aws/iot/model/AssociateTargetsWithJobResult.h>
 #include <aws/iot/model/AttachSecurityProfileResult.h>
 #include <aws/iot/model/AttachThingPrincipalResult.h>
@@ -121,6 +122,7 @@
 #include <aws/iot/model/DescribeThingTypeResult.h>
 #include <aws/iot/model/DetachSecurityProfileResult.h>
 #include <aws/iot/model/DetachThingPrincipalResult.h>
+#include <aws/iot/model/DisassociateSbomFromPackageVersionResult.h>
 #include <aws/iot/model/GetBehaviorModelTrainingSummariesResult.h>
 #include <aws/iot/model/GetBucketsAggregationResult.h>
 #include <aws/iot/model/GetCardinalityResult.h>
@@ -178,6 +180,7 @@
 #include <aws/iot/model/ListProvisioningTemplatesResult.h>
 #include <aws/iot/model/ListRelatedResourcesForAuditFindingResult.h>
 #include <aws/iot/model/ListRoleAliasesResult.h>
+#include <aws/iot/model/ListSbomValidationResultsResult.h>
 #include <aws/iot/model/ListScheduledAuditsResult.h>
 #include <aws/iot/model/ListSecurityProfilesResult.h>
 #include <aws/iot/model/ListSecurityProfilesForTargetResult.h>
@@ -345,6 +348,7 @@ namespace Aws
       class AcceptCertificateTransferRequest;
       class AddThingToBillingGroupRequest;
       class AddThingToThingGroupRequest;
+      class AssociateSbomWithPackageVersionRequest;
       class AssociateTargetsWithJobRequest;
       class AttachPolicyRequest;
       class AttachSecurityProfileRequest;
@@ -461,6 +465,7 @@ namespace Aws
       class DetachSecurityProfileRequest;
       class DetachThingPrincipalRequest;
       class DisableTopicRuleRequest;
+      class DisassociateSbomFromPackageVersionRequest;
       class EnableTopicRuleRequest;
       class GetBehaviorModelTrainingSummariesRequest;
       class GetBucketsAggregationRequest;
@@ -519,6 +524,7 @@ namespace Aws
       class ListProvisioningTemplatesRequest;
       class ListRelatedResourcesForAuditFindingRequest;
       class ListRoleAliasesRequest;
+      class ListSbomValidationResultsRequest;
       class ListScheduledAuditsRequest;
       class ListSecurityProfilesRequest;
       class ListSecurityProfilesForTargetRequest;
@@ -599,6 +605,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> AcceptCertificateTransferOutcome;
       typedef Aws::Utils::Outcome<AddThingToBillingGroupResult, IoTError> AddThingToBillingGroupOutcome;
       typedef Aws::Utils::Outcome<AddThingToThingGroupResult, IoTError> AddThingToThingGroupOutcome;
+      typedef Aws::Utils::Outcome<AssociateSbomWithPackageVersionResult, IoTError> AssociateSbomWithPackageVersionOutcome;
       typedef Aws::Utils::Outcome<AssociateTargetsWithJobResult, IoTError> AssociateTargetsWithJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> AttachPolicyOutcome;
       typedef Aws::Utils::Outcome<AttachSecurityProfileResult, IoTError> AttachSecurityProfileOutcome;
@@ -715,6 +722,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DetachSecurityProfileResult, IoTError> DetachSecurityProfileOutcome;
       typedef Aws::Utils::Outcome<DetachThingPrincipalResult, IoTError> DetachThingPrincipalOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> DisableTopicRuleOutcome;
+      typedef Aws::Utils::Outcome<DisassociateSbomFromPackageVersionResult, IoTError> DisassociateSbomFromPackageVersionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> EnableTopicRuleOutcome;
       typedef Aws::Utils::Outcome<GetBehaviorModelTrainingSummariesResult, IoTError> GetBehaviorModelTrainingSummariesOutcome;
       typedef Aws::Utils::Outcome<GetBucketsAggregationResult, IoTError> GetBucketsAggregationOutcome;
@@ -773,6 +781,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListProvisioningTemplatesResult, IoTError> ListProvisioningTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListRelatedResourcesForAuditFindingResult, IoTError> ListRelatedResourcesForAuditFindingOutcome;
       typedef Aws::Utils::Outcome<ListRoleAliasesResult, IoTError> ListRoleAliasesOutcome;
+      typedef Aws::Utils::Outcome<ListSbomValidationResultsResult, IoTError> ListSbomValidationResultsOutcome;
       typedef Aws::Utils::Outcome<ListScheduledAuditsResult, IoTError> ListScheduledAuditsOutcome;
       typedef Aws::Utils::Outcome<ListSecurityProfilesResult, IoTError> ListSecurityProfilesOutcome;
       typedef Aws::Utils::Outcome<ListSecurityProfilesForTargetResult, IoTError> ListSecurityProfilesForTargetOutcome;
@@ -853,6 +862,7 @@ namespace Aws
       typedef std::future<AcceptCertificateTransferOutcome> AcceptCertificateTransferOutcomeCallable;
       typedef std::future<AddThingToBillingGroupOutcome> AddThingToBillingGroupOutcomeCallable;
       typedef std::future<AddThingToThingGroupOutcome> AddThingToThingGroupOutcomeCallable;
+      typedef std::future<AssociateSbomWithPackageVersionOutcome> AssociateSbomWithPackageVersionOutcomeCallable;
       typedef std::future<AssociateTargetsWithJobOutcome> AssociateTargetsWithJobOutcomeCallable;
       typedef std::future<AttachPolicyOutcome> AttachPolicyOutcomeCallable;
       typedef std::future<AttachSecurityProfileOutcome> AttachSecurityProfileOutcomeCallable;
@@ -969,6 +979,7 @@ namespace Aws
       typedef std::future<DetachSecurityProfileOutcome> DetachSecurityProfileOutcomeCallable;
       typedef std::future<DetachThingPrincipalOutcome> DetachThingPrincipalOutcomeCallable;
       typedef std::future<DisableTopicRuleOutcome> DisableTopicRuleOutcomeCallable;
+      typedef std::future<DisassociateSbomFromPackageVersionOutcome> DisassociateSbomFromPackageVersionOutcomeCallable;
       typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
       typedef std::future<GetBehaviorModelTrainingSummariesOutcome> GetBehaviorModelTrainingSummariesOutcomeCallable;
       typedef std::future<GetBucketsAggregationOutcome> GetBucketsAggregationOutcomeCallable;
@@ -1027,6 +1038,7 @@ namespace Aws
       typedef std::future<ListProvisioningTemplatesOutcome> ListProvisioningTemplatesOutcomeCallable;
       typedef std::future<ListRelatedResourcesForAuditFindingOutcome> ListRelatedResourcesForAuditFindingOutcomeCallable;
       typedef std::future<ListRoleAliasesOutcome> ListRoleAliasesOutcomeCallable;
+      typedef std::future<ListSbomValidationResultsOutcome> ListSbomValidationResultsOutcomeCallable;
       typedef std::future<ListScheduledAuditsOutcome> ListScheduledAuditsOutcomeCallable;
       typedef std::future<ListSecurityProfilesOutcome> ListSecurityProfilesOutcomeCallable;
       typedef std::future<ListSecurityProfilesForTargetOutcome> ListSecurityProfilesForTargetOutcomeCallable;
@@ -1110,6 +1122,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::AcceptCertificateTransferRequest&, const Model::AcceptCertificateTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptCertificateTransferResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::AddThingToBillingGroupRequest&, const Model::AddThingToBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddThingToBillingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::AddThingToThingGroupRequest&, const Model::AddThingToThingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddThingToThingGroupResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::AssociateSbomWithPackageVersionRequest&, const Model::AssociateSbomWithPackageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSbomWithPackageVersionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::AssociateTargetsWithJobRequest&, const Model::AssociateTargetsWithJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTargetsWithJobResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::AttachPolicyRequest&, const Model::AttachPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::AttachSecurityProfileRequest&, const Model::AttachSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachSecurityProfileResponseReceivedHandler;
@@ -1226,6 +1239,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::DetachSecurityProfileRequest&, const Model::DetachSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachSecurityProfileResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DetachThingPrincipalRequest&, const Model::DetachThingPrincipalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachThingPrincipalResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DisableTopicRuleRequest&, const Model::DisableTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableTopicRuleResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DisassociateSbomFromPackageVersionRequest&, const Model::DisassociateSbomFromPackageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSbomFromPackageVersionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::EnableTopicRuleRequest&, const Model::EnableTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableTopicRuleResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetBehaviorModelTrainingSummariesRequest&, const Model::GetBehaviorModelTrainingSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBehaviorModelTrainingSummariesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetBucketsAggregationRequest&, const Model::GetBucketsAggregationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketsAggregationResponseReceivedHandler;
@@ -1284,6 +1298,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::ListProvisioningTemplatesRequest&, const Model::ListProvisioningTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProvisioningTemplatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListRelatedResourcesForAuditFindingRequest&, const Model::ListRelatedResourcesForAuditFindingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRelatedResourcesForAuditFindingResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListRoleAliasesRequest&, const Model::ListRoleAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoleAliasesResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListSbomValidationResultsRequest&, const Model::ListSbomValidationResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSbomValidationResultsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListScheduledAuditsRequest&, const Model::ListScheduledAuditsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListScheduledAuditsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListSecurityProfilesRequest&, const Model::ListSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListSecurityProfilesForTargetRequest&, const Model::ListSecurityProfilesForTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilesForTargetResponseReceivedHandler;

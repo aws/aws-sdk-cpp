@@ -25,7 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>VPC configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration of a virtual private cloud (VPC). For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html">Protect
+   * your data using Amazon Virtual Private Cloud and Amazon Web Services
+   * PrivateLink</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/VpcConfig">AWS
    * API Reference</a></p>
    */
@@ -40,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>VPC configuration subnets.</p>
+     * <p>An array of IDs for each subnet in the VPC to use.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
@@ -55,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>VPC configuration security group Ids.</p>
+     * <p>An array of IDs for each security group in the VPC to use.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }

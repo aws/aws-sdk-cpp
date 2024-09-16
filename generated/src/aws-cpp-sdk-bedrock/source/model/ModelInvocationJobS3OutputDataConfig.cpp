@@ -20,7 +20,8 @@ namespace Model
 
 ModelInvocationJobS3OutputDataConfig::ModelInvocationJobS3OutputDataConfig() : 
     m_s3UriHasBeenSet(false),
-    m_s3EncryptionKeyIdHasBeenSet(false)
+    m_s3EncryptionKeyIdHasBeenSet(false),
+    m_s3BucketOwnerHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ ModelInvocationJobS3OutputDataConfig& ModelInvocationJobS3OutputDataConfig::oper
     m_s3EncryptionKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3BucketOwner"))
+  {
+    m_s3BucketOwner = jsonValue.GetString("s3BucketOwner");
+
+    m_s3BucketOwnerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue ModelInvocationJobS3OutputDataConfig::Jsonize() const
   if(m_s3EncryptionKeyIdHasBeenSet)
   {
    payload.WithString("s3EncryptionKeyId", m_s3EncryptionKeyId);
+
+  }
+
+  if(m_s3BucketOwnerHasBeenSet)
+  {
+   payload.WithString("s3BucketOwner", m_s3BucketOwner);
 
   }
 

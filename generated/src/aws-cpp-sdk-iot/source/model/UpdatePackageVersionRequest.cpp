@@ -20,8 +20,10 @@ UpdatePackageVersionRequest::UpdatePackageVersionRequest() :
     m_versionNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_attributesHasBeenSet(false),
+    m_artifactHasBeenSet(false),
     m_action(PackageVersionAction::NOT_SET),
     m_actionHasBeenSet(false),
+    m_recipeHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -48,9 +50,21 @@ Aws::String UpdatePackageVersionRequest::SerializePayload() const
 
   }
 
+  if(m_artifactHasBeenSet)
+  {
+   payload.WithObject("artifact", m_artifact.Jsonize());
+
+  }
+
   if(m_actionHasBeenSet)
   {
    payload.WithString("action", PackageVersionActionMapper::GetNameForPackageVersionAction(m_action));
+  }
+
+  if(m_recipeHasBeenSet)
+  {
+   payload.WithString("recipe", m_recipe);
+
   }
 
   return payload.View().WriteReadable();

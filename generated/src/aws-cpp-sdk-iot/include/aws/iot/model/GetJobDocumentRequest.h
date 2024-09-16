@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoT
 {
 namespace Model
@@ -31,6 +35,8 @@ namespace Model
 
     AWS_IOT_API Aws::String SerializePayload() const override;
 
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
 
     ///@{
     /**
@@ -45,10 +51,24 @@ namespace Model
     inline GetJobDocumentRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
     inline GetJobDocumentRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A flag that provides a view of the job document before and after the
+     * substitution parameters have been resolved with their exact values.</p>
+     */
+    inline bool GetBeforeSubstitution() const{ return m_beforeSubstitution; }
+    inline bool BeforeSubstitutionHasBeenSet() const { return m_beforeSubstitutionHasBeenSet; }
+    inline void SetBeforeSubstitution(bool value) { m_beforeSubstitutionHasBeenSet = true; m_beforeSubstitution = value; }
+    inline GetJobDocumentRequest& WithBeforeSubstitution(bool value) { SetBeforeSubstitution(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
+
+    bool m_beforeSubstitution;
+    bool m_beforeSubstitutionHasBeenSet = false;
   };
 
 } // namespace Model
