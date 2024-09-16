@@ -3,12 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-package com.amazonaws.util.awsclientgenerator;
-
-import com.amazonaws.util.awsclientgenerator.config.exceptions.GeneratorNotImplementedException;
-import com.amazonaws.util.awsclientgenerator.generators.DirectFromC2jGenerator;
-import com.amazonaws.util.awsclientgenerator.generators.MainGenerator;
-import com.amazonaws.util.awsclientgenerator.generators.SmithyParser;
+package com.amazonaws.util.awsclientsmithygenerator;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -26,12 +21,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
+import com.amazonaws.util.awsclientsmithygenerator.generators.SdkFileEntry;
+import com.amazonaws.util.awsclientsmithygenerator.generators.SmithyParser;
 //import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.auth.SigV4Trait;
@@ -39,6 +36,7 @@ import software.amazon.smithy.aws.traits.auth.SigV4ATrait;
 import software.amazon.smithy.model.traits.HttpBearerAuthTrait;
 
 import software.amazon.smithy.aws.traits.ServiceTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.exceptions.GeneratorNotImplementedException;
 
 public class main {
 
@@ -57,6 +55,30 @@ public class main {
     static final String STANDALONE_OPTION = "standalone";
     static final String ENABLE_VIRTUAL_OPERATIONS = "enable-virtual-operations";
     static final String GENERATE_SMOKE_TESTS_OPTION = "generate-smoke-tests";
+
+    public static ByteArrayOutputStream compressFilesToZip(final SdkFileEntry[] apiFiles, final String componentOutputName) throws IOException {
+        //we need to add a BOM to accommodate MSFT compilers.
+        //as specified here https://blogs.msdn.microsoft.com/vcblog/2016/02/22/new-options-for-managing-character-sets-in-the-microsoft-cc-compiler/
+        byte[] bom = {(byte)0xEF,(byte)0xBB,(byte)0xBF};
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try (ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream, StandardCharsets.UTF_8)) {
+            for (SdkFileEntry apiFile : apiFiles) {
+                if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
+                    ZipEntry zipEntry = new ZipEntry(String.format("%s/%s", componentOutputName, apiFile.getPathRelativeToRoot()));
+                    zipOutputStream.putNextEntry(zipEntry);
+
+                    if(apiFile.isNeedsByteOrderMark()) {
+                        zipOutputStream.write(bom);
+                    }
+
+                    zipOutputStream.write(apiFile.getSdkFile().toString().getBytes(StandardCharsets.UTF_8));
+                    zipOutputStream.closeEntry();
+                }
+            }
+        }
+
+        return outputStream;
+    }
 
     public static File findPomXml(File startDir) {
         // Search upwards first
@@ -106,7 +128,7 @@ public class main {
 
         return null;
     }
-    private static void generateSmokeTests(String serviceName){
+    protected static void generateSmokeTests(String serviceName){
         //use generateSmokeTests
         //add smithy test parser
         try {
@@ -134,7 +156,7 @@ public class main {
             }
 
             // Call the parse method of SmithyParser
-            SmithyParser parser = new SmithyParser();
+            SmithyParser parser = new SmithyParser(serviceName);
             List<SmithyParser.TestcaseParams> tests = parser.parse(directoryPath);
 
             if (tests.size() == 0) {
@@ -163,7 +185,7 @@ public class main {
             // Ensure the parent directory (tmp) exists
             Files.createDirectories(zipfilePath.getParent());
 
-            ByteArrayOutputStream generated = MainGenerator.compressFilesToZip(files,componentOutputName);
+            ByteArrayOutputStream generated = compressFilesToZip(files,componentOutputName);
             // Check if file exists before creating
             if (Files.exists(zipfilePath)) {
                 System.out.println("File already exists: " + zipfilePath);
@@ -241,184 +263,16 @@ public class main {
             if (argPairs.containsKey(OUTPUT_FILE_NAME) && !argPairs.get(OUTPUT_FILE_NAME).isEmpty()) {
                 outputFileName = argPairs.get(OUTPUT_FILE_NAME);
             }
-            
-            
-            
 
-            if (arbitraryJson != null && arbitraryJson.length() > 0) {
-                try {
-                    ByteArrayOutputStream generated;
+            generateSmokeTests(serviceName);
 
-                    String componentOutputName;
-                    if (serviceName != null && !serviceName.isEmpty()) {
-                        if (!generateTests) {
-                            generated = generateService(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
-                                    licenseText, generateStandalonePackage, enableVirtualOperations);
-
-                            componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
-
-                            //generateSmokeTests(serviceName);
-                        } else {
-                            generated = generateServiceTest(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
-                                    licenseText);
-
-                            componentOutputName = String.format("%s-gen-tests", serviceName);
-                        }
-                    } else {
-                        if (generateTests) {
-                            System.out.println("Test generation for defaults is not supported by the generator.");
-                            System.exit(-1);
-                        }
-
-                        if (selectedOption.equalsIgnoreCase(DEFAULTS_OPTION)) {
-                            generated = generateDefaults(arbitraryJson, languageBinding, serviceName, namespace,
-                                    licenseText, generateStandalonePackage, enableVirtualOperations);
-                        } else if (selectedOption.equalsIgnoreCase(PARTITIONS_OPTION)) {
-                            generated = generatePartitions(arbitraryJson, languageBinding, serviceName, namespace,
-                                    licenseText, generateStandalonePackage, enableVirtualOperations);
-                        } else {
-                            System.err.println(String.format("Unsupported core component %s requested for generation", selectedOption));
-                            System.exit(-1);
-                            return;
-                        }
-                        componentOutputName = String.format("aws-cpp-sdk-core");
-                    }
-
-                    if (outputFileName != null && outputFileName.equals("STDOUT")) {
-                        generated.writeTo(System.out);
-                    } else {
-                        File finalOutputFile;
-                        if (outputFileName != null) {
-                            finalOutputFile = new File(outputFileName);
-                        } else {
-                            finalOutputFile = File.createTempFile(componentOutputName, ".zip");
-                        }
-                        FileOutputStream fileOutputStream = new FileOutputStream(finalOutputFile);
-                        generated.writeTo(fileOutputStream);
-
-                        System.out.println(finalOutputFile.getAbsolutePath());
-                    }
-
-                } catch (GeneratorNotImplementedException e) {
-                    System.err.println(e.getMessage());
-                    e.printStackTrace();
-                    System.exit(-1);
-                } catch (Exception e) {
-                    System.err.println(e.getMessage());
-                    e.printStackTrace();
-                    System.exit(-1);
-                }
-            } else {
-                System.err.println("You must supply standard input if you specify the --arbitrary option.");
-                System.exit(-1);
-            }
             return;
         }
 
         printHelp();
     }
 
-    private static ByteArrayOutputStream generateService(String arbitraryJson,
-                                                         String endpointRules,
-                                                         String endpointRulesTests,
-                                                         String languageBinding,
-                                                         String serviceName,
-                                                         String namespace,
-                                                         String licenseText,
-                                                         boolean generateStandalonePackage,
-                                                         boolean enableVirtualOperations) throws Exception {
-        MainGenerator generator = new MainGenerator();
-        DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
-
-        ByteArrayOutputStream outputStream = directFromC2jGenerator.generateServiceSourceFromJson(
-                arbitraryJson,
-                endpointRules,
-                endpointRulesTests,
-                languageBinding,
-                serviceName,
-                namespace,
-                licenseText,
-                generateStandalonePackage,
-                enableVirtualOperations);
-        return outputStream;
-    }
-
-    private static ByteArrayOutputStream generateServiceTest(String arbitraryJson,
-                                                             String endpointRules,
-                                                             String endpointRulesTests,
-                                                             String languageBinding,
-                                                             String serviceName,
-                                                             String namespace,
-                                                             String licenseText) throws Exception {
-        MainGenerator generator = new MainGenerator();
-        DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
-
-        ByteArrayOutputStream outputStream = directFromC2jGenerator.generateServiceTestSourceFromModels(
-                arbitraryJson,
-                endpointRules,
-                endpointRulesTests,
-                languageBinding,
-                serviceName,
-                namespace,
-                licenseText);
-        return outputStream;
-    }
-
-    private static ByteArrayOutputStream generateDefaults(String arbitraryJson, String languageBinding, String serviceName,
-                                         String namespace, String licenseText,
-                                         boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
-        MainGenerator generator = new MainGenerator();
-        DirectFromC2jGenerator defaultsGenerator = new DirectFromC2jGenerator(generator);
-
-        ByteArrayOutputStream outputStream = defaultsGenerator.generateDefaultsSourceFromJson(arbitraryJson,
-                languageBinding,
-                serviceName,
-                namespace,
-                licenseText,
-                generateStandalonePackage,
-                enableVirtualOperations);
-        return outputStream;
-    }
-
-    private static ByteArrayOutputStream generatePartitions(String arbitraryJson, String languageBinding, String serviceName,
-                                                           String namespace, String licenseText,
-                                                           boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
-        MainGenerator generator = new MainGenerator();
-        DirectFromC2jGenerator defaultsGenerator = new DirectFromC2jGenerator(generator);
-
-        ByteArrayOutputStream outputStream = defaultsGenerator.generatePartitionsSourceFromJson(arbitraryJson,
-                languageBinding,
-                serviceName,
-                namespace,
-                licenseText,
-                generateStandalonePackage,
-                enableVirtualOperations);
-        return outputStream;
-    }
-
-    private static String readFile(String filename) throws IOException {
-        InputStream stream;
-        if(filename != null && !filename.isEmpty()) {
-            stream = new FileInputStream(filename);
-        } else {
-            stream = System.in;
-        }
-
-        StringBuilder stringBuilder = new StringBuilder();
-        byte[] buffer = new byte[1024];
-        int bytes;
-        while ((bytes = stream.read(buffer)) > 0) {
-            stringBuilder.append(new String(buffer, 0, bytes, StandardCharsets.UTF_8));
-        }
-        return stringBuilder.toString();
-    }
-
-    private static InputStream getInputStreamReader(Map<String, String> argsMap) throws FileNotFoundException, UnsupportedEncodingException {
-        if (argsMap.containsKey(INPUT_FILE_NAME)) {
-            return new FileInputStream(argsMap.get(INPUT_FILE_NAME));
-        }
-        return System.in;
-    }
+    
 
     private static void printHelp() {
         System.out.println("Syntax: AWSClientGenerator <options>");
@@ -474,5 +328,22 @@ public class main {
         }
 
         return argsPairs;
+    }
+
+    private static String readFile(String filename) throws IOException {
+        InputStream stream;
+        if(filename != null && !filename.isEmpty()) {
+            stream = new FileInputStream(filename);
+        } else {
+            stream = System.in;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        byte[] buffer = new byte[1024];
+        int bytes;
+        while ((bytes = stream.read(buffer)) > 0) {
+            stringBuilder.append(new String(buffer, 0, bytes, StandardCharsets.UTF_8));
+        }
+        return stringBuilder.toString();
     }
 }

@@ -1,5 +1,5 @@
 
-package com.amazonaws.util.awsclientgenerator.generators;
+package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.loader.ModelAssembler;
@@ -18,13 +18,7 @@ import java.util.stream.Stream;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
-import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
-//import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
-//import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
-//import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
-//import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
-//import com.amazonaws.util.awsclientgenerator.generators.cpp.ErrorFormatter;
-import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
+import com.amazonaws.util.awsclientsmithygenerator.generators.SdkFileEntry;
 
 import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
 import software.amazon.smithy.model.shapes.ServiceShape;
@@ -55,11 +49,13 @@ import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.slf4j.helpers.NOPLoggerFactory;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.exceptions.SourceGenerationFailedException;
 
 
 public class SmithyParser {
     protected final VelocityEngine velocityEngine;
-    public SmithyParser()throws Exception {
+    protected final String serviceName;
+    public SmithyParser(String service)throws Exception {
         velocityEngine = new VelocityEngine();
         velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
         velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
@@ -69,7 +65,7 @@ public class SmithyParser {
         // # Use backward compatible space gobbling
         velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
         velocityEngine.init();
-
+        serviceName = service;
     }
 
 

@@ -315,7 +315,7 @@ def generate_single_client(service_name: str,
     dir_to_extract = f"{output_dir}/src/"
     service_name, status = extract_zip(output_zip_file, service_name, dir_to_extract, dir_to_delete_before_extract)
 
-    '''if model_files.endpoint_rule_set and model_files.endpoint_tests:
+    if model_files.endpoint_rule_set and model_files.endpoint_tests:
         run_command.append("--generate-tests")
 
         if tmp_dir:
@@ -326,9 +326,23 @@ def generate_single_client(service_name: str,
         if not os.path.exists(f"{output_dir}/tests"):
             os.makedirs(f"{output_dir}/tests")
         dir_to_delete_before_extract = f"{output_dir}/tests/{service_name}-gen-tests"
-        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/tests", dir_to_delete_before_extract)'''
+        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/tests", dir_to_delete_before_extract)
     #add for smoke tests
     #add check if such a file exists 
+    
+    run_command = []
+    run_command.append("java")
+    run_command += ["-jar", "code-generation/smithy_generator/" + GENERATOR_JAR]
+    run_command += ["--inputfile", model_filepath]
+    if model_files.endpoint_rule_set:
+        run_command += ["--endpoint-rule-set", f"{endpoints_filepath}/{model_files.endpoint_rule_set}"]
+    if model_files.endpoint_tests:
+        run_command += ["--endpoint-tests", f"{endpoints_filepath}/{model_files.endpoint_tests}"]
+    run_command += ["--service", service_name]
+    run_command += ["--outputfile", output_filename]
+    output_zip_file = run_generator_once(service_name, run_command, output_filename)
+    
+    
     dir_to_delete_before_extract = f"{output_dir}/smoke-tests/{service_name}-smoke-tests"
     smoketest_zip_file = f"/tmp/smithySmokeTests/{service_name}-smoke-tests.zip"
     print("smoketest_zip_file=",smoketest_zip_file," output dir=",f"{output_dir}/smoke-tests")

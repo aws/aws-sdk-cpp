@@ -18,8 +18,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -30,7 +30,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.amazonaws.util.awsclientgenerator.main</mainClass>
+                            <mainClass>com.amazonaws.util.awsclientsmithygenerator.main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -43,7 +43,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.amazonaws.util.awsclientgenerator.main</mainClass>
+                            <mainClass>com.amazonaws.util.awsclientsmithygenerator.main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -60,6 +60,28 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.amazonaws.util.awsclientsmithygenerator.main</mainClass> 
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin> -->
         </plugins>
 
     </build>
@@ -110,47 +132,34 @@
         </dependency>
 
         <!--Dependicies for lambda function-->
-
-
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-lambda-java-core</artifactId>
-            <version>1.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.7</version>
-        </dependency>
-        <dependency>
-            <groupId>net.lingala.zip4j</groupId>
-            <artifactId>zip4j</artifactId>
-            <version>2.11.3</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.5</version>
-        </dependency>
-        
         <dependency>
             <groupId>software.amazon.smithy</groupId>
-            <artifactId>smithy-jmespath</artifactId>
+            <artifactId>smithy-model</artifactId>
             <version>1.51.0</version>
         </dependency>
         <dependency>
             <groupId>software.amazon.smithy</groupId>
-            <artifactId>smithy-codegen-core</artifactId>
+            <artifactId>smithy-rules-engine</artifactId>
             <version>1.51.0</version>
         </dependency>
         <dependency>
             <groupId>software.amazon.smithy</groupId>
-            <artifactId>smithy-waiters</artifactId>
+            <artifactId>smithy-protocol-test-traits</artifactId>
+            <version>1.51.0</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.smithy</groupId>
+            <artifactId>smithy-trait-codegen</artifactId>
             <version>1.51.0</version>
         </dependency>
         <dependency>
             <groupId>software.amazon.smithy</groupId>
             <artifactId>smithy-aws-traits</artifactId>
+            <version>1.51.0</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.smithy</groupId>
+            <artifactId>smithy-aws-smoke-test-model</artifactId>
             <version>1.51.0</version>
         </dependency>
         <dependency>
