@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock/model/ModelInvocationJobInputDataConfig.h>
 #include <aws/bedrock/model/ModelInvocationJobOutputDataConfig.h>
+#include <aws/bedrock/model/VpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +192,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration of the Virtual Private Cloud (VPC) for the data in the
+     * batch inference job. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect
+     * batch inference jobs using a VPC</a>.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
+    inline GetModelInvocationJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+    inline GetModelInvocationJobResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of hours after which batch inference job was set to time out.</p>
      */
     inline int GetTimeoutDurationInHours() const{ return m_timeoutDurationInHours; }
@@ -244,6 +259,8 @@ namespace Model
     ModelInvocationJobInputDataConfig m_inputDataConfig;
 
     ModelInvocationJobOutputDataConfig m_outputDataConfig;
+
+    VpcConfig m_vpcConfig;
 
     int m_timeoutDurationInHours;
 

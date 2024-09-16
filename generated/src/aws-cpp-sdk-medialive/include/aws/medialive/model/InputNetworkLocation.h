@@ -17,7 +17,6 @@ namespace Model
   {
     NOT_SET,
     AWS,
-    ON_PREMISE,
     ON_PREMISES
   };
 

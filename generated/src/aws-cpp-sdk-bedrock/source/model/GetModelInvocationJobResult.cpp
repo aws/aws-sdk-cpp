@@ -104,6 +104,12 @@ GetModelInvocationJobResult& GetModelInvocationJobResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+  }
+
   if(jsonValue.ValueExists("timeoutDurationInHours"))
   {
     m_timeoutDurationInHours = jsonValue.GetInteger("timeoutDurationInHours");

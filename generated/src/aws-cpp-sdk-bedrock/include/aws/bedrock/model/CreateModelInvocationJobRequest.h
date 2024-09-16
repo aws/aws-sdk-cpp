@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/ModelInvocationJobInputDataConfig.h>
 #include <aws/bedrock/model/ModelInvocationJobOutputDataConfig.h>
+#include <aws/bedrock/model/VpcConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/Tag.h>
 #include <utility>
@@ -128,6 +129,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration of the Virtual Private Cloud (VPC) for the data in the
+     * batch inference job. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect
+     * batch inference jobs using a VPC</a>.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+    inline CreateModelInvocationJobRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+    inline CreateModelInvocationJobRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of hours after which to force the batch inference job to time
      * out.</p>
      */
@@ -172,6 +188,9 @@ namespace Model
 
     ModelInvocationJobOutputDataConfig m_outputDataConfig;
     bool m_outputDataConfigHasBeenSet = false;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
 
     int m_timeoutDurationInHours;
     bool m_timeoutDurationInHoursHasBeenSet = false;

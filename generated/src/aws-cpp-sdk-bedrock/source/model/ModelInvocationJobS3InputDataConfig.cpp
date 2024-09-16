@@ -21,7 +21,8 @@ namespace Model
 ModelInvocationJobS3InputDataConfig::ModelInvocationJobS3InputDataConfig() : 
     m_s3InputFormat(S3InputFormat::NOT_SET),
     m_s3InputFormatHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+    m_s3UriHasBeenSet(false),
+    m_s3BucketOwnerHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,13 @@ ModelInvocationJobS3InputDataConfig& ModelInvocationJobS3InputDataConfig::operat
     m_s3UriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3BucketOwner"))
+  {
+    m_s3BucketOwner = jsonValue.GetString("s3BucketOwner");
+
+    m_s3BucketOwnerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue ModelInvocationJobS3InputDataConfig::Jsonize() const
   if(m_s3UriHasBeenSet)
   {
    payload.WithString("s3Uri", m_s3Uri);
+
+  }
+
+  if(m_s3BucketOwnerHasBeenSet)
+  {
+   payload.WithString("s3BucketOwner", m_s3BucketOwner);
 
   }
 

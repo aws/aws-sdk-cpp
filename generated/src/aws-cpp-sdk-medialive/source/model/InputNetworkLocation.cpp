@@ -21,7 +21,6 @@ namespace Aws
       {
 
         static const int AWS_HASH = HashingUtils::HashString("AWS");
-        static const int ON_PREMISE_HASH = HashingUtils::HashString("ON_PREMISE");
         static const int ON_PREMISES_HASH = HashingUtils::HashString("ON_PREMISES");
 
 
@@ -31,10 +30,6 @@ namespace Aws
           if (hashCode == AWS_HASH)
           {
             return InputNetworkLocation::AWS;
-          }
-          else if (hashCode == ON_PREMISE_HASH)
-          {
-            return InputNetworkLocation::ON_PREMISE;
           }
           else if (hashCode == ON_PREMISES_HASH)
           {
@@ -58,8 +53,6 @@ namespace Aws
             return {};
           case InputNetworkLocation::AWS:
             return "AWS";
-          case InputNetworkLocation::ON_PREMISE:
-            return "ON_PREMISE";
           case InputNetworkLocation::ON_PREMISES:
             return "ON_PREMISES";
           default:

@@ -7,8 +7,11 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/PackageVersionArtifact.h>
 #include <aws/iot/model/PackageVersionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iot/model/Sbom.h>
+#include <aws/iot/model/SbomValidationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +111,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The various components that make up a software package version.</p>
+     */
+    inline const PackageVersionArtifact& GetArtifact() const{ return m_artifact; }
+    inline void SetArtifact(const PackageVersionArtifact& value) { m_artifact = value; }
+    inline void SetArtifact(PackageVersionArtifact&& value) { m_artifact = std::move(value); }
+    inline GetPackageVersionResult& WithArtifact(const PackageVersionArtifact& value) { SetArtifact(value); return *this;}
+    inline GetPackageVersionResult& WithArtifact(PackageVersionArtifact&& value) { SetArtifact(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status associated to the package version. For more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
      * version lifecycle</a>.</p>
@@ -155,6 +169,43 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The software bill of materials for a software package version.</p>
+     */
+    inline const Sbom& GetSbom() const{ return m_sbom; }
+    inline void SetSbom(const Sbom& value) { m_sbom = value; }
+    inline void SetSbom(Sbom&& value) { m_sbom = std::move(value); }
+    inline GetPackageVersionResult& WithSbom(const Sbom& value) { SetSbom(value); return *this;}
+    inline GetPackageVersionResult& WithSbom(Sbom&& value) { SetSbom(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the validation for a new software bill of materials added to a
+     * software package version.</p>
+     */
+    inline const SbomValidationStatus& GetSbomValidationStatus() const{ return m_sbomValidationStatus; }
+    inline void SetSbomValidationStatus(const SbomValidationStatus& value) { m_sbomValidationStatus = value; }
+    inline void SetSbomValidationStatus(SbomValidationStatus&& value) { m_sbomValidationStatus = std::move(value); }
+    inline GetPackageVersionResult& WithSbomValidationStatus(const SbomValidationStatus& value) { SetSbomValidationStatus(value); return *this;}
+    inline GetPackageVersionResult& WithSbomValidationStatus(SbomValidationStatus&& value) { SetSbomValidationStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The inline job document associated with a software package version used for a
+     * quick job deployment via IoT Jobs.</p>
+     */
+    inline const Aws::String& GetRecipe() const{ return m_recipe; }
+    inline void SetRecipe(const Aws::String& value) { m_recipe = value; }
+    inline void SetRecipe(Aws::String&& value) { m_recipe = std::move(value); }
+    inline void SetRecipe(const char* value) { m_recipe.assign(value); }
+    inline GetPackageVersionResult& WithRecipe(const Aws::String& value) { SetRecipe(value); return *this;}
+    inline GetPackageVersionResult& WithRecipe(Aws::String&& value) { SetRecipe(std::move(value)); return *this;}
+    inline GetPackageVersionResult& WithRecipe(const char* value) { SetRecipe(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -176,6 +227,8 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
 
+    PackageVersionArtifact m_artifact;
+
     PackageVersionStatus m_status;
 
     Aws::String m_errorReason;
@@ -183,6 +236,12 @@ namespace Model
     Aws::Utils::DateTime m_creationDate;
 
     Aws::Utils::DateTime m_lastModifiedDate;
+
+    Sbom m_sbom;
+
+    SbomValidationStatus m_sbomValidationStatus;
+
+    Aws::String m_recipe;
 
     Aws::String m_requestId;
   };

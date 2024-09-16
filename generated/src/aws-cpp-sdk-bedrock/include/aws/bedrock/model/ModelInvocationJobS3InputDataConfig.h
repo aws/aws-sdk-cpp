@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the configuration of the S3 location of the output
+   * <p>Contains the configuration of the S3 location of the input
    * data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ModelInvocationJobS3InputDataConfig">AWS
    * API Reference</a></p>
@@ -64,6 +64,21 @@ namespace Model
     inline ModelInvocationJobS3InputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
     inline ModelInvocationJobS3InputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the S3 bucket containing
+     * the input data.</p>
+     */
+    inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
+    inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
+    inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
+    inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
+    inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
+    inline ModelInvocationJobS3InputDataConfig& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
+    inline ModelInvocationJobS3InputDataConfig& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
+    inline ModelInvocationJobS3InputDataConfig& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
+    ///@}
   private:
 
     S3InputFormat m_s3InputFormat;
@@ -71,6 +86,9 @@ namespace Model
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
+
+    Aws::String m_s3BucketOwner;
+    bool m_s3BucketOwnerHasBeenSet = false;
   };
 
 } // namespace Model

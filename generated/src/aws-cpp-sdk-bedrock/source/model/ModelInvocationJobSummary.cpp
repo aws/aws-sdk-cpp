@@ -32,6 +32,7 @@ ModelInvocationJobSummary::ModelInvocationJobSummary() :
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
     m_timeoutDurationInHours(0),
     m_timeoutDurationInHoursHasBeenSet(false),
     m_jobExpirationTimeHasBeenSet(false)
@@ -130,6 +131,13 @@ ModelInvocationJobSummary& ModelInvocationJobSummary::operator =(JsonView jsonVa
     m_outputDataConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("timeoutDurationInHours"))
   {
     m_timeoutDurationInHours = jsonValue.GetInteger("timeoutDurationInHours");
@@ -216,6 +224,12 @@ JsonValue ModelInvocationJobSummary::Jsonize() const
   if(m_outputDataConfigHasBeenSet)
   {
    payload.WithObject("outputDataConfig", m_outputDataConfig.Jsonize());
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
 
   }
 

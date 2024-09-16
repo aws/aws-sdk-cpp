@@ -20,6 +20,7 @@ CreateModelInvocationJobRequest::CreateModelInvocationJobRequest() :
     m_modelIdHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
     m_timeoutDurationInHours(0),
     m_timeoutDurationInHoursHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -63,6 +64,12 @@ Aws::String CreateModelInvocationJobRequest::SerializePayload() const
   if(m_outputDataConfigHasBeenSet)
   {
    payload.WithObject("outputDataConfig", m_outputDataConfig.Jsonize());
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
 
   }
 
