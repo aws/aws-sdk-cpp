@@ -58,7 +58,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The soft limit for the <code>ulimit</code> type.</p>
+     * <p>The soft limit for the <code>ulimit</code> type. The value can be specified
+     * in bytes, seconds, or as a count, depending on the <code>type</code> of the
+     * <code>ulimit</code>.</p>
      */
     inline int GetSoftLimit() const{ return m_softLimit; }
     inline bool SoftLimitHasBeenSet() const { return m_softLimitHasBeenSet; }
@@ -68,7 +70,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The hard limit for the <code>ulimit</code> type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type. The value can be specified
+     * in bytes, seconds, or as a count, depending on the <code>type</code> of the
+     * <code>ulimit</code>.</p>
      */
     inline int GetHardLimit() const{ return m_hardLimit; }
     inline bool HardLimitHasBeenSet() const { return m_hardLimitHasBeenSet; }

@@ -433,6 +433,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>A publicly accessible URL for a file that contains the
+     * <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3
+     * buckets are supported</p>
+     */
+    inline const Aws::String& GetTargetLocationsURL() const{ return m_targetLocationsURL; }
+    inline bool TargetLocationsURLHasBeenSet() const { return m_targetLocationsURLHasBeenSet; }
+    inline void SetTargetLocationsURL(const Aws::String& value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL = value; }
+    inline void SetTargetLocationsURL(Aws::String&& value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL = std::move(value); }
+    inline void SetTargetLocationsURL(const char* value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL.assign(value); }
+    inline AutomationExecution& WithTargetLocationsURL(const Aws::String& value) { SetTargetLocationsURL(value); return *this;}
+    inline AutomationExecution& WithTargetLocationsURL(Aws::String&& value) { SetTargetLocationsURL(std::move(value)); return *this;}
+    inline AutomationExecution& WithTargetLocationsURL(const char* value) { SetTargetLocationsURL(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The subtype of the Automation operation. Currently, the only supported value
      * is <code>ChangeRequest</code>.</p>
      */
@@ -615,6 +631,9 @@ namespace Model
 
     Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
     bool m_triggeredAlarmsHasBeenSet = false;
+
+    Aws::String m_targetLocationsURL;
+    bool m_targetLocationsURLHasBeenSet = false;
 
     AutomationSubtype m_automationSubtype;
     bool m_automationSubtypeHasBeenSet = false;

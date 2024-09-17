@@ -122,8 +122,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The OpsItem status. Status can be <code>Open</code>, <code>In
-     * Progress</code>, or <code>Resolved</code>.</p>
+     * <p>The OpsItem status.</p>
      */
     inline const OpsItemStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

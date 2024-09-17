@@ -59,15 +59,14 @@ namespace Model
      * created.</p> <p>If you use the <code>KMS_DSSE</code> encryption type, the
      * contents of the repository will be encrypted with two layers of encryption using
      * server-side encryption with the KMS Management Service key stored in KMS.
-     * Similar to the KMS encryption type, you can either use the default Amazon Web
-     * Services managed KMS key for Amazon ECR, or specify your own KMS key, which
-     * you've already created. </p> <p>If you use the <code>AES256</code> encryption
-     * type, Amazon ECR uses server-side encryption with Amazon S3-managed encryption
-     * keys which encrypts the images in the repository using an AES256 encryption
-     * algorithm. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
-     * data using server-side encryption with Amazon S3-managed encryption keys
-     * (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer
+     * Similar to the <code>KMS</code> encryption type, you can either use the default
+     * Amazon Web Services managed KMS key for Amazon ECR, or specify your own KMS key,
+     * which you've already created. </p> <p>If you use the <code>AES256</code>
+     * encryption type, Amazon ECR uses server-side encryption with Amazon S3-managed
+     * encryption keys which encrypts the images in the repository using an AES256
+     * encryption algorithm.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html">Amazon
+     * ECR encryption at rest</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }

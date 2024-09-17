@@ -77,11 +77,11 @@ namespace Model
      * assign to the managed node. This IAM role must provide AssumeRole permissions
      * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM service role for a hybrid and multicloud environment</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>  <p>You can't specify an
-     * IAM service-linked role for this parameter. You must create a unique role.</p>
-     * 
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/hybrid-multicloud-service-role.html">Create
+     * the IAM service role required for Systems Manager in a hybrid and multicloud
+     * environments</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>  <p>You can't specify an IAM service-linked role for this
+     * parameter. You must create a unique role.</p> 
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
@@ -107,7 +107,7 @@ namespace Model
     ///@{
     /**
      * <p>The date by which this activation request should expire, in timestamp format,
-     * such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance.
+     * such as "2024-07-07T00:00:00". You can specify a date up to 30 days in advance.
      * If you don't provide an expiration date, the activation code expires in 24
      * hours.</p>
      */

@@ -715,6 +715,33 @@ namespace Lambda
         }
 
         /**
+         * <p>Deletes a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+         * policy</a> from a function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves details about your account's <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
          * usage in an Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
@@ -1145,6 +1172,59 @@ namespace Lambda
         void GetProvisionedConcurrencyConfigAsync(const GetProvisionedConcurrencyConfigRequestT& request, const GetProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LambdaClient::GetProvisionedConcurrencyConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve the public-access settings for a function.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPublicAccessBlockConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPublicAccessBlockConfigOutcome GetPublicAccessBlockConfig(const Model::GetPublicAccessBlockConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPublicAccessBlockConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPublicAccessBlockConfigRequestT = Model::GetPublicAccessBlockConfigRequest>
+        Model::GetPublicAccessBlockConfigOutcomeCallable GetPublicAccessBlockConfigCallable(const GetPublicAccessBlockConfigRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::GetPublicAccessBlockConfig, request);
+        }
+
+        /**
+         * An Async wrapper for GetPublicAccessBlockConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPublicAccessBlockConfigRequestT = Model::GetPublicAccessBlockConfigRequest>
+        void GetPublicAccessBlockConfigAsync(const GetPublicAccessBlockConfigRequestT& request, const GetPublicAccessBlockConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::GetPublicAccessBlockConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+         * policy</a> attached to a function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::GetResourcePolicy, request, handler, context);
         }
 
         /**
@@ -1851,6 +1931,75 @@ namespace Lambda
         void PutProvisionedConcurrencyConfigAsync(const PutProvisionedConcurrencyConfigRequestT& request, const PutProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LambdaClient::PutProvisionedConcurrencyConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Configure your function's public-access settings.</p> <p>To control public
+         * access to a Lambda function, you can choose whether to allow the creation of <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+         * policies</a> that allow public access to that function. You can also block
+         * public access to a function, even if it has an existing resource-based policy
+         * that allows it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutPublicAccessBlockConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPublicAccessBlockConfigOutcome PutPublicAccessBlockConfig(const Model::PutPublicAccessBlockConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutPublicAccessBlockConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutPublicAccessBlockConfigRequestT = Model::PutPublicAccessBlockConfigRequest>
+        Model::PutPublicAccessBlockConfigOutcomeCallable PutPublicAccessBlockConfigCallable(const PutPublicAccessBlockConfigRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::PutPublicAccessBlockConfig, request);
+        }
+
+        /**
+         * An Async wrapper for PutPublicAccessBlockConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutPublicAccessBlockConfigRequestT = Model::PutPublicAccessBlockConfigRequest>
+        void PutPublicAccessBlockConfigAsync(const PutPublicAccessBlockConfigRequestT& request, const PutPublicAccessBlockConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::PutPublicAccessBlockConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Adds a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+         * policy</a> to a function. You can use resource-based policies to grant access to
+         * other <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon
+         * Web Services accounts</a>, <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>,
+         * or <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>.
+         * Resource-based policies apply to a single function, version, or alias.</p>
+         *  <p>Adding a resource-based policy using this API action replaces any
+         * existing policy you've previously created. This means that if you've previously
+         * added resource-based permissions to a function using the <a>AddPermission</a>
+         * action, those permissions will be overwritten by your new policy.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::PutResourcePolicy, request, handler, context);
         }
 
         /**

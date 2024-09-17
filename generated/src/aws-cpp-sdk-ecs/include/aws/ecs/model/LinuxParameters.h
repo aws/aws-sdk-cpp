@@ -62,7 +62,7 @@ namespace Model
     ///@{
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
-     * <code>Devices</code> in tthe docker conainer create command and the
+     * <code>Devices</code> in the docker container create command and the
      * <code>--device</code> option to docker run.</p>  <p>If you're using tasks
      * that use the Fargate launch type, the <code>devices</code> parameter isn't
      * supported.</p> 

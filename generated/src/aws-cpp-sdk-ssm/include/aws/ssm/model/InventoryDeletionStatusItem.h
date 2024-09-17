@@ -111,7 +111,7 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-custom.html#delete-custom-inventory">Understanding
      * the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>
      */

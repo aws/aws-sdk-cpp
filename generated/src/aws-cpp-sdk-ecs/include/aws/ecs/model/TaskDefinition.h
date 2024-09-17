@@ -273,8 +273,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The task launch types the task definition validated against during task
-     * definition registration. For more information, see <a
+     * <p>Amazon ECS validates the task definition parameters with those supported by
+     * the launch type. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>

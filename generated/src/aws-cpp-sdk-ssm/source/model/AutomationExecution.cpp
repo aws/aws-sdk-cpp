@@ -49,6 +49,7 @@ AutomationExecution::AutomationExecution() :
     m_progressCountersHasBeenSet(false),
     m_alarmConfigurationHasBeenSet(false),
     m_triggeredAlarmsHasBeenSet(false),
+    m_targetLocationsURLHasBeenSet(false),
     m_automationSubtype(AutomationSubtype::NOT_SET),
     m_automationSubtypeHasBeenSet(false),
     m_scheduledTimeHasBeenSet(false),
@@ -303,6 +304,13 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
       m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
     }
     m_triggeredAlarmsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetLocationsURL"))
+  {
+    m_targetLocationsURL = jsonValue.GetString("TargetLocationsURL");
+
+    m_targetLocationsURLHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AutomationSubtype"))
@@ -584,6 +592,12 @@ JsonValue AutomationExecution::Jsonize() const
      triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject(m_triggeredAlarms[triggeredAlarmsIndex].Jsonize());
    }
    payload.WithArray("TriggeredAlarms", std::move(triggeredAlarmsJsonList));
+
+  }
+
+  if(m_targetLocationsURLHasBeenSet)
+  {
+   payload.WithString("TargetLocationsURL", m_targetLocationsURL);
 
   }
 

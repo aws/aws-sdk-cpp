@@ -76,7 +76,7 @@ namespace Model
      * installed using the Docker plugin CLI, use <code>docker plugin ls</code> to
      * retrieve the driver name from your container instance. If the driver was
      * installed using another method, use Docker plugin discovery to retrieve the
-     * driver name. This parameter maps to <code>Driver</code> in the docker conainer
+     * driver name. This parameter maps to <code>Driver</code> in the docker container
      * create command and the <code>xxdriver</code> option to docker volume create.</p>
      */
     inline const Aws::String& GetDriver() const{ return m_driver; }
@@ -113,7 +113,7 @@ namespace Model
     ///@{
     /**
      * <p>Custom metadata to add to your Docker volume. This parameter maps to
-     * <code>Labels</code> in the docker conainer create command and the
+     * <code>Labels</code> in the docker container create command and the
      * <code>xxlabel</code> option to docker volume create.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }

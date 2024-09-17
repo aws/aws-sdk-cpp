@@ -238,12 +238,12 @@ namespace SSM
          * activation code and ID when installing SSM Agent on machines in your hybrid
          * environment. For more information about requirements for managing on-premises
          * machines using Systems Manager, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * up Amazon Web Services Systems Manager for hybrid and multicloud
-         * environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
-         * </p>  <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge
-         * devices, and on-premises servers and VMs that are configured for Systems Manager
-         * are all called <i>managed nodes</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using
+         * Amazon Web Services Systems Manager in hybrid and multicloud environments</a> in
+         * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>  <p>Amazon
+         * Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises
+         * servers and VMs that are configured for Systems Manager are all called
+         * <i>managed nodes</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          */
@@ -340,7 +340,7 @@ namespace SSM
          * defines the actions that Systems Manager performs on your managed nodes. For
          * more information about SSM documents, including information about supported
          * schemas, features, and syntax, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents.html">Amazon
          * Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems
          * Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
@@ -495,8 +495,8 @@ namespace SSM
          * <code>SyncToDestination</code> type to synchronize Inventory data from multiple
          * Amazon Web Services Regions to a single Amazon Simple Storage Service (Amazon
          * S3) bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
-         * resource data sync for Inventory</a> in the <i>Amazon Web Services Systems
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creatinga
+         * a resource data sync for Inventory</a> in the <i>Amazon Web Services Systems
          * Manager User Guide</i>.</p> <p>You can configure Systems Manager Explorer to use
          * the <code>SyncFromSource</code> type to synchronize operational work items
          * (OpsItems) and operational data (OpsData) from multiple Amazon Web Services

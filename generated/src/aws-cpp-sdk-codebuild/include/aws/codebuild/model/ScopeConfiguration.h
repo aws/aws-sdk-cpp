@@ -41,9 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of either the enterprise or organization that will send webhook
-     * events to CodeBuild, depending on if the webhook is a global or organization
-     * webhook respectively.</p>
+     * <p>The name of either the group, enterprise, or organization that will send
+     * webhook events to CodeBuild, depending on the type of webhook.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -57,8 +56,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain of the GitHub Enterprise organization. Note that this parameter is
-     * only required if your project's source type is GITHUB_ENTERPRISE</p>
+     * <p>The domain of the GitHub Enterprise organization or the GitLab Self Managed
+     * group. Note that this parameter is only required if your project's source type
+     * is GITHUB_ENTERPRISE or GITLAB_SELF_MANAGED.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of scope for a GitHub webhook.</p>
+     * <p>The type of scope for a GitHub or GitLab webhook.</p>
      */
     inline const WebhookScopeType& GetScope() const{ return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }

@@ -27,7 +27,8 @@ VulnerablePackage::VulnerablePackage() :
     m_packageManagerHasBeenSet(false),
     m_releaseHasBeenSet(false),
     m_sourceLayerHashHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_fixedInVersionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,13 @@ VulnerablePackage& VulnerablePackage::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fixedInVersion"))
+  {
+    m_fixedInVersion = jsonValue.GetString("fixedInVersion");
+
+    m_fixedInVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +155,12 @@ JsonValue VulnerablePackage::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithString("version", m_version);
+
+  }
+
+  if(m_fixedInVersionHasBeenSet)
+  {
+   payload.WithString("fixedInVersion", m_fixedInVersion);
 
   }
 

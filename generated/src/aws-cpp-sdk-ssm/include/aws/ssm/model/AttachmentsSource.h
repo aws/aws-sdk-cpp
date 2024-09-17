@@ -60,9 +60,9 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://amzn-s3-demo-bucket/my-prefix" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * <code>"Values": [ "s3://amzn-s3-demo-bucket/my-prefix/my-file.py" ]</code> </p>
      * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
      * from the name of another SSM document in your account, a version number of that
      * document, and a file attached to that document version that you want to reuse.

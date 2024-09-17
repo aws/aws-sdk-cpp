@@ -215,10 +215,10 @@ namespace Model
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
-     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
-     * </p> <p> <code>doc-example-bucket</code> is the name of the S3 bucket;</p> <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3
-     * prefix;</p> <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p> <p>
+     * <code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
+     * </p> <p> <code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p> <p>
+     * <code>my-prefix</code> is the name of the S3 prefix;</p> <p>
+     * <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p> <p>
      * <code>awsrunShellScript</code> is the name of the plugin.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
@@ -236,10 +236,10 @@ namespace Model
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
-     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
-     * </p> <p> <code>doc-example-bucket</code> is the name of the S3 bucket;</p> <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3
-     * prefix;</p> <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p> <p>
+     * <code>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
+     * </p> <p> <code>amzn-s3-demo-bucket</code> is the name of the S3 bucket;</p> <p>
+     * <code>my-prefix</code> is the name of the S3 prefix;</p> <p>
+     * <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p> <p>
      * <code>awsrunShellScript</code> is the name of the plugin.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }

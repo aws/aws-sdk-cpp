@@ -109,9 +109,9 @@ namespace Model
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">SSM
+     * Command document for patching: <code>AWS-RunPatchBaseline</code> </a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetInstallOverrideList() const{ return m_installOverrideList; }
     inline bool InstallOverrideListHasBeenSet() const { return m_installOverrideListHasBeenSet; }

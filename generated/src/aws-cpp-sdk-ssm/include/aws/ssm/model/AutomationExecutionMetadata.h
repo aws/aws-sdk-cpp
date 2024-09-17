@@ -348,8 +348,8 @@ namespace Model
      * Amazon Web Services Regions and Amazon Web Services accounts. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Amazon Web Services Regions and accounts</a> in
-     * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+     * automations in multiple Amazon Web Services Regions and accounts</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>. </p>
      */
     inline const AutomationType& GetAutomationType() const{ return m_automationType; }
     inline bool AutomationTypeHasBeenSet() const { return m_automationTypeHasBeenSet; }
@@ -383,6 +383,22 @@ namespace Model
     inline AutomationExecutionMetadata& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
     inline AutomationExecutionMetadata& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(value); return *this; }
     inline AutomationExecutionMetadata& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A publicly accessible URL for a file that contains the
+     * <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3
+     * buckets are supported</p>
+     */
+    inline const Aws::String& GetTargetLocationsURL() const{ return m_targetLocationsURL; }
+    inline bool TargetLocationsURLHasBeenSet() const { return m_targetLocationsURLHasBeenSet; }
+    inline void SetTargetLocationsURL(const Aws::String& value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL = value; }
+    inline void SetTargetLocationsURL(Aws::String&& value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL = std::move(value); }
+    inline void SetTargetLocationsURL(const char* value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL.assign(value); }
+    inline AutomationExecutionMetadata& WithTargetLocationsURL(const Aws::String& value) { SetTargetLocationsURL(value); return *this;}
+    inline AutomationExecutionMetadata& WithTargetLocationsURL(Aws::String&& value) { SetTargetLocationsURL(std::move(value)); return *this;}
+    inline AutomationExecutionMetadata& WithTargetLocationsURL(const char* value) { SetTargetLocationsURL(value); return *this;}
     ///@}
 
     ///@{
@@ -542,6 +558,9 @@ namespace Model
 
     Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
     bool m_triggeredAlarmsHasBeenSet = false;
+
+    Aws::String m_targetLocationsURL;
+    bool m_targetLocationsURLHasBeenSet = false;
 
     AutomationSubtype m_automationSubtype;
     bool m_automationSubtypeHasBeenSet = false;

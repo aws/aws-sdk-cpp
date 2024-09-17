@@ -29,7 +29,7 @@ namespace Model
 
   /**
    * <p>The log configuration for the container. This parameter maps to
-   * <code>LogConfig</code> in the docker conainer create command and the
+   * <code>LogConfig</code> in the docker container create command and the
    * <code>--log-driver</code> option to docker run.</p> <p>By default, containers
    * use the same logging driver that the Docker daemon uses. However, the container
    * might use a different logging driver than the Docker daemon by specifying a log

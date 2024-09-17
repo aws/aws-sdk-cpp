@@ -145,6 +145,20 @@ namespace Model
     inline VulnerablePackage& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
     inline VulnerablePackage& WithVersion(const char* value) { SetVersion(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version of the package that contains the vulnerability fix.</p>
+     */
+    inline const Aws::String& GetFixedInVersion() const{ return m_fixedInVersion; }
+    inline bool FixedInVersionHasBeenSet() const { return m_fixedInVersionHasBeenSet; }
+    inline void SetFixedInVersion(const Aws::String& value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion = value; }
+    inline void SetFixedInVersion(Aws::String&& value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion = std::move(value); }
+    inline void SetFixedInVersion(const char* value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion.assign(value); }
+    inline VulnerablePackage& WithFixedInVersion(const Aws::String& value) { SetFixedInVersion(value); return *this;}
+    inline VulnerablePackage& WithFixedInVersion(Aws::String&& value) { SetFixedInVersion(std::move(value)); return *this;}
+    inline VulnerablePackage& WithFixedInVersion(const char* value) { SetFixedInVersion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arch;
@@ -170,6 +184,9 @@ namespace Model
 
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
+
+    Aws::String m_fixedInVersion;
+    bool m_fixedInVersionHasBeenSet = false;
   };
 
 } // namespace Model

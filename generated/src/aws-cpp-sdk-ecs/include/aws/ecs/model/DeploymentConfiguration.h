@@ -76,13 +76,16 @@ namespace Model
      * The default <code>maximumPercent</code> value for a service using the
      * <code>REPLICA</code> service scheduler is 200%.</p> <p>If a service is using
      * either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
-     * deployment types and tasks that use the EC2 launch type, the <b>maximum
-     * percent</b> value is set to the default value and is used to define the upper
-     * limit on the number of the tasks in the service that remain in the
-     * <code>RUNNING</code> state while the container instances are in the
-     * <code>DRAINING</code> state. If the tasks in the service use the Fargate launch
-     * type, the maximum percent value is not used, although it is returned when
-     * describing your service.</p>
+     * deployment types, and tasks in the service use the EC2 launch type, the
+     * <b>maximum percent</b> value is set to the default value. The <b>maximum
+     * percent</b> value is used to define the upper limit on the number of the tasks
+     * in the service that remain in the <code>RUNNING</code> state while the container
+     * instances are in the <code>DRAINING</code> state.</p>  <p>You can't
+     * specify a custom <code>maximumPercent</code> value for a service that uses
+     * either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
+     * deployment types and has tasks that use the EC2 launch type.</p>  <p>If
+     * the tasks in the service use the Fargate launch type, the maximum percent value
+     * is not used, although it is returned when describing your service.</p>
      */
     inline int GetMaximumPercent() const{ return m_maximumPercent; }
     inline bool MaximumPercentHasBeenSet() const { return m_maximumPercentHasBeenSet; }
@@ -132,13 +135,17 @@ namespace Model
      * value.</p> <p>If a service is using either the blue/green
      * (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is
      * running tasks that use the EC2 launch type, the <b>minimum healthy percent</b>
-     * value is set to the default value and is used to define the lower limit on the
-     * number of the tasks in the service that remain in the <code>RUNNING</code> state
-     * while the container instances are in the <code>DRAINING</code> state. If a
-     * service is using either the blue/green (<code>CODE_DEPLOY</code>) or
-     * <code>EXTERNAL</code> deployment types and is running tasks that use the Fargate
-     * launch type, the minimum healthy percent value is not used, although it is
-     * returned when describing your service.</p>
+     * value is set to the default value. The <b>minimum healthy percent</b> value is
+     * used to define the lower limit on the number of the tasks in the service that
+     * remain in the <code>RUNNING</code> state while the container instances are in
+     * the <code>DRAINING</code> state.</p>  <p>You can't specify a custom
+     * <code>minimumHealthyPercent</code> value for a service that uses either the
+     * blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
+     * and has tasks that use the EC2 launch type.</p>  <p>If a service is using
+     * either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
+     * deployment types and is running tasks that use the Fargate launch type, the
+     * minimum healthy percent value is not used, although it is returned when
+     * describing your service.</p>
      */
     inline int GetMinimumHealthyPercent() const{ return m_minimumHealthyPercent; }
     inline bool MinimumHealthyPercentHasBeenSet() const { return m_minimumHealthyPercentHasBeenSet; }
