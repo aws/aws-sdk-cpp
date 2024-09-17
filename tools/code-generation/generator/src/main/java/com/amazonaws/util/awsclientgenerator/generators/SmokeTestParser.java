@@ -46,6 +46,9 @@ import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerat
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.amazonaws.util.awsclientgenerator.domainmodels.smoketests.SmokeTestDocument;
+import software.amazon.smithy.model.node.Node;
+import software.amazon.smithy.model.node.ObjectNode;
+
 
 public class SmokeTestParser {
     protected final VelocityEngine velocityEngine;
@@ -78,7 +81,7 @@ public class SmokeTestParser {
         public String operationName;
         public String inputShapeName;
         public String outputShapeName;
-        Map<String, Object> paramsMap;
+        Map<String, Node> paramsMap;
         boolean expectSuccess;
         Optional<String> errorShapeId;
         //capture auth scheme as that decides the client constructor 
@@ -145,18 +148,75 @@ public class SmokeTestParser {
         return makeFile(template, context, fileName, true);
     }
 
-    private void extractTests(List<TestcaseParams> testcaseList)
+
+
+    private List<TestcaseParams> extractTests(SmokeTestDocument smoketests)
     {   
+        List<TestcaseParams> testcaseList = new ArrayList<TestcaseParams>();
+
+
+        List<Object> objList = new ArrayList<Object>();
+
+        smoketests.getTestCases().stream().forEach(test -> {
+
+            test.getInput().entrySet().stream().forEach(entry -> {
+
+                objList.add(entry.getValue());
+
+                
+            });
+        });
+
         
+
+        objList.stream().forEach(obj -> {
+            ObjectNode.Builder objectNodeBuilder = ObjectNode.builder();
+            TestcaseParams test = new TestcaseParams();
+            if (obj instanceof Map) {
+                Map<?, ?> map = (Map<?, ?>) obj; // Cast to Map
+    
+                // Iterate over entries
+                System.out.println("Map contents:");
+                for (Map.Entry<?, ?> entry : map.entrySet()) {
+                    String key = entry.getKey().toString();
+                    Object value = entry.getValue();
+                    
+                    System.out.println("Key: " + key);
+                    System.out.println("Value: " + value);
+                    
+                    // Additional type handling
+                    if (value instanceof String) {
+                        test.paramsMap.put(key, Node.from((String) value));
+                    } else if (value instanceof Double) {
+                        test.paramsMap.put(key, Node.from((Double) value));
+                    } else if (value instanceof Integer) {
+                        test.paramsMap.put(key, Node.from((Integer) value));
+                    } else if (value instanceof Boolean) {
+                        test.paramsMap.put(key, Node.from((Boolean) value));
+                    } else {
+                        System.out.println("Other Value Type: " + value.getClass().getName());
+                    }
+                }
+            } else {
+                System.out.println("The object is not a Map.");
+            }
+
+        });
+        
+
+        
+        // Convert the Java object to a JSON string
+        //
+
+        return testcaseList;
     }
 
     public List<TestcaseParams> parse(String rawJson, String serviceName) {
-        List<TestcaseParams> testcaseList = new ArrayList<TestcaseParams>();
+        
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
         SmokeTestDocument smoketests = gson.fromJson(rawJson, SmokeTestDocument.class);
-        extractTests(testcaseList);
 
-        return testcaseList;
+        return extractTests(smoketests);
     }
 }

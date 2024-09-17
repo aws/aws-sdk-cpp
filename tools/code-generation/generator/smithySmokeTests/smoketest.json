@@ -5,7 +5,8 @@
             "id": "ListTablesSuccess",
             "operationName": "ListTables",
             "input": {
-                "Limit": 1
+                "Limit": 1,
+                "ExclusiveStartTableName": "test"
             },
             "expectation": {
                 "success": {}
