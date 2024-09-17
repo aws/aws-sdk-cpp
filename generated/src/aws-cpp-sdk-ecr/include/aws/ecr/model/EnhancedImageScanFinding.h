@@ -237,6 +237,37 @@ namespace Model
     inline EnhancedImageScanFinding& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
     inline EnhancedImageScanFinding& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline const Aws::String& GetFixAvailable() const{ return m_fixAvailable; }
+    inline bool FixAvailableHasBeenSet() const { return m_fixAvailableHasBeenSet; }
+    inline void SetFixAvailable(const Aws::String& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = value; }
+    inline void SetFixAvailable(Aws::String&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = std::move(value); }
+    inline void SetFixAvailable(const char* value) { m_fixAvailableHasBeenSet = true; m_fixAvailable.assign(value); }
+    inline EnhancedImageScanFinding& WithFixAvailable(const Aws::String& value) { SetFixAvailable(value); return *this;}
+    inline EnhancedImageScanFinding& WithFixAvailable(Aws::String&& value) { SetFixAvailable(std::move(value)); return *this;}
+    inline EnhancedImageScanFinding& WithFixAvailable(const char* value) { SetFixAvailable(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline const Aws::String& GetExploitAvailable() const{ return m_exploitAvailable; }
+    inline bool ExploitAvailableHasBeenSet() const { return m_exploitAvailableHasBeenSet; }
+    inline void SetExploitAvailable(const Aws::String& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = value; }
+    inline void SetExploitAvailable(Aws::String&& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = std::move(value); }
+    inline void SetExploitAvailable(const char* value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable.assign(value); }
+    inline EnhancedImageScanFinding& WithExploitAvailable(const Aws::String& value) { SetExploitAvailable(value); return *this;}
+    inline EnhancedImageScanFinding& WithExploitAvailable(Aws::String&& value) { SetExploitAvailable(std::move(value)); return *this;}
+    inline EnhancedImageScanFinding& WithExploitAvailable(const char* value) { SetExploitAvailable(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_awsAccountId;
@@ -283,6 +314,12 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_fixAvailable;
+    bool m_fixAvailableHasBeenSet = false;
+
+    Aws::String m_exploitAvailable;
+    bool m_exploitAvailableHasBeenSet = false;
   };
 
 } // namespace Model

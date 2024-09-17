@@ -68,10 +68,17 @@ namespace Model
      * <p>The number of days after the release date of each patch matched by the rule
      * that the patch is marked as approved in the patch baseline. For example, a value
      * of <code>7</code> means that patches are approved seven days after they are
-     * released.</p>  <p>This parameter is marked as not required, but your
+     * released.</p> <p>This parameter is marked as <code>Required: No</code>, but your
      * request must include a value for either <code>ApproveAfterDays</code> or
-     * <code>ApproveUntilDate</code>.</p>  <p> Not supported for Debian Server
-     * or Ubuntu Server.</p>
+     * <code>ApproveUntilDate</code>.</p> <p>Not supported for Debian Server or Ubuntu
+     * Server.</p>  <p>Use caution when setting this value for Windows
+     * Server patch baselines. Because patch updates that are replaced by later updates
+     * are removed, setting too broad a value for this parameter can result in crucial
+     * patches not being installed. For more information, see the <b>Windows Server</b>
+     * tab in the topic <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-selecting-patches.html">How
+     * security patches are selected</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> 
      */
     inline int GetApproveAfterDays() const{ return m_approveAfterDays; }
     inline bool ApproveAfterDaysHasBeenSet() const { return m_approveAfterDaysHasBeenSet; }
@@ -83,11 +90,18 @@ namespace Model
     /**
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically.</p> <p>Enter dates in the
-     * format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p> 
-     * <p>This parameter is marked as not required, but your request must include a
-     * value for either <code>ApproveUntilDate</code> or
-     * <code>ApproveAfterDays</code>.</p>  <p>Not supported for Debian Server or
-     * Ubuntu Server.</p>
+     * format <code>YYYY-MM-DD</code>. For example, <code>2024-12-31</code>.</p>
+     * <p>This parameter is marked as <code>Required: No</code>, but your request must
+     * include a value for either <code>ApproveUntilDate</code> or
+     * <code>ApproveAfterDays</code>.</p> <p>Not supported for Debian Server or Ubuntu
+     * Server.</p>  <p>Use caution when setting this value for Windows
+     * Server patch baselines. Because patch updates that are replaced by later updates
+     * are removed, setting too broad a value for this parameter can result in crucial
+     * patches not being installed. For more information, see the <b>Windows Server</b>
+     * tab in the topic <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-selecting-patches.html">How
+     * security patches are selected</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> 
      */
     inline const Aws::String& GetApproveUntilDate() const{ return m_approveUntilDate; }
     inline bool ApproveUntilDateHasBeenSet() const { return m_approveUntilDateHasBeenSet; }

@@ -140,7 +140,7 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Understanding
      * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */

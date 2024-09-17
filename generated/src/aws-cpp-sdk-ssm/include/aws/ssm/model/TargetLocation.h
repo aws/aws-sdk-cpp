@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/AlarmConfiguration.h>
+#include <aws/ssm/model/Target.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +129,86 @@ namespace Model
     inline TargetLocation& WithTargetLocationAlarmConfiguration(const AlarmConfiguration& value) { SetTargetLocationAlarmConfiguration(value); return *this;}
     inline TargetLocation& WithTargetLocationAlarmConfiguration(AlarmConfiguration&& value) { SetTargetLocationAlarmConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether to include child organizational units (OUs) that are
+     * children of the targeted OUs. The default is <code>false</code>.</p>
+     */
+    inline bool GetIncludeChildOrganizationUnits() const{ return m_includeChildOrganizationUnits; }
+    inline bool IncludeChildOrganizationUnitsHasBeenSet() const { return m_includeChildOrganizationUnitsHasBeenSet; }
+    inline void SetIncludeChildOrganizationUnits(bool value) { m_includeChildOrganizationUnitsHasBeenSet = true; m_includeChildOrganizationUnits = value; }
+    inline TargetLocation& WithIncludeChildOrganizationUnits(bool value) { SetIncludeChildOrganizationUnits(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Amazon Web Services accounts or organizational units to exclude as expanded
+     * targets.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetExcludeAccounts() const{ return m_excludeAccounts; }
+    inline bool ExcludeAccountsHasBeenSet() const { return m_excludeAccountsHasBeenSet; }
+    inline void SetExcludeAccounts(const Aws::Vector<Aws::String>& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts = value; }
+    inline void SetExcludeAccounts(Aws::Vector<Aws::String>&& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts = std::move(value); }
+    inline TargetLocation& WithExcludeAccounts(const Aws::Vector<Aws::String>& value) { SetExcludeAccounts(value); return *this;}
+    inline TargetLocation& WithExcludeAccounts(Aws::Vector<Aws::String>&& value) { SetExcludeAccounts(std::move(value)); return *this;}
+    inline TargetLocation& AddExcludeAccounts(const Aws::String& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts.push_back(value); return *this; }
+    inline TargetLocation& AddExcludeAccounts(Aws::String&& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts.push_back(std::move(value)); return *this; }
+    inline TargetLocation& AddExcludeAccounts(const char* value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of key-value mappings to target resources. If you specify values for
+     * this data type, you must also specify a value for
+     * <code>TargetParameterName</code>.</p> <p>This <code>Targets</code> parameter
+     * takes precedence over the <code>StartAutomationExecution:Targets</code>
+     * parameter if both are supplied.</p>
+     */
+    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
+    inline TargetLocation& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
+    inline TargetLocation& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
+    inline TargetLocation& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    inline TargetLocation& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of targets allowed to run this task in parallel. This
+     * <code>TargetsMaxConcurrency</code> takes precedence over the
+     * <code>StartAutomationExecution:MaxConcurrency</code> parameter if both are
+     * supplied.</p>
+     */
+    inline const Aws::String& GetTargetsMaxConcurrency() const{ return m_targetsMaxConcurrency; }
+    inline bool TargetsMaxConcurrencyHasBeenSet() const { return m_targetsMaxConcurrencyHasBeenSet; }
+    inline void SetTargetsMaxConcurrency(const Aws::String& value) { m_targetsMaxConcurrencyHasBeenSet = true; m_targetsMaxConcurrency = value; }
+    inline void SetTargetsMaxConcurrency(Aws::String&& value) { m_targetsMaxConcurrencyHasBeenSet = true; m_targetsMaxConcurrency = std::move(value); }
+    inline void SetTargetsMaxConcurrency(const char* value) { m_targetsMaxConcurrencyHasBeenSet = true; m_targetsMaxConcurrency.assign(value); }
+    inline TargetLocation& WithTargetsMaxConcurrency(const Aws::String& value) { SetTargetsMaxConcurrency(value); return *this;}
+    inline TargetLocation& WithTargetsMaxConcurrency(Aws::String&& value) { SetTargetsMaxConcurrency(std::move(value)); return *this;}
+    inline TargetLocation& WithTargetsMaxConcurrency(const char* value) { SetTargetsMaxConcurrency(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of errors that are allowed before the system stops running
+     * the automation on additional targets. This <code>TargetsMaxErrors</code>
+     * parameter takes precedence over the
+     * <code>StartAutomationExecution:MaxErrors</code> parameter if both are
+     * supplied.</p>
+     */
+    inline const Aws::String& GetTargetsMaxErrors() const{ return m_targetsMaxErrors; }
+    inline bool TargetsMaxErrorsHasBeenSet() const { return m_targetsMaxErrorsHasBeenSet; }
+    inline void SetTargetsMaxErrors(const Aws::String& value) { m_targetsMaxErrorsHasBeenSet = true; m_targetsMaxErrors = value; }
+    inline void SetTargetsMaxErrors(Aws::String&& value) { m_targetsMaxErrorsHasBeenSet = true; m_targetsMaxErrors = std::move(value); }
+    inline void SetTargetsMaxErrors(const char* value) { m_targetsMaxErrorsHasBeenSet = true; m_targetsMaxErrors.assign(value); }
+    inline TargetLocation& WithTargetsMaxErrors(const Aws::String& value) { SetTargetsMaxErrors(value); return *this;}
+    inline TargetLocation& WithTargetsMaxErrors(Aws::String&& value) { SetTargetsMaxErrors(std::move(value)); return *this;}
+    inline TargetLocation& WithTargetsMaxErrors(const char* value) { SetTargetsMaxErrors(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accounts;
@@ -147,6 +228,21 @@ namespace Model
 
     AlarmConfiguration m_targetLocationAlarmConfiguration;
     bool m_targetLocationAlarmConfigurationHasBeenSet = false;
+
+    bool m_includeChildOrganizationUnits;
+    bool m_includeChildOrganizationUnitsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_excludeAccounts;
+    bool m_excludeAccountsHasBeenSet = false;
+
+    Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet = false;
+
+    Aws::String m_targetsMaxConcurrency;
+    bool m_targetsMaxConcurrencyHasBeenSet = false;
+
+    Aws::String m_targetsMaxErrors;
+    bool m_targetsMaxErrorsHasBeenSet = false;
   };
 
 } // namespace Model

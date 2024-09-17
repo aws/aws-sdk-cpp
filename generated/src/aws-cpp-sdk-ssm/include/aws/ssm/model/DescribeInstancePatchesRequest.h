@@ -64,9 +64,9 @@ namespace Model
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
      * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
      * lists of all <code>State</code> values, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
-     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Patch
+     * compliance state values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> </li> </ul>
      */
     inline const Aws::Vector<PatchOrchestratorFilter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

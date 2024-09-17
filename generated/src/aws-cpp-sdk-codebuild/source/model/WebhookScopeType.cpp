@@ -22,6 +22,7 @@ namespace Aws
 
         static const int GITHUB_ORGANIZATION_HASH = HashingUtils::HashString("GITHUB_ORGANIZATION");
         static const int GITHUB_GLOBAL_HASH = HashingUtils::HashString("GITHUB_GLOBAL");
+        static const int GITLAB_GROUP_HASH = HashingUtils::HashString("GITLAB_GROUP");
 
 
         WebhookScopeType GetWebhookScopeTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == GITHUB_GLOBAL_HASH)
           {
             return WebhookScopeType::GITHUB_GLOBAL;
+          }
+          else if (hashCode == GITLAB_GROUP_HASH)
+          {
+            return WebhookScopeType::GITLAB_GROUP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "GITHUB_ORGANIZATION";
           case WebhookScopeType::GITHUB_GLOBAL:
             return "GITHUB_GLOBAL";
+          case WebhookScopeType::GITLAB_GROUP:
+            return "GITLAB_GROUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

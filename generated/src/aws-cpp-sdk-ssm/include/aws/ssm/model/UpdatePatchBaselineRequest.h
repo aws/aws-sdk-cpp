@@ -97,9 +97,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-     * package name formats for approved and rejected patch lists</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
+     * name formats for approved and rejected patch lists</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApprovedPatches() const{ return m_approvedPatches; }
     inline bool ApprovedPatchesHasBeenSet() const { return m_approvedPatchesHasBeenSet; }
@@ -141,9 +141,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-     * package name formats for approved and rejected patch lists</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
+     * name formats for approved and rejected patch lists</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRejectedPatches() const{ return m_rejectedPatches; }
     inline bool RejectedPatchesHasBeenSet() const { return m_rejectedPatchesHasBeenSet; }

@@ -82,15 +82,13 @@ namespace Model
      * a VPC in dual-stack mode</a>. For more information on using IPv6 with tasks
      * launched on Fargate, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-task-networking.html#fargate-task-networking-vpc-dual-stack">Using
-     * a VPC in dual-stack mode</a>.</p> </li> <li> <p> <code>fargateFIPSMode</code> -
-     * If you specify <code>fargateFIPSMode</code>, Fargate FIPS 140 compliance is
-     * affected.</p> </li> <li> <p> <code>fargateTaskRetirementWaitPeriod</code> - When
-     * Amazon Web Services determines that a security or infrastructure update is
-     * needed for an Amazon ECS task hosted on Fargate, the tasks need to be stopped
-     * and new tasks launched to replace them. Use
-     * <code>fargateTaskRetirementWaitPeriod</code> to configure the wait time to
-     * retire a Fargate task. For information about the Fargate tasks maintenance, see
-     * <a
+     * a VPC in dual-stack mode</a>.</p> </li> <li> <p>
+     * <code>fargateTaskRetirementWaitPeriod</code> - When Amazon Web Services
+     * determines that a security or infrastructure update is needed for an Amazon ECS
+     * task hosted on Fargate, the tasks need to be stopped and new tasks launched to
+     * replace them. Use <code>fargateTaskRetirementWaitPeriod</code> to configure the
+     * wait time to retire a Fargate task. For information about the Fargate tasks
+     * maintenance, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon
      * Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer
      * Guide</i>.</p> </li> <li> <p> <code>tagResourceAuthorization</code> - Amazon ECS

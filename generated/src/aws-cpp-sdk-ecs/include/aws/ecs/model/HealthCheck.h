@@ -126,8 +126,8 @@ namespace Model
      * double quotes and brackets when you use the Amazon Web Services Management
      * Console.</p> <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code>
      * </p> <p>An exit code of 0 indicates success, and non-zero exit code indicates
-     * failure. For more information, see <code>HealthCheck</code> in tthe docker
-     * conainer create command</p>
+     * failure. For more information, see <code>HealthCheck</code> in the docker
+     * container create command</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }

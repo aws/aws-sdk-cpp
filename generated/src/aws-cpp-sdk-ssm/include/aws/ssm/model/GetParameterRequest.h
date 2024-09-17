@@ -42,7 +42,7 @@ namespace Model
      * "name:label"</code>. To query by parameter version, use <code>"Name":
      * "name:version"</code>.</p> <p>For more information about shared parameters, see
      * <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */

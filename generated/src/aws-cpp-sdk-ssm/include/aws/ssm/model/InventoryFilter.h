@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>The type of filter.</p>  <p>The <code>Exists</code> filter must be used
      * with aggregators. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-aggregate.html">Aggregating
      * inventory data</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p> 
      */

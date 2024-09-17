@@ -33,7 +33,7 @@ namespace Model
    * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it
    * must be the same value as the <code>containerPort</code>.</p> <p>Most fields of
    * this parameter (<code>containerPort</code>, <code>hostPort</code>,
-   * <code>protocol</code>) maps to <code>PortBindings</code> in the docker conainer
+   * <code>protocol</code>) maps to <code>PortBindings</code> in the docker container
    * create command and the <code>--publish</code> option to <code>docker run</code>.
    * If the network mode of a task definition is set to <code>host</code>, host ports
    * must either be undefined or match the container port in the port mapping.</p>

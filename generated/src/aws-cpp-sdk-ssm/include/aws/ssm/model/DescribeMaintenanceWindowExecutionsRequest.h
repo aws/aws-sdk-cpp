@@ -57,7 +57,7 @@ namespace Model
      * <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li> <li>
      * <p>Values. An array of strings, each between 1 and 256 characters. Supported
      * values are date/time strings in a valid ISO 8601 date/time format, such as
-     * <code>2021-11-04T05:00:00Z</code>.</p> </li> </ul>
+     * <code>2024-11-04T05:00:00Z</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<MaintenanceWindowFilter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

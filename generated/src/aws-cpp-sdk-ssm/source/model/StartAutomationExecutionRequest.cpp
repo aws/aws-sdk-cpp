@@ -26,7 +26,8 @@ StartAutomationExecutionRequest::StartAutomationExecutionRequest() :
     m_maxErrorsHasBeenSet(false),
     m_targetLocationsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false)
+    m_alarmConfigurationHasBeenSet(false),
+    m_targetLocationsURLHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,12 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
   if(m_alarmConfigurationHasBeenSet)
   {
    payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
+
+  }
+
+  if(m_targetLocationsURLHasBeenSet)
+  {
+   payload.WithString("TargetLocationsURL", m_targetLocationsURL);
 
   }
 

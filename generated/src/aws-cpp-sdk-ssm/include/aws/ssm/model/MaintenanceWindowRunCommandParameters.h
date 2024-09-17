@@ -205,7 +205,7 @@ namespace Model
      * crafted to provide only the permissions needed for your particular maintenance
      * window tasks. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html">Setting
-     * up maintenance windows</a> in the in the <i>Amazon Web Services Systems Manager
+     * up Maintenance Windows</a> in the in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }

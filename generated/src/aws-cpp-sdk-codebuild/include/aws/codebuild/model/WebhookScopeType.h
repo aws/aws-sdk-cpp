@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     GITHUB_ORGANIZATION,
-    GITHUB_GLOBAL
+    GITHUB_GLOBAL,
+    GITLAB_GROUP
   };
 
 namespace WebhookScopeTypeMapper

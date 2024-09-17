@@ -139,7 +139,9 @@ namespace Model
     ///@{
     /**
      * <p>A key-value mapping to target resources. Required if you specify
-     * TargetParameterName.</p>
+     * TargetParameterName.</p> <p>If both this parameter and the
+     * <code>TargetLocation:Targets</code> parameter are supplied,
+     * <code>TargetLocation:Targets</code> takes precedence.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
@@ -170,7 +172,9 @@ namespace Model
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * <code>10</code>.</p>
+     * <code>10</code>.</p> <p>If both this parameter and the
+     * <code>TargetLocation:TargetsMaxConcurrency</code> are supplied,
+     * <code>TargetLocation:TargetsMaxConcurrency</code> takes precedence.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
@@ -196,7 +200,9 @@ namespace Model
      * max-errors is reached are allowed to complete, but some of these executions may
      * fail as well. If you need to ensure that there won't be more than max-errors
      * failed executions, set max-concurrency to 1 so the executions proceed one at a
-     * time.</p>
+     * time.</p> <p>If this parameter and the
+     * <code>TargetLocation:TargetsMaxErrors</code> parameter are both supplied,
+     * <code>TargetLocation:TargetsMaxErrors</code> takes precedence.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
@@ -215,9 +221,8 @@ namespace Model
      * start an automation in multiple Amazon Web Services Regions and multiple Amazon
      * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
-     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>. </p>
+     * automations in multiple Amazon Web Services Regions and accounts</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>. </p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
@@ -261,6 +266,22 @@ namespace Model
     inline StartAutomationExecutionRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
     inline StartAutomationExecutionRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specify a publicly accessible URL for a file that contains the
+     * <code>TargetLocations</code> body. Currently, only files in presigned Amazon S3
+     * buckets are supported. </p>
+     */
+    inline const Aws::String& GetTargetLocationsURL() const{ return m_targetLocationsURL; }
+    inline bool TargetLocationsURLHasBeenSet() const { return m_targetLocationsURLHasBeenSet; }
+    inline void SetTargetLocationsURL(const Aws::String& value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL = value; }
+    inline void SetTargetLocationsURL(Aws::String&& value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL = std::move(value); }
+    inline void SetTargetLocationsURL(const char* value) { m_targetLocationsURLHasBeenSet = true; m_targetLocationsURL.assign(value); }
+    inline StartAutomationExecutionRequest& WithTargetLocationsURL(const Aws::String& value) { SetTargetLocationsURL(value); return *this;}
+    inline StartAutomationExecutionRequest& WithTargetLocationsURL(Aws::String&& value) { SetTargetLocationsURL(std::move(value)); return *this;}
+    inline StartAutomationExecutionRequest& WithTargetLocationsURL(const char* value) { SetTargetLocationsURL(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_documentName;
@@ -301,6 +322,9 @@ namespace Model
 
     AlarmConfiguration m_alarmConfiguration;
     bool m_alarmConfigurationHasBeenSet = false;
+
+    Aws::String m_targetLocationsURL;
+    bool m_targetLocationsURLHasBeenSet = false;
   };
 
 } // namespace Model

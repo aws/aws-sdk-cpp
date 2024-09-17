@@ -193,8 +193,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The OpsItem status. Status can be <code>Open</code>, <code>In
-     * Progress</code>, or <code>Resolved</code>. For more information, see <a
+     * <p>The OpsItem status. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
      * OpsItem details</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
